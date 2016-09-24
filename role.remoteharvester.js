@@ -24,7 +24,7 @@ module.exports = {
 	    var room = Game.spawns.Spawn1.room;
 	    
 	    var structures = room.find(FIND_STRUCTURES, {
-		        filter: (i) => i.structureType == STRUCTURE_CONTROLLER// && 
+		        filter: (i) => i.structureType == STRUCTURE_TOWER// && 
 		                       //i.energy < 2000
 	    });
 
