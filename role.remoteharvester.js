@@ -47,7 +47,7 @@ module.exports = {
 	    var action_status = creep.transfer(structure, RESOURCE_ENERGY);
 
 	    //console.log("CT: " + structure);
-	    console.log("CT: " + action_status);
+	    //console.log("CT: " + action_status);
 
 	    // if we're not close enough to xfer
             if (action_status == ERR_NOT_IN_RANGE) {
