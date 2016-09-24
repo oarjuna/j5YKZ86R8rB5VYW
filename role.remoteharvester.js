@@ -63,13 +63,12 @@ module.exports = {
 	    var flags = [];
 	    for (var key in flag_list) {
 		flags.push(key);
-	    	//console.log("flags: " + flag_list[key]);
+	    	console.log("flags: " + flag_list[key]);
 	    	//console.log("flags: " + key);
 	    }
 
 	    var randomnum = _.random(0,1);
 	    //dest_tmp = Game.flags. + "flags[randomnum]";
-
 	    console.log(creep + " -- flags: " + flags[randomnum]);
 
 	    dest = Game.flags.Flag1;
