@@ -10,7 +10,7 @@ module.exports = {
         // if creep is harvesting energy but is full
         else if (creep.memory.working == false && creep.carry.energy == creep.carryCapacity) {
             // switch state
-            console.log("C: " + creep + " -- harvester -- energy capacity full");
+            console.log(creep + " -- harvester -- energy capacity full");
             creep.memory.working = true;
         }
 
@@ -29,11 +29,11 @@ module.exports = {
 
             // if we found one
             if (structure != undefined) {
-                console.log("C: " + creep + " -- harvester -- transfering.");
+                console.log(creep + " -- harvester -- transfering.");
                 // try to transfer energy, if it is not in range
                 if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     // move towards it
-                    console.log("C: " + creep + " -- harvester -- moving to drop off");
+                    console.log(creep + " -- harvester -- moving to drop off");
                     creep.moveTo(structure);
                 }
             }
@@ -44,12 +44,12 @@ module.exports = {
         // if creep is supposed to harvest energy from source
         else {
             // find closest source
-            console.log("C: " + creep + " -- harvester -- looking for energy source");
+            console.log(creep + " -- harvester -- looking for energy source");
             var source = creep.pos.findClosestByPath(FIND_SOURCES);
             // try to harvest energy, if the source is not in range
             if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
                 // move towards the source
-                console.log("C: " + creep + " -- harvester -- moving to harvest");
+                console.log(creep + " -- harvester -- moving to harvest");
                 creep.moveTo(source);
             }
         }

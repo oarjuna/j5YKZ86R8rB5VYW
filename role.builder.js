@@ -7,13 +7,13 @@ module.exports = {
         // if creep is trying to complete a constructionSite but has no energy left
         if (creep.memory.working == true && creep.carry.energy == 0) {
             // switch state
-            console.log("C: " + creep + " -- out of energy.");
+            console.log(creep + " -- builder -- out of energy.");
             creep.memory.working = false;
         }
         // if creep is harvesting energy but is full
         else if (creep.memory.working == false && creep.carry.energy == creep.carryCapacity) {
             // switch state
-            console.log("C: " + creep + " -- energy storage full.");
+            console.log(creep + " -- builder -- energy storage full.");
             creep.memory.working = true;
         }
 
