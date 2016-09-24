@@ -60,7 +60,7 @@ module.exports = {
         else {
 
 	    var flag_list = Game.flags;
-	    for var key in flag_list {
+	    for (var key in flag_list) {
 		
 	    	console.log("flags: " + key);
 	    }
