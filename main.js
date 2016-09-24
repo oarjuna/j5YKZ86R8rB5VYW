@@ -48,7 +48,7 @@ module.exports.loop = function () {
 	}
     }
 
-    /*var towers = Game.rooms.W24S23.find(FIND_STRUCTURES, {
+    var towers = Game.rooms.E58N3.find(FIND_STRUCTURES, {
         filter: (s) => s.structureType == STRUCTURE_TOWER
     });
     for (let tower of towers) {
@@ -57,7 +57,7 @@ module.exports.loop = function () {
             tower.attack(target);
         }
     }
-*/
+
     // setup some minimum numbers for different roles
     var minimumNumberOfHarvesters = 3;
     var minimumNumberOfRemoteHarvesters = 9;
@@ -113,13 +113,13 @@ module.exports.loop = function () {
     // if not enough repairers
     else if (numberOfRepairers < minimumNumberOfRepairers) {
         // try to spawn one
-        console.log("main -- spawning repairer")
+        console.log("main -- spawning repairer");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'repairer');
     }
     // if not enough builders
     else if (numberOfBuilders < minimumNumberOfBuilders) {
         // try to spawn one
-        console.log("main -- spawning builder")
+        console.log("main -- spawning builder");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'builder');
     }
     // if not enough wallRepairers
@@ -130,7 +130,7 @@ module.exports.loop = function () {
     // if not enough remote harvesters
     else if (numberOfRemoteHarvesters < minimumNumberOfRemoteHarvesters) {
         // try to spawn one
-        console.log("main -- spawning remote_harvester")
+        console.log("main -- spawning remote_harvester");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'remote_harvester');
     }
     else {
