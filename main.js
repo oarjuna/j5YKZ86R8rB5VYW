@@ -97,7 +97,7 @@ module.exports.loop = function () {
     if (numberOfHarvesters < minimumNumberOfHarvesters) {
         // try to spawn one
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'harvester');
-        console.log("main -- spawning harvester")
+        //console.log("main -- spawning harvester")
         // if spawning failed and we have no harvesters left
         if (name == ERR_NOT_ENOUGH_ENERGY && numberOfHarvesters == 0) {
             // spawn one with what is available
