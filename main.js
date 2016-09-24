@@ -79,10 +79,10 @@ module.exports.loop = function () {
     var energy = Game.spawns.Spawn1.room.energyCapacityAvailable;
     var name = undefined;
 
-    var status1 = "H: " + numberOfHarvesters + "/" + minimumNumberOfHarvesters + " U: " + numberOfUpgraders + "/" + minimumNumberOfUpgraders;
+    var status1 = " H: " + numberOfHarvesters + "/" + minimumNumberOfHarvesters + " U: " + numberOfUpgraders + "/" + minimumNumberOfUpgraders;
     var status2 = "R: " + numberOfRepairers + "/" + minimumNumberOfRepairers + " B: " + numberOfBuilders + "/" + minimumNumberOfBuilders;
     var status3 = "RH: " + numberOfRemoteHarvesters + "/" + minimumNumberOfRemoteHarvesters;
-    console.log(status1 + " " + status2 + " " + status3);
+    console.log("E: " + energy + status1 + " " + status2 + " " + status3);
 
 
     // if not enough harvesters
