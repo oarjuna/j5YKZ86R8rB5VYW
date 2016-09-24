@@ -18,6 +18,7 @@ module.exports = function() {
 	    
 
 	    //var body = ["WORK","WORK","MOVE","MOVE","CARRY","CARRY"];
+	    console.log = ("spawn: " + body);
 
             // create creep with the created body and the given role
             return this.createCreep(body, undefined, { role: roleName, working: false, destid: null });
