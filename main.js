@@ -83,7 +83,7 @@ module.exports.loop = function () {
     var status3 = "RH: " + numberOfRemoteHarvesters + "/" + minimumNumberOfRemoteHarvesters;
 
     var energy = Game.spawns.Spawn1.room.energyCapacityAvailable;
-    var energyAvailable = Game.spawns.Spawn1.room.energyAvailable
+    var energyAvailable = Game.spawns.Spawn1.room.energyAvailable;
 
     var status4 = "E:  " + energyAvailable + "/" + energy;
 
@@ -95,7 +95,7 @@ module.exports.loop = function () {
     if (numberOfHarvesters < minimumNumberOfHarvesters) {
         // try to spawn one
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'harvester');
-        //console.log("main -- spawning harvester");
+        console.log("main -- spawning harvester")
         // if spawning failed and we have no harvesters left
         if (name == ERR_NOT_ENOUGH_ENERGY && numberOfHarvesters == 0) {
             // spawn one with what is available
@@ -107,7 +107,7 @@ module.exports.loop = function () {
     // if not enough upgraders
     else if (numberOfUpgraders < minimumNumberOfUpgraders) {
         // try to spawn one
-        console.log("main -- spawning upgrader")
+        console.log("main -- spawning upgrader");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'upgrader');
     }
     // if not enough repairers
