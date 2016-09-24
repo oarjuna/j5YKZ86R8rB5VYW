@@ -28,7 +28,7 @@ module.exports = {
 		    			//i.structureType == STRUCTURE_TOWER// &&
 		                       i.energy < 2000
 	    });
-	    console.log("CT: " + containersWithEnergy);
+	    console.log("CT: " + stucture);
 
             if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 // move towards it
