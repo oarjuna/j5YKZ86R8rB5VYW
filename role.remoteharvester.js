@@ -21,7 +21,7 @@ module.exports = {
         // if creep is supposed to transfer energy to a structure
         if (creep.memory.working == true) {
             // find closest spawn, extension or tower which is not full
-            var structure = spawn TODO:
+            var structure = Game.spawns.Spawn1;
 
             if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 // move towards it
@@ -32,9 +32,9 @@ module.exports = {
         // if creep is supposed to harvest energy from source
         else {
 	    // move to flag1
-		TODO:
+	    creep.moveTo(Game.flags.Flag1);
 			
-            // find closest source
+            // when you get ther, find closest source and harvest
             console.log("\t" + creep + " -- looking for energy source");
             var source = creep.pos.findClosestByPath(FIND_SOURCES);
             // try to harvest energy, if the source is not in range
