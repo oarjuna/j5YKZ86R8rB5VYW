@@ -64,7 +64,7 @@ module.exports = {
 	    var randomnum = _.random(0,1);
 	    //console.log("flags: " + flag_list[randomnum]);
 	    var x = Game.getObjectById(flag_list);
-	    console.log("flags: " + x);
+	    console.log("flags: " + flag_list);
 
             //creep.memory.destid = source_new[randomnum].id;
 	//    if (creep.memory.destid == undefined) {
