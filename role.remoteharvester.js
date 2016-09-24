@@ -67,7 +67,7 @@ module.exports = {
 		// a working array
 	    	var flags = [];
 	    	// push a list of keys onto the array
-	    	for (var key in flag_list) { flags.push(key); console.log("K: "+ key);}
+	    	for (var key in flag_list) { flags.push(key);{
 	    	// get a random number 
 	    	var randomnum = _.random(0,1);
 	    	// pick a random key form the array of keys 
