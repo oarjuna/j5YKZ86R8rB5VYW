@@ -60,14 +60,17 @@ module.exports = {
         else {
 
 	    var flag_list = Game.flags;
+	    var flags = [];
 	    for (var key in flag_list) {
-	    	console.log("flags: " + flag_list[key]);
+		flags.push(key);
+	    	//console.log("flags: " + flag_list[key]);
 	    	console.log("flags: " + key);
 	    }
 
-	    //var flag_list = ["flag1"];
 	    var randomnum = _.random(0,1);
-	    //console.log("flags: " + flag_list[randomnum]);
+	    console.log("flags: " + flags[randomnum]);
+
+	    //var flag_list = ["flag1"];
 	    //var x = Game.getObjectById(flag_list);
 
             //creep.memory.destid = source_new[randomnum].id;
