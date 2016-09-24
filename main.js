@@ -76,15 +76,17 @@ module.exports.loop = function () {
     var numberOfRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'repairer');
     var numberOfWallRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer');
 
-    var energy = Game.spawns.Spawn1.room.energyCapacityAvailable;
     var name = undefined;
 
     var status1 = " H: " + numberOfHarvesters + "/" + minimumNumberOfHarvesters + " U: " + numberOfUpgraders + "/" + minimumNumberOfUpgraders;
     var status2 = "R: " + numberOfRepairers + "/" + minimumNumberOfRepairers + " B: " + numberOfBuilders + "/" + minimumNumberOfBuilders;
     var status3 = "RH: " + numberOfRemoteHarvesters + "/" + minimumNumberOfRemoteHarvesters;
 
+    var energy = Game.spawns.Spawn1.room.energyCapacityAvailable;
+    var energyAvailable = Game.spawns.Spawn1.room.energyAvailable
+
     console.log("\n#------------------#");
-    console.log("E: " + energy + status1 + " " + status2 + " " + status3);
+    console.log("E: " + energyAvailable + status1 + " " + status2 + " " + status3);
 
 
     // if not enough harvesters
