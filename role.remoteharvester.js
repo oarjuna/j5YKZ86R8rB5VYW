@@ -22,10 +22,10 @@ module.exports = {
 	    var structure = Game.rooms.E58N3.controller;
 	    var structure_tmp = Game.rooms.E58N3.find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_CONTAINER}});
 
-	    var containersWithEnergy = room.find(FIND_STRUCTURES, {
+	    /*var containersWithEnergy = room.find(FIND_STRUCTURES, {
 		        filter: (i) => i.structureType == STRUCTURE_CONTAINER && 
 		                       i.store[RESOURCE_ENERGY] < 2000
-	    });
+	    });*/
 
             //var structure = Game.spawns.Spawn1;
 	    console.log("ST: " + containersWithEnergy);
