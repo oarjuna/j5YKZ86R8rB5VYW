@@ -62,14 +62,17 @@ module.exports = {
         //creep.memory.destid = source_new[randomnum].id;
 
         else {
+	    dest = Game.flags.Flag1;
 	    if (creep.memory._move == undefined ) {
-		creep.moveTo(Game.flags.Flag1);
+		creep.moveTo(dest);
+		//creep.moveTo(Game.flags.Flag1);
 	    }
 	    //console.log(creep + " -- remoteharv -- in " + creep.memory._move.room);
 	    if (creep.memory._move.room == 'E58N3' ) {
 	        // move to flag1
 		creep.say("flag");
-	    	creep.moveTo(Game.flags.Flag1);
+	    	creep.moveTo(dest);
+	    	//creep.moveTo(Game.flags.Flag1);
 	    }	
 	    else {
             	// when you get there, find closest source and harvest
