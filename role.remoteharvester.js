@@ -18,18 +18,16 @@ module.exports = {
 
         // if creep is supposed to transfer energy to a structure
         if (creep.memory.working == true) {
-	    //var structure = Game.rooms.E58N3.controller;
-            //var structure = Game.spawns.Spawn1;
-
+            /*
 	    var room = Game.spawns.Spawn1.room;
-	    
 	    var structures = room.find(FIND_STRUCTURES, {
 		        filter: (i) => i.structureType == STRUCTURE_TOWER// && 
 		                       //i.energy < 2000
 	    });
-
 	    var structure = structures[0];
+	    */
 
+	    var structure = Game.rooms.E58N3.controller;
 	    var action_status = creep.transfer(structure, RESOURCE_ENERGY);
 
 	    //console.log("CT: " + structure);
