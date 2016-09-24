@@ -65,7 +65,7 @@ module.exports = {
 	    dest = Game.flags.Flag1;
 
 	    if (creep.memory.destid == undefined) {
-		
+	// foo	
 	    }
 	    if (creep.memory._move == undefined ) {
 		creep.moveTo(dest);
