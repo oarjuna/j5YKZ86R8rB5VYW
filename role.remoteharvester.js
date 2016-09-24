@@ -63,6 +63,7 @@ module.exports = {
 	    if ( creep.memory.destid == undefined) {
 		// get a list of all flags
 	    	var flag_list = Game.flags;
+		console.log("F : " + flag_list);
 		// a working array
 	    	var flags = [];
 	    	// push a list of keys onto the array
