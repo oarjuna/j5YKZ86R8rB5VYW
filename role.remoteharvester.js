@@ -29,7 +29,7 @@ module.exports = {
         }
         // if creep is supposed to harvest energy from source
         else {
-	    if (creep.memory._move.room == undefined ) {
+	    if (creep.memory._move == undefined ) {
 		creep.memory._move.room = 'E58N3';
 	    }
 	    //console.log(creep + " -- remoteharv -- in " + creep.memory._move.room);
