@@ -25,6 +25,7 @@ module.exports = {
                 // try to build, if the constructionSite is not in range
                 if (creep.build(constructionSite) == ERR_NOT_IN_RANGE) {
                     // move towards the constructionSite
+		    creep.say("build");
                     creep.moveTo(constructionSite);
                 }
             }
