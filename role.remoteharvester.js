@@ -72,16 +72,20 @@ module.exports = {
 	    	var randomnum = _.random(0,1);
 	    	// pick a random key form the array of keys 
 	    	rnd_key = flags[randomnum];
-	    	// get the object for that random key
-	    	dest = flag_list[rnd_key];
-	    	//dest = Game.flags.Flag1;
 	    	// assign the destination to memory
-	    	creep.memory.destid = dest;
-	    	console.log(creep + " -- remoteharvester -- assigned dest: " + dest);
+	    	creep.memory.destid = rnd_key;
+		
+	    	// get the object for that random key
+	    	//dest = flag_list[rnd_key];
+	    	//dest = Game.flags.Flag1;
+	    	console.log(creep + " -- remoteharvester -- assigned dest: " + rnd_key);
 	    }
 	    else {
 		dest = creep.memory.destid;
 		//dest = Game.getObjectById(creep.memory.destid);
+		if ( dest_key == 'Flag1') {  dest = Game.flags.Flag1; }
+		else if ( dest_key == 'Flag2') {  dest = Game.flags.Flag2; }
+
 	    	console.log(creep + " -- remoteharvester --  dest: " + dest);
 		dest = Game.flags.Flag1;
             }
