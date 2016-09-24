@@ -72,11 +72,11 @@ module.exports = {
 	    // pick a random key form the array of keys 
 	    rnd_key = flags[randomnum];
 	    // get the object for that random key
-	   //dest = flag_list[rnd_key];
+	    dest_tmp = flag_list[rnd_key];
 	    dest = Game.flags.Flag1;
 
-	    console.log(creep + " -- flags: " + dest);
-	    //console.log(creep + " -- flags: " + dest_tmp);
+	   // console.log(creep + " -- flags: " + dest);
+	    console.log(creep + " -- flags: " + dest_tmp);
 
 
 	    if (creep.memory._move == undefined ) {
