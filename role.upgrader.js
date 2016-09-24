@@ -47,8 +47,6 @@ module.exports = {
            // var source = creep.pos.findClosestByPath(FIND_SOURCES);
             var source = Game.getObjectById(creep.memory.destid);
             
-            console.log("C: " + creep + " -- source: " + source);
-            
             // try to harvest energy, if the source is not in range
             if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
                 // move towards the source
