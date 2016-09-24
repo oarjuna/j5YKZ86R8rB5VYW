@@ -82,7 +82,7 @@ module.exports.loop = function () {
     var status1 = "H: " + numberOfHarvesters + "/" + minimumNumberOfHarvesters + " U: " + numberOfUpgraders + "/" + minimumNumberOfUpgraders;
     var status2 = "R: " + numberOfRepairers + "/" + minimumNumberOfRepairers + " B: " + numberOfBuilders + "/" + minimumNumberOfBuilders;
     var status3 = "RH: " + numberOfRemoteHarvesters ;
-    console.log(status1 + " " + status2);
+    console.log(status1 + " " + status2 + " " + status3);
 
 
     // if not enough harvesters
