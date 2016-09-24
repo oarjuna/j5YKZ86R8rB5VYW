@@ -61,11 +61,7 @@ module.exports = {
 
 	    var flag_list = Game.flags;
 	    var flags = [];
-	    for (var key in flag_list) {
-		flags.push(key);
-	    	//console.log("flags: " + flag_list[key]);
-	    	//console.log("flags: " + key);
-	    }
+	    for (var key in flag_list) { flags.push(key); }
 
 	    // get a random number 
 	    var randomnum = _.random(0,1);
@@ -77,7 +73,6 @@ module.exports = {
 
 	   // console.log(creep + " -- flags: " + dest);
 	    console.log(creep + " -- flags: " + dest_tmp);
-
 
 	    if (creep.memory._move == undefined ) {
 		creep.moveTo(dest);
