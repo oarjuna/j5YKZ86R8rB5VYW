@@ -63,7 +63,7 @@ module.exports = {
 	    var flags = [];
 	    for (var key in flag_list) {
 		flags.push(key);
-	    	console.log("flags: " + flag_list[key]);
+	    	//console.log("flags: " + flag_list[key]);
 	    	//console.log("flags: " + key);
 	    }
 
