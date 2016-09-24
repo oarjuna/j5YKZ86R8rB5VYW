@@ -33,7 +33,6 @@ module.exports = {
 	    console.log("CT: " + structure);
 	    console.log("CT: " + action_status);
 
-                creep.moveTo(structure);
             if (action_status == ERR_NOT_IN_RANGE || action_status == ERR_INVALID_TARGET) {
                 // move towards it
 		creep.say("rh-drop");
