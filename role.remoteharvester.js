@@ -16,7 +16,7 @@ module.exports = {
             creep.memory.working = true;
         }
 
-        // if creep is supposed to transfer energy to a structure
+        // assigned to transfer energy to a structure
         if (creep.memory.working == true) {
             
 	    var room = Game.spawns.Spawn1.room;
@@ -49,13 +49,14 @@ module.exports = {
 	    //console.log("CT: " + structure);
 	    console.log("CT: " + action_status);
 
+	    // if we're not close enough to xfer
             if (action_status == ERR_NOT_IN_RANGE) {
                 // move towards it
 		creep.say("rh-drop");
                 creep.moveTo(structure);
             }
         }
-        // if creep is supposed to harvest energy from source
+        // creep is supposed to harvest energy from source
         else {
 	    if (creep.memory._move == undefined ) {
 		creep.moveTo(Game.flags.Flag1);
