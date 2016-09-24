@@ -57,15 +57,16 @@ module.exports = {
             }
         }
         // creep is supposed to harvest energy from source
+        else {
+            var flag_list = Game.flags;
+	    console.log("flags: " + flag_list);
+	//    if (creep.memory.destid == undefined) {
 	//var randomnum = _.random(0,1)
         //creep.memory.destid = source_new[randomnum].id;
-
-        else {
-            var flag_list = Game.flags.Flag1;
-	    dest = Game.flags.Flag1;
-	//    if (creep.memory.destid == undefined) {
 	// foo	
 	 //   }
+
+	    dest = Game.flags.Flag1;
 	    if (creep.memory._move == undefined ) {
 		creep.moveTo(dest);
 	    }
