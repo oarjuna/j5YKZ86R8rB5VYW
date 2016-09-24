@@ -1,16 +1,17 @@
 module.exports = {
     // a function to run the logic for this role
     run: function(creep) {
-        console.log("C: " + creep + " upgrader");
 
         // if creep is bringing energy to the controller but has no energy left
         if (creep.memory.working == true && creep.carry.energy == 0) {
             // switch state
+	    console.log(creep + " -- upgrader -- out of energy");
             creep.memory.working = false;
         }
         // if creep is harvesting energy but is full
         else if (creep.memory.working == false && creep.carry.energy == creep.carryCapacity) {
             // switch state
+	    console.log(creep + " -- upgrader -- energy capacity full");
             creep.memory.working = true;
             creep.memory.destid = null;
         }
@@ -40,11 +41,9 @@ module.exports = {
                 
                 var source = creep.memory.destid;
                 
-                console.log("C: " + creep + " -- assigned source: " + creep.memory.destid);
+                console.log(creep + " -- upgrader -- assigned source: " + creep.memory.destid);
               
             }
-            // find closest source
-           // var source = creep.pos.findClosestByPath(FIND_SOURCES);
             var source = Game.getObjectById(creep.memory.destid);
             
             // try to harvest energy, if the source is not in range
