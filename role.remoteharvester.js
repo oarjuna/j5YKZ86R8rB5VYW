@@ -31,7 +31,7 @@ module.exports = {
 		    	filter: (i) => i.structureType == STRUCTURE_CONTAINER &&
 		    		       i.energy < 2000
 	    });
-	    var c_structure = c_structure[0];
+	    var c_structure = c_structures[0];
 
 	    // check towers in need first
 	    if (t_structure != undefined) { var structure = t_structure; }
