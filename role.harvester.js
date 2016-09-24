@@ -47,6 +47,7 @@ module.exports = {
             // find closest source
             //console.log(creep + " -- harvester -- looking for energy source");
             var source = creep.pos.findClosestByPath(FIND_SOURCES);
+       	    creep.say("harv");
             // try to harvest energy, if the source is not in range
             if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
                 // move towards the source
