@@ -21,26 +21,32 @@ module.exports = {
             
 	    var room = Game.spawns.Spawn1.room;
 
+	    // get a list of towers that need energy
 	    var t_structures = room.find(FIND_STRUCTURES, {
 		        filter: (i) => i.structureType == STRUCTURE_TOWER && 
 		                       i.energy < 1000
 	    });
+	    // take the first one off the list
 	    var t_structure = t_structures[0];
 
+	    // get a list of containers that need energy
 	    var c_structures = room.find(FIND_STRUCTURES, {
 		    	filter: (i) => i.structureType == STRUCTURE_CONTAINER &&
 		    		       i.energy < 2000
 	    });
+	    // take the first one off the list
 	    var c_structure = c_structures[0];
 
 	    // check towers in need first
 	    if (t_structure != undefined) { var structure = t_structure; }
+	    // then containers
 	    else if (c_structure != undefined) { var structure = c_structure; }
+	    // finally the controller
 	    else { var structure = Game.rooms.E58N3.controller; }
 
 	    var action_status = creep.transfer(structure, RESOURCE_ENERGY);
 
-	    console.log("CT: " + structure);
+	    //console.log("CT: " + structure);
 	    console.log("CT: " + action_status);
 
             if (action_status == ERR_NOT_IN_RANGE) {
