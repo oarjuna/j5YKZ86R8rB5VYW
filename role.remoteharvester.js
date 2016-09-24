@@ -80,7 +80,8 @@ module.exports = {
 	    	console.log(creep + " -- remoteharvester -- assigned dest: " + dest);
 	    }
 	    else {
-		dest = Game.getObjectById(creep.memory.destid);
+		dest = creep.memory.destid;
+		//dest = Game.getObjectById(creep.memory.destid);
 	    	console.log(creep + " -- remoteharvester --  dest: " + dest);
 		dest = Game.flags.Flag1;
             }
