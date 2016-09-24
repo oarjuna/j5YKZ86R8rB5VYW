@@ -68,7 +68,7 @@ module.exports = {
 	    }
 
 	    var randomnum = _.random(0,1);
-	    //console.log("flags: " + flags[randomnum]);
+	    console.log("flags: " + flags[randomnum]);
 
 	    //dest = Game.flags.flags[randomnum]
 	    dest = Game.flags.Flag1;
