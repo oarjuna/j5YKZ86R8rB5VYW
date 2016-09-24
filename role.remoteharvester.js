@@ -1,20 +1,18 @@
 module.exports = {
     // a function to run the logic for this role
     run: function(creep) {
-	// identify yourself
-        console.log(creep + " remoteharvester");
 	
         // if creep is bringing energy to a structure but has no energy left
         if (creep.memory.working == true && creep.carry.energy == 0) {
             // switch state
-            console.log("\t" + creep + " -- xfer complete");
+            console.log(creep + " -- remoteharv -- xfer complete");
             creep.memory.working = false;
         }
 
         // if creep is harvesting energy but is full
         else if (creep.memory.working == false && creep.carry.energy == creep.carryCapacity) {
             // switch state
-            console.log("\t" + creep + " -- energy capacity full. return.");
+            console.log(creep + " -- remoteharv -- energy capacity full. return.");
             creep.memory.working = true;
         }
 
@@ -25,26 +23,26 @@ module.exports = {
 
             if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 // move towards it
-                console.log("\t" + creep + " -- moving to drop off");
+                console.log(creep + " -- remoteharv -- moving to drop off");
                 creep.moveTo(structure);
             }
         }
         // if creep is supposed to harvest energy from source
         else {
-	    console.log(creep + " -- in " + creep.memory._move.room);
+	    console.log(creep + " -- remoteharv -- in " + creep.memory._move.room);
 	    if (creep.memory._move.room == 'E58N3' ) {
 	        // move to flag1
-            	console.log(creep + " -- moving to flag1");
+            	console.log(creep + " -- remoteharv -- moving to flag1");
 	    	creep.moveTo(Game.flags.Flag1);
 	    }	
 	    else {
             	// when you get ther, find closest source and harvest
-            	console.log(creep + " -- looking for energy source");
+            	console.log(creep + " --  remoteharv -- looking for energy source");
             	var source = creep.pos.findClosestByPath(FIND_SOURCES);
             	// try to harvest energy, if the source is not in range
             	if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
                 	// move towards the source
-                	console.log(creep + " -- moving to source");
+                	console.log(creep + " --  remoteharv -- moving to source");
                 	creep.moveTo(source);
             	}
 	    }
