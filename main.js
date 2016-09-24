@@ -85,8 +85,10 @@ module.exports.loop = function () {
     var energy = Game.spawns.Spawn1.room.energyCapacityAvailable;
     var energyAvailable = Game.spawns.Spawn1.room.energyAvailable
 
+    var status4 = "E:  " + energyAvailable + "/" + energy;
+
     console.log("\n#------------------#");
-    console.log("E: " + energyAvailable + status1 + " " + status2 + " " + status3);
+    console.log(status4 + " " + status1 + " " + status2 + " " + status3);
 
 
     // if not enough harvesters
