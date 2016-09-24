@@ -18,20 +18,30 @@ module.exports = {
 
         // if creep is supposed to transfer energy to a structure
         if (creep.memory.working == true) {
-            /*
+            
 	    var room = Game.spawns.Spawn1.room;
-	    var structures = room.find(FIND_STRUCTURES, {
-		        filter: (i) => i.structureType == STRUCTURE_TOWER// && 
-		                       //i.energy < 2000
-	    });
-	    var structure = structures[0];
-	    */
 
-	    var structure = Game.rooms.E58N3.controller;
+	    var t_structures = room.find(FIND_STRUCTURES, {
+		        filter: (i) => i.structureType == STRUCTURE_TOWER && 
+		                       i.energy < 1000
+	    });
+	    var t_structure = t_structures[0];
+
+	    var c_structures = room.find(FIND_STRUCTURES, {
+		    	filter: (i) => i.structureType == STRUCTURE_CONTAINER &&
+		    		       i.energy < 2000
+	    });
+	    var c_stucture = c_structure[0];
+
+	    // check towers in need first
+	    if (t_structure != undefined) { var structure = t_structure; }
+	    else if (c_structure != undefined) { var structure = c_structure; }
+	    else { var structure = Game.rooms.E58N3.controller; }
+
 	    var action_status = creep.transfer(structure, RESOURCE_ENERGY);
 
-	    //console.log("CT: " + structure);
-	    //console.log("CT: " + action_status);
+	    console.log("CT: " + structure);
+	    console.log("CT: " + action_status);
 
             if (action_status == ERR_NOT_IN_RANGE) {
                 // move towards it
