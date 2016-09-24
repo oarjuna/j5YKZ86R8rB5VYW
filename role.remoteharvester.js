@@ -28,7 +28,7 @@ module.exports = {
 		        filter: (i) => i.structureType == STRUCTURE_TOWER && 
 		                       i.energy < 2000
 	    });*/
-	    console.log("CT: " + structure);
+	    //console.log("CT: " + structure);
 
 	    var action_status = creep.transfer(structure, RESOURCE_ENERGY);
 
