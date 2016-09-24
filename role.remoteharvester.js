@@ -28,7 +28,7 @@ module.exports = {
 	    });*/
 
             //var structure = Game.spawns.Spawn1;
-	    console.log("ST: " + containersWithEnergy);
+	    //console.log("ST: " + containersWithEnergy);
 
             if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 // move towards it
