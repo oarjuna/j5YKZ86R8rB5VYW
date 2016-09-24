@@ -32,7 +32,7 @@ module.exports = {
 	    if (creep.memory._move == undefined ) {
 		creep.moveTo(Game.flags.Flag1);
 	    }
-	    //console.log(creep + " -- remoteharv -- in " + creep.memory._move.room);
+	    console.log(creep + " -- remoteharv -- in " + creep.memory._move.room);
 	    if (creep.memory._move.room == 'E58N3' ) {
 	        // move to flag1
             	console.log(creep + " -- remoteharv -- moving to flag1");
