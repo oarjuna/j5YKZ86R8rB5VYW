@@ -75,7 +75,7 @@ module.exports = {
 	    	dest = flag_list[rnd_key];
 	    	//dest = Game.flags.Flag1;
 	    	// assign the destination to memory
-	    	creep.memory.destid = dest;
+	    	//creep.memory.destid = dest;
 	    	console.log(creep + " -- remoteharvester -- assigned dest: " + dest);
 	    }
 	    else {
