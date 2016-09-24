@@ -59,8 +59,8 @@ module.exports = {
         // creep is supposed to harvest energy from source
         else {
 
-	    //var flag_list = find(FIND_FLAGS);
-	    var flag_list = ["flag1"];
+	    var flag_list = Game.rooms.E58N3.flags;
+	    //var flag_list = ["flag1"];
 	    var randomnum = _.random(0,1);
 	    console.log("flags: " + flag_list[randomnum]);
 
