@@ -33,7 +33,7 @@ module.exports = {
                 // try to transfer energy, if it is not in range
                 if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     // move towards it
-                    console.log(creep + " -- harvester -- moving to drop off");
+                    //console.log(creep + " -- harvester -- moving to drop off");
                     creep.moveTo(structure);
                 }
             }
@@ -53,7 +53,7 @@ module.exports = {
                 creep.moveTo(source);
             }
 	    else {
-		console.log(creep + " -- harvester -- harvesting");
+		//console.log(creep + " -- harvester -- harvesting");
 	    }
         }
     }
