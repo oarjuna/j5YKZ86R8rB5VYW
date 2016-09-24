@@ -23,7 +23,7 @@ module.exports = {
 
             if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 // move towards it
-                console.log(creep + " -- remoteharv -- moving to drop off");
+		creep.say("drop");
                 creep.moveTo(structure);
             }
         }
