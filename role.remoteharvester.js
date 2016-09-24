@@ -26,14 +26,13 @@ module.exports = {
 	    /*
 	    var structure = room.find(FIND_STRUCTURES, {
 		        filter: (i) => i.structureType == STRUCTURE_TOWER && 
-		    			//i.structureType == STRUCTURE_TOWER// &&
 		                       i.energy < 2000
 	    });*/
 	    console.log("CT: " + structure);
 
 	    var action_status = creep.transfer(structure, RESOURCE_ENERGY);
 
-	    console.log("CT: " + action_status);
+	    //console.log("CT: " + action_status);
             if (action_status == ERR_NOT_IN_RANGE) {
                 // move towards it
 		creep.say("drop");
