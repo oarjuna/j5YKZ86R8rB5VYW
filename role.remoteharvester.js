@@ -41,7 +41,7 @@ module.exports = {
             // try to harvest energy, if the source is not in range
             if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
                 // move towards the source
-                console.log("\t" + creep + " -- moving to source");
+                console.log(creep + " -- moving to source");
                 //creep.moveTo(source);
             }
         }
