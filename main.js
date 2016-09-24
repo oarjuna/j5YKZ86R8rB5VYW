@@ -1,6 +1,7 @@
 // import modules
 require('prototype.spawn')();
 var roleHarvester = require('role.harvester');
+var roleHarvester = require('role.remoteharvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var roleRepairer = require('role.repairer');
@@ -41,6 +42,10 @@ module.exports.loop = function () {
         else if (creep.memory.role == 'wallRepairer') {
             roleWallRepairer.run(creep);
         }
+        // if creep is wallRepairer, call wallRepairer script
+        else if (creep.memory.role == 'remote_harvester') {
+            roleremoteharvester.run(creep);
+	}
     }
 
     /*var towers = Game.rooms.W24S23.find(FIND_STRUCTURES, {
@@ -55,6 +60,7 @@ module.exports.loop = function () {
 */
     // setup some minimum numbers for different roles
     var minimumNumberOfHarvesters = 2;
+    var minimumNumberOfRemoteHarvesters = 0;
     var minimumNumberOfUpgraders = 3;
     var minimumNumberOfBuilders = 3;
     var minimumNumberOfRepairers = 2;
@@ -64,6 +70,7 @@ module.exports.loop = function () {
     // _.sum will count the number of properties in Game.creeps filtered by the
     //  arrow function, which checks for the creep being a harvester
     var numberOfHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'harvester');
+    var numberOfRemoteHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harvester');
     var numberOfUpgraders = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader');
     var numberOfBuilders = _.sum(Game.creeps, (c) => c.memory.role == 'builder');
     var numberOfRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'repairer');
@@ -88,6 +95,13 @@ module.exports.loop = function () {
                 Game.spawns.Spawn1.room.energyAvailable, 'harvester');
         }
     }
+   // if not enough remote harvesters
+    else if (numberOfRemoteHarvesters < minimumNumberOfRemoteHarvesters) {
+        // try to spawn one
+        console.log("main -- spawning remote_harvester")
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'remote_harvester');
+    }
+
     // if not enough upgraders
     else if (numberOfUpgraders < minimumNumberOfUpgraders) {
         // try to spawn one
