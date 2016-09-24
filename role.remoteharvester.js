@@ -59,20 +59,22 @@ module.exports = {
         // creep is supposed to harvest energy from source
         else {
 
-	    var flag_list = Game.flags;
-	    var flags = [];
-	    for (var key in flag_list) { flags.push(key); }
-
-	    // get a random number 
-	    var randomnum = _.random(0,1);
-	    // pick a random key form the array of keys 
-	    rnd_key = flags[randomnum];
-	    // get the object for that random key
-	    dest_tmp = flag_list[rnd_key];
-	    dest = Game.flags.Flag1;
-
-	   // console.log(creep + " -- flags: " + dest);
-	    console.log(creep + " -- flags: " + dest_tmp);
+	    if ( creep.memory.destid == undefined) {
+	    	var flag_list = Game.flags;
+	    	var flags = [];
+	    	// push a list of keys onto an array
+	    	for (var key in flag_list) { flags.push(key); }
+	    	// get a random number 
+	    	var randomnum = _.random(0,1);
+	    	// pick a random key form the array of keys 
+	    	rnd_key = flags[randomnum];
+	    	// get the object for that random key
+	    	dest = flag_list[rnd_key];
+	    	//dest = Game.flags.Flag1;
+	    	// assign the destination to memory
+	    	creep.memory.destid = dest;
+	    	console.log(creep + " -- assigned dest: " + dest);
+	    }
 
 	    if (creep.memory._move == undefined ) {
 		creep.moveTo(dest);
