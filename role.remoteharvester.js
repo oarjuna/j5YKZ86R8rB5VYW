@@ -70,8 +70,8 @@ module.exports = {
 	    var randomnum = _.random(0,1);
 	    //console.log("flags: " + flags[randomnum]);
 
-	    dest = Game.flags.flags[randomnum]
-	    //dest = Game.flags.Flag1;
+	    //dest = Game.flags.flags[randomnum]
+	    dest = Game.flags.Flag1;
 
 	    if (creep.memory._move == undefined ) {
 		creep.moveTo(dest);
