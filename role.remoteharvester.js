@@ -80,7 +80,7 @@ module.exports = {
 	    }
 	    else {
 		//dest = Game.getObjectById(creep.memory.destid.id);
-		dest = Game.flags.Flag1;
+		dest = Game.flags.Flag2;
             }
 
 	    if (creep.memory._move == undefined ) {
