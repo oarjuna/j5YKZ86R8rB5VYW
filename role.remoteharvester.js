@@ -68,17 +68,11 @@ module.exports = {
 	    }
 
 	    var randomnum = _.random(0,1);
-	    console.log("flags: " + flags[randomnum]);
+	    //console.log("flags: " + flags[randomnum]);
 
-	    //var flag_list = ["flag1"];
-	    //var x = Game.getObjectById(flag_list);
+	    dest = Game.flags.flags[randomnum]
+	    //dest = Game.flags.Flag1;
 
-            //creep.memory.destid = source_new[randomnum].id;
-	//    if (creep.memory.destid == undefined) {
-	// foo	
-	 //   }
-
-	    dest = Game.flags.Flag1;
 	    if (creep.memory._move == undefined ) {
 		creep.moveTo(dest);
 	    }
