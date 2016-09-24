@@ -78,6 +78,9 @@ module.exports = {
 	    	creep.memory.destid = dest;
 	    	console.log(creep + " -- remoteharvester -- assigned dest: " + dest);
 	    }
+	    else {
+		dest = creep.memory.destid;
+            }
 
 	    if (creep.memory._move == undefined ) {
 		creep.moveTo(dest);
