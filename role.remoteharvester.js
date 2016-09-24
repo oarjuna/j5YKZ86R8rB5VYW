@@ -18,7 +18,7 @@ module.exports = {
 
         // if creep is supposed to transfer energy to a structure
         if (creep.memory.working == true) {
-            // find closest spawn, extension or tower which is not full
+            // find closest spawn
             var structure = Game.spawns.Spawn1;
 
             if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
