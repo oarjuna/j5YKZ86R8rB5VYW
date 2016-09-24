@@ -1,5 +1,5 @@
 var roleBuilder = require('role.builder');
-
+//xxxxxx
 module.exports = {
     // a function to run the logic for this role
     run: function(creep) {
