@@ -53,7 +53,7 @@ module.exports = {
                 creep.moveTo(source);
             }
 	    else {
-		console.log(crepp + " -- harvester -- harvesting");
+		console.log(creep + " -- harvester -- harvesting");
 	    }
         }
     }
