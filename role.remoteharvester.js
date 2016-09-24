@@ -31,12 +31,11 @@ module.exports = {
         }
         // if creep is supposed to harvest energy from source
         else {
-	    //var room_name = creep._move.room;
 	    console.log(creep + " -- in " + creep.memory._move.room);
-	    if (false ) {
+	    if (creep.memory._move.room == 'E58N3' ) {
 	        // move to flag1
-            	//console.log(creep + " -- moving to flag1");
-	    	//creep.moveTo(Game.flags.Flag1);
+            	console.log(creep + " -- moving to flag1");
+	    	creep.moveTo(Game.flags.Flag1);
 	    }	
 	    else {
             	// when you get ther, find closest source and harvest
