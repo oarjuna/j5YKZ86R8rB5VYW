@@ -47,6 +47,7 @@ module.exports = {
             	if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
                 	// move towards the source
                 	console.log(creep + " --  remoteharv -- moving to source");
+			creep.say("moving to source");
                 	creep.moveTo(source);
             	}
 	    }
