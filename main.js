@@ -60,7 +60,7 @@ module.exports.loop = function () {
 */
     // setup some minimum numbers for different roles
     var minimumNumberOfHarvesters = 2;
-    var minimumNumberOfRemoteHarvesters = 0;
+    var minimumNumberOfRemoteHarvesters = 1;
     var minimumNumberOfUpgraders = 3;
     var minimumNumberOfBuilders = 3;
     var minimumNumberOfRepairers = 2;
@@ -97,12 +97,6 @@ module.exports.loop = function () {
                 Game.spawns.Spawn1.room.energyAvailable, 'harvester');
         }
     }
-   // if not enough remote harvesters
-    else if (numberOfRemoteHarvesters < minimumNumberOfRemoteHarvesters) {
-        // try to spawn one
-        console.log("main -- spawning remote_harvester")
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'remote_harvester');
-    }
 
     // if not enough upgraders
     else if (numberOfUpgraders < minimumNumberOfUpgraders) {
@@ -126,6 +120,12 @@ module.exports.loop = function () {
     else if (numberOfWallRepairers < minimumNumberOfWallRepairers) {
         // try to spawn one
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'wallRepairer');
+    }
+    // if not enough remote harvesters
+    else if (numberOfRemoteHarvesters < minimumNumberOfRemoteHarvesters) {
+        // try to spawn one
+        console.log("main -- spawning remote_harvester")
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'remote_harvester');
     }
     else {
         // else try to spawn a builder
