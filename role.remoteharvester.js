@@ -62,7 +62,7 @@ module.exports = {
 	    var flag_list = Game.flags;
 	    for (var key in flag_list) {
 		
-	    	console.log("flags: " + flag_list[0]);
+	    	console.log("flags: " + flag_list[key]);
 	    }
 
 	    //var flag_list = ["flag1"];
