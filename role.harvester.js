@@ -39,7 +39,7 @@ module.exports = {
                 }
             }
 	    else {
-i		console.log("C: " + creep + " -- did not find a structure to xfer to!");
+		console.log(creep + " -- did not find a structure to xfer to!");
 	    }
         }
         // if creep is supposed to harvest energy from source
