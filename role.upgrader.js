@@ -46,7 +46,6 @@ module.exports = {
             // find closest source
            // var source = creep.pos.findClosestByPath(FIND_SOURCES);
             var source = Game.getObjectById(creep.memory.destid);
-
             
             console.log("C: " + creep + " -- source: " + source);
             
