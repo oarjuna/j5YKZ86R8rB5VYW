@@ -26,8 +26,7 @@ module.exports = {
 		        filter: (i) => i.structureType == STRUCTURE_CONTAINER && 
 		                       i.store[RESOURCE_ENERGY] < 2000
 	    });
-
-	    console.log("ST: " + containersWithEnergy);
+	    console.log("CT: " + containersWithEnergy);
 
             if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 // move towards it
