@@ -33,7 +33,7 @@ module.exports = {
         else {
 	    //var room_name = creep._move.room;
 	    console.log(creep + " -- in " + creep._move.room);
-	    if ( ) {
+	    if (false ) {
 	        // move to flag1
             	//console.log(creep + " -- moving to flag1");
 	    	//creep.moveTo(Game.flags.Flag1);
