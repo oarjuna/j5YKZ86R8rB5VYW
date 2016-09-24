@@ -24,8 +24,8 @@ module.exports = {
 	    var room = Game.spawns.Spawn1.room;
 	    
 	    var structure = room.find(FIND_STRUCTURES, {
-		        filter: (i) => i.structureType == STRUCTURE_TOWER && 
-		                       i.energy < 2000
+		        filter: (i) => i.structureType == STRUCTURE_CONTROLLER// && 
+		                       //i.energy < 2000
 	    });
 
 	    var action_status = creep.transfer(structure, RESOURCE_ENERGY);
