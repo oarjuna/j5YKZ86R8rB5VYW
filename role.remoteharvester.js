@@ -32,8 +32,8 @@ module.exports = {
         // if creep is supposed to harvest energy from source
         else {
 	    // move to flag1
-            console.log(creep + " -- moving to flag1");
-	    creep.moveTo(Game.flags.Flag1);
+            //console.log(creep + " -- moving to flag1");
+	    //creep.moveTo(Game.flags.Flag1);
 			
             // when you get ther, find closest source and harvest
             console.log(creep + " -- looking for energy source");
