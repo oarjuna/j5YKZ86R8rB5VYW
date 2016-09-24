@@ -20,7 +20,7 @@ module.exports = {
         if (creep.memory.working == true) {
             // find closest spawn
 	    var structure = Game.rooms.E58N3.controller;
-	    var structure_tmp = Game.rooms.E58N3.find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_EXTENSION}});
+	    var structure_tmp = Game.rooms.E58N3.find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_CONTAINER}});
             //var structure = Game.spawns.Spawn1;
 	    console.log("ST: " + structure_tmp);
 
