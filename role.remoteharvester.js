@@ -30,7 +30,10 @@ module.exports = {
 	    });
 	    console.log("CT: " + structure);
 
-            if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+	    var action_status = creep.transfer(structure, RESOURCE_ENERGY);
+
+	    console.log("CT: " + action_status);
+            if (action_status == ERR_NOT_IN_RANGE) {
                 // move towards it
 		creep.say("drop");
                 creep.moveTo(structure);
