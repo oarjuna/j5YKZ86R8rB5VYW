@@ -92,7 +92,7 @@ module.exports = {
 	    //if (creep.memory._move.room == 'E58N3' ) {
 	        // move to flag1
 		creep.say("flag");
-		console.log(creep + " -- remoteharvester -- dest: " + dest);
+		//console.log(creep + " -- remoteharvester -- dest: " + dest);
 	    	creep.moveTo(dest);
 	    }	
 	    else {
