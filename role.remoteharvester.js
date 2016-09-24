@@ -32,7 +32,7 @@ module.exports = {
 	    // get a list of containers that need energy
 	    var c_structures = room.find(FIND_STRUCTURES, {
 		    	filter: (i) => i.structureType == STRUCTURE_CONTAINER &&
-		    		       i.energy < 2000
+		    		       i.store[RESOURCE_ENERGY] < 2000
 	    });
 	    // take the first one off the list
 	    var c_structure = c_structures[0];
