@@ -42,7 +42,7 @@ module.exports.loop = function () {
         else if (creep.memory.role == 'wallRepairer') {
             roleWallRepairer.run(creep);
         }
-        // if creep is wallRepairer, call wallRepairer script
+        // if creep is remote harvester
         else if (creep.memory.role == 'remote_harvester') {
             roleRemoteHarvester.run(creep);
 	}
@@ -60,7 +60,7 @@ module.exports.loop = function () {
 */
     // setup some minimum numbers for different roles
     var minimumNumberOfHarvesters = 2;
-    var minimumNumberOfRemoteHarvesters = 1;
+    var minimumNumberOfRemoteHarvesters = 0;
     var minimumNumberOfUpgraders = 3;
     var minimumNumberOfBuilders = 3;
     var minimumNumberOfRepairers = 2;
