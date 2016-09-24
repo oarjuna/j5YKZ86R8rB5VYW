@@ -1,7 +1,7 @@
 // import modules
 require('prototype.spawn')();
 var roleHarvester = require('role.harvester');
-var roleHarvester = require('role.remoteharvester');
+var roleRemoteHarvester = require('role.remoteharvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var roleRepairer = require('role.repairer');
@@ -44,7 +44,7 @@ module.exports.loop = function () {
         }
         // if creep is wallRepairer, call wallRepairer script
         else if (creep.memory.role == 'remote_harvester') {
-            roleremoteharvester.run(creep);
+            roleRemoteHarvester.run(creep);
 	}
     }
 
