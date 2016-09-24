@@ -68,7 +68,7 @@ module.exports = {
 	    }
 
 	    var randomnum = _.random(0,1);
-	    dest_tmp = Game.flags.flags[randomnum]
+	    dest_tmp = Game.flags. + "flags[randomnum]";
 
 	    console.log(creep + " -- flags: " + dest_tmp);
 
