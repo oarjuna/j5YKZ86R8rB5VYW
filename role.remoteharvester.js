@@ -18,11 +18,12 @@ module.exports = {
 
         // if creep is supposed to transfer energy to a structure
         if (creep.memory.working == true) {
-	    var structure = Game.rooms.E58N3.controller;
+	    //var structure = Game.rooms.E58N3.controller;
             //var structure = Game.spawns.Spawn1;
 
 	    var room = Game.spawns.Spawn1.room;
-	    var containersWithEnergy = room.find(FIND_STRUCTURES, {
+	    var structure = room.find(FIND_STRUCTURES, {
+	    //var containersWithEnergy = room.find(FIND_STRUCTURES, {
 		        filter: (i) => i.structureType == STRUCTURE_TOWER && 
 		    			//i.structureType == STRUCTURE_TOWER// &&
 		                       i.energy < 2000
