@@ -23,9 +23,9 @@ module.exports = {
 
 	    var room = Game.spawns.Spawn1.room;
 	    var containersWithEnergy = room.find(FIND_STRUCTURES, {
-		        filter: (i) => i.structureType == STRUCTURE_TOWER// && 
+		        filter: (i) => i.structureType == STRUCTURE_TOWER && 
 		    			//i.structureType == STRUCTURE_TOWER// &&
-		                       //i.store[RESOURCE_ENERGY] < 2000
+		                       i.store[RESOURCE_ENERGY] < 2000
 	    });
 	    console.log("CT: " + containersWithEnergy);
 
