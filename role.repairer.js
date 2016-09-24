@@ -31,6 +31,7 @@ module.exports = {
             // if we find one
             if (structure != undefined) {
                 // try to repair it, if it is out of range
+		creep.say("repair");
                 if (creep.repair(structure) == ERR_NOT_IN_RANGE) {
                     // move towards it
 	    	    //console.log(creep + " -- repairer -- moving to target")
