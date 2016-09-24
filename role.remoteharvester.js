@@ -72,7 +72,7 @@ module.exports = {
 	    	// pick a random key form the array of keys 
 	    	rnd_key = flags[randomnum];
 	    	// get the object for that random key
-	    	dest = flag_list[rnd_key];
+	    	dest = flag_list[rnd_key].id;
 	    	//dest = Game.flags.Flag1;
 	    	// assign the destination to memory
 	    	creep.memory.destid = dest;
