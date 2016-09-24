@@ -36,7 +36,7 @@ module.exports = {
                 creep.moveTo(structure);
             if (action_status == ERR_NOT_IN_RANGE || action_status == ERR_INVALID_TARGET) {
                 // move towards it
-		creep.say("drop");
+		creep.say("rh-drop");
                 creep.moveTo(structure);
             }
         }
