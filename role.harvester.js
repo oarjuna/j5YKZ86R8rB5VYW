@@ -31,6 +31,7 @@ module.exports = {
             if (structure != undefined) {
                 console.log(creep + " -- harvester -- transfering.");
                 // try to transfer energy, if it is not in range
+		creep.say("drop");
                 if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     // move towards it
                     //console.log(creep + " -- harvester -- moving to drop off");
