@@ -57,6 +57,10 @@ module.exports = {
             }
         }
         // creep is supposed to harvest energy from source
+	//var randomnum = _.random(0,1)
+       //v ar source_new = room.find(FIND_SOURCES);
+        //creep.memory.destid = source_new[randomnum].id;
+
         else {
 	    if (creep.memory._move == undefined ) {
 		creep.moveTo(Game.flags.Flag1);
@@ -68,8 +72,7 @@ module.exports = {
 	    	creep.moveTo(Game.flags.Flag1);
 	    }	
 	    else {
-            	// when you get ther, find closest source and harvest
-            	//console.log(creep + " --  remoteharv -- looking for energy source");
+            	// when you get there, find closest source and harvest
             	var source = creep.pos.findClosestByPath(FIND_SOURCES);
             	// try to harvest energy, if the source is not in range
             	if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
