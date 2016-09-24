@@ -35,7 +35,6 @@ module.exports = {
 	    console.log(creep + " -- remoteharv -- in " + creep.memory._move.room);
 	    if (creep.memory._move.room == 'E58N3' ) {
 	        // move to flag1
-            	console.log(creep + " -- remoteharv -- moving to flag1");
 		creep.say("flag");
 	    	creep.moveTo(Game.flags.Flag1);
 	    }	
@@ -46,7 +45,6 @@ module.exports = {
             	// try to harvest energy, if the source is not in range
             	if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
                 	// move towards the source
-                	console.log(creep + " --  remoteharv -- moving to source");
 			creep.say("drop");
                 	creep.moveTo(source);
             	}
