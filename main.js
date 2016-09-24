@@ -53,6 +53,7 @@ module.exports.loop = function () {
     });
     for (let tower of towers) {
         var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+	console.log(tower + " -- reporting in ");
         if (target != undefined) {
 	    console.log("tower -- attacking " + target);
             tower.attack(target);
