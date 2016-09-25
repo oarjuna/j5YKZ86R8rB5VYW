@@ -95,6 +95,11 @@ module.exports = {
 		else if ( dest_key == 'Flag4') {  dest = Game.flags.Flag4; }
 		else if ( dest_key == 'Flag5') {  dest = Game.flags.Flag1; }
 		else { dest = 'error'; }
+		//
+		//579faa610700be0674d30e48 - flag1
+		//579faa710700be0674d30fd5 - flag2
+		//579faa820700be0674d3115a - flag3
+		//579faa710700be0674d30fdb - flag4
 	    	//console.log(creep + " -- remoteharvester --  newdest: " + dest);
             }
 
