@@ -62,7 +62,7 @@ module.exports = {
 	    // if we're not close enough to xfer
             if (action_status == ERR_NOT_IN_RANGE) {
                 // move towards it
-		creep.say("rh-drop");
+		//creep.say("rh-drop");
                 creep.moveTo(structure);
             }
         }
@@ -104,7 +104,7 @@ module.exports = {
 
 	    if (!(creep.spawning) && creep.memory._move.room == 'E58N3' ) {
 	        // move to flag1
-		creep.say("flag");
+		//creep.say("flag");
 		//console.log(creep + " -- remoteharvester -- movingto: " + dest);
 	    	creep.moveTo(dest);
 	    }	
@@ -114,7 +114,7 @@ module.exports = {
             	// try to harvest energy, if the source is not in range
             	if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
                 	// move towards the source
-			creep.say("source");
+			//creep.say("source");
                 	creep.moveTo(source);
             	}
 	    }

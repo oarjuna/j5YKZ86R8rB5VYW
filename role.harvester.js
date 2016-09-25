@@ -30,10 +30,10 @@ module.exports = {
             // if we found one
             if (structure != undefined) {
                 // try to transfer energy, if it is not in range
-		creep.say("sp-drop");
+		//creep.say("sp-drop");
             }
 	    else {
-		creep.say("c-drop");
+		//creep.say("c-drop");
 		var structure = creep.room.controller;
 	    }
 
@@ -63,7 +63,7 @@ module.exports = {
 		if ( c_source != undefined ) { 
 			var source = c_source; 
                		//console.log(creep + " -- harvester -- " +  source);
-       	    		creep.say("c-harv");
+       	    		//creep.say("c-harv");
                         if (creep.withdraw(source,RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                                 // move towards the source
                                 // console.log(creep + " -- harvester -- moving to harvest");
@@ -73,7 +73,7 @@ module.exports = {
 		else { 
 			var source = creep.pos.findClosestByPath(FIND_SOURCES); 
                		//console.log(creep + " -- harvester -- " +  source);
-       	    		creep.say("s-harv");
+       	    		//creep.say("s-harv");
 		
             		// try to harvest energy, if the source is not in range
             		if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
