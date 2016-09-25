@@ -12,7 +12,11 @@ module.exports = function() {
                       	] // 450
         }
         else if (roleName == 'upgrader') {
-	    var body = [WORK, WORK, MOVE, MOVE, CARRY, CARRY]
+	    var body = [
+			WORK, WORK,  // 200
+			MOVE,   // 50
+			CARRY, CARRY // 100
+			] // 350
         }
         else if (roleName == 'builder') {
 	    var body = [WORK, WORK, MOVE, MOVE, CARRY, CARRY]
