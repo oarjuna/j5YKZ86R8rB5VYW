@@ -48,6 +48,14 @@ module.exports = function() {
                       	TOUGH, TOUGH // 20
 		] // 750
         }
+        else {
+                var body = [
+                        WORK, WORK,  // 200
+                        MOVE,   // 50
+                        CARRY, CARRY // 100
+                ] // 350
+        }
+
 	/* ACTION - COST - DESC 
 	 * MOVE - 50 - Decreases fatigue by 2 points per tick.
 	 * WORK - 100 - faster work based on task
