@@ -131,7 +131,7 @@ module.exports = {
 	    }
 	    else {
 		// Flag1 test logic
-		console.log("Flag1 test");
+		console.log(creep + " Flag1 test");
 	    }
 
         }
