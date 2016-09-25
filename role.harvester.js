@@ -49,10 +49,10 @@ module.exports = {
             	var s_source = creep.pos.findClosestByPath(FIND_SOURCES);
 		var room = Game.spawns.Spawn1.room;
 
-            var c_structures = room.find(FIND_STRUCTURES, {
+            	var c_structures = room.find(FIND_STRUCTURES, {
                         filter: (i) => i.structureType == STRUCTURE_CONTAINER &&
                                        i.store[RESOURCE_ENERGY] > 0
-            });
+            	});
 
 
 		// take the first one off the list
