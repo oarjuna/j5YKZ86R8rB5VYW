@@ -5,10 +5,10 @@ module.exports = function() {
 
         if (roleName == 'harvester') {
 		var body = [
-			WORK, // 100
-                        MOVE, // 50
+			WORK, // 50
+                        MOVE, MOVE, MOVE, MOVE, MOVE, // 250
                      	CARRY, CARRY, CARRY, CARRY, CARRY, CARRY // 300
-		] // 450
+		] // 500
         }
         else if (roleName == 'upgrader') {
 		var body = [
