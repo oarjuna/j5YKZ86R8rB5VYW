@@ -31,10 +31,11 @@ module.exports = {
             if (structure != undefined) {
                 console.log(creep + " -- harvester -- transfering.");
                 // try to transfer energy, if it is not in range
-		creep.say("drop");
+		creep.say("sp-drop");
             }
 	    else {
 		console.log(creep + " -- harvester -- did not find a structure to xfer to!");
+		creep.say("c-drop");
 		var structure = creep.room.controller;
 	    }
 
