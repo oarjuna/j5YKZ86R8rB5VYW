@@ -24,8 +24,8 @@ module.exports = function() {
 	    var body = ["WORK","WORK","MOVE","MOVE","CARRY","CARRY"];
         }
         else if (roleName == "remote_harvester") {
+	    var body = [WORK, WORK, MOVE, MOVE", CARRY, CARRY];
 	    console.log = ("spawn: " + body);
-	    var body = ["WORK", "WORK", "MOVE", "MOVE", "CARRY", "CARRY"];
         }
 	else { 
 		console.log = ("spawn: " + body);
