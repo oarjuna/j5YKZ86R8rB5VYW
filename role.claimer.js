@@ -1,7 +1,7 @@
 module.exports = {
     // a function to run the logic for this role
     run: function(creep) {
-
+	creep.say("!!");
         // if creep is bringing energy to the controller but has no energy left
         if (creep.memory.working == true && creep.carry.energy == 0) {
             // switch state
