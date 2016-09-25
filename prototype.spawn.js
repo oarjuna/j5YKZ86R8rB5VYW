@@ -42,11 +42,11 @@ module.exports = function() {
         else if (roleName == "remote_harvester") {
 	    var body = [
 			WORK, WORK, // 200
-		    	MOVE, MOVE, MOVE, MOVE, MOVE, MOVE,// 300
+		    	MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, // 350
 			CARRY, CARRY, // 100
 			ATTACK, // 80
                       	TOUGH, TOUGH // 20
-		] // 700
+		] // 750
         }
 	/* ACTION - COST - DESC 
 	 * MOVE - 50 - Decreases fatigue by 2 points per tick.
