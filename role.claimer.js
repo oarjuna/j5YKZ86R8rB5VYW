@@ -16,7 +16,7 @@ module.exports = {
             creep.memory.working = true;
             creep.memory.destid = null;
         }
-
+	creep.memory.working == true;
         // if creep is supposed to transfer energy to the controller
         if (creep.memory.working == true) {
             // instead of claimerController we could also use:
