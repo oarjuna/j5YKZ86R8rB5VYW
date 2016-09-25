@@ -35,6 +35,7 @@ module.exports = {
             // try to upgrade the controller
             if (creep.reserveController(target_controller) == ERR_NOT_IN_RANGE) {
                 // if not in range, move towards the controller
+		console.log(creep + " -- claimer -- moving to  " + target_controller);
                 creep.moveTo(target_controller);
             }
         }
