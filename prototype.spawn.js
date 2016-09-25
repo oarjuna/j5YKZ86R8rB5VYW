@@ -19,19 +19,31 @@ module.exports = function() {
 			] // 350
         }
         else if (roleName == 'builder') {
-	    var body = [WORK, WORK, MOVE, MOVE, CARRY, CARRY]
+	    var body = [
+			WORK, WORK, 
+			MOVE, MOVE, 
+			CARRY, CARRY
+			]
         }
         else if (roleName == 'repairer') {
-	    var body = [WORK, WORK, MOVE, MOVE, CARRY, CARRY]
+            var body = [
+                        WORK, WORK,
+                        MOVE, MOVE,
+                        CARRY, CARRY
+                        ]
         }
         else if (roleName == 'wallRepairer') {
-	    var body = [WORK, WORK, MOVE, MOVE, CARRY, CARRY]
+            var body = [
+                        WORK, WORK,
+                        MOVE, MOVE,
+                        CARRY, CARRY
+                        ]
         }
         else if (roleName == "remote_harvester") {
 	    var body = [WORK, WORK, // 200
-		    	MOVE, MOVE,  // 100
+		    	MOVE, MOVE, MOVE, MOVED // 200
 			CARRY, CARRY // 100
-			]
+			] // 500
 	    //var body = [WORK, WORK,  // 200
 	    //		MOVE, MOVE, MOVE, MOVE, // 200
 	    //		CARRY, CARRY, CARRY, CARRY, CARRY, CARRY// 300
