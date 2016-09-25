@@ -29,20 +29,12 @@ module.exports = {
         }
         // if creep is supposed to harvest energy from source
         else {
-            // do I have a source?
+            // dOo I have a source?
             if (creep.memory.destid == null ) {
-            //if ( true ) {
-                // No, pick one randonmly
-                var randomnum = _.random(0,1)
-                var room = Game.spawns.Spawn1.room;
-                var source_new = room.find(FIND_SOURCES);
-                
-                creep.memory.destid = source_new[randomnum].id;
-                
-                var source = creep.memory.destid;
-                
-                console.log(creep + " -- claimer -- assigned source: " + creep.memory.destid);
-              
+		var claimers_tmp = _.sum(Game.creeps, (c) => c.memory.role == 'claimer');
+		claimers_tmp = claimers_tmp - 1;
+		console.log(creep + "  -- " + claimers_tmp);
+
             }
             var source = Game.getObjectById(creep.memory.destid);
             
