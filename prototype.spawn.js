@@ -2,7 +2,6 @@ module.exports = function() {
     // create a new function for StructureSpawn
     StructureSpawn.prototype.createCustomCreep =
         function(energy, roleName) {
-	console.log(roleName + energy);
 
         if (roleName == 'harvester') {
 	    var body = [WORK, WORK, MOVE, MOVE, CARRY, CARRY]
