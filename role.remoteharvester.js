@@ -69,7 +69,7 @@ module.exports = {
         // creep is supposed to harvest energy from source
         else {
 		//creep.memory.destid = undefined;
-	   // if you don't know where to go
+	  	 // if you don't know where to go
 	    if ( creep.memory.destid == undefined) {
 		// get a list of all flags
 	    	var flag_list = Game.flags;
@@ -100,6 +100,9 @@ module.exports = {
 		//579faa710700be0674d30fd5 - flag2
 		//579faa820700be0674d3115a - flag3
 		//579faa710700be0674d30fdb - flag4
+		//579faa710700be0674d30fd7 -- home1
+		//579faa710700be0674d30fd8 -- home2
+		//
 	    	//console.log(creep + " -- remoteharvester --  newdest: " + dest);
             }
 
@@ -107,22 +110,30 @@ module.exports = {
 		creep.moveTo(dest);
 	    }
 
-	    if (!(creep.spawning) && creep.memory._move.room == 'E58N3' ) {
-	        // move to flag1
-		//creep.say("flag");
-		//console.log(creep + " -- remoteharvester -- movingto: " + dest);
-	    	creep.moveTo(dest);
-	    }	
-	    else {
-            	// when you get there, find closest source and harvest
-            	var source = creep.pos.findClosestByPath(FIND_SOURCES);
-            	// try to harvest energy, if the source is not in range
-            	if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
-                	// move towards the source
-			//creep.say("source");
-                	creep.moveTo(source);
-            	}
+	    if (dest_key != 'Flag1') {
+		// normal harvest logic
+	    	if (!(creep.spawning) && creep.memory._move.room == 'E58N3' ) {
+	        	// move to flag1
+			//creep.say("flag");
+			//console.log(creep + " -- remoteharvester -- movingto: " + dest);
+	    		creep.moveTo(dest);
+	    	}	
+	    	else {
+            		// when you get there, find closest source and harvest
+            		var source = creep.pos.findClosestByPath(FIND_SOURCES);
+            		// try to harvest energy, if the source is not in range
+            		if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
+                		// move towards the source
+				//creep.say("source");
+                		creep.moveTo(source);
+            		}
+	    	}
 	    }
+	    else {
+		// Flag1 test logic
+		console.log("Flag1 test");
+	    }
+
         }
     }
 };
