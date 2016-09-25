@@ -48,7 +48,7 @@ module.exports = {
             	//console.log(creep + " -- harvester -- looking for energy source");
             	var s_source = creep.pos.findClosestByPath(FIND_SOURCES);
 
-        	var c_source = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
+        	var c_source = creep.pos.findClosestByPath(FIND_STRUCTURES, {
         	// the second argument for findClosestByPath is an object which takes
         	// a property called filter which can be a function
 		// we use the arrow operator to define it
