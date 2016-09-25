@@ -47,7 +47,7 @@ module.exports = {
             	// find closest source
             	//console.log(creep + " -- harvester -- looking for energy source");
             	var s_source = creep.pos.findClosestByPath(FIND_SOURCES);
-
+		var room = Game.spawns.Spawn1.room;
 
             var c_structures = room.find(FIND_STRUCTURES, {
                         filter: (i) => i.structureType == STRUCTURE_CONTAINER &&
