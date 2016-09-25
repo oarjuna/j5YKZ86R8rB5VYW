@@ -19,9 +19,9 @@ module.exports = function() {
 	    var body = [WORK, WORK, MOVE, MOVE, CARRY, CARRY]
         }
         else if (roleName == "remote_harvester") {
-	    var body = [WORK, WORK, 
-		    	MOVE, MOVE, 
-			CARRY, CARRY
+	    var body = [WORK, WORK, // 200
+		    	MOVE, MOVE,  // 100
+			CARRY, CARRY // 100
 			]
 	    //var body = [WORK, WORK, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, ATTACK]
         }
