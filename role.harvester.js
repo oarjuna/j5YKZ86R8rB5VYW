@@ -62,7 +62,7 @@ module.exports = {
 			var source = c_source; 
                		console.log(creep + " -- harvester -- " +  source);
        	    		creep.say("harv");
-                        if (creep.withdraw(source) == ERR_NOT_IN_RANGE) {
+                        if (creep.withdraw(source,RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                                 // move towards the source
                                 // console.log(creep + " -- harvester -- moving to harvest");
                                 creep.moveTo(source);
