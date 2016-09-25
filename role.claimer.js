@@ -33,7 +33,7 @@ module.exports = {
             if (creep.memory.destid == null ) {
 		var claimers_tmp = _.sum(Game.creeps, (c) => c.memory.role == 'claimer');
 		claimers_tmp = claimers_tmp - 1;
-		console.log(creep + "  -- " + claimers_tmp);
+		console.log(creep + " XXX  -- " + claimers_tmp);
 
             }
             var source = Game.getObjectById(creep.memory.destid);
