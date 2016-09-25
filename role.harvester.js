@@ -29,21 +29,19 @@ module.exports = {
 
             // if we found one
             if (structure != undefined) {
-                console.log(creep + " -- harvester -- transfering.");
                 // try to transfer energy, if it is not in range
 		creep.say("sp-drop");
             }
 	    else {
-		console.log(creep + " -- harvester -- did not find a structure to xfer to!");
 		creep.say("c-drop");
 		var structure = creep.room.controller;
 	    }
 
-                if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                    // move towards it
-                    //console.log(creep + " -- harvester -- moving to drop off");
-                    creep.moveTo(structure);
-                }
+            if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                // move towards it
+                //console.log(creep + " -- harvester -- moving to drop off");
+            	creep.moveTo(structure);
+            }
 
         }
         // if creep is supposed to harvest energy from source
