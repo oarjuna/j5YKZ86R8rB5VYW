@@ -4,6 +4,7 @@ module.exports = function() {
         function(energy, roleName) {
 	console.log(roleName + energy);
 
+	    var body = [WORK, WORK, MOVE, MOVE, CARRY, CARRY];
         if (roleName == 'harvester') {
 	    var body = ["WORK", "WORK", "MOVE", "MOVE", "CARRY", "CARRY"];
         }
