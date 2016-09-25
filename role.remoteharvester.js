@@ -78,7 +78,7 @@ module.exports = {
 	    	// push a list of keys onto the array
 	    	for (var key in flag_list) { flags.push(key);}
 	    	// get a random number 
-	    	var randomnum = _.random(0,3);
+	    	var randomnum = _.random(0,4);
 	    	// pick a random key form the array of keys 
 	    	rnd_key = flags[randomnum];
 	    	// assign the destination name to memory
@@ -93,6 +93,7 @@ module.exports = {
 		else if ( dest_key == 'Flag2') {  dest = Game.flags.Flag2; }
 		else if ( dest_key == 'Flag3') {  dest = Game.flags.Flag3; }
 		else if ( dest_key == 'Flag4') {  dest = Game.flags.Flag4; }
+		else if ( dest_key == 'Flag5') {  dest = Game.flags.Flag5; }
 		else { dest = 'error'; }
 	    	//console.log(creep + " -- remoteharvester --  newdest: " + dest);
             }
