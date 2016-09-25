@@ -110,7 +110,7 @@ module.exports = {
 		creep.moveTo(dest);
 	    }
 
-	    if (dest_key != 'Flag1') {
+	    if (dest_key != 'Flag9') {
 		// normal harvest logic
 	    	if (!(creep.spawning) && creep.memory._move.room == 'E58N3' ) {
 	        	// move to flag1
