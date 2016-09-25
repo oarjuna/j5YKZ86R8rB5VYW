@@ -75,7 +75,7 @@ module.exports = {
 	    	rnd_key = flags[randomnum];
 	    	// assign the destination name to memory
 	    	creep.memory.destid = rnd_key;
-		dest = rnd_key;'
+		dest = rnd_key;
 		
 	    	console.log(creep + " -- remoteharvester -- assigned dest: " + rnd_key);
 	    }
