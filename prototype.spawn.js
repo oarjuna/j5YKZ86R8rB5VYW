@@ -43,7 +43,10 @@ module.exports = function() {
 	    var body = [WORK, WORK, // 200
 		    	MOVE, MOVE, MOVE, MOVE, // 200
 			CARRY, CARRY, CARRY, CARRY // 200
+			//ATTACK, // 80
+                      	//TOUGH, TOUGH // 20
 			] // 600
+
 	    //var body = [WORK, WORK,  // 200
 	    //		MOVE, MOVE, MOVE, MOVE, // 200
 	    //		CARRY, CARRY, CARRY, CARRY, CARRY, CARRY// 300
