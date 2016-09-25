@@ -2,6 +2,15 @@ module.exports = {
     // a function to run the logic for this role
     run: function(creep) {
 	
+	// attack hostile creeps
+	var target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+	if(target) {
+		console.log("ALERT -- found hostile creep!");
+    		if(creep.attack(target) == ERR_NOT_IN_RANGE) {
+        		creep.moveTo(target);
+    		}
+	}	
+
         // if creep is bringing energy to a structure but has no energy left
         if (creep.memory.working == true && creep.carry.energy == 0) {
             // switch state
