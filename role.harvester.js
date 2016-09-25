@@ -56,9 +56,9 @@ module.exports = {
 
 
 		// take the first one off the list
-            	var c_structures = c_source[0];
+            	var c_source = c_structures[0];
 
-		if ( c_source[0] != undefined ) { var source = c_source[0]; }
+		if ( c_source != undefined ) { var source = c_source; }
 		else { var source = creep.pos.findClosestByPath(FIND_SOURCES); }
 
        	    	creep.say("harv");
