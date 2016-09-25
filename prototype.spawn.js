@@ -19,10 +19,10 @@ module.exports = function() {
         }
         else if (roleName == 'builder') {
 		var body = [
-			WORK, WORK, 
-			MOVE, MOVE, 
-			CARRY, CARRY
-		]
+			WORK, WORK,  // 100
+			MOVE, MOVE, MOVE, MOVE, MOVE, // 250
+			CARRY, CARRY, CARRY, CARRY // 200
+		] // 550
         }
 	// m - 50 / w - 100 / c - 50 / a - 80 / t - 10
         else if (roleName == 'repairer') {
