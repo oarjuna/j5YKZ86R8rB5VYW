@@ -27,8 +27,8 @@ module.exports = {
 		// 579faa610700be0674d30e47 -- E57N3
 		var claimers_tmp = _.sum(Game.creeps, (c) => c.memory.role == 'claimer');
 		claimers_tmp = claimers_tmp - 1;
-		console.log(creep + " XXX  -- " + claimers_tmp);
-		//console.log(creep + " XXX  -- " + claim_room[claimers_tmp]);
+		//console.log(creep + " XXX  -- " + claimers_tmp);
+		console.log(creep + " XXX  -- " + claim_room[claimers_tmp]);
             	//var source = Game.getObjectById(creep.memory.destid);
             }
 
