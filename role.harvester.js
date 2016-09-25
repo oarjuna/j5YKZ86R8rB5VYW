@@ -32,15 +32,18 @@ module.exports = {
                 console.log(creep + " -- harvester -- transfering.");
                 // try to transfer energy, if it is not in range
 		creep.say("drop");
+            }
+	    else {
+		console.log(creep + " -- harvester -- did not find a structure to xfer to!");
+		var structure = creep.room.controller;
+	    }
+
                 if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     // move towards it
                     //console.log(creep + " -- harvester -- moving to drop off");
                     creep.moveTo(structure);
                 }
-            }
-	    else {
-		console.log(creep + " -- harvester -- did not find a structure to xfer to!");
-	    }
+
         }
         // if creep is supposed to harvest energy from source
         else {
