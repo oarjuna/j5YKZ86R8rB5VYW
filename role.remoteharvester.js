@@ -95,7 +95,7 @@ module.exports = {
 		else if ( dest_key == 'Flag4') {  dest = Game.flags.Flag4; }
 		else if ( dest_key == 'Flag5') {  dest = Game.flags.Flag5; }
 		else { dest = 'error'; }
-	    	console.log(creep + " -- remoteharvester --  newdest: " + dest);
+	    	//console.log(creep + " -- remoteharvester --  newdest: " + dest);
             }
 
 	    if (creep.memory._move == undefined ) {
