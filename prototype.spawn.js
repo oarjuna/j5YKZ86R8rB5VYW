@@ -4,61 +4,49 @@ module.exports = function() {
         function(energy, roleName) {
 
         if (roleName == 'harvester') {
-	//    var body = [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY]
-        	var body = [
+		var body = [
 			WORK, // 100
                         MOVE, // 50
                      	CARRY, CARRY, CARRY, CARRY, CARRY, CARRY // 300
-                      	] // 450
+		] // 450
         }
         else if (roleName == 'upgrader') {
-	    var body = [
+		var body = [
 			WORK, WORK,  // 200
 			MOVE,   // 50
 			CARRY, CARRY // 100
-			] // 350
+		] // 350
         }
         else if (roleName == 'builder') {
-	    var body = [
+		var body = [
 			WORK, WORK, 
 			MOVE, MOVE, 
 			CARRY, CARRY
-			]
+		]
         }
         else if (roleName == 'repairer') {
-            var body = [
+		var body = [
                         WORK, WORK,
                         MOVE, MOVE,
                         CARRY, CARRY
-                        ]
+		]
         }
         else if (roleName == 'wallRepairer') {
-            var body = [
+		var body = [
                         WORK, WORK,
                         MOVE, MOVE,
                         CARRY, CARRY
-                        ]
+		]
         }
         else if (roleName == "remote_harvester") {
-	    var body = [WORK, WORK, // 200
+	    var body = [
+			WORK, WORK, // 200
 		    	MOVE, MOVE, MOVE, MOVE, // 200
 			CARRY, CARRY, CARRY, CARRY // 200
 			//ATTACK, // 80
                       	//TOUGH, TOUGH // 20
-			] // 600
-
-	    //var body = [WORK, WORK,  // 200
-	    //		MOVE, MOVE, MOVE, MOVE, // 200
-	    //		CARRY, CARRY, CARRY, CARRY, CARRY, CARRY// 300
-	    //		ATTACK, // 80 
-	    //		TOUGH, TOUGH // 20
-	    //		] // total 800
+		] // 700
         }
-	// var body = [WORK, // 100
-	// 		MOVE, MOVE, MOVE,  // 150
-	// 		CARRY, CARRY, CARRY, CARRY // 200
-	// 		] // 450
-
 	/* ACTION - COST - DESC 
 	 * MOVE - 50 - Decreases fatigue by 2 points per tick.
 	 * WORK - 100 - faster work based on task
