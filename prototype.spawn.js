@@ -30,8 +30,12 @@ module.exports = function() {
 	    //		TOUGH, TOUGH // 20
 	    //		] // total 800
         }
+	// var body = [WORK, WORK, // 200
+	// 		MOVE, MOVE, // 100
+	// 		CARRY, CARRY // 100
+	// 		]
 
-	/* ACTION - COST - DESC - DESC - DESC - DESC
+	/* ACTION - COST - DESC 
 	 * MOVE - 50 - Decreases fatigue by 2 points per tick.
 	 * WORK - 100 - faster work based on task
 	 * CARRY - 50 - Can contain up to 50 resource units.
