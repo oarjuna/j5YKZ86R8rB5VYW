@@ -87,9 +87,9 @@ module.exports = {
 	    	//console.log(creep + " -- remoteharvester --  newdest: " + dest);
             }
 
-	    if (creep.memory._move == undefined ) {
+	    /*if (creep.memory._move == undefined ) {
 		creep.moveTo(dest);
-	    }
+	    }*/
 
 	    if (creep.memory._move.room == 'E58N3' ) {
 	        // move to flag1
