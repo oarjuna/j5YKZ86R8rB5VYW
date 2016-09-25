@@ -24,6 +24,7 @@ module.exports = function() {
 			CARRY, CARRY
 		]
         }
+	// m - 50 / w - 100 / c - 50 / a - 80 / t - 10
         else if (roleName == 'repairer') {
 		var body = [
                         WORK, WORK,
@@ -54,7 +55,6 @@ module.exports = function() {
 	 * ATTACK - 80 - Attacks another creep/structure with 30 hits per tick in a short-ranged attack.
 	 * RANGED_ATTACK - 150 - Attacks another single creep/structure with 10 hits 
 	 * 			per tick in a long-range attack up to 3 squares long.
-	 *
 	 * 			Attacks all hostile creeps/structures within 3 squares 
 	 * 			range with 1-4-10 hits (depending on the range).
 	 * HEAL - 250 - Heals self or another creep restoring 12 hits per tick 
