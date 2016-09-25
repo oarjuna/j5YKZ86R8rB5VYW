@@ -43,10 +43,10 @@ module.exports = {
             // do I have a source?
 		// move to closests -- it will be local            
             // try to harvest energy, if the source is not in range
-            if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
+            //if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
                 // move towards the source
                 //creep.moveTo(source);
-            }
+            //}
             
         }
     }
