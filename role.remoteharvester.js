@@ -59,7 +59,7 @@ module.exports = {
         }
         // creep is supposed to harvest energy from source
         else {
-		creep.memory.destid = undefined;
+		//creep.memory.destid = undefined;
 	   // if you don't know where to go
 	    if ( creep.memory.destid == undefined) {
 		// get a list of all flags
