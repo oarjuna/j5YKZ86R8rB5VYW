@@ -66,7 +66,7 @@ module.exports.loop = function () {
     var minimumNumberOfUpgraders = 1;
     var minimumNumberOfBuilders = 3;
     var minimumNumberOfRepairers = 2;
-    var minimumNumberOfWallRepairers = 0;
+    var minimumNumberOfWallRepairers = 1;
 
     // count the number of creeps alive for each role
     // _.sum will count the number of properties in Game.creeps filtered by the
@@ -88,6 +88,7 @@ module.exports.loop = function () {
     var energyAvailable = Game.spawns.Spawn1.room.energyAvailable;
 
     var status4 = "E:  " + energyAvailable + "/" + energy;
+    var status5 = "WR: " + numberOfWallRepairers + "/" + minimumNumberOfWallRepairers;
 
     console.log("\n#------------------#");
     console.log(status4 + " " + status1 + " " + status2 + " " + status3);
