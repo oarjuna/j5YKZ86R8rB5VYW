@@ -7,6 +7,7 @@ module.exports = {
             // switch state
             console.log(creep + " -- remoteharv -- xfer complete");
             creep.memory.working = false;
+	    creep.memory.destid = undefined;
         }
 
         // if creep is harvesting energy but is full
