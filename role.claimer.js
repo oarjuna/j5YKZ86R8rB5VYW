@@ -29,11 +29,12 @@ module.exports = {
         }
         // if creep is supposed to harvest energy from source
         else {
-            // dOo I have a source?
+            // do I have a source?
             if (creep.memory.destid == null ) {
+		var claim_room = ["E58N3","E57N3","E58N4","E59N3","E58N2"];
 		var claimers_tmp = _.sum(Game.creeps, (c) => c.memory.role == 'claimer');
 		claimers_tmp = claimers_tmp - 1;
-		console.log(creep + " XXX  -- " + claimers_tmp);
+		console.log(creep + " XXX  -- " + claim_room[claimers_tmp]);
 
             }
             var source = Game.getObjectById(creep.memory.destid);
