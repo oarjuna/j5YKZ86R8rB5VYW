@@ -88,10 +88,10 @@ module.exports.loop = function () {
     var energyAvailable = Game.spawns.Spawn1.room.energyAvailable;
 
     var status4 = "E:  " + energyAvailable + "/" + energy;
-    var status5 = "WR: " + numberOfWallRepairers + "/" + minimumNumberOfWallRepairers;
+    var status5 = " WR: " + numberOfWallRepairers + "/" + minimumNumberOfWallRepairers;
 
     console.log("\n#------------------#");
-    console.log(status4 + " " + status1 + " " + status2 + " " + status3);
+    console.log(status4 + " " + status1 + " " + status2 + " " + status3 + status5);
 
 
     // if not enough harvesters
