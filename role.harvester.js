@@ -24,7 +24,7 @@ module.exports = {
                filter: (s) => (s.structureType == STRUCTURE_SPAWN
                          || s.structureType == STRUCTURE_EXTENSION
                          || s.structureType == STRUCTURE_TOWER)
-                         //    && s.energy < s.energyCapacity
+                             && s.energy < s.energyCapacity
             });
 
             // if we found one
