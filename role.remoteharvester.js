@@ -131,7 +131,15 @@ module.exports = {
 	    }
 	    else {
 		// Flag1 test logic
-		console.log(creep + " Flag1 test");
+		var flag_id = '579faa610700be0674d30e48';	
+		var source = Game.getObjectById(flag_id);
+		console.log(creep + " Flag1 test " + flag_id + " -- " + source);
+                // try to harvest energy, if the source is not in range
+ 	               if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
+                       // move towards the source
+                       //creep.say("source");
+                       creep.moveTo(source);
+		}
 	    }
 
         }
