@@ -4,7 +4,7 @@ var roleHarvester = require('role.harvester');
 var roleRemoteHarvester = require('role.remoteharvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
-var roleBuilder = require('role.claimer');
+var roleClaimer = require('role.claimer');
 var roleRepairer = require('role.repairer');
 var roleWallRepairer = require('role.wallRepairer');
 
