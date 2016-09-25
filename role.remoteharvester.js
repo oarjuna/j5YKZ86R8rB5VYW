@@ -58,7 +58,7 @@ module.exports = {
         }
         // creep is supposed to harvest energy from source
         else {
-
+		creep.memory.destid = undefined;
 	   // if you don't know where to go
 	    if ( creep.memory.destid == undefined) {
 		// get a list of all flags
@@ -85,7 +85,7 @@ module.exports = {
 		//dest = Game.getObjectById(creep.memory.destid);
 		if ( dest_key == 'Flag1') {  dest = Game.flags.Flag1; }
 		else if ( dest_key == 'Flag2') {  dest = Game.flags.Flag2; }
-		else { dest = Game.flags.Flag1; }
+		else { dest = 'error'; }
 	    	//console.log(creep + " -- remoteharvester --  newdest: " + dest);
 
 		//dest = Game.flags.Flag1;
