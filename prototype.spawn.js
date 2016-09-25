@@ -19,9 +19,23 @@ module.exports = function() {
 	    var body = [WORK, WORK, MOVE, MOVE, CARRY, CARRY]
         }
         else if (roleName == "remote_harvester") {
-	    var body = [WORK, WORK, MOVE, MOVE, CARRY, CARRY]
-	    //var body = [WORK, WORK, MOVE, MOVE, CARRY, CARRY, ATTACK]
+	    var body = [WORK, WORK, 
+		    	MOVE, MOVE, 
+			CARRY, CARRY
+			]
+	    //var body = [WORK, WORK, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, ATTACK]
         }
+
+	/* ACTION - COST
+	 * MOVE - 50
+	 * WORK - 100
+	 * CARRY - 50
+	 * ATTACK - 80
+	 * RANGED_ATTACK - 150
+	 * HEAL - 250
+	 * CLAIM - 600
+	 * TOUGH - 10
+	 */
 
         // create creep with the created body and the given role
         return this.createCreep(body, undefined, { role: roleName, working: false, destid: null });
