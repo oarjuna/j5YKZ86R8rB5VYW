@@ -28,8 +28,8 @@ module.exports = {
 		var claimers_tmp = _.sum(Game.creeps, (c) => c.memory.role == 'claimer');
 		claimers_tmp = claimers_tmp - 1;
 		//console.log(creep + " XXX  -- " + claimers_tmp);
-		console.log(creep + " XXX  -- " + claim_room[claimers_tmp]);
-            	//var source = Game.getObjectById(creep.memory.destid);
+            	var target_controller = Game.getObjectById(claim_room[claimers_tmp]);
+		console.log(creep + " XXX  -- " + target_controller);
             }
 
             // try to upgrade the controller
