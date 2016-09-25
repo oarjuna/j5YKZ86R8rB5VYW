@@ -48,13 +48,15 @@ module.exports = {
             	//console.log(creep + " -- harvester -- looking for energy source");
             	var s_source = creep.pos.findClosestByPath(FIND_SOURCES);
 
-        	var c_source = creep.pos.findClosestByPath(FIND_STRUCTURES, {
-         			filter: (i) => (i.structureType == STRUCTURE_CONTAINER && 
-                        	i.store[RESOURCE_ENERGY] > 0
-      		});
+
+            var c_structures = room.find(FIND_STRUCTURES, {
+                        filter: (i) => i.structureType == STRUCTURE_CONTAINER &&
+                                       i.store[RESOURCE_ENERGY] > 0
+            });
+
 
 		// take the first one off the list
-            	var c_source = c_source[0];
+            	var c_structures = c_source[0];
 
 		if ( c_source[0] != undefined ) { var source = c_source[0]; }
 		else { var source = creep.pos.findClosestByPath(FIND_SOURCES); }
