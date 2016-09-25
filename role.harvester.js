@@ -49,10 +49,7 @@ module.exports = {
             	var s_source = creep.pos.findClosestByPath(FIND_SOURCES);
 
         	var c_source = creep.pos.findClosestByPath(FIND_STRUCTURES, {
-        	// the second argument for findClosestByPath is an object which takes
-        	// a property called filter which can be a function
-		// we use the arrow operator to define it
-         	filter: (s) => (s.structureType == STRUCTURE_CONTAINER && 
+         			filter: (s) => (s.structureType == STRUCTURE_CONTAINER && 
                         	i.store[RESOURCE_ENERGY] > 0
       		});
 
