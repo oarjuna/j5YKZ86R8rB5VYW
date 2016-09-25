@@ -44,19 +44,34 @@ module.exports = {
         }
         // if creep is supposed to harvest energy from source
         else {
-            // find closest source
-            //console.log(creep + " -- harvester -- looking for energy source");
-            var source = creep.pos.findClosestByPath(FIND_SOURCES);
-       	    creep.say("harv");
-            // try to harvest energy, if the source is not in range
-            if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
-                // move towards the source
-                // console.log(creep + " -- harvester -- moving to harvest");
-                creep.moveTo(source);
-            }
-	    else {
-		//console.log(creep + " -- harvester -- harvesting");
-	    }
+            	// find closest source
+            	//console.log(creep + " -- harvester -- looking for energy source");
+            	var s_source = creep.pos.findClosestByPath(FIND_SOURCES);
+
+        	var c_source = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
+        	// the second argument for findClosestByPath is an object which takes
+        	// a property called filter which can be a function
+		// we use the arrow operator to define it
+         	filter: (s) => (s.structureType == STRUCTURE_CONTAINER
+                        	&&  i.store[RESOURCE_ENERGY] > 0
+      		});
+
+		// take the first one off the list
+            	var c_source = c_source[0];
+
+		if ( c_source[0] != undefined ) { var source = c_source[0]; }
+		else { var source = creep.pos.findClosestByPath(FIND_SOURCES); }
+
+       	    	creep.say("harv");
+            	// try to harvest energy, if the source is not in range
+            	if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
+                	// move towards the source
+                	// console.log(creep + " -- harvester -- moving to harvest");
+                	creep.moveTo(source);
+            	}
+	    	else {
+			//console.log(creep + " -- harvester -- harvesting");
+	    	}
         }
     }
 };
