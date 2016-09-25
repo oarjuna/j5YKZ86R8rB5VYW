@@ -84,7 +84,7 @@ module.exports = {
 		if ( dest_key == 'Flag1') {  dest = Game.flags.Flag1; }
 		else if ( dest_key == 'Flag2') {  dest = Game.flags.Flag2; }
 		else { dest = 'error'; }
-	    	console.log(creep + " -- remoteharvester --  newdest: " + dest);
+	    	//console.log(creep + " -- remoteharvester --  newdest: " + dest);
             }
 
 	    if (creep.memory._move == undefined ) {
