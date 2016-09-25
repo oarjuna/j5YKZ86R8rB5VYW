@@ -53,7 +53,7 @@ module.exports = {
 
             	var c_structures = room.find(FIND_STRUCTURES, {
                         filter: (i) => i.structureType == STRUCTURE_CONTAINER &&
-                                       i.store[RESOURCE_ENERGY] > 1000
+                                       i.store[RESOURCE_ENERGY] > 100
             	});
 
 
