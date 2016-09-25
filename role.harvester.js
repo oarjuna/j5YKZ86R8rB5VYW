@@ -49,7 +49,7 @@ module.exports = {
             	var s_source = creep.pos.findClosestByPath(FIND_SOURCES);
 
         	var c_source = creep.pos.findClosestByPath(FIND_STRUCTURES, {
-         			filter: (s) => (s.structureType == STRUCTURE_CONTAINER && 
+         			filter: (i) => (i.structureType == STRUCTURE_CONTAINER && 
                         	i.store[RESOURCE_ENERGY] > 0
       		});
 
