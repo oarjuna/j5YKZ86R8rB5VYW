@@ -20,7 +20,9 @@ module.exports = function() {
         }
         else if (roleName == "remote_harvester") {
 	    var body = [WORK, WORK, MOVE, MOVE, CARRY, CARRY]
+	    //var body = [WORK, WORK, MOVE, MOVE, CARRY, CARRY, ATTACK]
         }
+
         // create creep with the created body and the given role
         return this.createCreep(body, undefined, { role: roleName, working: false, destid: null });
      };
