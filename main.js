@@ -4,6 +4,7 @@ var roleHarvester = require('role.harvester');
 var roleRemoteHarvester = require('role.remoteharvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
+var roleBuilder = require('role.claimer');
 var roleRepairer = require('role.repairer');
 var roleWallRepairer = require('role.wallRepairer');
 
@@ -33,6 +34,10 @@ module.exports.loop = function () {
         // if creep is builder, call builder script
         else if (creep.memory.role == 'builder') {
             roleBuilder.run(creep);
+        }
+        // if creep is claimer, call claimer script
+        else if (creep.memory.role == 'claimer') {
+            roleClaimer.run(creep);
         }
         // if creep is repairer, call repairer script
         else if (creep.memory.role == 'repairer') {
@@ -65,6 +70,7 @@ module.exports.loop = function () {
     var minimumNumberOfRemoteHarvesters = 25;
     var minimumNumberOfUpgraders = 1;
     var minimumNumberOfBuilders = 3;
+    var minimumNumberOfClaimers = 1;
     var minimumNumberOfRepairers = 2;
     var minimumNumberOfWallRepairers = 1;
 
@@ -75,6 +81,7 @@ module.exports.loop = function () {
     var numberOfRemoteHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harvester');
     var numberOfUpgraders = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader');
     var numberOfBuilders = _.sum(Game.creeps, (c) => c.memory.role == 'builder');
+    var numberOfClaimers = _.sum(Game.creeps, (c) => c.memory.role == 'claimer');
     var numberOfRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'repairer');
     var numberOfWallRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer');
 
@@ -89,9 +96,10 @@ module.exports.loop = function () {
 
     var status4 = "E:  " + energyAvailable + "/" + energy;
     var status5 = " WR: " + numberOfWallRepairers + "/" + minimumNumberOfWallRepairers;
+    var status6 = " C: " + numberOfWallClaimers + "/" + minimumNumberOfClaimers;
 
     console.log("\n#------------------#");
-    console.log(status4 + " " + status1 + " " + status2 + " " + status3 + status5);
+    console.log(status4 + " " + status1 + " " + status2 + " " + status3 + status5 + status6);
 
 
     // if not enough harvesters
@@ -125,6 +133,12 @@ module.exports.loop = function () {
         console.log("main -- spawning builder");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'builder');
     }
+    else if (numberOfClaimers < minimumNumberOfClaimers) {
+        // try to spawn one
+        console.log("main -- spawning claimer");
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'claimer');
+    }
+
     // if not enough wallRepairers
     else if (numberOfWallRepairers < minimumNumberOfWallRepairers) {
         // try to spawn one
