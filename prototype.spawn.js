@@ -4,7 +4,7 @@ module.exports = function() {
         function(energy, roleName) {
 
         if (roleName == 'harvester') {
-	    var body = ["WORK","WORK","MOVE","MOVE","CARRY","CARRY"];
+	    var body = ["WORK", "WORK", "MOVE", "MOVE", "CARRY", "CARRY"];
         }
         else if (roleName == 'upgrader') {
 	    var body = ["WORK","WORK","MOVE","MOVE","CARRY","CARRY"];
@@ -19,7 +19,8 @@ module.exports = function() {
 	    var body = ["WORK","WORK","MOVE","MOVE","CARRY","CARRY"];
         }
         else if (roleName == 'remote_harvester') {
-	    var body = ["WORK","WORK","MOVE","MOVE","CARRY","CARRY"];
+	console.log = ("spawn: " + body);
+	    var body = ["WORK", "WORK", "MOVE", "MOVE", "CARRY", "CARRY"];
         }
 	console.log = ("spawn: " + body);
         // create creep with the created body and the given role
