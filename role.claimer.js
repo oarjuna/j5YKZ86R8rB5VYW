@@ -2,6 +2,7 @@ module.exports = {
     // a function to run the logic for this role
     run: function(creep) {
 	creep.say("!!");
+	console.log(creep + " -- claimer");
         // if creep is bringing energy to the controller but has no energy left
         if (creep.memory.working == true && creep.carry.energy == 0) {
             // switch state
@@ -28,7 +29,7 @@ module.exports = {
 		claimers_tmp = claimers_tmp - 1;
 		console.log(creep + " XXX  -- " + claimers_tmp);
 		//console.log(creep + " XXX  -- " + claim_room[claimers_tmp]);
-            	var source = Game.getObjectById(creep.memory.destid);
+            	//var source = Game.getObjectById(creep.memory.destid);
             }
 
             // try to upgrade the controller
