@@ -4,7 +4,7 @@ module.exports = function() {
         function(energy, roleName) {
 
         if (roleName == 'harvester') {
-	    var body = [WORK, WORK, MOVE, MOVE, CARRY, CARRY]
+	    var body = [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY]
         }
         else if (roleName == 'upgrader') {
 	    var body = [WORK, WORK, MOVE, MOVE, CARRY, CARRY]
@@ -30,10 +30,10 @@ module.exports = function() {
 	    //		TOUGH, TOUGH // 20
 	    //		] // total 800
         }
-	// var body = [WORK, WORK, // 200
-	// 		MOVE, MOVE, // 100
+	// var body = [WORK, WORK, WORK, // 300
+	// 		MOVE, MOVE, MOVE,  // 150
 	// 		CARRY, CARRY // 100
-	// 		]
+	// 		] // 550
 
 	/* ACTION - COST - DESC 
 	 * MOVE - 50 - Decreases fatigue by 2 points per tick.
