@@ -96,7 +96,7 @@ module.exports.loop = function () {
 
     var status4 = "E:  " + energyAvailable + "/" + energy;
     var status5 = " WR: " + numberOfWallRepairers + "/" + minimumNumberOfWallRepairers;
-    var status6 = " C: " + numberOfWallClaimers + "/" + minimumNumberOfClaimers;
+    var status6 = " C: " + numberOfClaimers + "/" + minimumNumberOfClaimers;
 
     console.log("\n#------------------#");
     console.log(status4 + " " + status1 + " " + status2 + " " + status3 + status5 + status6);
