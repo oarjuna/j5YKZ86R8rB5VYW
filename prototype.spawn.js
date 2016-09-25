@@ -8,15 +8,19 @@ module.exports = function() {
 	    var body = ["WORK", "WORK", "MOVE", "MOVE", "CARRY", "CARRY"];
         }
         else if (roleName == 'upgrader') {
+	    console.log = ("spawn: " + body);
 	    var body = ["WORK","WORK","MOVE","MOVE","CARRY","CARRY"];
         }
         else if (roleName == 'builder') {
+	    console.log = ("spawn: " + body);
 	    var body = ["WORK","WORK","MOVE","MOVE","CARRY","CARRY"];
         }
         else if (roleName == 'repairer') {
+	    console.log = ("spawn: " + body);
 	    var body = ["WORK","WORK","MOVE","MOVE","CARRY","CARRY"];
         }
         else if (roleName == 'wallRepairer') {
+	    console.log = ("spawn: " + body);
 	    var body = ["WORK","WORK","MOVE","MOVE","CARRY","CARRY"];
         }
         else if (roleName == "remote_harvester") {
