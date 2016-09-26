@@ -13,7 +13,7 @@ module.exports = function() {
         else if (roleName == 'upgrader') {
 		var body = [
 			WORK, WORK,  // 200
-			MOVE, MOVE   // 100
+			MOVE, MOVE,  // 100
 			CARRY, CARRY // 100
 		] // 400
         }
