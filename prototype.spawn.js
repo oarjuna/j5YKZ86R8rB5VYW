@@ -53,8 +53,9 @@ module.exports = function() {
                         WORK, // 100
                         MOVE, MOVE, MOVE, MOVE,  // 200
                         CARRY,  // 50
-                        CLAIM // 600
-                ] // 950
+                        CLAIM, // 600
+			TOUGH, TOUGH
+                ] // 990
 	}
         else {
                 var body = [
