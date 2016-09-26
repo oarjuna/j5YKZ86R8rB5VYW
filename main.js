@@ -152,17 +152,17 @@ module.exports.loop = function () {
         // try to spawn one
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'wallRepairer');
     }
-    // if not enough remote harvesters
-    else if (numberOfRemoteHarvesters < minimumNumberOfRemoteHarvesters) {
-        // try to spawn one
-        console.log("main -- spawning remote_harvester");
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'remote_harvester');
-    }
     // if not enough local harvesters
     else if (numberOfLocalHarvesters < minimumNumberOfLocalHarvesters) {
         // try to spawn one
         console.log("main -- spawning local_harvester");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'local_harvester');
+    }
+    // if not enough remote harvesters
+    else if (numberOfRemoteHarvesters < minimumNumberOfRemoteHarvesters) {
+        // try to spawn one
+        console.log("main -- spawning remote_harvester");
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'remote_harvester');
     }
     else {
         // else try to spawn a builder
