@@ -1,4 +1,4 @@
-var roleLocalHarvester = require('role.localharvester');
+//var roleLocalHarvester = require('role.localharvester');
 
 module.exports = {
     // a function to run the logic for this role
