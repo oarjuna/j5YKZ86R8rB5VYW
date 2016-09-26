@@ -70,7 +70,7 @@ module.exports.loop = function () {
     var minimumNumberOfRemoteHarvesters = 25;
     var minimumNumberOfUpgraders = 1;
     var minimumNumberOfBuilders = 3;
-    var minimumNumberOfClaimers = 0;
+    var minimumNumberOfClaimers = 1;
     var minimumNumberOfRepairers = 2;
     var minimumNumberOfWallRepairers = 1;
 
