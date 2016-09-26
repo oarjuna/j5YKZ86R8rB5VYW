@@ -101,7 +101,6 @@ module.exports.loop = function () {
     console.log("\n#------------------#");
     console.log(status4 + " " + status1 + " " + status2 + " " + status3 + status5 + status6);
 
-
     // if not enough harvesters
     if (numberOfHarvesters < minimumNumberOfHarvesters) {
         // try to spawn one
