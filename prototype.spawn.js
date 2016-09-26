@@ -51,7 +51,7 @@ module.exports = function() {
 	else if (roleName == "claimer") {
                 var body = [
                         WORK, // 100
-                        MOVE, MOVE, MOVE, MOVE  // 200
+                        MOVE, MOVE, MOVE, MOVE,  // 200
                         CARRY,  // 50
                         CLAIM // 600
                 ] // 950
