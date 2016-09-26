@@ -57,7 +57,7 @@ module.exports = function() {
 	}
         else {
                 var body = [
-                        WORK, // 100
+                        WORK, WORK, WORK, WORK, // 100
                         MOVE, MOVE,  // 100
                         CARRY, CARRY  // 100
                 ] // 350
