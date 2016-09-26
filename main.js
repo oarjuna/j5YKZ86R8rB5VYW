@@ -1,6 +1,7 @@
 // import modules
 require('prototype.spawn')();
 var roleHarvester = require('role.harvester');
+var roleLocalHarvester = require('role.localharvester');
 var roleRemoteHarvester = require('role.remoteharvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
@@ -27,6 +28,11 @@ module.exports.loop = function () {
         if (creep.memory.role == 'harvester') {
             roleHarvester.run(creep);
         }
+        // if creep is local harvester, call local harvester script
+        if (creep.memory.role == 'local_harvester') {
+            roleLocalHarvester.run(creep);
+        }
+	
         // if creep is upgrader, call upgrader script
         else if (creep.memory.role == 'upgrader') {
             roleUpgrader.run(creep);
@@ -68,6 +74,7 @@ module.exports.loop = function () {
     // setup some minimum numbers for different roles
     var minimumNumberOfHarvesters = 4;
     var minimumNumberOfRemoteHarvesters = 25;
+    var minimumNumberOfLocalHarvesters = 0;
     var minimumNumberOfUpgraders = 1;
     var minimumNumberOfBuilders = 3;
     var minimumNumberOfClaimers = 0;
@@ -79,6 +86,7 @@ module.exports.loop = function () {
     //  arrow function, which checks for the creep being a harvester
     var numberOfHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'harvester');
     var numberOfRemoteHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harvester');
+    var numberOfLocalHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester');
     var numberOfUpgraders = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader');
     var numberOfBuilders = _.sum(Game.creeps, (c) => c.memory.role == 'builder');
     var numberOfClaimers = _.sum(Game.creeps, (c) => c.memory.role == 'claimer');
@@ -148,6 +156,12 @@ module.exports.loop = function () {
         // try to spawn one
         console.log("main -- spawning remote_harvester");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'remote_harvester');
+    }
+    // if not enough local harvesters
+    else if (numberOfLocalHarvesters < minimumNumberOfLocalHarvesters) {
+        // try to spawn one
+        console.log("main -- spawning local_harvester");
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'local_harvester');
     }
     else {
         // else try to spawn a builder
