@@ -58,9 +58,9 @@ module.exports = function() {
         else {
                 var body = [
                         WORK, WORK, WORK, WORK, // 400
-                        MOVE,   // 100
+                        MOVE,   // 50
                         CARRY, CARRY  // 100
-                ] // 350
+                ] // 550
         }
 
 	/* ACTION - COST - DESC 
