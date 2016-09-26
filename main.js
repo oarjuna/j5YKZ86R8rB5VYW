@@ -105,9 +105,10 @@ module.exports.loop = function () {
     var status4 = "E:  " + energyAvailable + "/" + energy;
     var status5 = " WR: " + numberOfWallRepairers + "/" + minimumNumberOfWallRepairers;
     var status6 = " C: " + numberOfClaimers + "/" + minimumNumberOfClaimers;
+    var status7 = " LH: " + numberOfLocalHarvesters + "/" + minimumNumberOfLocalHarvesters;
 
     console.log("\n#------------------#");
-    console.log(status4 + " " + status1 + " " + status2 + " " + status3 + status5 + status6);
+    console.log(status4 + " " + status1 + " " + status2 + " " + status3 + status5 + status6 + status7);
 
     // if not enough harvesters
     if (numberOfHarvesters < minimumNumberOfHarvesters) {
