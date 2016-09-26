@@ -5,17 +5,17 @@ module.exports = function() {
 
         if (roleName == 'harvester') {
 		var body = [
-			WORK, // 50
+			WORK, WORK, WORK, // 150
                         MOVE, MOVE, MOVE, MOVE, MOVE, // 250
                      	CARRY, CARRY, CARRY, CARRY, CARRY, CARRY // 300
-		] // 500
+		] // 600
         }
         else if (roleName == 'upgrader') {
 		var body = [
 			WORK, WORK,  // 200
-			MOVE,   // 50
+			MOVE, MOVE   // 100
 			CARRY, CARRY // 100
-		] // 350
+		] // 400
         }
         else if (roleName == 'builder') {
 		var body = [
@@ -28,14 +28,14 @@ module.exports = function() {
         else if (roleName == 'repairer') {
 		var body = [
                         WORK, WORK,
-                        MOVE, MOVE,
+                        MOVE, MOVE, MOVE, MOVE,
                         CARRY, CARRY
 		]
         }
         else if (roleName == 'wallRepairer') {
 		var body = [
                         WORK, WORK,
-                        MOVE, MOVE,
+                        MOVE, MOVE, MOVE, MOVE,
                         CARRY, CARRY
 		]
         }
