@@ -20,7 +20,7 @@ module.exports = {
         if (creep.memory.working == true) {
             // find closest constructionSite
 	    var container_id = '57e80b15429727d67472c8ae'; // temp container
-	    //var container_id = '57e9afb83cd48b64657b2501'; // north container
+	    //var container_id = '57e9b43430c9d8c674854d1b'; // north container
             var container = Game.getObjectById(container_id);
             // if one is found
             if (container != undefined) {
