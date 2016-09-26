@@ -18,6 +18,7 @@ module.exports = {
         }
 	//creep.memory.working = true;
         // if creep is supposed to transfer energy to the controller
+	creep.memory.working = true;
         if (creep.memory.working == true) {
 		var claim_room = ["579faa820700be0674d31159","579faa820700be0674d31159","E58N4","E58N3","E58N2"];
 		// 579faa610700be0674d30e47 -- E57N3
