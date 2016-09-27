@@ -121,11 +121,12 @@ module.exports = {
 		// normal harvest logic
 	    	if (!(creep.spawning) && creep.memory._move.room == 'E58N3' ) {
 	        	// move to flag1
-			//creep.say("flag");
+			creep.say("flag");
 			//console.log(creep + " -- remoteharvester -- movingto: " + dest);
 	    		creep.moveTo(dest);
 	    	}	
 	    	else {
+			creep.say("source");
             		// when you get there, find closest source and harvest
             		var source = creep.pos.findClosestByPath(FIND_SOURCES);
             		// try to harvest energy, if the source is not in range
