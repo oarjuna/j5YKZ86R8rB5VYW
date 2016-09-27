@@ -8,7 +8,7 @@ module.exports = {
 	//var target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
 	var t_target = '57eaaea6cb1526f2740513a4';
 	var target = Game.getObjectById(t_target);
-		console.log(creep + " ALERT -- found hostile creep!" + target);
+		console.log(creep + " ALERT -- found hostile creep!" + creep.attack(target));
 //console.log(creep + " ALERT -- found hostile creep!" + creep.attack(target));
 	if(target) {
 		console.log(creep + " ALERT -- found hostile creep!" + target);
