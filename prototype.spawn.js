@@ -50,7 +50,7 @@ module.exports = function() {
         }
 	else if (roleName == "claimer") {
                 var body = [
-                        MOVE, MOVE, MOVE, MOVE   // 200
+                        MOVE, MOVE, MOVE, MOVE,   // 200
                         CLAIM,  //  600
                 ] //  800
 	}
