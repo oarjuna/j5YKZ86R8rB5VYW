@@ -6,7 +6,7 @@ module.exports = {
 	var target = creep.pos.findClosestByRange(FIND_HOSTILE_CONSTRUCTION_SITES);
 	//var target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
 	if(target) {
-		console.log(creep + " ALERT -- found hostile creep!");
+		console.log(creep + " ALERT -- found hostile creep!" + creep.attack(target));
     		if(creep.attack(target) == ERR_NOT_IN_RANGE) {
 		console.log(creep + " ALERT -- move!");
         		creep.moveTo(target);
