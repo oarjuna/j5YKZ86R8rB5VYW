@@ -46,27 +46,17 @@ module.exports = {
         }
         // if creep is supposed to harvest energy from source
         else {
-            	// find closest source
-            	//console.log(creep + " -- harvester -- looking for energy source");
-            	var s_source = creep.pos.findClosestByPath(FIND_SOURCES);
-		var room = Game.spawns.Spawn1.room;
+            	// find closest container 
+                var source = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+                        filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
+                                       s.store[RESOURCE_ENERGY] > 0
+                });
 
-            	var c_structures = room.find(FIND_STRUCTURES, {
-                        filter: (i) => i.structureType == STRUCTURE_CONTAINER &&
-                                       i.store[RESOURCE_ENERGY] > 100
-            	});
-
-
-		// take the first one off the list
-            	var c_source = c_structures[0];
-
-		if ( c_source != undefined ) { 
-			var source = c_source; 
-               		//console.log(creep + " -- harvester -- " +  source);
-       	    		//creep.say("c-harv");
+		if ( source != undefined ) { 
+               		console.log(creep + " -- harvester -- " +  source);
+       	    		creep.say("c-harv");
                         if (creep.withdraw(source,RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                                 // move towards the source
-                                // console.log(creep + " -- harvester -- moving to harvest");
                                 creep.moveTo(source);
                         }
 		}
