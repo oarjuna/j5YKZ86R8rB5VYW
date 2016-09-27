@@ -45,10 +45,10 @@ module.exports = {
                                    i.store[RESOURCE_ENERGY] > 100
             });
 		var source = c_structures[0];
+		 creep.say("b-to-c");
             //var source = creep.pos.findClosestByPath(FIND_SOURCES);
             // try to harvest energy, if the source is not in range
             if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
-		 creep.say("b-to-c");
                 // move towards the source
                 creep.moveTo(source);
             }
