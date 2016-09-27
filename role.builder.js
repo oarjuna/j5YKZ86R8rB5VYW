@@ -29,13 +29,12 @@ module.exports = {
                     creep.moveTo(constructionSite);
                 }
             }
-            // if no constructionSite is found
             else {
                 // go upgrading the controller
                 roleUpgrader.run(creep);
             }
         }
-        // if creep is supposed to harvest energy from source
+        // need energy?
         else {
             // find closest source
 	    // STRUCTURE_CONTAINER
@@ -44,8 +43,15 @@ module.exports = {
                     filter: (i) => i.structureType == STRUCTURE_CONTAINER &&
                                    i.store[RESOURCE_ENERGY] > 100
             });
-		var source = c_structures[0];
-            //var source = creep.pos.findClosestByPath(FIND_SOURCES);
+	    var source = c_structures[0];
+//
+		var target = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+    		filter: function(object) {
+			return i.store[RESOURCE_ENERGY] > 100
+    		}
+		});
+
+		console.log(creep + " -- TAR: " + target);
             // try to transfer energy, if the source is not in range
             if (creep.transfer(source, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 // move towards the source
