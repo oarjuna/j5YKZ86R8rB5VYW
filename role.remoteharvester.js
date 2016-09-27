@@ -11,9 +11,9 @@ module.exports = {
 //		console.log(creep + " ALERT -- found hostile creep!" + creep.attack(target));
 //console.log(creep + " ALERT -- found hostile creep!" + creep.attack(target));
 	if(target) {
-		console.log(creep + " ALERT -- found hostile creep!" + target);
+	//	console.log(creep + " ALERT -- found hostile creep!" + target);
     		if(creep.attack(target) == ERR_NOT_IN_RANGE) {
-		console.log(creep + " ALERT -- move!");
+			console.log(creep + " ALERT -- move!");
         		creep.moveTo(target);
     		}
 	}	
