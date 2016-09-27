@@ -45,11 +45,13 @@ module.exports = {
             });
 	    var source = c_structures[0];
 //
-		var target = creep.pos.findClosestByRange(FIND_CONTAINER, {
+	/*	var target = creep.pos.findClosestByRange(FIND_CONTAINER, {
 			filter: (i) => i.store[RESOURCE_ENERGY] > 100
     		});
 
-		console.log(creep + " -- TAR: " + target);
+*/
+
+		console.log(creep + " -- TAR: " + source);
             // try to transfer energy, if the source is not in range
             if (creep.transfer(source, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 // move towards the source
