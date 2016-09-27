@@ -98,7 +98,7 @@ module.exports = {
 		var dest_key = creep.memory.destid;
 		if ( dest_key == 'Flag1') {  dest = Game.flags.Flag1; }
 		else if ( dest_key == 'Flag2') {  dest = Game.flags.Flag2; }
-		else if ( dest_key == 'Flag3') {  dest = Game.flags.Flag4; }
+		else if ( dest_key == 'Flag3') {  dest = Game.flags.Flag3; }
 		else if ( dest_key == 'Flag4') {  dest = Game.flags.Flag4; }
 		else if ( dest_key == 'Flag5') {  dest = Game.flags.Flag1; }
 		else { dest = 'error'; }
