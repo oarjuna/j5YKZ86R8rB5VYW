@@ -3,7 +3,8 @@ module.exports = {
     run: function(creep) {
 	
 	// attack hostile creeps
-	var target = creep.pos.findClosestByRange(FIND_HOSTILE_CONSTRUCTION_SITES);
+	var target = creep.pos.findClosestByRange(FIND_HOSTILE_SPAWNS);
+	//var target = creep.pos.findClosestByRange(FIND_HOSTILE_CONSTRUCTION_SITES);
 	//var target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
 		console.log(creep + " ALERT -- found hostile creep!" + target);
 //console.log(creep + " ALERT -- found hostile creep!" + creep.attack(target));
