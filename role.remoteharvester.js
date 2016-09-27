@@ -5,9 +5,9 @@ module.exports = {
 	// attack hostile creeps
 	//var target = creep.pos.findClosestByRange(FIND_HOSTILE_SPAWNS);
 	//var target = creep.pos.findClosestByRange(FIND_HOSTILE_CONSTRUCTION_SITES);
-	//var target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-	var t_target = '57eaaea6cb1526f2740513a4';
-	var target = Game.getObjectById(t_target);
+	var target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+	//var t_target = '57eaaea6cb1526f2740513a4';
+	//var target = Game.getObjectById(t_target);
 		console.log(creep + " ALERT -- found hostile creep!" + creep.attack(target));
 //console.log(creep + " ALERT -- found hostile creep!" + creep.attack(target));
 	if(target) {
