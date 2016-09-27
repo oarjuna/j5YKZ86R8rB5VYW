@@ -53,7 +53,7 @@ module.exports = {
 
 
             // try to transfer energy, if the source is not in range
-            if (creep.transfer(source, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+            if (creep.withdraw(source, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
 		console.log(creep + " -- TAR: " + source);
                 // move towards the source
                 creep.moveTo(source);
