@@ -25,7 +25,7 @@ module.exports = {
             // if one is found
             if (container != undefined) {
                 // try to build, if the container is not in range
-                if (creep.transfer(container) == ERR_NOT_IN_RANGE) {
+                if (creep.transfer(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     // move towards the container
                     creep.moveTo(container);
                 }
