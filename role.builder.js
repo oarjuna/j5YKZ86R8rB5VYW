@@ -39,6 +39,7 @@ module.exports = {
         else {
             // find closest source
 	    // STRUCTURE_CONTAINER
+	    var room = Game.spawns.Spawn1.room;
             var c_structures = room.find(FIND_STRUCTURES, {
                     filter: (i) => i.structureType == STRUCTURE_CONTAINER &&
                                    i.store[RESOURCE_ENERGY] > 100
