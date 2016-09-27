@@ -47,6 +47,7 @@ module.exports = {
 
 		//var target = creep.pos.findClosestByRange(room.getPositionAt(28,6), {
 		var target = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
+                                   i.store[RESOURCE_ENERGY] > 0
 			//filter: (s) => s.structureType==STRUCTURE_CONTAINER 
     		});
 
