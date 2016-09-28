@@ -36,28 +36,17 @@ module.exports = {
         }
         // need energy?
         else {
-            // find closest source
-	    // STRUCTURE_CONTAINER
-	    var room = Game.spawns.Spawn1.room;
-            var c_structures = room.find(FIND_STRUCTURES, {
-                    filter: (i) => i.structureType == STRUCTURE_CONTAINER &&
-                                   i.store[RESOURCE_ENERGY] > 100
-            });
-	    //var source = c_structures[0];
-
-		//var target = creep.pos.findClosestByRange(room.getPositionAt(28,6), {
-		var source = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-			filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
-				       s.store[RESOURCE_ENERGY] > 0
+		// find closest container with energy 
+		var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+		filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
+			       s.store[RESOURCE_ENERGY] > 0
     		});
 
-
-            // try to transfer energy, if the source is not in range
-            if (creep.withdraw(source, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-		console.log(creep + " -- builder -- : " + source);
-                // move towards the source
-                creep.moveTo(source);
-            }
+            	// try to transfer energy, if the container is not in range
+            	if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                	// move towards the container
+                	creep.moveTo(container);
+            	}
         }
     }
 };
