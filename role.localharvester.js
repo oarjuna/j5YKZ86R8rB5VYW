@@ -18,21 +18,19 @@ module.exports = {
 
         if (creep.memory.working == true) {
 
-	    var container_id = '57e9bb84c345ba440e136382'; // north container
-
                 // find closest container with energy
                 var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
                 filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
                                s.store[RESOURCE_ENERGY] <2000
                 });
 
+		console.log(creep + " --  dropoff container " + container);
                 // try to transfer energy, if the container is not in range
                 if (creep.transfer(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                         // move towards the container
                         creep.moveTo(container);
                 }
 
-		console.log(creep + " --  dropoff container " + target_source);
         }
         // if creep is supposed to harvest energy from source
         else {
