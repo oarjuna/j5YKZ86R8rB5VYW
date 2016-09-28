@@ -5,8 +5,8 @@ module.exports = function() {
 
         if (roleName == 'harvester') {
 		var body = [
-			WORK, // 150
-                        MOVE, MOVE, MOVE, MOVE, MOVE, // 250
+			WORK, // 100
+                        MOVE, MOVE, MOVE, MOVE, // 200
                      	CARRY, CARRY, CARRY, CARRY // 200
 		] // 500
         }
@@ -19,10 +19,10 @@ module.exports = function() {
         }
         else if (roleName == 'builder') {
 		var body = [
-			WORK, WORK,  // 100
+			WORK, WORK,  // 200
 			MOVE, MOVE, MOVE, MOVE, MOVE, // 250
 			CARRY, CARRY, CARRY, CARRY // 200
-		] // 550
+		] // 650
         }
 	// m - 50 / w - 100 / c - 50 / a - 80 / t - 10
         else if (roleName == 'repairer') {
