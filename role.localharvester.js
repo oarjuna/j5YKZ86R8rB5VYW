@@ -26,8 +26,7 @@ module.exports = {
 		var containers =[
 		    		'57e9bb84c345ba440e136382',
 		    		'57e9bb84c345ba440e136382',
-				'57e9bb84c345ba440e136382',
-				'unknown'
+				'57e9bb84c345ba440e136382'
 				];
 		var lhcount  = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester');
 		var lhcount = lhcount - 1;
@@ -51,13 +50,12 @@ module.exports = {
 	    var source_id = '579faa710700be0674d30fd7'; // north source
             var source = Game.getObjectById(source_id);
 
-                // assign a container from the array, based on your local_harvester #
+                // assign a source from the array, based on your local_harvester #
                 // ie -- harv0 gets array slot 0
                 var source_list =[
-                                '57e9bb84c345ba440e136382',
-                                '57e9bb84c345ba440e136382',
-                                '57e9bb84c345ba440e136382',
-                                'unknown'
+                                '579faa710700be0674d30fd7', // north
+                                '579faa710700be0674d30fd7', // north
+                                '579faa710700be0674d30fd8' // south
                                 ];
                 var srccount  = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester');
                 var srccount = srccount - 1;
