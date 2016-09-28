@@ -16,7 +16,6 @@ module.exports = {
             creep.memory.destid = null;
         }
 
-        // if creep is supposed to transfer energy to the controller
         if (creep.memory.working == true) {
             // try to upgrade the controller
             if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
@@ -24,7 +23,6 @@ module.exports = {
                 creep.moveTo(creep.room.controller);
             }
         }
-        // if creep is supposed to harvest energy from source
         else {
                // find closest container with energy
                 var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
