@@ -44,8 +44,7 @@ module.exports = {
 			src_count =  src_count - 1;
 			var target_source = source_list[src_count];
 			creep.memory.destid = target_source;
-			console.log(creep + " --- " + creep.memory.destid);
-			console.log(creep + " --- " + target_source);
+			//console.log(creep + " --- " + target_source);
 		//
 		//
 		var source = '579faa710700be0674d30fd7';
