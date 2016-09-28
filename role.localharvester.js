@@ -44,11 +44,13 @@ module.exports = {
 			var source = creep.memory.destid;
 		}	
 		else {
-		//	var source = '579faa710700be0674d30fd7';
                 	var src_count  = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester');
 			src_count =  src_sounct - 1;
 			var source = source_list[src_count];
 		}
+		//
+		//
+		var source = '579faa710700be0674d30fd7';
 		var target_source = Game.getObjectById(source);
 
             // try to harvest energy, if the source is not in range
