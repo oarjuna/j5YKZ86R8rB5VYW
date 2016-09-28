@@ -38,7 +38,7 @@ module.exports = {
                                 '579faa710700be0674d30fd7', // north
                                 '579faa710700be0674d30fd7', // north
                                 '579faa710700be0674d30fd8' // south
-		];
+				];
 
 		if (creep.memory.destid != undefined) {
 			var source = creep.memory.destid;
