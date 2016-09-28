@@ -21,6 +21,7 @@ module.exports = {
             // find closest constructionSite
             var constructionSite = creep.pos.findClosestByPath(FIND_CONSTRUCTION_SITES);
             // if one is found
+	    var constructionSite = Game.getObjectById('57e9bf6830c9d8c674855b40');
             if (constructionSite != undefined) {
                 // try to build, if the constructionSite is not in range
                 if (creep.build(constructionSite) == ERR_NOT_IN_RANGE) {
