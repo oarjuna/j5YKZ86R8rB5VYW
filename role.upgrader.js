@@ -26,29 +26,18 @@ module.exports = {
         }
         // if creep is supposed to harvest energy from source
         else {
-            // do I have a source?
-            if (creep.memory.destid == null ) {
-            //if ( true ) {
-                // No, pick one randonmly
-                var randomnum = _.random(0,1)
-                var room = Game.spawns.Spawn1.room;
-                var source_new = room.find(FIND_SOURCES);
-                
-                creep.memory.destid = source_new[randomnum].id;
-                
-                var source = creep.memory.destid;
-                
-                console.log(creep + " -- upgrader -- assigned source: " + creep.memory.destid);
-              
-            }
-            var source = Game.getObjectById(creep.memory.destid);
-            
-            // try to harvest energy, if the source is not in range
-            if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
-                // move towards the source
-                creep.moveTo(source);
-            }
-            
+               // find closest container with energy
+                var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+                filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
+                               s.store[RESOURCE_ENERGY] > 0
+                });
+
+                // try to transfer energy, if the container is not in range
+                if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                        // move towards the container
+                        creep.moveTo(container);
+                }
+ 
         }
     }
 };
