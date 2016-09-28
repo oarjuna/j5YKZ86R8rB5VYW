@@ -46,7 +46,7 @@ module.exports = {
 	    // take the first one off the list
 	    var t_structure = t_structures[0];
 
-               // find closest container with energy
+               // find closest container without energy
                 var c_structure = creep.pos.findClosestByRange(FIND_STRUCTURES, {
                 filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
                                s.store[RESOURCE_ENERGY] < 1750
@@ -60,7 +60,7 @@ module.exports = {
 	    // finally the controller
 	    else { var structure = Game.rooms.E58N3.controller; }
 
-	    console.log(creep + " -- removeharv - dropoff - " + structure );
+	    //console.log(creep + " -- removeharv - dropoff - " + structure );
 	    var action_status = creep.transfer(structure, RESOURCE_ENERGY);
 
 	    // if we're not close enough to xfer
