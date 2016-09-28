@@ -157,9 +157,7 @@ module.exports.loop = function () {
     else if (numberOfLocalHarvesters < minimumNumberOfLocalHarvesters) {
         // try to spawn one
 	var lh_tmp = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester');
-	lh_tmp = lh_tmp - 1;
-	if ( lh_tmp < 0 ) { lh_tmp = 0; }
-	if ( lh_tmp <= 2 ) { var dest = '579faa710700be0674d30fd7'; } // north 
+	if ( lh_tmp <= 3 { var dest = '579faa710700be0674d30fd7'; } // north 
 	else { var dest = '579faa710700be0674d30fd8'; } // south
         console.log("main -- spawning local_harvester -- " + lh_tmp);
 
