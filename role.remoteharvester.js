@@ -53,7 +53,6 @@ module.exports = {
 		});
 
 
-
 	    // check towers in need first
 	    if (t_structure != undefined) { var structure = t_structure; }
 	    // then containers
@@ -61,10 +60,8 @@ module.exports = {
 	    // finally the controller
 	    else { var structure = Game.rooms.E58N3.controller; }
 
+	    console.log(creep + " -- removeharv - dropff - " + structure );
 	    var action_status = creep.transfer(structure, RESOURCE_ENERGY);
-
-	    //console.log("CT: " + structure);
-	    //console.log("CT: " + action_status);
 
 	    // if we're not close enough to xfer
             if (action_status == ERR_NOT_IN_RANGE) {
