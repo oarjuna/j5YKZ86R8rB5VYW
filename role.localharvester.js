@@ -41,15 +41,11 @@ module.exports = {
 				];
 
                	var src_count  = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester');
-		src_count =  src_count - 1;
-		var target_source = source_list[src_count];
-		creep.memory.destid = target_source;
-		//console.log(creep + " --- " + target_source);
 
 		var source = '579faa710700be0674d30fd7';
 		var target_source = Game.getObjectById(source);
 
-		if (creep.harvest(target_source) == ERR_NO_PATH	) {  
+		if (src_count == 4) {  
 			var source = '579faa710700be0674d30fd8'; 
 			target_source = Game.getObjectById(source);
 		}
