@@ -163,7 +163,7 @@ module.exports.loop = function () {
 	else { var dest = '579faa710700be0674d30fd8'; } // south
         console.log("main -- spawning local_harvester -- " + dest);
 
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'local_harvester',dest);
+        //name = Game.spawns.Spawn1.createCustomCreep(energy, 'local_harvester',dest);
     }
     // if not enough remote harvesters
     else if (numberOfRemoteHarvesters < minimumNumberOfRemoteHarvesters) {
