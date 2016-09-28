@@ -40,26 +40,29 @@ module.exports = {
                                 '579faa710700be0674d30fd8' // south
 				];
 
-                	var src_count  = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester');
-			src_count =  src_count - 1;
-			var target_source = source_list[src_count];
-			creep.memory.destid = target_source;
-			//console.log(creep + " --- " + target_source);
-		//
-		//
-		var xsource = creep.pos.findClosestByRange(FIND_SOURCES);
+               	var src_count  = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester');
+		src_count =  src_count - 1;
+		var target_source = source_list[src_count];
+		creep.memory.destid = target_source;
+		//console.log(creep + " --- " + target_source);
+
 		var source = '579faa710700be0674d30fd7';
-		console.log(creep + " --- " + xsource);
 		var target_source = Game.getObjectById(source);
 
-            // try to harvest energy, if the source is not in range
-            if (creep.harvest(target_source) == ERR_NOT_IN_RANGE) {
-                // move towards the source
-                creep.moveTo(target_source);
-            }
-	    else {
-		    console.log(creep + " ttt " + creep.moveTo(target_source));
-	    }		    
-        }
+		if (creep.harvest(target_source) == ERR_NO_PATH	) {  
+			var source = '579faa710700be0674d30fd8'; 
+			target_source = Game.getObjectById(source);
+		}
+		
+
+            	// try to harvest energy, if the source is not in range
+            	if (creep.harvest(target_source) == ERR_NOT_IN_RANGE) {
+                	// move towards the source
+                	creep.moveTo(target_source);
+            	}
+	    	else {
+		    	console.log(creep + " ttt " + creep.moveTo(target_source));
+	    	}		    
+       	}
     }
 };
