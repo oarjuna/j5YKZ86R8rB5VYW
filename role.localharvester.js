@@ -40,20 +40,15 @@ module.exports = {
                                 '579faa710700be0674d30fd8' // south
 				];
 
-		if (creep.memory.destid != undefined) {
-			var source = creep.memory.destid;
-		}	
-		else {
                 	var src_count  = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester');
 			src_count =  src_count - 1;
 			var target_source = source_list[src_count];
 			creep.memory.destid = target_source;
 			console.log(creep + " --- " + creep.memory.destid);
 			console.log(creep + " --- " + target_source);
-		}
 		//
 		//
-		//var source = '579faa710700be0674d30fd7';
+		var source = '579faa710700be0674d30fd7';
 		var target_source = Game.getObjectById(source);
 
             // try to harvest energy, if the source is not in range
