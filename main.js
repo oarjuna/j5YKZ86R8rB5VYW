@@ -150,7 +150,7 @@ module.exports.loop = function () {
     // if not enough wallRepairers
     else if (numberOfWallRepairers < minimumNumberOfWallRepairers) {
         // try to spawn one
-        console.log("main -- wall repairer");
+        console.log("main -- spawning wall repairer");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'wallRepairer');
     }
     // if not enough local harvesters
@@ -164,10 +164,6 @@ module.exports.loop = function () {
         // try to spawn one
         console.log("main -- spawning remote_harvester");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'remote_harvester');
-    }
-    else {
-        // else try to spawn a builder
-        //name = Game.spawns.Spawn1.createCustomCreep(energy, 'builder');
     }
 
 };
