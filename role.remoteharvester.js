@@ -46,13 +46,12 @@ module.exports = {
 	    // take the first one off the list
 	    var t_structure = t_structures[0];
 
-	    // get a list of containers that need energy
-	    var c_structures = room.find(FIND_STRUCTURES, {
-		    	filter: (i) => i.structureType == STRUCTURE_CONTAINER &&
-		    		       i.store[RESOURCE_ENERGY] < 2000
-	    });
-	    // take the first one off the list
-	    var c_structure = c_structures[0];
+               // find closest container with energy
+                var c_structure = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+                filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
+                               s.store[RESOURCE_ENERGY] > 1750
+
+
 
 	    // check towers in need first
 	    if (t_structure != undefined) { var structure = t_structure; }
