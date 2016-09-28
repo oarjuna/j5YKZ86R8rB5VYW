@@ -53,7 +53,7 @@ module.exports = {
 		}
 		//
 		//
-		var source = '579faa710700be0674d30fd7';
+		//var source = '579faa710700be0674d30fd7';
 		var target_source = Game.getObjectById(source);
 
             // try to harvest energy, if the source is not in range
