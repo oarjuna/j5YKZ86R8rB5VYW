@@ -49,14 +49,17 @@ module.exports = {
 		//
 		var xsource = creep.pos.findClosestByRange(FIND_SOURCES);
 		var source = '579faa710700be0674d30fd7';
+		console.log(creep + " --- " + xsource);
 		var target_source = Game.getObjectById(source);
-			console.log(creep + " --- " + xsource);
 
             // try to harvest energy, if the source is not in range
             if (creep.harvest(target_source) == ERR_NOT_IN_RANGE) {
                 // move towards the source
                 creep.moveTo(target_source);
             }
+	    else {
+		    console.log(creep + " ttt " + creep.harvest(target_source));
+	    }		    
         }
     }
 };
