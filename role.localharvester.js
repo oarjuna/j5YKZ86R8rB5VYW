@@ -49,6 +49,7 @@ module.exports = {
 			var source = source_list[src_count];
 			creep.memory.destid = target_source;
 			console.log(creep + " --- " + creep.memory.destid);
+			console.log(creep + " --- " + target_source.destid);
 		}
 		//
 		//
