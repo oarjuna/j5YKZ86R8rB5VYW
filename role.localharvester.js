@@ -16,33 +16,23 @@ module.exports = {
             creep.memory.working = true;
         }
 
-        // if creep is supposed to complete a constructionSite
         if (creep.memory.working == true) {
 
 	    var container_id = '57e9bb84c345ba440e136382'; // north container
 
-	    	// assign a container from the array, based on your local_harvester #
-		// ie -- harv0 gets array slot 0
-		var containers =[
-		    		'57e9bb84c345ba440e136382',
-		    		'57e9bb84c345ba440e136382',
-				'57e9bb84c345ba440e136382'
-				];
-		var lhcount  = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester');
-		var lhcount = lhcount - 1;
-		var target_source = Game.getObjectById(containers[lhcount]);
-		console.log(creep + " --  dropoff container " + target_source);
+                // find closest container with energy
+                var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+                filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
+                               s.store[RESOURCE_ENERGY] > 0
+                });
 
-				
-            var container = Game.getObjectById(container_id);
-            // if one is found
-            if (container != undefined) {
-                // try to build, if the container is not in range
-                if (creep.transfer(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                    // move towards the container
-                    creep.moveTo(container);
+                // try to transfer energy, if the container is not in range
+                if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                        // move towards the container
+                        creep.moveTo(container);
                 }
-            }
+
+		console.log(creep + " --  dropoff container " + target_source);
         }
         // if creep is supposed to harvest energy from source
         else {
