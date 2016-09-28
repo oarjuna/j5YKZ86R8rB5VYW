@@ -48,7 +48,7 @@ module.exports = {
         else {
             // find closest source
 	    var source_id = '579faa710700be0674d30fd7'; // north source
-            var source = Game.getObjectById(source_id);
+            //var source = Game.getObjectById(source_id);
 
                 // assign a source from the array, based on your local_harvester #
                 // ie -- harv0 gets array slot 0
@@ -59,8 +59,8 @@ module.exports = {
                                 ];
                 var srccount  = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester');
                 var srccount = srccount - 1;
-                var target_source = Game.getObjectById(source_list[srccount]);
-                console.log(creep + " --  local harv - source " + target_source);
+                var source = Game.getObjectById(source_list[srccount]);
+                console.log(creep + " --  local harv - source " + source);
 
 
             // try to harvest energy, if the source is not in range
