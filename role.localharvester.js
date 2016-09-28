@@ -34,7 +34,7 @@ module.exports = {
         else {
                 // assign a source from the array, based on your local_harvester #
                 // ie -- harv0 gets array slot 0
-		var source_list [
+		var source_list = [
                                 '579faa710700be0674d30fd7', // north
                                 '579faa710700be0674d30fd7', // north
                                 '579faa710700be0674d30fd8' // south
