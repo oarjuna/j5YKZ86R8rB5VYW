@@ -39,7 +39,7 @@ module.exports = {
                 var source_list =[
                                 '579faa710700be0674d30fd7', // north
                                 '579faa710700be0674d30fd7', // north
-                                '579faa710700be0674d30fd8' // south
+                                '579faa710700be0674d30fd7' // south
                                 ];
                 var srccount  = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester');
                 var srccount = srccount - 1;
