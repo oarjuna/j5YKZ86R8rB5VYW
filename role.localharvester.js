@@ -20,6 +20,15 @@ module.exports = {
         if (creep.memory.working == true) {
             // find closest constructionSite
 	    var container_id = '57e9bb84c345ba440e136382'; // north container
+		var containers =[
+		    		'57e9bb84c345ba440e136382',
+		    		'57e9bb84c345ba440e136382',
+				'57e9bb84c345ba440e136382',
+				'57e9bb84c345ba440e136382'
+				];
+		var  = _.sum(Game.creeps, (c) => c.memory.role == 'claimer');
+
+				
             var container = Game.getObjectById(container_id);
             // if one is found
             if (container != undefined) {
