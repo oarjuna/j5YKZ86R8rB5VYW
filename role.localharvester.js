@@ -18,13 +18,16 @@ module.exports = {
 
         // if creep is supposed to complete a constructionSite
         if (creep.memory.working == true) {
-            // find closest constructionSite
+
 	    var container_id = '57e9bb84c345ba440e136382'; // north container
+
+	    	// assign a container from the array, based on your local_harvester #
+		// ie -- harv0 gets array slot 0
 		var containers =[
 		    		'57e9bb84c345ba440e136382',
 		    		'57e9bb84c345ba440e136382',
 				'57e9bb84c345ba440e136382',
-				'57e9bb84c345ba440e136382'
+				'unknown'
 				];
 		var lhcount  = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester');
 		var lhcount = lhcount - 1;
