@@ -157,7 +157,7 @@ module.exports.loop = function () {
     else if (numberOfLocalHarvesters < minimumNumberOfLocalHarvesters) {
         // try to spawn one
         console.log("main -- spawning local_harvester");
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'local_harvester');
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'local_harvester','north');
     }
     // if not enough remote harvesters
     else if (numberOfRemoteHarvesters < minimumNumberOfRemoteHarvesters) {
