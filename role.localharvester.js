@@ -50,7 +50,7 @@ module.exports = {
 		var xsource = creep.pos.findClosestByRange(FIND_SOURCES);
 		var source = '579faa710700be0674d30fd7';
 		var target_source = Game.getObjectById(source);
-			console.log(creep + " --- " + source);
+			console.log(creep + " --- " + xsource);
 
             // try to harvest energy, if the source is not in range
             if (creep.harvest(target_source) == ERR_NOT_IN_RANGE) {
