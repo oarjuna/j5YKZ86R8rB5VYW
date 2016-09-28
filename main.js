@@ -155,7 +155,10 @@ module.exports.loop = function () {
     }
     // if not enough local harvesters
     else if (numberOfLocalHarvesters < minimumNumberOfLocalHarvesters) {
-	var lh_tmp = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester');
+	var lh_tmp = _.sum(Game.creeps, 
+			(c) => c.memory.role == 'local_harvester' &&
+				c.memory.destid == '579faa710700be0674d30fd7'
+			);
 	if ( lh_tmp < 3 ) { var dest = '579faa710700be0674d30fd7'; } // north 
 	else { var dest = '579faa710700be0674d30fd8'; } // south
         console.log("main -- spawning local_harvester -- " + dest + " -- " + lh_tmp);
