@@ -47,6 +47,7 @@ module.exports = {
                 	var src_count  = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester');
 			src_count =  src_count - 1;
 			var source = source_list[src_count];
+			creep.memory.destid = target_source;
 		}
 		//
 		//
