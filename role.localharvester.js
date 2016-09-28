@@ -34,16 +34,12 @@ module.exports = {
         }
         // if creep is supposed to harvest energy from source
         else {
-            // find closest source
-	    //var source_id = '579faa710700be0674d30fd7'; // north source
-            //var source = Game.getObjectById(source_id);
-
                 // assign a source from the array, based on your local_harvester #
                 // ie -- harv0 gets array slot 0
                 var source_list =[
                                 '579faa710700be0674d30fd7', // north
                                 '579faa710700be0674d30fd7', // north
-                                '579faa710700be0674d30fd7' // south
+                                '579faa710700be0674d30fd8' // south
                                 ];
                 var srccount  = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester');
                 var srccount = srccount - 1;
