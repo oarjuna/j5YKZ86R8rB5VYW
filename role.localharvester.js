@@ -51,13 +51,14 @@ module.exports = {
 		}*/
 		
 
+		console.log(creep + " ttt " + creep.memory.destid);
             	// try to harvest energy, if the source is not in range
             	if (creep.harvest(target_source) == ERR_NOT_IN_RANGE) {
                 	// move towards the source
                 	creep.moveTo(target_source);
             	}
 	    	else {
-		    	console.log(creep + " ttt " + creep.moveTo(target_source));
+		//    	console.log(creep + " ttt " + creep.moveTo(target_source));
 	    	}		    
        	}
     }
