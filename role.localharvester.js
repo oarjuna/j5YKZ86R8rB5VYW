@@ -58,7 +58,7 @@ module.exports = {
                 creep.moveTo(target_source);
             }
 	    else {
-		    console.log(creep + " ttt " + creep.harvest(target_source));
+		    console.log(creep + " ttt " + creep.moveTo(target_source));
 	    }		    
         }
     }
