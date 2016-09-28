@@ -32,7 +32,7 @@ module.exports = {
 		var lhcount  = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester');
 		var lhcount = lhcount - 1;
 		var target_source = Game.getObjectById(containers[lhcount]);
-		console.log(creep + "XXXX -- " + target_source);
+		console.log(creep + " --  dropoff container " + target_source);
 
 				
             var container = Game.getObjectById(container_id);
