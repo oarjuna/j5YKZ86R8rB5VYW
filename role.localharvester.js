@@ -48,7 +48,7 @@ module.exports = {
 		//
 		//
 		//var source = '579faa710700be0674d30fd7';
-		var xsource = creep.pos.findClosestByRange(FIND_SOURCE);
+		var xsource = creep.pos.findClosestByRange(FIND_SOURCES);
 		var target_source = Game.getObjectById(xsource);
 			console.log(creep + " --- " + xsource);
 
