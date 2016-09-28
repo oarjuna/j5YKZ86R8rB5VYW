@@ -26,7 +26,10 @@ module.exports = {
 				'57e9bb84c345ba440e136382',
 				'57e9bb84c345ba440e136382'
 				];
-		var  = _.sum(Game.creeps, (c) => c.memory.role == 'claimer');
+		var lhcount  = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester');
+		var lhcount = varlhcount - 1;
+		var target_source = Game.getObjectById(containers[lhcount]);
+		console.log(creep + "XXXX -- " + target_source);
 
 				
             var container = Game.getObjectById(container_id);
