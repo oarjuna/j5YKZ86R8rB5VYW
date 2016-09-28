@@ -16,7 +16,6 @@ module.exports = {
         }
 
         if (creep.memory.working == true) {
-
                 // find closest container with energy
                 var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
                 filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
@@ -35,17 +34,13 @@ module.exports = {
         else {
                 // assign a source from the array, based on your local_harvester #
                 // ie -- harv0 gets array slot 0
-                var source_list =[
-                                '579faa710700be0674d30fd7', // north
-                                '579faa710700be0674d30fd7', // north
-                                '579faa710700be0674d30fd7' // south
-                                ];
+                //                '579faa710700be0674d30fd7', // north
+               //                 '579faa710700be0674d30fd7', // north
+                //                '579faa710700be0674d30fd7' // south
                 var srccount  = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester');
-                var srccount = srccount - 1;
-                var source = Game.getObjectById(source_list[srccount]);
-                console.log(creep + " --  local harv - source " + source);
 
 
+		var source = '579faa710700be0674d30fd7';
             // try to harvest energy, if the source is not in range
             if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
                 // move towards the source
