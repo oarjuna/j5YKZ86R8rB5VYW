@@ -161,7 +161,7 @@ module.exports.loop = function () {
 	if ( lh_tmp < 0 ) { lh_tmp = 0; }
 	if ( lh_tmp <= 2 ) { var dest = '579faa710700be0674d30fd7'; } // north 
 	else { var dest = '579faa710700be0674d30fd8'; } // south
-        console.log("main -- spawning local_harvester -- " + dest);
+        console.log("main -- spawning local_harvester -- " + lh_tmp);
 
         //name = Game.spawns.Spawn1.createCustomCreep(energy, 'local_harvester',dest);
     }
