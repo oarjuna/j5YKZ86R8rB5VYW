@@ -44,16 +44,19 @@ module.exports = {
                 roleBuilder.run(creep);
             }
         }
-        // if creep is supposed to harvest energy from source
         else {
-            // find closest source
-            var source = creep.pos.findClosestByPath(FIND_SOURCES);
-            // try to harvest energy, if the source is not in range
-            if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
-                // move towards the source
-	    	//console.log(creep + " -- repairer -- moving to source")
-                creep.moveTo(source);
-            }
+               // find closest container with energy
+                var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+                filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
+                               s.store[RESOURCE_ENERGY] > 0
+                });
+
+                // try to transfer energy, if the container is not in range
+                if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                        // move towards the container
+                        creep.moveTo(container);
+                }
+
         }
     }
 };
