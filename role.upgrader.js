@@ -17,9 +17,8 @@ module.exports = {
         }
 
         if (creep.memory.working == true) {
-            // try to upgrade the controller
+            // upgrade the controller
             if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
-                // if not in range, move towards the controller
                 creep.moveTo(creep.room.controller);
             }
         }
@@ -31,9 +30,9 @@ module.exports = {
                                s.store[RESOURCE_ENERGY] > 250
                 });
 
-                // try to transfer energy, if the container is not in range
+		console.log(creep + " -- upgrader --pickup -- " + container );
+
                 if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                        // move towards the container
                         creep.moveTo(container);
                 }
  
