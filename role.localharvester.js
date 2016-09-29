@@ -25,10 +25,10 @@ module.exports = {
 
 		console.log(creep + " --  dropoff container " + container);
                 // try to transfer energy, if the container is not in range
-                if (creep.transfer(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                /*if (creep.transfer(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                         // move towards the container
                         creep.moveTo(container);
-                }
+                }*/
 
         }
         // if creep is supposed to harvest energy from source
