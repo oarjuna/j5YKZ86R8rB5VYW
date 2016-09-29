@@ -33,8 +33,9 @@ module.exports = {
 		creep.say("sp-drop");
             }
 	    else {
-		creep.say("c-drop");
-		var structure = creep.room.controller;
+		creep.say("st-drop");
+		var structure = Game.getObjectById('57eb41b15c1de9d60a49f613');
+		//var structure = creep.room.controller;
 	    }
 
             if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
