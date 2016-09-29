@@ -35,6 +35,7 @@ module.exports = {
 	    else {
 		creep.say("st-drop");
 		var structure = Game.getObjectById('57eb41b15c1de9d60a49f613');
+		console.log(creep + " -- harv -- storage -- " + structure );
 		//var structure = creep.room.controller;
 	    }
 
