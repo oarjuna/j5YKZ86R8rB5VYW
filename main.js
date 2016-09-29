@@ -123,6 +123,18 @@ module.exports.loop = function () {
         }
     }
 
+   // if not enough local harvesters
+    else if (numberOfLocalHarvesters < minimumNumberOfLocalHarvesters) {
+        var lh_tmp = _.sum(Game.creeps,
+                        (c) => c.memory.role == 'local_harvester' &&
+                                c.memory.destid == '579faa710700be0674d30fd7'
+                        );
+        if ( lh_tmp < 3 ) { var dest = '579faa710700be0674d30fd7'; } // north
+        else { var dest = '579faa710700be0674d30fd8'; } // south
+        console.log("main -- spawning local_harvester -- " + dest + " -- " + lh_tmp);
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'local_harvester',dest);
+    }
+
     // if not enough upgraders
     else if (numberOfUpgraders < minimumNumberOfUpgraders) {
         // try to spawn one
@@ -152,17 +164,6 @@ module.exports.loop = function () {
         // try to spawn one
         console.log("main -- spawning wall repairer");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'wallRepairer');
-    }
-    // if not enough local harvesters
-    else if (numberOfLocalHarvesters < minimumNumberOfLocalHarvesters) {
-	var lh_tmp = _.sum(Game.creeps, 
-			(c) => c.memory.role == 'local_harvester' &&
-				c.memory.destid == '579faa710700be0674d30fd7'
-			);
-	if ( lh_tmp < 3 ) { var dest = '579faa710700be0674d30fd7'; } // north 
-	else { var dest = '579faa710700be0674d30fd8'; } // south
-        console.log("main -- spawning local_harvester -- " + dest + " -- " + lh_tmp);
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'local_harvester',dest);
     }
     // if not enough remote harvesters
     else if (numberOfRemoteHarvesters < minimumNumberOfRemoteHarvesters) {
