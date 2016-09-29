@@ -36,7 +36,7 @@ module.exports = {
 		//var source = '579faa710700be0674d30fd7';
 		var target_source = Game.getObjectById(source);
 
-		console.log(creep + " ttt " + creep.memory.destid);
+		//console.log(creep + " ttt " + creep.memory.destid);
             	// try to harvest energy, if the source is not in range
             	if (creep.harvest(target_source) == ERR_NOT_IN_RANGE) {
                 	// move towards the source
