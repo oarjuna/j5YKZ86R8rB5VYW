@@ -1,30 +1,19 @@
 var roleBuilder = require('role.builder');
 
 module.exports = {
-    // a function to run the logic for this role
     run: function(creep) {
-        // if creep is trying to repair something but has no energy left
         if (creep.memory.working == true && creep.carry.energy == 0) {
-            // switch state
 	    console.log(creep + " -- repairer -- out of energy")
             creep.memory.working = false;
         }
-        // if creep is harvesting energy but is full
         else if (creep.memory.working == false && creep.carry.energy == creep.carryCapacity) {
-            // switch state
 	    console.log(creep + " -- repairer -- full of energy")
             creep.memory.working = true;
         }
 
-        // if creep is supposed to repair something
+        // find someting to repair
         if (creep.memory.working == true) {
-            // find closest structure with less than max hits
-            // Exclude walls because they have way too many max hits and would keep
-            // our repairers busy forever. We have to find a solution for that later.
             var structure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
-                // the second argument for findClosestByPath is an object which takes
-                // a property called filter which can be a function
-                // we use the arrow operator to define it
                 filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
             });
 
@@ -33,12 +22,9 @@ module.exports = {
                 // try to repair it, if it is out of range
 		creep.say("repair");
                 if (creep.repair(structure) == ERR_NOT_IN_RANGE) {
-                    // move towards it
-	    	    //console.log(creep + " -- repairer -- moving to target")
                     creep.moveTo(structure);
                 }
             }
-            // if we can't fine one
             else {
                 // look for construction sites
                 roleBuilder.run(creep);
@@ -47,17 +33,16 @@ module.exports = {
         else {
                // find closest container with energy
                 var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-                filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
-                                //s.structureType==STRUCTURE_STORAGE &&
-                               s.store[RESOURCE_ENERGY] > 100
+                filter: (s) => ( s.structureType==STRUCTURE_CONTAINER ||
+                                s.structureType==STRUCTURE_STORAGE ) &&
+                               s.store[RESOURCE_ENERGY] > 250
                 });
 
-                // try to transfer energy, if the container is not in range
+                console.log(creep + " -- repairer --pickup -- " + container );
+
                 if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                        // move towards the container
                         creep.moveTo(container);
                 }
-
         }
     }
 };
