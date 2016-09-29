@@ -49,7 +49,7 @@ module.exports = {
                // find closest container with energy
                 var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
                 filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
-                               s.store[RESOURCE_ENERGY] > 0
+                               s.store[RESOURCE_ENERGY] > 500
                 });
 
                 // try to transfer energy, if the container is not in range
