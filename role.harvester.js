@@ -18,14 +18,12 @@ module.exports = {
         if (creep.memory.working == true) {
             // find closest spawn, extension or tower which is not full
             var structure = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
-                // the second argument for findClosestByPath is an object which takes
-                // a property called filter which can be a function
-                // we use the arrow operator to define it
                filter: (s) => (s.structureType == STRUCTURE_SPAWN
                          || s.structureType == STRUCTURE_EXTENSION
                          || s.structureType == STRUCTURE_TOWER)
                              && s.energy < s.energyCapacity
             });
+
 
             // if we found one
             if (structure != undefined) {
@@ -34,9 +32,9 @@ module.exports = {
             }
 	    else {
 		creep.say("st-drop");
-		var structure = Game.getObjectById('57eb41b15c1de9d60a49f613');
-		console.log(creep + " -- harv -- storage -- " + structure );
 		//var structure = creep.room.controller;
+	    	var structure = creep.room.storage;
+		console.log(creep + " -- harv -- storage -- " + structure );
 	    }
 
             if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
