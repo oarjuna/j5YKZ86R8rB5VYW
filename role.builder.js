@@ -35,11 +35,11 @@ module.exports = {
 		// if you  can find energy laying around //
 		var energy = creep.pos.findInRange(FIND_DROPPED_ENERGY);
                 if (creep.pickup(energy) == ERR_NOT_IN_RANGE) {
+			console.log(creep + " -- dropped energy " + energy);
 			creep.say("drop-pick");
                         creep.moveTo(energy);
                 }
 
-		console.log(creep + " -- dropped energy " + energy);
 	}
             else {
                 // go upgrading the controller
