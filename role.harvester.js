@@ -34,21 +34,20 @@ module.exports = {
 		creep.say("st-drop");
 		//var structure = creep.room.controller;
 	    	var structure = creep.room.storage;
-		console.log(creep + " -- harv -- storage -- " + structure );
 	    }
 
             if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 // move towards it
-                //console.log(creep + " -- harvester -- moving to drop off");
+		console.log(creep + " -- harv -- storage -- " + structure );
             	creep.moveTo(structure);
             }
 
         }
-        // if creep is supposed to harvest energy from source
         else {
                // find closest container with energy
                 var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-                filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
+                filter: (s) => ( s.structureType==STRUCTURE_CONTAINER || 
+				s.structureType=STRUCTURE_STORAGE ) &&
                                s.store[RESOURCE_ENERGY] > 500
                 });
 
