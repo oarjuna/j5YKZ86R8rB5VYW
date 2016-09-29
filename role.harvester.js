@@ -47,7 +47,8 @@ module.exports = {
                // find closest container with energy
                 var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
 		//filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
-                filter: (s) => s.structureType==STRUCTURE_STORAGE &&
+                filter: (s) => ( s.structureType==STRUCTURE_STORAGE ||
+				 s.structureType==STRUCTURE_CONTAINER ) &&
                                s.store[RESOURCE_ENERGY] > 500
 	       });
 		console.log(creep + " -- harv --pickup -- " + structure );
