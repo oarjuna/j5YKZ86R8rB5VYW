@@ -30,10 +30,10 @@ module.exports = {
             // if we found one
             if (structure != undefined) {
                 // try to transfer energy, if it is not in range
-		//creep.say("sp-drop");
+		creep.say("sp-drop");
             }
 	    else {
-		//creep.say("c-drop");
+		creep.say("c-drop");
 		var structure = creep.room.controller;
 	    }
 
