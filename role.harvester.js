@@ -51,7 +51,7 @@ module.exports = {
 				 s.structureType==STRUCTURE_CONTAINER ) &&
                                s.store[RESOURCE_ENERGY] > 500
 	       });
-		console.log(creep + " -- harv --pickup -- " + structure );
+		console.log(creep + " -- harv --pickup -- " + container );
 
                 // try to transfer energy, if the container is not in range
                 if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
