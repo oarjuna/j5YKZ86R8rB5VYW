@@ -31,6 +31,12 @@ module.exports = {
                     creep.moveTo(constructionSite);
                 }
             }
+	else if ( creep.pos.findInRange(FIND_DROPPED_ENERGY)  ) {
+		//  can find energy laying around //
+		//
+		var energy = creep.pos.findInRange(FIND_DROPPED_ENERGY);
+		console.log(creep + " -- dropped energy " + energy);
+	}
             else {
                 // go upgrading the controller
                 roleUpgrader.run(creep);
