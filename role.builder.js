@@ -32,8 +32,12 @@ module.exports = {
                 }
             }
 	else if ( creep.pos.findInRange(FIND_DROPPED_ENERGY)  ) {
-		//  can find energy laying around //
+		// if you  can find energy laying around //
 		var energy = creep.pos.findInRange(FIND_DROPPED_ENERGY);
+                if (creep.pickup(energy) == ERR_NOT_IN_RANGE) {
+                        creep.moveTo(energy);
+                }
+
 		console.log(creep + " -- dropped energy " + energy);
 	}
             else {
