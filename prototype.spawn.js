@@ -68,9 +68,6 @@ module.exports = function() {
                         CARRY, CARRY, CARRY, CARRY, CARRY, CARRY  // 300
                 ] // 550
         }
-
-
-
         else {
                 var body = [
                         WORK, WORK, WORK, WORK, // 400
