@@ -164,8 +164,8 @@ module.exports.loop = function () {
                         (c) => c.memory.role == 'energy_mover' &&
                                 c.memory.destid == '579faa710700be0674d30fd7'
                         );
-        if ( em_tmp < 1 ) { var dest = '57eb41b15c1de9d60a49f613'; } // storage
-        else { var dest = '579faa710700be0674d30fd9'; } // controller
+        if ( em_tmp < 1 ) { var dest = '57e7235e6b66411171b7f0f8'; } // storage
+        else { var dest = '57e6b5c1135326b41e54835e'; } // controller
         console.log("main -- spawning energy_mover -- " + dest + " -- " + em_tmp);
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'energy_mover',dest);
     }

@@ -28,7 +28,7 @@ module.exports = {
                                         	structureType: STRUCTURE_STORAGE 
                                 	}})[0];
 		
-               	var controller = creep.pos.findInRange(FIND_MY_STRUCTURES, 2,
+	               	var controller = creep.pos.findInRange(FIND_MY_STRUCTURES, 2,
                                 	{filter: {
                                         	structureType: STRUCTURE_CONTROLLER
                                 	}})[0];
