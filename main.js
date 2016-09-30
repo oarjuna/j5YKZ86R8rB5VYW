@@ -78,7 +78,7 @@ module.exports.loop = function () {
             tower.attack(target);
         }
 	else if (repair_target != undefined ) {
-		console.log(tower + " -- repairing " + repair_target);
+	//	console.log(tower + " -- repairing " + repair_target);
 		tower.repair(repair_target);
 	}	
     }
