@@ -1,3 +1,4 @@
+var shared  = require('func.shared');
 var roleUpgrader = require('role.upgrader');
 
 module.exports = {
@@ -16,17 +17,13 @@ module.exports = {
             creep.memory.working = true;
         }
 
-        // if creep is supposed to complete a constructionSite
+        // complete a constructionSite
         if (creep.memory.working == true) {
             // find closest constructionSite
             var constructionSite = creep.pos.findClosestByPath(FIND_CONSTRUCTION_SITES);
-            // if one is found
-	    //var constructionSite = Game.getObjectById('57e9bf6830c9d8c674855b40');
 
             if (constructionSite != undefined) {
-                // try to build, if the constructionSite is not in range
                 if (creep.build(constructionSite) == ERR_NOT_IN_RANGE) {
-                    // move towards the constructionSite
 		    creep.say("build");
                     creep.moveTo(constructionSite);
                 }
@@ -50,20 +47,9 @@ module.exports = {
                 roleUpgrader.run(creep);
             }
         }
-        // need energy?
         else {
-		// find closest container with energy 
-		var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-		filter: (s) => ( s.structureType==STRUCTURE_CONTAINER || 
-                                s.structureType==STRUCTURE_STORAGE ) &&
-			       s.store[RESOURCE_ENERGY] > 250
-    		});
-
-            	// try to transfer energy, if the container is not in range
-            	if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                	// move towards the container
-                	creep.moveTo(container);
-            	}
+               // find closest container with energy and fill up
+		shared.pickupEnergy(creep);
         }
     }
 };
