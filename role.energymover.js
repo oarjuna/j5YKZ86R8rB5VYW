@@ -33,7 +33,8 @@ module.exports = {
                                         	structureType: STRUCTURE_CONTROLLER
                                 	}})[0];
 	
-			console.log(creep + " CL: " + closelink + " FL: " + farlink + " ST: " + storage + " CT: " + controller);
+			console.log(creep + " CL: " + closelink + " FL: " + farlink + 
+				" ST: " + storage + " CT: " + controller);
 	
 			if ( controller != undefined ) {
 				// load up on energy
@@ -44,7 +45,7 @@ module.exports = {
                 		console.log(creep + " mover xfer: " + closelink + " ct: "
 				 	+ controller + " status: " + status);
 			}		
-			elsif ( storage != undefined ) { 
+			else if ( storage != undefined ) { 
 				// load up on energy
 				status = creep.withdraw(storage, RESOURCE_ENERGY);
 				// xfer to the far link
