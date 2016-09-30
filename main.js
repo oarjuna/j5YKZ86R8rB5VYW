@@ -106,6 +106,7 @@ module.exports.loop = function () {
     var status5 = " WR: " + numberOfWallRepairers + "/" + minimumNumberOfWallRepairers;
     var status6 = " C: " + numberOfClaimers + "/" + minimumNumberOfClaimers;
     var status7 = " LH: " + numberOfLocalHarvesters + "/" + minimumNumberOfLocalHarvesters;
+    var room = Game.spawns.Spawn1.room;
     var status8 = " UP: " + room.controller.progress + "/" + room.controller.progressTotalnumber;
 
     console.log("\n#------------------#");
