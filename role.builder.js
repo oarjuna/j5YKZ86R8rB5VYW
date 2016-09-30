@@ -20,8 +20,8 @@ module.exports = {
         // complete a constructionSite
         if (creep.memory.working == true) {
             // find closest constructionSite
-            //var constructionSite = creep.pos.findClosestByPath(FIND_CONSTRUCTION_SITES);
-           var constructionSite = Game.getObjectById("57ee747d1bc46fa650bf2aa9");
+            var constructionSite = creep.pos.findClosestByPath(FIND_CONSTRUCTION_SITES);
+           //var constructionSite = Game.getObjectById("57ee747d1bc46fa650bf2aa9");
 
             if (constructionSite != undefined) {
                 if (creep.build(constructionSite) == ERR_NOT_IN_RANGE) {
