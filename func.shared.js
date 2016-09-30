@@ -14,7 +14,7 @@ module.exports = {
                                s.store[RESOURCE_ENERGY] > 250
                 });
 
-                console.log(creep + " TEST --pickup -- " + container );
+//                console.log(creep + " TEST --pickup -- " + container );
 		creep.say("pickup");
 
                 if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
