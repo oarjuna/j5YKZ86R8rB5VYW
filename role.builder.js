@@ -31,7 +31,8 @@ module.exports = {
                     creep.moveTo(constructionSite);
                 }
             }
-	else if ( creep.pos.findClosestByRange(FIND_DROPPED_ENERGY)  ) {
+	else if ( false  ) {
+	//else if ( creep.pos.findClosestByRange(FIND_DROPPED_ENERGY)  ) {
 		// if you  can find energy laying around //
 		var energy = creep.pos.findClosestByRange(FIND_DROPPED_ENERGY);
                 if (creep.pickup(energy) == ERR_NOT_IN_RANGE) {
