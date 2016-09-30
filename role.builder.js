@@ -40,9 +40,9 @@ module.exports = {
                 }
 		else {
 			console.log(creep + " -- build - dropped energy " + creep.pickup(energy[0]));
+			console.log(creep + " -- dropped energy " + energy);
 		}	
 
-		console.log(creep + " -- dropped energy " + energy);
 	}
             else {
                 // go upgrading the controller
