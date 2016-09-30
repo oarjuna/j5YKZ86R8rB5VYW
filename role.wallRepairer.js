@@ -17,9 +17,9 @@ module.exports = {
         // if creep is supposed to repair something
         if (creep.memory.working == true) {
             // find all walls in the room
-            var walls = creep.room.find(FIND_STRUCTURES, {
+            /*var walls = creep.room.find(FIND_STRUCTURES, {
                 filter: (s) => s.structureType == STRUCTURE_WALL
-            });
+            });*/
 
             var target = undefined;
 
@@ -27,12 +27,6 @@ module.exports = {
             for (let percentage = 0.0001; percentage <= 1; percentage = percentage + 0.0001){
                 // find a wall with less than percentage hits
 
-                // for some reason this doesn't work
-                // target = creep.pos.findClosestByPath(walls, {
-                //     filter: (s) => s.hits / s.hitsMax < percentage
-                // });
-
-                // so we have to use this
                 target = creep.pos.findClosestByPath(FIND_STRUCTURES, {
                     filter: (s) => s.structureType == STRUCTURE_WALL &&
                                    s.hits / s.hitsMax < percentage
