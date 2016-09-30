@@ -5,8 +5,8 @@ module.exports = {
 
 		status = creep.moveTo(22,20);
 		if ( status ) { 
-			console.log(creep + " move status: " + status);
 			status = creep.moveTo(22,20);
+			console.log(creep + " move status: " + status);
 		}
 		else {
 			// find nearby link
