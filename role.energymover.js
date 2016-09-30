@@ -33,8 +33,7 @@ module.exports = {
                                         	structureType: STRUCTURE_CONTROLLER
                                 	}})[0];
 	
-			console.log(creep " CL: " + closelink + " FL: " + farlink +
-					" ST: " + storage + " CT: " + controller);
+			console.log(creep " CL: " + closelink + " FL: " + farlink + " ST: " + storage + " CT: " + controller);
 	
 			if ( controller != undefined ) {
 				// load up on energy
