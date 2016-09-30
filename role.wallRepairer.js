@@ -36,25 +36,13 @@ module.exports = {
                     creep.moveTo(target);
                 }
             }
-            // if we can't fine one
-            else {
-                // look for construction sites
-                roleBuilder.run(creep);
-            }
+            // if we can't fine one, become a builder
+            else {  roleBuilder.run(creep); }
         }
         else {
-               // find closest container with energy
-                var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-                filter: (s) => ( s.structureType==STRUCTURE_CONTAINER ||
-                                s.structureType==STRUCTURE_STORAGE ) &&
-                               s.store[RESOURCE_ENERGY] > 250
-                });
+               // find closest container with energy and fill up
+                shared.pickupEnergy(creep);
 
-                //console.log(creep + " -- wallrepair --pickup -- " + container );
-
-                if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                        creep.moveTo(container);
-                }
 
         }
     }
