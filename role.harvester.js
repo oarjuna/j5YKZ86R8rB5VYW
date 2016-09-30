@@ -37,7 +37,6 @@ module.exports = {
 
             if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 // move towards it
-		console.log(creep + " -- harv -- storage -- " + structure );
             	creep.moveTo(structure);
             }
 
