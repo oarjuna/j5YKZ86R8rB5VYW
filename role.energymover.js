@@ -16,19 +16,19 @@ module.exports = {
 					}})[0];
 	
 			// find the far away link
-			var farlink = Game.spawns.Spawn1.pos.findInRange(FIND_MY_STRUCTURES,
+			var farlink = creep.pos.findInRange(FIND_MY_STRUCTURES,
                                 	{filter: {
                                         	structureType: STRUCTURE_LINK
                                 	}})[1];
 	
 	
 			// find nearby xfer destinations ( controller. storage, other?)
-                	var storage = Game.spawns.Spawn1.pos.findInRange(FIND_MY_STRUCTURES, 5,
+                	var storage = creep.pos.findInRange(FIND_MY_STRUCTURES, 5,
                                 	{filter: {
                                         	structureType: STRUCTURE_STORAGE 
                                 	}})[0];
 		
-               	var controller = Game.spawns.Spawn1.pos.findInRange(FIND_MY_STRUCTURES, 2,
+               	var controller = creep.pos.findInRange(FIND_MY_STRUCTURES, 2,
                                 	{filter: {
                                         	structureType: STRUCTURE_CONTROLLER
                                 	}})[0];
