@@ -161,17 +161,17 @@ module.exports.loop = function () {
    // if not enough energy movers
     else if (numberOfEnergyMovers < minimumNumberOfEnergyMovers) {
         var st_num = _.sum(Game.creeps,
-                        (c) => c.memory.role == 'energy_mover' 
+                        (c) => c.memory.role == 'energy_mover'  &&
 				c.memory.destid == '57e7235e6b66411171b7f0f8'
                         );
 
 	var c1_num = _.sum(Game.creeps,
-                        (c) => c.memory.role == 'energy_mover'
+                        (c) => c.memory.role == 'energy_mover' &&
                                 c.memory.destid == '57e6b6f9bf7be6eb05caa521'
                         );
 
 	var c2_num =  = _.sum(Game.creeps,
-                        (c) => c.memory.role == 'energy_mover'
+                        (c) => c.memory.role == 'energy_mover' &&
                                 c.memory.destid == '57e6b5c1135326b41e54835e'
                         );
 
