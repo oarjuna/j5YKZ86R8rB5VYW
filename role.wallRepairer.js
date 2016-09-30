@@ -54,7 +54,7 @@ module.exports = {
                                s.store[RESOURCE_ENERGY] > 250
                 });
 
-                console.log(creep + " -- wallrepair --pickup -- " + container );
+                //console.log(creep + " -- wallrepair --pickup -- " + container );
 
                 if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                         creep.moveTo(container);
