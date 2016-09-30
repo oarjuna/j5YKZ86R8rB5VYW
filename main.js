@@ -59,6 +59,7 @@ module.exports.loop = function () {
 	}
     }
 
+    // Tower control
     var towers = Game.rooms.E58N3.find(FIND_STRUCTURES, {
         filter: (s) => s.structureType == STRUCTURE_TOWER
     });
@@ -67,12 +68,10 @@ module.exports.loop = function () {
 	var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
                 filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
         });
-	//console.log(tower + " -- reporting in ");
         if (target != undefined) {
 	    console.log(tower + " -- attacking " + target);
             tower.attack(target);
         }
-
 	else if (repair_target != undefined ) {
 		console.log(tower + " -- repairing " + repair_target);
 		tower.repair(repair_target);
