@@ -36,27 +36,13 @@ module.exports = {
         // assigned to transfer energy to a structure
         if (creep.memory.working == true) {
             
-	    var room = Game.spawns.Spawn1.room;
-
-	    // get a list of towers that need energy
-	    var t_structures = room.find(FIND_STRUCTURES, {
-		        filter: (i) => i.structureType == STRUCTURE_TOWER && 
-		                       i.energy < 1000
-	    });
-	    // take the first one off the list
-	    var t_structure = t_structures[0];
-
-               // find closest container without energy
-                var c_structure = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-                filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
-                               s.store[RESOURCE_ENERGY] < 1750
-		});
-
-
-	    // check towers in need first
-	    if (t_structure != undefined) { var structure = t_structure; }
-	    // then containers
-	    else if (c_structure != undefined) { var structure = c_structure; }
+	var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+                filter: (s) => ( s.structureType==STRUCTURE_CONTAINER ||
+                                s.structureType==STRUCTURE_STORAGE ) &&
+                               s.store[RESOURCE_ENERGY] > 250
+                });
+	
+	    (container != undefined) { var structure = container; }
 	    // finally the controller
 	    else { var structure = Game.rooms.E58N3.controller; }
 
