@@ -10,7 +10,7 @@ module.exports = {
 		}
 		else {
 			// find nearby link
-			var closelink = Game.spawns.Spawn1.pos.findInRange(FIND_MY_STRUCTURES, 2, 
+			var closelink = creep.pos.findInRange(FIND_MY_STRUCTURES, 2, 
 					{filter: {
 						structureType: STRUCTURE_LINK
 					}})[0];
