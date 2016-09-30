@@ -120,7 +120,8 @@ module.exports.loop = function () {
 	    	" lvl: " + room.controller.level;
 
     console.log("\n#------------------#");
-    console.log(status4 + status8 + " -- " + status1 + " " + status2 + " " + status3 + status5 + status6 + status7);
+    console.log( status8 + " -- " + status1 + " " + status2 + " " + status3 + status5 + status6 + status7);
+    //console.log(status4 + status8 + " -- " + status1 + " " + status2 + " " + status3 + status5 + status6 + status7);
 
     // if not enough harvesters
     if (numberOfHarvesters < minimumNumberOfHarvesters) {
