@@ -8,7 +8,7 @@ var roleBuilder = require('role.builder');
 var roleClaimer = require('role.claimer');
 var roleRepairer = require('role.repairer');
 var roleWallRepairer = require('role.wallRepairer');
-var roleEnergyMover = require('role.energyMover');
+var roleEnergyMover = require('role.energymover');
 
 module.exports.loop = function () {
     // check for memory entries of died creeps by iterating over Memory.creeps
@@ -35,7 +35,7 @@ module.exports.loop = function () {
         }
         // if creep is energy_mover
         if (creep.memory.role == 'energy_mover') {
-            roleenergyMover.run(creep);
+            roleEnergyMover.run(creep);
         }
 	
         // if creep is upgrader, call upgrader script
