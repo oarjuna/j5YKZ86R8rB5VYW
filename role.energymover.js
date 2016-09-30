@@ -49,7 +49,7 @@ module.exports = {
 				// load up on energy
 				status = creep.withdraw(storage, RESOURCE_ENERGY);
 				// xfer energy to the link
-				status2 = creep.transfer(nearlink, RESOURCE_ENERGY);
+				status2 = creep.transfer(closelink, RESOURCE_ENERGY);
 				// xfer to the far link
 				status = closelink.transferEnergy(farlink);
 				console.log(creep + " link xferstatus: " + status );
