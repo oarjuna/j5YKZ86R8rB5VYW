@@ -108,8 +108,8 @@ module.exports.loop = function () {
     var status2 = "R: " + numberOfRepairers + "/" + minimumNumberOfRepairers + " B: " + numberOfBuilders + "/" + minimumNumberOfBuilders;
     var status3 = "RH: " + numberOfRemoteHarvesters + "/" + minimumNumberOfRemoteHarvesters;
 
-    var energy = Game.spawns.Spawn1.room.energyCapacityAvailable;
-    var energyAvailable = Game.spawns.Spawn1.room.energyAvailable;
+    //var energy = Game.spawns.Spawn1.room.energyCapacityAvailable;
+    //var energyAvailable = Game.spawns.Spawn1.room.energyAvailable;
 
     var status4 = "E:  " + energyAvailable + "/" + energy;
     var status5 = " WR: " + numberOfWallRepairers + "/" + minimumNumberOfWallRepairers;
