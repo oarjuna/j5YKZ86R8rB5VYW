@@ -132,7 +132,7 @@ module.exports.loop = function () {
 
     console.log("\n#------------------#");
     console.log(status4 + status8 );
-    console.log( + status1 + " " + status2 + " " + status3 + status5 + status6 + status7);
+    console.log( status1 + " " + status2 + " " + status3 + status5 + status6 + status7);
 
     // if not enough harvesters
     if (numberOfHarvesters < minimumNumberOfHarvesters) {
