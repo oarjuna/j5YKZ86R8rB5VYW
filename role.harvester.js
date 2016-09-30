@@ -44,7 +44,18 @@ module.exports = {
         }
         else {
 		// find closest container with energy and fill up
-		shared.pickupEnergy(creep);
+                var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+                filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
+                               s.store[RESOURCE_ENERGY] > 250
+                });
+
+                console.log(creep + " harv --pickup -- " + container );
+                creep.say("pickup");
+
+                if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                        creep.moveTo(container);
+                }
+
         }
     }
 };
