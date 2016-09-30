@@ -40,7 +40,7 @@ module.exports = {
                         creep.moveTo(energy);
                 }
 		else {
-			console.log(creep + " -- dropped energy " + creep.pickup(energy));
+			console.log(creep + " -- lh - dropped energy " + creep.pickup(energy));
 		}	
 
 		console.log(creep + " -- dropped energy " + energy);
