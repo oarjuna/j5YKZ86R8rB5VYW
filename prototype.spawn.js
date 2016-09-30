@@ -6,7 +6,7 @@ module.exports = function() {
         if (roleName == 'harvester') {
 		var body = [
 			WORK, // 100
-                        WORK, WORK, MOVE, MOVE, // 100
+                        MOVE, MOVE, MOVE, MOVE, // 100
                      	CARRY, CARRY, CARRY, CARRY //100
 		] // 300
         }
