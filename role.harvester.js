@@ -1,3 +1,5 @@
+var shared  = require('func.shared');
+
 module.exports = {
     // a function to run the logic for this role
     run: function(creep) {
@@ -27,7 +29,6 @@ module.exports = {
 
             // if we found one
             if (structure != undefined) {
-                // try to transfer energy, if it is not in range
 		creep.say("sp-drop");
             }
 	    else {
@@ -42,23 +43,8 @@ module.exports = {
 
         }
         else {
-               // find closest container with energy
-                var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-		filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
-			//  working below!
-                //filter: (s) => ( s.structureType==STRUCTURE_STORAGE ||
-	//			 s.structureType==STRUCTURE_CONTAINER ) &&
-                               s.store[RESOURCE_ENERGY] > 500
-	       });
-		//console.log(creep + " -- harv --pickup -- " + container );
-
-                // try to transfer energy, if the container is not in range
-                if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                        // move towards the container
-                        creep.moveTo(container);
-                }
-
-
+		// find closest container with energy and fill up
+		shared.pickupEnergy(creep);
         }
     }
 };

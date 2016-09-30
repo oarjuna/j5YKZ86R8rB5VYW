@@ -5,6 +5,7 @@ module.exports = {
 	{
 		//console.log(creep + "TESTING SHARED FUNC " + foo);
                // find closest container with energy and fill up
+		//var shared  = require('func.shared');
   	       // shared.pickupEnergy(creep);
 
                 var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
