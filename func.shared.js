@@ -3,6 +3,6 @@ module.exports = {
 	// pickup energy from the closest container
 	pickupEnergy: function(creep, foo)
 	{
-		console.log(creep + "TESTING SHARED FUNC " + foo);
+		//console.log(creep + "TESTING SHARED FUNC " + foo);
 	}
 };
