@@ -35,7 +35,7 @@ module.exports.loop = function () {
         }
         // if creep is energy_mover
         if (creep.memory.role == 'energy_mover') {
-            roleEnergyMover.run(creep);
+            roleenergyMover.run(creep);
         }
 	
         // if creep is upgrader, call upgrader script
