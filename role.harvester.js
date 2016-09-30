@@ -44,6 +44,8 @@ module.exports = {
         }
         else {
 		// find closest container with energy and fill up
+		// can't pickup from the large storage as it's the final dropoff point
+		// and that makes them loop infinately at the storage
                 var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
                 filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
                                s.store[RESOURCE_ENERGY] > 250
