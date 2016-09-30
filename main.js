@@ -75,7 +75,7 @@ module.exports.loop = function () {
         });
 	if (repair_target != undefined ) {
 		console.log(tower + " -- repairing " + repair_target);
-		tower.repair(target);
+		tower.repair(repair_target);
 	}	
 
     }
