@@ -166,7 +166,7 @@ module.exports.loop = function () {
                         );
         if ( em_tmp < 1 ) { var dest = '57eb41b15c1de9d60a49f613'; } // storage
         else { var dest = '579faa710700be0674d30fd9'; } // controller
-        console.log("main -- spawning local_harvester -- " + dest + " -- " + em_tmp);
+        console.log("main -- spawning energy_mover -- " + dest + " -- " + em_tmp);
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'energy_mover',dest);
     }
 
