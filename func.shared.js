@@ -4,5 +4,5 @@ module.exports = {
 	pickupEnergy: function(foo)
 		{
 			console.log(creep + "TESTING SHARED FUNC" + foo);
-		};
+		}
 };
