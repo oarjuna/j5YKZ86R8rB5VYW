@@ -40,7 +40,7 @@ module.exports = {
 	   var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
                 filter: (s) => ( s.structureType==STRUCTURE_CONTAINER ||
                                 s.structureType==STRUCTURE_STORAGE ) &&
-                               s.store[RESOURCE_ENERGY] < s.storeCapacity;
+                               s.store[RESOURCE_ENERGY] < s.storeCapacity
                 });
 	    if (container != undefined) { var structure = container; }
 	    // finally the controller
