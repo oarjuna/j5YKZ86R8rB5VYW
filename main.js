@@ -69,6 +69,15 @@ module.exports.loop = function () {
 	    console.log(tower + " -- attacking " + target);
             tower.attack(target);
         }
+
+	var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
+                filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
+        });
+	if (repair_target !=undefine) {
+		console.log(tower + " -- repairing " + repair_target);
+		tower.repair(target);
+	}	
+
     }
 
     // setup some minimum numbers for different roles
@@ -107,7 +116,8 @@ module.exports.loop = function () {
     var status6 = " C: " + numberOfClaimers + "/" + minimumNumberOfClaimers;
     var status7 = " LH: " + numberOfLocalHarvesters + "/" + minimumNumberOfLocalHarvesters;
     var room = Game.spawns.Spawn1.room;
-    var status8 = " UP: " + room.controller.progress + "/" + room.controller.progressTotal + " lvl: " + room.controller.level;
+    var status8 = " UP: " + room.controller.progress + "/" + room.controller.progressTotal + 
+	    	" lvl: " + room.controller.level;
 
     console.log("\n#------------------#");
     console.log(status4 + status8 + " -- " + status1 + " " + status2 + " " + status3 + status5 + status6 + status7);

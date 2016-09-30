@@ -2,3 +2,8 @@
 103k at 6:35p
 115k at 12:34p
 125k at 3:40p
+
+
+-- remote harvesters should be able to build containers
+-- they can store their energy in the containers
+-- then harvests can go unload from the container
