@@ -175,9 +175,9 @@ module.exports.loop = function () {
                                 c.memory.destid == '57e6b5c1135326b41e54835e'
                         );
 
-        if ( st_tmp == 0 ) { var dest = '57e7235e6b66411171b7f0f8'; } // storage
-        else if ( c1_tmp == 0 ) { var dest = '57e6b6f9bf7be6eb05caa521'; } // controller #1
-        else if ( c2_tmp == 0 ){ var dest = '57e6b5c1135326b41e54835e'; } // controller  #2
+        if ( st_num == 0 ) { var dest = '57e7235e6b66411171b7f0f8'; } // storage
+        else if ( c1_num == 0 ) { var dest = '57e6b6f9bf7be6eb05caa521'; } // controller #1
+        else if ( c2_num == 0 ){ var dest = '57e6b5c1135326b41e54835e'; } // controller  #2
 	else {  var dest = '57e6530dfb8875006e762b5e'; } // controller #3
         console.log("main -- spawning energy_mover -- " + dest );
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'energy_mover',dest);
