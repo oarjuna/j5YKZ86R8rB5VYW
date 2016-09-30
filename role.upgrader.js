@@ -17,7 +17,9 @@ module.exports = {
             creep.memory.working = true;
             creep.memory.destid = null;
         }
-	creep.pickupEnergy;
+
+	creep.prototype.pickupEnergy;
+
         if (creep.memory.working == true) {
             // upgrade the controller
             if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
