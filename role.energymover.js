@@ -3,7 +3,7 @@ module.exports = {
     run: function(creep) {
 		// move to destinaton 
 
-		status = creep.moveTo("22","20");
+		status = creep.moveTo(22,20);
 		console.log(creep + " move status: " + status);
 		if ( status ) { 
 			status = creep.moveTo(22,20);
