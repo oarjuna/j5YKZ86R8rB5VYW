@@ -25,7 +25,7 @@ module.exports = {
             }
         }
         else {
-               // find closest container with energy
+               // find closest container with energy and fill up
 		shared.pickupEnergy(creep); 
         }
     }
