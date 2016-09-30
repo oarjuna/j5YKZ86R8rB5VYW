@@ -6,7 +6,7 @@ module.exports = {
 		var dest = Game.getObjectById(dest_id);
 		var status = creep.moveTo(dest.pos);
 		if ( status ) { 
-			status = creep.moveTo(22,20);
+			status = creep.moveTo(dest.pos);
 			console.log(creep + " move status: " + status);
 		}
 		else {
