@@ -1,4 +1,4 @@
-var sharedfunctions = require('func.shared');
+var shared  = require('func.shared');
 
 module.exports = {
     // a function to run the logic for this role
@@ -18,7 +18,7 @@ module.exports = {
             creep.memory.destid = null;
         }
 
-	//creep.pickupEnergy('100');
+	shared.pickupEnergy('100');
 
         if (creep.memory.working == true) {
             // upgrade the controller
