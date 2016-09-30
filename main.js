@@ -108,10 +108,10 @@ module.exports.loop = function () {
     var status2 = "R: " + numberOfRepairers + "/" + minimumNumberOfRepairers + " B: " + numberOfBuilders + "/" + minimumNumberOfBuilders;
     var status3 = "RH: " + numberOfRemoteHarvesters + "/" + minimumNumberOfRemoteHarvesters;
 
-    //var energy = Game.spawns.Spawn1.room.energyCapacityAvailable;
-    //var energyAvailable = Game.spawns.Spawn1.room.energyAvailable;
+    var energy = Game.spawns.Spawn1.room.energyCapacityAvailable;
+    var energyAvailable = Game.spawns.Spawn1.room.energyAvailable;
 
-    //var status4 = "E:  " + energyAvailable + "/" + energy;
+    var status4 = "E:  " + energyAvailable + "/" + energy;
     var status5 = " WR: " + numberOfWallRepairers + "/" + minimumNumberOfWallRepairers;
     var status6 = " C: " + numberOfClaimers + "/" + minimumNumberOfClaimers;
     var status7 = " LH: " + numberOfLocalHarvesters + "/" + minimumNumberOfLocalHarvesters;
@@ -120,8 +120,7 @@ module.exports.loop = function () {
 	    	" lvl: " + room.controller.level;
 
     console.log("\n#------------------#");
-    console.log( status8 + " -- " + status1 + " " + status2 + " " + status3 + status5 + status6 + status7);
-    //console.log(status4 + status8 + " -- " + status1 + " " + status2 + " " + status3 + status5 + status6 + status7);
+    console.log(status4 + status8 + " -- " + status1 + " " + status2 + " " + status3 + status5 + status6 + status7);
 
     // if not enough harvesters
     if (numberOfHarvesters < minimumNumberOfHarvesters) {
