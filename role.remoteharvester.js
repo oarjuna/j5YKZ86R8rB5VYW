@@ -42,7 +42,7 @@ module.exports = {
                                s.store[RESOURCE_ENERGY] > 250
                 });
 	
-	    (container != undefined) { var structure = container; }
+	    if (container != undefined) { var structure = container; }
 	    // finally the controller
 	    else { var structure = Game.rooms.E58N3.controller; }
 
