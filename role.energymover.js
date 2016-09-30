@@ -2,8 +2,9 @@ module.exports = {
     // a function to run the logic for this role
     run: function(creep) {
 		// move to destinaton 
-
-		status = creep.moveTo(22,20);
+		var dest_id = creep.memory.destid;
+		var dest = Game.getObjectById(dest_id);
+		var status = creep.moveTo(dest.pos);
 		if ( status ) { 
 			status = creep.moveTo(22,20);
 			console.log(creep + " move status: " + status);
