@@ -80,7 +80,7 @@ module.exports.loop = function () {
     // Link control
     var linkfrom = Game.getObjectById("57ee7790b2cf99e1199ebf1c"); // storage link
     var linkto =   Game.getObjectById("57ee896c291f632c3c83c6e4"); // controller link
-    var linkstatus = linkFrom.transferEnergy(linkTo);
+    var linkstatus = linkfrom.transferEnergy(linkto);
     console.log("link status -- " + linkstatus);
 
     // setup some minimum numbers for different roles
