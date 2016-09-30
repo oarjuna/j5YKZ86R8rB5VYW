@@ -4,5 +4,5 @@ module.exports = function() {
 	Creep.prototype.pickupEnergy =
 		function() {
 			console.log(creep + "TESTING SHARED FUNC");
-		}
-}
+		};
+};
