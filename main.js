@@ -162,7 +162,7 @@ module.exports.loop = function () {
     else if (numberOfEnergyMovers < minimumNumberOfEnergyMovers) {
         var em_tmp = _.sum(Game.creeps,
                         (c) => c.memory.role == 'energy_mover' &&
-                                c.memory.destid == '579faa710700be0674d30fd7'
+                                c.memory.destid == '57e7235e6b66411171b7f0f8'
                         );
         if ( em_tmp < 1 ) { var dest = '57e7235e6b66411171b7f0f8'; } // storage
         else { var dest = '57e6b5c1135326b41e54835e'; } // controller
