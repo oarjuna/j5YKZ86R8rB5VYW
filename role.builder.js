@@ -31,16 +31,15 @@ module.exports = {
                     creep.moveTo(constructionSite);
                 }
             }
-	//else if ( creep.pos.findInRange(FIND_DROPPED_ENERGY)  ) {
-	    else if (false) {
+	else if ( creep.pos.creep.pos.findClosestByRange(FIND_DROPPED_ENERGY)  ) {
 		// if you  can find energy laying around //
-		var energy = creep.pos.findInRange(FIND_DROPPED_ENERGY);
-                if (creep.pickup(energy) == ERR_NOT_IN_RANGE) {
+		var energy = creep.pos.findClosestByRange(FIND_DROPPED_ENERGY);
+                if (creep.pickup(energy[0]) == ERR_NOT_IN_RANGE) {
 			creep.say("drop-pick");
                         creep.moveTo(energy);
                 }
 		else {
-			console.log(creep + " -- lh - dropped energy " + creep.pickup(energy));
+			console.log(creep + " -- lh - dropped energy " + creep.pickup(energy[0]));
 		}	
 
 		console.log(creep + " -- dropped energy " + energy);
