@@ -16,7 +16,7 @@ module.exports = {
 					}})[0];
 	
 			// find the far away link
-			var farlink = creep.pos.findInRange(FIND_MY_STRUCTURES,
+			var farlink = creep.pos.findInRange(FIND_MY_STRUCTURES, 999
                                 	{filter: {
                                         	structureType: STRUCTURE_LINK
                                 	}})[1];
