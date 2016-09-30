@@ -97,7 +97,7 @@ module.exports.loop = function () {
     var minimumNumberOfClaimers = 0;
     var minimumNumberOfRepairers = 0;
     var minimumNumberOfWallRepairers = 1;
-    var minimumNumberOfEnergyMovers = 2;
+    var minimumNumberOfEnergyMovers = 3;
 
     // count the number of creeps alive for each role
     // _.sum will count the number of properties in Game.creeps filtered by the
@@ -165,7 +165,7 @@ module.exports.loop = function () {
                                 c.memory.destid == '57e7235e6b66411171b7f0f8'
                         );
         if ( em_tmp == 0 ) { var dest = '57e7235e6b66411171b7f0f8'; } // storage
-        else if ( em_tmp == 1 { var dest = '57e6b5c1135326b41e54835e'; } // controller
+        else if ( em_tmp == 1 ) { var dest = '57e6b5c1135326b41e54835e'; } // controller
         else { var dest = '57e6530dfb8875006e762b5e'; } // controller #2
         console.log("main -- spawning energy_mover -- " + dest + " -- " + em_tmp);
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'energy_mover',dest);
