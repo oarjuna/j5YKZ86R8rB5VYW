@@ -63,10 +63,10 @@ module.exports = function() {
         }
         else if (roleName == "energy_mover") {
                 var body = [
-                        WORK, WORK, WORK, WORK, WORK, WORK, // 500
+                        WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK WORK// 500
                         MOVE,   // 50
                         CARRY  // 50
-                ] // 600
+                ] // 1000
         }
         else {
                 var body = [
