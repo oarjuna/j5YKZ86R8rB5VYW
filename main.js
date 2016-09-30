@@ -87,7 +87,7 @@ module.exports.loop = function () {
     var minimumNumberOfUpgraders = 3;
     var minimumNumberOfBuilders = 2;
     var minimumNumberOfClaimers = 0;
-    var minimumNumberOfRepairers = 2;
+    var minimumNumberOfRepairers = 0;
     var minimumNumberOfWallRepairers = 1;
 
     // count the number of creeps alive for each role
