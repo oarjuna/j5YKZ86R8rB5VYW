@@ -18,7 +18,7 @@ module.exports = {
             creep.memory.destid = null;
         }
 
-	shared.pickupEnergy('100');
+	shared.pickupEnergy(creep,"100");
 
         if (creep.memory.working == true) {
             // upgrade the controller
