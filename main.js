@@ -64,15 +64,15 @@ module.exports.loop = function () {
     });
     for (let tower of towers) {
         var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+	var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
+                filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
+        });
 	//console.log(tower + " -- reporting in ");
         if (target != undefined) {
 	    console.log(tower + " -- attacking " + target);
             tower.attack(target);
         }
 
-	var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
-                filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
-        });
 	else if (repair_target != undefined ) {
 		console.log(tower + " -- repairing " + repair_target);
 		tower.repair(repair_target);
