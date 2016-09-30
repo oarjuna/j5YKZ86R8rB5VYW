@@ -42,7 +42,7 @@ module.exports = {
 			console.log(creep + " -- lh - dropped energy " + creep.pickup(energy[0]));
 		}	
 
-		console.log(creep + " -- dropped energy " + energy[0]);
+		console.log(creep + " -- dropped energy " + energy);
 	}
             else {
                 // go upgrading the controller
