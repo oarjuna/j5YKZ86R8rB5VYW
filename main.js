@@ -73,7 +73,7 @@ module.exports.loop = function () {
 	var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
                 filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
         });
-	if (repair_target != undefined ) {
+	else if (repair_target != undefined ) {
 		console.log(tower + " -- repairing " + repair_target);
 		tower.repair(repair_target);
 	}	
