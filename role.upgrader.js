@@ -15,7 +15,6 @@ module.exports = {
             // switch state
 	    console.log(creep + " -- upgrader -- energy capacity full");
             creep.memory.working = true;
-            creep.memory.destid = null;
         }
 
         if (creep.memory.working == true) {

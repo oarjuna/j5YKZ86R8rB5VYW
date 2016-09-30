@@ -4,7 +4,7 @@ module.exports = {
 	pickupEnergy: function(creep)
 	{
 		//console.log(creep + "TESTING SHARED FUNC " + foo);
-               // find closest container with energy
+               // find closest container with energy and fill up
                 var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
                 filter: (s) => ( s.structureType==STRUCTURE_CONTAINER ||
                                 s.structureType==STRUCTURE_STORAGE ) &&

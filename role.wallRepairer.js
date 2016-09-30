@@ -1,7 +1,7 @@
+var shared  = require('func.shared');
 var roleBuilder = require('role.builder');
-//xxxxxx
+
 module.exports = {
-    // a function to run the logic for this role
     run: function(creep) {
         // if creep is trying to repair something but has no energy left
         if (creep.memory.working == true && creep.carry.energy == 0) {
@@ -25,12 +25,8 @@ module.exports = {
                     filter: (s) => s.structureType == STRUCTURE_WALL &&
                                    s.hits / s.hitsMax < percentage
                 });
-
-                // if there is one
-                if (target != undefined) {
-                    // break the loop
-                    break;
-                }
+                // if there is one, break the loop
+                if (target != undefined) { break; }
             }
 
             // if we find a wall that has to be repaired
