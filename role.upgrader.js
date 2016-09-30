@@ -18,8 +18,6 @@ module.exports = {
             creep.memory.destid = null;
         }
 
-	shared.pickupEnergy(creep,"100");
-
         if (creep.memory.working == true) {
             // upgrade the controller
             if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
