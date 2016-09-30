@@ -1,5 +1,5 @@
 var shared  = require('func.shared');
-var roleUpgrader = require('role.upgrader');
+var roleUpgrader = require('role.harvester');
 
 module.exports = {
     // a function to run the logic for this role
@@ -44,8 +44,7 @@ module.exports = {
 
 	}
             else {
-                // go upgrading the controller
-                roleUpgrader.run(creep);
+                roleBuilder.run(creep);
             }
         }
         else {
