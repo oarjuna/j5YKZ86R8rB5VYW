@@ -45,7 +45,7 @@ module.exports = {
                 	// if you  can find energy laying around //
                 	var energy = creep.pos.findInRange(FIND_DROPPED_ENERGY,1);
 			status = creep.pickup(energy[0]);
-                       	console.log(creep + " -- dropped energy " + status);
+                       	//console.log(creep + " -- dropped energy " + status);
         	}
        	}
     }
