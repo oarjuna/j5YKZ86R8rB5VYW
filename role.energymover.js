@@ -1,6 +1,7 @@
 module.exports = {
     // a function to run the logic for this role
     run: function(creep) {
+		creep.say("^^");
 		// move to destinaton 
 		var dest_id = creep.memory.destid;
 		var dest = Game.getObjectById(dest_id);
