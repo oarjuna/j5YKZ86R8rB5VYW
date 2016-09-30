@@ -80,7 +80,7 @@ module.exports.loop = function () {
     }
 
     // setup some minimum numbers for different roles
-    var minimumNumberOfHarvesters = 4;
+    var minimumNumberOfHarvesters = 6;
     var minimumNumberOfRemoteHarvesters = 10;
     var minimumNumberOfLocalHarvesters = 3;
     var minimumNumberOfUpgraders = 3;
