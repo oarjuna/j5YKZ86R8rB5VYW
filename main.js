@@ -128,7 +128,7 @@ module.exports.loop = function () {
     var room = Game.spawns.Spawn1.room;
     var status8 = " UP: " + room.controller.progress + "/" + room.controller.progressTotal + 
 	    	" lvl: " + room.controller.level;
-   var status9 = " EM: " numberOfEnergyMovers  + "/" + minimumNumberOfEnergyMovers;
+    var status9 = " EM: " + numberOfEnergyMovers  + "/" + minimumNumberOfEnergyMovers;
 
     console.log("\n#------------------#");
     console.log(status4 + status8 + " -- " + status1 + " " + status2 + " " + status3 + status5 + status6 + status7);
