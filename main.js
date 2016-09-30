@@ -111,7 +111,7 @@ module.exports.loop = function () {
     //var energy = Game.spawns.Spawn1.room.energyCapacityAvailable;
     //var energyAvailable = Game.spawns.Spawn1.room.energyAvailable;
 
-    var status4 = "E:  " + energyAvailable + "/" + energy;
+    //var status4 = "E:  " + energyAvailable + "/" + energy;
     var status5 = " WR: " + numberOfWallRepairers + "/" + minimumNumberOfWallRepairers;
     var status6 = " C: " + numberOfClaimers + "/" + minimumNumberOfClaimers;
     var status7 = " LH: " + numberOfLocalHarvesters + "/" + minimumNumberOfLocalHarvesters;
