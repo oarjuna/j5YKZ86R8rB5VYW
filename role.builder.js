@@ -1,5 +1,5 @@
 var shared  = require('func.shared');
-var roleUpgrader = require('role.harvester');
+var roleBuilder = require('role.harvester');
 
 module.exports = {
     // a function to run the logic for this role
