@@ -61,6 +61,14 @@ module.exports = function() {
                         CARRY  // 50
                 ] // 600
         }
+        else if (roleName == "energy_mover") {
+                var body = [
+                        WORK, WORK, WORK, WORK, // 200
+                        MOVE,   // 50
+                        CARRY, CARRY, CARRY, CARRY, CARRY, CARRY  // 300
+                ] // 550
+        }
+
 
 
         else {

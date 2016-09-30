@@ -8,6 +8,7 @@ var roleBuilder = require('role.builder');
 var roleClaimer = require('role.claimer');
 var roleRepairer = require('role.repairer');
 var roleWallRepairer = require('role.wallRepairer');
+var roleEnergyMover = require('role.energyMover');
 
 module.exports.loop = function () {
     // check for memory entries of died creeps by iterating over Memory.creeps
@@ -31,6 +32,10 @@ module.exports.loop = function () {
         // if creep is local harvester, call local harvester script
         if (creep.memory.role == 'local_harvester') {
             roleLocalHarvester.run(creep);
+        }
+        // if creep is energy_mover
+        if (creep.memory.role == 'energy_mover') {
+            roleEnergyMover.run(creep);
         }
 	
         // if creep is upgrader, call upgrader script
@@ -92,6 +97,7 @@ module.exports.loop = function () {
     var minimumNumberOfClaimers = 0;
     var minimumNumberOfRepairers = 0;
     var minimumNumberOfWallRepairers = 1;
+    var minimumNumberOfEnergyMovers = 0;
 
     // count the number of creeps alive for each role
     // _.sum will count the number of properties in Game.creeps filtered by the
@@ -104,6 +110,7 @@ module.exports.loop = function () {
     var numberOfClaimers = _.sum(Game.creeps, (c) => c.memory.role == 'claimer');
     var numberOfRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'repairer');
     var numberOfWallRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer');
+    var numberOfEnergyMovers = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover');
 
     var name = undefined;
 
@@ -121,6 +128,7 @@ module.exports.loop = function () {
     var room = Game.spawns.Spawn1.room;
     var status8 = " UP: " + room.controller.progress + "/" + room.controller.progressTotal + 
 	    	" lvl: " + room.controller.level;
+   var status9 = " EM: " numberOfEnergyMovers  + "/" + minimumNumberOfEnergyMovers;
 
     console.log("\n#------------------#");
     console.log(status4 + status8 + " -- " + status1 + " " + status2 + " " + status3 + status5 + status6 + status7);
@@ -148,6 +156,17 @@ module.exports.loop = function () {
         else { var dest = '579faa710700be0674d30fd8'; } // south
         console.log("main -- spawning local_harvester -- " + dest + " -- " + lh_tmp);
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'local_harvester',dest);
+    }
+   // if not enough energy movers
+    else if (numberOfEnergyMovers < minimumNumberOfEnergyMovers) {
+        var em_tmp = _.sum(Game.creeps,
+                        (c) => c.memory.role == 'energy_mover' &&
+                                c.memory.destid == '579faa710700be0674d30fd7'
+                        );
+        if ( em_tmp < 1 ) { var dest = '57eb41b15c1de9d60a49f613'; } // storage
+        else { var dest = '579faa710700be0674d30fd9'; } // controller
+        console.log("main -- spawning local_harvester -- " + dest + " -- " + em_tmp);
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'energy_mover',dest);
     }
 
     // if not enough upgraders
