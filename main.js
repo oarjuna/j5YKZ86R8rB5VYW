@@ -160,14 +160,26 @@ module.exports.loop = function () {
     }
    // if not enough energy movers
     else if (numberOfEnergyMovers < minimumNumberOfEnergyMovers) {
-        var em_tmp = _.sum(Game.creeps,
+        var st_num = _.sum(Game.creeps,
                         (c) => c.memory.role == 'energy_mover' 
+				c.memory.destid == '57e7235e6b66411171b7f0f8'
                         );
-        if ( em_tmp == 0 ) { var dest = '57e7235e6b66411171b7f0f8'; } // storage
-        else if ( em_tmp == 1 ) { var dest = '57e6b6f9bf7be6eb05caa521'; } // controller #1
-        else if ( em_tmp == 2 ){ var dest = '57e6b5c1135326b41e54835e'; } // controller  #2
+
+	var c1_num = _.sum(Game.creeps,
+                        (c) => c.memory.role == 'energy_mover'
+                                c.memory.destid == '57e6b6f9bf7be6eb05caa521'
+                        );
+
+	var c2_num =  = _.sum(Game.creeps,
+                        (c) => c.memory.role == 'energy_mover'
+                                c.memory.destid == '57e6b5c1135326b41e54835e'
+                        );
+
+        if ( st_tmp == 0 ) { var dest = '57e7235e6b66411171b7f0f8'; } // storage
+        else if ( c1_tmp == 0 ) { var dest = '57e6b6f9bf7be6eb05caa521'; } // controller #1
+        else if ( c2_tmp == 0 ){ var dest = '57e6b5c1135326b41e54835e'; } // controller  #2
 	else {  var dest = '57e6530dfb8875006e762b5e'; } // controller #3
-        console.log("main -- spawning energy_mover -- " + dest + " -- " + em_tmp);
+        console.log("main -- spawning energy_mover -- " + dest );
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'energy_mover',dest);
     }
 
