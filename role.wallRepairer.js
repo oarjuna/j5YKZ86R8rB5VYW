@@ -16,17 +16,11 @@ module.exports = {
 
         // if creep is supposed to repair something
         if (creep.memory.working == true) {
-            // find all walls in the room
-            /*var walls = creep.room.find(FIND_STRUCTURES, {
-                filter: (s) => s.structureType == STRUCTURE_WALL
-            });*/
-
             var target = undefined;
 
             // loop with increasing percentages
             for (let percentage = 0.0001; percentage <= 1; percentage = percentage + 0.0001){
                 // find a wall with less than percentage hits
-
                 target = creep.pos.findClosestByPath(FIND_STRUCTURES, {
                     filter: (s) => s.structureType == STRUCTURE_WALL &&
                                    s.hits / s.hitsMax < percentage
@@ -43,7 +37,6 @@ module.exports = {
             if (target != undefined) {
                 // try to repair it, if not in range
                 if (creep.repair(target) == ERR_NOT_IN_RANGE) {
-                    // move towards it
                     creep.moveTo(target);
                 }
             }
@@ -56,14 +49,14 @@ module.exports = {
         else {
                // find closest container with energy
                 var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-                filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
-				//s.structureType==STRUCTURE_STORAGE &&
-                               s.store[RESOURCE_ENERGY] > 100
+                filter: (s) => ( s.structureType==STRUCTURE_CONTAINER ||
+                                s.structureType==STRUCTURE_STORAGE ) &&
+                               s.store[RESOURCE_ENERGY] > 250
                 });
 
-                // try to transfer energy, if the container is not in range
+                console.log(creep + " -- wallrepair --pickup -- " + container );
+
                 if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                        // move towards the container
                         creep.moveTo(container);
                 }
 
