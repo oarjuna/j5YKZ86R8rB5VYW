@@ -46,13 +46,10 @@ module.exports = {
 	    // finally the controller
 	    else { var structure = Game.rooms.E58N3.controller; }
 
-	    console.log(creep + " -- removeharv - dropoff - " + structure + " " + structure.storeCapacity );
 	    var action_status = creep.transfer(structure, RESOURCE_ENERGY);
 
-	    // if we're not close enough to xfer
             if (action_status == ERR_NOT_IN_RANGE) {
-                // move towards it
-		//creep.say("rh-drop");
+		creep.say("rh-drop");
                 creep.moveTo(structure);
             }
         }
