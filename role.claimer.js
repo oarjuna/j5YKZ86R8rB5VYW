@@ -30,6 +30,10 @@ module.exports = {
 					console.log(creep + " claimer -- CS " + constructionSite);
 					creep.moveTo(constructionSite);
 				}
+                                else {
+                                        console.log(creep + " claimer -- CS " + creep.moveTo(constructionSite));
+                                }
+
 			}
 			// repair jobs
 			else if ( repairStructure != undefined ) {
