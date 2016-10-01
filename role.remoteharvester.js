@@ -55,7 +55,7 @@ module.exports = {
         }
         // creep is supposed to harvest energy from source
         else {
-		var dest_key = creep.memory.destid;
+	/*	var dest_key = creep.memory.destid;
 		if ( dest_key == 'Flag1') {  dest = Game.flags.Flag1; }
 		else if ( dest_key == 'Flag2') {  dest = Game.flags.Flag2; }
 		else if ( dest_key == 'Flag3') {  dest = Game.flags.Flag4; }
@@ -75,7 +75,7 @@ module.exports = {
                        creep.moveTo(source);
 		}
 	    }
-
+*/
         }
     }
 };
