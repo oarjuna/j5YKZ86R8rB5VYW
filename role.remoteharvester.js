@@ -9,9 +9,11 @@ module.exports = {
 	// attack hostile creeps
 	var target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
 	if(target) {
+/*	
 		console.log(creep + " ALERT -- found hostile creep!" + target);
     		if(creep.attack(target) == ERR_NOT_IN_RANGE) {
         		creep.moveTo(target);
+*/
     	}
 
         // are we in the room with the flag?
