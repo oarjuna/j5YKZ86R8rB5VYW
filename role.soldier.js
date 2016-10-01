@@ -22,6 +22,11 @@ module.exports = {
 					s.structureType==STRUCTURE_SPAWN
 	});
 
+        var neutral_controller = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+                        filter: (s) => s.structureType==STRUCTURE_CONTROLLER
+        });
+
+
         if( hostile_tower != undefined ) {
                 console.log(creep + "SOLDIER -- attacking hostile tower!" + hostile_tower);
                 if(creep.attack(hostile_tower) == ERR_NOT_IN_RANGE) {
@@ -40,6 +45,13 @@ module.exports = {
                         creep.moveTo(other_target);
                 }
         }
+        else if ( neutral_controller != undefined ) {
+                console.log(creep + "SOLDIER -- claiming target!" + neutral_controller);
+                if(creep.attack(neutral_controller) == ERR_NOT_IN_RANGE) {
+                        creep.moveTo(neutral_controller);
+                }
+        }
+
 	else { 
 		creep.moveTo(gotoFlag); 
 		}
