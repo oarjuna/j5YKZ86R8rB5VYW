@@ -40,6 +40,7 @@ module.exports = {
                         }
 			// harvesting
                         else if ( harvestSite != undefined ) {
+				console.log(creep + "here -- " + harvestSite);
                                 if ( creep.harvest(harvestSite) == ERR_NOT_IN_RANGE ) {
                                         console.log(creep + " claimer -- HS " + harvestSite);
                                         creep.moveTo(harvestSite);
