@@ -36,7 +36,7 @@ module.exports.loop = function () {
         else if (creep.memory.role == 'upgrader') { roleUpgrader.run(creep); }
         else if (creep.memory.role == 'builder') { roleBuilder.run(creep); }
         else if (creep.memory.role == 'claimer') { roleClaimer.run(creep); }
-	else if (creep.memory.role == 'soldier') {  roleSolider.run(creep); }
+	else if (creep.memory.role == 'soldier') {  roleSoldier.run(creep); }
         else if (creep.memory.role == 'repairer') { roleRepairer.run(creep); }
         else if (creep.memory.role == 'wallRepairer') { roleWallRepairer.run(creep); }
         else if (creep.memory.role == 'remote_harvester') { roleRemoteHarvester.run(creep); }
