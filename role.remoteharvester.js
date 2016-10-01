@@ -10,8 +10,8 @@ module.exports = {
                 if ( creep.pos.roomName != gotoFlag.pos.roomName ) {
                         // not in the room with the flag, move towards the flag
                         moveStatus = creep.moveTo(gotoFlag);
-                        console.log(creep + " claimer -movestatus " + moveStatus + " GF " + gotoFlag);
-                        console.log(creep + " claimer -CR " + creep.pos.roomName + " FR: " + gotoFlag.pos.roomName);
+                        console.log(creep + " remoteharv -movestatus " + moveStatus + " GF " + gotoFlag);
+                        console.log(creep + " removeharv -CR " + creep.pos.roomName + " FR: " + gotoFlag.pos.roomName);
                 }
 	
 		// attack hostile creeps
