@@ -74,7 +74,8 @@ module.exports = function() {
 	else if (roleName == "soldier") {
 		var body = [
 			TOUGH,TOUGH,TOUGH,
-			MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,
+			CLAIM,
+			MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE
 			ATTACK,ATTACK,ATTACK,ATTACK,ATTACK
 			];
 	}
