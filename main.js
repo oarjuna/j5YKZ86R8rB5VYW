@@ -20,7 +20,7 @@ module.exports.loop = function () {
             delete Memory.creeps[name];
         }
     }
-
+/*
     for (let name in Game.creeps) {
         var creep = Game.creeps[name];
         if (creep.memory.role == 'harvester') {  roleHarvester.run(creep); }
@@ -35,7 +35,7 @@ module.exports.loop = function () {
         else if (creep.memory.role == 'remote_harvester') { roleRemoteHarvester.run(creep); }
 	}
     }
-
+*/
     // Tower control
     var towers = Game.rooms.E58N3.find(FIND_STRUCTURES, {
         filter: (s) => s.structureType == STRUCTURE_TOWER
