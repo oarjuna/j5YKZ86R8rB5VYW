@@ -50,8 +50,9 @@ module.exports = function() {
         }
 	else if (roleName == "claimer") {
                 var body = [
+			WORK, WORK, // 200
                         MOVE, MOVE, MOVE, MOVE,   // 200
-                        CLAIM,  //  600
+			CARRY, CARRY, // 100
                 ] //  800
 	}
         else if (roleName == "local_harvester") {
