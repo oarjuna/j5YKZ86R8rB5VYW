@@ -24,34 +24,36 @@ module.exports = {
                         });
 			var harvestSite = creep.pos.findClosestByPath(FIND_SOURCES);
 			console.log(creep + "here -- " + harvestSite);
-			// construction jobs
-			if ( constructionSite != undefined ) {
-				if ( creep.build(constructionSite) == ERR_NOT_IN_RANGE ) {
-					console.log(creep + " claimer -- CS " + constructionSite);
-					creep.moveTo(constructionSite);
-				}
+                        // harvesting
+                        else if ( harvestSite != undefined ) {
+                                console.log(creep + "here -- " + harvestSite);
+                                if ( creep.harvest(harvestSite) == ERR_NOT_IN_RANGE ) {
+                                        console.log(creep + " claimer -- HS " + harvestSite);
+                                        creep.moveTo(harvestSite);
+                                }
+                                else {
+                                        console.log(creep + " claimer -- HS " + creep.moveTo(harvestSite));
+                                }
+                        }
+                        // construction jobs
+                        else if ( constructionSite != undefined ) {
+                                if ( creep.build(constructionSite) == ERR_NOT_IN_RANGE ) {
+                                        console.log(creep + " claimer -- CS " + constructionSite);
+                                        creep.moveTo(constructionSite);
+                                }
                                 else {
                                         console.log(creep + " claimer -- CS " + creep.moveTo(constructionSite));
                                 }
 
-			}
+                        }
+
+
 			// repair jobs
 			else if ( repairStructure != undefined ) {
                                 if ( creep.repair(repairStructure) == ERR_NOT_IN_RANGE ) {
                                         console.log(creep + " claimer -- RS " + repairStructure);
                                         creep.moveTo(repairStructure);
                                 }
-                        }
-			// harvesting
-                        else if ( harvestSite != undefined ) {
-				console.log(creep + "here -- " + harvestSite);
-                                if ( creep.harvest(harvestSite) == ERR_NOT_IN_RANGE ) {
-                                        console.log(creep + " claimer -- HS " + harvestSite);
-                                        creep.moveTo(harvestSite);
-                                }
-				else {
-					console.log(creep + " claimer -- HS " + creep.moveTo(harvestSite));
-				}
                         }
 			// drop stuff off
 			else {
