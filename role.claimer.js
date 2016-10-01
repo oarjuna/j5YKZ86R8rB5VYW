@@ -4,10 +4,11 @@ module.exports = {
 		// get your assignment
 		var gotoFlag = Game.getObjectById(creep.memory.destid);	
 
-		// move towards it
-		moveStatus = creep.moveTo(gotoFlag);
-		if ( moveStatus != 0 ) {
-			
+		
+		if ( creep.room != gotoFlag.room ) {
+			// move towards it
+			moveStatus = creep.moveTo(gotoFlag);
+			console.log(creep + " claimer -movestatus " + moveStatus);	
 		}
 		else {
 
