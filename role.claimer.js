@@ -24,8 +24,19 @@ module.exports = {
                         });
 			var harvestSite = creep.pos.findClosestByPath(FIND_SOURCES);
 
+			if (creep.memory.working == true && creep.carry.energy == 0) {
+				// switch state
+				console.log(creep + " -- claimer -- out of energy");
+				creep.memory.working = false;
+			}
+			else if (creep.memory.working == false && creep.carry.energy == creep.carryCapacity) {
+            			// switch state
+            			console.log(creep + " -- claimer -- energy capacity full");
+            			creep.memory.working = true;
+        		}
+
                         // harvesting
-                        if ( harvestSite != undefined  && creep.carry.energy != creep.carryCapacity) {
+                        if ( harvestSite != undefined  && creep.memory.working == false ) {
                                 if ( creep.harvest(harvestSite) == ERR_NOT_IN_RANGE ) {
                                         console.log(creep + " claimer -- HS " + harvestSite);
                                         creep.moveTo(harvestSite);
@@ -35,7 +46,7 @@ module.exports = {
                                 }
                         }
                         // construction jobs
-                        else if ( constructionSite != undefined  && creep.carry.energy == creep.carryCapacity) {
+                        else if ( constructionSite != undefined  && creep.memory.working == true) {
                                 if ( creep.build(constructionSite) == ERR_NOT_IN_RANGE ) {
                                         console.log(creep + " claimer -- CS " + constructionSite);
                                         creep.moveTo(constructionSite);
@@ -46,7 +57,7 @@ module.exports = {
 
                         }
 			// repair jobs
-			else if ( repairStructure != undefined  && creep.carry.energy == creep.carryCapacity) {
+			else if ( repairStructure != undefined  && creep.memory.working == true ) {
                                 if ( creep.repair(repairStructure) == ERR_NOT_IN_RANGE ) {
                                         console.log(creep + " claimer -- RS " + repairStructure);
                                         creep.moveTo(repairStructure);
