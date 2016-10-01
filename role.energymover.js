@@ -8,7 +8,7 @@ module.exports = {
 		var status = creep.moveTo(dest.pos);
 		if ( status != 0 ) { 
 			status = creep.moveTo(dest.pos);
-			console.log(creep + " move status: " + status);
+			//console.log(creep + " move status: " + status);
 		}
 		else {
 			// find nearby link
@@ -35,16 +35,16 @@ module.exports = {
                                         	structureType: STRUCTURE_CONTROLLER
                                 	}})[0];
 	
-			console.log(creep + " CL: " + closelink + " FL: " + farlink + 
-				" ST: " + storage + " CT: " + controller);
+			//console.log(creep + " CL: " + closelink + " FL: " + farlink + 
+			//	" ST: " + storage + " CT: " + controller);
 	
 			if ( controller != undefined ) {
 				// load up on energy
 				status = creep.withdraw(closelink, RESOURCE_ENERGY);
-                		console.log(creep + " mover load: " + closelink + " status: " + status);
+                		//console.log(creep + " mover load: " + closelink + " status: " + status);
 				// upgrade the controller
 				status = creep.upgradeController(controller)
-                		console.log(creep + " mover xfer: " + closelink + " ct: "
+                		//console.log(creep + " mover xfer: " + closelink + " ct: "
 				 	+ controller + " status: " + status);
 			}		
 			else if ( storage != undefined ) { 
@@ -54,7 +54,7 @@ module.exports = {
 				status2 = creep.transfer(closelink, RESOURCE_ENERGY);
 				// xfer to the far link
 				status = closelink.transferEnergy(farlink);
-				console.log(creep + " link xferstatus: " + status );
+				//console.log(creep + " link xferstatus: " + status );
 			}
 		}
     	}
