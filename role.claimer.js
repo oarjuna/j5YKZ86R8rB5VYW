@@ -22,7 +22,7 @@ module.exports = {
                         var repairStructure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
                                 filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
                         });
-			var harvestSite = creep.pos.findClosestByPath(FIND_SPAWNS);
+			var harvestSite = creep.pos.findClosestByPath(FIND_SOURCES);
 
 			// construction jobs
 			if ( constructionSite != undefined ) {
