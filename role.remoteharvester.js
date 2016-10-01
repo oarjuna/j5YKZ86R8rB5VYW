@@ -36,7 +36,7 @@ module.exports = {
         	}
 
         	if (creep.memory.working == true) {
-	   		var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+	  /* 		var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
                 		filter: (s) => s.structureType==STRUCTURE_STORAGE &&
                                		s.store[RESOURCE_ENERGY] < s.storeCapacity
                 		});
@@ -48,7 +48,7 @@ module.exports = {
             		if (action_status == ERR_NOT_IN_RANGE) {
 				creep.say("rh-drop");
                 		creep.moveTo(structure);
-            		}
+            		}*/
         	}
         	else {
  	               if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
