@@ -200,9 +200,13 @@ module.exports.loop = function () {
     }
 	// claimers
     else if (numberOfClaimers < minimumNumberOfClaimers) {
+	// count the number of claimers per flag
         var c_flag1 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag1');
+        var c_flag2 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag2');
+
         if ( c_flag1 == 0 ) { var dest = 'Flag1'; } 
-        else { var dest = 'Flag1'; } // south
+        else if ( c_flag2 == 0 ) { var dest = 'Flag2'; } 
+        else { var dest = 'error'; } 
 
         console.log("main -- spawning claimer");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'claimer',dest);
@@ -216,9 +220,16 @@ module.exports.loop = function () {
     }
     // if not enough remote harvesters
     else if (numberOfRemoteHarvesters < minimumNumberOfRemoteHarvesters) {
-        // try to spawn one
+        // count the number of remote harvs per flag
+        var c_flag1 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harvester' && c.memory.destid == 'Flag1');
+        var c_flag2 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harvester' && c.memory.destid == 'Flag2');
+
+        if ( c_flag1 == 0 ) { var dest = 'Flag1'; }
+        else if ( c_flag2 == 0 ) { var dest = 'Flag2'; }
+        else { var dest = 'error'; }
+
         console.log("main -- spawning remote_harvester");
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'remote_harvester','Flag1');
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'remote_harvester',dest);
     }
 
 };
