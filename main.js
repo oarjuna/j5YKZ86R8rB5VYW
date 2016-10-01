@@ -21,6 +21,18 @@ module.exports.loop = function () {
         }
     }
 
+    // setup some minimum numbers for different roles
+    var minimumNumberOfHarvesters = 4;
+    var minimumNumberOfRemoteHarvesters = 4;
+    var minimumNumberOfLocalHarvesters = 3;
+    var minimumNumberOfUpgraders = 0;
+    var minimumNumberOfBuilders = 1;
+    var minimumNumberOfClaimers = 4;
+    var minimumNumberOfRepairers = 0;
+    var minimumNumberOfWallRepairers = 1;
+    var minimumNumberOfEnergyMovers = 3;
+
+	// run the roles per creep
     for (let name in Game.creeps) {
         var creep = Game.creeps[name];
         if (creep.memory.role == 'harvester') {  roleHarvester.run(creep); }
@@ -59,16 +71,6 @@ module.exports.loop = function () {
     var linkstatus = linkfrom.transferEnergy(linkto);
     //console.log("link status -- " + linkstatus);
 
-    // setup some minimum numbers for different roles
-    var minimumNumberOfHarvesters = 4;
-    var minimumNumberOfRemoteHarvesters = 4;
-    var minimumNumberOfLocalHarvesters = 3;
-    var minimumNumberOfUpgraders = 0;
-    var minimumNumberOfBuilders = 1;
-    var minimumNumberOfClaimers = 4;
-    var minimumNumberOfRepairers = 0;
-    var minimumNumberOfWallRepairers = 1;
-    var minimumNumberOfEnergyMovers = 3;
 
     // count the number of creeps alive for each role
     var numberOfHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'harvester');
