@@ -25,12 +25,10 @@ module.exports = {
 			var harvestSite = creep.pos.findClosestByPath(FIND_SOURCES);
 
 			if (creep.memory.working == true && creep.carry.energy == 0) {
-				// switch state
 				console.log(creep + " -- claimer -- out of energy");
 				creep.memory.working = false;
 			}
 			else if (creep.memory.working == false && creep.carry.energy == creep.carryCapacity) {
-            			// switch state
             			console.log(creep + " -- claimer -- energy capacity full");
             			creep.memory.working = true;
         		}
@@ -42,7 +40,7 @@ module.exports = {
                                         creep.moveTo(harvestSite);
                                 }
                                 else {
-                                        console.log(creep + " claimer -- HS " + creep.moveTo(harvestSite));
+                                        console.log(creep + " claimer -- HS " + harvestSite.energy);
                                 }
                         }
                         // construction jobs
