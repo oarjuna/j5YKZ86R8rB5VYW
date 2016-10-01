@@ -44,6 +44,9 @@ module.exports = {
                                         console.log(creep + " claimer -- HS " + harvestSite);
                                         creep.moveTo(harvestSite);
                                 }
+				else {
+					console.log(creep " claimer -- HS " + creep.moveTo(harvestSite));
+				}
                         }
 			// drop stuff off
 			else {
