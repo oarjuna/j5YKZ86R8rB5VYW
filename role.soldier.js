@@ -39,7 +39,11 @@ module.exports = {
                         creep.moveTo(other_target);
                 }
         }
+	else { 
+		creep.moveTo(gotoFlag); 
+		}
 
+/*
         // are we in the room with the flag?
         if ( creep.pos.roomName != gotoFlag.pos.roomName ) {
                 // not in the room with the flag, move towards the flag
@@ -48,9 +52,9 @@ module.exports = {
                 console.log(creep + " soldier -CR " + creep.pos.roomName + " FR: " + gotoFlag.pos.roomName);
         }
 	else {
-	//	creep.moveTo(gotoFlag);
+		creep.moveTo(gotoFlag);
 	}
-
+*/
 
 // end
     }
