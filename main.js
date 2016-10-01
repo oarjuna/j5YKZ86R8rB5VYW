@@ -204,7 +204,7 @@ module.exports.loop = function () {
     else if (numberOfClaimers < minimumNumberOfClaimers) {
         // try to spawn one
         console.log("main -- spawning claimer");
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'claimer',Game.flags.Flag1);
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'claimer','Flag1');
     }
 
     // if not enough wallRepairers

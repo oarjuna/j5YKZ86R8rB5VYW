@@ -3,10 +3,13 @@ module.exports = {
 		creep.say("!!");
 
 		// get your assignment
-		var gotoFlag = creep.memory.destid.pos;	
+                var dest_key = creep.memory.destid;
+                if ( dest_key == 'Flag1') {  gotoFlag = Game.flags.Flag1; }
+                else if ( dest_key == 'Flag2') {  gotoFlag = Game.flags.Flag2; }
+                else if ( dest_key == 'Flag3') {  gotoFlag = Game.flags.Flag4; }
 		
 		// are we in the room with the flag?
-		if ( creep.room.name != creep.memory.destid.room.name ) {
+		if ( creep.room.name != gotoFlag.room.name ) {
 			// not in the room with the flag, move towards the flag
 			moveStatus = creep.moveTo(gotoFlag);
 			console.log(creep + " claimer -movestatus " + moveStatus + " GF " + gotoFlag);	
