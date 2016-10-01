@@ -9,11 +9,11 @@ module.exports = {
                 else if ( dest_key == 'Flag3') {  var gotoFlag = Game.flags.Flag4; }
 		
 		// are we in the room with the flag?
-		if ( creep.room != gotoFlag ) {
+		if ( creep._move.room != gotoFlag ) {
 			// not in the room with the flag, move towards the flag
 			moveStatus = creep.moveTo(gotoFlag);
 			console.log(creep + " claimer -movestatus " + moveStatus + " GF " + gotoFlag);	
-			console.log(creep + " claimer -creeproom " + creep.room.name + " FR " + creep.memory.destid.room.name);	
+			console.log(creep + " claimer -creeproom " + creep._move.room + " FR " + creep.memory.destid.room.name);	
 		}
 		else {
 			// in the room with the flag, look for stuff to do (likely very CPU heavy)
