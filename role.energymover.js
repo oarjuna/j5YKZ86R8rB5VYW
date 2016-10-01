@@ -45,7 +45,7 @@ module.exports = {
 				// upgrade the controller
 				status = creep.upgradeController(controller)
                 		//console.log(creep + " mover xfer: " + closelink + " ct: "
-				 	+ controller + " status: " + status);
+				 	//+ controller + " status: " + status);
 			}		
 			else if ( storage != undefined ) { 
 				// load up on energy
