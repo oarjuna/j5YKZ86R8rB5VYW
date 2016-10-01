@@ -36,21 +36,18 @@ module.exports = {
                         // harvesting
                         if ( harvestSite != undefined  && creep.memory.working == false ) {
                                 if ( creep.harvest(harvestSite) == ERR_NOT_IN_RANGE ) {
-                                        console.log(creep + " claimer -- HS " + harvestSite);
                                         creep.moveTo(harvestSite);
                                 }
                         }
                         // construction jobs
                         else if ( constructionSite != undefined  && creep.memory.working == true) {
                                 if ( creep.build(constructionSite) == ERR_NOT_IN_RANGE ) {
-                                        console.log(creep + " claimer -- CS " + constructionSite);
                                         creep.moveTo(constructionSite);
                                 }
                         }
 			// repair jobs
 			else if ( repairStructure != undefined  && creep.memory.working == true ) {
                                 if ( creep.repair(repairStructure) == ERR_NOT_IN_RANGE ) {
-                                        console.log(creep + " claimer -- RS " + repairStructure);
                                         creep.moveTo(repairStructure);
                                 }
                         }
@@ -61,7 +58,6 @@ module.exports = {
 							s.store[RESOURCE_ENERGY] < 2000
                 		});
                                 if ( creep.transfer(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE ) {
-	                                console.log(creep + " claimer -- C " + container);
 					creep.moveTo(container);
                                 }
 			}
