@@ -58,6 +58,7 @@ module.exports = {
 			// repair jobs
 			else if ( repairStructure != undefined  && creep.memory.working == true ) {
                                 if ( creep.repair(repairStructure) == ERR_NOT_IN_RANGE ) {
+					console.log(creep + " repair");
                                         creep.moveTo(repairStructure);
                                 }
                         }
