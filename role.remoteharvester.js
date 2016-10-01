@@ -51,13 +51,12 @@ module.exports = {
             		}
         	}
         	else {
-               // find closest container with energy and fill up
-                var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-                	filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
-                               s.store[RESOURCE_ENERGY] > 300
-                	});
+               		// find closest container with energy and fill up
+                	var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+                		filter: (s) => s.structureType==STRUCTURE_CONTAINER 
+                		});
 
- 	               if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+			if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
 				creep.moveTo(container);
 			}
 	    	}
