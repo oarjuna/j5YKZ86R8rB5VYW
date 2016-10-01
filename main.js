@@ -9,6 +9,7 @@ var roleClaimer = require('role.claimer');
 var roleRepairer = require('role.repairer');
 var roleWallRepairer = require('role.wallRepairer');
 var roleEnergyMover = require('role.energymover');
+var roleSoldier = require('role.soldier');
 
 module.exports.loop = function () {
     // check for memory entries of died creeps by iterating over Memory.creeps
@@ -24,43 +25,16 @@ module.exports.loop = function () {
     for (let name in Game.creeps) {
         // get the creep object
         var creep = Game.creeps[name];
-
-        // if creep is harvester, call harvester script
-        if (creep.memory.role == 'harvester') {
-            roleHarvester.run(creep);
-        }
-        // if creep is local harvester, call local harvester script
-        if (creep.memory.role == 'local_harvester') {
-            roleLocalHarvester.run(creep);
-        }
-        // if creep is energy_mover
-        if (creep.memory.role == 'energy_mover') {
-            roleEnergyMover.run(creep);
-        }
-	
-        // if creep is upgrader, call upgrader script
-        else if (creep.memory.role == 'upgrader') {
-            roleUpgrader.run(creep);
-        }
-        // if creep is builder, call builder script
-        else if (creep.memory.role == 'builder') {
-            roleBuilder.run(creep);
-        }
-        // if creep is claimer, call claimer script
-        else if (creep.memory.role == 'claimer') {
-            roleClaimer.run(creep);
-        }
-        // if creep is repairer, call repairer script
-        else if (creep.memory.role == 'repairer') {
-            roleRepairer.run(creep);
-        }
-        // if creep is wallRepairer, call wallRepairer script
-        else if (creep.memory.role == 'wallRepairer') {
-            roleWallRepairer.run(creep);
-        }
-        // if creep is remote harvester
-        else if (creep.memory.role == 'remote_harvester') {
-            roleRemoteHarvester.run(creep);
+        if (creep.memory.role == 'harvester') {  roleHarvester.run(creep); }
+        else if (creep.memory.role == 'local_harvester') {  roleLocalHarvester.run(creep); }
+        else if (creep.memory.role == 'energy_mover') { roleEnergyMover.run(creep); }
+        else if (creep.memory.role == 'upgrader') { roleUpgrader.run(creep); }
+        else if (creep.memory.role == 'builder') { roleBuilder.run(creep); }
+        else if (creep.memory.role == 'claimer') { roleClaimer.run(creep); }
+	else if (creep.memory.role == 'soldier') {  roleSolider.run(creep); }
+        else if (creep.memory.role == 'repairer') { roleRepairer.run(creep); }
+        else if (creep.memory.role == 'wallRepairer') { roleWallRepairer.run(creep); }
+        else if (creep.memory.role == 'remote_harvester') { roleRemoteHarvester.run(creep); }
 	}
     }
 
