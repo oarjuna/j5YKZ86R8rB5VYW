@@ -185,26 +185,27 @@ module.exports.loop = function () {
 
     // if not enough upgraders
     else if (numberOfUpgraders < minimumNumberOfUpgraders) {
-        // try to spawn one
         console.log("main -- spawning upgrader");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'upgrader');
     }
     // if not enough repairers
     else if (numberOfRepairers < minimumNumberOfRepairers) {
-        // try to spawn one
         console.log("main -- spawning repairer");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'repairer');
     }
     // if not enough builders
     else if (numberOfBuilders < minimumNumberOfBuilders) {
-        // try to spawn one
         console.log("main -- spawning builder");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'builder');
     }
+	// claimers
     else if (numberOfClaimers < minimumNumberOfClaimers) {
-        // try to spawn one
+        var c_flag1 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag1');
+        if ( c_flag1 == 0 ) { var dest = 'Flag1'; } /
+        else { var dest = 'Flag1'; } // south
+
         console.log("main -- spawning claimer");
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'claimer','Flag1');
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'claimer',dest);
     }
 
     // if not enough wallRepairers
