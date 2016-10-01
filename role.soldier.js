@@ -24,6 +24,9 @@ module.exports = {
                 console.log(creep + " soldier -movestatus " + moveStatus + " GF " + gotoFlag);
                 console.log(creep + " soldier -CR " + creep.pos.roomName + " FR: " + gotoFlag.pos.roomName);
         }
+
+
+
 // end
     }
 };
