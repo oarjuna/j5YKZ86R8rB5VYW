@@ -3,7 +3,7 @@ module.exports = {
 		creep.say("!!");
 
 		// get your assignment
-		var gotoFlag = Game.getObjectById(creep.memory.destid);	
+		var gotoFlag = creep.memory.destid;	
 		
 		// are we in the room with the flag?
 		if ( creep.room != gotoFlag.room ) {
