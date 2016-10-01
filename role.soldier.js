@@ -48,7 +48,7 @@ module.exports = {
                 console.log(creep + " soldier -CR " + creep.pos.roomName + " FR: " + gotoFlag.pos.roomName);
         }
 	else {
-	//	creep.moveTo(gotoFlag);
+		creep.moveTo(gotoFlag);
 	}
 
 
