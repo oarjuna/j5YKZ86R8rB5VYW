@@ -8,7 +8,7 @@ module.exports = {
 		// are we in the room with the flag?
 		if ( creep.room != gotoFlag.room ) {
 			// not in the room with the flag, move towards the flag
-			moveStatus = creep.moveTo(gotoFlag);
+			moveStatus = creep.moveTo(gotoFlag.pos);
 			console.log(creep + " claimer -movestatus " + moveStatus);	
 		}
 		else {
