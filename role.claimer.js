@@ -23,10 +23,9 @@ module.exports = {
                                 filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
                         });
 			var harvestSite = creep.pos.findClosestByPath(FIND_SOURCES);
-			console.log(creep + "here -- " + harvestSite);
+
                         // harvesting
                         if ( harvestSite != undefined ) {
-                                console.log(creep + "here -- " + harvestSite);
                                 if ( creep.harvest(harvestSite) == ERR_NOT_IN_RANGE ) {
                                         console.log(creep + " claimer -- HS " + harvestSite);
                                         creep.moveTo(harvestSite);
