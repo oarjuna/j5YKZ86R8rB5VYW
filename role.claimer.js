@@ -23,7 +23,7 @@ module.exports = {
                                 filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
                         });
 			var harvestSite = creep.pos.findClosestByPath(FIND_SOURCES);
-			console.log(creep + "here");
+			console.log(creep + "here -- " + harvestSite);
 			// construction jobs
 			if ( constructionSite != undefined ) {
 				if ( creep.build(constructionSite) == ERR_NOT_IN_RANGE ) {
