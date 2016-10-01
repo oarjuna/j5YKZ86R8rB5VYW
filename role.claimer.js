@@ -25,7 +25,7 @@ module.exports = {
 			var harvestSite = creep.pos.findClosestByPath(FIND_SOURCES);
 
                         // harvesting
-                        if ( harvestSite != undefined  && creep.carry.energy == 0) {
+                        if ( harvestSite != undefined  && creep.carry.energy != creep.carryCapacity) {
                                 if ( creep.harvest(harvestSite) == ERR_NOT_IN_RANGE ) {
                                         console.log(creep + " claimer -- HS " + harvestSite);
                                         creep.moveTo(harvestSite);
@@ -35,7 +35,7 @@ module.exports = {
                                 }
                         }
                         // construction jobs
-                        else if ( constructionSite != undefined  && creep.carry.energy != 0) {
+                        else if ( constructionSite != undefined  && creep.carry.energy == creep.carryCapacity) {
                                 if ( creep.build(constructionSite) == ERR_NOT_IN_RANGE ) {
                                         console.log(creep + " claimer -- CS " + constructionSite);
                                         creep.moveTo(constructionSite);
@@ -46,7 +46,7 @@ module.exports = {
 
                         }
 			// repair jobs
-			else if ( repairStructure != undefined  && creep.carry.energy != 0) {
+			else if ( repairStructure != undefined  && creep.carry.energy == creep.carryCapacity) {
                                 if ( creep.repair(repairStructure) == ERR_NOT_IN_RANGE ) {
                                         console.log(creep + " claimer -- RS " + repairStructure);
                                         creep.moveTo(repairStructure);
