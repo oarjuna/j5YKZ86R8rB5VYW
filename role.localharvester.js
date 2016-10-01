@@ -23,7 +23,7 @@ module.exports = {
                                s.store[RESOURCE_ENERGY] <2000
                 });
 
-		console.log(creep + " --  dropoff container " + container);
+		console.log(creep + " --  dropoff " + container);
                 // try to transfer energy, if the container is not in range
                 if (creep.transfer(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                         // move towards the container
