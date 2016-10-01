@@ -42,7 +42,7 @@ module.exports = {
                                 }
                         }
 			// drop stuff off
-			/*else {
+			else {
 				var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
 					filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
 							s.store[RESOURCE_ENERGY] < 2000
@@ -51,7 +51,7 @@ module.exports = {
 	                                console.log(creep + " claimer -- C " + container);
 					creep.moveTo(container);
                                 }
-			}*/
+			}
 
 			// attacking hostiles?
 			// reserving?
