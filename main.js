@@ -24,7 +24,7 @@ module.exports.loop = function () {
     for (let name in Game.creeps) {
         var creep = Game.creeps[name];
         if (creep.memory.role == 'harvester') {  roleHarvester.run(creep); }
-        //else if (creep.memory.role == 'local_harvester') {  roleLocalHarvester.run(creep); }
+        else if (creep.memory.role == 'local_harvester') {  roleLocalHarvester.run(creep); }
         //else if (creep.memory.role == 'energy_mover') { roleEnergyMover.run(creep); }
         //else if (creep.memory.role == 'upgrader') { roleUpgrader.run(creep); }
         //else if (creep.memory.role == 'builder') { roleBuilder.run(creep); }
@@ -33,7 +33,6 @@ module.exports.loop = function () {
         //else if (creep.memory.role == 'repairer') { roleRepairer.run(creep); }
         //else if (creep.memory.role == 'wallRepairer') { roleWallRepairer.run(creep); }
         //else if (creep.memory.role == 'remote_harvester') { roleRemoteHarvester.run(creep); }
-	}
     }
 
     // Tower control
