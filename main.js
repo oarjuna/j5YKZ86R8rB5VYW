@@ -20,22 +20,22 @@ module.exports.loop = function () {
             delete Memory.creeps[name];
         }
     }
-/*
+
     for (let name in Game.creeps) {
         var creep = Game.creeps[name];
         if (creep.memory.role == 'harvester') {  roleHarvester.run(creep); }
-        else if (creep.memory.role == 'local_harvester') {  roleLocalHarvester.run(creep); }
-        else if (creep.memory.role == 'energy_mover') { roleEnergyMover.run(creep); }
-        else if (creep.memory.role == 'upgrader') { roleUpgrader.run(creep); }
-        else if (creep.memory.role == 'builder') { roleBuilder.run(creep); }
-        else if (creep.memory.role == 'claimer') { roleClaimer.run(creep); }
+        //else if (creep.memory.role == 'local_harvester') {  roleLocalHarvester.run(creep); }
+        //else if (creep.memory.role == 'energy_mover') { roleEnergyMover.run(creep); }
+        //else if (creep.memory.role == 'upgrader') { roleUpgrader.run(creep); }
+        //else if (creep.memory.role == 'builder') { roleBuilder.run(creep); }
+        //else if (creep.memory.role == 'claimer') { roleClaimer.run(creep); }
 	//else if (creep.memory.role == 'soldier') {  roleSolider.run(creep); }
-        else if (creep.memory.role == 'repairer') { roleRepairer.run(creep); }
-        else if (creep.memory.role == 'wallRepairer') { roleWallRepairer.run(creep); }
-        else if (creep.memory.role == 'remote_harvester') { roleRemoteHarvester.run(creep); }
+        //else if (creep.memory.role == 'repairer') { roleRepairer.run(creep); }
+        //else if (creep.memory.role == 'wallRepairer') { roleWallRepairer.run(creep); }
+        //else if (creep.memory.role == 'remote_harvester') { roleRemoteHarvester.run(creep); }
 	}
     }
-*/
+
     // Tower control
     var towers = Game.rooms.E58N3.find(FIND_STRUCTURES, {
         filter: (s) => s.structureType == STRUCTURE_TOWER
