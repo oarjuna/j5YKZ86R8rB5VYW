@@ -12,7 +12,7 @@ var roleEnergyMover = require('role.energymover');
 var roleSoldier = require('role.soldier');
 
 module.exports.loop = function () {
-    // check for memory entries of died creeps by iterating over Memory.creeps
+    // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
     for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
 
     // setup some minimum numbers for different roles
@@ -22,6 +22,7 @@ module.exports.loop = function () {
     var minimumNumberOfUpgraders = 0;
     var minimumNumberOfBuilders = 1;
     var minimumNumberOfClaimers = 4;
+    var minimumNumberOfSoldiers = 0;
     var minimumNumberOfRepairers = 0;
     var minimumNumberOfWallRepairers = 1;
     var minimumNumberOfEnergyMovers = 3;
@@ -55,17 +56,17 @@ module.exports.loop = function () {
             tower.attack(target);
         }
 	else if (repair_target != undefined ) {
-	//	console.log(tower + " -- repairing " + repair_target);
 		tower.repair(repair_target);
 	}	
     }
+
     // Link control
     var linkfrom = Game.getObjectById("57ee7790b2cf99e1199ebf1c"); // storage link
     var linkto =   Game.getObjectById("57ee896c291f632c3c83c6e4"); // controller link
     var linkstatus = linkfrom.transferEnergy(linkto);
     //console.log("link status -- " + linkstatus);
 
-
+    // status
     // count the number of creeps alive for each role
     var numberOfHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'harvester');
     var numberOfRemoteHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harvester');
@@ -73,6 +74,7 @@ module.exports.loop = function () {
     var numberOfUpgraders = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader');
     var numberOfBuilders = _.sum(Game.creeps, (c) => c.memory.role == 'builder');
     var numberOfClaimers = _.sum(Game.creeps, (c) => c.memory.role == 'claimer');
+    var numberOfSoldiers = _.sum(Game.creeps, (c) => c.memory.role == 'soldier');
     var numberOfRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'repairer');
     var numberOfWallRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer');
     var numberOfEnergyMovers = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover');
@@ -94,10 +96,11 @@ module.exports.loop = function () {
     var status8 = " UP: " + room.controller.progress + "/" + room.controller.progressTotal + 
 	    	" lvl: " + room.controller.level;
     var status9 = " EM: " + numberOfEnergyMovers  + "/" + minimumNumberOfEnergyMovers;
+    var status10 = " S: " + numberOfSoldiers + "/" + minimumNumberOfSoldiers;
 
     console.log("\n#------------------#");
     console.log(status4 + status8 );
-    console.log( status1 + " " + status2 + " " + status3 + status5 + status6 + status7 + status9);
+    console.log( status1 + " " + status2 + " " + status3 + status5 + status6 + status7 + status9 + status10);
 
     // if not enough harvesters
     if (numberOfHarvesters < minimumNumberOfHarvesters) {
@@ -147,7 +150,11 @@ module.exports.loop = function () {
         console.log("main -- spawning energy_mover -- " + dest );
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'energy_mover',dest);
     }
-
+    // if not enough soldiers
+    else if (numberOfBuilders < minimumNumberOfSoldiers) {
+        console.log("main -- spawning soldier");
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'soldier','Attack');
+    }
     // if not enough upgraders
     else if (numberOfUpgraders < minimumNumberOfUpgraders) {
         console.log("main -- spawning upgrader");
