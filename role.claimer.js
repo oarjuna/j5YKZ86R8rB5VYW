@@ -9,7 +9,7 @@ module.exports = {
                 else if ( dest_key == 'Flag3') {  var gotoFlag = Game.flags.Flag4; }
 		
 		// are we in the room with the flag?
-		if ( creep.room != gotoFlag ) {
+		if ( creep != gotoFlag ) {
 			// not in the room with the flag, move towards the flag
 			moveStatus = creep.moveTo(gotoFlag);
 			console.log(creep + " claimer -movestatus " + moveStatus + " GF " + gotoFlag);	
