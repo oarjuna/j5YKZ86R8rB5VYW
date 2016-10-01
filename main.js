@@ -201,7 +201,7 @@ module.exports.loop = function () {
 	// claimers
     else if (numberOfClaimers < minimumNumberOfClaimers) {
         var c_flag1 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag1');
-        if ( c_flag1 == 0 ) { var dest = 'Flag1'; } /
+        if ( c_flag1 == 0 ) { var dest = 'Flag1'; } 
         else { var dest = 'Flag1'; } // south
 
         console.log("main -- spawning claimer");
