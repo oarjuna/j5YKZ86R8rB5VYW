@@ -4,9 +4,9 @@ module.exports = {
 
 		// get your assignment
                 var dest_key = creep.memory.destid;
-                if ( dest_key == 'Flag1') {  gotoFlag = Game.flags.Flag1; }
-                else if ( dest_key == 'Flag2') {  gotoFlag = Game.flags.Flag2; }
-                else if ( dest_key == 'Flag3') {  gotoFlag = Game.flags.Flag4; }
+                if ( dest_key == 'Flag1') {  var gotoFlag = Game.flags.Flag1; }
+                else if ( dest_key == 'Flag2') {  var gotoFlag = Game.flags.Flag2; }
+                else if ( dest_key == 'Flag3') {  var gotoFlag = Game.flags.Flag4; }
 		
 		// are we in the room with the flag?
 		if ( creep.room.name != gotoFlag.room.name ) {
