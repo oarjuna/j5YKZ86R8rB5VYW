@@ -48,7 +48,7 @@ module.exports.loop = function () {
         }
         // if creep is claimer, call claimer script
         else if (creep.memory.role == 'claimer') {
-            //roleClaimer.run(creep);
+            roleClaimer.run(creep);
         }
         // if creep is repairer, call repairer script
         else if (creep.memory.role == 'repairer') {
