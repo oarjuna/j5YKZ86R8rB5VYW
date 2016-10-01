@@ -42,11 +42,11 @@ module.exports = function() {
         else if (roleName == "remote_harvester") {
 	    var body = [
 			WORK, WORK, // 200
-		    	MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, // 300
+		    	MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, // 550
 			CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, // 300
 			ATTACK, // 80
                       	TOUGH, TOUGH // 20
-		] // 900
+		] // 1150
         }
 	else if (roleName == "claimer") {
                 var body = [
