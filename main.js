@@ -89,7 +89,7 @@ module.exports.loop = function () {
     console.log("link status -- " + linkstatus);
 
     // setup some minimum numbers for different roles
-    var minimumNumberOfHarvesters = 3;
+    var minimumNumberOfHarvesters = 5;
     var minimumNumberOfRemoteHarvesters = 10;
     var minimumNumberOfLocalHarvesters = 3;
     var minimumNumberOfUpgraders = 0;
