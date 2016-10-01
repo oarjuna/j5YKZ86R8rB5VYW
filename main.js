@@ -60,7 +60,7 @@ module.exports.loop = function () {
         }
         // if creep is remote harvester
         else if (creep.memory.role == 'remote_harvester') {
-            roleRemoteHarvester.run(creep);
+            //roleRemoteHarvester.run(creep);
 	}
     }
 
