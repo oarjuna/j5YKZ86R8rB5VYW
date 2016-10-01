@@ -1,12 +1,22 @@
 module.exports = {
 	run: function(creep) {
-		creep.say("!!");
+	creep.say("!!");
 
-		// get your assignment
-                var dest_key = creep.memory.destid;
-                if ( dest_key == 'Flag1') {  var gotoFlag = Game.flags.Flag1; }
-                else if ( dest_key == 'Flag2') {  var gotoFlag = Game.flags.Flag2; }
-                else if ( dest_key == 'Flag3') {  var gotoFlag = Game.flags.Flag4; }
+	// get your assignment
+        var dest_key = creep.memory.destid;
+        if ( dest_key == 'Flag1') {  var gotoFlag = Game.flags.Flag1; }
+        else if ( dest_key == 'Flag2') {  var gotoFlag = Game.flags.Flag2; }
+	else if ( dest_key == 'Flag3') {  var gotoFlag = Game.flags.Flag4; }
+
+        // attack hostile creeps
+        var target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+        if(target) {
+                console.log(creep + "ALERT -- found hostile creep!" + target);
+                if(creep.attack(target) == ERR_NOT_IN_RANGE) {
+                        creep.moveTo(target);
+                }
+        }
+
 		
 		// are we in the room with the flag?
 		if ( creep.pos.roomName != gotoFlag.pos.roomName ) {
