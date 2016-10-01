@@ -151,7 +151,7 @@ module.exports.loop = function () {
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'energy_mover',dest);
     }
     // if not enough soldiers
-    else if (numberOfBuilders < minimumNumberOfSoldiers) {
+    else if (numberOfSoldiers < minimumNumberOfSoldiers) {
         console.log("main -- spawning soldier");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'soldier','Attack');
     }
