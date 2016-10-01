@@ -217,7 +217,7 @@ module.exports.loop = function () {
     else if (numberOfRemoteHarvesters < minimumNumberOfRemoteHarvesters) {
         // try to spawn one
         console.log("main -- spawning remote_harvester");
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'remote_harvester');
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'remote_harvester','Flag1');
     }
 
 };
