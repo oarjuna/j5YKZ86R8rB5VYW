@@ -6,7 +6,7 @@ module.exports = {
         // get your assignment
         var dest_key = creep.memory.destid;
         if ( dest_key == 'Attack') {  var gotoFlag = Game.flags.Attack; }
-	else { var gotoFlag = creep.room.spawn; }
+	else { var gotoFlag = creep.room.controller; }
 
         // attack hostile creeps
         var target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
