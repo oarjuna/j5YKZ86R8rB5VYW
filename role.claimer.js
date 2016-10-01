@@ -25,7 +25,7 @@ module.exports = {
 			var harvestSite = creep.pos.findClosestByPath(FIND_SOURCES);
 
                         // harvesting
-                        if ( harvestSite != undefined  && creep.carry.energy != creep.carryCapacity) {
+                        if ( harvestSite != undefined  && creep.carry.energy == 0) {
                                 if ( creep.harvest(harvestSite) == ERR_NOT_IN_RANGE ) {
                                         console.log(creep + " claimer -- HS " + harvestSite);
                                         creep.moveTo(harvestSite);
@@ -45,8 +45,6 @@ module.exports = {
                                 }
 
                         }
-
-
 			// repair jobs
 			else if ( repairStructure != undefined  && creep.carry.energy != 0) {
                                 if ( creep.repair(repairStructure) == ERR_NOT_IN_RANGE ) {
