@@ -21,8 +21,8 @@ module.exports = {
         if ( creep.pos.roomName != gotoFlag.pos.roomName && creep.memory.working != true ) {
                 // not in the room with the flag, move towards the flag
                 moveStatus = creep.moveTo(gotoFlag);
-                console.log(creep + " remoteharv -movestatus " + moveStatus + " GF " + gotoFlag);
-                console.log(creep + " removeharv -CR " + creep.pos.roomName + " FR: " + gotoFlag.pos.roomName);
+                console.log(creep + " soldier -movestatus " + moveStatus + " GF " + gotoFlag);
+                console.log(creep + " soldier -CR " + creep.pos.roomName + " FR: " + gotoFlag.pos.roomName);
         }
 // end
     }
