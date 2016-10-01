@@ -42,18 +42,20 @@ module.exports = function() {
         else if (roleName == "remote_harvester") {
 	    var body = [
 			WORK, WORK, // 200
-		    	MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, // 350
-			CARRY, CARRY, // 100
+		    	MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, // 300
+			CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, // 300
 			ATTACK, // 80
                       	TOUGH, TOUGH // 20
-		] // 750
+		] // 900
         }
 	else if (roleName == "claimer") {
                 var body = [
 			WORK, WORK, // 200
                         MOVE, MOVE, MOVE, MOVE,   // 200
-			CARRY, CARRY, // 100
-                ] //  500
+			CARRY, CARRY // 100
+                        ATTACK, // 80
+                        TOUGH, TOUGH // 20
+                ] //  600
 	}
         else if (roleName == "local_harvester") {
                 var body = [
