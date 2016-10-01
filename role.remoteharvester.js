@@ -33,16 +33,12 @@ module.exports = {
             creep.memory.working = true;
         }
 
-        // assigned to transfer energy to a structure
         if (creep.memory.working == true) {
-            
-		// First, look for containers and storage. 
 	   var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
                 filter: (s) => s.structureType==STRUCTURE_STORAGE &&
                                s.store[RESOURCE_ENERGY] < s.storeCapacity
                 });
 	    if (container != undefined) { var structure = container; }
-	    // finally the controller
 	    else { var structure = Game.rooms.E58N3.controller; }
 
 	    var action_status = creep.transfer(structure, RESOURCE_ENERGY);
