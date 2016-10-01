@@ -71,6 +71,13 @@ module.exports = function() {
                         CARRY  // 50
                 ] // 1100
         }
+	else if (roleName == "soldier") {
+		var body = [
+			TOUGH,TOUGH,TOUGH,
+			MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,
+			ATTACK,ATTACK,ATTACK,ATTACK,ATTACK
+			];
+	}
         else {
                 var body = [
                         WORK, WORK, WORK, WORK, // 400

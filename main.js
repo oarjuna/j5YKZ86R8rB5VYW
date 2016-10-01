@@ -100,8 +100,6 @@ module.exports.loop = function () {
     var minimumNumberOfEnergyMovers = 3;
 
     // count the number of creeps alive for each role
-    // _.sum will count the number of properties in Game.creeps filtered by the
-    //  arrow function, which checks for the creep being a harvester
     var numberOfHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'harvester');
     var numberOfRemoteHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harvester');
     var numberOfLocalHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester');
