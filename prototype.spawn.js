@@ -53,7 +53,7 @@ module.exports = function() {
 			WORK, WORK, // 200
                         MOVE, MOVE, MOVE, MOVE,   // 200
 			CARRY, CARRY, // 100
-                ] //  800
+                ] //  500
 	}
         else if (roleName == "local_harvester") {
                 var body = [
