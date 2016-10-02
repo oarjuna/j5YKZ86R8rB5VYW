@@ -80,49 +80,49 @@ module.exports.loop = function () {
     var linkstatus = linkfrom.transferEnergy(linkto);
     //console.log("link status -- " + linkstatus);
 
-    // status
+    // status 
     // count the number of creeps alive for each role
-    var numberOfHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthpace == 'Spawn1');
-    var numberOfRemoteHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harvester' && c.memory.birthpace == 'Spawn1');
-    var numberOfLocalHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester' && c.memory.birthpace == 'Spawn1');
-    var numberOfUpgraders = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader' && c.memory.birthpace == 'Spawn1');
-    var numberOfBuilders = _.sum(Game.creeps, (c) => c.memory.role == 'builder' && c.memory.birthpace == 'Spawn1');
-    var numberOfClaimers = _.sum(Game.creeps, (c) => c.memory.role == 'claimer' && c.memory.birthpace == 'Spawn1');
-    var numberOfSoldiers = _.sum(Game.creeps, (c) => c.memory.role == 'soldier' && c.memory.birthpace == 'Spawn1');
-    var numberOfRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'repairer' && c.memory.birthpace == 'Spawn1');
-    var numberOfWallRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer' && c.memory.birthpace == 'Spawn1');
-    var numberOfEnergyMovers = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthpace == 'Spawn1');
+    var numSpawn1Harv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthpace == 'Spawn1');
+    var numSpawn1ReHa = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harvester' && c.memory.birthpace == 'Spawn1');
+    var numSpawn1LoHa = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester' && c.memory.birthpace == 'Spawn1');
+    var numSpawn1Upgr = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader' && c.memory.birthpace == 'Spawn1');
+    var numSpawn1Buil = _.sum(Game.creeps, (c) => c.memory.role == 'builder' && c.memory.birthpace == 'Spawn1');
+    var numSpawn1Clai = _.sum(Game.creeps, (c) => c.memory.role == 'claimer' && c.memory.birthpace == 'Spawn1');
+    var numSpawn1Sold = _.sum(Game.creeps, (c) => c.memory.role == 'soldier' && c.memory.birthpace == 'Spawn1');
+    var numSpawn1Repa = _.sum(Game.creeps, (c) => c.memory.role == 'repairer' && c.memory.birthpace == 'Spawn1');
+    var numSpawn1WaRe = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer' && c.memory.birthpace == 'Spawn1');
+    var numSpawn1EnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthpace == 'Spawn1');
 
     var name = undefined;
 
-    var status1 = " H: " + numberOfHarvesters + "/" + spawn1MinHarv + " U: " + numberOfUpgraders + "/" + spawn1MinUgra;
-    var status2 = "R: " + numberOfRepairers + "/" + spawn1MinRepa + " B: " + numberOfBuilders + "/" + spawn1MinBuil;
-    var status3 = "RH: " + numberOfRemoteHarvesters + "/" + spawn1MinReHa;
+    var status1 = " H: " + numSpawn1Harv + "/" + spawn1MinHarv + " U: " + numSpawn1Upgr + "/" + spawn1MinUgra;
+    var status2 = "R: " + numSpawn1Repa + "/" + spawn1MinRepa + " B: " + numSpawn1Buil + "/" + spawn1MinBuil;
+    var status3 = "RH: " + numSpawn1ReHa + "/" + spawn1MinReHa;
 
     var energy = Game.spawns.Spawn1.room.energyCapacityAvailable;
     var energyAvailable = Game.spawns.Spawn1.room.energyAvailable;
 
     var status4 = "E:  " + energyAvailable + "/" + energy;
-    var status5 = " WR: " + numberOfWallRepairers + "/" + spawn1MinWall;
-    var status6 = " C: " + numberOfClaimers + "/" + spawn1MinClai;
-    var status7 = " LH: " + numberOfLocalHarvesters + "/" + spawn1MinLoHa;
+    var status5 = " WR: " + numSpawn1WaRe + "/" + spawn1MinWall;
+    var status6 = " C: " + numSpawn1Clai + "/" + spawn1MinClai;
+    var status7 = " LH: " + numSpawn1LoHa + "/" + spawn1MinLoHa;
     var room = Game.spawns.Spawn1.room;
     var status8 = " UP: " + room.controller.progress + "/" + room.controller.progressTotal + 
 	    	" lvl: " + room.controller.level;
-    var status9 = " EM: " + numberOfEnergyMovers  + "/" + spawn1MinEner;
-    var status10 = " S: " + numberOfSoldiers + "/" + spawn1MinSold;
+    var status9 = " EM: " + numSpawn1EnMo  + "/" + spawn1MinEner;
+    var status10 = " S: " + numSpawn1Sold + "/" + spawn1MinSold;
 
     console.log("\n#------------------#");
     console.log(status4 + status8 );
     console.log( status1 + " " + status2 + " " + status3 + status5 + status6 + status7 + status9 + status10);
 
     // if not enough harvesters
-    if (numberOfHarvesters < spawn1MinHarv) {
+    if (numSpawn1Harv < spawn1MinHarv) {
         // try to spawn one
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'harvester');
 	console.log("main -- spawning harvester");
         // if spawning failed and we have no harvesters left
-        if (name == ERR_NOT_ENOUGH_ENERGY && numberOfHarvesters == 0) {
+        if (name == ERR_NOT_ENOUGH_ENERGY && numSpawn1Harv == 0) {
             // spawn one with what is available
             name = Game.spawns.Spawn1.createCustomCreep(
                 Game.spawns.Spawn1.room.energyAvailable, 'harvester');
@@ -130,7 +130,7 @@ module.exports.loop = function () {
     }
 
    // if not enough local harvesters
-    else if (numberOfLocalHarvesters < spawn1MinLoHa) {
+    else if (numSpawn1LoHa < spawn1MinLoHa) {
         var lh_tmp = _.sum(Game.creeps,
                         (c) => c.memory.role == 'local_harvester' &&
                                 c.memory.destid == '579faa710700be0674d30fd7'
@@ -141,7 +141,7 @@ module.exports.loop = function () {
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'local_harvester',dest);
     }
    // if not enough energy movers
-    else if (numberOfEnergyMovers < spawn1MinEner) {
+    else if (numSpawn1EnMo < spawn1MinEner) {
         var st_num = _.sum(Game.creeps,
                         (c) => c.memory.role == 'energy_mover'  &&
 				c.memory.destid == '57e7235e6b66411171b7f0f8'
@@ -165,27 +165,27 @@ module.exports.loop = function () {
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'energy_mover',dest);
     }
     // if not enough soldiers
-    else if (numberOfSoldiers < spawn1MinSold) {
+    else if (numSpawn1Sold < spawn1MinSold) {
         console.log("main -- spawning soldier");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'soldier2','Attack');
     }
     // if not enough upgraders
-    else if (numberOfUpgraders < spawn1MinUgra) {
+    else if (numSpawn1Upgr < spawn1MinUgra) {
         console.log("main -- spawning upgrader");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'upgrader');
     }
     // if not enough repairers
-    else if (numberOfRepairers < spawn1MinRepa) {
+    else if (numSpawn1Repa < spawn1MinRepa) {
         console.log("main -- spawning repairer");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'repairer');
     }
     // if not enough builders
-    else if (numberOfBuilders < spawn1MinBuil) {
+    else if (numSpawn1Buil < spawn1MinBuil) {
         console.log("main -- spawning builder");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'builder');
     }
 	// claimers
-    else if (numberOfClaimers < spawn1MinClai) {
+    else if (numSpawn1Clai < spawn1MinClai) {
 	// count the number of claimers per flag
         var c_flag1 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag1');
         var c_flag2 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag2');
@@ -206,13 +206,13 @@ module.exports.loop = function () {
     }
 
     // if not enough wallRepairers
-    else if (numberOfWallRepairers < spawn1MinWall) {
+    else if (numSpawn1WaRe < spawn1MinWall) {
         // try to spawn one
         console.log("main -- spawning wall repairer");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'wallRepairer');
     }
     // if not enough remote harvesters
-    else if (numberOfRemoteHarvesters < spawn1MinReHa) {
+    else if (numSpawn1ReHa < spawn1MinReHa) {
         // count the number of remote harvs per flag
         var c_flag1 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harvester' && c.memory.destid == 'Flag1');
         var c_flag2 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harvester' && c.memory.destid == 'Flag2');
