@@ -15,16 +15,16 @@ module.exports = {
         var spawn1MinEner = 3;
 
         // count the number of creeps alive for each role born at Spawn1
-        var numSpawn1Harv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthpace == 'Spawn1');
-        var numSpawn1ReHa = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harvester' && c.memory.birthpace == 'Spawn1');
-        var numSpawn1LoHa = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester' && c.memory.birthpace == 'Spawn1');
-        var numSpawn1Upgr = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader' && c.memory.birthpace == 'Spawn1');
-        var numSpawn1Buil = _.sum(Game.creeps, (c) => c.memory.role == 'builder' && c.memory.birthpace == 'Spawn1');
-        var numSpawn1Clai = _.sum(Game.creeps, (c) => c.memory.role == 'claimer' && c.memory.birthpace == 'Spawn1');
-        var numSpawn1Sold = _.sum(Game.creeps, (c) => c.memory.role == 'soldier' && c.memory.birthpace == 'Spawn1');
-        var numSpawn1Repa = _.sum(Game.creeps, (c) => c.memory.role == 'repairer' && c.memory.birthpace == 'Spawn1');
-        var numSpawn1WaRe = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer' && c.memory.birthpace == 'Spawn1');
-        var numSpawn1EnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthpace == 'Spawn1');
+        var numSpawn1Harv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthplace == 'Spawn1');
+        var numSpawn1ReHa = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harvester' && c.memory.birthplace == 'Spawn1');
+        var numSpawn1LoHa = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester' && c.memory.birthplace == 'Spawn1');
+        var numSpawn1Upgr = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader' && c.memory.birthplace == 'Spawn1');
+        var numSpawn1Buil = _.sum(Game.creeps, (c) => c.memory.role == 'builder' && c.memory.birthplace == 'Spawn1');
+        var numSpawn1Clai = _.sum(Game.creeps, (c) => c.memory.role == 'claimer' && c.memory.birthplace == 'Spawn1');
+        var numSpawn1Sold = _.sum(Game.creeps, (c) => c.memory.role == 'soldier' && c.memory.birthplace == 'Spawn1');
+        var numSpawn1Repa = _.sum(Game.creeps, (c) => c.memory.role == 'repairer' && c.memory.birthplace == 'Spawn1');
+        var numSpawn1WaRe = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer' && c.memory.birthplace == 'Spawn1');
+        var numSpawn1EnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthplace == 'Spawn1');
 
    // if not enough harvesters
     if (numSpawn1Harv < spawn1MinHarv) {
