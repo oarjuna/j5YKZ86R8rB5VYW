@@ -16,7 +16,7 @@ module.exports.loop = function () {
     for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
 
     // setup some minimum numbers fo1 different roles
-    var minimumNumberOfHarvesters = 4;
+    var spawn1MinHarv = 4;
     var minimumNumberOfRemoteHarvesters = 4;
     var minimumNumberOfLocalHarvesters = 3;
     var minimumNumberOfUpgraders = 0;
@@ -92,7 +92,7 @@ module.exports.loop = function () {
 
     var name = undefined;
 
-    var status1 = " H: " + numberOfHarvesters + "/" + minimumNumberOfHarvesters + " U: " + numberOfUpgraders + "/" + minimumNumberOfUpgraders;
+    var status1 = " H: " + numberOfHarvesters + "/" + spawn1MinHarv + " U: " + numberOfUpgraders + "/" + minimumNumberOfUpgraders;
     var status2 = "R: " + numberOfRepairers + "/" + minimumNumberOfRepairers + " B: " + numberOfBuilders + "/" + minimumNumberOfBuilders;
     var status3 = "RH: " + numberOfRemoteHarvesters + "/" + minimumNumberOfRemoteHarvesters;
 
@@ -114,7 +114,7 @@ module.exports.loop = function () {
     console.log( status1 + " " + status2 + " " + status3 + status5 + status6 + status7 + status9 + status10);
 
     // if not enough harvesters
-    if (numberOfHarvesters < minimumNumberOfHarvesters) {
+    if (numberOfHarvesters < spawn1MinHarv) {
         // try to spawn one
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'harvester');
 	console.log("main -- spawning harvester");
