@@ -203,6 +203,7 @@ module.exports.loop = function () {
         else if ( c_flag5 == 1 ) { var dest = 'Flag5'; role = "claimer"; }  // allow two of these
         else { var dest = 'error'; } 
 
+	var energy = '';
         console.log("main -- spawning claimer " + dest + " body - " + role);
         name = Game.spawns.Spawn1.createCustomCreep(energy, role, dest);
     }
