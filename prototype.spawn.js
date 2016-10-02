@@ -10,21 +10,28 @@ module.exports = function() {
                         MOVE, MOVE, MOVE, MOVE, // 200
                      	//CARRY, CARRY //200
                      	CARRY, CARRY, CARRY, CARRY //200
-		] // 500
+		]; // 500
+        }
+	else if (roleName == 'harvester_lite') {
+                var body = [
+                        WORK,   // 100
+                        MOVE, MOVE,  // 100
+                        CARRY, CARRY // 100
+                ]; // 300
         }
         else if (roleName == 'upgrader') {
 		var body = [
 			WORK, WORK,  // 200
 			MOVE, MOVE, MOVE, MOVE,  // 200
 			CARRY, CARRY, CARRY, CARRY // 200
-		] // 600
+		]; // 600
         }
         else if (roleName == 'builder') {
 		var body = [
 			WORK, WORK,  // 200
 			MOVE, MOVE, MOVE, MOVE, MOVE, // 250
 			CARRY, CARRY, CARRY, CARRY // 200
-		] // 650
+		]; // 650
         }
 	// m - 50 / w - 100 / c - 50 / a - 80 / t - 10
         else if (roleName == 'repairer') {
@@ -32,14 +39,14 @@ module.exports = function() {
                         WORK, WORK,
                         MOVE, MOVE, MOVE, MOVE,
                         CARRY, CARRY
-		]
+		];
         }
         else if (roleName == 'wallRepairer') {
 		var body = [
                         WORK, WORK,
                         MOVE, MOVE, MOVE, MOVE,
                         CARRY, CARRY
-		]
+		];
         }
         else if (roleName == "remote_harvester") {
 	    var body = [
@@ -48,7 +55,7 @@ module.exports = function() {
 			CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, // 300
 			ATTACK, // 80
                       	TOUGH, TOUGH // 20
-		] // 1150
+		]; // 1150
         }
 	else if (roleName == "claimer") {
                 var body = [
@@ -57,7 +64,7 @@ module.exports = function() {
 			CARRY, CARRY, // 100
                         ATTACK, // 80
                         TOUGH, TOUGH // 20
-                ] //  600
+                ];//  600
 	}
 	else if (roleName == "claimer_lg") {
 		var body = [
@@ -67,7 +74,7 @@ module.exports = function() {
                         CARRY, CARRY, // 100
                         ATTACK, // 80
                         TOUGH, TOUGH // 20
-		] // 1100
+		]; // 1100
 		roleName = "claimer";
 	} 
         else if (roleName == "local_harvester") {
@@ -76,14 +83,14 @@ module.exports = function() {
                         WORK, WORK, WORK, WORK, WORK, WORK, // 500
                         MOVE,   // 50
                         CARRY  // 50
-                ] // 600
+                ]; // 600
         }
         else if (roleName == "energy_mover") {
                 var body = [
                         WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK,// 1000
                         MOVE,   // 50
                         CARRY  // 50
-                ] // 1100
+                ]; // 1100
         }
 	else if (roleName == "soldier") {
 		var body = [
