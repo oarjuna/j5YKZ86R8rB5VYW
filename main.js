@@ -94,28 +94,29 @@ module.exports.loop = function () {
 	// start of the status bar
     	var name = undefined;
 
-    	var room = Game.spawns.Spawn1.room;
-    	var energy = Game.spawns.Spawn1.room.energyCapacityAvailable;
-    	var energyAvailable = Game.spawns.Spawn1.room.energyAvailable;
+    	var roomSp1 = Game.spawns.Spawn1.room;
+    	var energySp1 = Game.spawns.Spawn1.room.energyCapacityAvailable;
+    	var energyAvailableSp1 = Game.spawns.Spawn1.room.energyAvailable;
 
-    	var status1 = " H: " + numSpawn1Harv + "/" + spawn1MinHarv; 
-	var status2 = " U: " + numSpawn1Upgr + "/" + spawn1MinUgra;
-    	var status3 = " R: " + numSpawn1Repa + "/" + spawn1MinRepa;
-	var status4 = " B: " + numSpawn1Buil + "/" + spawn1MinBuil;
-    	var status5 = " RH: " + numSpawn1ReHa + "/" + spawn1MinReHa;
-    	var status6 = " WR: " + numSpawn1WaRe + "/" + spawn1MinWall;
-    	var status7 = " C: " + numSpawn1Clai + "/" + spawn1MinClai;
-    	var status8 = " LH: " + numSpawn1LoHa + "/" + spawn1MinLoHa;
-    	var status9 = " EM: " + numSpawn1EnMo  + "/" + spawn1MinEner;
-    	var status10 =" S: " + numSpawn1Sold + "/" + spawn1MinSold;
+    	var status1Sp1 = " H: " + numSpawn1Harv + "/" + spawn1MinHarv; 
+	var status2Sp1 = " U: " + numSpawn1Upgr + "/" + spawn1MinUgra;
+    	var status3Sp1 = " R: " + numSpawn1Repa + "/" + spawn1MinRepa;
+	var status4Sp1 = " B: " + numSpawn1Buil + "/" + spawn1MinBuil;
+    	var status5Sp1 = " RH: " + numSpawn1ReHa + "/" + spawn1MinReHa;
+    	var status6Sp1 = " WR: " + numSpawn1WaRe + "/" + spawn1MinWall;
+    	var status7Sp1 = " C: " + numSpawn1Clai + "/" + spawn1MinClai;
+    	var status8Sp1 = " LH: " + numSpawn1LoHa + "/" + spawn1MinLoHa;
+    	var status9Sp1 = " EM: " + numSpawn1EnMo  + "/" + spawn1MinEner;
+    	var status10Sp1 =" S: " + numSpawn1Sold + "/" + spawn1MinSold;
 
-    	var status11 = "E:  " + energyAvailable + "/" + energy;
-    	var status12 = " UP: " + room.controller.progress +
+    	var status11Sp1 = "E:  " + energyAvailable + "/" + energy;
+    	var status12Sp1 = " UP: " + room.controller.progress +
 			 "/" + room.controller.progressTotal + 
 	    		" lvl: " + room.controller.level;
     console.log("\n#------------------#");
-    console.log(status11 + status12 );
-    console.log( status1 + status2 + status3 + status4 + status5 + status6 + status7 + status8 + status9 + status10);
+    console.log(status11Sp1 + status12Sp1 );
+    console.log( status1Sp1 + status2Sp1 + status3Sp1 + status4Sp1 + status5Sp1 + status6Sp1 + 
+		status7Sp1 + status8Sp1 + status9Sp1 + status10Sp1);
 
     // if not enough harvesters
     if (numSpawn1Harv < spawn1MinHarv) {
