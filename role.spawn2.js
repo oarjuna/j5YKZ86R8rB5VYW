@@ -143,9 +143,6 @@ module.exports = {
         // start of the status bar
         var name = undefined;
 
-        var roomSp2 = Game.spawns.Spawn2.room;
-        var energySp2 = Game.spawns.Spawn2.room.energyCapacityAvailable;
-        var energyAvailableSp2 = Game.spawns.Spawn2.room.energyAvailable;
 
         var status1Sp2 = "H: " + numSpawn2Harv + "/" + spawn2MinHarv;
         var status2Sp2 = " U: " + numSpawn2Upgr + "/" + spawn2MinUgra;
@@ -158,6 +155,9 @@ module.exports = {
         var status9Sp2 = " EM: " + numSpawn2EnMo  + "/" + spawn2MinEner;
         var status10Sp2 =" S: " + numSpawn2Sold + "/" + spawn2MinSold;
 
+        var roomSp2 = Game.spawns.Spawn2.room;
+        var energySp2 = Game.spawns.Spawn2.room.energyCapacityAvailable;
+        var energyAvailableSp2 = Game.spawns.Spawn2.room.energyAvailable;
         var status11Sp2 = "E:  " + energyAvailableSp2 + "/" + energySp2
         var status12Sp2 = " UP: " + roomSp2.controller.progress +
                          "/" + roomSp2.controller.progressTotal +
