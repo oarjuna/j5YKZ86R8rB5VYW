@@ -69,7 +69,7 @@ module.exports.loop = function () {
     	var linkstatus = linkfrom.transferEnergy(linkto);
     	//console.log("link status -- " + linkstatus);
 
-	roleSpawn1.run;
+	roleSpawn1.run(foo);
 
 	// the same, born at Spawn2
     	var numSpawn2Harv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthpace == 'Spawn2');
