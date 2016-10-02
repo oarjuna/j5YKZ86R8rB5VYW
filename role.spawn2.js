@@ -6,7 +6,7 @@ module.exports = {
         var spawn2MinHarv = 0;
         var spawn2MinReHa = 0;
         var spawn2MinLoHa = 1;
-        var spawn2MinUgra = 1;
+        var spawn2MinUgra = 0;
         var spawn2MinBuil = 0;
         var spawn2MinClai = 0;
         var spawn2MinSold = 0;
@@ -47,7 +47,7 @@ module.exports = {
                         );
         if ( lh_tmp < 2 ) { var dest = '579faa610700be0674d30e44'; } // north
         console.log("main -- spawning local_harvester -- " + dest + " -- " + lh_tmp);
-        name = Game.spawns.Spawn2.createCustomCreep(energy, 'local_harvester',dest);
+        name = Game.spawns.Spawn2.createCustomCreep(energy, 'local_harvester',dest,'Spawn2');
     }
    // if not enough energy movers
     else if (numSpawn2EnMo < spawn2MinEner) {
