@@ -83,15 +83,15 @@ module.exports.loop = function () {
     // status
     // count the number of creeps alive for each role
     var numberOfHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthpace == 'Spawn1');
-    var numberOfRemoteHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harvester');
-    var numberOfLocalHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester');
-    var numberOfUpgraders = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader');
-    var numberOfBuilders = _.sum(Game.creeps, (c) => c.memory.role == 'builder');
-    var numberOfClaimers = _.sum(Game.creeps, (c) => c.memory.role == 'claimer');
-    var numberOfSoldiers = _.sum(Game.creeps, (c) => c.memory.role == 'soldier');
-    var numberOfRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'repairer');
-    var numberOfWallRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer');
-    var numberOfEnergyMovers = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover');
+    var numberOfRemoteHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harvester' && c.memory.birthpace == 'Spawn1');
+    var numberOfLocalHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester' && c.memory.birthpace == 'Spawn1');
+    var numberOfUpgraders = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader' && c.memory.birthpace == 'Spawn1');
+    var numberOfBuilders = _.sum(Game.creeps, (c) => c.memory.role == 'builder' && c.memory.birthpace == 'Spawn1');
+    var numberOfClaimers = _.sum(Game.creeps, (c) => c.memory.role == 'claimer' && c.memory.birthpace == 'Spawn1');
+    var numberOfSoldiers = _.sum(Game.creeps, (c) => c.memory.role == 'soldier' && c.memory.birthpace == 'Spawn1');
+    var numberOfRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'repairer' && c.memory.birthpace == 'Spawn1');
+    var numberOfWallRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer' && c.memory.birthpace == 'Spawn1');
+    var numberOfEnergyMovers = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthpace == 'Spawn1');
 
     var name = undefined;
 
