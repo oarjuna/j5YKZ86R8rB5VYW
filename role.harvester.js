@@ -54,7 +54,7 @@ module.exports = {
                                s.store[RESOURCE_ENERGY] > 199
                 });
 
-		if ( container == undefined ) { var container = creep.creep.pos.findClosestByRange(FIND_SOURCE); }
+		if ( container == undefined ) { var container = creep.pos.findClosestByRange(FIND_SOURCE); }
 
                 console.log(creep + " harv --pickup -- " + container );
                 creep.say("pickup");
