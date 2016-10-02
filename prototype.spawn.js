@@ -1,7 +1,7 @@
 module.exports = function() {
     // create a new function for StructureSpawn
     StructureSpawn.prototype.createCustomCreep =
-        function(energy, roleName, dest) {
+        function(energy, roleName, dest, birthplace) {
 
         if (roleName == 'harvester') {
 		var body = [
@@ -122,6 +122,6 @@ module.exports = function() {
 	 */
 
         // create creep with the created body and the given role
-        return this.createCreep(body, undefined, { role: roleName, working: false, destid: dest });
+        return this.createCreep(body, undefined, { role: roleName, working: false, destid: dest birthplace: birthplace});
      };
 };
