@@ -76,11 +76,10 @@ module.exports = {
 				if (creep.claimController(creep.room.controller) == ERR_NOT_IN_RANGE) {
                                         creep.moveTo(creep.room.controller);
                                 }
-	
 			}
 			// upgrade the controller if necessary
 			else if ( false  &&
-				 dest_key == 'Flag5';
+				 dest_key == 'Flag5'
 				) {
             			if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
                 			creep.moveTo(creep.room.controller);
