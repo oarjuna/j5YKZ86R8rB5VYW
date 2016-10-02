@@ -106,6 +106,7 @@ module.exports = {
 					filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
 							s.store[RESOURCE_ENERGY] < 2000
                 		});
+				console.log(creep + " claimer -- transfering energy.");
                                 if ( creep.transfer(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE ) {
 					creep.moveTo(container);
                                 }
