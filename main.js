@@ -153,7 +153,7 @@ module.exports.loop = function () {
     // if not enough soldiers
     else if (numberOfSoldiers < minimumNumberOfSoldiers) {
         console.log("main -- spawning soldier");
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'soldier','Attack');
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'soldier2','Attack');
     }
     // if not enough upgraders
     else if (numberOfUpgraders < minimumNumberOfUpgraders) {
@@ -177,11 +177,13 @@ module.exports.loop = function () {
         var c_flag2 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag2');
         var c_flag3 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag3');
         var c_flag4 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag4');
+        var c_flag5 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag5');
 
         if ( c_flag1 == 0 ) { var dest = 'Flag1'; } 
         else if ( c_flag2 == 0 ) { var dest = 'Flag2'; } 
         else if ( c_flag3 == 0 ) { var dest = 'Flag3'; } 
         else if ( c_flag4 == 0 ) { var dest = 'Flag4'; } 
+        else if ( c_flag5 == 0 ) { var dest = 'Flag5'; } 
         else { var dest = 'error'; } 
 
         console.log("main -- spawning claimer");
@@ -201,11 +203,13 @@ module.exports.loop = function () {
         var c_flag2 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harvester' && c.memory.destid == 'Flag2');
         var c_flag3 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harvester' && c.memory.destid == 'Flag3');
         var c_flag4 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harvester' && c.memory.destid == 'Flag4');
+        var c_flag5 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harvester' && c.memory.destid == 'Flag5');
 
         if ( c_flag1 == 0 ) { var dest = 'Flag1'; }
         else if ( c_flag2 == 0 ) { var dest = 'Flag2'; }
         else if ( c_flag3 == 0 ) { var dest = 'Flag3'; }
         else if ( c_flag4 == 0 ) { var dest = 'Flag4'; }
+        else if ( c_flag5 == 0 ) { var dest = 'Flag5'; }
         else { var dest = 'error'; }
 
         console.log("main -- spawning remote_harvester");

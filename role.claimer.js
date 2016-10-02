@@ -8,6 +8,7 @@ module.exports = {
         else if ( dest_key == 'Flag2') {  var gotoFlag = Game.flags.Flag2; }
         else if ( dest_key == 'Flag3') {  var gotoFlag = Game.flags.Flag3; }
         else if ( dest_key == 'Flag4') {  var gotoFlag = Game.flags.Flag4; }
+        else if ( dest_key == 'Flag5') {  var gotoFlag = Game.flags.Flag5; }
 
         // attack hostile creeps
         var target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);

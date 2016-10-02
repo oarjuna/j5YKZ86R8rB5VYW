@@ -45,11 +45,12 @@ module.exports = {
                         creep.moveTo(other_target);
                 }
         }
-        else if ( neutral_controller != undefined ) {
+        else if ( neutral_controller != undefined ) { /// if we have the CLAIM part!
                 console.log(creep + "SOLDIER -- claiming target!" + neutral_controller);
                 if(creep.attack(neutral_controller) == ERR_NOT_IN_RANGE) {
                         creep.moveTo(neutral_controller);
                 }
+	// also for HEAL
         }
 
 	else { 

@@ -79,6 +79,13 @@ module.exports = function() {
 			ATTACK,ATTACK,ATTACK,ATTACK,ATTACK
 			];
 	}
+        else if (roleName == "soldier2") {
+                var body = [
+                        CLAIM,
+                        MOVE,MOVE,MOVE,MOVE,MOVE
+                        ];
+        }
+
         else {
                 var body = [
                         WORK, WORK, WORK, WORK, // 400
