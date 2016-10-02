@@ -94,5 +94,4 @@ module.exports.loop = function () {
     	var numSpawn2EnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthpace == 'Spawn2');
 
 
-*/
 };
