@@ -64,7 +64,7 @@ module.exports = {
                		 }
 		}
 		else {
-               		console.log(creep + " harv --pickup -- " + container );
+               	//	console.log(creep + " harv --pickup -- " + container );
                 	if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                         	creep.moveTo(container);
                 	}
