@@ -17,6 +17,7 @@ module.exports = function() {
                         MOVE, MOVE,  // 100
                         CARRY, CARRY // 100
                 ]; // 300
+		var roleName = 'harvester';
         }
         else if (roleName == 'upgrader') {
 		var body = [
