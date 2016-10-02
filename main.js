@@ -11,7 +11,7 @@ var roleWallRepairer = require('role.wallRepairer');
 var roleEnergyMover = require('role.energymover');
 var roleSoldier = require('role.soldier');
 var roleSpawn1 = require('role.spawn1');
-//var roleSpawn2 = require('role.spawn2');
+var roleSpawn2 = require('role.spawn2');
 
 module.exports.loop = function () {
     // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
