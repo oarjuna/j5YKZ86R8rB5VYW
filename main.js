@@ -58,7 +58,7 @@ module.exports.loop = function () {
 
 	// Run the spawn logics
 	roleSpawn1.run(100);
-	//roleSpawn2.run(100);
+	roleSpawn2.run(100);
 
 
 };
