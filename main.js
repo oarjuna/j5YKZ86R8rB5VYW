@@ -10,6 +10,7 @@ var roleRepairer = require('role.repairer');
 var roleWallRepairer = require('role.wallRepairer');
 var roleEnergyMover = require('role.energymover');
 var roleSoldier = require('role.soldier');
+var roleSpawn1 = require('role.spawn1');
 
 module.exports.loop = function () {
     // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
@@ -113,11 +114,15 @@ module.exports.loop = function () {
     	var status12Sp1 = " UP: " + roomSp1.controller.progress +
 			 "/" + roomSp1.controller.progressTotal + 
 	    		" lvl: " + roomSp1.controller.level;
-    console.log("\n#------------------#");
-    console.log(status11Sp1 + status12Sp1 );
-    console.log( status1Sp1 + status2Sp1 + status3Sp1 + status4Sp1 + status5Sp1 + status6Sp1 + 
-		status7Sp1 + status8Sp1 + status9Sp1 + status10Sp1);
 
+	// print the thing 
+    	console.log("\n#------------------#");
+    	console.log(status11Sp1 + status12Sp1 );
+    	console.log( status1Sp1 + status2Sp1 + status3Sp1 + status4Sp1 + status5Sp1 + status6Sp1 + 
+			status7Sp1 + status8Sp1 + status9Sp1 + status10Sp1);
+
+	roleSpawn1.run();
+/*
     // if not enough harvesters
     if (numSpawn1Harv < spawn1MinHarv) {
         // try to spawn one
@@ -233,5 +238,5 @@ module.exports.loop = function () {
         console.log("main -- spawning remote_harvester");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'remote_harvester',dest);
     }
-
+*/
 };
