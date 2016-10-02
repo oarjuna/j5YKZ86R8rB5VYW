@@ -57,14 +57,14 @@ module.exports = {
 
 
 		if ( container == undefined ) { 
-               		console.log(creep + " harv --pickup -- " + container );
+               	//	console.log(creep + " harv --pickup -- " + container );
 			var container = creep.pos.findClosestByRange(FIND_SOURCES); 
 		         if (creep.harvest(container) == ERR_NOT_IN_RANGE) {
 		                 creep.moveTo(container);
                		 }
 		}
 		else {
-               		console.log(creep + " harv --pickup -- " + container );
+               	//	console.log(creep + " harv --pickup -- " + container );
                 	if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                         	creep.moveTo(container);
                 	}
