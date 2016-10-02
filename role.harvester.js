@@ -35,7 +35,8 @@ module.exports = {
             }
 	    else {
 		creep.say("st-drop");
-	    	var structure = creep.room.storage;
+		if ( creep.room.storage == undefined ) { var structure = creep.room.controller; }
+	    	else { var structure = creep.room.storage; }
 	    }
 
             if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
