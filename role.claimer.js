@@ -2,6 +2,15 @@ module.exports = {
 	run: function(creep) {
 	creep.say("!!");
 
+	// array search function
+	function contains(a, obj) {
+		for (var i = 0; i < a.length; i++) {
+       			if (a[i] === obj) { return true; }
+    		}
+    	return false;
+	}
+
+
 	// get your assignment
         var dest_key = creep.memory.destid;
         if ( dest_key == 'Flag1') {  var gotoFlag = Game.flags.Flag1; }
@@ -61,8 +70,9 @@ module.exports = {
                                 }
                         }
                        	// does the container exist? if not, rebuild it? 
-
+			else if ( contains(creep.body, 'claim') { console.log(creep + " HAS CLAIM! ");
 			// upgrade the controller if necessary
+
 			else if ( false  &&
 				upgradeControl != undefined && 
 				creep.memory.working == true &&
