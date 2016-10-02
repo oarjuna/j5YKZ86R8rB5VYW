@@ -59,7 +59,8 @@ module.exports = {
                                 }
                         }
 			// upgrade the controller if necessary
-			else if ( upgradeControl != undefined && 
+			else if ( false  &&
+				upgradeControl != undefined && 
 				creep.memory.working == true &&
 				creep.pos.roomName == gotoFlag.pos.roomName
 				) {
