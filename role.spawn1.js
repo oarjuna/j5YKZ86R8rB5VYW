@@ -169,7 +169,6 @@ module.exports = {
         console.log( status1Sp1 + status2Sp1 + status3Sp1 + status4Sp1 + status5Sp1 + status6Sp1 +
                         status7Sp1 + status8Sp1 + status9Sp1 + status10Sp1);
 
-        roleSpawn1.run();
 
 // end
 }
