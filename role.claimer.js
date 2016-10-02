@@ -24,8 +24,8 @@ module.exports = {
 		if ( creep.pos.roomName != gotoFlag.pos.roomName ) {
 			// not in the room with the flag, move towards the flag
 			moveStatus = creep.moveTo(gotoFlag);
-			console.log(creep + " claimer -movestatus " + moveStatus + " GF " + gotoFlag);	
-			console.log(creep + " claimer -CR " + creep.pos.roomName + " FR: " + gotoFlag.pos.roomName);
+			//console.log(creep + " claimer -movestatus " + moveStatus + " GF " + gotoFlag);	
+			//console.log(creep + " claimer -CR " + creep.pos.roomName + " FR: " + gotoFlag.pos.roomName);
 		}
 		else {
 			// in the room with the flag, look for stuff to do (likely very CPU heavy)
@@ -52,12 +52,14 @@ module.exports = {
                                         creep.moveTo(harvestSite);
                                 }
                         }
-                        // construction jobs
+			// other, construction jobs
                         else if ( constructionSite != undefined  && creep.memory.working == true) {
                                 if ( creep.build(constructionSite) == ERR_NOT_IN_RANGE ) {
                                         creep.moveTo(constructionSite);
                                 }
                         }
+                       	// does the container exist? if not, rebuild it? 
+
 			// upgrade the controller if necessary
 			else if ( false  &&
 				upgradeControl != undefined && 

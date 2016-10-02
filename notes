@@ -24,3 +24,6 @@ sun
 
 // claimers need to rebuild the container if they don't exist
 // build on the flag spot?
+
+// need a basic_harv role that spawns first
+// when we get wiped
