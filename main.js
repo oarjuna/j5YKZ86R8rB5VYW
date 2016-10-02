@@ -15,8 +15,8 @@ module.exports.loop = function () {
     // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
     for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
 
-    // setup some minimum numbers for different roles
-    var minimumNumberOfHarvesters = 0;
+    // setup some minimum numbers fo1 different roles
+    var minimumNumberOfHarvesters = 1;
     var minimumNumberOfRemoteHarvesters = 0;
     var minimumNumberOfLocalHarvesters = 1;
     var minimumNumberOfUpgraders = 0;
