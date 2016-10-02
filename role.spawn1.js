@@ -116,4 +116,4 @@ module.exports = {
         console.log("main -- spawning remote_harvester");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'remote_harvester',dest);
     }
-
+};
