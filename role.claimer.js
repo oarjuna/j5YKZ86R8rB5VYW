@@ -70,7 +70,7 @@ module.exports = {
                                 }
                         }
                        	// does the container exist? if not, rebuild it? 
-			else if ( contains(creep.body, 'claim') { console.log(creep + " HAS CLAIM! "); }
+			else if ( contains(creep.body, 'claim') ) { console.log(creep + " HAS CLAIM! "); }
 			// upgrade the controller if necessary
 
 			else if ( false  &&
