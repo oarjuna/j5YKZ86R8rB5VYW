@@ -17,11 +17,11 @@ module.exports.loop = function () {
 
     // setup some minimum numbers fo1 different roles
     var minimumNumberOfHarvesters = 4;
-    var minimumNumberOfRemoteHarvesters = 0;
+    var minimumNumberOfRemoteHarvesters = 4;
     var minimumNumberOfLocalHarvesters = 3;
     var minimumNumberOfUpgraders = 0;
     var minimumNumberOfBuilders = 1;
-    var minimumNumberOfClaimers = 0;
+    var minimumNumberOfClaimers = 4;
     var minimumNumberOfSoldiers = 0;
     var minimumNumberOfRepairers = 0;
     var minimumNumberOfWallRepairers = 1;

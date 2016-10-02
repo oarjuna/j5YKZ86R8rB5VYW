@@ -6,10 +6,10 @@ module.exports = function() {
         if (roleName == 'harvester') {
 		var body = [
 			WORK, // 100
-                        MOVE, MOVE, // 200
-                        //MOVE, MOVE, MOVE, MOVE, // 200
-                     	CARRY, CARRY //200
-                     	//CARRY, CARRY, CARRY, CARRY //200
+                        //MOVE, MOVE, // 200
+                        MOVE, MOVE, MOVE, MOVE, // 200
+                     	//CARRY, CARRY //200
+                     	CARRY, CARRY, CARRY, CARRY //200
 		] // 500
         }
         else if (roleName == 'upgrader') {
@@ -61,8 +61,8 @@ module.exports = function() {
 	}
         else if (roleName == "local_harvester") {
                 var body = [
-                        WORK, WORK, // 500
-                        //WORK, WORK, WORK, WORK, WORK, WORK, // 500
+                        //WORK, WORK, // 500
+                        WORK, WORK, WORK, WORK, WORK, WORK, // 500
                         MOVE,   // 50
                         CARRY  // 50
                 ] // 600
