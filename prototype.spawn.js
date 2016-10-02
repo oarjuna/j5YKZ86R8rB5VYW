@@ -78,10 +78,10 @@ module.exports = function() {
         else if (roleName == "local_harvester") {
                 var body = [
                         //WORK, WORK, // 500
-                        WORK, WORK, WORK, WORK, WORK, WORK, // 500
+                        WORK, WORK, WORK, WORK, WORK, WORK, // 300
                         MOVE,   // 50
                         CARRY  // 50
-                ]; // 600
+                ]; // 400
         }
         else if (roleName == "energy_mover") {
                 var body = [
