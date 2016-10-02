@@ -16,18 +16,6 @@ module.exports.loop = function () {
     // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
     for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
 
-	// spawn levels
-    	var spawn2MinHarv = 0; 
-    	var spawn2MinReHa = 0;
-    	var spawn2MinLoHa = 0; 
-    	var spawn2MinUgra = 0;
-    	var spawn2MinBuil = 0; 
-    	var spawn2MinClai = 0; 
-    	var spawn2MinSold = 0; 
-    	var spawn2MinRepa = 0; 
-    	var spawn2MinWall = 0; 
-    	var spawn2MinEner = 0; 
-
 	// run the roles per creep
     	for (let name in Game.creeps) {
         	var creep = Game.creeps[name];
@@ -69,19 +57,8 @@ module.exports.loop = function () {
     	var linkstatus = linkfrom.transferEnergy(linkto);
     	//console.log("link status -- " + linkstatus);
 
+	// Run the spawn logics
 	roleSpawn1.run(100);
-
-	// the same, born at Spawn2
-    	var numSpawn2Harv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthpace == 'Spawn2');
-    	var numSpawn2ReHa = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harvester' && c.memory.birthpace == 'Spawn2');
-    	var numSpawn2LoHa = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester' && c.memory.birthpace == 'Spawn2');
-    	var numSpawn2Upgr = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader' && c.memory.birthpace == 'Spawn2');
-    	var numSpawn2Buil = _.sum(Game.creeps, (c) => c.memory.role == 'builder' && c.memory.birthpace == 'Spawn2');
-    	var numSpawn2Clai = _.sum(Game.creeps, (c) => c.memory.role == 'claimer' && c.memory.birthpace == 'Spawn2');
-    	var numSpawn2Sold = _.sum(Game.creeps, (c) => c.memory.role == 'soldier' && c.memory.birthpace == 'Spawn2');
-    	var numSpawn1Repa = _.sum(Game.creeps, (c) => c.memory.role == 'repairer' && c.memory.birthpace == 'Spawn2');
-    	var numSpawn2WaRe = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer' && c.memory.birthpace == 'Spawn2');
-    	var numSpawn2EnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthpace == 'Spawn2');
 
 
 };
