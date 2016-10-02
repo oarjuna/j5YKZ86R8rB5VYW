@@ -16,9 +16,9 @@ module.exports.loop = function () {
     for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
 
     // setup some minimum numbers fo1 different roles
-    var minimumNumberOfHarvesters = 2;
+    var minimumNumberOfHarvesters = 4;
     var minimumNumberOfRemoteHarvesters = 0;
-    var minimumNumberOfLocalHarvesters = 1;
+    var minimumNumberOfLocalHarvesters = 3;
     var minimumNumberOfUpgraders = 0;
     var minimumNumberOfBuilders = 1;
     var minimumNumberOfClaimers = 0;
