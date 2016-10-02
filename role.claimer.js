@@ -59,12 +59,14 @@ module.exports = {
 
                         // harvesting
                         if ( harvestSite != undefined  && creep.memory.working == false ) {
+				console.log(creep + " claimer -- harvesting");
                                 if ( creep.harvest(harvestSite) == ERR_NOT_IN_RANGE ) {
                                         creep.moveTo(harvestSite);
                                 }
                         }
 			// other, construction jobs
                         else if ( constructionSite != undefined  && creep.memory.working == true) {
+				console.log(creep + " claimer -- building");
                                 if ( creep.build(constructionSite) == ERR_NOT_IN_RANGE ) {
                                         creep.moveTo(constructionSite);
                                 }
