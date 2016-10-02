@@ -181,14 +181,14 @@ module.exports.loop = function () {
 
 	var role;
         if ( c_flag1 == 0 ) { var dest = 'Flag1'; role = "claimer"; } 
-        else if ( c_flag2 == 0 ) { var dest = 'Flag2'; role = 'claimer'; } 
-        else if ( c_flag3 == 0 ) { var dest = 'Flag3'; role = 'claimer'; } 
-        else if ( c_flag4 == 0 ) { var dest = 'Flag4'; role = 'claimer'; } 
-        else if ( c_flag5 == 0 ) { var dest = 'Flag5'; role = 'claimer_lg'; } 
+        else if ( c_flag2 == 0 ) { var dest = 'Flag2'; role = "claimer"; } 
+        else if ( c_flag3 == 0 ) { var dest = 'Flag3'; role = "claimer"; } 
+        else if ( c_flag4 == 0 ) { var dest = 'Flag4'; role = "claimer"; } 
+        else if ( c_flag5 == 0 ) { var dest = 'Flag5'; role = "claimer_lg"; } 
         else { var dest = 'error'; } 
 
         console.log("main -- spawning claimer " + role);
-        //name = Game.spawns.Spawn1.createCustomCreep(energy, role, dest);
+        name = Game.spawns.Spawn1.createCustomCreep(energy, role, dest);
     }
 
     // if not enough wallRepairers
