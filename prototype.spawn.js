@@ -71,10 +71,8 @@ module.exports = function() {
 			CLAIM, // 500
                         WORK, WORK, WORK, // 150 
                         MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE,  // 350
-                        CARRY, CARRY, // 100
-                        ATTACK, // 80
-                        TOUGH, TOUGH // 20
-		]; // 1100
+                        CARRY, CARRY // 100
+		]; // 1000
 		roleName = "claimer";
 	} 
         else if (roleName == "local_harvester") {
