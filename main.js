@@ -109,10 +109,10 @@ module.exports.loop = function () {
     	var status9Sp1 = " EM: " + numSpawn1EnMo  + "/" + spawn1MinEner;
     	var status10Sp1 =" S: " + numSpawn1Sold + "/" + spawn1MinSold;
 
-    	var status11Sp1 = "E:  " + energyAvailable + "/" + energy;
-    	var status12Sp1 = " UP: " + room.controller.progress +
-			 "/" + room.controller.progressTotal + 
-	    		" lvl: " + room.controller.level;
+    	var status11Sp1 = "E:  " + energyAvailableSp1 + "/" + energySp1
+    	var status12Sp1 = " UP: " + roomSp1.controller.progress +
+			 "/" + roomSp1.controller.progressTotal + 
+	    		" lvl: " + roomSp1.controller.level;
     console.log("\n#------------------#");
     console.log(status11Sp1 + status12Sp1 );
     console.log( status1Sp1 + status2Sp1 + status3Sp1 + status4Sp1 + status5Sp1 + status6Sp1 + 
