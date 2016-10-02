@@ -26,6 +26,7 @@ module.exports = {
         var numSpawn2WaRe = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer' && c.memory.birthplace == 'Spawn2');
         var numSpawn2EnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthplace == 'Spawn2');
 
+        console.log("#------------------#");
    // if not enough harvesters
     if (numSpawn2Harv < spawn2MinHarv) {
         // try to spawn one
@@ -163,7 +164,6 @@ module.exports = {
                         " lvl: " + roomSp2.controller.level;
 
         // print the thing
-        console.log("#------------------#");
         console.log("Sp2: " + status11Sp2 + status12Sp2 );
         console.log("Sp2: " +  status1Sp2 + status2Sp2 + status3Sp2 + status4Sp2 + status5Sp2 + status6Sp2 +
                         status7Sp2 + status8Sp2 + status9Sp2 + status10Sp2);
