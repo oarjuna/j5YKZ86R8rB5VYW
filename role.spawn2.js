@@ -30,7 +30,7 @@ module.exports = {
     if (numSpawn2Harv < spawn2MinHarv) {
         // try to spawn one
         name = Game.spawns.Spawn2.createCustomCreep(energy, 'harvester','','Spawn1');
-        console.log("main -- spawning harvester");
+        console.log("sp2 -- spawning harvester");
         // if spawning failed and we have no harvesters left
         if (name == ERR_NOT_ENOUGH_ENERGY && numSpawn2Harv == 0) {
             // spawn one with what is available
@@ -46,7 +46,7 @@ module.exports = {
                                 c.memory.destid == '579faa610700be0674d30e44'
                         );
         if ( lh_tmp < 2 ) { var dest = '579faa610700be0674d30e44'; } // north
-        console.log("main -- spawning local_harvester -- " + dest + " -- " + lh_tmp);
+        console.log("sp2 -- spawning local_harvester -- " + dest + " -- " + lh_tmp);
         name = Game.spawns.Spawn2.createCustomCreep(energy, 'local_harvester',dest,'Spawn2');
     }
    // if not enough energy movers
@@ -70,27 +70,27 @@ module.exports = {
         else if ( c1_num == 0 ) { var dest = '57e6b6f9bf7be6eb05caa521'; } // controller #1
         else if ( c2_num == 0 ){ var dest = '57e6b5c1135326b41e54835e'; } // controller  #2
         else {  var dest = '57e6530dfb8875006e762b5e'; } // controller #3
-        console.log("main -- spawning energy_mover -- " + dest );
+        console.log("sp2 -- spawning energy_mover -- " + dest );
         name = Game.spawns.Spawn2.createCustomCreep(energy, 'energy_mover',dest,'Spawn2');
     }
     // if not enough soldiers
     else if (numSpawn2Sold < spawn2MinSold) {
-        console.log("main -- spawning soldier");
+        console.log("sp2 -- spawning soldier");
         name = Game.spawns.Spawn2.createCustomCreep(energy, 'soldier','Attack','Spawn2');
     }
     // if not enough upgraders
     else if (numSpawn2Upgr < spawn2MinUgra) {
-        console.log("main -- spawning upgrader");
+        console.log("sp2 -- spawning upgrader");
         name = Game.spawns.Spawn2.createCustomCreep(energy, 'upgrader','','Spawn2');
     }
     // if not enough repairers
     else if (numSpawn2Repa < spawn2MinRepa) {
-        console.log("main -- spawning repairer");
+        console.log("sp2 -- spawning repairer");
         name = Game.spawns.Spawn2.createCustomCreep(energy, 'repairer','','Spawn2');
     }
     // if not enough builders
     else if (numSpawn2Buil < spawn2MinBuil) {
-        console.log("main -- spawning builder");
+        console.log("sp2 -- spawning builder");
         name = Game.spawns.Spawn2.createCustomCreep(energy, 'builder','','Spawn2');
     }
         // claimers
@@ -111,13 +111,13 @@ module.exports = {
         else { var dest = 'error'; }
 
         var energy = '';
-        console.log("main -- spawning claimer " + dest + " body - " + role);
+        console.log("sp2 -- spawning claimer " + dest + " body - " + role);
         name = Game.spawns.Spawn2.createCustomCreep(energy, role, dest,'Spawn2');
     }
     // if not enough wallRepairers
     else if (numSpawn2WaRe < spawn2MinWall) {
         // try to spawn one
-        console.log("main -- spawning wall repairer");
+        console.log("sp2 -- spawning wall repairer");
         name = Game.spawns.Spawn2.createCustomCreep(energy, 'wallRepairer','','Spawn2');
     }
     // if not enough remote harvesters
@@ -136,7 +136,7 @@ module.exports = {
         else if ( c_flag5 == 0 ) { var dest = 'Flag5'; }
         else { var dest = 'error'; }
 
-        console.log("main -- spawning remote_harvester");
+        console.log("sp2 -- spawning remote_harvester");
         name = Game.spawns.Spawn2.createCustomCreep(energy, 'remote_harvester',dest,'Spawn2');
     }
         // start of the status bar
