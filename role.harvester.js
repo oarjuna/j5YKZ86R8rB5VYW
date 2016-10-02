@@ -55,7 +55,8 @@ module.exports = {
                 });
 
 		if ( container == undefined ) { var container = creep.creep.pos.findClosestByRange(FIND_SOURCE); }
-                //console.log(creep + " harv --pickup -- " + container );
+
+                console.log(creep + " harv --pickup -- " + container );
                 creep.say("pickup");
 
                 if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
