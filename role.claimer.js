@@ -67,7 +67,7 @@ module.exports = {
                 			creep.moveTo(creep.room.controller);
             			}
 				else {
-i					console.log(creep + " upgrade - " + creep.upgradeController(creep.room.controller));
+					console.log(creep + " upgrade - " + creep.upgradeController(creep.room.controller));
 				}
 			}
 			// repair jobs
