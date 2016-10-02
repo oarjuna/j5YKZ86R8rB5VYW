@@ -84,6 +84,7 @@ module.exports = {
 			else if ( false  &&
 				 dest_key == 'Flag5'
 				) {
+				console.log(creep + " claimer -- upgrading");
             			if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
                 			creep.moveTo(creep.room.controller);
             			}
@@ -93,6 +94,7 @@ module.exports = {
 			}
 			// repair jobs
 			else if ( repairStructure != undefined  && creep.memory.working == true ) {
+				console.log(creep + " claimer -- repairing");
                                 if ( creep.repair(repairStructure) == ERR_NOT_IN_RANGE ) {
 					console.log(creep + " repair");
                                         creep.moveTo(repairStructure);
