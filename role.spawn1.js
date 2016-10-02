@@ -29,13 +29,13 @@ module.exports = {
    // if not enough harvesters
     if (numSpawn1Harv < spawn1MinHarv) {
         // try to spawn one
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'harvester');
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'harvester','','Spawn1');
         console.log("main -- spawning harvester");
         // if spawning failed and we have no harvesters left
         if (name == ERR_NOT_ENOUGH_ENERGY && numSpawn1Harv == 0) {
             // spawn one with what is available
             name = Game.spawns.Spawn1.createCustomCreep(
-                Game.spawns.Spawn1.room.energyAvailable, 'harvester');
+                Game.spawns.Spawn1.room.energyAvailable, 'harvester','','Spawn1');
         }
     }
 
@@ -48,7 +48,7 @@ module.exports = {
         if ( lh_tmp < 2 ) { var dest = '579faa710700be0674d30fd7'; } // north
         else { var dest = '579faa710700be0674d30fd8'; } // south
         console.log("main -- spawning local_harvester -- " + dest + " -- " + lh_tmp);
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'local_harvester',dest);
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'local_harvester',dest,'Spawn1');
     }
    // if not enough energy movers
     else if (numSpawn1EnMo < spawn1MinEner) {
@@ -72,27 +72,27 @@ module.exports = {
         else if ( c2_num == 0 ){ var dest = '57e6b5c1135326b41e54835e'; } // controller  #2
         else {  var dest = '57e6530dfb8875006e762b5e'; } // controller #3
         console.log("main -- spawning energy_mover -- " + dest );
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'energy_mover',dest);
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'energy_mover',dest,'Spawn1');
     }
     // if not enough soldiers
     else if (numSpawn1Sold < spawn1MinSold) {
         console.log("main -- spawning soldier");
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'soldier2','Attack');
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'soldier','Attack','Spawn1');
     }
     // if not enough upgraders
     else if (numSpawn1Upgr < spawn1MinUgra) {
         console.log("main -- spawning upgrader");
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'upgrader');
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'upgrader','','Spawn1');
     }
     // if not enough repairers
     else if (numSpawn1Repa < spawn1MinRepa) {
         console.log("main -- spawning repairer");
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'repairer');
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'repairer','','Spawn1');
     }
     // if not enough builders
     else if (numSpawn1Buil < spawn1MinBuil) {
         console.log("main -- spawning builder");
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'builder');
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'builder','','Spawn1');
     }
         // claimers
     else if (numSpawn1Clai < spawn1MinClai) {
@@ -113,13 +113,13 @@ module.exports = {
 
         var energy = '';
         console.log("main -- spawning claimer " + dest + " body - " + role);
-        name = Game.spawns.Spawn1.createCustomCreep(energy, role, dest);
+        name = Game.spawns.Spawn1.createCustomCreep(energy, role, dest,'Spawn1');
     }
     // if not enough wallRepairers
     else if (numSpawn1WaRe < spawn1MinWall) {
         // try to spawn one
         console.log("main -- spawning wall repairer");
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'wallRepairer');
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'wallRepairer','','Spawn1');
     }
     // if not enough remote harvesters
     else if (numSpawn1ReHa < spawn1MinReHa) {
@@ -138,7 +138,7 @@ module.exports = {
         else { var dest = 'error'; }
 
         console.log("main -- spawning remote_harvester");
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'remote_harvester',dest);
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'remote_harvester',dest,'Spawn1');
     }
         // start of the status bar
         var name = undefined;
