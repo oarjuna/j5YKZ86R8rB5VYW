@@ -33,7 +33,7 @@ module.exports = {
         name = Game.spawns.Spawn2.createCustomCreep(energy, 'harvester','','Spawn2');
         console.log("sp2 -- spawning harvester");
         // if spawning failed and we have no harvesters left
-        if (name == ERR_NOT_ENOUGH_ENERGY && numSpawn2Harv == 0) {
+        if (name == ERR_NOT_ENOUGH_ENERGY && numSpawn2Harv < 2) {
             // spawn one with what is available
             name = Game.spawns.Spawn2.createCustomCreep(
                 Game.spawns.Spawn2.room.energyAvailable, 'harvester_lite','','Spawn2');
