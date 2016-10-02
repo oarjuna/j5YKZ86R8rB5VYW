@@ -21,7 +21,7 @@ module.exports.loop = function () {
     var minimumNumberOfLocalHarvesters = 3;
     var minimumNumberOfUpgraders = 0;
     var minimumNumberOfBuilders = 1;
-    var minimumNumberOfClaimers = 5;
+    var minimumNumberOfClaimers = 6;
     var minimumNumberOfSoldiers = 0;
     var minimumNumberOfRepairers = 0;
     var minimumNumberOfWallRepairers = 1;
@@ -184,7 +184,7 @@ module.exports.loop = function () {
         else if ( c_flag2 == 0 ) { var dest = 'Flag2'; role = "claimer"; } 
         else if ( c_flag3 == 0 ) { var dest = 'Flag3'; role = "claimer"; } 
         else if ( c_flag4 == 0 ) { var dest = 'Flag4'; role = "claimer"; } 
-        else if ( c_flag5 == 0 ) { var dest = 'Flag5'; role = "claimer_lg"; } 
+        else if ( c_flag5 == 1 ) { var dest = 'Flag5'; role = "claimer_lg"; }  // allow two of these
         else { var dest = 'error'; } 
 
         console.log("main -- spawning claimer " + dest + " body - " + role);
