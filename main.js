@@ -100,7 +100,7 @@ module.exports.loop = function () {
 
     	var status1 = " H: " + numSpawn1Harv + "/" + spawn1MinHarv; 
 	var status2 = " U: " + numSpawn1Upgr + "/" + spawn1MinUgra;
-    	var status2 = " R: " + numSpawn1Repa + "/" + spawn1MinRepa;
+    	var status3 = " R: " + numSpawn1Repa + "/" + spawn1MinRepa;
 	var status4 = " B: " + numSpawn1Buil + "/" + spawn1MinBuil;
     	var status5 = " RH: " + numSpawn1ReHa + "/" + spawn1MinReHa;
     	var status6 = " WR: " + numSpawn1WaRe + "/" + spawn1MinWall;
