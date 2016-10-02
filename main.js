@@ -29,7 +29,6 @@ module.exports.loop = function () {
         	else if (creep.memory.role == 'repairer') { roleRepairer.run(creep); }
         	else if (creep.memory.role == 'wallRepairer') { roleWallRepairer.run(creep); }
         	else if (creep.memory.role == 'remote_harvester') { roleRemoteHarvester.run(creep); }
-	creep.memory.birthplace = 'Spawn1';
     	}
 
     	// Tower control
