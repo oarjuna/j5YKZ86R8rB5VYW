@@ -70,13 +70,17 @@ module.exports = {
                                 }
                         }
                        	// does the container exist? if not, rebuild it? 
-			else if ( contains(creep.body, 'claim') ) { console.log(creep + " HAS CLAIM! "); }
-			// upgrade the controller if necessary
 
+			// claim the controller if necessary
+			else if ( true && dest_key == 'Flag5' ) {
+				if (creep.claimController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+                                        creep.moveTo(creep.room.controller);
+                                }
+	
+			}
+			// upgrade the controller if necessary
 			else if ( false  &&
-				upgradeControl != undefined && 
-				creep.memory.working == true &&
-				creep.pos.roomName == gotoFlag.pos.roomName
+				 dest_key == 'Flag5';
 				) {
             			if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
                 			creep.moveTo(creep.room.controller);
