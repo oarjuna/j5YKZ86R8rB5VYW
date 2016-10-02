@@ -5,8 +5,8 @@ module.exports = {
         // spawn levels
         var spawn2MinHarv = 0;
         var spawn2MinReHa = 0;
-        var spawn2MinLoHa = 0;
-        var spawn2MinUgra = 0;
+        var spawn2MinLoHa = 1;
+        var spawn2MinUgra = 1;
         var spawn2MinBuil = 0;
         var spawn2MinClai = 0;
         var spawn2MinSold = 0;
@@ -43,10 +43,9 @@ module.exports = {
     else if (numSpawn2LoHa < spawn2MinLoHa) {
         var lh_tmp = _.sum(Game.creeps,
                         (c) => c.memory.role == 'local_harvester' &&
-                                c.memory.destid == '579faa710700be0674d30fd7'
+                                c.memory.destid == '579faa610700be0674d30e44'
                         );
-        if ( lh_tmp < 2 ) { var dest = '579faa710700be0674d30fd7'; } // north
-        else { var dest = '579faa710700be0674d30fd8'; } // south
+        if ( lh_tmp < 2 ) { var dest = '579faa610700be0674d30e44'; } // north
         console.log("main -- spawning local_harvester -- " + dest + " -- " + lh_tmp);
         name = Game.spawns.Spawn2.createCustomCreep(energy, 'local_harvester',dest);
     }
