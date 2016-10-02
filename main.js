@@ -27,6 +27,17 @@ module.exports.loop = function () {
     var minimumNumberOfWallRepairers = 1;
     var minimumNumberOfEnergyMovers = 3;
 
+	// control Spawn2 levels
+	var spawn2MinHarv = 0;
+	var spawn2MinReHa = 0;
+	var spawn2MinLoHa = 0;
+	var spawn2MinUgra = 0;
+	var spawn2MinBuil = 0;
+	var spawn2MinClai = 0;
+	var spawn2MinSold = 0;
+	var spawn2MinWall = 0;
+	var spawn2MinEner = 0;
+
 	// run the roles per creep
     for (let name in Game.creeps) {
         var creep = Game.creeps[name];
@@ -184,7 +195,7 @@ module.exports.loop = function () {
         else if ( c_flag2 == 0 ) { var dest = 'Flag2'; role = "claimer"; } 
         else if ( c_flag3 == 0 ) { var dest = 'Flag3'; role = "claimer"; } 
         else if ( c_flag4 == 0 ) { var dest = 'Flag4'; role = "claimer"; } 
-        else if ( c_flag5 == 1 ) { var dest = 'Flag5'; role = "claimer_lg"; }  // allow two of these
+        else if ( c_flag5 == 1 ) { var dest = 'Flag5'; role = "claimer"; }  // allow two of these
         else { var dest = 'error'; } 
 
         console.log("main -- spawning claimer " + dest + " body - " + role);
