@@ -29,13 +29,13 @@ module.exports = {
    // if not enough harvesters
     if (numSpawn2Harv < spawn2MinHarv) {
         // try to spawn one
-        name = Game.spawns.Spawn2.createCustomCreep(energy, 'harvester');
+        name = Game.spawns.Spawn2.createCustomCreep(energy, 'harvester','','Spawn1');
         console.log("main -- spawning harvester");
         // if spawning failed and we have no harvesters left
         if (name == ERR_NOT_ENOUGH_ENERGY && numSpawn2Harv == 0) {
             // spawn one with what is available
             name = Game.spawns.Spawn2.createCustomCreep(
-                Game.spawns.Spawn2.room.energyAvailable, 'harvester_lite');
+                Game.spawns.Spawn2.room.energyAvailable, 'harvester_lite','','Spawn1');
         }
     }
 
