@@ -53,16 +53,22 @@ module.exports = {
                 filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
                                s.store[RESOURCE_ENERGY] > 199
                 });
+               	creep.say("pickup");
 
-		if ( container == undefined ) { var container = creep.pos.findClosestByRange(FIND_SOURCES); }
 
-                console.log(creep + " harv --pickup -- " + container );
-                creep.say("pickup");
-
-                if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                        creep.moveTo(container);
-                }
-
+		if ( container == undefined ) { 
+               		console.log(creep + " harv --pickup -- " + container );
+			var container = creep.pos.findClosestByRange(FIND_SOURCES); 
+		         if (creep.harvest(container) == ERR_NOT_IN_RANGE) {
+		                 creep.moveTo(container);
+               		 }
+		}
+		else {
+               		console.log(creep + " harv --pickup -- " + container );
+                	if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                        	creep.moveTo(container);
+                	}
+		}
         }
     }
 };
