@@ -22,7 +22,7 @@ module.exports.loop = function () {
     var minimumNumberOfUpgraders = 0;
     var minimumNumberOfBuilders = 1;
     var minimumNumberOfClaimers = 4;
-    var minimumNumberOfSoldiers = 1;
+    var minimumNumberOfSoldiers = 0;
     var minimumNumberOfRepairers = 0;
     var minimumNumberOfWallRepairers = 1;
     var minimumNumberOfEnergyMovers = 3;
@@ -153,7 +153,7 @@ module.exports.loop = function () {
     // if not enough soldiers
     else if (numberOfSoldiers < minimumNumberOfSoldiers) {
         console.log("main -- spawning soldier");
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'soldier2','Attack');
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'soldier','Attack');
     }
     // if not enough upgraders
     else if (numberOfUpgraders < minimumNumberOfUpgraders) {
