@@ -68,7 +68,6 @@ module.exports.loop = function () {
     	var linkstatus = linkfrom.transferEnergy(linkto);
     	//console.log("link status -- " + linkstatus);
 
-    	// status 
     	// count the number of creeps alive for each role born at Spawn1
     	var numSpawn1Harv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthpace == 'Spawn1');
     	var numSpawn1ReHa = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harvester' && c.memory.birthpace == 'Spawn1');
@@ -92,28 +91,31 @@ module.exports.loop = function () {
     	var numSpawn2WaRe = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer' && c.memory.birthpace == 'Spawn2');
     	var numSpawn2EnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthpace == 'Spawn2');
 
-    var name = undefined;
+	// start of the status bar
+    	var name = undefined;
 
-    var status1 = " H: " + numSpawn1Harv + "/" + spawn1MinHarv + " U: " + numSpawn1Upgr + "/" + spawn1MinUgra;
-    var status2 = "R: " + numSpawn1Repa + "/" + spawn1MinRepa + " B: " + numSpawn1Buil + "/" + spawn1MinBuil;
-    var status3 = "RH: " + numSpawn1ReHa + "/" + spawn1MinReHa;
+    	var room = Game.spawns.Spawn1.room;
+    	var energy = Game.spawns.Spawn1.room.energyCapacityAvailable;
+    	var energyAvailable = Game.spawns.Spawn1.room.energyAvailable;
 
-    var energy = Game.spawns.Spawn1.room.energyCapacityAvailable;
-    var energyAvailable = Game.spawns.Spawn1.room.energyAvailable;
+    	var status1 = " H: " + numSpawn1Harv + "/" + spawn1MinHarv; 
+	var status2 = " U: " + numSpawn1Upgr + "/" + spawn1MinUgra;
+    	var status2 = " R: " + numSpawn1Repa + "/" + spawn1MinRepa;
+	var status4 = " B: " + numSpawn1Buil + "/" + spawn1MinBuil;
+    	var status5 = " RH: " + numSpawn1ReHa + "/" + spawn1MinReHa;
+    	var status6 = " WR: " + numSpawn1WaRe + "/" + spawn1MinWall;
+    	var status7 = " C: " + numSpawn1Clai + "/" + spawn1MinClai;
+    	var status8 = " LH: " + numSpawn1LoHa + "/" + spawn1MinLoHa;
+    	var status9 = " EM: " + numSpawn1EnMo  + "/" + spawn1MinEner;
+    	var status10 =" S: " + numSpawn1Sold + "/" + spawn1MinSold;
 
-    var status4 = "E:  " + energyAvailable + "/" + energy;
-    var status5 = " WR: " + numSpawn1WaRe + "/" + spawn1MinWall;
-    var status6 = " C: " + numSpawn1Clai + "/" + spawn1MinClai;
-    var status7 = " LH: " + numSpawn1LoHa + "/" + spawn1MinLoHa;
-    var room = Game.spawns.Spawn1.room;
-    var status8 = " UP: " + room.controller.progress + "/" + room.controller.progressTotal + 
-	    	" lvl: " + room.controller.level;
-    var status9 = " EM: " + numSpawn1EnMo  + "/" + spawn1MinEner;
-    var status10 = " S: " + numSpawn1Sold + "/" + spawn1MinSold;
-
+    	var status11 = "E:  " + energyAvailable + "/" + energy;
+    	var status12 = " UP: " + room.controller.progress +
+			 "/" + room.controller.progressTotal + 
+	    		" lvl: " + room.controller.level;
     console.log("\n#------------------#");
-    console.log(status4 + status8 );
-    console.log( status1 + " " + status2 + " " + status3 + status5 + status6 + status7 + status9 + status10);
+    console.log(status11 + status12 );
+    console.log( status1 + status2 + status3 + status4 + status5 + status6 + status7 + status8 + status9 + status10);
 
     // if not enough harvesters
     if (numSpawn1Harv < spawn1MinHarv) {
