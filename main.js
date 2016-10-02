@@ -17,16 +17,16 @@ module.exports.loop = function () {
     for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
 
 	// spawn levels
-    	var spawn1MinHarv = 4; var spawn2MinHarv = 0;
-    	var spawn1MinReHa = 4; var spawn2MinReHa = 0;
-    	var spawn1MinLoHa = 3; var spawn2MinLoHa = 0;
-    	var spawn1MinUgra = 0; var spawn2MinUgra = 0;
-    	var spawn1MinBuil = 1; var spawn2MinBuil = 0;
-    	var spawn1MinClai = 6; var spawn2MinClai = 0;
-    	var spawn1MinSold = 0; var spawn2MinSold = 0;
-    	var spawn1MinRepa = 0; var spawn2MinRepa = 0;
-    	var spawn1MinWall = 1; var spawn2MinWall = 0;
-    	var spawn1MinEner = 3; var spawn2MinEner = 0;
+    	var spawn2MinHarv = 0; 
+    	var spawn2MinReHa = 0;
+    	var spawn2MinLoHa = 0; 
+    	var spawn2MinUgra = 0;
+    	var spawn2MinBuil = 0; 
+    	var spawn2MinClai = 0; 
+    	var spawn2MinSold = 0; 
+    	var spawn2MinRepa = 0; 
+    	var spawn2MinWall = 0; 
+    	var spawn2MinEner = 0; 
 
 	// run the roles per creep
     	for (let name in Game.creeps) {
@@ -80,6 +80,7 @@ module.exports.loop = function () {
     	var numSpawn1Repa = _.sum(Game.creeps, (c) => c.memory.role == 'repairer' && c.memory.birthpace == 'Spawn1');
     	var numSpawn1WaRe = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer' && c.memory.birthpace == 'Spawn1');
     	var numSpawn1EnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthpace == 'Spawn1');
+
 	// the same, born at Spawn2
     	var numSpawn2Harv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthpace == 'Spawn2');
     	var numSpawn2ReHa = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harvester' && c.memory.birthpace == 'Spawn2');
