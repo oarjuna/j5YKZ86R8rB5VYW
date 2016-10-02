@@ -35,6 +35,7 @@ module.exports = {
                                 filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
                         });
 			var harvestSite = creep.pos.findClosestByPath(FIND_SOURCES);
+			var upgradeControl = creep.room.controller
 
 			if (creep.memory.working == true && creep.carry.energy == 0) {
 				console.log(creep + " -- claimer -- out of energy");
@@ -57,6 +58,18 @@ module.exports = {
                                         creep.moveTo(constructionSite);
                                 }
                         }
+			// upgrade the controller if necessary
+			else if ( upgradeControl != undefined  && 
+				creep.memory.working == true &&
+				creep.pos.roomName == gotoFlag.pos.roomName
+				) {
+            			if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+                			creep.moveTo(creep.room.controller);
+            			}
+				else {
+i					console.log(creep + " upgrade - " + creep.upgradeController(creep.room.controller);
+				}
+			}
 			// repair jobs
 			else if ( repairStructure != undefined  && creep.memory.working == true ) {
                                 if ( creep.repair(repairStructure) == ERR_NOT_IN_RANGE ) {
