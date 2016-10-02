@@ -180,10 +180,10 @@ module.exports.loop = function () {
         var c_flag5 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag5');
 
         if ( c_flag1 == 0 ) { var dest = 'Flag1'; } 
-        else if ( c_flag2 == 0 ) { var dest = 'Flag2'; var role = 'claimer'; } 
-        else if ( c_flag3 == 0 ) { var dest = 'Flag3'; var role = 'claimer'; } 
-        else if ( c_flag4 == 0 ) { var dest = 'Flag4'; var role = 'claimer'; } 
-        else if ( c_flag5 == 0 ) { var dest = 'Flag5'; var role = 'claimer_lg'; } 
+        else if ( c_flag2 == 0 ) { var dest = 'Flag2'; role = 'claimer'; } 
+        else if ( c_flag3 == 0 ) { var dest = 'Flag3'; role = 'claimer'; } 
+        else if ( c_flag4 == 0 ) { var dest = 'Flag4'; role = 'claimer'; } 
+        else if ( c_flag5 == 0 ) { var dest = 'Flag5'; role = 'claimer_lg'; } 
         else { var dest = 'error'; } 
 
         console.log("main -- spawning claimer" + role);
