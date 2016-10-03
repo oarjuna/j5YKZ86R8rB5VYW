@@ -34,6 +34,10 @@ module.exports = {
             // if we found one
             if (structure != undefined) {
 		creep.say("sp-drop");
+            	if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+               	 	// move towards it
+            		creep.moveTo(structure);
+            	}
             }
 	    else {
 		creep.say("st-drop");
@@ -44,10 +48,6 @@ module.exports = {
 		}
 	    }
 
-            if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                // move towards it
-            	creep.moveTo(structure);
-            }
 
         }
         else {
