@@ -25,11 +25,12 @@ module.exports = {
                filter: (s) => (
                          	//( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity - 200 ) ||
                          	( s.structureType == STRUCTURE_EXTENSION ) ||
-				( s.structureType == STRUCTURE_SPAWN  ) 
+				( s.structureType == STRUCTURE_SPAWN ) 
 				) && s.energy < s.energyCapacity
             });
 
 		console.log(creep + " S: " + structure);
+				roleBuilder.run(creep);
         	// if we found one
         	if (structure == undefined) {
 			creep.say("st-drop");
