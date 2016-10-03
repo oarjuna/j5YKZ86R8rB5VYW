@@ -28,10 +28,10 @@ module.exports = function() {
         }
         else if (roleName == 'builder') {
 		var body = [
-			WORK, WORK,  // 200
-			MOVE, MOVE, MOVE, MOVE, // 250
-			CARRY, CARRY, CARRY // 200
-		]; // 550
+			WORK,  // 100
+			MOVE, MOVE, // 100
+			CARRY, CARRY // 200
+		]; // 300
         }
         else if (roleName == 'repairer') {
 		var body = [
