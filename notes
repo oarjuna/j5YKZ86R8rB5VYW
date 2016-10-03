@@ -22,7 +22,9 @@ sun
 	9:45a	me	5@560K
 		ms	5@722K
 
+	8:15p	me	5@672K
+		ms	5@776K
+
 // claimers need to rebuild the container if they don't exist
 // build on the flag spot?
 
-// need a basic_harv role that spawns first when we get wiped
