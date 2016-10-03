@@ -30,9 +30,9 @@ module.exports = {
             });
 
 		console.log(creep + " S: " + structure);
-				roleBuilder.run(creep);
+				//roleBuilder.run(creep);
         	// if we found one
-        	if (structure == undefined) {
+        	if (structure == null) {
 			creep.say("st-drop");
 			if ( creep.room.storage == undefined ) { 
 				if ( creep.room.controller.ticksToDowngrade < 500 ) {  
