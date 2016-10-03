@@ -33,6 +33,7 @@ module.exports = {
 
             // if we found one
             if (structure != undefined) {
+		//
             }
 	    else {
 		creep.say("st-drop");
