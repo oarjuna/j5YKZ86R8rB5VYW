@@ -41,10 +41,12 @@ module.exports = {
             }
 	    else {
 		creep.say("st-drop");
-		if ( creep.room.storage == undefined ) { var structure = creep.room.controller; }
-	    	else { 
+		if ( creep.room.storage == undefined ) { 
+		//	var structure = creep.room.controller; 
 			roleBuilder.run(creep);
-		//	var structure = creep.room.storage; 
+		}
+	    	else { 
+			var structure = creep.room.storage; 
 		}
 	    }
 
