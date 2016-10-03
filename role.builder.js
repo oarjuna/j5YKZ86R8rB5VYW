@@ -1,5 +1,5 @@
 var shared  = require('func.shared');
-var roleHarv = require('role.harvester');
+//var roleHarv = require('role.harvester');
 
 module.exports = {
     // a function to run the logic for this role
@@ -44,7 +44,7 @@ module.exports = {
 
 	}
             else {
-                roleHarv.run(creep);
+                //roleHarv.run(creep);
             }
         }
         else {
