@@ -1,4 +1,6 @@
 var shared  = require('func.shared');
+var roleBuilder = require('role.builder');
+
 
 module.exports = {
     // a function to run the logic for this role
@@ -36,7 +38,10 @@ module.exports = {
 	    else {
 		creep.say("st-drop");
 		if ( creep.room.storage == undefined ) { var structure = creep.room.controller; }
-	    	else { var structure = creep.room.storage; }
+	    	else { 
+			roleBuilder.run(creep);
+		//	var structure = creep.room.storage; 
+		}
 	    }
 
             if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
