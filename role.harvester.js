@@ -30,25 +30,25 @@ module.exports = {
                              	&& s.energy < s.energyCapacity
             });
 
-	console.log(creep + " S: " + structure);
-        // if we found one
-        if (structure == undefined) {
-		creep.say("st-drop");
-		if ( creep.room.storage == undefined ) { 
-			if ( creep.room.controller.ticksToDowngrade < 500 ) {  
-				var structure = creep.room.controller;
-				console.log(creep + " " + creep.room.controller.ticksToDowngrade);
+		console.log(creep + " S: " + structure);
+        	// if we found one
+        	if (structure == undefined) {
+			creep.say("st-drop");
+			if ( creep.room.storage == undefined ) { 
+				if ( creep.room.controller.ticksToDowngrade < 500 ) {  
+					var structure = creep.room.controller;
+					console.log(creep + " " + creep.room.controller.ticksToDowngrade);
+				}
+			}
+			else {
+				roleBuilder.run(creep);
 			}
 		}
-		else {
-			roleBuilder.run(creep);
-		}
-	}
-	creep.say("sp-drop");
-       	if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-        	// move towards it
-       		creep.moveTo(structure);
-        }
+		creep.say("sp-drop");
+       		if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+        		// move towards it
+       			creep.moveTo(structure);
+        	}
 	}
         else {
 		// find closest container with energy and fill up
