@@ -30,8 +30,9 @@ module.exports = {
                              	&& s.energy < s.energyCapacity
             });
 
-            // if we found one
-            if (structure == undefined) {
+	console.log(creep + " S: " + structure);
+        // if we found one
+        if (structure == undefined) {
 		creep.say("st-drop");
 		if ( creep.room.storage == undefined ) { 
 			if ( creep.room.controller.ticksToDowngrade < 500 ) {  
@@ -41,8 +42,7 @@ module.exports = {
 		else {
 			roleBuilder.run(creep);
 		}
-	    }
-	console.log(creep + " " + structure);
+	}
 	creep.say("sp-drop");
        	if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
         	// move towards it
