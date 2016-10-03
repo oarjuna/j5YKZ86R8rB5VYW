@@ -38,7 +38,7 @@ module.exports = function() {
                         WORK, WORK, // 200
                         MOVE, MOVE, MOVE, // 150
                         CARRY, CARRY // 200
-		]; //  150
+		]; //  550
         }
         else if (roleName == 'wallRepairer') {
 		var body = [
