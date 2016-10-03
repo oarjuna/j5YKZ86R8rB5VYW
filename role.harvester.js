@@ -33,23 +33,23 @@ module.exports = {
 
             // if we found one
             if (structure != undefined) {
-		creep.say("sp-drop");
-            	if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-               	 	// move towards it
-            		creep.moveTo(structure);
-            	}
             }
 	    else {
 		creep.say("st-drop");
 		if ( creep.room.storage == undefined ) { 
-		//	var structure = creep.room.controller; 
-			roleBuilder.run(creep);
+			var structure = creep.room.controller; 
+		//	roleBuilder.run(creep);
 		}
 	    	else { 
 			var structure = creep.room.storage; 
 		}
 	    }
 
+		creep.say("sp-drop");
+            	if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+               	 	// move towards it
+            		creep.moveTo(structure);
+            	}
 
         }
         else {
