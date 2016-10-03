@@ -166,8 +166,10 @@ module.exports = {
                          "/" + roomSp1.controller.progressTotal +
                         " lvl: " + roomSp1.controller.level;
 
+	var status13Sp1 = " Stored -- " + Game.spawns.Spawn1.room.storage;
+
         // print the thing
-        console.log("Sp1: " + status11Sp1 + status12Sp1 );
+        console.log("Sp1: " + status11Sp1 + status12Sp1 + status13Sp1);
         console.log("Sp1: " + status1Sp1 + status2Sp1 + status3Sp1 + status4Sp1 + status5Sp1 + status6Sp1 +
                         status7Sp1 + status8Sp1 + status9Sp1 + status10Sp1);
 
