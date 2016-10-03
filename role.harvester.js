@@ -29,8 +29,6 @@ module.exports = {
 				) && s.energy < s.energyCapacity
             });
 
-		console.log(creep + " S: " + structure);
-				//roleBuilder.run(creep);
         	// if we found one
         	if (structure == null) {
 			creep.say("st-drop");
