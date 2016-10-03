@@ -38,6 +38,7 @@ module.exports = {
 			if ( creep.room.controller.ticksToDowngrade < 500 ) {  
 				var structure = creep.room.controller;
 				console.log(creep + " " + creep.room.controller.ticksToDowngrade);
+			}
 		}
 		else {
 			roleBuilder.run(creep);
@@ -47,8 +48,6 @@ module.exports = {
        	if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
         	// move towards it
        		creep.moveTo(structure);
-       	}
-        }
 	}
         else {
 		// find closest container with energy and fill up
