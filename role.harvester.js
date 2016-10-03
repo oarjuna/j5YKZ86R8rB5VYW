@@ -37,7 +37,7 @@ module.exports = {
 	    else {
 		creep.say("st-drop");
 		if ( creep.room.storage == undefined ) { 
-			console.log(creep + " " creep.room.controller.ticksToDowngrade);
+			console.log(creep + " " + creep.room.controller.ticksToDowngrade);
 			var structure = creep.room.controller; 
 		//	roleBuilder.run(creep);
 		}
