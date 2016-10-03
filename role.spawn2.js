@@ -5,7 +5,7 @@ module.exports = {
         // spawn levels
         var spawn2MinHarv = 2;
         var spawn2MinReHa = 0;
-        var spawn2MinLoHa = 1;
+        var spawn2MinLoHa = 0;
         var spawn2MinUgra = 0;
         var spawn2MinBuil = 1;
         var spawn2MinClai = 0;
