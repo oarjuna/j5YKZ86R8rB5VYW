@@ -30,6 +30,7 @@ module.exports = {
                              	&& s.energy < s.energyCapacity
             });
 
+		console.log(creep + " " + structure);
             // if we found one
             if (structure == undefined) {
 		creep.say("st-drop");
@@ -75,5 +76,6 @@ module.exports = {
                 	}
 		}
         }
+// END 
 } 
 };
