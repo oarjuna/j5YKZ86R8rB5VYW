@@ -30,7 +30,7 @@ module.exports = {
             });
 
 		console.log(creep + " S: " + structure);
-				roleBuilder.run(creep);
+				//roleBuilder.run(creep);
         	// if we found one
         	if (structure == null) {
 			creep.say("st-drop");
@@ -39,9 +39,12 @@ module.exports = {
 					var structure = creep.room.controller;
 					console.log(creep + " " + creep.room.controller.ticksToDowngrade);
 				}
+				else {
+					roleBuilder.run(creep);
+				}
 			}
 			else {
-				roleBuilder.run(creep);
+				var structure = creep.room.storage;
 			}
 		}
 		creep.say("sp-drop");
