@@ -48,8 +48,8 @@ module.exports = {
                	 	// move towards it
             		creep.moveTo(structure);
             	}
-
-        }
+        	}
+	}
         else {
 		// find closest container with energy and fill up
 		// can't pickup from the large storage as it's the final dropoff point
