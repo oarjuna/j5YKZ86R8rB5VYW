@@ -48,7 +48,7 @@ module.exports = {
                	 	// move towards it
             		creep.moveTo(structure);
             	}
-        	}
+        }
 	}
         else {
 		// find closest container with energy and fill up
@@ -75,4 +75,5 @@ module.exports = {
                 	}
 		}
         }
+} 
 };
