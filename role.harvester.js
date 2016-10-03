@@ -30,7 +30,7 @@ module.exports = {
             });
 
 		console.log(creep + " S: " + structure);
-				//roleBuilder.run(creep);
+				roleBuilder.run(creep);
         	// if we found one
         	if (structure == null) {
 			creep.say("st-drop");
