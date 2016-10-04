@@ -12,7 +12,7 @@ var roleEnergyMover = require('role.energymover');
 var roleSoldier = require('role.soldier');
 var roleSpawn1 = require('role.spawn1');
 var roleSpawn2 = require('role.spawn2');
-var roleSpawn = require('role.spawn');
+//var roleSpawn = require('role.spawn');
 
 
 module.exports.loop = function () {
@@ -63,6 +63,6 @@ module.exports.loop = function () {
 	roleSpawn2.run(100);
 
 	for (var spawn in Game.spawns){
-		roleSpawn.run(spawn);
+//		roleSpawn.run(spawn);
 	}
 };
