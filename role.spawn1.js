@@ -111,7 +111,7 @@ module.exports = {
         else if ( c_flag2 == 0 ) { var dest = 'Flag2'; role = "claimer"; }
         else if ( c_flag3 == 0 ) { var dest = 'Flag3'; role = "claimer"; }
         else if ( c_flag4 == 0 ) { var dest = 'Flag4'; role = "claimer"; }
-        else if ( c_flag5 == 1 ) { var dest = 'Flag5'; role = "claimer"; }  // allow two of these
+        else if ( c_flag5 == 0 ) { var dest = 'Flag5'; role = "claimer"; } 
         else { var dest = 'error'; }
 
         var energy = '';
