@@ -73,6 +73,7 @@ module.exports = {
                         }
                        	// does the container exist? if not, rebuild it? 
 
+			/*
 			// claim the controller if necessary
 			else if ( false && dest_key == 'FlagX' ) {
 				//console.log(creep + " claimer -- claiming");
@@ -80,8 +81,8 @@ module.exports = {
                                         creep.moveTo(creep.room.controller);
                                 }
 			}
-			// upgrade the controller if necessary
-			else if ( false  &&
+// upgrade the controller if necessary
+			else if ( false || 
 				 dest_key == 'FlagX'
 				) {
 				//console.log(creep + " claimer -- upgrading");
@@ -92,6 +93,7 @@ module.exports = {
 					//console.log(creep + " upgrade - " + creep.room.controller.owner.username);
 				}
 			}
+*/
 			// repair jobs
 			else if ( repairStructure != undefined  && creep.memory.working == true ) {
 				//console.log(creep + " claimer -- repairing");
