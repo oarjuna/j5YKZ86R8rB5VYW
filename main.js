@@ -12,6 +12,8 @@ var roleEnergyMover = require('role.energymover');
 var roleSoldier = require('role.soldier');
 var roleSpawn1 = require('role.spawn1');
 var roleSpawn2 = require('role.spawn2');
+var roleSpawn = require('role.spawn');
+
 
 module.exports.loop = function () {
     // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
@@ -61,7 +63,7 @@ module.exports.loop = function () {
 	roleSpawn2.run(100);
 
 	for (var spawn in Game.spawns){
-		console.log(spawn + " -> " + Game.spawns[spawn])   
+		//console.log(spawn + " -> " + Game.spawns[spawn])   
   		// if (key == "name") doSomething();
 	}
 };
