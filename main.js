@@ -35,7 +35,7 @@ module.exports.loop = function () {
     	}
 
     	// Tower control
-    	var towers = Game.rooms.E58N3.find(FIND_STRUCTURES, {
+    	var towers = Game.rooms.E57N4.find(FIND_STRUCTURES, {
         	filter: (s) => s.structureType == STRUCTURE_TOWER
     	});
     	for (let tower of towers) {
