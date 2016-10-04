@@ -41,7 +41,7 @@ module.exports = {
 		else {
 			// in the room with the flag, look for stuff to do (likely very CPU heavy)
 
-			var constructionSite = creep.pos.findClosestByPath(FIND_CONSTRUCTION_SITES);
+			var constructionSite = creep.pos.findClosestByPath(FIND_MY_CONSTRUCTION_SITES);
                         var repairStructure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
                                 filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
                         });
