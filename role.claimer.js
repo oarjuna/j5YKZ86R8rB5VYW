@@ -96,7 +96,7 @@ module.exports = {
 */
 			// repair jobs
 			else if ( repairStructure != undefined  && creep.memory.working == true ) {
-				//console.log(creep + " claimer -- repairing");
+				console.log(creep + " claimer -- repairing");
                                 if ( creep.repair(repairStructure) == ERR_NOT_IN_RANGE ) {
 					//console.log(creep + " repair");
                                         creep.moveTo(repairStructure);
@@ -108,7 +108,7 @@ module.exports = {
 					filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
 							s.store[RESOURCE_ENERGY] < 2000
                 		});
-				//console.log(creep + " claimer -- transfering energy.");
+				console.log(creep + " claimer -- transfering energy.");
                                 if ( creep.transfer(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE ) {
 					creep.moveTo(container);
                                 }
