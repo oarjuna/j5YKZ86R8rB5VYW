@@ -63,6 +63,6 @@ module.exports.loop = function () {
 	roleSpawn2.run(100);
 
 	for (var spawn in Game.spawns){
-		roleSpawn(spawn);
+		roleSpawn.run(spawn);
 	}
 };
