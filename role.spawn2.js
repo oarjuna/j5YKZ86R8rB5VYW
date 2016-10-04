@@ -92,7 +92,7 @@ module.exports = {
     // if not enough builders
     else if (numSpawn2Buil < spawn2MinBuil) {
         console.log("sp2 -- spawning builder");
-        name = Game.spawns.Spawn2.createCustomCreep(energy, 'builder_sm','','Spawn2');
+        name = Game.spawns.Spawn2.createCustomCreep(energy, 'builder_med','','Spawn2');
     }
         // claimers
     else if (numSpawn2Clai < spawn2MinClai) {
