@@ -81,7 +81,7 @@ module.exports = {
                                 }
 			}
 			// upgrade the controller if necessary
-			else if ( true  &&
+			else if ( false  &&
 				 dest_key == 'Flag5'
 				) {
 				//console.log(creep + " claimer -- upgrading");
