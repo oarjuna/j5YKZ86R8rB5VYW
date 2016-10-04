@@ -94,11 +94,11 @@ module.exports = function() {
 	} 
         else if (roleName == "local_harvester") {
                 var body = [
-			WORK, WORK, WORK, WORK, // 400
-                        WORK, WORK, WORK, WORK, // 400
+			WORK, WORK, WORK, WORK, // 500
+                        WORK, WORK, WORK, // 300
                         MOVE,   // 50
                         CARRY  // 50
-                ]; // 900
+                ]; // 800
         }
 	else if (roleName == "local_harvester_sm") {
                var body = [
