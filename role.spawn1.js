@@ -97,27 +97,6 @@ module.exports = {
         console.log("sp1 -- spawning builder");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'builder','','Spawn1');
     }
-        // claimers
-    else if (numSpawn1Clai < spawn1MinClai) {
-        // count the number of claimers per flag
-        var c_flag1 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag1');
-        var c_flag2 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag2');
-        var c_flag3 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag3');
-        var c_flag4 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag4');
-        var c_flag5 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag5');
-
-        var role;
-        if ( c_flag1 == 0 ) { var dest = 'Flag1'; role = "claimer"; }
-        else if ( c_flag2 == 0 ) { var dest = 'Flag2'; role = "claimer"; }
-        else if ( c_flag3 == 0 ) { var dest = 'Flag3'; role = "claimer"; }
-        else if ( c_flag4 == 0 ) { var dest = 'Flag4'; role = "claimer"; }
-        else if ( c_flag5 == 0 ) { var dest = 'Flag5'; role = "claimer"; } 
-        else { var dest = 'error'; }
-
-        var energy = '';
-        console.log("sp1 -- spawning claimer " + dest + " body - " + role);
-        name = Game.spawns.Spawn1.createCustomCreep(energy, role, dest,'Spawn1');
-    }
     // if not enough wallRepairers
     else if (numSpawn1WaRe < spawn1MinWall) {
         // try to spawn one
@@ -143,6 +122,28 @@ module.exports = {
         console.log("sp1 -- spawning remote_harvester");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'remote_harvester',dest,'Spawn1');
     }
+        // claimers
+    else if (numSpawn1Clai < spawn1MinClai) {
+        // count the number of claimers per flag
+        var c_flag1 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag1');
+        var c_flag2 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag2');
+        var c_flag3 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag3');
+        var c_flag4 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag4');
+        var c_flag5 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag5');
+
+        var role;
+        if ( c_flag1 == 0 ) { var dest = 'Flag1'; role = "claimer"; }
+        else if ( c_flag2 == 0 ) { var dest = 'Flag2'; role = "claimer"; }
+        else if ( c_flag3 == 0 ) { var dest = 'Flag3'; role = "claimer"; }
+        else if ( c_flag4 == 0 ) { var dest = 'Flag4'; role = "claimer"; }
+        else if ( c_flag5 == 0 ) { var dest = 'Flag5'; role = "claimer"; }
+        else { var dest = 'error'; }
+
+        var energy = '';
+        console.log("sp1 -- spawning claimer " + dest + " body - " + role);
+        name = Game.spawns.Spawn1.createCustomCreep(energy, role, dest,'Spawn1');
+    }
+
         // start of the status bar
         var name = undefined;
 
