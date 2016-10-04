@@ -59,7 +59,7 @@ module.exports = {
 
                         // harvesting
                         if ( harvestSite != undefined  && creep.memory.working == false ) {
-				//console.log(creep + " claimer -- harvesting");
+				console.log(creep + " claimer -- harvesting");
                                 if ( creep.harvest(harvestSite) == ERR_NOT_IN_RANGE ) {
                                         creep.moveTo(harvestSite);
                                 }
