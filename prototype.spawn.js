@@ -32,6 +32,14 @@ module.exports = function() {
 			MOVE, MOVE, MOVE, // 150
 			CARRY, CARRY // 200
 		]; // 850
+       }
+        else if (roleName == 'builder_med') {
+                var body = [
+                        WORK, WORK, WORK,  // 300
+                        MOVE, MOVE, MOVE // 100
+                        CARRY // 100
+                ]; // 550
+		roleName = "builder";
         }
         else if (roleName == 'builder_sm') {
                 var body = [
@@ -39,6 +47,7 @@ module.exports = function() {
                         MOVE, MOVE, // 100
                         CARRY, CARRY // 200
                 ]; // 300
+		roleName = "builder";
         }
         else if (roleName == 'repairer') {
 		var body = [
