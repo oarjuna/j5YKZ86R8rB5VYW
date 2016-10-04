@@ -1,11 +1,9 @@
-module.exports = { run: function(foo) {
+module.exports = { run: function(spawn) {
 // START
 
-for(var i in Game.spawns) {
 ///    Game.spawns[i].createCreep(body);
-	console.log(i); 
+	console.log(spawn); 
 
-}
 
 // END
 }};

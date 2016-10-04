@@ -63,7 +63,6 @@ module.exports.loop = function () {
 	roleSpawn2.run(100);
 
 	for (var spawn in Game.spawns){
-		//console.log(spawn + " -> " + Game.spawns[spawn])   
-  		// if (key == "name") doSomething();
+		roleSpawn(spawn);
 	}
 };
