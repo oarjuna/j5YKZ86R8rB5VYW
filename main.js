@@ -41,7 +41,9 @@ module.exports.loop = function () {
     	for (let tower of towers) {
         	var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
 		var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
-                	filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
+                	filter: (s) => s.hits < s.hitsMax && 
+					s.structureType != STRUCTURE_WALL &&
+					s.structureType != STRUCTURE_RAMPART
         	});
         	if (target != undefined) {
 	    		console.log(tower + " -- attacking " + target);
@@ -58,7 +60,9 @@ module.exports.loop = function () {
         for (let tower of towers) {
                 var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
                 var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
-                        filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
+                        filter: (s) => s.hits < s.hitsMax &&
+                                        s.structureType != STRUCTURE_WALL &&
+                                        s.structureType != STRUCTURE_RAMPART
                 });
                 if (target != undefined) {
                         console.log(tower + " -- attacking " + target);
