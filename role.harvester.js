@@ -60,7 +60,7 @@ module.exports = {
 		// and that makes them loop infinately at the storage
                 var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
                 filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
-                               s.store[RESOURCE_ENERGY] > 199
+                               s.store[RESOURCE_ENERGY] > 10
                 });
                	creep.say("pickup");
 
