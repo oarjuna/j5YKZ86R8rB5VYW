@@ -60,8 +60,8 @@ module.exports.loop = function () {
 	roleSpawn1.run(100);
 	roleSpawn2.run(100);
 
-	foreach(spawn in Game.spawns) {
-		console.log("main -- spawn- " + spawn);
+	for (var spawn in Game.spawns){
+		console.log(spawn + " -> " + tHash[spawn]));   
+  		// if (key == "name") doSomething();
 	}
-
 };
