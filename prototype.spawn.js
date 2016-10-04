@@ -42,10 +42,10 @@ module.exports = function() {
         }
         else if (roleName == 'repairer') {
 		var body = [
-                        WORK, WORK, // 200
+                        WORK, WORK, WORK, // 300
                         MOVE, MOVE, MOVE, // 150
                         CARRY, CARRY // 100
-		]; //  450
+		]; //  550
         }
         else if (roleName == 'wallRepairer') {
 		var body = [
