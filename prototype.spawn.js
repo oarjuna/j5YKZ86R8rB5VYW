@@ -36,7 +36,7 @@ module.exports = function() {
         else if (roleName == 'builder_med') {
                 var body = [
                         WORK, WORK, WORK,  // 300
-                        MOVE, MOVE, MOVE // 100
+                        MOVE, MOVE, MOVE, // 100
                         CARRY // 100
                 ]; // 550
 		roleName = "builder";
