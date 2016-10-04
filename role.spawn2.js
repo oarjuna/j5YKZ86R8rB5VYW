@@ -48,7 +48,7 @@ module.exports = {
                         );
         if ( lh_tmp < 2 ) { var dest = '579faa610700be0674d30e44'; } // north
         console.log("sp2 -- spawning local_harvester -- " + dest + " -- " + lh_tmp);
-	if ( Game.spawns.Spawn2.room.energyCapacityAvailable < 900 ) {
+	if ( Game.spawns.Spawn2.room.energyCapacityAvailable < 800 ) {
         	name = Game.spawns.Spawn2.createCustomCreep(energy, 'local_harvester_sm',dest,'Spawn2');
 	}
 	else {
