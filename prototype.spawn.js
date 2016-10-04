@@ -28,10 +28,17 @@ module.exports = function() {
         }
         else if (roleName == 'builder') {
 		var body = [
-			WORK,  // 100
-			MOVE, MOVE, // 100
+			WORK, WORK, WORK, WORK, WORK,  // 500
+			MOVE, MOVE, MOVE, // 150
 			CARRY, CARRY // 200
-		]; // 300
+		]; // 850
+        }
+        else if (roleName == 'builder_sm') {
+                var body = [
+                        WORK,  // 100
+                        MOVE, MOVE, // 100
+                        CARRY, CARRY // 200
+                ]; // 300
         }
         else if (roleName == 'repairer') {
 		var body = [
