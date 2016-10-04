@@ -66,7 +66,7 @@ module.exports = {
                         }
 			// other, construction jobs
                         else if ( constructionSite != undefined  && creep.memory.working == true) {
-				//console.log(creep + " claimer -- building");
+				console.log(creep + " claimer -- building");
                                 if ( creep.build(constructionSite) == ERR_NOT_IN_RANGE ) {
                                         creep.moveTo(constructionSite);
                                 }
