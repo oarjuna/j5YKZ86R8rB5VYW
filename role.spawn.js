@@ -3,7 +3,7 @@ module.exports = { run: function(foo) {
 
 for(var i in Game.spawns) {
 ///    Game.spawns[i].createCreep(body);
-
+	console.log(i); 
 
 }
 
