@@ -29,9 +29,9 @@ module.exports = function() {
         else if (roleName == 'builder') {
 		var body = [
 			WORK, WORK, WORK, WORK,  // 400
-			MOVE, MOVE, MOVE, // 150
+			MOVE, MOVE, MOVE, MOVE, // 150
 			CARRY, CARRY // 200
-		]; // 750
+		]; // 800
        }
         else if (roleName == 'builder_med') {
                 var body = [
@@ -118,10 +118,17 @@ module.exports = function() {
 	else if (roleName == "soldier") {
 		var body = [
 			TOUGH,TOUGH,TOUGH,
-			CLAIM,
-			MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,
-			ATTACK,ATTACK,ATTACK,ATTACK,ATTACK
-			];
+			MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE, // 450
+			ATTACK,ATTACK,ATTACK,ATTACK,ATTACK // 400
+			]; // 980
+	}
+	else if (roleName == "soldier_sm") {
+		var body = [
+                        TOUGH,TOUGH,TOUGH,TOUGH, // 40
+                        MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE, // 350
+                        ATTACK,ATTACK,ATTACK,ATTACK,ATTACK // 400
+                        ]; // 800
+			roleName = "soldier";
 	}
         else if (roleName == "soldier2") {
                 var body = [

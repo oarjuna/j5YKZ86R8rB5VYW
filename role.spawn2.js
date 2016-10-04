@@ -82,7 +82,7 @@ module.exports = {
     // if not enough soldiers
     else if (numSpawn2Sold < spawn2MinSold) {
         console.log("sp2 -- spawning soldier");
-        name = Game.spawns.Spawn2.createCustomCreep(energy, 'soldier','Attack','Spawn2');
+        name = Game.spawns.Spawn2.createCustomCreep(energy, 'soldier_sm','Attack','Spawn2');
     }
     // if not enough upgraders
     else if (numSpawn2Upgr < spawn2MinUgra) {
