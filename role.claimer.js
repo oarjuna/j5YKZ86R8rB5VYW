@@ -46,7 +46,7 @@ module.exports = {
                                 filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
                         });
 			var harvestSite = creep.pos.findClosestByPath(FIND_SOURCES);
-			var upgradeControl = creep.room.controller
+			//var upgradeControl = creep.room.controller
 
 			if (creep.memory.working == true && creep.carry.energy == 0) {
 				//console.log(creep + " -- claimer -- out of energy");
