@@ -6,12 +6,12 @@ module.exports = {
         var spawn2MinHarv = 1;
         var spawn2MinReHa = 0;
         var spawn2MinLoHa = 2;
-        var spawn2MinUgra = 2;
+        var spawn2MinUgra = 3;
         var spawn2MinBuil = 1;
         var spawn2MinClai = 0;
         var spawn2MinSold = 0;
         var spawn2MinRepa = 0;
-        var spawn2MinWall = 0;
+        var spawn2MinWall = 1;
         var spawn2MinEner = 0;
 
         // count the number of creeps alive for each role born at Spawn2
