@@ -4,8 +4,8 @@ module.exports = {
     run: function(foo) {
         // spawn levels
 
-        var spawn1MinReHa = 4;
-        var spawn1MinClai = 4;
+        var spawn1MinReHa = 5;
+        var spawn1MinClai = 5;
 
         var spawn1MinHarv = 4;
         var spawn1MinLoHa = 3;
