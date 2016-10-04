@@ -51,6 +51,25 @@ module.exports.loop = function () {
 			tower.repair(repair_target);
 		}	
     	}
+        // Tower control
+        var towers = Game.rooms.E58N3.find(FIND_STRUCTURES, {
+                filter: (s) => s.structureType == STRUCTURE_TOWER
+        });
+        for (let tower of towers) {
+                var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+                var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
+                        filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
+                });
+                if (target != undefined) {
+                        console.log(tower + " -- attacking " + target);
+                        tower.attack(target);
+                }
+                else if (repair_target != undefined ) {
+                        tower.repair(repair_target);
+                }
+        }
+
+
 
     	// Link control
     	var linkfrom = Game.getObjectById("57ee7790b2cf99e1199ebf1c"); // storage link
