@@ -49,7 +49,7 @@ module.exports = {
 			}		
 			else if ( storage != undefined ) { 
 				// load up on energy
-				creep.withdraw(closelink, RESOURCE_ENERGY, '10');
+				creep.withdraw(closelink, RESOURCE_ENERGY, 10);
 				creep.transfer(storage, RESOURCE_ENERGY);
 				//status = creep.withdraw(storage, RESOURCE_ENERGY);
 				// xfer energy to the link
