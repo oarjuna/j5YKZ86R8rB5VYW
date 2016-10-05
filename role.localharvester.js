@@ -22,10 +22,16 @@ module.exports = {
                                s.store[RESOURCE_ENERGY] <2000
                 });
 
-		var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-			filter: (s) => s.structureType==STRUCTURE_LINK ||
-					s.structureType==STRUCTURE_CONTAINER
-		});
+		var link =  creep.pos.findClosestByRange(FIND_STRUCTURES, { filter: (s) => s.structureType==STRUCTURE_LINK });
+
+		if ( link == undefined ) { 
+			var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+				filter: (s) => s.structureType==STRUCTURE_STRUCTURE_CONTAINER 
+			});
+		}
+		else {
+			var container = link;
+		}
 
 		console.log(creep + " --  dropoff " + container);
                 // try to transfer energy, if the container is not in range
