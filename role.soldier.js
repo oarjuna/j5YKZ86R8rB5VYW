@@ -11,7 +11,9 @@ module.exports = {
 	// gotoFlag = "57e990dd30c9d8c674851969"; // his spawn
 
         // collect targets
-        var creep_target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+        var creep_target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
+			filter: (s) => s.owner.username != 'nabo_c'
+	});
 
 	var hostile_tower = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES, {
 			filter: (s) => s.structureType==STRUCTURE_TOWER 
