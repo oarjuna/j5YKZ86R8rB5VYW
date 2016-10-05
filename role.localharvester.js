@@ -26,7 +26,7 @@ module.exports = {
 
 		if ( link == undefined ) { 
 			var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-				filter: (s) => s.structureType==STRUCTURE_STRUCTURE_CONTAINER 
+				filter: (s) => s.structureType==STRUCTURE_CONTAINER 
 			});
 		}
 		else {
