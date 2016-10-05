@@ -37,7 +37,7 @@ module.exports = {
                                                 structureType: STRUCTURE_LINK
                                         }})[0];
 
-		if ( closelink == undefined ) { var structure == container; }
+		if ( closelink == undefined ) { var structure = container; }
 		else { var structure = closelink; }
 
 
