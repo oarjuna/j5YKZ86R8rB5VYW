@@ -33,6 +33,7 @@ module.exports = {
 			var container = link;
 		}
 
+		var container = link;
 		console.log(creep + " --  dropoff " + container);
                 // try to transfer energy, if the container is not in range
                 if (creep.transfer(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
