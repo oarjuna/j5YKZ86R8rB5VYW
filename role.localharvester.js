@@ -39,7 +39,7 @@ module.exports = {
 
 		if ( closelink != undefined ) { var container = closelink; }
 
-		console.log(creep + " --  XXXdropoff " + closelink + " st: " + creep.transfer(closelink, RESOURCE_ENERGY));
+		console.log(creep + " --  XXXXXXXXXXXXXX " + closelink + " st: " + creep.transfer(closelink, RESOURCE_ENERGY));
 
                 // try to transfer energy, if the container is not in range
                 if (creep.transfer(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
