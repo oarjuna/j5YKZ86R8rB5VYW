@@ -77,7 +77,7 @@ module.exports.loop = function () {
 
     	// Link control
     	var centerlink = Game.getObjectById("57ee7790b2cf99e1199ebf1c"); // storage link
-    	var southlink =   Game.getObjectById("57ee896c291f632c3c83c6e4"); // controller link
+    	var southlink =   Game.getObjectById("57eecdaa33926a476d1e764b"); // controller link
 	var northlink = Game.getObjectById("57f45a291d1a9d5c42304e96"); // north link
     	var ls1 =  centerlink.transferEnergy(southlink);
     	var ls2 =  northlink.transferEnergy(centerlink);
