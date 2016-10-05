@@ -52,7 +52,7 @@ module.exports = {
 				creep.transfer(storage, RESOURCE_ENERGY);
 				//status = creep.withdraw(storage, RESOURCE_ENERGY);
 				// xfer energy to the link
-				status2 = creep.transfer(closelink, RESOURCE_ENERGY, 1);
+				status2 = creep.transfer(closelink, RESOURCE_ENERGY, 5);
 				// xfer to the far link
 				closelink.transferEnergy(farlink);
 				//xx = closelink.transferEnergy(farlink);
