@@ -82,11 +82,11 @@ module.exports.loop = function () {
     	var ls1 =  centerlink.transferEnergy(southlink);
     	var ls2 =  northlink.transferEnergy(centerlink);
 
-	console.log("link status -- center_to_contrl: " + ls1 + " north_to_center: " + ls2);
 
 	// Run the spawn logics
 	roleSpawn1.run(100);
 	roleSpawn2.run(100);
+	console.log("link status -- center_to_contrl: " + ls1 + " north_to_center: " + ls2);
 
 	for (var spawn in Game.spawns){
 //		roleSpawn.run(spawn);
