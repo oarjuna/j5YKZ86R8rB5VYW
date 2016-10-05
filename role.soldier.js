@@ -25,7 +25,8 @@ module.exports = {
 	});
 
         var neutral_controller = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-                        filter: (s) => s.structureType==STRUCTURE_CONTROLLER
+                        filter: (s) => s.structureType==STRUCTURE_CONTROLLER &&
+			filter: (s) => s.owner.username != 'nabo_c'
         });
 
 
