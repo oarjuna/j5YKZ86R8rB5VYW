@@ -48,11 +48,11 @@ module.exports = {
 				 	//+ controller + " status: " + status);
 			}		
 			else if ( storage != undefined ) { 
-				creep.withdraw(closelink, RESOURCE_ENERGY, 10);
+				creep.withdraw(closelink, RESOURCE_ENERGY, 20);
 				creep.transfer(storage, RESOURCE_ENERGY);
 				//status = creep.withdraw(storage, RESOURCE_ENERGY);
 				// xfer energy to the link
-				status2 = creep.transfer(closelink, RESOURCE_ENERGY);
+				status2 = creep.transfer(closelink, RESOURCE_ENERGY, 1);
 				// xfer to the far link
 				closelink.transferEnergy(farlink);
 				//xx = closelink.transferEnergy(farlink);
