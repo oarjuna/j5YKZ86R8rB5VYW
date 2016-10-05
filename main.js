@@ -82,7 +82,6 @@ module.exports.loop = function () {
     	var ls1 =  centerlink.transferEnergy(southlink);
     	var ls2 =  northlink.transferEnergy(centerlink);
 
-
 	// Run the spawn logics
 	roleSpawn1.run(100);
 	roleSpawn2.run(100);
