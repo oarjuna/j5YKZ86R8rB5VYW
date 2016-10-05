@@ -40,10 +40,18 @@ module.exports = {
         	}
 
         	if (creep.memory.working == true) {
-	   		var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+	   		var ostructure-container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
                 		filter: (s) => s.structureType==STRUCTURE_STORAGE &&
                                		s.store[RESOURCE_ENERGY] < s.storeCapacity
                 		});
+
+	            var container = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
+       			        filter: (s) => (
+                                	( s.structureType == STRUCTURE_EXTENSION ) ||
+                                	( s.structureType == STRUCTURE_SPAWN )
+                                ) && s.energy < s.energyCapacity
+            		});
+
 	    		if (container != undefined) { var structure = container; }
 	    		else { var structure = Game.rooms.E58N3.controller; }
 
