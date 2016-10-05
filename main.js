@@ -80,7 +80,7 @@ module.exports.loop = function () {
     	var southlink =   Game.getObjectById("57ee896c291f632c3c83c6e4"); // controller link
 	var northlink = Game.getObjectById("57f45a291d1a9d5c42304e96"); // north link
     	var ls1 =  centerlink.transferEnergy(southlink);
-    	var ls2 =  northlink.linkfrom.transferEnergy(centerlink);
+    	var ls2 =  northlink.transferEnergy(centerlink);
 
 	console.log("link status -- center_to_contrl: " + ls1 + " north_to_center: " + ls2);
 
