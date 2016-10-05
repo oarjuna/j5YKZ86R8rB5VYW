@@ -40,10 +40,12 @@ module.exports = {
         	}
 
         	if (creep.memory.working == true) {
+			/*
 	   		var old_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
                 		filter: (s) => s.structureType==STRUCTURE_STORAGE &&
                                		s.store[RESOURCE_ENERGY] < s.storeCapacity
                 		});
+			*/
 
 	            var container = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
        			        filter: (s) => (
