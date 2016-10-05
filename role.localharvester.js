@@ -22,7 +22,7 @@ module.exports = {
                                s.store[RESOURCE_ENERGY] <2000
                 });
 
-		var link = creep.pos.findInRange(FIND_STRUCTURES, 1, { filter: (s) => s.structureType==STRUCTURE_LINK});
+		var link = creep.pos.findInRange(FIND_MY_STRUCTURES, 1, { filter: (s) => s.structureType==STRUCTURE_LINK});
 
 		if ( link == undefined ) { 
 			var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
