@@ -23,8 +23,8 @@ module.exports = {
                 // find a wall with less than percentage hits
                 target = creep.pos.findClosestByPath(FIND_STRUCTURES, {
                     filter: (s) => (
-				s.structureType == STRUCTURE_WALL ||
-				s.structureType == STRUCTURE_RAMPART
+				s.structureType == STRUCTURE_RAMPART ||
+				s.structureType == STRUCTURE_WALL 
 				) && 	
                                    s.hits / s.hitsMax < percentage
                 });
