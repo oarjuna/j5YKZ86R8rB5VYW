@@ -37,6 +37,9 @@ module.exports = {
                                                 structureType: STRUCTURE_LINK
                                         }})[0];
 
+		if ( closelink == undefined ) { var structure == container; }
+		else { var structure = closelink; }
+
 
 
 		console.log(creep + " --  XXXdropoff " + closelink + " st: " + creep.transfer(closelink, RESOURCE_ENERGY));
