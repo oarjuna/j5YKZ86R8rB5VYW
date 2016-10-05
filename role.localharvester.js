@@ -25,7 +25,13 @@ module.exports = {
 		var container = creep.pos.findClosestByRange(FIND_STRUCTURES, { filter: (s) => s.structureType==STRUCTURE_CONTAINER });
 
 		//console.log(creep + " --  dropoff " + container);
-		var link = creep.pos.findInRange(FIND_MY_STRUCTURES, 1, { filter: (s) => s.structureType==STRUCTURE_LINK});
+		var otherlink = creep.pos.findInRange(FIND_MY_STRUCTURES, 2, { filter: (s) => s.structureType==STRUCTURE_LINK});
+                var link = creep.pos.findInRange(FIND_MY_STRUCTURES, 2,
+                                        {filter: {
+                                                structureType: STRUCTURE_LINK
+                                        }})[0];
+
+
 		console.log(creep + " --  XXXdropoff " + link + " st: " + creep.transfer(link, RESOURCE_ENERGY));
 
                 // try to transfer energy, if the container is not in range
