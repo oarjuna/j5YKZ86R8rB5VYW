@@ -55,7 +55,9 @@ module.exports = {
             		});
 
 	    		if (container != undefined) { var structure = container; }
-	    		else { var structure = Game.rooms.E58N3.controller; }
+	    		else {// var structure = Game.rooms.E58N3.controller; 
+				var structure = creep.room.storage;
+			}
 
 	    		var action_status = creep.transfer(structure, RESOURCE_ENERGY);
 

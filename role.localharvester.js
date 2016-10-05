@@ -26,6 +26,7 @@ module.exports = {
 
 		//console.log(creep + " --  dropoff " + container);
 		var otherlink = creep.pos.findInRange(FIND_MY_STRUCTURES, 2, { filter: (s) => s.structureType==STRUCTURE_LINK});
+
                 var link = creep.pos.findInRange(FIND_MY_STRUCTURES, 2,
                                         {filter: {
                                                 structureType: STRUCTURE_LINK
