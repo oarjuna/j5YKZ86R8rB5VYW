@@ -7,7 +7,7 @@ module.exports = {
         var spawn1MinReHa = 5;
         var spawn1MinClai = 5;
 
-        var spawn1MinHarv = 4;
+        var spawn1MinHarv = 3;
         var spawn1MinLoHa = 3;
         var spawn1MinUgra = 0;
         var spawn1MinBuil = 1;

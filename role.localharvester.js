@@ -32,8 +32,8 @@ module.exports = {
                                                 structureType: STRUCTURE_LINK
                                         }});
 
-                        var closelink = creep.pos.findInRange(FIND_MY_STRUCTURES, 2,
-                                        {filter: {
+                var closelink = creep.pos.findInRange(FIND_MY_STRUCTURES, 2,
+                                     {filter: {
                                                 structureType: STRUCTURE_LINK
                                         }})[0];
 

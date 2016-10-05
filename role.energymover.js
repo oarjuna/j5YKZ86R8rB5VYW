@@ -53,7 +53,7 @@ module.exports = {
 				// xfer energy to the link
 				status2 = creep.transfer(closelink, RESOURCE_ENERGY);
 				// xfer to the far link
-				status = closelink.transferEnergy(farlink);
+				//status = closelink.transferEnergy(farlink);
 				//console.log(creep + " link xferstatus: " + status );
 			}
 		}
