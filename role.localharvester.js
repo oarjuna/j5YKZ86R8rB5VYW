@@ -29,7 +29,7 @@ module.exports = {
                 var link = creep.pos.findInRange(FIND_MY_STRUCTURES, 2,
                                         {filter: {
                                                 structureType: STRUCTURE_LINK
-                                        }})[0];
+                                        }});
 
 
 		console.log(creep + " --  XXXdropoff " + link + " st: " + creep.transfer(link, RESOURCE_ENERGY));
