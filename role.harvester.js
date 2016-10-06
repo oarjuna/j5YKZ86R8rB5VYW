@@ -62,7 +62,7 @@ module.exports = {
                 filter: (s) => ( 
 				s.structureType==STRUCTURE_STORAGE ||
                 		s.structureType==STRUCTURE_CONTAINER ) &&
-                               s.store[RESOURCE_ENERGY] > 100
+                               s.store[RESOURCE_ENERGY] > 1
                 });
                	creep.say("pickup");
 
