@@ -32,7 +32,7 @@ module.exports = {
         });
 
 	var claim_parts = creep.body.find( x => x.type == 'attack');
-	console.log(creep + "SOLDIER -- claim parts: " + claim_parts);
+	console.log(creep + "SOLDIER -- claim parts: " + claim_parts.type);
 
         if( hostile_tower != undefined ) {
                 console.log(creep + "SOLDIER -- attacking hostile tower!" + hostile_tower);
