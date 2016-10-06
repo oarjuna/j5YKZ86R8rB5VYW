@@ -28,6 +28,8 @@ module.exports = {
 					s.owner.username != 'nabo_c'
         });
 
+	var claim_parts = creep.body.find( x => x.name == 'claim');
+	console.log(creep + "SOLDIER -- claim parts: " + claim_parts);
 
         if( hostile_tower != undefined ) {
                 console.log(creep + "SOLDIER -- attacking hostile tower!" + hostile_tower);
