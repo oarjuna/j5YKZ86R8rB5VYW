@@ -12,7 +12,7 @@ module.exports = {
 
         var spawn1MinReHa = 0;
         var spawn1MinClai = 0;
-        var spawn1MinSold = 1;
+        var spawn1MinSold = 0;
         var spawn1MinRepa = 0;
 
         // count the number of creeps alive for each role born at Spawn1
