@@ -32,7 +32,6 @@ module.exports = {
         });
 
 	var claim_parts = creep.body.find( x => x.type == 'claim');
-	console.log(creep + "SOLDIER -- claim parts: " + claim_parts);
 
         if( hostile_tower != undefined ) {
                 console.log(creep + "SOLDIER -- attacking hostile tower!" + hostile_tower);
@@ -52,7 +51,7 @@ module.exports = {
                         creep.moveTo(other_target);
                 }
         }
-        else if ( neutral_controller != undefined ) { /// if we have the CLAIM part!
+        else if ( neutral_controller != undefined && claim_parts != undefined ) { 
                 console.log(creep + "SOLDIER -- claiming target!" + neutral_controller);
                 if(creep.attack(neutral_controller) == ERR_NOT_IN_RANGE) {
                         creep.moveTo(neutral_controller);
