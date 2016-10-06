@@ -5,6 +5,7 @@ module.exports = {
 		// move to destinaton 
 		var dest_id = creep.memory.destid;
 		var dest = Game.getObjectById(dest_id);
+		console.log(dest_id);
 		var status = creep.moveTo(dest.pos);
 		if ( status != 0 ) { 
 			status = creep.moveTo(dest.pos);
