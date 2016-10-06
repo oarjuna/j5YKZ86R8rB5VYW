@@ -20,8 +20,7 @@ module.exports = {
 	});
 
 	var other_target = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES, {
-			filter: (s) => s.structureType==STRUCTURE_EXTENSION ||
-					s.structureType==STRUCTURE_SPAWN
+			filter: (s) => s.structureType==STRUCTURE_SPAWN 
 	});
 
         var neutral_controller = creep.pos.findClosestByRange(FIND_STRUCTURES, {
