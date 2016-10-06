@@ -26,7 +26,7 @@ module.exports = {
                          	( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity - 200 ) ||
                          	( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity ) ||
 				( s.structureType == STRUCTURE_SPAWN ) 
-				) && s.energy < s.energyCapacity
+				) 
             });
 
         	// if we found one
