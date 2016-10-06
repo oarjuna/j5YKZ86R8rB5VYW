@@ -23,10 +23,10 @@ module.exports = {
 			filter: (s) => s.structureType==STRUCTURE_SPAWN 
 	});
 
-        /*var neutral_controller = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+        var neutral_controller = creep.pos.findClosestByRange(FIND_STRUCTURES, {
                         filter: (s) => s.structureType==STRUCTURE_CONTROLLER &&
 					s.owner.username != 'nabo_c'
-        });*/
+        });
 
 	var claim_parts = creep.body.find( x => x.name == 'claim');
 	console.log(creep + "SOLDIER -- claim parts: " + claim_parts);
