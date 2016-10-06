@@ -48,7 +48,7 @@ module.exports = {
 		else {
 			creep.say("sp-drop");
 		}
-		console.log(creep + " S: " + structure);
+		//console.log(creep + " S: " + structure);
        		if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
         		// move towards it
        			creep.moveTo(structure);
