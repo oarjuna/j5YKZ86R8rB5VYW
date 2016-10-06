@@ -9,7 +9,7 @@ module.exports = {
 
         var spawn1MinHarv = 2 ; // 3
         var spawn1MinLoHa = 2; //3 
-        var spawn1MinUgra = 1;
+        var spawn1MinUgra = 2;
         var spawn1MinBuil = 1; //1
         var spawn1MinSold = 0;
         var spawn1MinRepa = 0;
