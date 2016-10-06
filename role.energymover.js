@@ -33,7 +33,7 @@ module.exports = {
 	               	var controller = creep.pos.findInRange(FIND_MY_STRUCTURES, 5,
                                 	{filter: {
                                         	structureType: STRUCTURE_CONTROLLER
-                                	}});
+                                	}})[0];
 	
 			//console.log(creep + " CL: " + closelink + " FL: " + farlink + 
 			//	" ST: " + storage + " CT: " + controller);
