@@ -70,7 +70,7 @@ module.exports = {
                                 c.memory.destid == '57e6b5c1135326b41e54835e'
                         );
 
-        if ( st_num == 0 ) { var dest = '57e7235e6b66411171b7f0f8'; } // storage
+        if ( st_num == 0 ) { var dest = '57e7f8f77e983bb210dcc654'; } // storage
         else if ( c1_num == 0 ) { var dest = '57e6b6f9bf7be6eb05caa521'; } // controller #1
         else if ( c2_num == 0 ){ var dest = '57e6b5c1135326b41e54835e'; } // controller  #2
         else {  var dest = '57e6530dfb8875006e762b5e'; } // controller #3
