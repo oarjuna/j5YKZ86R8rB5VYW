@@ -25,7 +25,10 @@ module.exports = {
 
         var neutral_controller = creep.pos.findClosestByRange(FIND_STRUCTURES, {
                         filter: (s) => s.structureType==STRUCTURE_CONTROLLER &&
-					s.owner.username != 'nabo_c'
+					( s.owner.username != 'nabo_c'  ||
+					s.owner.username != 'Arjuna'
+					)
+
         });
 
 	var claim_parts = creep.body.find( x => x.name == 'attack');
