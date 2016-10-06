@@ -38,7 +38,7 @@ module.exports = {
         if (name == ERR_NOT_ENOUGH_ENERGY && numSpawn1Harv == 0) {
             // spawn one with what is available
             name = Game.spawns.Spawn1.createCustomCreep(
-                Game.spawns.Spawn1.room.energyAvailable, 'harvester','','Spawn1');
+                Game.spawns.Spawn1.room.energyAvailable, 'harvester_lite','','Spawn1');
         }
     }
 
