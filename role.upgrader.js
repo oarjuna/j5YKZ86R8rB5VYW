@@ -26,7 +26,7 @@ module.exports = {
         else {
                // find closest container with energy and fill up
                // if you  can find energy laying around //
-                var energy = creep.pos.findClosestByRange(FIND_DROPPED_ENERGY);
+                var energy = creep.pos.findInRange(FIND_DROPPED_ENERGY,5);
                 if (creep.pickup(energy) == ERR_NOT_IN_RANGE) {
                         creep.say("drop-pick");
                         creep.moveTo(energy);
