@@ -57,7 +57,7 @@ module.exports = {
     else if (numSpawn1EnMo < spawn1MinEner) {
         var st_num = _.sum(Game.creeps,
                         (c) => c.memory.role == 'energy_mover'  &&
-                                c.memory.destid == '57e7235e6b66411171b7f0f8'
+                                c.memory.destid == '57e7f8f77e983bb210dcc654'
                         );
 
         var c1_num = _.sum(Game.creeps,
