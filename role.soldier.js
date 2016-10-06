@@ -25,8 +25,8 @@ module.exports = {
 
         var neutral_controller = creep.pos.findClosestByRange(FIND_STRUCTURES, {
                         filter: (s) => s.structureType==STRUCTURE_CONTROLLER &&
-					( s.owner.username != 'nabo_c'  ||
-					s.owner.username != 'Arjuna'
+					( s.owner.username != 'Arjuna'  ||
+					s.owner.username != 'nabo_c'
 					)
 
         });
