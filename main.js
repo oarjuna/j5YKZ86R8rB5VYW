@@ -77,15 +77,15 @@ module.exports.loop = function () {
 
     	// Link control
     	var centerlink = Game.getObjectById("57ee7790b2cf99e1199ebf1c"); // storage link
-    	var southlink =   Game.getObjectById("57eecdaa33926a476d1e764b"); // controller link
+    	var southlink =   Game.getObjectById("57f5bad59e1dc4607ac0f7e9"); // south link
 	var northlink = Game.getObjectById("57f45a291d1a9d5c42304e96"); // north link
-//    	var ls1 = centerlink.transferEnergy(southlink);
+    	var ls1 = southlink.transferEnergy(centerlink);
     	var ls2 = northlink.transferEnergy(centerlink);
 
 	// Run the spawn logics
 	roleSpawn1.run(100);
 	roleSpawn2.run(100);
-	//console.log("link status -- center_to_contrl: " + ls1 + " north_to_center: " + ls2);
+	console.log("link status -- south_to_center: " + ls1 + " north_to_center: " + ls2);
 
 	for (var spawn in Game.spawns){
 //		roleSpawn.run(spawn);
