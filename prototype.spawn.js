@@ -113,7 +113,7 @@ module.exports = function() {
                         WORK, WORK, WORK, WORK, WORK, 
 			//WORK, WORK, WORK, WORK, WORK,// 1000
                         MOVE,   // 50
-                        CARRY  // 50
+                        CARRY, CARRY  // 100
                 ]; // 1100
         }
 	else if (roleName == "soldier") {
