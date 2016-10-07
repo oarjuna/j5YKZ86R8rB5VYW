@@ -2,7 +2,6 @@ module.exports = {
    display_status: function(foo)
    {  //// start
 	///    Game.spawns[i].createCreep(body);
-	spawn = Game.spawns[spawn_name];
         for (var spawn in Game.spawns.name){
 		console.log(spawn + " helo!");
         }
