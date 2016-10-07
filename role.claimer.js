@@ -56,8 +56,15 @@ module.exports = {
             			creep.memory.working = true;
         		}
 
+			// claim the controller if necessary
+			if ( dest_key == 'Flag1' ) {
+				console.log(creep + " claimer -- claiming");
+				if (creep.claimController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+                                        creep.moveTo(creep.room.controller);
+                                }
+			}
                         // harvesting
-                        if ( harvestSite != undefined  && creep.memory.working == false ) {
+                        else if ( harvestSite != undefined  && creep.memory.working == false ) {
 				//console.log(creep + " claimer -- harvesting");
                                 if ( creep.harvest(harvestSite) == ERR_NOT_IN_RANGE ) {
                                         creep.moveTo(harvestSite);
@@ -72,13 +79,6 @@ module.exports = {
                         }
                        	// does the container exist? if not, rebuild it? 
 
-			// claim the controller if necessary
-			else if ( dest_key == 'Flag1' ) {
-				console.log(creep + " claimer -- claiming");
-				if (creep.claimController(creep.room.controller) == ERR_NOT_IN_RANGE) {
-                                        creep.moveTo(creep.room.controller);
-                                }
-			}
 			// upgrade the controller if necessary
 			else if ( 
 				 dest_key == 'Flag1'
