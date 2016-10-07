@@ -73,7 +73,7 @@ module.exports = {
                        	// does the container exist? if not, rebuild it? 
 
 			// claim the controller if necessary
-			else if ( dest_key == 'FlagX' ) {
+			else if ( dest_key == 'Flag1' ) {
 				console.log(creep + " claimer -- claiming");
 				if (creep.claimController(creep.room.controller) == ERR_NOT_IN_RANGE) {
                                         creep.moveTo(creep.room.controller);
