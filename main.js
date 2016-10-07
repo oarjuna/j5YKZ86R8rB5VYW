@@ -12,7 +12,7 @@ var roleEnergyMover = require('role.energymover');
 var roleSoldier = require('role.soldier');
 var roleSpawn1 = require('role.spawn1');
 var roleSpawn2 = require('role.spawn2');
-var roleStatus = require('status');
+//var roleStatus = require('status');
 //var roleSpawn = require('role.spawn');
 
 
