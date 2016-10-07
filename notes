@@ -1,30 +1,6 @@
-fri 	6p -- milkshake -- level5 @ 529K
-	  me	   -- level5 @ 135K
-	
-	8p  me	   -- level5 @ 188K
-	   ms 	  --- level5 @ 541K
+9p thur  	232K @6 - 175K storage
+7:3a fri 	327K @6 - 156K storage 
 
-sat	6a	me  -- level5 @ 338K
-		ms  -- level5 @ 589K	
-
-	8.5a	me	5@365K
-		ms	5@597K
-
-	10.45a	me	5@384K
-		ms	5@608K
-
-	2:45p	me	5@432K
-		ms	5@631K
-
-	8:45P	me	5@510K
-		ms	5@658K
-sun
-	9:45a	me	5@560K
-		ms	5@722K
-
-	8:15p	me	5@672K
-		ms	5@776K
-
-// claimers need to rebuild the container if they don't exist
-// build on the flag spot?
-
+todo 
+fix claimer for tonight
+claimer_lg
