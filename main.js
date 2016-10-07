@@ -12,7 +12,7 @@ var roleEnergyMover = require('role.energymover');
 var roleSoldier = require('role.soldier');
 var roleSpawn1 = require('role.spawn1');
 var roleSpawn2 = require('role.spawn2');
-var gameStatus = require('status');
+//var gameStatus = require('status');
 //var roleSpawn = require('role.spawn');
 
         // spawn levels
@@ -102,8 +102,8 @@ module.exports.loop = function () {
 	roleSpawn2.run(100);
 	console.log("link status -- south_to_center: " + ls1 + " north_to_center: " + ls2);
 
+	//gameStatus.display_status();
 
-	gameStatus.display_status();
 	for (var spawn in Game.spawns){
 //		roleSpawn.run(spawn);
 	}
