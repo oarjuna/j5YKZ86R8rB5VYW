@@ -23,7 +23,7 @@ module.exports = {
         var energySp1 = Game.spawns.Spawn1.room.energyCapacityAvailable;
         var energyAvailableSp1 = Game.spawns.Spawn1.room.energyAvailable;
 
-        var status1Sp1 = "H: " + numSpawn1Harv + "/" + spawn1MinHarv;
+        var status1Sp1 = "H: " + numSpawn1Harv + "/" + spawn1Jarv;
         var status2Sp1 = " U: " + numSpawn1Upgr + "/" + spawn1MinUgra;
         var status3Sp1 = " R: " + numSpawn1Repa + "/" + spawn1MinRepa;
         var status4Sp1 = " B: " + numSpawn1Buil + "/" + spawn1MinBuil;
