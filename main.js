@@ -15,21 +15,6 @@ var roleSpawn2 = require('role.spawn2');
 //var gameStatus = require('status');
 //var roleSpawn = require('role.spawn');
 
-        // spawn levels
-        var spawn1MinHarv = 3; // 3
-        var spawn1MinLoHa = 2; // 3
-        var spawn1MinUgra = 3; // 3
-        var spawn1MinBuil = 1; // 1
-        var spawn1MinWall = 1; // 1
-        var spawn1MinEner = 1; // 1
-
-        var spawn1MinReHa = 0;
-        var spawn1MinClai = 0;
-        var spawn1MinSold = 0;
-        var spawn1MinRepa = 0;
-
-
-
 module.exports.loop = function () {
     // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
     for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
