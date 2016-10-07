@@ -22,13 +22,15 @@ module.exports = {
 //	//console.log(creep + " body " + creep.body[0].type);
 
         // attack hostile creeps
-        var target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+       	/* 
+	var target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
         if(target) {
                 //console.log(creep + "ALERT -- found hostile creep!" + target);
                 if(creep.attack(target) == ERR_NOT_IN_RANGE) {
                         creep.moveTo(target);
                 }
         }
+	*/
 
 		
 		// are we in the room with the flag?
@@ -70,19 +72,18 @@ module.exports = {
                         }
                        	// does the container exist? if not, rebuild it? 
 
-			/*
 			// claim the controller if necessary
-			else if ( false && dest_key == 'FlagX' ) {
-				//console.log(creep + " claimer -- claiming");
+			else if ( dest_key == 'FlagX' ) {
+				console.log(creep + " claimer -- claiming");
 				if (creep.claimController(creep.room.controller) == ERR_NOT_IN_RANGE) {
                                         creep.moveTo(creep.room.controller);
                                 }
 			}
-// upgrade the controller if necessary
-			else if ( false || 
-				 dest_key == 'FlagX'
+			// upgrade the controller if necessary
+			else if ( 
+				 dest_key == 'Flag1'
 				) {
-				//console.log(creep + " claimer -- upgrading");
+				console.log(creep + " claimer -- upgrading");
             			if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
                 			creep.moveTo(creep.room.controller);
             			}
@@ -90,7 +91,6 @@ module.exports = {
 					//console.log(creep + " upgrade - " + creep.room.controller.owner.username);
 				}
 			}
-*/
 			// repair jobs
 			else if ( repairStructure != undefined  && creep.memory.working == true ) {
 				//console.log(creep + " claimer -- repairing");
