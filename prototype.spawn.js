@@ -125,7 +125,7 @@ module.exports = function() {
 		var body = [
                         TOUGH,TOUGH,TOUGH,TOUGH, // 40
                         MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE, // 350
-                        ATTACK,ATTACK,ATTACK,ATTACK // 360
+                        ATTACK,ATTACK,ATTACK // 360
                         ]; // 750
 			roleName = "soldier";
 	}
