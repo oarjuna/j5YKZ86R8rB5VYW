@@ -118,7 +118,7 @@ module.exports = function() {
 		var body = [
 			TOUGH,TOUGH,TOUGH,TOUGH,TOUGH, // 50
 			MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE, // 450
-			ATTACK,ATTACK,ATTACK,ATTACK,ATTACK // 400
+			ATTACK,ATTACK,ATTACK,ATTACK // 400
 			]; // 900
 	}
 	else if (roleName == "soldier_sm") {
