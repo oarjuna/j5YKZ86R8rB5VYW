@@ -8,7 +8,8 @@ module.exports = {
         if ( dest_key == 'Attack') {  var gotoFlag = Game.flags.Attack; }
 	else { var gotoFlag = creep.room.spawn; }
 
-	// gotoFlag = "57e990dd30c9d8c674851969"; // his spawn
+	// gotoFlag_id = "57e4ba80adafdf710cc4b5a9"; // his spawn
+	// var gotoFlag = Game.getObjectById("57e4ba80adafdf710cc4b5a9");
 
         // collect targets
         var creep_target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {

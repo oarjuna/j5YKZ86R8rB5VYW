@@ -86,10 +86,8 @@ module.exports = function() {
 	else if (roleName == "claimer_lg") {
 		var body = [
 			CLAIM, // 500
-                        WORK, WORK, WORK, // 150 
-                        MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE,  // 350
-                        CARRY, CARRY // 100
-		]; // 1000
+                        MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE  // 350
+		]; // 850
 		roleName = "claimer";
 	} 
         else if (roleName == "local_harvester") {
