@@ -29,20 +29,21 @@ module.exports = {
           ( s.structureType == STRUCTURE_CONTAINER && s.energy < s.energyCapacity) ||
           ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
         )});
-    // if we don't find one
     if (structure == null) {
+      // if we don't find someplace to drop energy
 			if ( creep.room.storage == undefined && creep.room.controller.ticksToDowngrade < 2000 ) {
-					var structure = creep.room.controller;
+          // check to see if the controller upgrading
+          var structure = creep.room.controller;
 					console.log(creep + " " + creep.room.controller.ticksToDowngrade);
       }
 			else {
-        //console.log(creep + "struc -- " + structure);
+        // otherwise, become a builder
 				roleBuilder.run(creep);
 			}
 		}
     else {
+      // we found someplace to drop energy
 		  creep.say("s-drop");
-      //var structure = creep.room.storage;
 		 }
 
 		 console.log(creep + " S: " + structure);
