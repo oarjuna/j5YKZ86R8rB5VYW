@@ -22,15 +22,14 @@ module.exports = {
     // if creep is supposed to transfer energy to a structure
     if (creep.memory.working == true) {
       // get a list of closest spawn, extension or tower which is not full
-      /*var structure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
+      var structure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
         filter: (s) => (
           ( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity - 200 ) ||
           ( s.structureType == STRUCTURE_CONTAINER && s.energy < s.energyCapacity) ||
           ( s.structureType == STRUCTURE_SPAWN && s.energy < s.energyCapacity ) ||
           ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
         )});
-    */
-
+  /*
     // CONTAINERS
     var structure_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
         filter: (s) => (
@@ -48,6 +47,7 @@ module.exports = {
 
     // Tower
 
+    */
 
 
 
