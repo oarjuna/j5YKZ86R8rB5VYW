@@ -41,7 +41,7 @@ module.exports = {
 			}
 		}
     else {
-		  creep.say("struct drop");
+		  creep.say("s-drop");
       //var structure = creep.room.storage;
 		 }
 
