@@ -7,9 +7,9 @@ module.exports = function() {
 		var body = [
 			WORK, // 100
                         //MOVE, MOVE, // 200
-                        MOVE, MOVE, MOVE, MOVE, // 200
+                        MOVE, MOVE,// 200
                      	//CARRY, CARRY //200
-                     	CARRY, CARRY, CARRY, CARRY //200
+                     	CARRY, CARRY, //200
 		]; // 500
         }
 	else if (roleName == 'harvester_lite') {
@@ -59,7 +59,7 @@ module.exports = function() {
         }
         else if (roleName == 'wallRepairer') {
 		var body = [
-                        WORK, WORK, // 200 
+                        WORK, WORK, // 200
                         MOVE, MOVE, MOVE, /// 150
                         CARRY, CARRY // 200
 		]; // 550
@@ -89,7 +89,7 @@ module.exports = function() {
                         MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE  // 350
 		]; // 850
 		roleName = "claimer";
-	} 
+	}
         else if (roleName == "local_harvester") {
                 var body = [
 			WORK, WORK, WORK, WORK, // 500
@@ -108,7 +108,7 @@ module.exports = function() {
 	}
         else if (roleName == "energy_mover") {
                 var body = [
-                        WORK, WORK, WORK, WORK, WORK, 
+                        WORK, WORK, WORK, WORK, WORK,
 			//WORK, WORK, WORK, WORK, WORK,// 1000
                         MOVE,   // 50
                         CARRY, CARRY  // 100
