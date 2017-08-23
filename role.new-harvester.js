@@ -37,6 +37,7 @@ module.exports = {
 					console.log(creep + " " + creep.room.controller.ticksToDowngrade);
 				}
 				else {
+          creep.say("struc -- " + structure);
 					roleBuilder.run(creep);
 				}
 			}
