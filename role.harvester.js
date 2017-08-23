@@ -33,7 +33,7 @@ module.exports = {
         	// if we found one
         	if (structure == null) {
 			if ( creep.room.storage == undefined ) {
-				if ( creep.room.controller.ticksToDowngrade < 1500 ) {
+				if ( creep.room.controller.ticksToDowngrade < 9999999 ) {
 					var structure = creep.room.controller;
 					console.log(creep + " " + creep.room.controller.ticksToDowngrade);
 				}
