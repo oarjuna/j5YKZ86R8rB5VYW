@@ -11,7 +11,7 @@ module.exports = function() {
 			           WORK, WORK,  // 200
                  MOVE,        // 50
                  CARRY, CARRY, // 100
-		         ]; // 500
+		         ]; // 350
         }
 	       else if (roleName == 'harvester_lite') {
             var body = [
