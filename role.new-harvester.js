@@ -46,7 +46,7 @@ module.exports = {
 			}
 		}
 		else {
-		  creep.say("sp-drop");
+		  creep.say("sp-drop -- " + structure);
 		 }
 		 //console.log(creep + " S: " + structure);
      if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
@@ -54,6 +54,7 @@ module.exports = {
       creep.moveTo(structure);
       }
     }
+    // END unload
     else {
 		  // find closest container with energy and fill up
 		  // can't pickup from the large storage as it's the final dropoff point
