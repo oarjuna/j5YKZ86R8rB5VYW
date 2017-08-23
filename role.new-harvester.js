@@ -36,7 +36,7 @@ module.exports = {
         filter: (s) => (
           ( s.structureType == STRUCTURE_CONTAINER && s.energy < s.energyCapacity)
         )});
-    console.log(creep + "Struct: " + structure_container);
+    console.log(creep + " Struct: " + structure_container);
 
     // SPAWN
     var structure_spawn = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
