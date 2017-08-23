@@ -53,7 +53,7 @@ module.exports = {
 
     if (structure == null) {
       // if we don't find someplace to drop energy
-			if ( creep.room.storage == undefined && creep.room.controller.ticksToDowngrade < 99999 ) {
+			if ( creep.room.storage == undefined && creep.room.controller.ticksToDowngrade < 3000 ) {
           // check to see if the controller upgrading
           var structure = creep.room.controller;
 					console.log(creep + " " + creep.room.controller.ticksToDowngrade);
