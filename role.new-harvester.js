@@ -35,21 +35,20 @@ module.exports = {
         filter: (s) => (
           ( s.structureType == STRUCTURE_CONTAINER && s.energy < s.energyCapacity)
         )});
-    console.log(creep + " Struct: " + structure_container);
+    console.log(creep + " Cont: " + structure_container);
 
-/*
+
     // SPAWN
-    var structure_spawn = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
+    var structure_spawn = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
       filter: (s) => (
         ( s.structureType == STRUCTURE_SPAWN && s.energy < s.energyCapacity)
       )});
 
+    console.log(creep + " Spawn: " + structure_spawn);
+
     // EXTENSTION
 
     // Tower
-
-    */
-
 
 
     if (structure == null) {
