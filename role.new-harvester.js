@@ -34,6 +34,7 @@ module.exports = {
 			if ( creep.room.storage == undefined && creep.room.controller.ticksToDowngrade < 2000 ) {
 					var structure = creep.room.controller;
 					console.log(creep + " " + creep.room.controller.ticksToDowngrade);
+      }
 			else {
         console.log(creep + "struc -- " + structure);
 				roleBuilder.run(creep);
