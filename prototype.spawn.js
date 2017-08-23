@@ -8,8 +8,8 @@ module.exports = function() {
         function(energy, roleName, dest, birthplace) {
         if (roleName == 'harvester') {
 		        var body = [
-			           WORK, WORK, WORK,  // 300
-                 MOVE, MOVE, MOVE, // 150
+			           WORK, WORK,  // 200
+                 MOVE,        // 50
                  CARRY, CARRY, // 100
 		         ]; // 500
         }
