@@ -29,14 +29,15 @@ module.exports = {
           ( s.structureType == STRUCTURE_SPAWN && s.energy < s.energyCapacity ) ||
           ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
         )});
-  /*
+
     // CONTAINERS
     var structure_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
         filter: (s) => (
-          ( s.structureType == STRUCTURE_CONTAINER && s.energy < s.energyCapacity)
+          ( s.structureType == STRUCTURE_CONTAINER)
         )});
     console.log(creep + " Struct: " + structure_container);
 
+/*
     // SPAWN
     var structure_spawn = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
       filter: (s) => (
