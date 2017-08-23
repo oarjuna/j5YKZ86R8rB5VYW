@@ -41,7 +41,7 @@ module.exports = {
     // SPAWN
     var structure_spawn = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
       filter: (s) => (
-        ( s.structureType == STRUCTURE_SPAWN && s.energy < s.energyCapacity)
+        ( s.structureType == STRUCTURE_SPAWN )
       )});
 
     console.log(creep + " Spawn: " + structure_spawn);
