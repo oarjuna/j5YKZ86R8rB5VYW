@@ -53,7 +53,7 @@ module.exports = {
 
     if (structure == null) {
       // if we don't find someplace to drop energy
-			if ( creep.room.storage == undefined && creep.room.controller.ticksToDowngrade < 3000 ) {
+			if ( creep.room.storage == undefined && creep.room.controller.ticksToDowngrade < 9999 ) {
           // check to see if the controller upgrading
           var structure = creep.room.controller;
 					console.log(creep + " " + creep.room.controller.ticksToDowngrade);
@@ -66,12 +66,12 @@ module.exports = {
     else {
       // we found someplace to drop energy
 		  creep.say("s-drop");
-		 }
+		}
 
-		 console.log(creep + " S: " + structure);
-     if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-     // move towards it
-      creep.moveTo(structure);
+		  console.log(creep + " S: " + structure);
+      if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+        // move towards it
+        creep.moveTo(structure);
       }
     }
     // END unload
