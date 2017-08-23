@@ -25,14 +25,14 @@ module.exports = {
                filter: (s) => (
                          	( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity - 200 ) ||
                          	( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity ) ||
-				( s.structureType == STRUCTURE_SPAWN && s.energy < s.energyCapacity ) 
-				) 
+				( s.structureType == STRUCTURE_SPAWN && s.energy < s.energyCapacity )
+				)
             });
 
         	// if we found one
         	if (structure == null) {
-			if ( creep.room.storage == undefined ) { 
-				if ( creep.room.controller.ticksToDowngrade < 1000 ) {  
+			if ( creep.room.storage == undefined ) {
+				if ( creep.room.controller.ticksToDowngrade < 5000 ) {
 					var structure = creep.room.controller;
 					console.log(creep + " " + creep.room.controller.ticksToDowngrade);
 				}
@@ -47,6 +47,7 @@ module.exports = {
 		}
 		else {
 			creep.say("sp-drop");
+
 		}
 		//console.log(creep + " S: " + structure);
        		if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
@@ -59,7 +60,7 @@ module.exports = {
 		// can't pickup from the large storage as it's the final dropoff point
 		// and that makes them loop infinately at the storage
                 var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-                filter: (s) => ( 
+                filter: (s) => (
 				s.structureType==STRUCTURE_STORAGE ||
                 		s.structureType==STRUCTURE_CONTAINER ) &&
                                s.store[RESOURCE_ENERGY] > 1
@@ -67,9 +68,9 @@ module.exports = {
                	creep.say("pickup");
 
 
-		if ( container == undefined ) { 
+		if ( container == undefined ) {
                	//	console.log(creep + " harv --pickup -- " + container );
-			var container = creep.pos.findClosestByRange(FIND_SOURCES); 
+			var container = creep.pos.findClosestByRange(FIND_SOURCES);
 		         if (creep.harvest(container) == ERR_NOT_IN_RANGE) {
 		                 creep.moveTo(container);
                		 }
@@ -81,6 +82,6 @@ module.exports = {
                 	}
 		}
         }
-// END 
-} 
+// END
+}
 };
