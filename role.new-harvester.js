@@ -40,12 +40,9 @@ module.exports = {
 				roleBuilder.run(creep);
 			}
 		}
-		else {
-			creep.say("st-drop");
-			var structure = creep.room.storage;
-		}
-		else {
+    else {
 		  creep.say("sp-drop -- " + structure);
+      //var structure = creep.room.storage;
 		 }
 		 //console.log(creep + " S: " + structure);
      if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
