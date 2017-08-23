@@ -28,20 +28,20 @@ module.exports.loop = function () {
         	else if (creep.memory.role == 'upgrader') { roleUpgrader.run(creep); }
         	else if (creep.memory.role == 'builder') { roleBuilder.run(creep); }
         	else if (creep.memory.role == 'claimer') { roleClaimer.run(creep); }
-		else if (creep.memory.role == 'soldier') {  roleSoldier.run(creep); }
+		    else if (creep.memory.role == 'soldier') {  roleSoldier.run(creep); }
         	else if (creep.memory.role == 'repairer') { roleRepairer.run(creep); }
         	else if (creep.memory.role == 'wallRepairer') { roleWallRepairer.run(creep); }
         	else if (creep.memory.role == 'remote_harvester') { roleRemoteHarvester.run(creep); }
     	}
 
-    	// Tower control
-    	var towers = Game.rooms.E57N4.find(FIND_STRUCTURES, {
+    	// Tower control -- stuff
+    	var towers = Game.rooms.W28S81.find(FIND_STRUCTURES, {
         	filter: (s) => s.structureType == STRUCTURE_TOWER
     	});
     	for (let tower of towers) {
         	var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
 		var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
-                	filter: (s) => s.hits < s.hitsMax && 
+                	filter: (s) => s.hits < s.hitsMax &&
 					s.structureType != STRUCTURE_WALL &&
 					s.structureType != STRUCTURE_RAMPART
         	});
@@ -51,16 +51,16 @@ module.exports.loop = function () {
         	}
 		else if (repair_target != undefined ) {
 			tower.repair(repair_target);
-		}	
+		}
     	}
         // Tower control
-        var towers = Game.rooms.E58N3.find(FIND_STRUCTURES, {
+        var towers = Game.rooms.W28S81.find(FIND_STRUCTURES, {
                 filter: (s) => s.structureType == STRUCTURE_TOWER
         });
         for (let tower of towers) {
                 var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
                 var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
-                        filter: (s) => s.hits < s.hitsMax && 
+                        filter: (s) => s.hits < s.hitsMax &&
 					s.structureType != STRUCTURE_WALL &&
 					s.structureType != STRUCTURE_RAMPART
                 });
@@ -76,16 +76,16 @@ module.exports.loop = function () {
 
 
     	// Link control
-    	var centerlink = Game.getObjectById("57ee7790b2cf99e1199ebf1c"); // storage link
+    /*	var centerlink = Game.getObjectById("57ee7790b2cf99e1199ebf1c"); // storage link
     	var southlink =   Game.getObjectById("57f5bad59e1dc4607ac0f7e9"); // south link
 	var northlink = Game.getObjectById("57f45a291d1a9d5c42304e96"); // north link
     	var ls1 = southlink.transferEnergy(centerlink);
     	var ls2 = northlink.transferEnergy(centerlink);
-
+*/
 	// Run the spawn logics
 	roleSpawn1.run(100);
-	roleSpawn2.run(100);
-	console.log("link status -- south_to_center: " + ls1 + " north_to_center: " + ls2);
+//	roleSpawn2.run(100);
+//	console.log("link status -- south_to_center: " + ls1 + " north_to_center: " + ls2);
 
 	//gameStatus.display_status();
 
