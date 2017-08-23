@@ -32,10 +32,10 @@ module.exports = {
     */
 
     // CONTAINERS
-    var structure_container = room.find(FIND_STRUCTURES, {
+    var structure_container = creep.find(FIND_STRUCTURES, {
         filter: (s) => (
           ( s.structureType == STRUCTURE_CONTAINER && s.energy < s.energyCapacity)
-        )});                   
+        )});
     console.log(creep + "Struct: " + structure_container);
 
     // SPAWN
