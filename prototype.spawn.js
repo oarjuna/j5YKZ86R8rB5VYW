@@ -1,15 +1,16 @@
 module.exports = function() {
-    // create a new function for StructureSpawn
-// 300 // 550 /// 800 // 1800 //
+// move = 50
+// carry = 50
+// work = 100
+
+
     StructureSpawn.prototype.createCustomCreep =
         function(energy, roleName, dest, birthplace) {
         if (roleName == 'harvester') {
 		var body = [
-			WORK, // 100
-                        //MOVE, MOVE, // 200
-                        MOVE, MOVE,// 200
-                     	//CARRY, CARRY //200
-                     	CARRY, CARRY, //200
+			WORK, WORK, WORK,  // 300
+      MOVE, MOVE, MOVE, // 150
+      CARRY, CARRY, // 100
 		]; // 500
         }
 	else if (roleName == 'harvester_lite') {
