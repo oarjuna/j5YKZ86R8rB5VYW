@@ -31,20 +31,17 @@ module.exports = {
         )});
     // if we don't find one
     if (structure == null) {
-			if ( creep.room.storage == undefined ) {
-				if ( creep.room.controller.ticksToDowngrade < 2000 ) {
+			if ( creep.room.storage == undefined && creep.room.controller.ticksToDowngrade < 2000 ) {
 					var structure = creep.room.controller;
 					console.log(creep + " " + creep.room.controller.ticksToDowngrade);
-				}
-				else {
-          console.log(creep + "struc -- " + structure);
-					roleBuilder.run(creep);
-				}
-			}
 			else {
-				creep.say("st-drop");
-				var structure = creep.room.storage;
+        console.log(creep + "struc -- " + structure);
+				roleBuilder.run(creep);
 			}
+		}
+		else {
+			creep.say("st-drop");
+			var structure = creep.room.storage;
 		}
 		else {
 		  creep.say("sp-drop -- " + structure);
