@@ -47,7 +47,7 @@ module.exports = {
 		}
 		else {
 			creep.say("sp-drop");
-      creep.room.controller.sign()
+    //  creep.room.controller.sign()
 		}
 		//console.log(creep + " S: " + structure);
        		if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
