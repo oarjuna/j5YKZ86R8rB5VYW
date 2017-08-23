@@ -25,7 +25,8 @@ module.exports = {
                filter: (s) => (
                          	( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity - 200 ) ||
                          	( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity ) ||
-				( s.structureType == STRUCTURE_SPAWN && s.energy < s.energyCapacity )
+				                  ( s.structureType == STRUCTURE_SPAWN && s.energy < s.energyCapacity ) ||
+                          ( s.structureType == STRUCTURE_CONTAINER && s.energy < s.energyCapacity)
 				)
             });
 
@@ -47,7 +48,7 @@ module.exports = {
 		}
 		else {
 			creep.say("sp-drop");
-    //  creep.room.controller.sign()
+    //  console.log(creep.room.controller.sign("foo"));
 		}
 		//console.log(creep + " S: " + structure);
        		if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
