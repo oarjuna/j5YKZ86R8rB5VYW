@@ -3,9 +3,15 @@ module.exports = {
     // a function to run the logic for this role
     run: function(foo) {
         // spawn levels
+<<<<<<< HEAD
         var spawn1MinHarv = 2; // 3
         var spawn1MinLoHa = 0; // 3
         var spawn1MinUgra = 1; // 3
+=======
+        var spawn1MinHarv = 3; // 3
+        var spawn1MinLoHa = 2; // 3
+        var spawn1MinUgra = 4; // 3
+>>>>>>> 24aa2d1fd5c77ad4b0144d9a3b758a0ccdb00d60
         var spawn1MinBuil = 1; // 1
         var spawn1MinWall = 0; // 1
         var spawn1MinEner = 0; // 1
