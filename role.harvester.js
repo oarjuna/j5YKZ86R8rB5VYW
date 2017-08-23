@@ -32,7 +32,7 @@ module.exports = {
         	// if we found one
         	if (structure == null) {
 			if ( creep.room.storage == undefined ) {
-				if ( creep.room.controller.ticksToDowngrade < 5000 ) {
+				if ( creep.room.controller.ticksToDowngrade < 1500 ) {
 					var structure = creep.room.controller;
 					console.log(creep + " " + creep.room.controller.ticksToDowngrade);
 				}
@@ -47,7 +47,7 @@ module.exports = {
 		}
 		else {
 			creep.say("sp-drop");
-
+      creep.room.controller.sign()
 		}
 		//console.log(creep + " S: " + structure);
        		if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
