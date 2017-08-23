@@ -1,6 +1,6 @@
 // import modules
 require('prototype.spawn')();
-var roleHarvester = require('role.harvester');
+var roleHarvester = require('role.new-harvester');
 var roleLocalHarvester = require('role.localharvester');
 var roleRemoteHarvester = require('role.remoteharvester');
 var roleUpgrader = require('role.upgrader');
