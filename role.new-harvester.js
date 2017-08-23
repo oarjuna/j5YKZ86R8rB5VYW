@@ -36,7 +36,7 @@ module.exports = {
 					console.log(creep + " " + creep.room.controller.ticksToDowngrade);
       }
 			else {
-        console.log(creep + "struc -- " + structure);
+        //console.log(creep + "struc -- " + structure);
 				roleBuilder.run(creep);
 			}
 		}
@@ -44,7 +44,8 @@ module.exports = {
 		  creep.say("sp-drop -- " + structure);
       //var structure = creep.room.storage;
 		 }
-		 //console.log(creep + " S: " + structure);
+
+		 console.log(creep + " S: " + structure);
      if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
      // move towards it
       creep.moveTo(structure);
