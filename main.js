@@ -1,7 +1,7 @@
 // import modules
 require('prototype.spawn')();
 var roleHarvester = require('role.new-harvester');
-var roleLocalHarvester = require('role.localharvester');
+var roleDeliverer = require('role.deliverer');
 var roleRemoteHarvester = require('role.remoteharvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
@@ -23,7 +23,7 @@ module.exports.loop = function () {
     	for (let name in Game.creeps) {
         	var creep = Game.creeps[name];
         	if (creep.memory.role == 'harvester') {  roleHarvester.run(creep); }
-        	else if (creep.memory.role == 'local_harvester') {  roleLocalHarvester.run(creep); }
+        	else if (creep.memory.role == 'deliverer') {  roleDeliverer.run(creep); }
         	else if (creep.memory.role == 'energy_mover') { roleEnergyMover.run(creep); }
         	else if (creep.memory.role == 'upgrader') { roleUpgrader.run(creep); }
         	else if (creep.memory.role == 'builder') { roleBuilder.run(creep); }
