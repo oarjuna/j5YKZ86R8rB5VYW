@@ -90,11 +90,12 @@ module.exports = {
       */
       var source = creep.memory.destid;
       var target_source = Game.getObjectById(source);
+
       if ( source == null) {
         var source = creep.pos.findClosestByRange(FIND_SOURCES);
       }
       creep.say("harvest");
-
+      console.log("H" + source);
 		  if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
 		    creep.moveTo(source);
       }
