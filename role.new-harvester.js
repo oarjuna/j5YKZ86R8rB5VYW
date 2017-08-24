@@ -44,11 +44,12 @@ module.exports = {
       // Find Towers
 
 
-      if ( creep.room.controller.ticksToDowngrade < 2000 ) {
+      if ( creep.room.controller.ticksToDowngrade < 200 ) {
           // Emergency controller upgrade
           var structure = creep.room.controller;
           creep.say("deliv-co");
       }
+/*
       else if ( structure_spawn.energy < structure_spawn.energyCapacity) {
         // load the spawn
         var structure = structure_spawn;
@@ -59,17 +60,19 @@ module.exports = {
         var structure = structure_extension;
         creep.say("deliv.ex");
       }
+*/
       else if ( structure_container != null ) {
         // Load a container
         var structure = structure_container;
         creep.say("deliv-cn");
       }
+/*
 			else {
         // upgrade the controller
         var structure = creep.room.controller;
         creep.say("deliv.XX");
 			}
-
+*/
       if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
         // move towards it
         creep.moveTo(structure);
