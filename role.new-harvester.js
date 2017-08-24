@@ -6,6 +6,7 @@ module.exports = {
   run: function(creep) {
     // *** switch states ***
     var deliver_to_spawn = false;
+
     // if creep is bringing energy to a structure but has no energy left
     if (creep.memory.working == true && creep.carry.energy == 0) {
       // switch state
@@ -42,7 +43,10 @@ module.exports = {
                   )});
 
       // Find Towers
-
+      var structure_tower = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
+         filter: (s) => (
+                    ( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity )
+                  )});
 
       if ( creep.room.controller.ticksToDowngrade < 200 ) {
           // Emergency controller upgrade
@@ -60,7 +64,11 @@ module.exports = {
         var structure = structure_extension;
         creep.say("deliv.ex");
       }
-
+      else if ( structure_tower != null ) {
+        // Load a container
+        var structure = structure_tower;
+        creep.say("deliv-tw");
+      }
       else if ( structure_container != null ) {
         // Load a container
         var structure = structure_container;
