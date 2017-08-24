@@ -34,13 +34,15 @@ module.exports = {
       }
 
 			// claim the controller if necessary
-			if ( dest_key == 'Flag1' ) {
+
+
+			var status = creep.claimController(creep.room.controller);
+
+			if (status == ERR_NOT_IN_RANGE && status != ERR_INVALID_TARGET) {
 				console.log(creep + " claimer -- claiming");
-				var status = creep.claimController(creep.room.controller);
-				if (status == ERR_NOT_IN_RANGE && status != ERR_INVALID_TARGET) {
-        	creep.moveTo(creep.room.controller);
-        }
-			}
+      	creep.moveTo(creep.room.controller);
+      }
+
       // harvesting
       else if ( harvestSite != undefined  && creep.memory.working == false ) {
 				console.log(creep + " claimer -- harvesting");
