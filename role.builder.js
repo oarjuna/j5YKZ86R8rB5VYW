@@ -41,7 +41,7 @@ module.exports = {
 		else {
 			console.log(creep + " -- build - dropped energy " + creep.pickup(energy));
 			console.log(creep + " -- build dropped energy " + energy);
-		}	
+		}
 
 	}
             else {
@@ -51,7 +51,7 @@ module.exports = {
         else {
                // find closest container with energy and fill up
                 var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-                	filter: (s) => s.structureType==STRUCTURE_STORAGE
+                	filter: (s) => s.structureType==STRUCTURE_CONTAINER
                 });
 
                 creep.say("pickup");

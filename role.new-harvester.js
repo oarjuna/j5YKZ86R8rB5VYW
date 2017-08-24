@@ -66,8 +66,6 @@ module.exports = {
         var structure = creep.room.controller;
         creep.say("deliv.co");
 			}
-      //creep.say("deliv");
-		  //console.log(creep + " SCE: " + structure_container.storeCapacity);
 
       if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
         // move towards it
@@ -84,6 +82,7 @@ module.exports = {
         var source = creep.pos.findClosestByRange(FIND_SOURCES);
       }
       creep.say("harvest");
+      console.log(creep + "dest" mem_source);
 		  if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
 		    creep.moveTo(source);
       }
