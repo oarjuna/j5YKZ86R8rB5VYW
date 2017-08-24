@@ -90,8 +90,8 @@ module.exports = function() {
 	}
 	else if (roleName == "claimer_lg") {
 		var body = [
-			CLAIM, // 500
-      MOVE, MOVE, MOVE, MOVE,  // 200
+			CLAIM, // 600
+      MOVE, MOVE,   // 100
 		]; // 700
 		roleName = "claimer";
 	}
