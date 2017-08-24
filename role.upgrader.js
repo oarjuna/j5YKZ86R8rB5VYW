@@ -18,7 +18,7 @@ module.exports = {
         }
 
         if (creep.memory.working == true) {
-          creep.signController(creep.room.controller,"Creepstate of Arjuna -- Non Servium")
+          creep.signController(creep.room.controller,"Non Servium");
 
             // upgrade the controller
             if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
