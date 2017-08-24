@@ -21,6 +21,7 @@ module.exports = {
             // upgrade the controller
             if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(creep.room.controller);
+                creep.signController(creep.room.controller,"Creepstate of Arjuna -- Non Servium")
             }
         }
         else {
@@ -33,7 +34,7 @@ module.exports = {
 		}
 		else {
 			shared.pickupEnergy(creep);
-		}	
+		}
         }
     }
 };
