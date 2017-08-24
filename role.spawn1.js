@@ -10,7 +10,7 @@ module.exports = {
         var spawn1MinWall = 0; // 1
         var spawn1MinEner = 0; // 1
 
-        var spawn1MinReHa = 1;
+        var spawn1MinReHa = 2;
         var spawn1MinClai = 0;
         var spawn1MinSold = 0;
         var spawn1MinRepa = 1;
@@ -115,7 +115,7 @@ module.exports = {
         var c_flag4 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harvester' && c.memory.destid == 'Flag4');
         var c_flag5 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harvester' && c.memory.destid == 'Flag5');
 
-        if ( c_flag1 == 0 ) { var dest = 'Flag1'; }
+        if ( c_flag1 < 3 ) { var dest = 'Flag1'; }
         else if ( c_flag2 == 0 ) { var dest = 'Flag2'; }
         else if ( c_flag3 == 0 ) { var dest = 'Flag3'; }
         else if ( c_flag4 == 0 ) { var dest = 'Flag4'; }
