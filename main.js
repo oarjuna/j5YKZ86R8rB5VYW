@@ -68,7 +68,7 @@ module.exports.loop = function () {
 */
 	// Run the spawn logics
 	roleSpawn1.run(100);
-//	roleSpawn2.run(100);
+  roleSpawn2.run(100);
 //	console.log("link status -- south_to_center: " + ls1 + " north_to_center: " + ls2);
 
 	//gameStatus.display_status();
