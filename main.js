@@ -40,10 +40,10 @@ module.exports.loop = function () {
     	});
     	for (let tower of towers) {
         	var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-		var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
+		      var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
                 	filter: (s) => s.hits < s.hitsMax &&
-					s.structureType != STRUCTURE_WALL &&
-					s.structureType != STRUCTURE_RAMPART
+					                       s.structureType != STRUCTURE_WALL &&
+					                       s.structureType != STRUCTURE_RAMPART
         	});
         	if (target != undefined) {
 	    		console.log(tower + " -- attacking " + target);
@@ -53,25 +53,7 @@ module.exports.loop = function () {
 			tower.repair(repair_target);
 		}
     	}
-        // Tower control
-        var towers = Game.rooms.W28S81.find(FIND_STRUCTURES, {
-                filter: (s) => s.structureType == STRUCTURE_TOWER
-        });
-        for (let tower of towers) {
-                var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-                var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
-                        filter: (s) => s.hits < s.hitsMax &&
-					s.structureType != STRUCTURE_WALL &&
-					s.structureType != STRUCTURE_RAMPART
-                });
-                if (target != undefined) {
-                        console.log(tower + " -- attacking " + target);
-                        tower.attack(target);
-                }
-                else if (repair_target != undefined ) {
-                        tower.repair(repair_target);
-                }
-        }
+
 
 
 
