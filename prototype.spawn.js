@@ -75,8 +75,8 @@ module.exports = function() {
     else if (roleName == "remote_harvester") {
 	    var body = [
 			  WORK, WORK, // 200
-        MOVE, MOVE, MOVE, MOVE, MOVE, // 250
-			  CARRY, CARRY, CARRY, CARRY, CARRY,  // 250
+        MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, // 300
+			  CARRY, CARRY, CARRY, CARRY,   // 200
 		  ]; //
     }
 	else if (roleName == "claimer") {
@@ -91,8 +91,8 @@ module.exports = function() {
 	else if (roleName == "claimer_lg") {
 		var body = [
 			CLAIM, // 500
-      MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE  // 350
-		]; // 850
+      MOVE, MOVE, MOVE, MOVE,  // 200
+		]; // 750
 		roleName = "claimer";
 	}
         else if (roleName == "local_harvester") {
