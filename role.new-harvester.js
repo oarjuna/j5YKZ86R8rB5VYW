@@ -62,7 +62,7 @@ module.exports = {
         var structure = creep.room.controller;
 			}
       creep.say("deliv");
-		  console.log(creep + " SCE: " + structure_container.energyCapacity);
+		  console.log(creep + " SCE: " + structure_container);
 
       if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
         // move towards it
