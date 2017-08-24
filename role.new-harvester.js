@@ -43,7 +43,7 @@ module.exports = {
       if ( creep.room.controller.ticksToDowngrade < 2000 ) {
           var structure = creep.room.controller;
       }
-      else if ( structure_spawn.energy < structure_spawn.energyCapacity) {
+      else if ( structure_spawn.energy < Game.spawns.Spawn1.room.energyCapacityAvailable) {
         // load the spawn
         var structure = structure_spawn;
       }
