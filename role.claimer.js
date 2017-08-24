@@ -36,7 +36,7 @@ module.exports = {
 			// claim the controller if necessary
 			if ( dest_key == 'Flag1' ) {
 				console.log(creep + " claimer -- claiming");
-				var status = creep.claimController(creep.room.controller;
+				var status = creep.claimController(creep.room.controller);
 				if (status == ERR_NOT_IN_RANGE && status != ERR_INVALID_TARGET) {
         	creep.moveTo(creep.room.controller);
         }
