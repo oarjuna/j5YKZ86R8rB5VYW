@@ -28,14 +28,15 @@ module.exports = {
       // do stuff
     	if (creep.memory.working == true) {
         // drop off
-        var container = '599eeb35a2f45c5265e8c678';
+        var container = '599f20d2c9f2bd7d098da2d5';
         var structure = Game.getObjectById(container);
-
+/*
         // Find CONTAINERS
         var structure_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
             filter: (s) => (
               ( s.structureType == STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] < s.storeCapacity - 200)
             )});
+  */          
         var structure = structure_container;
     		var action_status = creep.transfer(structure, RESOURCE_ENERGY);
     		if (action_status == ERR_NOT_IN_RANGE) {
