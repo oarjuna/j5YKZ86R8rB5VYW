@@ -81,12 +81,10 @@ module.exports = function() {
     }
 	else if (roleName == "claimer") {
     var body = [
-			WORK, WORK, WORK, WORK, WORK, WORK, // 300
-      MOVE, MOVE, MOVE, MOVE,   // 200
-			CARRY, CARRY, // 100
-      ATTACK, // 80
-      TOUGH, TOUGH // 20
-    ];//  600
+      WORK, WORK, // 200
+      MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, // 300
+      CARRY, CARRY, CARRY, CARRY,   // 200
+    ];//  700
 	}
 	else if (roleName == "claimer_lg") {
 		var body = [
