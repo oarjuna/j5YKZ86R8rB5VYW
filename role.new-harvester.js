@@ -26,7 +26,7 @@ module.exports = {
       // Find CONTAINERS
       var structure_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
           filter: (s) => (
-            ( s.structureType == STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] < s.storeCapacity)
+            ( s.structureType == STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] < s.storeCapacity - 200)
           )});
 
       // Find the SPAWN
