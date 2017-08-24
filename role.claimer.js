@@ -1,77 +1,64 @@
 module.exports = {
 	run: function(creep) {
-	creep.say("[-]");
+		creep.say("[-]");
 
-	// get your assignment
-        var dest_key = creep.memory.destid;
-        if ( dest_key == 'Flag1') {  var gotoFlag = Game.flags.Flag1; }
-        else if ( dest_key == 'Flag2') {  var gotoFlag = Game.flags.Flag2; }
-        else if ( dest_key == 'Flag3') {  var gotoFlag = Game.flags.Flag3; }
-        else if ( dest_key == 'Flag4') {  var gotoFlag = Game.flags.Flag4; }
-        else if ( dest_key == 'Flag5') {  var gotoFlag = Game.flags.Flag5; }
+		// get your assignment
+    var dest_key = creep.memory.destid;
+    if ( dest_key == 'Flag1') {  var gotoFlag = Game.flags.Flag1; }
+    else if ( dest_key == 'Flag2') {  var gotoFlag = Game.flags.Flag2; }
+    else if ( dest_key == 'Flag3') {  var gotoFlag = Game.flags.Flag3; }
+    else if ( dest_key == 'Flag4') {  var gotoFlag = Game.flags.Flag4; }
+    else if ( dest_key == 'Flag5') {  var gotoFlag = Game.flags.Flag5; }
 
-//	//console.log(creep + " body " + creep.body[0].type);
-
-        // attack hostile creeps
-       	/* 
-	var target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-        if(target) {
-                //console.log(creep + "ALERT -- found hostile creep!" + target);
-                if(creep.attack(target) == ERR_NOT_IN_RANGE) {
-                        creep.moveTo(target);
-                }
-        }
-	*/
-
-		
 		// are we in the room with the flag?
 		if ( creep.pos.roomName != gotoFlag.pos.roomName ) {
+			// No
 			moveStatus = creep.moveTo(gotoFlag);
 		}
 		else {
-			// in the room with the flag, look for stuff to do (likely very CPU heavy)
+			// yes, in the room with the flag,
 
+			// look for stuff to do
 			var constructionSite = creep.pos.findClosestByPath(FIND_MY_CONSTRUCTION_SITES);
                         var repairStructure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
                                 filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
                         });
 			var harvestSite = creep.pos.findClosestByPath(FIND_SOURCES);
-			//var upgradeControl = creep.room.controller
 
+			// Switch states
 			if (creep.memory.working == true && creep.carry.energy == 0) {
-				//console.log(creep + " -- claimer -- out of energy");
 				creep.memory.working = false;
 			}
 			else if (creep.memory.working == false && creep.carry.energy == creep.carryCapacity) {
-            			//console.log(creep + " -- claimer -- energy capacity full");
-            			creep.memory.working = true;
-        		}
+				creep.memory.working = true;
+      }
 
 			// claim the controller if necessary
 			if ( dest_key == 'Flag1' ) {
 				console.log(creep + " claimer -- claiming");
-				if (creep.claimController(creep.room.controller) == ERR_NOT_IN_RANGE) {
-                                        creep.moveTo(creep.room.controller);
-                                }
+				var status = creep.claimController(creep.room.controller;
+				if (status == ERR_NOT_IN_RANGE && status != ERR_INVALID_TARGET) {
+        	creep.moveTo(creep.room.controller);
+        }
 			}
-                        // harvesting
-                        else if ( harvestSite != undefined  && creep.memory.working == false ) {
-				//console.log(creep + " claimer -- harvesting");
-                                if ( creep.harvest(harvestSite) == ERR_NOT_IN_RANGE ) {
-                                        creep.moveTo(harvestSite);
-                                }
-                        }
-			// other, construction jobs
+      // harvesting
+      else if ( harvestSite != undefined  && creep.memory.working == false ) {
+				console.log(creep + " claimer -- harvesting");
+        if ( creep.harvest(harvestSite) == ERR_NOT_IN_RANGE ) {
+                creep.moveTo(harvestSite);
+        }
+      }
+			// construction jobs
                         else if ( constructionSite != undefined  && creep.memory.working == true) {
 				//console.log(creep + " claimer -- building");
                                 if ( creep.build(constructionSite) == ERR_NOT_IN_RANGE ) {
                                         creep.moveTo(constructionSite);
                                 }
                         }
-                       	// does the container exist? if not, rebuild it? 
+                       	// does the container exist? if not, rebuild it?
 
 			// upgrade the controller if necessary
-			else if ( 
+			else if (
 				 dest_key == 'Flag1'
 				) {
 				console.log(creep + " claimer -- upgrading");
