@@ -62,7 +62,7 @@ module.exports = {
         // otherwise, become a builder
 				roleBuilder.run(creep);
 			}
-
+      creep.say("load");
 		  console.log(creep + " S: " + structure);
       if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
         // move towards it
