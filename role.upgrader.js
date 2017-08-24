@@ -33,10 +33,10 @@ module.exports = {
                 if (creep.pickup(energy) == ERR_NOT_IN_RANGE) {
                         creep.say("drop-pick");
                         creep.moveTo(energy);
-		}
-		else {
-			shared.pickupEnergy(creep);
-		}
+		            }
+		            else {
+			               shared.pickupEnergy(creep);
+		            }
         }
     }
 };
