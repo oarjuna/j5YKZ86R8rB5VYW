@@ -51,7 +51,7 @@ module.exports = {
         // load the spawn
         var structure = structure_spawn;
       }
-      else if ( structure_container.energy < structure_container.energyCapacity) {
+      else if ( structure_container.store[RESOURCE_ENERGY] < structure_container.energyCapacity) {
           var structure = structure_container;
       }
       else if (structure_extension != null) {
@@ -62,7 +62,7 @@ module.exports = {
         var structure = creep.room.controller;
 			}
       creep.say("deliv");
-		  console.log(creep + " SCE: " + structure_container);
+		  console.log(creep + " SCE: " + structure_container.store[RESOURCE_ENERGY]);
 
       if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
         // move towards it
