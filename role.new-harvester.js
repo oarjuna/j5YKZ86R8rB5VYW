@@ -22,14 +22,6 @@ module.exports = {
     // if creep is supposed to transfer energy to a structure
     if (creep.memory.working == true) {
       // START UNLOAD
-      // get a list of closest spawn, extension or tower which is not full
-      var structure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
-        filter: (s) => (
-          ( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity - 200 ) ||
-          ( s.structureType == STRUCTURE_CONTAINER && s.energy < s.energyCapacity ) ||
-          ( s.structureType == STRUCTURE_SPAWN && s.energy < s.energyCapacity ) ||
-          ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
-        )});
 
       // CONTAINERS
       var structure_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
@@ -64,6 +56,7 @@ module.exports = {
 			}
       creep.say("deliv");
 		  console.log(creep + " S: " + structure);
+
       if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
         // move towards it
         creep.moveTo(structure);
@@ -75,12 +68,14 @@ module.exports = {
 		  // find closest container with energy and fill up
 		  // can't pickup from the large storage as it's the final dropoff point
 		  // and that makes them loop infinately at the storage
+      /*
       var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
       filter: (s) => (
 				s.structureType==STRUCTURE_STORAGE ||
         s.structureType==STRUCTURE_CONTAINER ) &&
         s.store[RESOURCE_ENERGY] > 1
       });
+      */
       creep.say("load");
 		  if ( container == undefined ) {
         //	console.log(creep + " harv --pickup -- " + container );
