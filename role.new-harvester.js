@@ -88,8 +88,8 @@ module.exports = {
         s.store[RESOURCE_ENERGY] > 1
       });
       */
-      var source = creep.memory.destid;
-      var target_source = Game.getObjectById(source);
+      //var source = creep.memory.destid;
+      //var target_source = Game.getObjectById(source);
 
       if ( source == null) {
         var source = creep.pos.findClosestByRange(FIND_SOURCES);
