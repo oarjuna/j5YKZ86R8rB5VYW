@@ -35,7 +35,7 @@ module.exports = {
 /*
         var container = '599b912278ca755b8407a299';
         var structure = Game.getObjectById(container);
-        
+
         // Find CONTAINERS
         var structure_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
             filter: (s) => (
