@@ -28,13 +28,9 @@ module.exports = {
       // do stuff
     	if (creep.memory.working == true) {
         // drop off
-
         var container = '599eeb35a2f45c5265e8c678';
         var structure = Game.getObjectById(container);
-
-
     		var action_status = creep.transfer(structure, RESOURCE_ENERGY);
-
     		if (action_status == ERR_NOT_IN_RANGE) {
 				  creep.say("rh-drop");
           creep.moveTo(structure);
@@ -47,6 +43,7 @@ module.exports = {
   		    creep.moveTo(source);
         }
 	    }
+
 	   }
   }
 };
