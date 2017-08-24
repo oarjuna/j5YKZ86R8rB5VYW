@@ -4,7 +4,7 @@ module.exports = {
     run: function(foo) {
         // spawn levels
         var spawn1MinHarv = 6; // 3
-        var spawn1MinLoHa = 0; // 3
+        var spawn1MinDeli = 0; // 3
         var spawn1MinUgra = 3; // 3
         var spawn1MinBuil = 1; // 1
         var spawn1MinWall = 0; // 1
@@ -18,7 +18,7 @@ module.exports = {
         // count the number of creeps alive for each role born at Spawn1
         var numSpawn1Harv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthplace == 'Spawn1');
         var numSpawn1ReHa = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harvester' && c.memory.birthplace == 'Spawn1');
-        var numSpawn1LoHa = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester' && c.memory.birthplace == 'Spawn1');
+        var numSpawn1Deli = _.sum(Game.creeps, (c) => c.memory.role == 'deliverer' && c.memory.birthplace == 'Spawn1');
         var numSpawn1Upgr = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader' && c.memory.birthplace == 'Spawn1');
         var numSpawn1Buil = _.sum(Game.creeps, (c) => c.memory.role == 'builder' && c.memory.birthplace == 'Spawn1');
         var numSpawn1Clai = _.sum(Game.creeps, (c) => c.memory.role == 'claimer' && c.memory.birthplace == 'Spawn1');
@@ -50,17 +50,10 @@ module.exports = {
         }
     }
 
-   // if not enough local harvesters
-    else if (numSpawn1LoHa < spawn1MinLoHa) {
-        var lh_tmp = _.sum(Game.creeps,
-                        (c) => c.memory.role == 'local_harvester' &&
-                                c.memory.destid == '579faa710700be0674d30fd7'
-                        );
-
-        if ( lh_tmp < 1 ) { var dest = '579faa710700be0674d30fd7'; } // north
-        else { var dest = '579faa710700be0674d30fd8'; } // south
-        console.log("sp1 -- spawning local_harvester -- " + dest + " -- " + lh_tmp);
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'local_harvester',dest,'Spawn1');
+   // if not enough deliverers
+    else if (numSpawn1Deli < spawn1MinDeli) {
+        console.log("sp1 -- spawning deliverer");
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'deliverer',dest,'Spawn1');
     }
    // if not enough energy movers
     else if (numSpawn1EnMo < spawn1MinEner) {
@@ -167,7 +160,7 @@ module.exports = {
         var status5Sp1 = " RH: " + numSpawn1ReHa + "/" + spawn1MinReHa;
         var status6Sp1 = " WR: " + numSpawn1WaRe + "/" + spawn1MinWall;
         var status7Sp1 = " C: " + numSpawn1Clai + "/" + spawn1MinClai;
-        var status8Sp1 = " LH: " + numSpawn1LoHa + "/" + spawn1MinLoHa;
+        var status8Sp1 = " De: " + numSpawn1Deli + "/" + spawn1MinDeli;
         var status9Sp1 = " EM: " + numSpawn1EnMo  + "/" + spawn1MinEner;
         var status10Sp1 =" S: " + numSpawn1Sold + "/" + spawn1MinSold;
 
