@@ -76,7 +76,7 @@ module.exports = {
     }
     // END unload
     else {
-      // START FILL
+      // START HARVESTING
 		  // find closest container with energy and fill up
 		  // can't pickup from the large storage as it's the final dropoff point
 		  // and that makes them loop infinately at the storage
@@ -88,20 +88,16 @@ module.exports = {
         s.store[RESOURCE_ENERGY] > 1
       });
       */
-      creep.say("load");
-		  if ( container == undefined ) {
-        //	console.log(creep + " harv --pickup -- " + container );
-			  var container = creep.pos.findClosestByRange(FIND_SOURCES);
-		    if (creep.harvest(container) == ERR_NOT_IN_RANGE) {
-		      creep.moveTo(container);
-        }
+      //var source = creep.memory.destid;
+      //var target_source = Game.getObjectById(source);
+      creep.say("harvest");
+      
+			var source = creep.pos.findClosestByRange(FIND_SOURCES);
+		  if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
+		    creep.moveTo(source);
       }
-      else {
-        //	console.log(creep + " harv --pickup -- " + container );
-        if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-          creep.moveTo(container);
-        }
-      }
+
+
 
     } // END FILL
 
