@@ -28,9 +28,14 @@ module.exports = {
       // do stuff
     	if (creep.memory.working == true) {
         // drop off
+
+
+        var constructionSite = creep.pos.findClosestByPath(FIND_MY_CONSTRUCTION_SITES);
+
+/*
         var container = '599b912278ca755b8407a299';
         var structure = Game.getObjectById(container);
-/*
+        
         // Find CONTAINERS
         var structure_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
             filter: (s) => (
@@ -39,12 +44,23 @@ module.exports = {
 
         var structure = structure_container;
 
-          */
+
     		var action_status = creep.transfer(structure, RESOURCE_ENERGY);
     		if (action_status == ERR_NOT_IN_RANGE) {
 				  creep.say("rh-drop");
           creep.moveTo(structure);
         }
+    */
+
+        // do construction jobs
+        if ( constructionSite != undefined) {
+  				console.log(creep + " remoteharv -- building");
+          if ( creep.build(constructionSite) == ERR_NOT_IN_RANGE ) {
+                  creep.moveTo(constructionSite);
+          }
+  			}
+
+
       }
       else {
         // find closest source and fill up
