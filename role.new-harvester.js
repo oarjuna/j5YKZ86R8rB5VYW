@@ -47,7 +47,7 @@ module.exports = {
         // load the spawn
         var structure = structure_spawn;
       }
-      else if ( structure_container != null && structure_container.energy < structure_container.energyCapacity) {
+      else if ( structure_container.energy < structure_container.energyCapacity) {
           var structure = structure_container;
       }
 			else {
