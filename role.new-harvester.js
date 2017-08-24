@@ -82,7 +82,7 @@ module.exports = {
         var source = creep.pos.findClosestByRange(FIND_SOURCES);
       }
       creep.say("harvest");
-      console.log(creep + "dest" mem_source);
+      console.log(creep + "dest" + mem_source);
 		  if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
 		    creep.moveTo(source);
       }
