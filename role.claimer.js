@@ -34,8 +34,6 @@ module.exports = {
       }
 
 			// claim the controller if necessary
-
-
 			var status = creep.claimController(creep.room.controller);
 			console.log(creep + " claimer -- controller status " + status);
 
@@ -52,49 +50,42 @@ module.exports = {
         }
       }
 			// construction jobs
-                        else if ( constructionSite != undefined  && creep.memory.working == true) {
-				//console.log(creep + " claimer -- building");
-                                if ( creep.build(constructionSite) == ERR_NOT_IN_RANGE ) {
-                                        creep.moveTo(constructionSite);
-                                }
-                        }
-                       	// does the container exist? if not, rebuild it?
-
-			// upgrade the controller if necessary
-			else if (
-				 dest_key == 'Flag1'
-				) {
-				console.log(creep + " claimer -- upgrading");
-            			if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
-                			creep.moveTo(creep.room.controller);
-            			}
-				else {
-					//console.log(creep + " upgrade - " + creep.room.controller.owner.username);
-				}
+      else if ( constructionSite != undefined  && creep.memory.working == true) {
+				console.log(creep + " claimer -- building");
+        if ( creep.build(constructionSite) == ERR_NOT_IN_RANGE ) {
+                creep.moveTo(constructionSite);
+        }
 			}
+
+			// upgrade the controller
+			else if ( creep.room.controller.ticksToDowngrade < 500 ) {
+				console.log(creep + " claimer -- upgrading");
+  			if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+      			creep.moveTo(creep.room.controller);
+  			}
+			}
+
 			// repair jobs
 			else if ( repairStructure != undefined  && creep.memory.working == true ) {
-				//console.log(creep + " claimer -- repairing");
-                                if ( creep.repair(repairStructure) == ERR_NOT_IN_RANGE ) {
-					//console.log(creep + " repair");
-                                        creep.moveTo(repairStructure);
-                                }
-                        }
+				console.log(creep + " claimer -- repairing");
+      	if ( creep.repair(repairStructure) == ERR_NOT_IN_RANGE ) {
+        	creep.moveTo(repairStructure);
+        }
+      }
+
 			// drop stuff off
 			else {
 				var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
 					filter: (s) => s.structureType==STRUCTURE_CONTAINER &&
 							s.store[RESOURCE_ENERGY] < 2000
-                		});
-				//console.log(creep + " claimer -- transfering energy.");
-                                if ( creep.transfer(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE ) {
+          });
+
+				console.log(creep + " claimer -- transfering energy.");
+        if ( creep.transfer(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE ) {
 					creep.moveTo(container);
-                                }
+        }
 			}
 
-			// attacking hostiles?
-			// reserving?
 		}
-
 	}
 };
