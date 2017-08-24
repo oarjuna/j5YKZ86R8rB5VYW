@@ -49,6 +49,7 @@ module.exports = {
                 creep.moveTo(harvestSite);
         }
       }
+
 			// construction jobs
       else if ( constructionSite != undefined  && creep.memory.working == true) {
 				console.log(creep + " claimer -- building");
@@ -57,13 +58,6 @@ module.exports = {
         }
 			}
 
-			// upgrade the controller
-			else if ( creep.room.controller.ticksToDowngrade < 500 ) {
-				console.log(creep + " claimer -- upgrading");
-  			if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
-      			creep.moveTo(creep.room.controller);
-  			}
-			}
 
 			// repair jobs
 			else if ( repairStructure != undefined  && creep.memory.working == true ) {
@@ -72,6 +66,14 @@ module.exports = {
         	creep.moveTo(repairStructure);
         }
       }
+
+			// upgrade the controller
+			else if ( creep.room.controller.ticksToDowngrade < 999999 && creep.memory.working == true ) {
+				console.log(creep + " claimer -- upgrading");
+  			if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+      			creep.moveTo(creep.room.controller);
+  			}
+			}
 
 			// drop stuff off
 			else {
