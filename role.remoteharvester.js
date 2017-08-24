@@ -28,7 +28,7 @@ module.exports = {
       // do stuff
     	if (creep.memory.working == true) {
         // drop off
-        var container = '599f20d2c9f2bd7d098da2d5';
+        var container = '599b912278ca755b8407a299';
         var structure = Game.getObjectById(container);
 /*
         // Find CONTAINERS
@@ -39,7 +39,7 @@ module.exports = {
 
         var structure = structure_container;
 
-          */  
+          */
     		var action_status = creep.transfer(structure, RESOURCE_ENERGY);
     		if (action_status == ERR_NOT_IN_RANGE) {
 				  creep.say("rh-drop");
