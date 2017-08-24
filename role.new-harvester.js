@@ -76,6 +76,7 @@ module.exports = {
     }
     // END unload
     else {
+      // START FILL
 		  // find closest container with energy and fill up
 		  // can't pickup from the large storage as it's the final dropoff point
 		  // and that makes them loop infinately at the storage
@@ -85,7 +86,7 @@ module.exports = {
         s.structureType==STRUCTURE_CONTAINER ) &&
         s.store[RESOURCE_ENERGY] > 1
       });
-      creep.say("pickup");
+      creep.say("load");
 		  if ( container == undefined ) {
         //	console.log(creep + " harv --pickup -- " + container );
 			  var container = creep.pos.findClosestByRange(FIND_SOURCES);
@@ -99,6 +100,8 @@ module.exports = {
           creep.moveTo(container);
         }
       }
-    }
+
+    } // END FILL
+
   }
 };
