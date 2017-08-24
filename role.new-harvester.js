@@ -21,6 +21,7 @@ module.exports = {
 
     // if creep is supposed to transfer energy to a structure
     if (creep.memory.working == true) {
+      // START UNLOAD
       // get a list of closest spawn, extension or tower which is not full
       var structure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
         filter: (s) => (
@@ -30,43 +31,37 @@ module.exports = {
           ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
         )});
 
-    // CONTAINERS
-    var structure_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+      // CONTAINERS
+      var structure_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+          filter: (s) => (
+            ( s.structureType == STRUCTURE_CONTAINER)
+          )});
+        console.log(creep + " Cont: " + structure_container);
+
+
+      // SPAWN
+      var structure_spawn = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
         filter: (s) => (
-          ( s.structureType == STRUCTURE_CONTAINER)
+          ( s.structureType == STRUCTURE_SPAWN )
         )});
-    console.log(creep + " Cont: " + structure_container);
+
+      console.log(creep + " Spawn: " + structure_spawn);
+
+      // EXTENSTION
+
+      // Tower
 
 
-    // SPAWN
-    var structure_spawn = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
-      filter: (s) => (
-        ( s.structureType == STRUCTURE_SPAWN )
-      )});
-
-    console.log(creep + " Spawn: " + structure_spawn);
-
-    // EXTENSTION
-
-    // Tower
-
-
-    if (structure == null) {
-      // if we don't find someplace to drop energy
-			if ( creep.room.storage == undefined && creep.room.controller.ticksToDowngrade < 9999 ) {
-          // check to see if the controller upgrading
+      if ( creep.room.controller.ticksToDowngrade < 2000 ) {
           var structure = creep.room.controller;
-					console.log(creep + " " + creep.room.controller.ticksToDowngrade);
+      }
+      else if ( structure_container != null) {
+          var structure = structure_container;
       }
 			else {
         // otherwise, become a builder
 				roleBuilder.run(creep);
 			}
-		}
-    else {
-      // we found someplace to drop energy
-		  creep.say("s-drop");
-		}
 
 		  console.log(creep + " S: " + structure);
       if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
