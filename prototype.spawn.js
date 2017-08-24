@@ -72,29 +72,26 @@ module.exports = function() {
                         CARRY, CARRY // 200
 		]; // 550
         }
-        else if (roleName == "remote_harvester") {
+    else if (roleName == "remote_harvester") {
 	    var body = [
-			WORK, WORK, // 200
-		    	MOVE, MOVE, MOVE, MOVE, MOVE, MOVE,
-			 MOVE, MOVE, MOVE, MOVE, MOVE, // 550
-			CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, // 300
-			ATTACK, // 80
-                      	TOUGH, TOUGH // 20
-		]; // 1150
-        }
+			  WORK, WORK, // 200
+        MOVE, MOVE, MOVE, MOVE, MOVE, // 250
+			  CARRY, CARRY, CARRY, CARRY, CARRY,  // 250
+		  ]; //
+    }
 	else if (roleName == "claimer") {
-                var body = [
+    var body = [
 			WORK, WORK, WORK, WORK, WORK, WORK, // 300
-                        MOVE, MOVE, MOVE, MOVE,   // 200
+      MOVE, MOVE, MOVE, MOVE,   // 200
 			CARRY, CARRY, // 100
-                        ATTACK, // 80
-                        TOUGH, TOUGH // 20
-                ];//  600
+      ATTACK, // 80
+      TOUGH, TOUGH // 20
+    ];//  600
 	}
 	else if (roleName == "claimer_lg") {
 		var body = [
 			CLAIM, // 500
-                        MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE  // 350
+      MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE  // 350
 		]; // 850
 		roleName = "claimer";
 	}
