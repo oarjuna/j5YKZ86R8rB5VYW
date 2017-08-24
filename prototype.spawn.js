@@ -30,8 +30,8 @@ module.exports = function() {
         }
         else if (roleName == 'builder') {
 		var body = [
-			WORK, WORK, WORK, WORK,  // 400
-			MOVE, MOVE, MOVE, MOVE, // 150
+			WORK, WORK,  // 200
+			MOVE, MOVE, MOVE, // 150
 			CARRY, CARRY // 200
 		]; // 800
        }
