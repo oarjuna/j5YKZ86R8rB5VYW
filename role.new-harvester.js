@@ -28,16 +28,12 @@ module.exports = {
           filter: (s) => (
             ( s.structureType == STRUCTURE_CONTAINER)
           )});
-        console.log(creep + " Cont: " + structure_container);
-
 
       // SPAWN
       var structure_spawn = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
         filter: (s) => (
           ( s.structureType == STRUCTURE_SPAWN )
         )});
-
-      console.log(creep + " Spawn: " + structure_spawn);
 
       // EXTENSTION
 
@@ -46,6 +42,10 @@ module.exports = {
 
       if ( creep.room.controller.ticksToDowngrade < 2000 ) {
           var structure = creep.room.controller;
+      }
+      else if ( structure_spawn.energy < structure_spawn.energyCapacity)
+        // load the spawn
+        var structure = structure_spawn;
       }
       else if ( structure_container != null) {
           var structure = structure_container;
