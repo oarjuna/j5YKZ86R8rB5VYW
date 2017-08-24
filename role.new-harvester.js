@@ -53,13 +53,13 @@ module.exports = {
         var structure = structure_spawn;
         creep.say("deliv-s");
       }
-      else if ( structure_container.store[RESOURCE_ENERGY] < structure_container.storeCapacity) {
-          var structure = structure_container;
-          creep.say("deliv-cn");
-      }
       else if (structure_extension != null) {
           var structure = structure_extension;
           creep.say("deliv.ex");
+      }
+      else if ( structure_container.store[RESOURCE_ENERGY] < structure_container.storeCapacity) {
+          var structure = structure_container;
+          creep.say("deliv-cn");
       }
 			else {
         // upgrade the controller
@@ -84,7 +84,6 @@ module.exports = {
         var source = creep.pos.findClosestByRange(FIND_SOURCES);
       }
       creep.say("harvest");
-      console.log("H" + source);
 		  if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
 		    creep.moveTo(source);
       }
