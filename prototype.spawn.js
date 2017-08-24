@@ -21,6 +21,13 @@ module.exports = function() {
             ]; // 300
 		        var roleName = 'harvester';
         }
+        else if (roleName == 'deliverer') {
+    var body = [
+      WORK, WORK,  // 200
+      MOVE, MOVE, MOVE, // 150
+      CARRY, CARRY, CARRY, CARRY // 200
+    ]; // 550`
+
         else if (roleName == 'upgrader') {
 		var body = [
 			WORK, WORK,  // 200
@@ -31,9 +38,9 @@ module.exports = function() {
         else if (roleName == 'builder') {
 		var body = [
 			WORK, WORK,  // 200
-			MOVE, MOVE, MOVE, // 150
-			CARRY, CARRY // 200
-		]; // 800
+			MOVE, MOVE, MOVE, MOVE, // 200
+			CARRY, CARRY, CARRY // 150
+		]; // 550
        }
         else if (roleName == 'builder_med') {
                 var body = [
