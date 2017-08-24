@@ -85,7 +85,7 @@ module.exports = {
         var source = target_source;
       }
       creep.say("harvest");
-      console.log(creep + " dest " + target_source);
+    //console.log(creep + " dest " + target_source);
 		  if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
 		    creep.moveTo(source);
       }
