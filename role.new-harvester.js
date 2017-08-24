@@ -36,6 +36,10 @@ module.exports = {
         )});
 
       // EXTENSTION
+      var structure_extension = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
+         filter: (s) => (
+                    ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity ) ||
+                  )});
 
       // Tower
 
@@ -49,6 +53,9 @@ module.exports = {
       }
       else if ( structure_container.energy < structure_container.energyCapacity) {
           var structure = structure_container;
+      }
+      else if (structure_extension != null) {
+          var structure = structure_extension;
       }
 			else {
         // upgrade the controller
