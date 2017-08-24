@@ -11,7 +11,7 @@ module.exports = {
         var spawn1MinEner = 0; // 1
 
         var spawn1MinReHa = 2;
-        var spawn1MinClai = 1;
+        var spawn1MinClai = 2;
         var spawn1MinSold = 0;
         var spawn1MinRepa = 1;
 
@@ -135,7 +135,7 @@ module.exports = {
         var c_flag5 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag5');
 
         var role;
-        if ( c_flag1 == 0 ) { var dest = 'Flag1'; role = "claimer"; }
+        if ( c_flag1 < 3 ) { var dest = 'Flag1'; role = "claimer"; }
         else if ( c_flag2 == 0 ) { var dest = 'Flag2'; role = "claimer"; }
         else if ( c_flag3 == 0 ) { var dest = 'Flag3'; role = "claimer"; }
         else if ( c_flag4 == 0 ) { var dest = 'Flag4'; role = "claimer"; }
