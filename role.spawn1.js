@@ -170,7 +170,7 @@ module.exports = {
                          "/" + roomSp1.controller.progressTotal +
                         " lvl: " + roomSp1.controller.level;
 
-	var status13Sp1 = " Stored -- " +  _.sum(roomSp1.storage.store[RESOURCE_ENERGY]);
+	var status13Sp1 = " Stored -- " +  _.sum(roomSp1.storage[RESOURCE_ENERGY]);
 	//var status13Sp1 = " Stored -- R ";
 
         // print the thing
