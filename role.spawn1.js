@@ -28,6 +28,12 @@ module.exports = {
         var numSpawn1EnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthplace == 'Spawn1');
 
         console.log("\n#------------------#");
+        var testing = _.sum(Game.creeps,
+                        (c) => c.memory.role == 'harvester' &&
+                                c.memory.destid == '5873bcc211e3e4361b4d81ec'
+                        );
+        console.log("#ofharv" + testing);
+
    // if not enough harvesters
     if (numSpawn1Harv < spawn1MinHarv) {
       var h_tmp = _.sum(Game.creeps,
