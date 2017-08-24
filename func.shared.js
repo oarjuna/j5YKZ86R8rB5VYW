@@ -15,12 +15,13 @@ module.exports = {
 		}
 	}
 
-
-	// head to the spawner for regeneration 
+/*
+	// head to the spawner for regeneration
 	regenTTL: function(creep)
 	{
 
 
 	}
+*/
 
 };
