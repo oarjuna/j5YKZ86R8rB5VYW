@@ -6,7 +6,7 @@ module.exports = {
         var spawn1MinHarv = 5; // 3
         var spawn1MinLoHa = 0; // 3
         var spawn1MinUgra = 1; // 3
-        var spawn1MinBuil = 0; // 1
+        var spawn1MinBuil = 1; // 1
         var spawn1MinWall = 0; // 1
         var spawn1MinEner = 0; // 1
 
@@ -41,7 +41,7 @@ module.exports = {
         // try to spawn one
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'harvester',dest,'Spawn1');
         console.log("sp1 -- spawning harvester");
-        
+
         // if spawning failed and we have no harvesters left
         if (name == ERR_NOT_ENOUGH_ENERGY && numSpawn1Harv == 0) {
             // spawn one with what is available
