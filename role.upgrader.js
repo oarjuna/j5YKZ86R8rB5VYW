@@ -18,6 +18,7 @@ module.exports = {
         }
 
         if (creep.memory.working == true) {
+          creep.moveTo(creep.room.controller);
           creep.signController(creep.room.controller,"Non Servium");
 
             // upgrade the controller
