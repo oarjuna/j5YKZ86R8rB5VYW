@@ -26,7 +26,7 @@ module.exports = {
       // CONTAINERS
       var structure_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
           filter: (s) => (
-            ( s.structureType == STRUCTURE_CONTAINER )
+            ( s.structureType == STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] < s.storeCapacity)
           )});
 
       // SPAWN
@@ -57,7 +57,7 @@ module.exports = {
           var structure = structure_extension;
           creep.say("deliv.ex");
       }
-      else if ( structure_container.store[RESOURCE_ENERGY] < structure_container.storeCapacity) {
+      else if ( structure_container != null ) {
           var structure = structure_container;
           creep.say("deliv-cn");
       }
