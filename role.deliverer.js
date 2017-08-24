@@ -35,6 +35,12 @@ module.exports = {
                     ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
                   )});
 
+      // Find Towers
+      var structure_tower = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
+         filter: (s) => (
+                    ( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity )
+                  )});
+
       if ( creep.room.controller.ticksToDowngrade < 500 ) {
           // Emergency controller upgrade
           var structure = creep.room.controller;
@@ -49,6 +55,11 @@ module.exports = {
         // Load the extension
         var structure = structure_extension;
         creep.say("deliv.ex");
+      }
+      else if ( structure_tower != null ) {
+        // Load a container
+        var structure = structure_tower;
+        creep.say("deliv-tw");
       }
       else {
         // upgrade the controller
