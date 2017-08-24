@@ -38,7 +38,7 @@ module.exports = {
       // Find EXTENSTIONs
       var structure_extension = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
          filter: (s) => (
-                    ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity - 200 )
+                    ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
                   )});
 
       // Find Towers
