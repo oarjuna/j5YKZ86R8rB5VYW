@@ -36,8 +36,10 @@ module.exports = {
             filter: (s) => (
               ( s.structureType == STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] < s.storeCapacity - 200)
             )});
-  */          
+
         var structure = structure_container;
+
+          */  
     		var action_status = creep.transfer(structure, RESOURCE_ENERGY);
     		if (action_status == ERR_NOT_IN_RANGE) {
 				  creep.say("rh-drop");
