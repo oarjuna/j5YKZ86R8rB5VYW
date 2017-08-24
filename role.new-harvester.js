@@ -50,12 +50,12 @@ module.exports = {
           creep.say("deliv-ER");
       }
 
-      else if ( structure_spawn.energy < structure_spawn.energyCapacity) {
+      else if (( structure_spawn.energy < structure_spawn.energyCapacity) && deliver_to_spawn == true) {
         // load the spawn
         var structure = structure_spawn;
         creep.say("deliv-s");
       }
-      else if (structure_extension != null) {
+      else if ((structure_extension != null) && deliver_to_spawn == true) {
         // Load the extension
         var structure = structure_extension;
         creep.say("deliv.ex");
