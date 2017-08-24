@@ -4,7 +4,7 @@ module.exports = {
     run: function(foo) {
         // spawn levels
         var spawn1MinHarv = 4; // 3
-        var spawn1MinDeli = 5; // 3
+        var spawn1MinDeli = 4; // 3
         var spawn1MinUgra = 3; // 3
         var spawn1MinBuil = 1; // 1
         var spawn1MinWall = 0; // 1
@@ -35,7 +35,7 @@ module.exports = {
                               c.memory.destid == '5873bcc211e3e4361b4d81ec'
                       );
 
-        if ( h_tmp < 1 ) { var dest = '5873bcc211e3e4361b4d81ec'; } // north
+        if ( h_tmp < 2 ) { var dest = '5873bcc211e3e4361b4d81ec'; } // north
         else { var dest = '5873bcc211e3e4361b4d81ed'; } // south
 
         // try to spawn one
