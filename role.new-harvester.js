@@ -81,6 +81,9 @@ module.exports = {
       if ( target_source == null) {
         var source = creep.pos.findClosestByRange(FIND_SOURCES);
       }
+      else {
+        var source = target_source;
+      }
       creep.say("harvest");
       console.log(creep + " dest " + target_source);
 		  if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
