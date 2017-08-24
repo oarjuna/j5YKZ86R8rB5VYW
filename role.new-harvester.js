@@ -46,23 +46,28 @@ module.exports = {
 
       if ( creep.room.controller.ticksToDowngrade < 2000 ) {
           var structure = creep.room.controller;
+          creep.say("deliv-co");
       }
       else if ( structure_spawn.energy < structure_spawn.energyCapacity) {
         // load the spawn
         var structure = structure_spawn;
+        creep.say("deliv-s");
       }
       else if ( structure_container.store[RESOURCE_ENERGY] < structure_container.storeCapacity) {
           var structure = structure_container;
+          creep.say("deliv-cn");
       }
       else if (structure_extension != null) {
           var structure = structure_extension;
+          creep.say("deliv.ex");
       }
 			else {
         // upgrade the controller
         var structure = creep.room.controller;
+        creep.say("deliv.co");
 			}
-      creep.say("deliv");
-		  console.log(creep + " SCE: " + structure_container.storeCapacity);
+      //creep.say("deliv");
+		  //console.log(creep + " SCE: " + structure_container.storeCapacity);
 
       if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
         // move towards it
