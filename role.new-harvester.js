@@ -23,28 +23,29 @@ module.exports = {
     if (creep.memory.working == true) {
       // START UNLOAD
 
-      // CONTAINERS
+      // Find CONTAINERS
       var structure_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
           filter: (s) => (
             ( s.structureType == STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] < s.storeCapacity)
           )});
 
-      // SPAWN
+      // Find the SPAWN
       var structure_spawn = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
         filter: (s) => (
           ( s.structureType == STRUCTURE_SPAWN )
         )});
 
-      // EXTENSTION
+      // Find EXTENSTIONs
       var structure_extension = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
          filter: (s) => (
-                    ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
+                    ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity - 200 )
                   )});
 
-      // Tower
+      // Find Towers
 
 
       if ( creep.room.controller.ticksToDowngrade < 2000 ) {
+          // Emergency controller upgrade
           var structure = creep.room.controller;
           creep.say("deliv-co");
       }
@@ -54,12 +55,14 @@ module.exports = {
         creep.say("deliv-s");
       }
       else if (structure_extension != null) {
-          var structure = structure_extension;
-          creep.say("deliv.ex");
+        // Load the extension
+        var structure = structure_extension;
+        creep.say("deliv.ex");
       }
       else if ( structure_container != null ) {
-          var structure = structure_container;
-          creep.say("deliv-cn");
+        // Load a container
+        var structure = structure_container;
+        creep.say("deliv-cn");
       }
 			else {
         // upgrade the controller
