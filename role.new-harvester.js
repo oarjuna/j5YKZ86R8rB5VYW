@@ -89,7 +89,7 @@ module.exports = {
 		    creep.moveTo(source);
       }
 
-    } // END FILL
+    } // END HARVEST
 
   }
 };

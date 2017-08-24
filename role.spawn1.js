@@ -30,9 +30,18 @@ module.exports = {
         console.log("\n#------------------#");
    // if not enough harvesters
     if (numSpawn1Harv < spawn1MinHarv) {
+      var h_tmp = _.sum(Game.creeps,
+                      (c) => c.memory.role == 'harvester' &&
+                              c.memory.destid == '5873bcc211e3e4361b4d81ec'
+                      );
+
+        if ( h_tmp < 2 ) { var dest = '5873bcc211e3e4361b4d81ec'; } // north
+        else { var dest = '5873bcc211e3e4361b4d81ed'; } // south
+
         // try to spawn one
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'harvester','','Spawn1');
+        name = Game.spawns.Spawn1.createCustomCreep(energy, 'harvester',dest,'Spawn1');
         console.log("sp1 -- spawning harvester");
+        
         // if spawning failed and we have no harvesters left
         if (name == ERR_NOT_ENOUGH_ENERGY && numSpawn1Harv == 0) {
             // spawn one with what is available
@@ -47,6 +56,7 @@ module.exports = {
                         (c) => c.memory.role == 'local_harvester' &&
                                 c.memory.destid == '579faa710700be0674d30fd7'
                         );
+
         if ( lh_tmp < 1 ) { var dest = '579faa710700be0674d30fd7'; } // north
         else { var dest = '579faa710700be0674d30fd8'; } // south
         console.log("sp1 -- spawning local_harvester -- " + dest + " -- " + lh_tmp);
