@@ -92,7 +92,7 @@ module.exports = function() {
 		var body = [
 			CLAIM, // 500
       MOVE, MOVE, MOVE, MOVE,  // 200
-		]; // 750
+		]; // 700
 		roleName = "claimer";
 	}
         else if (roleName == "local_harvester") {
