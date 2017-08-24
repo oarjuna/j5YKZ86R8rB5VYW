@@ -43,16 +43,16 @@ module.exports = {
       if ( creep.room.controller.ticksToDowngrade < 2000 ) {
           var structure = creep.room.controller;
       }
-      else if ( structure_spawn.energy < Game.spawns.Spawn1.room.energyCapacityAvailable) {
+      else if ( structure_spawn.energy < structure_spawn.energyCapacity) {
         // load the spawn
         var structure = structure_spawn;
       }
-      else if ( structure_container != null) {
+      else if ( structure_container != null && structure_container.energy < structure_container.energyCapacity) {
           var structure = structure_container;
       }
 			else {
-        // otherwise, become a builder
-				roleBuilder.run(creep);
+        // upgrade the controller
+        var structure = creep.room.controller;
 			}
       creep.say("deliv");
 		  console.log(creep + " S: " + structure);
