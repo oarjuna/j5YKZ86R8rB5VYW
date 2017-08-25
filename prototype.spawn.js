@@ -81,10 +81,10 @@ module.exports = function() {
     }
     else if (roleName == 'repairer_lite') {
       var body = [
-        WORK, WORK, WORK, // 300
-        MOVE, MOVE, MOVE, // 150
-        CARRY, CARRY // 100
-      ]; //  550
+        WORK,  // 100
+        MOVE, MOVE, // 100
+        CARRY, CARRY // 200
+      ]; // 300
       var roleName = 'repairer';
     }
     else if (roleName == 'wallRepairer') {
