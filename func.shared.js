@@ -7,7 +7,7 @@ module.exports = {
     	filter: (s) =>
 				( s.structureType==STRUCTURE_CONTAINER ||
 					s.structureType==STRUCTURE_STORAGE ) &&
-					s.store[RESOURCE_ENERGY] > 100
+					s.store[RESOURCE_ENERGY] > 90
     });
 		creep.say("pickup");
 		if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
