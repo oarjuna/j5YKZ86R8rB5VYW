@@ -13,10 +13,10 @@ module.exports = function() {
     }
     else if (roleName == 'harvester_lite') {
       var body = [
-          WORK,   // 100
+          WORK, WORK,WORK,   // 300
           MOVE, MOVE,  // 100
-          CARRY, CARRY // 100
-      ]; // 300
+          CARRY, CARRY  // 100
+      ]; //500
       var roleName = 'harvester';
     }
     else if (roleName == 'deliverer') {
@@ -28,10 +28,10 @@ module.exports = function() {
     }
     else if (roleName == 'deliverer_lite') {
       var body = [
-        WORK,  // 100
+        WORK, WORK, WORK, // 300
         MOVE, MOVE,  // 100
         CARRY, CARRY  // 100
-      ]; // 300
+      ]; // 500
       var roleName = 'deliverer';
     }
     else if (roleName == 'upgrader') {
