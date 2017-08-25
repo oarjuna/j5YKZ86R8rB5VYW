@@ -29,12 +29,9 @@ module.exports = {
     	if (creep.memory.working == true) {
         // drop off
 
-
         var constructionSite = creep.pos.findClosestByPath(FIND_MY_CONSTRUCTION_SITES);
 
-/*
-        var container = '599b912278ca755b8407a299';
-        var structure = Game.getObjectById(container);
+        var container = '599eeb35a2f45c5265e8c678';
 
         // Find CONTAINERS
         var structure_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
@@ -42,25 +39,24 @@ module.exports = {
               ( s.structureType == STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] < s.storeCapacity - 200)
             )});
 
-        var structure = structure_container;
 
+//        var structure = structure_container;
+        var structure = Game.getObjectById(container);
 
     		var action_status = creep.transfer(structure, RESOURCE_ENERGY);
     		if (action_status == ERR_NOT_IN_RANGE) {
 				  creep.say("rh-drop");
           creep.moveTo(structure);
         }
-    */
-
-        // do construction jobs
+/*
         if ( constructionSite != undefined) {
+          // do construction jobs
   				console.log(creep + " remoteharv -- building");
           if ( creep.build(constructionSite) == ERR_NOT_IN_RANGE ) {
                   creep.moveTo(constructionSite);
           }
   			}
-
-
+*/
       }
       else {
         // find closest source and fill up
@@ -68,6 +64,7 @@ module.exports = {
         if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
   		    creep.moveTo(source);
         }
+
 	    }
 
 	   }
