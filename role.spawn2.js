@@ -4,7 +4,7 @@ module.exports = {
     run: function(foo) {
         // spawn levels
         var spawn2MinHarv = 3; // 3
-        var spawn2MinDeli = 8; // 3
+        var spawn2MinDeli = 7; // 3
         var spawn2MinUgra = 0; // 3
         var spawn2MinBuil = 1; // 1
         var spawn2MinWall = 0; // 1
