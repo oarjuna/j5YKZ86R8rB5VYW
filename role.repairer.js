@@ -36,7 +36,7 @@ module.exports = {
                 var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
                 filter: (s) => ( s.structureType==STRUCTURE_CONTAINER ||
                                 s.structureType==STRUCTURE_STORAGE ) &&
-                               s.store[RESOURCE_ENERGY] > 250
+                               s.store[RESOURCE_ENERGY] > 90
                 });
 
                 console.log(creep + " -- repairer --pickup -- " + container );
