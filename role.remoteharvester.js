@@ -43,7 +43,7 @@ module.exports = {
 
 
 
-        if ( do_building == true ) {
+        if ( do_building == false ) {
           //var structure = structure_container;
           var structure = Game.getObjectById(container);
       		var action_status = creep.transfer(structure, RESOURCE_ENERGY);
