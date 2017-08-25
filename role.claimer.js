@@ -35,7 +35,7 @@ module.exports = {
 
 			// claim the controller if necessary
 			var status = creep.claimController(creep.room.controller);
-			console.log(creep + " claimer -- controller status " + status);
+			//console.log(creep + " claimer -- controller status " + status);
 
 			if (status == ERR_NOT_IN_RANGE && status != ERR_INVALID_TARGET) {
 				console.log(creep + " claimer -- claiming ");
