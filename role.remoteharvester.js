@@ -64,7 +64,7 @@ module.exports = {
       }
       else {
         // find closest source and fill up
-        var source = creep.pos.findClosestByRange(FIND_SOURCES);
+        var source = creep.pos.findClosestByPath(FIND_SOURCES);
         if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
   		    creep.moveTo(source);
         }
