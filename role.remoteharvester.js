@@ -40,15 +40,15 @@ module.exports = {
             )});
 
 
+            /*
 //        var structure = structure_container;
         var structure = Game.getObjectById(container);
-
     		var action_status = creep.transfer(structure, RESOURCE_ENERGY);
     		if (action_status == ERR_NOT_IN_RANGE) {
 				  creep.say("rh-drop");
           creep.moveTo(structure);
         }
-/*
+        */
         if ( constructionSite != undefined) {
           // do construction jobs
   				console.log(creep + " remoteharv -- building");
@@ -56,7 +56,6 @@ module.exports = {
                   creep.moveTo(constructionSite);
           }
   			}
-*/
       }
       else {
         // find closest source and fill up
