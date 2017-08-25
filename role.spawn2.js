@@ -1,4 +1,4 @@
-
+jhsdjhs
 module.exports = {
     // a function to run the logic for this role
     run: function(foo) {
@@ -6,7 +6,7 @@ module.exports = {
         var spawn2MinHarv = 1; // 3
         var spawn2MinDeli = 1; // 3
         var spawn2MinUgra = 0; // 3
-        var spawn2MinBuil = 0; // 1
+        var spawn2MinBuil = 1; // 1
         var spawn2MinWall = 0; // 1
         var spawn2MinEner = 0; // 1
 
@@ -98,7 +98,7 @@ module.exports = {
     // if not enough builders
     else if (numSpawn2Buil < spawn2MinBuil) {
         console.log("sp2 -- spawning builder");
-        name = Game.spawns.Spawn2.createCustomCreep(energy, 'builder','','Spawn2');
+        name = Game.spawns.Spawn2.createCustomCreep(energy, 'builder_lite','','Spawn2');
     }
     // if not enough wallRepairers
     else if (numSpawn2WaRe < spawn2MinWall) {
