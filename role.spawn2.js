@@ -3,7 +3,7 @@ module.exports = {
     // a function to run the logic for this role
     run: function(foo) {
         // spawn levels
-        var spawn2MinHarv = 0; // 3
+        var spawn2MinHarv = 1; // 3
         var spawn2MinDeli = 0; // 3
         var spawn2MinUgra = 0; // 3
         var spawn2MinBuil = 0; // 1
@@ -33,14 +33,14 @@ module.exports = {
     if (numSpawn2Harv < spawn2MinHarv) {
       var h_tmp = _.sum(Game.creeps,
                       (c) => c.memory.role == 'harvester' &&
-                              c.memory.destid == '5873bcc211e3e4361b4d81ec'
+                              c.memory.destid == '5873bcc511e3e4361b4d822f'
                       );
 
-        if ( h_tmp < 2 ) { var dest = '5873bcc211e3e4361b4d81ec'; } // north
-        else { var dest = '5873bcc211e3e4361b4d81ed'; } // south
+        if ( h_tmp < 2 ) { var dest = '5873bcc511e3e4361b4d822f'; } // west
+        else { var dest = '5873bcc511e3e4361b4d822e'; } // east
 
         // try to spawn one
-        name = Game.spawns.Spawn2.createCustomCreep(energy, 'harvester',dest,'Spawn2');
+        name = Game.spawns.Spawn2.createCustomCreep(energy, 'harvester_lite',dest,'Spawn2');
         console.log("sp1 -- spawning harvester");
 
         // if spawning failed and we have no harvesters left
