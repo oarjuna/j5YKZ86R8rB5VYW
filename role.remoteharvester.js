@@ -2,7 +2,7 @@ module.exports = {
   run: function(creep) {
 	  creep.say("!!");
 
-    var do_building = false;
+    var do_building = true;
     // get your assignment
     var dest_key = creep.memory.destid;
     if ( dest_key == 'Flag1') {  var gotoFlag = Game.flags.Flag1; }
