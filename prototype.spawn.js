@@ -40,7 +40,7 @@ module.exports = function() {
   			CARRY, CARRY, CARRY, CARRY // 200
   		]; // 550
     }
-    else if (roleName == 'upgrade_liter') {
+    else if (roleName == 'upgrader_lite') {
       var body = [
         WORK,  // 100
         MOVE, MOVE,  // 100

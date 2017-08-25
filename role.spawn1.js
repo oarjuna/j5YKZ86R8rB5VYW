@@ -13,7 +13,7 @@ module.exports = {
         var spawn1MinReHa = 2;
         var spawn1MinClai = 2;
         var spawn1MinSold = 0;
-        var spawn1MinRepa = 1;
+        var spawn1MinRepa = 0;
 
         // count the number of creeps alive for each role born at Spawn1
         var numSpawn1Harv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthplace == 'Spawn1');
