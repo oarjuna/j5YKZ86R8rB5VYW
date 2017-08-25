@@ -1,6 +1,8 @@
 module.exports = {
   run: function(creep) {
 	  creep.say("!!");
+
+    var do_building = true;
     // get your assignment
     var dest_key = creep.memory.destid;
     if ( dest_key == 'Flag1') {  var gotoFlag = Game.flags.Flag1; }
@@ -26,7 +28,7 @@ module.exports = {
     	}
 
       // do stuff
-    	if (creep.memory.working == true) {
+    	 if (creep.memory.working == true) {
         // drop off
 
         var constructionSite = creep.pos.findClosestByPath(FIND_MY_CONSTRUCTION_SITES);
@@ -40,22 +42,25 @@ module.exports = {
             )});
 
 
-            /*
-//        var structure = structure_container;
-        var structure = Game.getObjectById(container);
-    		var action_status = creep.transfer(structure, RESOURCE_ENERGY);
-    		if (action_status == ERR_NOT_IN_RANGE) {
-				  creep.say("rh-drop");
-          creep.moveTo(structure);
-        }
-        */
-        if ( constructionSite != undefined) {
-          // do construction jobs
-  				console.log(creep + " remoteharv -- building");
-          if ( creep.build(constructionSite) == ERR_NOT_IN_RANGE ) {
-                  creep.moveTo(constructionSite);
+
+        if ( do_building == true ) {
+          //var structure = structure_container;
+          var structure = Game.getObjectById(container);
+      		var action_status = creep.transfer(structure, RESOURCE_ENERGY);
+      		if (action_status == ERR_NOT_IN_RANGE) {
+  				  creep.say("rh-drop");
+            creep.moveTo(structure);
           }
-  			}
+        }
+        else {
+          if ( constructionSite != undefined) {
+            // do construction jobs
+      				console.log(creep + " remoteharv -- building");
+              if ( creep.build(constructionSite) == ERR_NOT_IN_RANGE ) {
+                      creep.moveTo(constructionSite);
+              }
+      		}
+        }
       }
       else {
         // find closest source and fill up
