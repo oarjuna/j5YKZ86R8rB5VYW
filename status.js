@@ -8,7 +8,7 @@ module.exports = {
      var spawn1MinBuil = 1; // 1
      var spawn1MinWall = 0; // 1
      var spawn1MinEner = 0; // 1
-     var spawn1MinReHa = 2;
+     var spawn1MinReHa = 0;
      var spawn1MinClai = 1;
      var spawn1MinSold = 0;
      var spawn1MinRepa = 0;
@@ -21,7 +21,7 @@ module.exports = {
      var spawn2MinWall = 0; // 1
      var spawn2MinEner = 0; // 1
 
-     var spawn2MinReHa = 2;
+     var spawn2MinReHa = 0;
      var spawn2MinClai = 1;
      var spawn2MinSold = 0;
      var spawn2MinRepa = 0;
