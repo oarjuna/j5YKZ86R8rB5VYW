@@ -21,8 +21,6 @@ module.exports = function() {
   function(energy_avail, roleName, dest, birthplace) {
 
     console.log("proto -- " + energy_avail);
-    console.log("proto -- " + roleName);
-
 
     // 300 - 549 energy_avail --- initial spawn
     if ( energy_avail < 550 ) {
