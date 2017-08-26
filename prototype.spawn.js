@@ -44,7 +44,7 @@ module.exports = function() {
     }
 
     // 550 energy
-    else if ( energy >= 550 && energy < 800 ) {
+    else if ( energy >= 550 && energy < 1100 ) {
       if (roleName == 'harvester') {
         var body = [ WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY ]; //550
       }
