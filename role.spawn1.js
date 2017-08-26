@@ -146,29 +146,52 @@ module.exports = {
         console.log("sp1 -- spawning claimer " + dest + " body - " + role);
         name = Game.spawns.Spawn1.createCustomCreep(energy, role, dest,'Spawn1');
     }
+    // local Tower control
+    var towers = Game.rooms.W28S81.find(FIND_STRUCTURES, {
+        filter: (s) => s.structureType == STRUCTURE_TOWER
+    });
 
-        // start of the status bar
-        var name = undefined;
+    for (let tower of towers) {
+      var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
 
-        var roomSp1 = Game.spawns.Spawn1.room;
-        var energySp1 = Game.spawns.Spawn1.room.energyCapacityAvailable;
-        var energyAvailableSp1 = Game.spawns.Spawn1.room.energyAvailable;
+      var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
+        filter: (s) =>
+          s.hits < s.hitsMax &&
+          ( s.structureType == STRUCTURE_WALL && s.hits < 30000 ) &&
+          s.structureType != STRUCTURE_RAMPART
+        });
 
-        var status1Sp1 = "H: " + numSpawn1Harv + "/" + spawn1MinHarv;
-        var status2Sp1 = " U: " + numSpawn1Upgr + "/" + spawn1MinUgra;
-        var status3Sp1 = " R: " + numSpawn1Repa + "/" + spawn1MinRepa;
-        var status4Sp1 = " B: " + numSpawn1Buil + "/" + spawn1MinBuil;
-        var status5Sp1 = " RH: " + numSpawn1ReHa + "/" + spawn1MinReHa;
-        var status6Sp1 = " WR: " + numSpawn1WaRe + "/" + spawn1MinWall;
-        var status7Sp1 = " C: " + numSpawn1Clai + "/" + spawn1MinClai;
-        var status8Sp1 = " De: " + numSpawn1Deli + "/" + spawn1MinDeli;
-        var status9Sp1 = " EM: " + numSpawn1EnMo  + "/" + spawn1MinEner;
-        var status10Sp1 =" S: " + numSpawn1Sold + "/" + spawn1MinSold;
+      if (target != undefined) {
+      console.log(tower + " -- attacking " + target);
+            tower.attack(target);
+      }
+      else if (repair_target != undefined ) {
+        tower.repair(repair_target);
+      }
+    }
 
-        var status11Sp1 = "E: " + energyAvailableSp1 + "/" + energySp1
-        var status12Sp1 = " UP: " + roomSp1.controller.progress +
-                         "/" + roomSp1.controller.progressTotal +
-                        " lvl: " + roomSp1.controller.level;
+    // start of the status bar
+    var name = undefined;
+
+    var roomSp1 = Game.spawns.Spawn1.room;
+    var energySp1 = Game.spawns.Spawn1.room.energyCapacityAvailable;
+    var energyAvailableSp1 = Game.spawns.Spawn1.room.energyAvailable;
+
+    var status1Sp1 = "H: " + numSpawn1Harv + "/" + spawn1MinHarv;
+    var status2Sp1 = " U: " + numSpawn1Upgr + "/" + spawn1MinUgra;
+    var status3Sp1 = " R: " + numSpawn1Repa + "/" + spawn1MinRepa;
+    var status4Sp1 = " B: " + numSpawn1Buil + "/" + spawn1MinBuil;
+    var status5Sp1 = " RH: " + numSpawn1ReHa + "/" + spawn1MinReHa;
+    var status6Sp1 = " WR: " + numSpawn1WaRe + "/" + spawn1MinWall;
+    var status7Sp1 = " C: " + numSpawn1Clai + "/" + spawn1MinClai;
+    var status8Sp1 = " De: " + numSpawn1Deli + "/" + spawn1MinDeli;
+    var status9Sp1 = " EM: " + numSpawn1EnMo  + "/" + spawn1MinEner;
+    var status10Sp1 =" S: " + numSpawn1Sold + "/" + spawn1MinSold;
+
+    var status11Sp1 = "E: " + energyAvailableSp1 + "/" + energySp1
+    var status12Sp1 = " UP: " + roomSp1.controller.progress +
+                     "/" + roomSp1.controller.progressTotal +
+                    " lvl: " + roomSp1.controller.level;
 
 	//var status13Sp1 = " Stored -- " +  _.sum(roomSp1.storage.store[RESOURCE_ENERGY]);
 	var status13Sp1 = " Stored -- R ";
