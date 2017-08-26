@@ -19,9 +19,10 @@ module.exports = function() {
 
   StructureSpawn.prototype.createCustomCreep =
   function(energy, roleName, dest, birthplace) {
-// 300 - 550 energy --- initial spawn
+
     console.log("proto -- " + energy);
 
+    // 300 - 549 energy --- initial spawn
     if ( energy < 550 ) {
       if (roleName == 'harvester') {
         var body = [ WORK, MOVE, MOVE, WORK, CARRY ]; // 300
@@ -38,13 +39,13 @@ module.exports = function() {
       else if (roleName == 'upgrader') {
         var body = [ WORK, MOVE, MOVE, WORK, CARRY ]; // 300
       }
-      else if (roleName == 'repairer') {
+      else if (roleName == 'deliverer') {
         var body = [ WORK, MOVE, MOVE, WORK, CARRY ]; // 300
       }
     }
 
-    // 550 energy
-    else if ( energy >= 550 && energy < 1100 ) {
+    // 550 - 799 energy
+    else if ( energy >= 550 && energy < 800 ) {
       if (roleName == 'harvester') {
         var body = [ WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY ]; //550
       }
@@ -59,6 +60,16 @@ module.exports = function() {
       }
       else if (roleName == 'repairer') {
         var body = [ WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY ]; //  550
+      }
+      else if (roleName == "remote_harvester") {
+        var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; // 700
+      }
+      else if (roleName == "claimer") {
+        var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; //  700
+      }
+      else if (roleName == "claimer_lg") {
+        var body = [ CLAIM, MOVE, MOVE]; // 700
+        roleName = "claimer";
       }
     }
 
@@ -79,7 +90,6 @@ module.exports = function() {
       else if (roleName == 'repairer') {
         var body = [ WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY ]; //  550
       }
-
       else if (roleName == "remote_harvester") {
   	    var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; // 700
       }
@@ -90,9 +100,12 @@ module.exports = function() {
     		var body = [ CLAIM, MOVE, MOVE]; // 700
     		roleName = "claimer";
     	}
+      else if (roleName == "soldier") {
+        var body = [ TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,ATTACK,ATTACK,ATTACK,ATTACK]; // 900
+      }
     }
 
-    // 1100 energy
+    // >= 1100 energy
     else if ( energy >= 1100 ){
       if (roleName == 'harvester') {
         var body = [ WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY ]; //550
@@ -108,6 +121,16 @@ module.exports = function() {
       }
       else if (roleName == 'repairer') {
         var body = [ WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY ]; //  550
+      }
+      else if (roleName == "remote_harvester") {
+        var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; // 700
+      }
+      else if (roleName == "claimer") {
+        var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; //  700
+      }
+      else if (roleName == "claimer_lg") {
+        var body = [ CLAIM, MOVE, MOVE]; // 700
+        roleName = "claimer";
       }
       else if (roleName == "energy_mover") {
         var body = [ WORK, WORK, WORK, WORK, WORK, MOVE, CARRY, CARRY ]; // 1100
