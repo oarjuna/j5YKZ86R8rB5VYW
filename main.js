@@ -41,7 +41,7 @@ var Empire = new Hive('foo');
 
   for (var cur_spawn_tmp in Game.spawns){
      spawn_name = Game.spawns[cur_spawn_tmp].name;
-     Empire.hives.push(spawn_name);
+     //Empire.hives.push(spawn_name);
    }
 
 module.exports.loop = function () {
