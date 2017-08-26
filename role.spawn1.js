@@ -48,7 +48,7 @@ module.exports = {
         if (name == ERR_NOT_ENOUGH_ENERGY && numSpawn1Harv == 0) {
             // spawn one with what is available
             name = Game.spawns.Spawn1.createCustomCreep(
-                Game.spawns.Spawn1.room.energyAvailable, 'harvester_lite','','Spawn1');
+                Game.spawns.Spawn1.room.energyAvailable, 'harvester','','Spawn1');
         }
     }
 
@@ -57,6 +57,7 @@ module.exports = {
         console.log("sp1 -- spawning deliverer");
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'deliverer',dest,'Spawn1');
     }
+
    // if not enough energy movers
     else if (numSpawn1EnMo < spawn1MinEner) {
         var st_num = _.sum(Game.creeps,

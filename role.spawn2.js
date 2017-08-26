@@ -42,21 +42,21 @@ module.exports = {
         else { var dest = '5873bcc511e3e4361b4d822e'; } // east
 
         // try to spawn one
-        name = Game.spawns.Spawn2.createCustomCreep(energy, 'harvester_lite',dest,'Spawn2');
+        name = Game.spawns.Spawn2.createCustomCreep(energy, 'harvester',dest,'Spawn2');
         console.log("sp2 -- spawning harvester");
 
         // if spawning failed and we have no harvesters left
         if (name == ERR_NOT_ENOUGH_ENERGY && numSpawn2Harv == 0) {
             // spawn one with what is available
             name = Game.spawns.Spawn2.createCustomCreep(
-                Game.spawns.Spawn2.room.energyAvailable, 'harvester_lite','','Spawn2');
+                Game.spawns.Spawn2.room.energyAvailable, 'harvester','','Spawn2');
         }
     }
 
    // if not enough deliverers
     else if (numSpawn2Deli < spawn2MinDeli) {
         console.log("sp2 -- spawning deliverer");
-        name = Game.spawns.Spawn2.createCustomCreep(energy, 'deliverer_lite',dest,'Spawn2');
+        name = Game.spawns.Spawn2.createCustomCreep(energy, 'deliverer',dest,'Spawn2');
     }
    // if not enough energy movers
     else if (numSpawn2EnMo < spawn2MinEner) {
@@ -95,12 +95,12 @@ module.exports = {
     // if not enough repairers
     else if (numSpawn2Repa < spawn2MinRepa) {
         console.log("sp2 -- spawning repairer");
-        name = Game.spawns.Spawn2.createCustomCreep(energy, 'repairer_lite','','Spawn2');
+        name = Game.spawns.Spawn2.createCustomCreep(energy, 'repairer','','Spawn2');
     }
     // if not enough builders
     else if (numSpawn2Buil < spawn2MinBuil) {
         console.log("sp2 -- spawning builder");
-        name = Game.spawns.Spawn2.createCustomCreep(energy, 'builder_lite','','Spawn2');
+        name = Game.spawns.Spawn2.createCustomCreep(energy, 'builder','','Spawn2');
     }
     // if not enough wallRepairers
     else if (numSpawn2WaRe < spawn2MinWall) {
