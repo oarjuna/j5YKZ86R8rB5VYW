@@ -13,6 +13,7 @@ var gameStatus = require('status');
 
 var roleSpawn1 = require('role.spawn1');
 var roleSpawn2 = require('role.spawn2');
+var roleSpawn3 = require('role.spawn3');
 
 //var roleSpawn = require('role.spawn');
 
@@ -24,6 +25,7 @@ var roleSpawn2 = require('role.spawn2');
   // spawn levels
   var scl1 = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
   var scl2 = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
+  var scl3 = [ 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
   //var Empire.levels.
   //var Empire.Spawn1.levels = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
@@ -50,19 +52,15 @@ module.exports.loop = function () {
 /*
   Harvest, Deliv, Upgrade, Buid, Energy, RemoHarv, Claim, Soldier, Repair
 */
-  // spawn levels
-  //scl1 = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
-  //scl2 = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
-
   // Run the spawn logics
   roleSpawn1.run(scl1[0],scl1[1],scl1[2],scl1[3],scl1[4],scl1[5],scl1[6],scl1[7],scl1[8]);
   roleSpawn2.run(scl2[0],scl2[1],scl2[2],scl2[3],scl2[4],scl2[5],scl2[6],scl2[7],scl2[8]);
+  //roleSpawn3.run(scl3[0],scl3[1],scl3[2],scl3[3],scl3[4],scl3[5],scl3[6],scl3[7],scl3[8]);
 
 	gameStatus.display_status(1);
-  //gameStatus.display_status(spawn2_creep_levels);
 
-  for (var spawn in Game.spawns){
+  //for (var spawn in Game.spawns){
     //roleSpawn.run(spawn);
-	}
+	//}
 
 };
