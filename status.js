@@ -66,7 +66,7 @@ module.exports = {
 
             // print the thing
             console.log(": " + status11 + status12 + status13);
-            console.log(": " + status1 + status2 + status3 + status4 + status5 + status6 +
+            console.log(": " + status1 + status2 + status3 + status4 + status5 +
                             status7 + status8 + status9 + status10);
 
 ////// end
