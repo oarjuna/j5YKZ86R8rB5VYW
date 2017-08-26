@@ -16,7 +16,12 @@ var gameStatus = require('status');
 
 //var spawn1MinHarv = 4; // 4
 //var spawn2MinHarv = 3; // 3
-
+/*
+  Harvest, Deliv, Upgrade, Buid, Energy, RemoHarv, Claim, Soldier, Repair
+*/
+  // spawn levels
+  var scl1 = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
+  var scl2 = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
 
 module.exports.loop = function () {
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
