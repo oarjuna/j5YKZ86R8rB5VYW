@@ -45,7 +45,7 @@ var Empire = new Hive('foo');
    }
 
 module.exports.loop = function () {
-  console.log("KPP: -- " + Empire.hives[0]);
+  console.log("KPP: -- " + Empire.hives);
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
   for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
