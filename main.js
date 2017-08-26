@@ -49,7 +49,7 @@ var scl3 = [ 2, 1, 0, 0, 0, 0, 0, 0, 0];
   //Empire.Spawn2.levels = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
 
 module.exports.loop = function () {
-  console.log("KPP: -- " + Empire.levels);
+//  console.log("KPP: -- " + Empire.levels);
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
   for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
