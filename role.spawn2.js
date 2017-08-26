@@ -117,8 +117,8 @@ module.exports = {
         var c_flag4 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harv' && c.memory.destid == 'Flag4');
         var c_flag5 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harv' && c.memory.destid == 'Flag5');
 
-        if ( c_flag1 < 3 ) { var dest = 'Flag1'; }
-        else if ( c_flag2 == 0 ) { var dest = 'Flag2'; }
+        if ( c_flag1 == 99999 ) { var dest = 'Flag1'; } // spawn 1 using this flag
+        else if ( c_flag2  < 3 ) { var dest = 'Flag2'; }
         else if ( c_flag3 == 0 ) { var dest = 'Flag3'; }
         else if ( c_flag4 == 0 ) { var dest = 'Flag4'; }
         else if ( c_flag5 == 0 ) { var dest = 'Flag5'; }

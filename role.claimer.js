@@ -35,6 +35,7 @@ module.exports = {
 
 			// claim the controller if necessary
 			var status = creep.claimController(creep.room.controller);
+			creep.signController(creep.room.controller,"Non Servium");
 			//console.log(creep + " claimer -- controller status " + status);
 
 			if (status == ERR_NOT_IN_RANGE && status != ERR_INVALID_TARGET) {
