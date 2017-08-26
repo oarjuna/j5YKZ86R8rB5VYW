@@ -25,7 +25,7 @@ var roleSpawn3 = require('role.spawn3');
   // spawn levels
   var scl1 = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
   var scl2 = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
-  var scl3 = [ 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  var scl3 = [ 2, 1, 0, 0, 0, 0, 0, 0, 0];
 
   //var Empire.levels.
   //var Empire.Spawn1.levels = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
