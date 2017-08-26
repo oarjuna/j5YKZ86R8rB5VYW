@@ -9,9 +9,11 @@ var roleClaimer = require('role.claimer');
 var roleRepairer = require('role.repairer');
 var roleEnergyMover = require('role.energymover');
 var roleSoldier = require('role.soldier');
+var gameStatus = require('status');
+
 var roleSpawn1 = require('role.spawn1');
 var roleSpawn2 = require('role.spawn2');
-var gameStatus = require('status');
+
 //var roleSpawn = require('role.spawn');
 
 //var spawn1MinHarv = 4; // 4
