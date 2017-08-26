@@ -45,8 +45,8 @@ module.exports.loop = function () {
   Harvest, Deliv, Upgrade, Buid, Energy, RemoHarv, Claim, Soldier, Repair
 */
   // spawn levels
-  scl1 = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
-  scl2 = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
+  //scl1 = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
+  //scl2 = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
 
   // Run the spawn logics
   roleSpawn1.run(scl1[0],scl1[1],scl1[2],scl1[3],scl1[4],scl1[5],scl1[6],scl1[7],scl1[8]);
