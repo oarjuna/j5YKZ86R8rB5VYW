@@ -26,8 +26,8 @@ var roleSpawn2 = require('role.spawn2');
   var scl2 = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
 
   //var Empire.levels.
-  var Empire.Spawn1.levels = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
-  var Empire.Spawn2.levels = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
+  //var Empire.Spawn1.levels = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
+  //var Empire.Spawn2.levels = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
 
 module.exports.loop = function () {
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
