@@ -1,9 +1,10 @@
 module.exports = {
    display_status: function(foo) {
      let x = -1;
-     console.log("im status");
-     
-     for (var cur_spawn in Game.spawns.name){
+     console.log("in status");
+
+     for (var cur_spawn_tmp in Game.spawns){
+        cur_spawn = Game.spawns[cur_spawn_tmp].name;
          x++;
 		     console.log(cur_spawn + " helo!");
         // count the number of creeps alive for each role and according to spawn
