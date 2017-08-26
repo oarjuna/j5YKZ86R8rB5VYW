@@ -28,6 +28,7 @@ module.exports = {
         var numSpawn1EnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthplace == 'Spawn1');
 
         console.log("\n#------------------#");
+   var energy = Game.spawns.Spawn1.room.energyCapacityAvailable;
 
    // if not enough harvesters
     if (numSpawn1Harv < spawn1MinHarv) {
@@ -197,7 +198,7 @@ module.exports = {
                     " lvl: " + roomSp1.controller.level;
 
 	//var status13Sp1 = " Stored -- " +  _.sum(roomSp1.storage.store[RESOURCE_ENERGY]);
-	var status13Sp1 = " Stored -- R ";
+	var status13Sp1 = " energy -- " + energy;
 
         // print the thing
         console.log("Sp1: " + status11Sp1 + status12Sp1 + status13Sp1);
