@@ -19,9 +19,9 @@ module.exports = {
         var numWaRe = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer' && c.memory.birthplace == cur_spawn);
         var numEnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthplace == cur_spawn);
 
-        var cur_room = Game.spawns.cur_spawn.room;
-        var cur_energy_cap = Game.spawns.cur_spawn.room.energyCapacityAvailable;
-        var cur_energy = Game.spawns.cur_spawn.room.energyAvailable;
+        var cur_room = Game.spawns[cur_spawn_tmp].room;
+        var cur_energy_cap = Game.spawns[cur_spawn_tmp].room.energyCapacityAvailable;
+        var cur_energy = Game.spawns[cur_spawn_tmp].room.energyAvailable;
 
         var status1 = "H: " + numHarv + "/" + spawn1MinHarv;
         var status2 = " U: " + numUpgr + "/" + spawn1MinUgra;
