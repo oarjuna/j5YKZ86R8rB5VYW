@@ -7,7 +7,6 @@ var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var roleClaimer = require('role.claimer');
 var roleRepairer = require('role.repairer');
-var roleWallRepairer = require('role.wallRepairer');
 var roleEnergyMover = require('role.energymover');
 var roleSoldier = require('role.soldier');
 var roleSpawn1 = require('role.spawn1');
