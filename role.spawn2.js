@@ -29,6 +29,8 @@ module.exports = {
 
         console.log("\n#------------------#");
 
+   var energy = Game.spawns.Spawn2.room.energyCapacityAvailable;
+
    // if not enough harvesters
     if (numSpawn2Harv < spawn2MinHarv) {
       var h_tmp = _.sum(Game.creeps,
