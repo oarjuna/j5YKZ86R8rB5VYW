@@ -24,11 +24,22 @@ var roleSpawn3 = require('role.spawn3');
 */
   // spawn levels
 
+  function Empire(spawn_name) {
+    this.spawn = spawn_name;
+  }
+
   var scl1 = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
   var scl2 = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
   var scl3 = [ 2, 1, 0, 0, 0, 0, 0, 0, 0];
 
-  var Empire = new Object();
+  for (var cur_spawn_tmp in Game.spawns){
+     spawn_name = Game.spawns[cur_spawn_tmp].name;
+     var tmp_foo = new Empire(spawn_name)
+   }
+
+
+  var Empire = new Empire(scl1);
+
   //Empire.Spawn1.levels = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
   //Empire.Spawn2.levels = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
 
