@@ -37,7 +37,7 @@ var scl1 = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
 var scl2 = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
 var scl3 = [ 2, 1, 0, 0, 0, 0, 0, 0, 0];
 
-var Empire = new Hive(spawn_name);
+var Empire = new Hive('foo');
 
   for (var cur_spawn_tmp in Game.spawns){
      spawn_name = Game.spawns[cur_spawn_tmp].name;
