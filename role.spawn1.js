@@ -163,13 +163,14 @@ module.exports = {
           s.structureType != STRUCTURE_RAMPART
         });
 
-      if (target != undefined) {
-      console.log(tower + " -- attacking " + target);
-            tower.attack(target);
-      }
-      else if (repair_target != undefined ) {
-        tower.repair(repair_target);
-      }
+        if (target != undefined) {
+          console.log(tower + " -- attacking " + target);
+          tower.attack(target);
+        }
+        else if (repair_target != undefined ) {
+          console.log(tower + " -- repairing " + repair_target);
+          tower.repair(repair_target);
+        }
     }
 
     // start of the status bar
