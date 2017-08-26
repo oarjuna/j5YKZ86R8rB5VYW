@@ -26,8 +26,6 @@ module.exports = {
      var spawn2MinSold = 0;
      var spawn2MinRepa = 0;
 
-     console.log("in status");
-
      for (var cur_spawn_tmp in Game.spawns){
         cur_spawn = Game.spawns[cur_spawn_tmp].name;
          x++;
@@ -53,7 +51,6 @@ module.exports = {
         var status3 = " R: " + numRepa + "/" + spawn1MinRepa;
         var status4 = " B: " + numBuil + "/" + spawn1MinBuil;
         var status5 = " RH: " + numReHa + "/" + spawn1MinReHa;
-        var status6 = " WR: " + numWaRe + "/" + spawn1MinWall;
         var status7 = " C: " + numClai + "/" + spawn1MinClai;
         var status8 = " De: " + numDeli + "/" + spawn1MinDeli;
         var status9 = " EM: " + numEnMo  + "/" + spawn1MinEner;
