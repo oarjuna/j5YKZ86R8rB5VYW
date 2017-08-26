@@ -60,7 +60,7 @@ module.exports = function() {
       else if (roleName == 'repairer') {
         var body = [ WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY ]; //  550
       }
-
+    }
     //}
     // 800 energy
     else if ( energy >= 800 && energy < 1100 ) {
