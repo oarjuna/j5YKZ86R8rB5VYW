@@ -3,7 +3,7 @@ module.exports = {
    display_status: function(foo) {
      let x = -1;
      // spawn1
-    // var spawn1MinHarv = 4; // 4
+     var spawn1MinHarv = 4; // 4
      var spawn1MinDeli = 4; // 3
      var spawn1MinUgra = 5; // 3
      var spawn1MinBuil = 1; // 1
@@ -15,7 +15,7 @@ module.exports = {
      var spawn1MinRepa = 0;
 
      // spawn2
-     //var spawn2MinHarv = 3; // 3
+     var spawn2MinHarv = 3; // 3
      var spawn2MinDeli = 7; // 3
      var spawn2MinUgra = 1; // 3
      var spawn2MinBuil = 1; // 1

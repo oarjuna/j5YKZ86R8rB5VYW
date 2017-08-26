@@ -14,8 +14,8 @@ var roleSpawn2 = require('role.spawn2');
 var gameStatus = require('status');
 //var roleSpawn = require('role.spawn');
 
-var spawn1MinHarv = 4; // 4
-var spawn2MinHarv = 3; // 3
+//var spawn1MinHarv = 4; // 4
+//var spawn2MinHarv = 3; // 3
 
 
 module.exports.loop = function () {
