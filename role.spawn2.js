@@ -157,10 +157,12 @@ module.exports = {
 
       var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
         filter: (s) =>
-          s.hits < s.hitsMax &&
-          ( s.structureType == STRUCTURE_WALL && s.hits < 20000 ) &&
+          (( s.structureType == STRUCTURE_ROAD && s.hits < s.hitsMax) ||
+          ( s.structureType == STRUCTURE_CONTAINER && s.hits < s.hitsMax) ||
+          ( s.structureType == STRUCTURE_WALL && s.hits < 25000 ) ) &&
           s.structureType != STRUCTURE_RAMPART
         });
+
 
       if (target != undefined) {
       console.log(tower + " -- attacking " + target);
