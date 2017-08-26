@@ -14,6 +14,10 @@ var roleSpawn2 = require('role.spawn2');
 var gameStatus = require('status');
 //var roleSpawn = require('role.spawn');
 
+var spawn1MinHarv = 4; // 4
+var spawn2MinHarv = 3; // 3
+
+
 module.exports.loop = function () {
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
   for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
