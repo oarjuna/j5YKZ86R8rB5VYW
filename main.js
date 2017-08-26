@@ -37,7 +37,7 @@ module.exports.loop = function () {
   roleSpawn1.run(100);
   roleSpawn2.run(100);
 
-	//gameStatus.display_status();
+	gameStatus.display_status(1);
 
   for (var spawn in Game.spawns){
     //roleSpawn.run(spawn);
