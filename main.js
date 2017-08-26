@@ -33,10 +33,23 @@ module.exports.loop = function () {
   	else if (creep.memory.role == 'claimer') { roleClaimer.run(creep); }
     else if (creep.memory.role == 'soldier') {  roleSoldier.run(creep); }
   	else if (creep.memory.role == 'repairer') { roleRepairer.run(creep); }
-  	else if (creep.memory.role == 'wallRepairer') { roleWallRepairer.run(creep); }
   	else if (creep.memory.role == 'remote_harv') { roleRemoteHarvester.run(creep); }
   }
-
+  /*
+  var spawn2MinHarv = 3; // 3
+  var spawn2MinDeli = 7; // 3
+  var spawn2MinUgra = 1; // 3
+  var spawn2MinBuil = 1; // 1
+  var spawn2MinEner = 0; // 1
+  var spawn2MinReHa = 0;
+  var spawn2MinClai = 1;
+  var spawn2MinSold = 0;
+  var spawn2MinRepa = 0;
+*/
+  // spawn levels
+  spawn1_levels = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
+  spawn1_levels = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
+  
   // Run the spawn logics
   roleSpawn1.run(100);
   roleSpawn2.run(100);

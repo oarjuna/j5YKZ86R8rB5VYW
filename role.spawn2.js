@@ -7,9 +7,7 @@ module.exports = {
         var spawn2MinDeli = 7; // 3
         var spawn2MinUgra = 1; // 3
         var spawn2MinBuil = 1; // 1
-        var spawn2MinWall = 0; // 1
         var spawn2MinEner = 0; // 1
-
         var spawn2MinReHa = 0;
         var spawn2MinClai = 1;
         var spawn2MinSold = 0;
@@ -101,12 +99,7 @@ module.exports = {
         console.log("sp2 -- spawning builder");
         name = Game.spawns.Spawn2.createCustomCreep(energy_avail, 'builder','','Spawn2');
     }
-    // if not enough wallRepairers
-    else if (numSpawn2WaRe < spawn2MinWall) {
-        // try to spawn one
-        console.log("sp2 -- spawning wall repairer");
-        name = Game.spawns.Spawn2.createCustomCreep(energy_avail, 'wallRepairer','','Spawn2');
-    }
+
     // if not enough remote harvesters
     else if (numSpawn2ReHa < spawn2MinReHa) {
         // count the number of remote harvs per flag
