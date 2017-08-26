@@ -144,7 +144,6 @@ module.exports = {
         else if ( c_flag5 == 0 ) { var dest = 'CFlag5'; role = "claimer"; }
         else { var dest = 'error'; }
 
-        var energy_avail = '';
         console.log("sp1 -- spawning claimer " + dest + " body - " + role);
         name = Game.spawns.Spawn1.createCustomCreep(energy_avail, role, dest,'Spawn1');
     }
