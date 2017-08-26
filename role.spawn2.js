@@ -137,11 +137,11 @@ module.exports = {
         var c_flag5 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'CFlag5');
 
         var role;
-        if ( c_flag1 < 1 ) { var dest = 'CFlag1'; role = "claimer_lg"; }
-        else if ( c_flag2 == 0 ) { var dest = 'CFlag2'; role = "claimer"; }
-        else if ( c_flag3 == 0 ) { var dest = 'CFlag3'; role = "claimer"; }
-        else if ( c_flag4 == 0 ) { var dest = 'CFlag4'; role = "claimer"; }
-        else if ( c_flag5 == 0 ) { var dest = 'CFlag5'; role = "claimer"; }
+        if ( c_flag1 < 1 ) { var dest = 'CFlag2'; role = "claimer_lg"; }
+        else if ( c_flag2 < 1 ) { var dest = 'CFlag2'; role = "claimer"; }
+        else if ( c_flag3 == 0 ) { var dest = 'CFlag2'; role = "claimer"; }
+        else if ( c_flag4 == 0 ) { var dest = 'CFlag2'; role = "claimer"; }
+        else if ( c_flag5 == 0 ) { var dest = 'CFlag2'; role = "claimer"; }
         else { var dest = 'error'; }
         console.log("sp2 -- spawning claimer " + dest + " body - " + role);
         name = Game.spawns.Spawn2.createCustomCreep(energy_avail, role, dest,'Spawn2');
