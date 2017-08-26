@@ -171,39 +171,6 @@ module.exports = {
           tower.repair(repair_target);
         }
     }
-/*
-    // start of the status bar
-    var name = undefined;
 
-    var roomSp1 = Game.spawns.Spawn1.room;
-    var energySp1 = Game.spawns.Spawn1.room.energyCapacityAvailable;
-    var energyAvailableSp1 = Game.spawns.Spawn1.room.energyAvailable;
-
-    var status1Sp1 = "H: " + numSpawn1Harv + "/" + spawn1MinHarv;
-    var status2Sp1 = " U: " + numSpawn1Upgr + "/" + spawn1MinUgra;
-    var status3Sp1 = " R: " + numSpawn1Repa + "/" + spawn1MinRepa;
-    var status4Sp1 = " B: " + numSpawn1Buil + "/" + spawn1MinBuil;
-    var status5Sp1 = " RH: " + numSpawn1ReHa + "/" + spawn1MinReHa;
-    var status6Sp1 = " WR: " + numSpawn1WaRe + "/" + spawn1MinWall;
-    var status7Sp1 = " C: " + numSpawn1Clai + "/" + spawn1MinClai;
-    var status8Sp1 = " De: " + numSpawn1Deli + "/" + spawn1MinDeli;
-    var status9Sp1 = " EM: " + numSpawn1EnMo  + "/" + spawn1MinEner;
-    var status10Sp1 =" S: " + numSpawn1Sold + "/" + spawn1MinSold;
-
-    var status11Sp1 = "E: " + energyAvailableSp1 + "/" + energySp1
-    var status12Sp1 = " UP: " + roomSp1.controller.progress +
-                     "/" + roomSp1.controller.progressTotal +
-                    " lvl: " + roomSp1.controller.level;
-
-	//var status13Sp1 = " Stored -- " +  _.sum(roomSp1.storage.store[RESOURCE_ENERGY]);
-	var status13Sp1 = " energy_avail -- " + energy_avail;
-
-        // print the thing
-        console.log("Sp1: " + status11Sp1 + status12Sp1 + status13Sp1);
-        console.log("Sp1: " + status1Sp1 + status2Sp1 + status3Sp1 + status4Sp1 + status5Sp1 + status6Sp1 +
-                        status7Sp1 + status8Sp1 + status9Sp1 + status10Sp1);
-
-*/
-// end
 }
 };

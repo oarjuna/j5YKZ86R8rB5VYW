@@ -8,15 +8,6 @@ module.exports = function() {
 // 800
 // 1300
 
-// harvester
-// deliverer
-// upgrader
-// repairer
-// builder
-
-// remote harvester
-// claimer
-
   StructureSpawn.prototype.createCustomCreep =
   function(energy_avail, roleName, dest, birthplace) {
     // 300 - 549 energy_avail --- initial spawn
