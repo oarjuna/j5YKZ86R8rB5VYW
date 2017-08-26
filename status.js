@@ -1,6 +1,31 @@
 module.exports = {
    display_status: function(foo) {
      let x = -1;
+     // spawn1
+     var spawn1MinHarv = 4; // 3
+     var spawn1MinDeli = 4; // 3
+     var spawn1MinUgra = 5; // 3
+     var spawn1MinBuil = 1; // 1
+     var spawn1MinWall = 0; // 1
+     var spawn1MinEner = 0; // 1
+     var spawn1MinReHa = 2;
+     var spawn1MinClai = 1;
+     var spawn1MinSold = 0;
+     var spawn1MinRepa = 0;
+
+     // spawn2
+     var spawn2MinHarv = 3; // 3
+     var spawn2MinDeli = 7; // 3
+     var spawn2MinUgra = 1; // 3
+     var spawn2MinBuil = 1; // 1
+     var spawn2MinWall = 0; // 1
+     var spawn2MinEner = 0; // 1
+
+     var spawn2MinReHa = 2;
+     var spawn2MinClai = 1;
+     var spawn2MinSold = 0;
+     var spawn2MinRepa = 0;
+
      console.log("in status");
 
      for (var cur_spawn_tmp in Game.spawns){
