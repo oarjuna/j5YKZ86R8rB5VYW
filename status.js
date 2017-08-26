@@ -61,7 +61,7 @@ module.exports = {
                          "/" + cur_room.controller.progressTotal +
                         " lvl: " + cur_room.controller.level;
 
-    	var status13 = " Stored -- ");
+    	var status13 = " Stored -- ";
     	//var status13 = " energy_avail -- " + energy_avail;
 
             // print the thing
