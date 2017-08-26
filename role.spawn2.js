@@ -10,7 +10,7 @@ module.exports = {
         var spawn2MinWall = 0; // 1
         var spawn2MinEner = 0; // 1
 
-        var spawn2MinReHa = 2;
+        var spawn2MinReHa = 0;
         var spawn2MinClai = 1;
         var spawn2MinSold = 0;
         var spawn2MinRepa = 0;
