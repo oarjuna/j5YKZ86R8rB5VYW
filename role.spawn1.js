@@ -11,7 +11,7 @@ module.exports = {
         var spawn1MinEner = 0; // 1
 
         var spawn1MinReHa = 2;
-        var spawn1MinClai = 1;
+        var spawn1MinClai = 0;
         var spawn1MinSold = 0;
         var spawn1MinRepa = 0;
 
