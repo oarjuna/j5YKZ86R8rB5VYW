@@ -47,7 +47,7 @@ module.exports.loop = function () {
   roleSpawn1.run(scl1[0],scl1[1],scl1[2],scl1[3],scl1[4],scl1[5],scl1[6],scl1[7],scl1[8]);
   roleSpawn2.run(scl2[0],scl2[1],scl2[2],scl2[3],scl2[4],scl2[5],scl2[6],scl2[7],scl2[8]);
 
-	gameStatus.display_status(spawn1_creep_levels);
+	gameStatus.display_status(1);
   //gameStatus.display_status(spawn2_creep_levels);
 
   for (var spawn in Game.spawns){
