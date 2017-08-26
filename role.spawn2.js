@@ -17,7 +17,7 @@ module.exports = {
 
         // count the number of creeps alive for each role born at Spawn2
         var numSpawn2Harv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthplace == 'Spawn2');
-        var numSpawn2ReHa = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harvester' && c.memory.birthplace == 'Spawn2');
+        var numSpawn2ReHa = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harv' && c.memory.birthplace == 'Spawn2');
         var numSpawn2Deli = _.sum(Game.creeps, (c) => c.memory.role == 'deliverer' && c.memory.birthplace == 'Spawn2');
         var numSpawn2Upgr = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader' && c.memory.birthplace == 'Spawn2');
         var numSpawn2Buil = _.sum(Game.creeps, (c) => c.memory.role == 'builder' && c.memory.birthplace == 'Spawn2');
@@ -111,11 +111,11 @@ module.exports = {
     // if not enough remote harvesters
     else if (numSpawn2ReHa < spawn2MinReHa) {
         // count the number of remote harvs per flag
-        var c_flag1 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harvester' && c.memory.destid == 'Flag1');
-        var c_flag2 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harvester' && c.memory.destid == 'Flag2');
-        var c_flag3 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harvester' && c.memory.destid == 'Flag3');
-        var c_flag4 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harvester' && c.memory.destid == 'Flag4');
-        var c_flag5 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harvester' && c.memory.destid == 'Flag5');
+        var c_flag1 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harv' && c.memory.destid == 'Flag1');
+        var c_flag2 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harv' && c.memory.destid == 'Flag2');
+        var c_flag3 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harv' && c.memory.destid == 'Flag3');
+        var c_flag4 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harv' && c.memory.destid == 'Flag4');
+        var c_flag5 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harv' && c.memory.destid == 'Flag5');
 
         if ( c_flag1 < 3 ) { var dest = 'Flag1'; }
         else if ( c_flag2 == 0 ) { var dest = 'Flag2'; }
@@ -124,8 +124,8 @@ module.exports = {
         else if ( c_flag5 == 0 ) { var dest = 'Flag5'; }
         else { var dest = 'error'; }
 
-        console.log("sp2 -- spawning remote_harvester");
-        name = Game.spawns.Spawn2.createCustomCreep(energy, 'remote_harvester',dest,'Spawn2');
+        console.log("sp2 -- spawning remote_harv");
+        name = Game.spawns.Spawn2.createCustomCreep(energy, 'remote_harv',dest,'Spawn2');
     }
         // claimers
     else if (numSpawn2Clai < spawn2MinClai) {
