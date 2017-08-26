@@ -11,7 +11,7 @@ module.exports = {
         var spawn2MinEner = 0; // 1
 
         var spawn2MinReHa = 2;
-        var spawn2MinClai = 0;
+        var spawn2MinClai = 1;
         var spawn2MinSold = 0;
         var spawn2MinRepa = 0;
 
@@ -130,18 +130,18 @@ module.exports = {
         // claimers
     else if (numSpawn2Clai < spawn2MinClai) {
         // count the number of claimers per flag
-        var c_flag1 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag1');
-        var c_flag2 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag2');
-        var c_flag3 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag3');
-        var c_flag4 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag4');
-        var c_flag5 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag5');
+        var c_flag1 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'CFlag1');
+        var c_flag2 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'CFlag2');
+        var c_flag3 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'CFlag3');
+        var c_flag4 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'CFlag4');
+        var c_flag5 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'CFlag5');
 
         var role;
-        if ( c_flag1 == 0 ) { var dest = 'Flag1'; role = "claimer"; }
-        else if ( c_flag2 == 0 ) { var dest = 'Flag2'; role = "claimer"; }
-        else if ( c_flag3 == 0 ) { var dest = 'Flag3'; role = "claimer"; }
-        else if ( c_flag4 == 0 ) { var dest = 'Flag4'; role = "claimer"; }
-        else if ( c_flag5 == 0 ) { var dest = 'Flag5'; role = "claimer"; }
+        if ( c_flag1 < 1 ) { var dest = 'CFlag1'; role = "claimer_lg"; }
+        else if ( c_flag2 == 0 ) { var dest = 'CFlag2'; role = "claimer"; }
+        else if ( c_flag3 == 0 ) { var dest = 'CFlag3'; role = "claimer"; }
+        else if ( c_flag4 == 0 ) { var dest = 'CFlag4'; role = "claimer"; }
+        else if ( c_flag5 == 0 ) { var dest = 'CFlag5'; role = "claimer"; }
         else { var dest = 'error'; }
         console.log("sp2 -- spawning claimer " + dest + " body - " + role);
         name = Game.spawns.Spawn2.createCustomCreep(energy_avail, role, dest,'Spawn2');
