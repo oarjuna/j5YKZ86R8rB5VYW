@@ -41,7 +41,7 @@ var scl3 = [ 2, 1, 0, 0, 0, 0, 0, 0, 0];
 
   for (var cur_spawn_tmp in Game.spawns){
      spawn_name = Game.spawns[cur_spawn_tmp].name;
-     var tmp_foo = new Spaw(spawn_name)
+     var tmp_foo = new Spawn(spawn_name)
    }
 
    console.log("KPP: -- " + Empire.spawn);
