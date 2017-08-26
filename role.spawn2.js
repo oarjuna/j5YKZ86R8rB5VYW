@@ -5,7 +5,7 @@ module.exports = {
         // spawn levels
         var spawn2MinHarv = 3; // 3
         var spawn2MinDeli = 7; // 3
-        var spawn2MinUgra = 0; // 3
+        var spawn2MinUgra = 1; // 3
         var spawn2MinBuil = 1; // 1
         var spawn2MinWall = 0; // 1
         var spawn2MinEner = 0; // 1
@@ -166,10 +166,11 @@ module.exports = {
 
 
       if (target != undefined) {
-      console.log(tower + " -- attacking " + target);
-            tower.attack(target);
+        console.log(tower + " -- attacking " + target);
+        tower.attack(target);
       }
       else if (repair_target != undefined ) {
+        console.log(tower + " -- repairing " + repair_target);
         tower.repair(repair_target);
       }
     }
