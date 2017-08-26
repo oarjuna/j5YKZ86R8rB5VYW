@@ -11,7 +11,7 @@ module.exports = {
         var spawn1MinEner = 0; // 1
 
         var spawn1MinReHa = 2;
-        var spawn1MinClai = 0;
+        var spawn1MinClai = 1;
         var spawn1MinSold = 0;
         var spawn1MinRepa = 0;
 
@@ -162,7 +162,7 @@ module.exports = {
           ( s.structureType == STRUCTURE_CONTAINER && s.hits < s.hitsMax) ||
           ( s.structureType == STRUCTURE_STORAGE && s.hits < s.hitsMax) ||
           ( s.structureType == STRUCTURE_WALL && s.hits < 25000 ) ||
-          ( s.structureType == STRUCTURE_RAMPART && s.hits < 25000) 
+          ( s.structureType == STRUCTURE_RAMPART && s.hits < 25000)
         });
 
         if (target != undefined) {
