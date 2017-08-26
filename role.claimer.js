@@ -39,13 +39,13 @@ module.exports = {
 			//console.log(creep + " claimer -- controller status " + status);
 
 			if (status == ERR_NOT_IN_RANGE && status != ERR_INVALID_TARGET) {
-				console.log(creep + " claimer -- claiming ");
+				//console.log(creep + " claimer -- claiming ");
       	creep.moveTo(creep.room.controller);
       }
 
       // harvesting
       else if ( harvestSite != undefined  && creep.memory.working == false ) {
-				console.log(creep + " claimer -- harvesting");
+				//console.log(creep + " claimer -- harvesting");
         if ( creep.harvest(harvestSite) == ERR_NOT_IN_RANGE ) {
                 creep.moveTo(harvestSite);
         }
@@ -61,7 +61,7 @@ module.exports = {
 
 			// construction jobs
       else if ( constructionSite != undefined  && creep.memory.working == true) {
-				console.log(creep + " claimer -- building");
+				//console.log(creep + " claimer -- building");
         if ( creep.build(constructionSite) == ERR_NOT_IN_RANGE ) {
                 creep.moveTo(constructionSite);
         }
@@ -69,7 +69,7 @@ module.exports = {
 
 			// repair jobs
 			else if ( repairStructure != undefined  && creep.memory.working == true ) {
-				console.log(creep + " claimer -- repairing");
+				//console.log(creep + " claimer -- repairing");
       	if ( creep.repair(repairStructure) == ERR_NOT_IN_RANGE ) {
         	creep.moveTo(repairStructure);
         }
@@ -82,7 +82,7 @@ module.exports = {
 							s.store[RESOURCE_ENERGY] < 2000
           });
 
-				console.log(creep + " claimer -- transfering energy.");
+				//console.log(creep + " claimer -- transfering energy.");
         if ( creep.transfer(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE ) {
 					creep.moveTo(container);
         }
