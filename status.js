@@ -29,7 +29,7 @@ module.exports = {
      for (var cur_spawn_tmp in Game.spawns){
         cur_spawn = Game.spawns[cur_spawn_tmp].name;
          x++;
-		     console.log(cur_spawn + " helo!");
+		     console.log("----" + cur_spawn + " helo! ----");
         // count the number of creeps alive for each role and according to spawn
         var numHarv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthplace == cur_spawn);
         var numReHa = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harv' && c.memory.birthplace == cur_spawn);
