@@ -12,7 +12,7 @@ module.exports = function() {
   function(energy, roleName, dest, birthplace) {
 // 300 - 550 energy --- initial spawn
     console.log("proto -- " + energy);
-    
+
     if ( energy < 550 ) {
       if (roleName == 'harvester_lite') {
         var body = [ WORK, WORK, WORK, MOVE, MOVE, CARRY, CARRY ]; //500
@@ -29,7 +29,7 @@ module.exports = function() {
     }
 
     // 550 energy
-    else if ( energy >= 550 && energy < 800 ) {
+    else if ( energy >= 550 && energy < 10000 ) {
       if (roleName == 'harvester') {
         var body = [ WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY ]; //550
       }
@@ -64,10 +64,10 @@ module.exports = function() {
         var body = [ WORK, WORK, WORK, WORK, MOVE, CARRY ]; // 500
         roleName = "local_harvester";
       }
-    }
+    //}
     // 800 energy
-    else if ( energy >= 800 && energy < 1100 ) {
-      if (roleName == "remote_harvester") {
+    //else if ( energy >= 800 && energy < 1100 ) {
+      else if (roleName == "remote_harvester") {
   	    var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; // 700
       }
     	else if (roleName == "claimer") {
