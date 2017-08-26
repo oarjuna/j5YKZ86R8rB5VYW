@@ -37,8 +37,7 @@ var roleSpawn3 = require('role.spawn3');
      var tmp_foo = new Empire(spawn_name)
    }
 
-
-  var Empire = new Empire(scl1);
+   console.log("KPP: -- " + Empire.spawn);
 
   //Empire.Spawn1.levels = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
   //Empire.Spawn2.levels = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
