@@ -1,50 +1,49 @@
 module.exports = {
-   display_status: function(foo)
-   {  //// start
-	///    Game.spawns[i].createCreep(body);
-        for (var spawn in Game.spawns.name){
-		console.log(spawn + " helo!");
-        }
+   display_status: function(foo) {
+     let x = -1;
+     for (var cur_spawn in Game.spawns.name){
+         x++;
+		     console.log(cur_spawn + " helo!");
+        // count the number of creeps alive for each role and according to spawn
+        var numHarv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthplace == cur_spawn);
+        var numReHa = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harv' && c.memory.birthplace == cur_spawn);
+        var numLoHa = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester' && c.memory.birthplace == cur_spawn);
+        var numUpgr = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader' && c.memory.birthplace == cur_spawn);
+        var numBuil = _.sum(Game.creeps, (c) => c.memory.role == 'builder' && c.memory.birthplace == cur_spawn);
+        var numClai = _.sum(Game.creeps, (c) => c.memory.role == 'claimer' && c.memory.birthplace == cur_spawn);
+        var numSold = _.sum(Game.creeps, (c) => c.memory.role == 'soldier' && c.memory.birthplace == cur_spawn);
+        var numRepa = _.sum(Game.creeps, (c) => c.memory.role == 'repairer' && c.memory.birthplace == cur_spawn);
+        var numWaRe = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer' && c.memory.birthplace == cur_spawn);
+        var numEnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthplace == cur_spawn);
 
+        var cur_room = Game.spawns.cur_spawn.room;
+        var cur_energy_cap = Game.spawns.cur_spawn.room.energyCapacityAvailable;
+        var cur_energy = Game.spawns.cur_spawn.room.energyAvailable;
 
-        // count the number of creeps alive for each role born at Spawn1
-        var numSpawn1Harv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthplace == 'Spawn1');
-        var numSpawn1ReHa = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harv' && c.memory.birthplace == 'Spawn1');
-        var numSpawn1LoHa = _.sum(Game.creeps, (c) => c.memory.role == 'local_harvester' && c.memory.birthplace == 'Spawn1');
-        var numSpawn1Upgr = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader' && c.memory.birthplace == 'Spawn1');
-        var numSpawn1Buil = _.sum(Game.creeps, (c) => c.memory.role == 'builder' && c.memory.birthplace == 'Spawn1');
-        var numSpawn1Clai = _.sum(Game.creeps, (c) => c.memory.role == 'claimer' && c.memory.birthplace == 'Spawn1');
-        var numSpawn1Sold = _.sum(Game.creeps, (c) => c.memory.role == 'soldier' && c.memory.birthplace == 'Spawn1');
-        var numSpawn1Repa = _.sum(Game.creeps, (c) => c.memory.role == 'repairer' && c.memory.birthplace == 'Spawn1');
-        var numSpawn1WaRe = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer' && c.memory.birthplace == 'Spawn1');
-        var numSpawn1EnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthplace == 'Spawn1');
+        var status1 = "H: " + numHarv + "/" + spawn1MinHarv;
+        var status2 = " U: " + numUpgr + "/" + spawn1MinUgra;
+        var status3 = " R: " + numRepa + "/" + spawn1MinRepa;
+        var status4 = " B: " + numBuil + "/" + spawn1MinBuil;
+        var status5 = " RH: " + numReHa + "/" + spawn1MinReHa;
+        var status6 = " WR: " + numWaRe + "/" + spawn1MinWall;
+        var status7 = " C: " + numClai + "/" + spawn1MinClai;
+        var status8 = " De: " + numDeli + "/" + spawn1MinDeli;
+        var status9 = " EM: " + numEnMo  + "/" + spawn1MinEner;
+        var status10 =" S: " + numSold + "/" + spawn1MinSold;
 
-	      var roomSp1 = Game.spawns.Spawn1.room;
-        var energySp1 = Game.spawns.Spawn1.room.energyCapacityAvailable;
-        var energyAvailableSp1 = Game.spawns.Spawn1.room.energyAvailable;
+        var status11 = "E: " + cur_energy + "/" + cur_energy_cap
+        var status12 = " UP: " + cur_room.controller.progress +
+                         "/" + cur_room.controller.progressTotal +
+                        " lvl: " + cur_room.controller.level;
 
-        var status1Sp1 = "H: " + numSpawn1Harv + "/" + spawn1Harv;
-        var status2Sp1 = " U: " + numSpawn1Upgr + "/" + spawn1MinUgra;
-        var status3Sp1 = " R: " + numSpawn1Repa + "/" + spawn1MinRepa;
-        var status4Sp1 = " B: " + numSpawn1Buil + "/" + spawn1MinBuil;
-        var status5Sp1 = " RH: " + numSpawn1ReHa + "/" + spawn1MinReHa;
-        var status6Sp1 = " WR: " + numSpawn1WaRe + "/" + spawn1MinWall;
-        var status7Sp1 = " C: " + numSpawn1Clai + "/" + spawn1MinClai;
-        var status8Sp1 = " LH: " + numSpawn1LoHa + "/" + spawn1MinLoHa;
-        var status9Sp1 = " EM: " + numSpawn1EnMo  + "/" + spawn1MinEner;
-        var status10Sp1 =" S: " + numSpawn1Sold + "/" + spawn1MinSold;
+    	//var status13 = " Stored -- " +  _.sum(cur_room.storage.store[RESOURCE_ENERGY]);
+    	var status13 = " energy_avail -- " + energy_avail;
 
-        var status11Sp1 = "E: " + energyAvailableSp1 + "/" + energySp1
-        var status12Sp1 = " UP: " + roomSp1.controller.progress +
-                         "/" + roomSp1.controller.progressTotal +
-                        " lvl: " + roomSp1.controller.level;
+            // print the thing
+            console.log(": " + status11 + status12 + status13);
+            console.log(": " + status1 + status2 + status3 + status4 + status5 + status6 +
+                            status7 + status8 + status9 + status10);
 
-        var status13Sp1 = " Stored -- " + Game.spawns.Spawn1.room.storage.store[RESOURCE_ENERGY];
-
-        // print the thing
-        console.log("Sp1: " + status11Sp1 + status12Sp1 + status13Sp1);
-        console.log("Sp1: " + status1Sp1 + status2Sp1 + status3Sp1 + status4Sp1 + status5Sp1 + status6Sp1 +
-                        status7Sp1 + status8Sp1 + status9Sp1 + status10Sp1);
 ////// end
    }
 };

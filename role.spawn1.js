@@ -173,7 +173,7 @@ module.exports = {
           tower.repair(repair_target);
         }
     }
-
+/*
     // start of the status bar
     var name = undefined;
 
@@ -205,7 +205,7 @@ module.exports = {
         console.log("Sp1: " + status1Sp1 + status2Sp1 + status3Sp1 + status4Sp1 + status5Sp1 + status6Sp1 +
                         status7Sp1 + status8Sp1 + status9Sp1 + status10Sp1);
 
-
+*/
 // end
 }
 };
