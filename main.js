@@ -47,7 +47,8 @@ module.exports.loop = function () {
   roleSpawn1.run(spawn1_creep_levels);
   roleSpawn2.run(spawn2_creep_levels);
 
-	gameStatus.display_status(1);
+	gameStatus.display_status(spawn1_creep_levels);
+  //gameStatus.display_status(spawn2_creep_levels);
 
   for (var spawn in Game.spawns){
     //roleSpawn.run(spawn);
