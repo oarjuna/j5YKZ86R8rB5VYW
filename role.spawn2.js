@@ -159,6 +159,7 @@ module.exports = {
         filter: (s) =>
           (( s.structureType == STRUCTURE_ROAD && s.hits < s.hitsMax) ||
           ( s.structureType == STRUCTURE_CONTAINER && s.hits < s.hitsMax) ||
+          ( s.structureType == STRUCTURE_STORAGE && s.hits < s.hitsMax) ||
           ( s.structureType == STRUCTURE_WALL && s.hits < 25000 ) ) &&
           s.structureType != STRUCTURE_RAMPART
         });
