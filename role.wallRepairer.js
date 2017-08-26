@@ -24,8 +24,8 @@ module.exports = {
                 target = creep.pos.findClosestByPath(FIND_STRUCTURES, {
                     filter: (s) => (
 				s.structureType == STRUCTURE_RAMPART ||
-				s.structureType == STRUCTURE_WALL 
-				) && 	
+				s.structureType == STRUCTURE_WALL
+				) &&
                                    s.hits / s.hitsMax < percentage
                 });
                 // if there is one, break the loop
@@ -50,4 +50,3 @@ module.exports = {
         }
     }
 };
-
