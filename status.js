@@ -1,6 +1,8 @@
 module.exports = {
    display_status: function(foo) {
      let x = -1;
+     console.log("im status");
+     
      for (var cur_spawn in Game.spawns.name){
          x++;
 		     console.log(cur_spawn + " helo!");

@@ -27,7 +27,6 @@ module.exports = {
         var numSpawn2WaRe = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer' && c.memory.birthplace == 'Spawn2');
         var numSpawn2EnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthplace == 'Spawn2');
 
-        console.log("\n#------------------#");
 
    var energy_avail = Game.spawns.Spawn2.room.energyCapacityAvailable;
 
