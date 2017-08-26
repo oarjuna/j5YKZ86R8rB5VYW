@@ -61,7 +61,7 @@ module.exports = function() {
         var body = [ WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY ]; //  550
       }
     }
-    //}
+
     // 800 energy
     else if ( energy >= 800 && energy < 1100 ) {
       if (roleName == 'harvester') {
@@ -94,7 +94,22 @@ module.exports = function() {
 
     // 1100 energy
     else if ( energy >= 1100 ){
-      if (roleName == "energy_mover") {
+      if (roleName == 'harvester') {
+        var body = [ WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY ]; //550
+      }
+      else if (roleName == 'deliverer') {
+        var body = [ WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; // 550
+      }
+      else if (roleName == 'upgrader') {
+        var body = [WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; // 550
+      }
+      else if (roleName == 'builder') {
+        var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY ]; // 550
+      }
+      else if (roleName == 'repairer') {
+        var body = [ WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY ]; //  550
+      }
+      else if (roleName == "energy_mover") {
         var body = [ WORK, WORK, WORK, WORK, WORK, MOVE, CARRY, CARRY ]; // 1100
       }
       else if (roleName == "soldier") {
