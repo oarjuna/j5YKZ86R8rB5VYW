@@ -28,6 +28,7 @@ module.exports = {
 
      for (var cur_spawn_tmp in Game.spawns){
         cur_spawn = Game.spawns[cur_spawn_tmp].name;
+        console.log("OOO:" + cur_spawn + " --- " + Empire.cur_spawn.levels);
          x++;
 		     console.log("----" + cur_spawn + " helo! ----");
         // count the number of creeps alive for each role and according to spawn
