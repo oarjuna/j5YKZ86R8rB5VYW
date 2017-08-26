@@ -87,7 +87,7 @@ module.exports = function() {
     }
 
     // 1100 energy
-    else if ( energy >= 1100 ){
+    else if ( energy >= 11000000 ){
       if (roleName == "energy_mover") {
         var body = [ WORK, WORK, WORK, WORK, WORK, MOVE, CARRY, CARRY ]; // 1100
       }
