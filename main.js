@@ -33,7 +33,7 @@ module.exports.loop = function () {
         	else if (creep.memory.role == 'wallRepairer') { roleWallRepairer.run(creep); }
         	else if (creep.memory.role == 'remote_harvester') { roleRemoteHarvester.run(creep); }
     	}
-
+/*
     	// Tower control -- stuff
     	var towers = Game.rooms.W28S81.find(FIND_STRUCTURES, {
         	filter: (s) => s.structureType == STRUCTURE_TOWER
@@ -55,7 +55,7 @@ module.exports.loop = function () {
 			tower.repair(repair_target);
 		}
     	}
-
+*/
 
 
 
