@@ -28,7 +28,7 @@ module.exports = {
         var numSpawn1EnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthplace == 'Spawn1');
 
         console.log("\n#------------------#");
-   var energy = Game.spawns.Spawn1.room.energyCapacityAvailable;
+   var energy_avail = Game.spawns.Spawn1.room.energyCapacityAvailable;
 
    // if not enough harvesters
     if (numSpawn1Harv < spawn1MinHarv) {
@@ -41,7 +41,7 @@ module.exports = {
         else { var dest = '5873bcc211e3e4361b4d81ed'; } // south
 
         // try to spawn one
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'harvester',dest,'Spawn1');
+        name = Game.spawns.Spawn1.createCustomCreep(energy_avail, 'harvester',dest,'Spawn1');
         console.log("sp1 -- spawning harvester");
 
         // if spawning failed and we have no harvesters left
@@ -55,7 +55,7 @@ module.exports = {
    // if not enough deliverers
     else if (numSpawn1Deli < spawn1MinDeli) {
         console.log("sp1 -- spawning deliverer");
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'deliverer',dest,'Spawn1');
+        name = Game.spawns.Spawn1.createCustomCreep(energy_avail, 'deliverer',dest,'Spawn1');
     }
 
    // if not enough energy movers
@@ -80,33 +80,33 @@ module.exports = {
         else if ( c2_num == 0 ){ var dest = '57e6b5c1135326b41e54835e'; } // controller  #2
         else {  var dest = '57e6530dfb8875006e762b5e'; } // controller #3
         console.log("sp1 -- spawning energy_mover -- " + dest );
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'energy_mover',dest,'Spawn1');
+        name = Game.spawns.Spawn1.createCustomCreep(energy_avail, 'energy_mover',dest,'Spawn1');
     }
     // if not enough soldiers
     else if (numSpawn1Sold < spawn1MinSold) {
         console.log("sp1 -- spawning soldier");
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'soldier','Attack','Spawn1');
+        name = Game.spawns.Spawn1.createCustomCreep(energy_avail, 'soldier','Attack','Spawn1');
     }
     // if not enough upgraders
     else if (numSpawn1Upgr < spawn1MinUgra) {
         console.log("sp1 -- spawning upgrader");
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'upgrader','','Spawn1');
+        name = Game.spawns.Spawn1.createCustomCreep(energy_avail, 'upgrader','','Spawn1');
     }
     // if not enough repairers
     else if (numSpawn1Repa < spawn1MinRepa) {
         console.log("sp1 -- spawning repairer");
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'repairer','','Spawn1');
+        name = Game.spawns.Spawn1.createCustomCreep(energy_avail, 'repairer','','Spawn1');
     }
     // if not enough builders
     else if (numSpawn1Buil < spawn1MinBuil) {
         console.log("sp1 -- spawning builder");
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'builder','','Spawn1');
+        name = Game.spawns.Spawn1.createCustomCreep(energy_avail, 'builder','','Spawn1');
     }
     // if not enough wallRepairers
     else if (numSpawn1WaRe < spawn1MinWall) {
         // try to spawn one
         console.log("sp1 -- spawning wall repairer");
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'wallRepairer','','Spawn1');
+        name = Game.spawns.Spawn1.createCustomCreep(energy_avail, 'wallRepairer','','Spawn1');
     }
     // if not enough remote harvesters
     else if (numSpawn1ReHa < spawn1MinReHa) {
@@ -125,7 +125,7 @@ module.exports = {
         else { var dest = 'error'; }
 
         console.log("sp1 -- spawning remote_harv");
-        name = Game.spawns.Spawn1.createCustomCreep(energy, 'remote_harv',dest,'Spawn1');
+        name = Game.spawns.Spawn1.createCustomCreep(energy_avail, 'remote_harv',dest,'Spawn1');
     }
         // claimers
     else if (numSpawn1Clai < spawn1MinClai) {
@@ -144,9 +144,9 @@ module.exports = {
         else if ( c_flag5 == 0 ) { var dest = 'CFlag5'; role = "claimer"; }
         else { var dest = 'error'; }
 
-        var energy = '';
+        var energy_avail = '';
         console.log("sp1 -- spawning claimer " + dest + " body - " + role);
-        name = Game.spawns.Spawn1.createCustomCreep(energy, role, dest,'Spawn1');
+        name = Game.spawns.Spawn1.createCustomCreep(energy_avail, role, dest,'Spawn1');
     }
     // local Tower control
     var towers = Game.rooms.W28S81.find(FIND_STRUCTURES, {
@@ -199,7 +199,7 @@ module.exports = {
                     " lvl: " + roomSp1.controller.level;
 
 	//var status13Sp1 = " Stored -- " +  _.sum(roomSp1.storage.store[RESOURCE_ENERGY]);
-	var status13Sp1 = " energy -- " + energy;
+	var status13Sp1 = " energy_avail -- " + energy_avail;
 
         // print the thing
         console.log("Sp1: " + status11Sp1 + status12Sp1 + status13Sp1);
