@@ -147,6 +147,30 @@ module.exports = {
         name = Game.spawns.Spawn2.createCustomCreep(energy, role, dest,'Spawn2');
     }
 
+    // local Tower control
+    var towers = Game.rooms.W27S81.find(FIND_STRUCTURES, {
+        filter: (s) => s.structureType == STRUCTURE_TOWER
+    });
+
+    for (let tower of towers) {
+      var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+
+      var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
+        filter: (s) =>
+          s.hits < s.hitsMax &&
+          ( s.structureType == STRUCTURE_WALL && s.hits < 20000 ) &&
+          s.structureType != STRUCTURE_RAMPART
+        });
+
+      if (target != undefined) {
+      console.log(tower + " -- attacking " + target);
+            tower.attack(target);
+      }
+      else if (repair_target != undefined ) {
+        tower.repair(repair_target);
+      }
+    }
+
         // start of the status bar
         var name = undefined;
 
