@@ -40,7 +40,7 @@ module.exports.loop = function () {
   Harvest, Deliv, Upgrade, Buid, Energy, RemoHarv, Claim, Soldier, Repair
 */
   // spawn levels
-  sc11 = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
+  scl1 = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
   scl2 = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
 
   // Run the spawn logics
