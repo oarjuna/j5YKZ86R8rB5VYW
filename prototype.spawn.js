@@ -24,23 +24,23 @@ module.exports = function() {
 
     // 300 - 549 energy --- initial spawn
     if ( energy < 550 ) {
-      if      (roleName == 'harvester') { var body = [ WORK, MOVE, MOVE, WORK, CARRY ]; }// 300 }
-      else if (roleName == 'builder')   { var body = [ WORK, MOVE, MOVE, WORK, CARRY ]; }// 300 }
-      else if (roleName == 'repairer')  { var body = [ WORK, MOVE, MOVE, WORK, CARRY ]; }// 300 }
-      else if (roleName == 'upgrader')  { var body = [ WORK, MOVE, MOVE, WORK, CARRY ]; }// 300 }
-      else if (roleName == 'deliverer') { var body = [ WORK, MOVE, MOVE, WORK, CARRY ]; }// 300 }
+      if      (roleName == 'harvester') { var body = [ WORK, MOVE, MOVE, WORK, CARRY ]; } // 300 
+      else if (roleName == 'builder')   { var body = [ WORK, MOVE, MOVE, WORK, CARRY ]; } // 300
+      else if (roleName == 'repairer')  { var body = [ WORK, MOVE, MOVE, WORK, CARRY ]; } // 300
+      else if (roleName == 'upgrader')  { var body = [ WORK, MOVE, MOVE, WORK, CARRY ]; } // 300
+      else if (roleName == 'deliverer') { var body = [ WORK, MOVE, MOVE, WORK, CARRY ]; } // 300
     }
 
     // 550 - 799 energy
     else if ( energy >= 550 && energy < 800 ) {
-      if      (roleName == 'harvester')   { var body = [ WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY ]; } //550 }
-      else if (roleName == 'deliverer')   { var body = [ WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; } // 550 }
-      else if (roleName == 'upgrader')    { var body = [WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; } // 550 }
-      else if (roleName == 'builder')     { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY ]; } // 550 }
-      else if (roleName == 'repairer')    { var body = [ WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY ]; } //  550  }
-      else if (roleName == "remote_harv") { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; }
-      else if (roleName == "claimer")     { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; } //  700 }
-      else if (roleName == "claimer_lg")  { var body = [ CLAIM, MOVE, MOVE]; roleName = "claimer"; } // 700 }
+      if      (roleName == 'harvester')   { var body = [ WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY ]; }                          // 550
+      else if (roleName == 'deliverer')   { var body = [ WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; }                  // 550
+      else if (roleName == 'upgrader')    { var body = [WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; }                   // 550
+      else if (roleName == 'builder')     { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY ]; }                   // 550
+      else if (roleName == 'repairer')    { var body = [ WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY ]; }                          // 550
+      else if (roleName == "remote_harv") { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ];  // 700
+      else if (roleName == "claimer")     { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY ]; }              // 600
+      else if (roleName == "claimer_lg")  { var body = [ CLAIM, MOVE, MOVE]; roleName = "claimer"; }                                    // 700
     }
 
     // 800 energy
@@ -52,8 +52,8 @@ module.exports = function() {
       else if (roleName == 'repairer')    { var body = [ WORK,WORK,WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY ];  }         // 750
 
       else if (roleName == "remote_harv") { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; } // 700 }
-      else if (roleName == "claimer")     { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; } //  700 }
-      else if (roleName == "claimer_lg")  { var body = [ CLAIM, MOVE, MOVE]; roleName = "claimer";  } // 700 }
+      else if (roleName == "claimer")     { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY ]; } //  600 }
+      else if (roleName == "claimer_lg")  { var body = [ CLAIM, MOVE, MOVE, MOVE, MOVE ]; roleName = "claimer";  } // 800 }
       else if (roleName == "soldier")     { var body = [ TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,ATTACK,ATTACK,ATTACK,ATTACK];  }// 900 }
     }
 

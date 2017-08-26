@@ -130,18 +130,18 @@ module.exports = {
         // claimers
     else if (numSpawn1Clai < spawn1MinClai) {
         // count the number of claimers per flag
-        var c_flag1 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag1');
-        var c_flag2 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag2');
-        var c_flag3 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag3');
-        var c_flag4 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag4');
-        var c_flag5 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'Flag5');
+        var c_flag1 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'CFlag1');
+        var c_flag2 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'CFlag2');
+        var c_flag3 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'CFlag3');
+        var c_flag4 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'CFlag4');
+        var c_flag5 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'CFlag5');
 
         var role;
-        if ( c_flag1 < 3 ) { var dest = 'Flag1'; role = "claimer"; }
-        else if ( c_flag2 == 0 ) { var dest = 'Flag2'; role = "claimer"; }
-        else if ( c_flag3 == 0 ) { var dest = 'Flag3'; role = "claimer"; }
-        else if ( c_flag4 == 0 ) { var dest = 'Flag4'; role = "claimer"; }
-        else if ( c_flag5 == 0 ) { var dest = 'Flag5'; role = "claimer"; }
+        if ( c_flag1 < 1 ) { var dest = 'CFlag1'; role = "claimer_lg"; }
+        else if ( c_flag2 < 1 ) { var dest = 'CFlag2'; role = "claimer"; }
+        else if ( c_flag3 == 0 ) { var dest = 'CFlag3'; role = "claimer"; }
+        else if ( c_flag4 == 0 ) { var dest = 'CFlag4'; role = "claimer"; }
+        else if ( c_flag5 == 0 ) { var dest = 'CFlag5'; role = "claimer"; }
         else { var dest = 'error'; }
 
         var energy = '';
