@@ -40,12 +40,12 @@ module.exports.loop = function () {
   Harvest, Deliv, Upgrade, Buid, Energy, RemoHarv, Claim, Soldier, Repair
 */
   // spawn levels
-  spawn1_creep_levels = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
-  spawn2_creep_levels = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
+  sc11 = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
+  scl2 = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
 
   // Run the spawn logics
-  roleSpawn1.run(spawn1_creep_levels);
-  roleSpawn2.run(spawn2_creep_levels);
+  roleSpawn1.run(scl1[0],scl1[1],scl1[2],scl1[3],scl1[4],scl1[5],scl1[6],scl1[7],scl1[8]);
+  roleSpawn2.run(scl2[0],scl2[1],scl2[2],scl2[3],scl2[4],scl2[5],scl2[6],scl2[7],scl2[8]);
 
 	gameStatus.display_status(spawn1_creep_levels);
   //gameStatus.display_status(spawn2_creep_levels);
