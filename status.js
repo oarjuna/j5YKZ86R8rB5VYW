@@ -2,8 +2,8 @@ module.exports = {
   //var spawn1MinHarv = 4; // 4
   //var spawn2MinHarv = 3; // 3
 
-  var foo = 4;
-  
+  //var foo = 4;
+
    display_status: function(foo) {
      let x = -1;
      // spawn1
