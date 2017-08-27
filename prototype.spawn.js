@@ -61,7 +61,7 @@ module.exports = function() {
     }
 
     // create creep with the created body and the given role
-    console.log("spawning -- " + roleName + " -- "+ energy_avail );
+    //console.log("spawning -- " + roleName + " -- "+ energy_avail );
     return this.createCreep(body, undefined, { role: roleName, working: false, destid: dest, birthplace: birthplace});
   };
 };
