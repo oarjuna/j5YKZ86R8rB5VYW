@@ -35,7 +35,11 @@ var scl3 = [ 2, 1, 0, 0, 0, 0, 0, 0, 0];
 
 var Empire = {
   spawn_names: ['Spawn1','Spawn2','Spawn3'],
-  spawn_levels: [scl1,scl2,scl3]
+  spawn_levels: [
+                [ 4, 4, 5, 1, 0, 0, 1, 0, 0],
+                [ 3, 7, 1, 1, 0, 0, 1, 0, 0],
+                [ 2, 1, 0, 0, 0, 0, 0, 0, 0]
+              ]
 };
 
   //for (var cur_spawn_tmp in Game.spawns){
