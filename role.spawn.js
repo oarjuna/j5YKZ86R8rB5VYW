@@ -27,11 +27,11 @@ module.exports = {
     if (numHarv < MinHarv) {
       var h_tmp = _.sum(Game.creeps,
                       (c) => c.memory.role == 'harvester' &&
-                              c.memory.destid == '5873bcc211e3e4361b4d81ec'
+                              c.memory.destid == '5873bcc711e3e4361b4d827f'
                       );
 
-        if ( h_tmp < 2 ) { var dest = '5873bcc211e3e4361b4d81ec'; } // north
-        else { var dest = '5873bcc211e3e4361b4d81ed'; } // south
+        if ( h_tmp < 2 ) { var dest = '5873bcc711e3e4361b4d827f'; } // north
+        else { var dest = '5873bcc711e3e4361b4d827e'; } // south
 
         // try to spawn one
         name = Game.spawns.spawn_name.createCustomCreep(energy_avail, 'harvester',dest,spawn_name);
