@@ -35,7 +35,8 @@ module.exports = {
 
         // source status information
         for ( let source_id in Empire.sources[spawn_num]) {
-          console.log(spawn_name + " : " + Empire.sources[spawn_num][source_id]);
+          var source = Game.getObjectById(Empire.sources[spawn_num][source_id]);
+          console.log(spawn_name + " : " + source);          
         }
 
         // print the thing
