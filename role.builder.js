@@ -19,22 +19,33 @@ module.exports = {
         // complete a constructionSite
         if (creep.memory.working == true) {
             // find closest constructionSite
-            var constructionSite = creep.pos.findClosestByPath(FIND_CONSTRUCTION_SITES);
-           //var constructionSite = Game.getObjectById("599ebecb9b900d5b493c851e");
 
-            if (constructionSite != undefined) {
+           var constructionSite = creep.pos.findClosestByPath(FIND_CONSTRUCTION_SITES);
+            var droppedresource = creep.pos.findClosestByPath(FIND_DROPPED_ENERGY);
+
+            var droppedresource = creep.pos.findClosestByPath(FIND_DROPPED_RESOURCES, {
+              filter: (s) =>
+                ( s.structureType==STRUCTURE_CONTAINER ||
+                  s.structureType==STRUCTURE_STORAGE ) &&
+                  s.store[RESOURCE_ENERGY] > 90
+            });
+          
+
+            if ( constructionSite != undefined ) {
                 if (creep.build(constructionSite) == ERR_NOT_IN_RANGE) {
 		                creep.say("build");
                     creep.moveTo(constructionSite);
                 }
             }
-          	else if ( false  ) {
+
+            else if ( false  ) {
           		var energy = creep.pos.findClosestByRange(FIND_DROPPED_ENERGY);
                 if (creep.pickup(energy) == ERR_NOT_IN_RANGE) {
 			                 creep.say("drop-pick");
                         creep.moveTo(energy);
                 }
           	}
+
         }
         else {
                shared.pickupEnergy(creep)
