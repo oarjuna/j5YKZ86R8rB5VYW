@@ -98,7 +98,7 @@ module.exports.loop = function () {
 
   roleSpawn.run(2,Empire);
   gameStatus.display_status(2,Empire);
-  
+   
   //roleSpawn.run(2,Empire);
 	gameStatus.display_status(1,Empire);
 
