@@ -34,12 +34,13 @@ module.exports = {
         var lvl =  Game.spawns[spawn_name].room.controller.level;
 
         // source status information
+        var msg = '';
         for ( let source_id in Empire.sources[spawn_num]) {
           var source = Game.getObjectById(Empire.sources[spawn_num][source_id]);
           var source_energy = source.energy;
           var source_energy_cap = source.energyCapacity;
           var source_ticks = source.ticksToRegeneration;
-          var out = "Source: " + source_id + " - Ticks: " + source_ticks + " E: " + source_energy + "/" + source_energy_cap;
+          var out = " So: " + source_id + " - Ticks: " + source_ticks + " E: " + source_energy + "/" + source_energy_cap;
           var msg = msg + out;
         }
         console.log(msg);
