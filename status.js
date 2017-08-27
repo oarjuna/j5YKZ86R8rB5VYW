@@ -43,10 +43,10 @@ module.exports = {
           var out = "\tSo: " + source_id + " - Ticks: " + source_ticks + " E: " + source_energy + "/" + source_energy_cap;
           var msg = msg + out;
         }
-        console.log(msg);
 
         // print the thing
         console.log(spawn_name + ":" + lvl + " -- " + status1 + status2 + status3 + status4 + status5 + status7 + status8 + status9 + status10 + status11 + status12);
+        console.log(msg);
 
   }
 };
