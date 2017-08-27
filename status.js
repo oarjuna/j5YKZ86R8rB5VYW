@@ -53,7 +53,7 @@ module.exports = {
           var source_ticks = source.ticksToRegeneration;
           var out = "\tSo: " + source_id + " - Ticks: " + source_ticks + " E: " + source_energy + "/" + source_energy_cap;
           //var msg = msg + out;
-          console.log(msg);
+          console.log(out);
         }
   }
 };
