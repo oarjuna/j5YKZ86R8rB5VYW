@@ -19,13 +19,7 @@ module.exports = {
         // complete a constructionSite
         if (creep.memory.working == true) {
             // find closest constructionSite
-
            var constructionSite = creep.pos.findClosestByPath(FIND_CONSTRUCTION_SITES);
-           var droppedresource = creep.pos.findClosestByPath(FIND_DROPPED_RESOURCES, {
-            	filter: (s) =>
-        			( s.resourceType==RESOURCE_ENERGY )
-           });
-
 
             if ( constructionSite != undefined ) {
                 if (creep.build(constructionSite) == ERR_NOT_IN_RANGE) {
@@ -33,17 +27,10 @@ module.exports = {
                     creep.moveTo(constructionSite);
                 }
             }
-            else if ( droppedresource != undefined  ) {
-                if (creep.pickup(droppedresource) == ERR_NOT_IN_RANGE) {
-			                 creep.say("drop-pick");
-                       console.log(creep + " DR: " + droppedresource);
-                      creep.moveTo(droppedresource);
-                }
-          	}
-
         }
         else {
-               shared.pickupEnergy(creep)
+          // we'e out of energy
+          shared.pickupEnergy(creep)
         }
     }
 };
