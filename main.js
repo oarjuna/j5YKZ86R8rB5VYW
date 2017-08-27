@@ -101,7 +101,7 @@ module.exports.loop = function () {
   //roleSpawn3.run(scl[2][0],scl[2][1],scl[2][2],scl[2][3],scl[2][4],scl[2][5],scl[2][6],scl[2][7],scl3[8]);
   //roleSpawn.run(2,Empire);
 
-  roleSpawn.run(3,Empire);
+  roleSpawn.run(2,Empire);
 	gameStatus.display_status(1);
 
   //for (var spawn in Game.spawns){
