@@ -39,9 +39,7 @@ module.exports = {
           var source_energy = source.energy;
           var source_energy_cap = source.energyCapacity;
           var source_ticks = source.ticksToRegeneration;
-           
-          console.log(spawn_name + " : " + source.id " Ticks: " + source_ticks + " E: " + source_energy + "/" + source_energy_cap);
-
+          console.log(spawn_name + " : " + source.id + " Ticks: " + source_ticks + " E: " + source_energy + "/" + source_energy_cap);
         }
 
         // print the thing
