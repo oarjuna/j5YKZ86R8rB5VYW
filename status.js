@@ -1,6 +1,9 @@
 module.exports = {
 
-   display_status: function(foo) {
+   display_status: function(spawn_num,Empire) {
+     [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa] =  Empire.spawn_levels[spawn_num];
+     var spawn_name = Empire.spawn_names[spawn_num];
+     
      let x = -1;
      // spawn1
      var spawn1MinHarv = 4; // 4
