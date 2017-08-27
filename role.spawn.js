@@ -46,8 +46,8 @@ module.exports = {
 
         // try to spawn one
 
-        name = Game.spawns.spawn_names.createCustomCreep(energy_avail,'harvester',dest,spawn_name);
-        
+        name = Game.spawns[spawn_names].createCustomCreep(energy_avail,'harvester',dest,spawn_name);
+
         console.log("S# -- spawning harvester for: " + dest);
     }
 
