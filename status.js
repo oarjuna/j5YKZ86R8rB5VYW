@@ -42,7 +42,7 @@ module.exports = {
     	  //var status13 = " energy_avail -- " + energy_avail;
 
             // print the thing
-            console.log(": " + status11 + status12 + status13);
+            //console.log(": " + status11 + status12 + status13);
             console.log(": " + status1 + status2 + status3 + status4 + status5 +
                             status7 + status8 + status9 + status10);
 
