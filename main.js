@@ -14,7 +14,7 @@ var gameStatus = require('status');
 var roleSpawn1 = require('role.spawn1');
 var roleSpawn2 = require('role.spawn2');
 var roleSpawn3 = require('role.spawn3');
-    
+
 var roleSpawn = require('role.spawn');
 
 module.exports.loop = function () {
@@ -28,7 +28,7 @@ module.exports.loop = function () {
                 [
                   [ 4, 4, 5, 1, 0, 0, 1, 0, 0], // Spawn1
                   [ 3, 7, 1, 1, 0, 0, 1, 0, 0], // Spawn2
-                  [ 1, 1, 0, 0, 0, 0, 0, 0, 0], // Spawn3
+                  [ 4, 2, 0, 0, 0, 0, 0, 0, 0], // Spawn3
                   [ 0, 0, 0, 0, 0, 0, 0, 0, 0]  // Spawn4
                 ],
     sources:    [
