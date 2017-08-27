@@ -24,10 +24,6 @@ var roleSpawn3 = require('role.spawn3');
 */
   // spawn levels
 
-
-    function Hive(name) {
-      this.hives = name
-  }
 /*
   var scl[0] = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
   var scl[1] = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
@@ -37,15 +33,16 @@ var scl1 = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
 var scl2 = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
 var scl3 = [ 2, 1, 0, 0, 0, 0, 0, 0, 0];
 
-var Empire = new Hive('foo');
+var Empire = {
+  spawn_levels: [scl1,scl2,scl3]
+};
 
-  for (var cur_spawn_tmp in Game.spawns){
-     spawn_name = Game.spawns[cur_spawn_tmp].name;
-     //Empire.hives.push(spawn_name);
-   }
+  //for (var cur_spawn_tmp in Game.spawns){
+  //   spawn_name = Game.spawns[cur_spawn_tmp].name;
+  //}
 
 module.exports.loop = function () {
-  console.log("KPP: -- " + Empire.hives);
+  console.log("KPP: -- " + Empire.spawn_levels[0]);
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
   for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
