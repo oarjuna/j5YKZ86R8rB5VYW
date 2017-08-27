@@ -67,7 +67,7 @@ module.exports = function() {
       // round up to the nearest integer
       // t = ceil(K * W / M)
 
-      else if (roleName == "soldier") {
+      else if (roleName == "soldier_melee") {
         var body = [ TOUGH,TOUGH,TOUGH,TOUGH,                               // 40 - 4
                      TOUGH,TOUGH,TOUGH,TOUGH,                               // 40 - 4
                      MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,     // 500 - 10
@@ -75,15 +75,15 @@ module.exports = function() {
                      ATTACK,ATTACK,ATTACK,ATTACK                            // 320 - 4
                    ]; }     // 1000 total - balanced fatigue
 
-      else if (roleName == "soldier_rng") {
-        var body = [ TOUGH,TOUGH,TOUGH,TOUGH,TOUGH                          // 50 - 5
-                     TOUGH,TOUGH,TOUGH,TOUGH,TOUGH                          // 50 - 5
+      else if (roleName == "soldier_ranged") {
+        var body = [ TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,                          // 50 - 5
+                     TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,                          // 50 - 5
                      MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,     // 500 - 10
                      MOVE,MOVE,                                             // 100 - 2
                      RANGED_ATTACK,RANGED_ATTACK                            // 300 - 2
                    ]; }     // 1000 total - balanced fatigue
 
-      else if (roleName == "soldier_heal"){
+      else if (roleName == "soldier_healer"){
         var body = [ TOUGH,TOUGH,TOUGH,TOUGH,                               // 40 - 4
                      TOUGH,TOUGH,TOUGH,TOUGH,                               // 40 - 4
                      MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,     // 500 - 10
