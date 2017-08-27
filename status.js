@@ -31,11 +31,12 @@ module.exports = {
         var status10 =" S: " + numSold + "/" + MinSold;
 
         var status11 = "E: " + cur_energy + "/" + cur_energy_cap
-        var status12 = " UP: " + cur_room.controller.progress +
-                         "/" + cur_room.controller.progressTotal +
-                        " lvl: " + cur_room.controller.level;
+      //  var status12 = " UP: " + cur_room.controller.progress +
+        //                 "/" + cur_room.controller.progressTotal +
+        //                " lvl: " + cur_room.controller.level;
 
     	var status13 = " Stored -- ";
+      var status12 = "asfsd";
     	  //var status13 = " energy_avail -- " + energy_avail;
 
             // print the thing
