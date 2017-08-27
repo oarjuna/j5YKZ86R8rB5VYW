@@ -9,9 +9,9 @@ var roleClaimer = require('role.claimer');
 var roleRepairer = require('role.repairer');
 var roleEnergyMover = require('role.energymover');
 var roleSoldier = require('role.soldier');
-var roleSoldier = require('role.soldier_melee');
-var roleSoldier = require('role.soldier_ranged');
-var roleSoldier = require('role.soldier_healer');
+var roleSoldier_melee = require('role.soldier_melee');
+var roleSoldier_ranged = require('role.soldier_ranged');
+var roleSoldier_healer = require('role.soldier_healer');
 
 var gameStatus = require('status');
 var roleSpawn = require('role.spawn');
@@ -50,9 +50,9 @@ module.exports.loop = function () {
   for (let name in Game.creeps) {
   	var creep = Game.creeps[name];
     if (creep.memory.role == 'soldier')             { roleSoldier.run(creep); }
-    else if (creep.memory.role == 'soldier_melee')  { roleSoldier.run(creep); }
-    else if (creep.memory.role == 'soldier_ranged') { roleSoldier.run(creep); }
-    else if (creep.memory.role == 'soldier_healer') { roleSoldier.run(creep); }
+    else if (creep.memory.role == 'soldier_melee')  { roleSoldier_melee.run(creep); }
+    else if (creep.memory.role == 'soldier_ranged') { roleSoldier_ranged.run(creep); }
+    else if (creep.memory.role == 'soldier_healer') { roleSoldier_healer.run(creep); }
     else if (creep.memory.role == 'harvester')      { roleHarvester.run(creep); }
   	else if (creep.memory.role == 'deliverer')      { roleDeliverer.run(creep); }
   	else if (creep.memory.role == 'energy_mover')   { roleEnergyMover.run(creep); }
