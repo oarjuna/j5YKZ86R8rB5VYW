@@ -35,7 +35,7 @@ module.exports = {
                 }
             }
 
-            else if ( resourceType != undefined  ) {
+            else if ( droppedresource != undefined  ) {
                 if (creep.pickup(droppedresource) == ERR_NOT_IN_RANGE) {
 			                 creep.say("drop-pick");
                       creep.moveTo(droppedresource);
