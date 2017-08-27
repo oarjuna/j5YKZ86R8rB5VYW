@@ -42,17 +42,11 @@ var Empire = {
               ]
 };
 
-  //for (var cur_spawn_tmp in Game.spawns){
-  //   spawn_name = Game.spawns[cur_spawn_tmp].name;
-  //}
-
 module.exports.loop = function () {
 
-let x_tmp = 0;
-
   for (let xx in Empire.spawn_names ) {
-    console.log("SP: -- " + Empire.spawn_names[xx] + " - " + Empire.spawn_levels[xx]);
-    x_tmp++;
+    (MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa) =  Empire.spawn_levels[xx]);
+    console.log("SP: -- " + Empire.spawn_names[xx] + " - " + MinDeli);
   }
 
 
