@@ -3,11 +3,11 @@ module.exports = {
     /*
       Harvest, Deliv, Upgrade, Build, Energy, RemoHarv, Claim, Soldier, Repair
     */
-    run: function(spawn_name,Empire) {
+    run: function(spawn_num,Empire) {
+      [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa] =  Empire.spawn_levels[spawn_num];
+      var spawn_name = Empire.spawn_names[spawn_num];
 
-      //MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa) {
-
-        console.log("Sp -- " + MinHarv);
+        console.log("Sp -- " + MinHarv + " " + MinDeli);
 
         // count the number of creeps alive for each role born at
         var numHarv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthplace == spawn_name);
