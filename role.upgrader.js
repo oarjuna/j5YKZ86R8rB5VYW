@@ -7,13 +7,13 @@ module.exports = {
         // if creep is bringing energy to the controller but has no energy left
         if (creep.memory.working == true && creep.carry.energy == 0) {
             // switch state
-	    console.log(creep + " -- upgrader -- out of energy");
+	    //console.log(creep + " -- upgrader -- out of energy");
             creep.memory.working = false;
         }
         // if creep is harvesting energy but is full
         else if (creep.memory.working == false && creep.carry.energy == creep.carryCapacity) {
             // switch state
-	    console.log(creep + " -- upgrader -- energy capacity full");
+	    //console.log(creep + " -- upgrader -- energy capacity full");
             creep.memory.working = true;
         }
 
