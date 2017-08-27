@@ -5,8 +5,6 @@ module.exports = {
     */
     run: function(spawn1MinHarv,spawn1MinDeli,spawn1MinUgra,spawn1MinBuil,spawn1MinEner,spawn1MinReHa,spawn1MinClai,spawn1MinSold,spawn1MinRepa) {
 
-        console.log("Sp1 -- " + spawn1MinHarv);
-
         // count the number of creeps alive for each role born at Spawn1
         var numSpawn1Harv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthplace == 'Spawn1');
         var numSpawn1ReHa = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harv' && c.memory.birthplace == 'Spawn1');
