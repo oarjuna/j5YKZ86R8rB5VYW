@@ -28,6 +28,8 @@ module.exports = {
    }
 
    // if not enough harvesters
+   // TODO -- deliver_to_spawn memory flag
+
    else  if (numHarv < MinHarv) {
       for (let xx in Empire.sources[spawn_num] ) {
         var h_tmp = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.destid == Empire.sources[spawn_num][xx]);
@@ -73,6 +75,7 @@ module.exports = {
     }
 
     // if not enough remote harvesters
+    // TODO -- remote harv do_building flag
     else if (numReHa < MinReHa) {
         // count the number of remote harvs per flag
         var c_flag1 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harv' && c.memory.destid == 'Flag1');
