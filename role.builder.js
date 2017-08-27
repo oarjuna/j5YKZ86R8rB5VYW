@@ -22,14 +22,9 @@ module.exports = {
 
            var constructionSite = creep.pos.findClosestByPath(FIND_CONSTRUCTION_SITES);
             var droppedresource = creep.pos.findClosestByPath(FIND_DROPPED_ENERGY);
+            var droppedresource = creep.pos.findClosestByPath(FIND_DROPPED_RESOURCES);
 
-            var droppedresource = creep.pos.findClosestByPath(FIND_DROPPED_RESOURCES, {
-              filter: (s) =>
-                ( s.structureType==STRUCTURE_CONTAINER ||
-                  s.structureType==STRUCTURE_STORAGE ) &&
-                  s.store[RESOURCE_ENERGY] > 90
-            });
-          
+            console.log(creep + " DR: " + droppedresource);
 
             if ( constructionSite != undefined ) {
                 if (creep.build(constructionSite) == ERR_NOT_IN_RANGE) {
