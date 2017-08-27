@@ -30,7 +30,7 @@ module.exports.loop = function () {
                   [ 4, 4, 5, 1, 0, 0, 0, 0, 0], // Spawn1
                   [ 3, 7, 1, 1, 0, 0, 0, 0, 0], // Spawn2
                   [ 4, 2, 0, 1, 0, 0, 0, 0, 1], // Spawn3
-                  [ 0, 0, 0, 0, 0, 0, 0, 0, 0]  // Spawn4
+                  [ 0, 0, 0, 0, 0, 0, 0, 1, 0]  // Spawn4
                 ],
     sources:    [
                   [ '5873bcc211e3e4361b4d81ec','5873bcc211e3e4361b4d81ed'], // Spawn1
