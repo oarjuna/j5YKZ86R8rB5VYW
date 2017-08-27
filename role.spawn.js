@@ -24,7 +24,7 @@ module.exports = {
    //var energy_avail = Game.spawns.spawn_name.room.energyCapacityAvailable;
    var energy_avail = 300;
 
-   console.log("S# -- " + numHarv + " " + spawn_name + " " + Empire.sources[spawn_num][1]);
+   console.log("S# -- " + numHarv + " " + MinHarv + " "  + spawn_name + " " + Empire.sources[spawn_num][1]);
 
    // if not enough harvesters
     if (numHarv < MinHarv) {
