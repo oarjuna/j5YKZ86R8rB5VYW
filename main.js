@@ -44,7 +44,13 @@ var Empire = {
                 [ '5873bcc511e3e4361b4d822e','5873bcc511e3e4361b4d822f'], // Spawn2
                 [ '5873bcc711e3e4361b4d827e','5873bcc711e3e4361b4d827f'], // Spawn3
                 [ '000000000000000000000001','000000000000000000000002']  // Spawn4
-              ]
+              ],
+  harvs_per_source: [
+                      [2,2], // Spawn1
+                      [1,2], // Spawn2
+                      [2,2], // Spawn3
+                      [1,1]  // Spawn4
+                    ]
 };
 
 module.exports.loop = function () {
