@@ -69,9 +69,17 @@ module.exports.loop = function () {
 
 /*
   Harvest, Deliv, Upgrade, Buid, Energy, RemoHarv, Claim, Soldier, Repair
-*/
+
   // Run the spawn logics
-  roleSpawn1.run(scl1[0],scl1[1],scl1[2],scl1[3],scl1[4],scl1[5],scl1[6],scl1[7],scl1[8]);
+  for (let xx in Empire.spawn_names ) {
+    [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa] =  Empire.spawn_levels[xx];
+    roleSpawn1.run(MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa);
+    console.log("SP: -- " + Empire.spawn_names[xx] + " -- " + MinHarv);
+    */
+
+  }
+  //roleSpawn1.run(scl1[0],scl1[1],scl1[2],scl1[3],scl1[4],scl1[5],scl1[6],scl1[7],scl1[8]);
+  roleSpawn1.run( Empire.spawn_levels[0]);
   roleSpawn2.run(scl2[0],scl2[1],scl2[2],scl2[3],scl2[4],scl2[5],scl2[6],scl2[7],scl2[8]);
   //roleSpawn3.run(scl[2][0],scl[2][1],scl[2][2],scl[2][3],scl[2][4],scl[2][5],scl[2][6],scl[2][7],scl3[8]);
 
