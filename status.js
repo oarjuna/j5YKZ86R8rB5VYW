@@ -51,7 +51,7 @@ module.exports = {
           var source_energy = source.energy;
           var source_energy_cap = source.energyCapacity;
           var source_ticks = source.ticksToRegeneration;
-          var out = "\tSo: " + source_id + " - t:" + source_ticks + " @ " + source_energy;
+          var out = "\tSo: " + source_id + " - " + source_energy + " w/ " + source_ticks + "ticks remain";
           //var msg = msg + out;
           console.log(out);
         }
