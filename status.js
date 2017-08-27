@@ -41,7 +41,7 @@ module.exports = {
         var status12 = " UP: " + Game.spawns[spawn_name].room.controller.progress + "/" + Game.spawns[spawn_name].room.controller.progressTotal;
         var lvl =  Game.spawns[spawn_name].room.controller.level;
 
-        console.log(spawn_name + " : lvl" + lvl + " -- " + status1 + status2 + status3 + status4 + status5 + status7 + status8 + status9 + status10 + status11 + status12);
+        console.log(spawn_name + " : lvl" + lvl + status11 + status12 + " -- " + status1 + status2 + status3 + status4 + status5 + status7 + status8 + status9 + status10);
         console.log("\t" + status21 + status22 + status23);
 
         // source status information
