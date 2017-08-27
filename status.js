@@ -18,7 +18,9 @@ module.exports = {
 
         //var cur_room = Game.spawns.[spawn_name].room;
         //var cur_energy_cap = Game.spawns.[spawn_name].room.energyCapacityAvailable;
-        //var cur_energy = Game.spawns.[spawn_name].room.energyAvailable;
+
+        var cur_energy = Game.spawns[spawn_name].room.energyAvailable;
+        var cur_energy_cap = Game.spawns[spawn_name].room.energyCapacityAvailable;
 
         var status1 = "H: " + numHarv + "/" + MinHarv;
         var status2 = " U: " + numUpgr + "/" + MinUgra;
@@ -30,7 +32,7 @@ module.exports = {
         var status9 = " EM: " + numEnMo  + "/" + MinEner;
         var status10 =" S: " + numSold + "/" + MinSold;
 
-      //  var status11 = "E: " + cur_energy + "/" + cur_energy_cap
+        var status11 = "E: " + cur_energy + "/" + cur_energy_cap
       //  var status12 = " UP: " + cur_room.controller.progress +
         //                 "/" + cur_room.controller.progressTotal +
         //                " lvl: " + cur_room.controller.level;
@@ -44,7 +46,7 @@ module.exports = {
             // print the thing
             //console.log(": " + status11 + status12 + status13);
             console.log(spawn_name + ": " + status1 + status2 + status3 + status4 + status5 +
-                            status7 + status8 + status9 + status10);
+                            status7 + status8 + status9 + status10 + status11);
 
 ////// end
 

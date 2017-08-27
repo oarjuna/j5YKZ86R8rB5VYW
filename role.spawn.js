@@ -21,10 +21,13 @@ module.exports = {
         var numWaRe = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer' && c.memory.birthplace == spawn_name);
         var numEnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthplace == spawn_name);
 
+
+// TODO
    var energy_avail = Game.spawns[spawn_name].room.energyCapacityAvailable;
    //var energy_avail = 300;
 
    //console.log(spawn_name + " -- " + spawn_num  + " " + numHarv + " " + MinHarv + " "  + spawn_name + " " + Empire.sources[spawn_num][1]);
+
 
    // if not enough harvesters
     if (numHarv < MinHarv) {
@@ -37,7 +40,7 @@ module.exports = {
           );
 
           console.log(spawn_name + " -- " + h_tmp  + " " +  Empire.harvs_per_source[spawn_num][xx]);
-
+  // TODO
         if ( h_tmp < Empire.harvs_per_source[xx][0]) {
            var dest =  Empire.sources[spawn_num][xx];
         }
