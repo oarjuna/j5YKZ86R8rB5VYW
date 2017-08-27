@@ -121,7 +121,7 @@ module.exports = {
     // TODO
 
     // local Tower control
-    var towers = Game.spawns[spawn_name].find(FIND_STRUCTURES, {
+    var towers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
         filter: (s) => s.structureType == STRUCTURE_TOWER
     });
 
