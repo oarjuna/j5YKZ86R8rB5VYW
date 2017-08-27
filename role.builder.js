@@ -1,10 +1,8 @@
 var shared  = require('func.shared');
-//var roleHarv = require('role.harvester');
 
 module.exports = {
-    // a function to run the logic for this role
     run: function(creep) {
-	creep.say("BB");
+	     creep.say("BB");
         // if creep is trying to complete a constructionSite but has no energy left
         if (creep.memory.working == true && creep.carry.energy == 0) {
             // switch state
@@ -26,23 +24,17 @@ module.exports = {
 
             if (constructionSite != undefined) {
                 if (creep.build(constructionSite) == ERR_NOT_IN_RANGE) {
-		    creep.say("build");
+		                creep.say("build");
                     creep.moveTo(constructionSite);
                 }
             }
-	else if ( false  ) {
-	//else if ( creep.pos.findClosestByRange(FIND_DROPPED_ENERGY)  ) {
-		// if you  can find energy laying around //
-		var energy = creep.pos.findClosestByRange(FIND_DROPPED_ENERGY);
+          	else if ( false  ) {
+          		var energy = creep.pos.findClosestByRange(FIND_DROPPED_ENERGY);
                 if (creep.pickup(energy) == ERR_NOT_IN_RANGE) {
 			                 creep.say("drop-pick");
                         creep.moveTo(energy);
                 }
-
-	}
-            else {
-                //roleHarv.run(creep);
-            }
+          	}
         }
         else {
                shared.pickupEnergy(creep)
