@@ -7,7 +7,7 @@ module.exports = {
       [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa] =  Empire.spawn_levels[spawn_num];
       var spawn_name = Empire.spawn_names[spawn_num];
 
-        console.log("Sp -- " + MinHarv + " " + spawn_name);
+        console.log("Sp -- " + MinHarv + " " + spawn_name + " " + Empire.sources[spawn_num]);
 
         // count the number of creeps alive for each role born at
         var numHarv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthplace == spawn_name);
