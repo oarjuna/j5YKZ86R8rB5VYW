@@ -22,11 +22,6 @@ module.exports = {
       creep.memory.working = true;
     }
 
-    // debugging
-    if ( creep.memory.birthplace == 'Spawn1') {
-      console.log(creep + " dest: " + creep.memory.destid);
-    }
-
     // if creep is supposed to transfer energy to a structure
     if (creep.memory.working == true) {
       // START UNLOAD

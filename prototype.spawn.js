@@ -18,7 +18,6 @@ module.exports = function() {
       else if (roleName == 'upgrader')  { var body = [ WORK, MOVE, MOVE, CARRY, CARRY ]; } // 300
       else if (roleName == 'deliverer') { var body = [ WORK, MOVE, MOVE, CARRY, CARRY ]; } // 300
       else if (roleName == "soldier")   { var body = [ TOUGH, TOUGH, TOUGH, TOUGH, MOVE, ATTACK ,MOVE, ATTACK]; } // 300
-
     }
 
     // 550 - 799 energy_avail
