@@ -45,7 +45,9 @@ module.exports = {
         //else { var dest =  Empire.sources[spawn_num][1]; } // south
 
         // try to spawn one
-        name = Game.spawns.spawn_name.createCustomCreep(energy_avail,'harvester',dest,spawn_name);
+
+        name = Game.spawns.spawn_names.createCustomCreep(energy_avail,'harvester',dest,spawn_name);
+        
         console.log("S# -- spawning harvester for: " + dest);
     }
 
