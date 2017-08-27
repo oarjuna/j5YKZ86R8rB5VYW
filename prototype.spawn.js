@@ -17,7 +17,7 @@ module.exports = function() {
       else if (roleName == 'repairer')  { var body = [ WORK, MOVE, MOVE, CARRY, CARRY ]; } // 300
       else if (roleName == 'upgrader')  { var body = [ WORK, MOVE, MOVE, CARRY, CARRY ]; } // 300
       else if (roleName == 'deliverer') { var body = [ WORK, MOVE, MOVE, CARRY, CARRY ]; } // 300
-      else if (roleName == "soldier")   { var body = [ MOVE, TOUGH, TOUGH, TOUGH, MOVE, TOUGH, ATTACK, ATTACK]; } // 300
+      else if (roleName == "soldier")   { var body = [ TOUGH, TOUGH, TOUGH, TOUGH, MOVE, ATTACK ,MOVE, ATTACK]; } // 300
 
     }
 
@@ -31,7 +31,7 @@ module.exports = function() {
       else if (roleName == "remote_harv") { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; } // 700
       else if (roleName == "claimer")     { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY ]; }              // 600
       else if (roleName == "claimer_lg")  { var body = [ CLAIM, MOVE, MOVE]; roleName = "claimer"; }                                    // 700
-      else if (roleName == "soldier")     { var body = [ MOVE, TOUGH, TOUGH, TOUGH, MOVE, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK]; }       // 460 
+      else if (roleName == "soldier")     { var body = [ TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, ATTACK, MOVE, ATTACK, MOVE, ATTACK, MOVE, ATTACK]; }   // 550
     }
 
     // 800 energy_avail
