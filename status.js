@@ -41,6 +41,9 @@ module.exports = {
         var status12 = " UP: " + Game.spawns[spawn_name].room.controller.progress + "/" + Game.spawns[spawn_name].room.controller.progressTotal;
         var lvl =  Game.spawns[spawn_name].room.controller.level;
 
+        console.log(spawn_name + " : lvl" + lvl + " -- " + status1 + status2 + status3 + status4 + status5 + status7 + status8 + status9 + status10 + status11 + status12);
+        console.log("\t" + status21 + status22 + status23);
+
         // source status information
         var msg = '';
         for ( let source_id in Empire.sources[spawn_num]) {
@@ -49,13 +52,8 @@ module.exports = {
           var source_energy_cap = source.energyCapacity;
           var source_ticks = source.ticksToRegeneration;
           var out = "\tSo: " + source_id + " - Ticks: " + source_ticks + " E: " + source_energy + "/" + source_energy_cap;
-          var msg = msg + out;
+          //var msg = msg + out;
+          console.log(msg);
         }
-
-        // print the thing
-        console.log(spawn_name + " : lvl" + lvl + " -- " + status1 + status2 + status3 + status4 + status5 + status7 + status8 + status9 + status10 + status11 + status12);
-        console.log("\t" + status21 + status22 + status23);
-        console.log(msg);
-
   }
 };
