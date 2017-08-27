@@ -117,12 +117,16 @@ module.exports = {
         name = Game.spawns[spawn_name].createCustomCreep(energy_avail, role, dest,spawn_name);
     }
 
-    /*
+
+    // TODO
+
     // local Tower control
-    var towers = Game.rooms.W28S81.find(FIND_STRUCTURES, {
+    var towers = Game.spawns[spawn_name].find(FIND_STRUCTURES, {
         filter: (s) => s.structureType == STRUCTURE_TOWER
     });
 
+
+    /*
     for (let tower of towers) {
       var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
 
