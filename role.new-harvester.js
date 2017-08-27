@@ -23,7 +23,7 @@ module.exports = {
     }
 
     // debugging
-    if ( creep.memory.birthplace == 'Spawn3') {
+    if ( creep.memory.birthplace == 'Spawn1') {
       console.log(creep + " dest: " + creep.memory.destid);
     }
 
