@@ -29,14 +29,16 @@ module.exports = {
    // if not enough harvesters
     if (numHarv < MinHarv) {
 
-      for (let xx in Empire.sources ) {
+      for (let xx in Empire.sources[spawn_num] ) {
+
         var h_tmp = _.sum(Game.creeps,
           (c) => c.memory.role == 'harvester' &&
                  c.memory.destid == Empire.sources[spawn_num][xx]
           );
+
           console.log("S# -- " + h_tmp  + " " +  Empire.harvs_per_source[xx]);
 
-        if ( h_tmp < Empire.harvs_per_source[xx]) {
+        if ( h_tmp < Empire.harvs_per_source[xx][0]) {
            var dest =  Empire.sources[spawn_num][xx];
         }
       }
