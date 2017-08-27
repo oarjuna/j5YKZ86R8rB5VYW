@@ -65,13 +65,21 @@ module.exports = {
       else {
         // upgrade the controller
         var structure = creep.room.controller;
+        var contr_flag = true;
         creep.say("deliv.XX");
       }
 
-      if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-        // move towards it
-        creep.moveTo(structure);
+      if ( contr_flag == true ) {
+          if (creep.upgradeController(structure) == ERR_NOT_IN_RANGE) {
+            creep.moveTo(structure);
+          }
       }
+      else {
+        if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+          creep.moveTo(structure);
+        }
+      }
+
     } // End UNLOAD
     else {
       // when Empty

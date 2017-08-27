@@ -21,16 +21,13 @@ module.exports = {
 
    var energy_avail = Game.spawns[spawn_name].room.energyCapacityAvailable;
 
-   //console.log(spawn_name + " -- " + spawn_num  + " " + numHarv + " " + MinHarv + " "  + spawn_name + " " + Empire.sources[spawn_num][1]);
-
-   //console.log(spawn_name + " - hvs@0 - " + Empire.harvs_per_source[spawn_num][0] + " " + Empire.sources[spawn_num][0]);
-   //qconsole.log(spawn_name + " - hvs@1 - " + Empire.harvs_per_source[spawn_num][1] + " " + Empire.sources[spawn_num][1]);
-
-   // if not enough harvesters
+   // soldiers
     if (numSold < MinSold) {
        console.log(spawn_name + " -- spawning soldier");
        name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'soldier','Attack',spawn_name);
    }
+
+   // if not enough harvesters
    else  if (numHarv < MinHarv) {
       for (let xx in Empire.sources[spawn_num] ) {
         var h_tmp = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.destid == Empire.sources[spawn_num][xx]);
@@ -39,7 +36,6 @@ module.exports = {
            var dest =  Empire.sources[spawn_num][xx];
         }
       }
-
         // try to spawn one
         name = Game.spawns[spawn_name].createCustomCreep(energy_avail,'harvester',dest,spawn_name);
         console.log(spawn_name + " -- spawning harvester for: "+ dest);

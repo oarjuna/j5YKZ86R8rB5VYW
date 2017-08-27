@@ -15,12 +15,10 @@ var roleSpawn = require('role.spawn');
 // START
 module.exports.loop = function () {
 
-
-
   var Empire = {
     spawn_names: ['Spawn1','Spawn2','Spawn3','Spawn4'],
     spawn_levels:
-                //  Harvest, Deliv, Upgrade, Build, Energy, RemoHarv, Claim, Soldier, Repair
+                //  Harvest, Deliv, Upgrade, Build, Energy, RemoteHarv, Claim, Soldier, Repair
                 [
                   [ 4, 4, 5, 1, 0, 0, 0, 0, 0], // Spawn1
                   [ 3, 7, 1, 1, 0, 0, 0, 0, 0], // Spawn2
@@ -40,7 +38,6 @@ module.exports.loop = function () {
                         [0,0]  // Spawn4
                       ]
   };
-
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
   for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
