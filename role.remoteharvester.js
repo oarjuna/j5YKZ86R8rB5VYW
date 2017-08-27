@@ -2,6 +2,7 @@ module.exports = {
   run: function(creep) {
 	  creep.say("!!");
 
+    // TODO -- should be a creep.memory item
     var do_building = false;
 
     // get your assignment

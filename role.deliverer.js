@@ -16,7 +16,7 @@ module.exports = {
       //console.log(creep + " -- deliv -- energy capacity full");
       creep.memory.working = true;
     }
-    
+
 
     // Do stuff
 
