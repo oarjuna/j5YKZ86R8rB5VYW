@@ -21,10 +21,10 @@ module.exports = {
             // find closest constructionSite
 
            var constructionSite = creep.pos.findClosestByPath(FIND_CONSTRUCTION_SITES);
-            var droppedresource = creep.pos.findClosestByPath(FIND_DROPPED_RESOURCES, {
+           var droppedresource = creep.pos.findClosestByPath(FIND_DROPPED_RESOURCES, {
             	filter: (s) =>
-        				( s.resourceType==RESOURCE_ENERGY )
-            });
+        			( s.resourceType==RESOURCE_ENERGY )
+           });
 
             console.log(creep + " DR: " + droppedresource);
 
@@ -34,7 +34,6 @@ module.exports = {
                     creep.moveTo(constructionSite);
                 }
             }
-
             else if ( droppedresource != undefined  ) {
                 if (creep.pickup(droppedresource) == ERR_NOT_IN_RANGE) {
 			                 creep.say("drop-pick");
