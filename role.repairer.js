@@ -3,11 +3,11 @@ var roleBuilder = require('role.builder');
 module.exports = {
     run: function(creep) {
         if (creep.memory.working == true && creep.carry.energy == 0) {
-	    console.log(creep + " -- repairer -- out of energy")
+	    //console.log(creep + " -- repairer -- out of energy")
             creep.memory.working = false;
         }
         else if (creep.memory.working == false && creep.carry.energy == creep.carryCapacity) {
-	    console.log(creep + " -- repairer -- full of energy")
+	   // console.log(creep + " -- repairer -- full of energy")
             creep.memory.working = true;
         }
 
@@ -21,7 +21,7 @@ module.exports = {
             if (structure != undefined) {
                 // try to repair it, if it is out of range
 		            creep.say("repair");
-                console.log(creep + " -- repairer --repair -- " + structure );
+              //  console.log(creep + " -- repairer --repair -- " + structure );
                 if (creep.repair(structure) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(structure);
                 }
@@ -40,7 +40,7 @@ module.exports = {
                                s.store[RESOURCE_ENERGY] > 90
                 });
 
-                console.log(creep + " -- repairer --pickup -- " + container );
+                //console.log(creep + " -- repairer --pickup -- " + container );
 
                 if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                         creep.moveTo(container);
