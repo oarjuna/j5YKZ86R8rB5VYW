@@ -21,8 +21,8 @@ module.exports = {
         var numWaRe = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer' && c.memory.birthplace == spawn_name);
         var numEnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthplace == spawn_name);
 
-   //var energy_avail = Game.spawns.spawn_name.room.energyCapacityAvailable;
-   var energy_avail = 300;
+   var energy_avail = Game.spawns[spawn_name].room.energyCapacityAvailable;
+   //var energy_avail = 300;
 
    //console.log(spawn_name + " -- " + spawn_num  + " " + numHarv + " " + MinHarv + " "  + spawn_name + " " + Empire.sources[spawn_num][1]);
 

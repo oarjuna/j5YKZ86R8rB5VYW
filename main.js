@@ -20,7 +20,6 @@ var roleSpawn = require('role.spawn');
 module.exports.loop = function () {
   var scl1 = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
   var scl2 = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
-  var scl3 = [ 2, 1, 0, 0, 0, 0, 0, 0, 0];
 
   var Empire = {
     spawn_names: ['Spawn1','Spawn2','Spawn3','Spawn4'],
