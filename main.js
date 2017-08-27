@@ -29,9 +29,6 @@ var roleSpawn3 = require('role.spawn3');
   var scl[1] = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
   var scl[2] = [ 2, 1, 0, 0, 0, 0, 0, 0, 0];
 */
-var scl1 = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
-var scl2 = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
-var scl3 = [ 2, 1, 0, 0, 0, 0, 0, 0, 0];
 
 var Empire = {
   spawn_names: ['Spawn1','Spawn2','Spawn3'],
@@ -43,6 +40,9 @@ var Empire = {
 };
 
 module.exports.loop = function () {
+  var scl1 = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
+  var scl2 = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
+  var scl3 = [ 2, 1, 0, 0, 0, 0, 0, 0, 0];
 
   for (let xx in Empire.spawn_names ) {
     [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa] =  Empire.spawn_levels[xx];
@@ -75,10 +75,9 @@ module.exports.loop = function () {
     [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa] =  Empire.spawn_levels[xx];
     roleSpawn1.run(MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa);
     console.log("SP: -- " + Empire.spawn_names[xx] + " -- " + MinHarv);
-
-
   }
     */
+
   roleSpawn1.run(scl1[0],scl1[1],scl1[2],scl1[3],scl1[4],scl1[5],scl1[6],scl1[7],scl1[8]);
   //roleSpawn1.run( Empire.spawn_levels[0]);
   roleSpawn2.run(scl2[0],scl2[1],scl2[2],scl2[3],scl2[4],scl2[5],scl2[6],scl2[7],scl2[8]);
