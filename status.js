@@ -36,7 +36,7 @@ module.exports = {
                         " lvl: " + cur_room.controller.level;
 
     	var status13 = " Stored -- ";
-    	//var status13 = " energy_avail -- " + energy_avail;
+    	  //var status13 = " energy_avail -- " + energy_avail;
 
             // print the thing
             console.log(": " + status11 + status12 + status13);
