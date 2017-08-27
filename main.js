@@ -41,7 +41,7 @@ module.exports.loop = function () {
     harvs_per_source: [
                         [2,2], // Spawn1
                         [1,2], // Spawn2
-                        [1,1], // Spawn3
+                        [2,2], // Spawn3
                         [1,1]  // Spawn4
                       ]
   };
