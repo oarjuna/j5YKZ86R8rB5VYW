@@ -34,6 +34,7 @@ var scl2 = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
 var scl3 = [ 2, 1, 0, 0, 0, 0, 0, 0, 0];
 
 var Empire = {
+  spawn_names: ['Spawn1','Spawn2','Spawn3']
   spawn_levels: [scl1,scl2,scl3]
 };
 
@@ -42,7 +43,7 @@ var Empire = {
   //}
 
 module.exports.loop = function () {
-  console.log("KPP: -- " + Empire.spawn_levels[0]);
+  console.log("SP: -- " Empire.spawn_names[0] + " - " + Empire.spawn_levels[0]);
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
   for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
