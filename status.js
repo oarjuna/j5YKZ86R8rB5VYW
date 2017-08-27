@@ -32,7 +32,7 @@ module.exports = {
         var status9 = " EM: " + numEnMo  + "/" + MinEner;
         var status10 =" S: " + numSold + "/" + MinSold;
 
-        var status21 = " SM: " + numSolM + "/" + MinSolM;
+        var status21 = "SM: " + numSolM + "/" + MinSolM;
         var status22 = " SR: " + numSolR + "/" + MinSolR;
         var status23 = " SH: " + numSolH + "/" + MinSolH;
 
