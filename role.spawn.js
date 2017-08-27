@@ -35,7 +35,6 @@ module.exports = {
       for (let xx in Empire.sources[spawn_num] ) {
         var h_tmp = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.destid == Empire.sources[spawn_num][xx]);
         //console.log(spawn_name + " -- " + h_tmp  + " " +  Empire.harvs_per_source[spawn_num][xx]);
-        // TODO ??
         if ( h_tmp < Empire.harvs_per_source[spawn_num][xx]) {
            var dest =  Empire.sources[spawn_num][xx];
         }
