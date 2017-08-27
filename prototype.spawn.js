@@ -17,7 +17,7 @@ module.exports = function() {
       else if (roleName == 'repairer')  { var body = [ WORK, MOVE, MOVE, CARRY, CARRY ]; } // 300
       else if (roleName == 'upgrader')  { var body = [ WORK, MOVE, MOVE, CARRY, CARRY ]; } // 300
       else if (roleName == 'deliverer') { var body = [ WORK, MOVE, MOVE, CARRY, CARRY ]; } // 300
-      else if (roleName == "soldier")   { var body = [ MOVE, TOUGH, TOUGH, TOUGH, MOVE, TOUGH, ATTACK, ATTACK]; } // 300  }
+      else if (roleName == "soldier")   { var body = [ MOVE, TOUGH, TOUGH, TOUGH, MOVE, TOUGH, ATTACK, ATTACK]; } // 300
 
     }
 
@@ -31,6 +31,7 @@ module.exports = function() {
       else if (roleName == "remote_harv") { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; } // 700
       else if (roleName == "claimer")     { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY ]; }              // 600
       else if (roleName == "claimer_lg")  { var body = [ CLAIM, MOVE, MOVE]; roleName = "claimer"; }                                    // 700
+      else if (roleName == "soldier")     { var body = [ MOVE, TOUGH, TOUGH, TOUGH, MOVE, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK]; }       // 460 
     }
 
     // 800 energy_avail
@@ -44,7 +45,7 @@ module.exports = function() {
       else if (roleName == "remote_harv") { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; } // 700 }
       else if (roleName == "claimer")     { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY ]; } //  600 }
       else if (roleName == "claimer_lg")  { var body = [ CLAIM, MOVE, MOVE, MOVE, MOVE ]; roleName = "claimer";  } // 800 }
-      else if (roleName == "soldier")     { var body = [ TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,ATTACK,ATTACK,ATTACK,ATTACK];  }// 900 }
+      else if (roleName == "soldier")     { var body = [ TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,ATTACK,ATTACK,ATTACK,ATTACK];  }// 720 }
     }
 
     // >= 1100 energy_avail
