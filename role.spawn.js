@@ -23,8 +23,8 @@ module.exports = {
 
    //console.log(spawn_name + " -- " + spawn_num  + " " + numHarv + " " + MinHarv + " "  + spawn_name + " " + Empire.sources[spawn_num][1]);
 
-   console.log(spawn_name + " - hvs@0 - " + Empire.harvs_per_source[spawn_num][0]);
-   console.log(spawn_name + " - hvs@1 - " + Empire.harvs_per_source[spawn_num][1]);
+   console.log(spawn_name + " - hvs@0 - " + Empire.harvs_per_source[spawn_num][0] + " " + Empire.sources[spawn_num][0]);
+   console.log(spawn_name + " - hvs@1 - " + Empire.harvs_per_source[spawn_num][1] + " " + Empire.sources[spawn_num][1]);
 
 
    // if not enough harvesters
