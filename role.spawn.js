@@ -148,6 +148,5 @@ module.exports = {
           tower.repair(repair_target);
         }
     }
-    */
 }
 };
