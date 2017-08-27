@@ -10,12 +10,12 @@ var roleRepairer = require('role.repairer');
 var roleEnergyMover = require('role.energymover');
 var roleSoldier = require('role.soldier');
 var gameStatus = require('status');
-
-var roleSpawn1 = require('role.spawn1');
-var roleSpawn2 = require('role.spawn2');
-var roleSpawn3 = require('role.spawn3');
-
 var roleSpawn = require('role.spawn');
+
+//var roleSpawn1 = require('role.spawn1');
+//var roleSpawn2 = require('role.spawn2');
+//var roleSpawn3 = require('role.spawn3');
+
 //
 module.exports.loop = function () {
 
