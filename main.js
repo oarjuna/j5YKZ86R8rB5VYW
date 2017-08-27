@@ -99,6 +99,7 @@ module.exports.loop = function () {
   //roleSpawn1.run( Empire.spawn_levels[0]);
   roleSpawn2.run(scl2[0],scl2[1],scl2[2],scl2[3],scl2[4],scl2[5],scl2[6],scl2[7],scl2[8]);
   //roleSpawn3.run(scl3[0],scl3[1],scl3[2],scl3[3],scl3[4],scl3[5],scl3[6],scl3[7],scl3[8]);
+
   roleSpawn.run(2,Empire);
 
   //roleSpawn.run(2,Empire);
