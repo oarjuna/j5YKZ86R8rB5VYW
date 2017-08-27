@@ -32,10 +32,16 @@ var roleSpawn3 = require('role.spawn3');
 
 var Empire = {
   spawn_names: ['Spawn1','Spawn2','Spawn3'],
-  spawn_levels: [
+  spawn_levels:
+              [
                 [ 4, 4, 5, 1, 0, 0, 1, 0, 0], // Spawn1
                 [ 3, 7, 1, 1, 0, 0, 1, 0, 0], // Spawn2
                 [ 2, 1, 0, 0, 0, 0, 0, 0, 0]  // Spawn3
+              ],
+  sources:    [
+                [ '5873bcc211e3e4361b4d81ec','5873bcc211e3e4361b4d81ed'], // Spawn1
+                [ '5873bcc511e3e4361b4d822e','5873bcc511e3e4361b4d822f'], // Spawn2
+                [ '5873bcc711e3e4361b4d827e','5873bcc711e3e4361b4d827f'], // Spawn3
               ]
 };
 
@@ -72,7 +78,9 @@ module.exports.loop = function () {
 
   // Run the spawn logics
   for (let xx in Empire.spawn_names ) {
+
     [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa] =  Empire.spawn_levels[xx];
+
     roleSpawn1.run(MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa);
     console.log("SP: -- " + Empire.spawn_names[xx] + " -- " + MinHarv);
   }
