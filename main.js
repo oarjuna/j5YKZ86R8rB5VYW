@@ -45,8 +45,8 @@ var Empire = {
 module.exports.loop = function () {
 
   for (let xx in Empire.spawn_names ) {
-    //MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa =  Empire.spawn_levels[xx];
-    console.log("SP: -- " + Empire.spawn_names[xx] + " - ");
+    [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa] =  Empire.spawn_levels[xx];
+    console.log("SP: -- " + Empire.spawn_names[xx] + " -- " + MinHarv);
   }
 
 
