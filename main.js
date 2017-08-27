@@ -36,9 +36,9 @@ var scl3 = [ 2, 1, 0, 0, 0, 0, 0, 0, 0];
 var Empire = {
   spawn_names: ['Spawn1','Spawn2','Spawn3'],
   spawn_levels: [
-                [ 4, 4, 5, 1, 0, 0, 1, 0, 0],
-                [ 3, 7, 1, 1, 0, 0, 1, 0, 0],
-                [ 2, 1, 0, 0, 0, 0, 0, 0, 0]
+                [ 4, 4, 5, 1, 0, 0, 1, 0, 0], // Spawn1
+                [ 3, 7, 1, 1, 0, 0, 1, 0, 0], // Spawn2
+                [ 2, 1, 0, 0, 0, 0, 0, 0, 0]  // Spawn3
               ]
 };
 
@@ -47,7 +47,7 @@ var Empire = {
   //}
 
 module.exports.loop = function () {
-  console.log("SP: -- " + Empire.spawn_names[0] + " - " + Empire.spawn_levels[0]);
+  console.log("SP: -- " + Empire.spawn_names[0] + " - " + Empire.spawn_levels[0][2]);
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
   for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
