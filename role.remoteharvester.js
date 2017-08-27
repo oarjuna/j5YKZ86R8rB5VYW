@@ -3,6 +3,7 @@ module.exports = {
 	  creep.say("!!");
 
     var do_building = false;
+
     // get your assignment
     var dest_key = creep.memory.destid;
     if ( dest_key == 'Flag1') {  var gotoFlag = Game.flags.Flag1; }
@@ -44,13 +45,17 @@ module.exports = {
 
 
         if ( do_building == false ) {
+
           //var structure = structure_container;
+
           var structure = Game.getObjectById(container);
       		var action_status = creep.transfer(structure, RESOURCE_ENERGY);
-      		if (action_status == ERR_NOT_IN_RANGE) {
+
+        	if (action_status == ERR_NOT_IN_RANGE) {
   				  creep.say("rh-drop");
             creep.moveTo(structure);
           }
+
         }
         else {
           if ( constructionSite != undefined) {

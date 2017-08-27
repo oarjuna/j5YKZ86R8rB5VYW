@@ -2,7 +2,7 @@
 module.exports = {
     // a function to run the logic for this role
     run: function(spawn3MinHarv,spawn3MinDeli,spawn3MinUgra,spawn3MinBuil,spawn3MinEner,spawn3MinReHa,spawn3MinClai,spawn3MinSold,spawn3MinRepa) {
-  
+
         // count the number of creeps alive for each role born at Spawn3
         var numSpawn3Harv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthplace == 'Spawn3');
         var numSpawn3ReHa = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harv' && c.memory.birthplace == 'Spawn3');
@@ -22,11 +22,11 @@ module.exports = {
     if (numSpawn3Harv < spawn3MinHarv) {
       var h_tmp = _.sum(Game.creeps,
                       (c) => c.memory.role == 'harvester' &&
-                              c.memory.destid == '5873bcc511e3e4361b4d822f'
+                              c.memory.destid == '5873bcc711e3e4361b4d827f'
                       );
 
-        if ( h_tmp < 2 ) { var dest = '5873bcc511e3e4361b4d822f'; } // west
-        else { var dest = '5873bcc511e3e4361b4d822e'; } // east
+        if ( h_tmp < 2 ) { var dest = '5873bcc711e3e4361b4d827f'; } // west
+        else { var dest = '5873bcc711e3e4361b4d827e'; } // east
 
         // try to spawn one
         name = Game.spawns.Spawn3.createCustomCreep(energy_avail, 'harvester',dest,'Spawn3');

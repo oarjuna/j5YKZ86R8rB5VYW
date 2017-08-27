@@ -16,7 +16,7 @@ var roleSpawn2 = require('role.spawn2');
 var roleSpawn3 = require('role.spawn3');
 
 var roleSpawn = require('role.spawn');
-
+//
 module.exports.loop = function () {
   var scl1 = [ 4, 4, 5, 1, 0, 0, 0, 0, 0];
   var scl2 = [ 3, 7, 1, 1, 0, 0, 0, 0, 0];
