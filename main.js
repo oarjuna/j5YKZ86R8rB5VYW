@@ -17,21 +17,6 @@ var roleSpawn3 = require('role.spawn3');
 
 var roleSpawn = require('role.spawn');
 
-//var spawn1MinHarv = 4; // 4
-//var spawn2MinHarv = 3; // 3
-/*
-  Harvest, Deliv, Upgrade, Buid, Energy, RemoHarv, Claim, Soldier, Repair
-*/
-  // spawn levels
-
-/*
-  var scl[0] = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
-  var scl[1] = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
-  var scl[2] = [ 2, 1, 0, 0, 0, 0, 0, 0, 0];
-*/
-
-
-
 module.exports.loop = function () {
   var scl1 = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
   var scl2 = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
@@ -78,22 +63,8 @@ module.exports.loop = function () {
   	else if (creep.memory.role == 'remote_harv') { roleRemoteHarvester.run(creep); }
   }
 
-/*
-  Harvest, Deliv, Upgrade, Buid, Energy, RemoHarv, Claim, Soldier, Repair
-
-  // Run the spawn logics
-  for (let xx in Empire.spawn_names ) {
-
-    [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa] =  Empire.spawn_levels[xx];
-
-    roleSpawn1.run(MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa);
-    console.log("SP: -- " + Empire.spawn_names[xx] + " -- " + MinHarv);
-  }
-    */
-
   roleSpawn1.run(scl1[0],scl1[1],scl1[2],scl1[3],scl1[4],scl1[5],scl1[6],scl1[7],scl1[8]);
   roleSpawn2.run(scl2[0],scl2[1],scl2[2],scl2[3],scl2[4],scl2[5],scl2[6],scl2[7],scl2[8]);
-  //roleSpawn3.run(scl3[0],scl3[1],scl3[2],scl3[3],scl3[4],scl3[5],scl3[6],scl3[7],scl3[8]);
   roleSpawn.run(2,Empire);
 
   gameStatus.display_status(0,Empire);
