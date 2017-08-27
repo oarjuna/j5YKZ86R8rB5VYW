@@ -14,7 +14,7 @@ var gameStatus = require('status');
 var roleSpawn1 = require('role.spawn1');
 var roleSpawn2 = require('role.spawn2');
 var roleSpawn3 = require('role.spawn3');
-
+    
 var roleSpawn = require('role.spawn');
 
 module.exports.loop = function () {
