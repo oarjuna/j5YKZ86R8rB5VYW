@@ -2,21 +2,7 @@
 module.exports = {
     // a function to run the logic for this role
     run: function(spawn3MinHarv,spawn3MinDeli,spawn3MinUgra,spawn3MinBuil,spawn3MinEner,spawn3MinReHa,spawn3MinClai,spawn3MinSold,spawn3MinRepa) {
-        // spawn levels
-        /*
-        var spawn3MinHarv = 3; // 3
-        var spawn3MinDeli = 7; // 3
-        var spawn3MinUgra = 1; // 3
-        var spawn3MinBuil = 1; // 1
-        var spawn3MinEner = 0; // 1
-        var spawn3MinReHa = 0;
-        var spawn3MinClai = 1;
-        var spawn3MinSold = 0;
-        var spawn3MinRepa = 0;
-        */
-
-        console.log("XXX: -- "+ spawn3MinHarv );
-
+  
         // count the number of creeps alive for each role born at Spawn3
         var numSpawn3Harv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthplace == 'Spawn3');
         var numSpawn3ReHa = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harv' && c.memory.birthplace == 'Spawn3');
