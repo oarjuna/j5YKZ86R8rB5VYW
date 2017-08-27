@@ -60,10 +60,6 @@ module.exports.loop = function () {
                       ]
   };
 
-  for (let xx in Empire.spawn_names ) {
-    [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa] =  Empire.spawn_levels[xx];
-    console.log("SP: -- " + Empire.spawn_names[xx] + " -- " + MinHarv);
-  }
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
   for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
