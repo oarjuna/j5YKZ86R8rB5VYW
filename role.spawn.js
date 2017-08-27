@@ -7,8 +7,6 @@ module.exports = {
       [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa] =  Empire.spawn_levels[spawn_num];
       var spawn_name = Empire.spawn_names[spawn_num];
 
-
-
         // count the number of creeps alive for each role born at
         var numHarv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthplace == spawn_name);
         var numReHa = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harv' && c.memory.birthplace == spawn_name);
@@ -21,12 +19,12 @@ module.exports = {
         var numWaRe = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer' && c.memory.birthplace == spawn_name);
         var numEnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthplace == spawn_name);
 
-
-// TODO
    var energy_avail = Game.spawns[spawn_name].room.energyCapacityAvailable;
-   //var energy_avail = 300;
 
    //console.log(spawn_name + " -- " + spawn_num  + " " + numHarv + " " + MinHarv + " "  + spawn_name + " " + Empire.sources[spawn_num][1]);
+
+   console.log(spawn_name + " - hvs@0 - " + Empire.harvs_per_source[spawn_num][0]);
+   console.log(spawn_name + " - hvs@1 - " + Empire.harvs_per_source[spawn_num][1]);
 
 
    // if not enough harvesters
