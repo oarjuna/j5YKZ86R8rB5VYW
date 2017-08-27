@@ -34,7 +34,7 @@ module.exports = {
         var lvl =  Game.spawns[spawn_name].room.controller.level;
 
         // source status information
-        for ( let source_id in Empire.sources[spawn_name]) {
+        for ( let source_id in Empire.sources[spawn_num]) {
           console.log(spawn_name + " : " + source_id);
         }
 
