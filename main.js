@@ -15,7 +15,7 @@ var roleSpawn1 = require('role.spawn1');
 var roleSpawn2 = require('role.spawn2');
 var roleSpawn3 = require('role.spawn3');
 
-//var roleSpawn = require('role.spawn');
+var roleSpawn = require('role.spawn');
 
 //var spawn1MinHarv = 4; // 4
 //var spawn2MinHarv = 3; // 3
@@ -31,17 +31,19 @@ var roleSpawn3 = require('role.spawn3');
 */
 
 var Empire = {
-  spawn_names: ['Spawn1','Spawn2','Spawn3'],
+  spawn_names: ['Spawn1','Spawn2','Spawn3','Spawn4'],
   spawn_levels:
               [
                 [ 4, 4, 5, 1, 0, 0, 1, 0, 0], // Spawn1
                 [ 3, 7, 1, 1, 0, 0, 1, 0, 0], // Spawn2
-                [ 2, 1, 0, 0, 0, 0, 0, 0, 0]  // Spawn3
+                [ 2, 1, 0, 0, 0, 0, 0, 0, 0], // Spawn3
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0]  // Spawn4
               ],
   sources:    [
                 [ '5873bcc211e3e4361b4d81ec','5873bcc211e3e4361b4d81ed'], // Spawn1
                 [ '5873bcc511e3e4361b4d822e','5873bcc511e3e4361b4d822f'], // Spawn2
                 [ '5873bcc711e3e4361b4d827e','5873bcc711e3e4361b4d827f'], // Spawn3
+                [ '000000000000000000000001','000000000000000000000002']  // Spawn4
               ]
 };
 
@@ -54,7 +56,6 @@ module.exports.loop = function () {
     [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa] =  Empire.spawn_levels[xx];
     console.log("SP: -- " + Empire.spawn_names[xx] + " -- " + MinHarv);
   }
-
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
   for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
