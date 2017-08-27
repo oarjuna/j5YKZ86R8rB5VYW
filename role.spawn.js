@@ -34,7 +34,7 @@ module.exports = {
           (c) => c.memory.role == 'harvester' &&
                  c.memory.destid == Empire.sources[spawn_num][xx]
           );
-          console.log("S# -- " + h_tmp  + " " + numHarv + " " + MinHarv + " "  + spawn_name + " " + Empire.sources[spawn_num][1]);
+          console.log("S# -- " + h_tmp  + " " +  Empire.harvs_per_source[xx]);
 
         if ( h_tmp < Empire.harvs_per_source[xx]) {
            var dest =  Empire.sources[spawn_num][xx];
