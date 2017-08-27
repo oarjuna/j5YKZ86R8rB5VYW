@@ -33,14 +33,14 @@ module.exports = {
       // Find EXTENSTIONs
       var structure_extension = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
          filter: (s) => (
-                    ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
-                  )});
+            ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
+          )});
 
       // Find Towers
       var structure_tower = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
          filter: (s) => (
-                    ( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity - 500 )
-                  )});
+            ( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity - 500 )
+          )});
 
       if ( creep.room.controller.ticksToDowngrade < 500 ) {
           // Emergency controller upgrade
