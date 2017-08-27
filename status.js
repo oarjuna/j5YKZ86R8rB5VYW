@@ -35,7 +35,7 @@ module.exports = {
 
         // source status information
         for ( let source_id in Empire.sources[spawn_num]) {
-          console.log(spawn_name + " : " + source_id);
+          console.log(spawn_name + " : " + Empire.sources[spawn_num][source_id]);
         }
 
         // print the thing
