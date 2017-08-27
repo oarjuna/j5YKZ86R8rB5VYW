@@ -12,19 +12,15 @@ var roleSoldier = require('role.soldier');
 var gameStatus = require('status');
 var roleSpawn = require('role.spawn');
 
-//var roleSpawn1 = require('role.spawn1');
-//var roleSpawn2 = require('role.spawn2');
-//var roleSpawn3 = require('role.spawn3');
-
-//
+// START
 module.exports.loop = function () {
 
-  /*
-    Harvest, Deliv, Upgrade, Build, Energy, RemoHarv, Claim, Soldier, Repair
-  */
+
+
   var Empire = {
     spawn_names: ['Spawn1','Spawn2','Spawn3','Spawn4'],
     spawn_levels:
+                //  Harvest, Deliv, Upgrade, Build, Energy, RemoHarv, Claim, Soldier, Repair
                 [
                   [ 4, 4, 5, 1, 0, 0, 0, 0, 0], // Spawn1
                   [ 3, 7, 1, 1, 0, 0, 0, 0, 0], // Spawn2
