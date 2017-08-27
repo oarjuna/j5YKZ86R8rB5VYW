@@ -36,7 +36,7 @@ module.exports = {
                  c.memory.destid == Empire.sources[spawn_num][xx]
           );
 
-          console.log(spawn_name + " -- " + h_tmp  + " " +  Empire.harvs_per_source[spawn_num][xx]);
+          //console.log(spawn_name + " -- " + h_tmp  + " " +  Empire.harvs_per_source[spawn_num][xx]);
 
         if ( h_tmp < Empire.harvs_per_source[xx][0]) {
            var dest =  Empire.sources[spawn_num][xx];
@@ -51,7 +51,7 @@ module.exports = {
 
         name = Game.spawns[spawn_name].createCustomCreep(energy_avail,'harvester',dest,spawn_name);
 
-        console.log(spawn_name + " -- spawning harvester for: "+ name + " " + energy_avail);
+        console.log(spawn_name + " -- spawning harvester for: "+ dest + " " + energy_avail);
     }
 
    // if not enough deliverers
