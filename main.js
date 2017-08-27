@@ -50,8 +50,8 @@ module.exports.loop = function () {
 
 let x_tmp = 0;
 
-  for (let xx in Empire.spawn_levels ) {
-    console.log("SP: -- " + xx + " - " + Empire.spawn_levels[x_tmp]);
+  for (let xx in Empire.spawn_names ) {
+    console.log("SP: -- " + Empire.spawn_names[xx] + " - " + Empire.spawn_levels[xx]);
     x_tmp++;
   }
 
