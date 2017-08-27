@@ -47,7 +47,14 @@ var Empire = {
   //}
 
 module.exports.loop = function () {
-  console.log("SP: -- " + Empire.spawn_names[0] + " - " + Empire.spawn_levels[0]);
+
+let x_tmp = 0;
+
+  for (let xx in Empire.spawn_levels ) {
+    console.log("SP: -- " + xx + " - " + Empire.spawn_levels[x_tmp]);
+    x_tmp++;
+  }
+
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
   for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
