@@ -20,14 +20,16 @@ var roleSpawn = require('role.spawn');
 module.exports.loop = function () {
   var scl1 = [ 4, 4, 5, 1, 0, 0, 1, 0, 0];
   var scl2 = [ 3, 7, 1, 1, 0, 0, 1, 0, 0];
-
+  /*
+    Harvest, Deliv, Upgrade, Build, Energy, RemoHarv, Claim, Soldier, Repair
+  */
   var Empire = {
     spawn_names: ['Spawn1','Spawn2','Spawn3','Spawn4'],
     spawn_levels:
                 [
                   [ 4, 4, 5, 1, 0, 0, 1, 0, 0], // Spawn1
                   [ 3, 7, 1, 1, 0, 0, 1, 0, 0], // Spawn2
-                  [ 4, 2, 0, 0, 0, 0, 0, 0, 0], // Spawn3
+                  [ 4, 2, 0, 0, 0, 0, 0, 0, 1], // Spawn3
                   [ 0, 0, 0, 0, 0, 0, 0, 0, 0]  // Spawn4
                 ],
     sources:    [
