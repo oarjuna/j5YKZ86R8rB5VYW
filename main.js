@@ -18,12 +18,12 @@ module.exports.loop = function () {
   var Empire = {
     spawn_names: ['Spawn1','Spawn2','Spawn3','Spawn4'],
     spawn_levels:
-                //  Harvest, Deliv, Upgrade, Build, Energy, RemoteHarv, Claim, Soldier, Repair
+                //  Harvest, Deliv, Upgrade, Build, Energy, RemoteHarv, Claim, Soldier, Repair, Sol-M ,Sol-R, Sol-H
                 [
-                  [ 4, 4, 5, 1, 0, 0, 0, 0, 0], // Spawn1
-                  [ 3, 7, 1, 1, 0, 0, 0, 0, 0], // Spawn2
-                  [ 4, 3, 1, 1, 0, 0, 0, 1, 1], // Spawn3
-                  [ 0, 0, 0, 0, 0, 0, 0, 0, 0]  // Spawn4
+                  [ 4, 4, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0], // Spawn1
+                  [ 3, 7, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], // Spawn2
+                  [ 4, 3, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0], // Spawn3
+                  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]  // Spawn4
                 ],
     sources:    [
                   [ '5873bcc211e3e4361b4d81ec','5873bcc211e3e4361b4d81ed'], // Spawn1

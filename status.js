@@ -1,7 +1,7 @@
 module.exports = {
 
    display_status: function(spawn_num,Empire) {
-     [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa] =  Empire.spawn_levels[spawn_num];
+     [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa,MinSolM,MinSolR,MinSolH] =  Empire.spawn_levels[spawn_num];
      var spawn_name = Empire.spawn_names[spawn_num];
 
         // count the number of creeps alive for each role and according to spawn
@@ -12,11 +12,14 @@ module.exports = {
         var numBuil = _.sum(Game.creeps, (c) => c.memory.role == 'builder' && c.memory.birthplace == spawn_name);
         var numClai = _.sum(Game.creeps, (c) => c.memory.role == 'claimer' && c.memory.birthplace == spawn_name);
         var numSold = _.sum(Game.creeps, (c) => c.memory.role == 'soldier' && c.memory.birthplace == spawn_name);
+        var numSolM = _.sum(Game.creeps, (c) => c.memory.role == 'soldier_melee' && c.memory.birthplace == spawn_name);
+        var numSolR = _.sum(Game.creeps, (c) => c.memory.role == 'soldier_ranged' && c.memory.birthplace == spawn_name);
+        var numSolH = _.sum(Game.creeps, (c) => c.memory.role == 'soldier_healer' && c.memory.birthplace == spawn_name);
         var numRepa = _.sum(Game.creeps, (c) => c.memory.role == 'repairer' && c.memory.birthplace == spawn_name);
         var numDeli = _.sum(Game.creeps, (c) => c.memory.role == 'deliverer' && c.memory.birthplace == spawn_name);
         var numEnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthplace == spawn_name);
 
-        var cur_energy = Game.spawns[spawn_name].room.energyAvailable;
+        var cur_energy = Game.spawns[spawn_name].rsoom.energyAvailable;
         var cur_energy_cap = Game.spawns[spawn_name].room.energyCapacityAvailable;
 
         var status1 = "H: " + numHarv + "/" + MinHarv;
@@ -28,7 +31,12 @@ module.exports = {
         var status8 = " De: " + numDeli + "/" + MinDeli;
         var status9 = " EM: " + numEnMo  + "/" + MinEner;
         var status10 =" S: " + numSold + "/" + MinSold;
-        var status11 = " E: " + cur_energy + "/" + cur_energy_cap
+
+        var status21 = " SM: " + numSolM + "/" + MinSolM;
+        var status22 = " SR: " + numSolR + "/" + MinSolR;
+        var status23 = " SH: " + numSolH + "/" + MinSolH;
+
+        var status11 = " E: " + cur_energy + "/" + cur_energy_cap;
 
         var status12 = " UP: " + Game.spawns[spawn_name].room.controller.progress + "/" + Game.spawns[spawn_name].room.controller.progressTotal;
         var lvl =  Game.spawns[spawn_name].room.controller.level;
@@ -46,6 +54,7 @@ module.exports = {
 
         // print the thing
         console.log(spawn_name + " : lvl" + lvl + " -- " + status1 + status2 + status3 + status4 + status5 + status7 + status8 + status9 + status10 + status11 + status12);
+        console.log(spawn_name + status21 + status22 + status23);
         console.log(msg);
 
   }

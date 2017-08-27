@@ -4,7 +4,7 @@ module.exports = {
       Harvest, Deliv, Upgrade, Build, Energy, RemoHarv, Claim, Soldier, Repair
     */
     run: function(spawn_num,Empire) {
-      [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa] =  Empire.spawn_levels[spawn_num];
+      [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa,MinSolM,MinSolR,MinSolH] =  Empire.spawn_levels[spawn_num];
       var spawn_name = Empire.spawn_names[spawn_num];
 
         // count the number of creeps alive for each role born at
@@ -15,16 +15,31 @@ module.exports = {
         var numBuil = _.sum(Game.creeps, (c) => c.memory.role == 'builder' && c.memory.birthplace == spawn_name);
         var numClai = _.sum(Game.creeps, (c) => c.memory.role == 'claimer' && c.memory.birthplace == spawn_name);
         var numSold = _.sum(Game.creeps, (c) => c.memory.role == 'soldier' && c.memory.birthplace == spawn_name);
+        var numSolM = _.sum(Game.creeps, (c) => c.memory.role == 'soldier_melee' && c.memory.birthplace == spawn_name);
+        var numSolR = _.sum(Game.creeps, (c) => c.memory.role == 'soldier_ranged' && c.memory.birthplace == spawn_name);
+        var numSolH = _.sum(Game.creeps, (c) => c.memory.role == 'soldier_healer' && c.memory.birthplace == spawn_name);
         var numRepa = _.sum(Game.creeps, (c) => c.memory.role == 'repairer' && c.memory.birthplace == spawn_name);
         var numEnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthplace == spawn_name);
 
-   var energy_avail = Game.spawns[spawn_name].room.energyCapacityAvailable;
+        var energy_avail = Game.spawns[spawn_name].room.energyCapacityAvailable;
 
-   // soldiers
-    if (numSold < MinSold) {
-       console.log(spawn_name + " -- spawning soldier");
-       name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'soldier','Attack',spawn_name);
-   }
+        // soldiers
+        if (numSold < MinSold) {
+           console.log(spawn_name + " -- spawning soldier");
+           name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'soldier','Attack',spawn_name);
+         }
+         else if (numSolM < MinSolM) {
+            console.log(spawn_name + " -- spawning soldier_melee");
+            name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'soldier_melee','Attack',spawn_name);
+        }
+        else if (numSolR < MinSolR) {
+           console.log(spawn_name + " -- spawning soldier_ranged");
+           name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'soldier_ranged','Attack',spawn_name);
+        }
+        else if (numSolH < MinSolH) {
+          console.log(spawn_name + " -- spawning soldier_healer");
+          name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'soldier_healer','Attack',spawn_name);
+        }
 
    // if not enough harvesters
    // TODO -- deliver_to_spawn memory flag
