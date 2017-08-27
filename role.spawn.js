@@ -36,7 +36,7 @@ module.exports = {
                  c.memory.destid == Empire.sources[spawn_num][xx]
           );
 
-          console.log("S# -- " + h_tmp  + " " +  Empire.harvs_per_source[xx]);
+          console.log("S# -- " + h_tmp  + " " +  Empire.harvs_per_source[spawn_num][xx]);
 
         if ( h_tmp < Empire.harvs_per_source[xx][0]) {
            var dest =  Empire.sources[spawn_num][xx];
