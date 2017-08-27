@@ -5,7 +5,7 @@ var roleBuilder = require('role.builder');
 module.exports = {
   run: function(creep) {
     // *** switch states ***
-    var deliver_to_spawn = false;
+    var deliver_to_spawn = true;
 
     // if creep is bringing energy to a structure but has no energy left
     if (creep.memory.working == true && creep.carry.energy == 0) {
