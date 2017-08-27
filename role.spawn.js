@@ -24,7 +24,7 @@ module.exports = {
    //var energy_avail = Game.spawns.spawn_name.room.energyCapacityAvailable;
    var energy_avail = 300;
 
-   //console.log("S# -- " + spawn_num  + " " + numHarv + " " + MinHarv + " "  + spawn_name + " " + Empire.sources[spawn_num][1]);
+   //console.log(spawn_name + " -- " + spawn_num  + " " + numHarv + " " + MinHarv + " "  + spawn_name + " " + Empire.sources[spawn_num][1]);
 
    // if not enough harvesters
     if (numHarv < MinHarv) {
@@ -36,7 +36,7 @@ module.exports = {
                  c.memory.destid == Empire.sources[spawn_num][xx]
           );
 
-          console.log("S# -- " + h_tmp  + " " +  Empire.harvs_per_source[spawn_num][xx]);
+          console.log(spawn_name + " -- " + h_tmp  + " " +  Empire.harvs_per_source[spawn_num][xx]);
 
         if ( h_tmp < Empire.harvs_per_source[xx][0]) {
            var dest =  Empire.sources[spawn_num][xx];
@@ -51,12 +51,12 @@ module.exports = {
 
         name = Game.spawns[spawn_name].createCustomCreep(energy_avail,'harvester',dest,spawn_name);
 
-        console.log("S# -- spawning harvester for: "+ name + " " + energy_avail);
+        console.log(spawn_name + " -- spawning harvester for: "+ name + " " + energy_avail);
     }
 
    // if not enough deliverers
     else if (numDeli < MinDeli) {
-        console.log("S# -- spawning deliverer");
+        console.log(spawn_name + " -- spawning deliverer");
         name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'deliverer',dest,spawn_name);
     }
 
@@ -66,22 +66,22 @@ module.exports = {
     }
     // if not enough soldiers
     else if (numSold < MinSold) {
-        console.log("S# -- spawning soldier");
+        console.log(spawn_name + " -- spawning soldier");
         name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'soldier','Attack',spawn_name);
     }
     // if not enough upgraders
     else if (numUpgr < MinUgra) {
-        console.log("S# -- spawning upgrader");
+        console.log(spawn_name + " -- spawning upgrader");
         name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'upgrader','',spawn_name);
     }
     // if not enough repairers
     else if (numRepa < MinRepa) {
-        console.log("S# -- spawning repairer");
+        console.log(spawn_name + " -- spawning repairer");
         name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'repairer','',spawn_name);
     }
     // if not enough builders
     else if (numBuil < MinBuil) {
-        console.log("S# -- spawning builder");
+        console.log(spawn_name + " -- spawning builder");
         name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'builder','',spawn_name);
     }
 
@@ -101,7 +101,7 @@ module.exports = {
         else if ( c_flag5 == 0 ) { var dest = 'Flag5'; }
         else { var dest = 'error'; }
 
-        console.log("S# -- spawning remote_harv");
+        console.log(spawn_name + " -- spawning remote_harv");
         name =Game.spawns[spawn_name].createCustomCreep(energy_avail, 'remote_harv',dest,spawn_name);
     }
         // claimers
@@ -121,7 +121,7 @@ module.exports = {
         else if ( c_flag5 == 0 ) { var dest = 'CFlag1'; role = "claimer"; }
         else { var dest = 'error'; }
 
-        console.log("S# -- spawning claimer " + dest + " body - " + role);
+        console.log(spawn_name + " -- spawning claimer " + dest + " body - " + role);
         name = Game.spawns[spawn_name].createCustomCreep(energy_avail, role, dest,spawn_name);
     }
 
