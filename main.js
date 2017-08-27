@@ -36,7 +36,7 @@ var Empire = {
               [
                 [ 4, 4, 5, 1, 0, 0, 1, 0, 0], // Spawn1
                 [ 3, 7, 1, 1, 0, 0, 1, 0, 0], // Spawn2
-                [ 2, 1, 0, 0, 0, 0, 0, 0, 0], // Spawn3
+                [ 1, 1, 0, 0, 0, 0, 0, 0, 0], // Spawn3
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0]  // Spawn4
               ],
   sources:    [
@@ -48,7 +48,7 @@ var Empire = {
   harvs_per_source: [
                       [2,2], // Spawn1
                       [1,2], // Spawn2
-                      [2,2], // Spawn3
+                      [1,1], // Spawn3
                       [1,1]  // Spawn4
                     ]
 };
