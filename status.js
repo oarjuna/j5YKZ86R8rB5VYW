@@ -33,6 +33,11 @@ module.exports = {
         var status12 = " UP: " + Game.spawns[spawn_name].room.controller.progress + "/" + Game.spawns[spawn_name].room.controller.progressTotal;
         var lvl =  Game.spawns[spawn_name].room.controller.level;
 
+        // source status information
+        for ( let source_id in Empire.sources) {
+          console.log(spawn_name + " : " + source_id);
+        }
+
         // print the thing
         console.log(spawn_name + ":" + lvl + " -- " + status1 + status2 + status3 + status4 + status5 + status7 + status8 + status9 + status10 + status11 + status12);
 
