@@ -17,7 +17,7 @@ module.exports = function() {
       else if (roleName == 'repairer')  { var body = [ WORK, MOVE, MOVE, CARRY, CARRY ]; } // 300
       else if (roleName == 'upgrader')  { var body = [ WORK, MOVE, MOVE, CARRY, CARRY ]; } // 300
       else if (roleName == 'deliverer') { var body = [ WORK, MOVE, MOVE, CARRY, CARRY ]; } // 300
-      else if (roleName == "soldier")   { var body = [ MOVE,MOVE,ATTACK,ATTACK]; } //  }
+      else if (roleName == "soldier")   { var body = [ MOVE, MOVE, TOUGH, TOUGH, TOUGH, TOUGH, ATTACK, ATTACK]; } // 300  }
 
     }
 
