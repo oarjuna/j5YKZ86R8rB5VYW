@@ -123,9 +123,6 @@ module.exports = {
     });
 
     for (let tower of towers) {
-
-      console.log(tower + " reporting in");
-
       var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
       var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
         filter: (s) =>
