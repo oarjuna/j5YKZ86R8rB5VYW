@@ -7,7 +7,7 @@ module.exports = {
       [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa] =  Empire.spawn_levels[spawn_num];
       var spawn_name = Empire.spawn_names[spawn_num];
 
-        console.log("S# -- " + MinHarv + " " + spawn_name + " " + Empire.sources[spawn_num][1]);
+
 
         // count the number of creeps alive for each role born at
         var numHarv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthplace == spawn_name);
@@ -23,6 +23,8 @@ module.exports = {
 
    //var energy_avail = Game.spawns.spawn_name.room.energyCapacityAvailable;
    var energy_avail = 300;
+
+   console.log("S# -- " + numHarv + " " + spawn_name + " " + Empire.sources[spawn_num][1]);
 
    // if not enough harvesters
     if (numHarv < MinHarv) {
