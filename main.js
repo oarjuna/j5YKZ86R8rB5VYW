@@ -72,7 +72,7 @@ module.exports.loop = function () {
   gameStatus.display_status(1,Empire);
 	gameStatus.display_status(2,Empire);
 
-  console.log("#----------------------#  H, U, R, B, RH, C, De, EM, S");
+  console.log("#-------------------------------------------------------#  H, U, R, B, RH, C, De, EM, S");
 
   //for (var spawn in Game.spawns){
     //roleSpawn.run(spawn);
