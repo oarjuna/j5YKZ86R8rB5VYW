@@ -25,7 +25,7 @@ module.exports.loop = function () {
                 //  Harvest, Deliv, Upgrade, Build, Energy, RemoteHarv, Claim, Soldier, Repair, Sol-M ,Sol-R, Sol-H
                 [
                   [ 4, 4, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0], // Spawn1
-                  [ 3, 7, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], // Spawn2
+                  [ 3, 5, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], // Spawn2
                   [ 4, 3, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0], // Spawn3
                   [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]  // Spawn4
                 ],
