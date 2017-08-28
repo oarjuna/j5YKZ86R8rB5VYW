@@ -22,6 +22,7 @@ module.exports = {
         var numEnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthplace == spawn_name);
 
         var energy_avail = Game.spawns[spawn_name].room.energyCapacityAvailable;
+	if ( spawn_name == 'Spawn3' ) { energy_avail = 300; }
 
         // soldiers
         if (numSold < MinSold) {
@@ -41,6 +42,11 @@ module.exports = {
           name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'soldier_healer','Attack',spawn_name);
         }
 
+   // if not enough deliverers
+    else if (numDeli < MinDeli) {
+        console.log(spawn_name + " -- spawning deliverer");
+        name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'deliverer',dest,spawn_name);
+    }
    // if not enough harvesters
    // TODO -- deliver_to_spawn memory flag
 
@@ -57,11 +63,6 @@ module.exports = {
         console.log(spawn_name + " -- spawning harvester for: "+ dest);
     }
 
-   // if not enough deliverers
-    else if (numDeli < MinDeli) {
-        console.log(spawn_name + " -- spawning deliverer");
-        name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'deliverer',dest,spawn_name);
-    }
 
    // if not enough energy movers
     else if (numEnMo < MinEner) {
