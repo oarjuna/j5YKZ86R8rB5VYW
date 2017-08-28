@@ -22,15 +22,17 @@ module.exports = {
         var cur_energy = Game.spawns[spawn_name].room.energyAvailable;
         var cur_energy_cap = Game.spawns[spawn_name].room.energyCapacityAvailable;
 
-        var status1 = "H: " + numHarv + "/" + MinHarv;
-        var status2 = " U: " + numUpgr + "/" + MinUgra;
-        var status3 = " R: " + numRepa + "/" + MinRepa;
-        var status4 = " B: " + numBuil + "/" + MinBuil;
-        var status5 = " RH: " + numReHa + "/" + MinReHa;
-        var status7 = " C: " + numClai + "/" + MinClai;
-        var status8 = " De: " + numDeli + "/" + MinDeli;
-        var status9 = " EM: " + numEnMo  + "/" + MinEner;
-        var status10 =" S: " + numSold + "/" + MinSold;
+        // H, U, R, B, RH, C, De, EM, S
+
+        var status1 = numHarv + "/" + MinHarv;
+        var status2 = numUpgr + "/" + MinUgra;
+        var status3 = numRepa + "/" + MinRepa;
+        var status4 = numBuil + "/" + MinBuil;
+        var status5 = numReHa + "/" + MinReHa;
+        var status7 = numClai + "/" + MinClai;
+        var status8 = numDeli + "/" + MinDeli;
+        var status9 = numEnMo  + "/" + MinEner;
+        var status10 = numSold + "/" + MinSold;
 
         var total_have = numHarv + numUpgr + numRepa + numBuil + numReHa + numClai + numDeli + numEnMo + numSold;
         var total_want = MinHarv + MinUgra + MinRepa + MinBuil + MinReHa + MinClai + MinDeli + MinEner + MinSold;
