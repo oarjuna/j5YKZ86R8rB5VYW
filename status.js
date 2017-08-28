@@ -22,7 +22,7 @@ module.exports = {
         var cur_energy = Game.spawns[spawn_name].room.energyAvailable;
         var cur_energy_cap = Game.spawns[spawn_name].room.energyCapacityAvailable;
 
-        // H, U, R, B, RH, C, De, EM, S
+        
 
         var status1 = numHarv + "/" + MinHarv + " ";
         var status2 = numUpgr + "/" + MinUgra + " ";
