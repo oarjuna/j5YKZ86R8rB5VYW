@@ -32,16 +32,22 @@ module.exports = {
         var status9 = " EM: " + numEnMo  + "/" + MinEner;
         var status10 =" S: " + numSold + "/" + MinSold;
 
+        var total_have = numHarv + numUpgr + numRepa + numBuil + numReHa + numClai + numDeli + numEnMo + numSold;
+        var total_want = MinHarv + MinUgra + MinRepa + MinBuil + MinReHa + MinClai + MinDeli + MinEner + MinSold;
+        var total_status = total_have + "/" + total_want;
+
         var status21 = "SM: " + numSolM + "/" + MinSolM;
         var status22 = " SR: " + numSolR + "/" + MinSolR;
         var status23 = " SH: " + numSolH + "/" + MinSolH;
+
+
 
         var status11 = " E: " + cur_energy + "/" + cur_energy_cap;
 
         var status12 = " UP: " + Game.spawns[spawn_name].room.controller.progress + "/" + Game.spawns[spawn_name].room.controller.progressTotal;
         var lvl =  Game.spawns[spawn_name].room.controller.level;
 
-        console.log(spawn_name + " : lvl" + lvl + status11 + status12 + " -- " + status1 + status2 + status3 + status4 + status5 + status7 + status8 + status9 + status10);
+        console.log(spawn_name + " : lvl" + lvl + status11 + status12 + " C: "+ total_status + " -- " + status1 + status2 + status3 + status4 + status5 + status7 + status8 + status9 + status10);
         console.log("\t" + status21 + status22 + status23);
 
         // source status information
