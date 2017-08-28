@@ -21,7 +21,7 @@ module.exports = function() {
     }
 
     // 550 - 799 energy_avail
-    else if ( energy_avail >= 550 && energy_avail < 800 ) {
+    else if ( energy_avail >= 550 && energy_avail < 850 ) {
       if      (roleName == 'harvester')   { var body = [ WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY ]; }                          // 550
       else if (roleName == 'deliverer')   { var body = [ WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; }                  // 550
       else if (roleName == 'upgrader')    { var body = [WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; }                   // 550
@@ -34,7 +34,7 @@ module.exports = function() {
     }
 
     // 800 energy_avail
-    else if ( energy_avail >= 800 && energy_avail < 1000 ) {
+    else if ( energy_avail >= 850 && energy_avail < 1000 ) {
       if      (roleName == 'harvester')   { var body = [ WORK,WORK,WORK, WORK, WORK, WORK, MOVE, MOVE, CARRY, CARRY ];  }         // 800
       else if (roleName == 'deliverer')   { var body = [ WORK,WORK,WORK, WORK, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; }  // 800
       else if (roleName == 'upgrader')    { var body = [ WORK,WORK,WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ];  } // 750
