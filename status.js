@@ -24,14 +24,14 @@ module.exports = {
 
         // H, U, R, B, RH, C, De, EM, S
 
-        var status1 = numHarv + "/" + MinHarv;
-        var status2 = numUpgr + "/" + MinUgra;
-        var status3 = numRepa + "/" + MinRepa;
-        var status4 = numBuil + "/" + MinBuil;
-        var status5 = numReHa + "/" + MinReHa;
-        var status7 = numClai + "/" + MinClai;
-        var status8 = numDeli + "/" + MinDeli;
-        var status9 = numEnMo  + "/" + MinEner;
+        var status1 = numHarv + "/" + MinHarv + " ";
+        var status2 = numUpgr + "/" + MinUgra + " ";
+        var status3 = numRepa + "/" + MinRepa + " ";
+        var status4 = numBuil + "/" + MinBuil + " ";
+        var status5 = numReHa + "/" + MinReHa + " ";
+        var status7 = numClai + "/" + MinClai + " ";
+        var status8 = numDeli + "/" + MinDeli + " ";
+        var status9 = numEnMo  + "/" + MinEner + " ";
         var status10 = numSold + "/" + MinSold;
 
         var total_have = numHarv + numUpgr + numRepa + numBuil + numReHa + numClai + numDeli + numEnMo + numSold;
