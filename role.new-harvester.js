@@ -41,7 +41,7 @@ module.exports = {
           var structure = creep.room.controller;
           creep.say("deliv-ER");
       }
-      else if ( structure_link != 'FOFOFOF' ){
+      else if ( structure_link == 'FOFOFOF' ){
         // Load the closest link
         var structure = structure_link;
         creep.say("deliv.li");
