@@ -31,45 +31,21 @@ module.exports = {
           filter: (s) => (
             ( s.structureType == STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] < s.storeCapacity - 200)
           )});
-
-      // Find the SPAWN
-      var structure_spawn = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
-        filter: (s) => (
-          ( s.structureType == STRUCTURE_SPAWN )
-        )});
-
-      // Find EXTENSTIONs
-      var structure_extension = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
-         filter: (s) => (
-                    ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
-                  )});
-
-      // Find Towers
-      var structure_tower = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
-         filter: (s) => (
-                    (( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity - 500) && deliver_to_spawn == true )
-                  )});
+      var structure_link = creep.pos.findInRange(FIND_MY_STRUCTURES, 6,
+          {filter: {
+            structureType: STRUCTURE_LINK
+          }})[0];
 
       if ( creep.room.controller.ticksToDowngrade < 200 ) {
           // Emergency controller upgrade
           var structure = creep.room.controller;
           creep.say("deliv-ER");
       }
-
-      else if (( structure_spawn.energy < structure_spawn.energyCapacity) && deliver_to_spawn == true) {
-        // load the spawn
-        var structure = structure_spawn;
-        creep.say("deliv-s");
-      }
-      else if ((structure_extension != null) && deliver_to_spawn == true) {
-        // Load the extension
-        var structure = structure_extension;
-        creep.say("deliv.ex");
-      }
-      else if ( structure_tower != null ) {
-        // Load a container
-        var structure = structure_tower;
-        creep.say("deliv-tw");
+      else if ( structure_link != 'FOFOFOF' ){
+        // Load the closest link
+        var structure = structure_link;
+        creep.say("deliv.li");
+        var deliv_link = true;
       }
       else if ( structure_container != null ) {
         // Load a container
@@ -82,7 +58,12 @@ module.exports = {
         creep.say("deliv.XX");
 			}
 
-      if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+      if ( deliv_link == true ) {
+        if ( creep.transfer(structure, RESOURCE_ENERGY) != 0 ) {
+          creep.moveTo(structure);
+        }
+      }
+      else if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
         // move towards it
         creep.moveTo(structure);
       }
