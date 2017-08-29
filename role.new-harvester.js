@@ -31,10 +31,18 @@ module.exports = {
           filter: (s) => (
             ( s.structureType == STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] < s.storeCapacity - 200)
           )});
+
+      // Find links
       var structure_link = creep.pos.findInRange(FIND_MY_STRUCTURES, 6,
           {filter: {
             structureType: STRUCTURE_LINK
           }})[0];
+
+      // Find storage
+      var structure_storage = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
+      filter: (s) => (
+                ( s.structureType == STRUCTURE_STORAGE )
+              )});
 
       if ( creep.room.controller.ticksToDowngrade < 200 ) {
           // Emergency controller upgrade
@@ -53,10 +61,11 @@ module.exports = {
         creep.say("deliv-cn");
       }
 			else {
-        // upgrade the controller
-        var structure = creep.room.controller;
-        creep.say("deliv.XX");
+        // drop off at storage
+        var structure = structure_storage;
+        creep.say("deliv.ST");
 			}
+
 
       if ( deliv_link == true ) {
         if ( creep.transfer(structure, RESOURCE_ENERGY) != 0 ) {

@@ -46,7 +46,7 @@ module.exports = {
 	var structure_storage = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
 	filter: (s) => (
             ( s.structureType == STRUCTURE_STORAGE )
-          )});	
+          )});
 
       if ( creep.room.controller.ticksToDowngrade < 500 ) {
           // Emergency controller upgrade
@@ -69,29 +69,20 @@ module.exports = {
         creep.say("deliv-tw");
       }
       else {
-        // upgrade the controller
-        var structure = creep.room.controller;
-        var contr_flag = true;
-        creep.say("deliv.XX");
+        // drop off at storage
+        var structure = structure_storage;
+        creep.say("deliv.ST");
+			}
+
+      if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+        creep.moveTo(structure);
       }
 
-      if ( contr_flag == true ) {
-          if (creep.upgradeController(structure) == ERR_NOT_IN_RANGE) {
-            creep.moveTo(structure);
-          }
-      }
+      } // End UNLOAD
       else {
-        if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-          creep.moveTo(structure);
-        }
-      }
-
-    } // End UNLOAD
-    else {
-      // when Empty
-      // Pick up more energy
-      shared.pickupEnergy(creep);
-    } // EnD LOAD
+        // Pick up more energy
+        shared.pickupEnergy(creep);
+      } // EnD LOAD
 
   }
 };
