@@ -137,6 +137,7 @@ module.exports = {
 
     for (let tower of towers) {
       var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+      
       var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
         filter: (s) =>
           ( s.structureType == STRUCTURE_ROAD && s.hits < s.hitsMax) ||
