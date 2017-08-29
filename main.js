@@ -24,9 +24,9 @@ module.exports.loop = function () {
     spawn_levels:
                 //  Harvest, Deliv, Upgrade, Build, Energy, RemoteHarv, Claim, Soldier, Repair, Sol-M ,Sol-R, Sol-H
                 [
-                  [ 4, 4, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0], // Spawn1
-                  [ 3, 4, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0], // Spawn2
-                  [ 4, 4, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0], // Spawn3
+                  [ 4, 4, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0], // Spawn1
+                  [ 3, 4, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0], // Spawn2
+                  [ 4, 4, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0], // Spawn3
                   [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]  // Spawn4
                 ],
     sources:    [
