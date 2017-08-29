@@ -40,7 +40,20 @@ module.exports.loop = function () {
                         [1,2], // Spawn2
                         [2,2], // Spawn3
                         [0,0]  // Spawn4
-                      ]
+                      ],
+    links: [
+            ['59a411fd06b5240409f8b847','59a446a802722c0fd674afdf'], // Spawn1
+            ['000000000000000000000001','000000000000000000000002'], // Spawn2
+            ['000000000000000000000001','000000000000000000000002'], // Spawn3
+            ['000000000000000000000001','000000000000000000000002'], // Spawn4
+          ],
+    receiving_link: [
+                    '59a446a802722c0fd674afdf', // Spawn1
+                    '000000000000000000000001', // Spawn2
+                    '000000000000000000000001', // Spawn3
+                    '000000000000000000000001' // Spawn4
+                    ]
+
   };
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
