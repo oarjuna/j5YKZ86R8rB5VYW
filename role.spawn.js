@@ -132,14 +132,11 @@ module.exports = {
 
     // local Tower control
     var towers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
-        filter: (s) => ( s.structureType == STRUCTURE_TOWER)
+        filter: (s) => s.structureType == STRUCTURE_TOWER
     });
 
     for (let tower of towers) {
-      console.log(tower + " -- reporting");
-
       var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-
       var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
         filter: (s) =>
           ( s.structureType == STRUCTURE_ROAD && s.hits < s.hitsMax) ||
@@ -159,5 +156,13 @@ module.exports = {
           tower.repair(repair_target);
         }
     }
+
+    //
+    for ( let link of Empire.links[spawn_num]) {
+      console.log("link: " + link);
+      
+    }
+
+
 }
 };
