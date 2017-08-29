@@ -6,8 +6,8 @@ module.exports = {
 		var container = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
     	filter: (s) =>
 				(
-					( s.structureType==STRUCTURE_LINK && s.store[RESOURCE_ENERGY] > 90 ) &&
-					( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] > 90 ) &&
+					( s.structureType==STRUCTURE_LINK && s.store[RESOURCE_ENERGY] > 90 ) ||
+					( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] > 90 ) ||
 					( s.structureType==STRUCTURE_STORAGE && s.store[RESOURCE_ENERGY] > 90 )
     });
 
