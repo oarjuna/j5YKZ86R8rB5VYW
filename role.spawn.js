@@ -132,7 +132,7 @@ module.exports = {
 
     // local Tower control
     var towers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
-        filter: (s) => s.structureType == STRUCTURE_TOWER
+        filter: (s) => ( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity - 500 )
     });
 
     for (let tower of towers) {
