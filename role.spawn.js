@@ -134,9 +134,10 @@ module.exports = {
     var towers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
         filter: (s) => ( s.structureType == STRUCTURE_TOWER)
     });
-    console.log(tower + " -- reporting");
 
     for (let tower of towers) {
+      console.log(tower + " -- reporting");
+
       var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
 
       var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
