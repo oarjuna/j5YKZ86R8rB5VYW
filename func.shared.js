@@ -3,7 +3,7 @@ module.exports = {
 	// pickup energy from the closest container
 	pickupEnergy: function(creep)
 	{
-		var container = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
+		var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
     	filter: (s) =>
 				(
 					( s.structureType==STRUCTURE_LINK && s.energy[RESOURCE_ENERGY] > 90 ) &&
