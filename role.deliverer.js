@@ -68,10 +68,6 @@ module.exports = {
         var structure = structure_tower;
         creep.say("deliv-tw");
       }
-/*      else if ( structure_storage != null ) {
-	var structure = structure_storage;
-	creep.say("deliv-st");
-*/    }
       else {
         // upgrade the controller
         var structure = creep.room.controller;
