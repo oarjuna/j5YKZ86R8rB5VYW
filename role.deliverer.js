@@ -45,7 +45,7 @@ module.exports = {
 	// Find storage
 	var structure_storage = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
 	filter: (s) => (
-            ( s.structureType == STRUCTURE_STORAGE );
+            ( s.structureType == STRUCTURE_STORAGE )
           )});	
 
       if ( creep.room.controller.ticksToDowngrade < 500 ) {
