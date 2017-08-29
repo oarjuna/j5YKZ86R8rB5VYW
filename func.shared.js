@@ -8,7 +8,7 @@ module.exports = {
 				(
 					( s.structureType==STRUCTURE_LINK && s.store[RESOURCE_ENERGY] > 90 ) &&
 					( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] > 90 ) &&
-					( s.structureType==STRUCTURE_STORAGE && s.store[RESOURCE_ENERGY] > 90
+					( s.structureType==STRUCTURE_STORAGE && s.store[RESOURCE_ENERGY] > 90 )
     });
 
 		creep.say("++");
