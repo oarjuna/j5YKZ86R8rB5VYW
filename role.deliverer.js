@@ -39,7 +39,7 @@ module.exports = {
       // Find Towers
       var structure_tower = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
          filter: (s) => (
-            ( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity - 500 )
+            ( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity)
           )});
 
       if ( creep.room.controller.ticksToDowngrade < 500 ) {
