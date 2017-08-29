@@ -70,8 +70,8 @@ module.exports = {
       }
       else {
         // drop off at storage
-        var structure = structure_storage;
-        creep.say("deliv.ST");
+        var structure = creep.room.controller;
+        creep.say("deliv.XX");
 			}
 
       if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
