@@ -160,9 +160,8 @@ module.exports = {
     // Local Link control
     for ( let link of Empire.links[spawn_num]) {
       var link_obj = Game.getObjectById(link);
-      if ( link_obj != undefined && ( link == Empire.receiving_link) ) {
-
-        console.log("link: " + link);
+      if ( link_obj != undefined && ( link == Empire.receiving_link[spawn_num]) ) {
+        console.log("rec link: " + link_obj);
       }
     }
 
