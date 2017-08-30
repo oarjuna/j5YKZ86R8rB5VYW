@@ -12,7 +12,7 @@ module.exports = {
     )});
 
 		creep.say("++");
-		console.log(creep + " con-- " + container);
+		console.log(creep + " ++ " + container);
 
 		if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
 			console.log(creep + " con-- " + container);
