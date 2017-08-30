@@ -148,7 +148,7 @@ module.exports = {
 
         if (target != undefined) {
           console.log(tower + " -- attacking " + target);
-          Game.notify(tower + " -- attacking " + target,5);
+          //Game.notify(tower + " -- attacking " + target,5);
           tower.attack(target);
         }
         else if (repair_target != undefined ) {
