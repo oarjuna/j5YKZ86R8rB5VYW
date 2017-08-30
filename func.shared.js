@@ -19,7 +19,7 @@ module.exports = {
 			let foo = creep.memory.destid;
 			tmp_c = Game.getObjectById(foo);
 			console.log("xxxx " + tmp_c + " " + foo);
-			//if ( tmp_c.energy > 90 ) { container = tmp_c; }
+			if ( tmp_c.energy > 90 ) { container = tmp_c; }
 		}
 
 		creep.say("++");

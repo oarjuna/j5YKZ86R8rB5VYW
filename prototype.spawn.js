@@ -51,15 +51,15 @@ module.exports = function() {
     else if ( energy_avail >= 1000 ){
       if      (roleName == 'harvester') {
           var body = [ WORK,WORK,WORK,WORK,WORK,WORK,  // 600
-                      MOVE, MOVE,MOVE,MOVE,             // 200
+                      MOVE,MOVE,MOVE,MOVE,             // 200
                       CARRY, CARRY ];                  // 100
-      }         // 700
+      }         // 900
 
       else if (roleName == 'deliverer')   {
         var body = [ WORK,WORK,WORK,WORK,  // 400
                   MOVE, MOVE,MOVE,MOVE,             // 200
                   CARRY, CARRY ];                  // 100
-      }
+      } // 700
       else if (roleName == 'upgrader')    {
         var body = [ WORK,WORK,WORK,WORK,  // 400
                   MOVE, MOVE,MOVE,MOVE,             // 200
