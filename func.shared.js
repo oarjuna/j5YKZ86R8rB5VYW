@@ -16,7 +16,7 @@ module.exports = {
 
 		if ( creep.memory.role == 'upgrader' ) {
 			tmp_c = Game.getObjectById(creep.memory.destid);
-			if ( tmp_c.energy > 90 ) { container = tmp_c; }
+			//if ( tmp_c.energy > 90 ) { container = tmp_c; }
 		}
 
 		creep.say("++");
