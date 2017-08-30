@@ -75,7 +75,7 @@ module.exports = {
         var structure = structure_tower;
         creep.say("deliv-tw");
       }
-      else if ( structure_link != null ) {
+      else if ( structure_link != 'fofof' ) {
         // Load a sending link
         var structure = structure_link;
         creep.say("deliv-li");
