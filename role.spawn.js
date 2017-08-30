@@ -164,7 +164,10 @@ module.exports = {
         console.log("rec link: " + link_obj);
         var receiving_link = link_obj;
       }
+      else { link_obj != undefined; }
     }
+
+
 
 
 
