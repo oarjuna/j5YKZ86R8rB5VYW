@@ -1,4 +1,5 @@
 var roleBuilder = require('role.builder');
+var shared  = require('func.shared');
 
 module.exports = {
     run: function(creep) {
