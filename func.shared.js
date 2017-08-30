@@ -6,9 +6,10 @@ module.exports = {
 		var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
     	filter: (s) =>
 				(
-					( s.structureType==STRUCTURE_STORAGE && s.store[RESOURCE_ENERGY] > 90 ) ||
 					( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] > 300 )
     )});
+
+		var storage = creep.room.storage;
 
 /*
 		var structures = creep.pos.lookFor(LOOK_STRUCTURES);
