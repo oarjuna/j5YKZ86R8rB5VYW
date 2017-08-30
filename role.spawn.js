@@ -165,7 +165,7 @@ module.exports = {
         var receiving_link = link_obj;
       }
       if ( link_obj != undefined && ( link != Empire.receiving_link[spawn_num]) ) {
-        console.log("rec link: " + link_obj);
+        console.log("send link: " + link_obj);
         var receiving_link = link_obj;
       }
     }
