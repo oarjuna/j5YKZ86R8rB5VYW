@@ -49,6 +49,10 @@ module.exports = {
 
       // find the sending links
       // TODO
+      var rec_link = creep.memory.destid;
+      var structure_link = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
+        filter: (s) => ( s.structureType == STRUCTURE_LINK && s.id != rec_link )
+      )});
 
       if ( creep.room.controller.ticksToDowngrade < 500 ) {
           // Emergency controller upgrade
