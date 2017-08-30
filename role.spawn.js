@@ -75,8 +75,8 @@ module.exports = {
     }
     // if not enough upgraders
     else if (numUpgr < MinUgra) {
-        console.log(spawn_name + " -- spawning upgrader");
-        name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'upgrader','',spawn_name);
+        console.log(spawn_name + " -- spawning upgrader - dest: " + Empire.receiving_link[spawn_num]);
+        name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'upgrader',Empire.receiving_link[spawn_num],spawn_name);
     }
     // if not enough repairers
     else if (numRepa < MinRepa) {
@@ -156,7 +156,7 @@ module.exports = {
           tower.repair(repair_target);
         }
     }
- 
+
     // Local Link control
     for ( let link of Empire.links[spawn_num]) {
       var link_obj = Game.getObjectById(link);
