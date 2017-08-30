@@ -12,7 +12,9 @@ module.exports = {
     )});
 
 		var structures = creep.pos.lookFor(LOOK_STRUCTURES);
-		console.log(creep + " ST: " + structures);
+		for ( let foo of structures) {
+			console.log(creep + " ST: " + foo);			
+		}
 
 		if ( creep.memory.role == 'upgrader') {
 
