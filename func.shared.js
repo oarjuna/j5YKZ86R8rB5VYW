@@ -7,8 +7,8 @@ module.exports = {
     	filter: (s) =>
 				(
 					( s.structureType==STRUCTURE_LINK && s.energy[RESOURCE_ENERGY] > 90 ) ||
-					( s.structureType==STRUCTURE_STORAGE && s.store[RESOURCE_ENERGY] > 90 ) ||
-					( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] > 300 ) 
+					( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] > 300 ) ||
+					( s.structureType==STRUCTURE_STORAGE && s.store[RESOURCE_ENERGY] > 90 )
     )});
 
 		creep.say("++");
