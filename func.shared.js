@@ -3,25 +3,21 @@ module.exports = {
 	// pickup energy from the closest container
 	pickupEnergy: function(creep)
 	{
+
 		var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
     	filter: (s) =>
 				(
 					( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] > 300 )
     )});
 
-		var storage = creep.room.storage;
-
-/*
-		var structures = creep.pos.lookFor(LOOK_STRUCTURES);
-		for ( let foo of structures) {
-			console.log(creep + " ST: " + foo);
+		if ( container == undefined ) {
+			container = creep.room.storage;
 		}
 
-		if ( creep.memory.role == 'upgrader') {
-
-			console.log(creep + " LI: " + link);
-		} else { var link = undefined; }
-*/
+		if ( memory.creep.role == upgrader ) {
+			tmp_c = Game.getObjectById(creep.memory.destid);
+			if ( tmp_c.energy > 90 ) { container = tmp_c; }
+		}
 
 		creep.say("++");
 		console.log(creep + " ++ " + container);
@@ -30,7 +26,6 @@ module.exports = {
 			console.log(creep + " --- " + container);
 			creep.moveTo(container);
 		}
-
 	}
 
 /*
