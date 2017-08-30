@@ -14,6 +14,7 @@ module.exports = {
 			container = creep.room.storage;
 		}
 
+// TODO
 		if ( creep.memory.role == 'upgrader' ) {
 			tmp_c = Game.getObjectById(creep.memory.destid);
 			console.log("xxxx " + creep.memory.destid);
