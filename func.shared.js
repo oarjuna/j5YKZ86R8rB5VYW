@@ -14,7 +14,7 @@ module.exports = {
 			container = creep.room.storage;
 		}
 
-		if ( creep.memory.role == upgrader ) {
+		if ( creep.memory.role == 'upgrader' ) {
 			tmp_c = Game.getObjectById(creep.memory.destid);
 			if ( tmp_c.energy > 90 ) { container = tmp_c; }
 		}
