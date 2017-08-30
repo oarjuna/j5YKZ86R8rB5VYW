@@ -15,7 +15,7 @@ module.exports = {
 		}
 
 // TODO
-		if ( creep.memory.role == 'upgrader' ) {
+		if ( creep.memory.role == 'upgrader' && creep.memory.destid != '000000000000000000000001' ) {
 			let foo = creep.memory.destid;
 			tmp_c = Game.getObjectById(foo);
 			console.log("xxxx " + tmp_c + " " + foo);
