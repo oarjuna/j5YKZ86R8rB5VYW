@@ -10,17 +10,17 @@ module.exports = {
 					( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] > 300 ) ||
 					( s.structureType==STRUCTURE_STORAGE && s.store[RESOURCE_ENERGY] > 90 )
     )});
-
+/*
 		var structures = creep.pos.lookFor(LOOK_STRUCTURES);
 		for ( let foo of structures) {
-			console.log(creep + " ST: " + foo);			
+			console.log(creep + " ST: " + foo);
 		}
 
 		if ( creep.memory.role == 'upgrader') {
 
 			console.log(creep + " LI: " + link);
 		} else { var link = undefined; }
-
+*/
 
 
 		creep.say("++");
