@@ -159,8 +159,10 @@ module.exports = {
 
     //
     for ( let link of Empire.links[spawn_num]) {
-      console.log("link: " + link);
-      
+      var link_obj = getObjectById(link);
+      if ( link_obj != undefined ) {
+        console.log("link: " + link);
+      }
     }
 
 
