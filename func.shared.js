@@ -11,6 +11,13 @@ module.exports = {
 					( s.structureType==STRUCTURE_STORAGE && s.store[RESOURCE_ENERGY] > 90 )
     )});
 
+		if ( creep.memory.role == 'upgrader') {
+			var link = creep.pos.lookFor(STRUCTURE_LINK);
+			console.log(creep + " " + link);
+		} else { var link = undefined; }
+
+
+
 		creep.say("++");
 		console.log(creep + " ++ " + container);
 
