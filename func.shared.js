@@ -6,10 +6,10 @@ module.exports = {
 		var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
     	filter: (s) =>
 				(
-					( s.structureType==STRUCTURE_LINK && s.energy[RESOURCE_ENERGY] > 90 ) ||
-					( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] > 300 ) ||
-					( s.structureType==STRUCTURE_STORAGE && s.store[RESOURCE_ENERGY] > 90 )
+					( s.structureType==STRUCTURE_STORAGE && s.store[RESOURCE_ENERGY] > 90 ) ||
+					( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] > 300 )
     )});
+
 /*
 		var structures = creep.pos.lookFor(LOOK_STRUCTURES);
 		for ( let foo of structures) {
@@ -22,7 +22,6 @@ module.exports = {
 		} else { var link = undefined; }
 */
 
-
 		creep.say("++");
 		console.log(creep + " ++ " + container);
 
@@ -30,8 +29,8 @@ module.exports = {
 			console.log(creep + " --- " + container);
 			creep.moveTo(container);
 		}
-	}
 
+	}
 
 /*
 	// head to the spawner for regeneration
