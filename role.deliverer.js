@@ -16,7 +16,7 @@ module.exports = {
       //console.log(creep + " -- deliv -- energy capacity full");
       creep.memory.working = true;
     }
-    
+
     // Do stuff
 
     if (creep.memory.working == true) {
@@ -41,11 +41,14 @@ module.exports = {
             ( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity - 500 )
           )});
 
-	// Find storage
-	var structure_storage = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
-	filter: (s) => (
+	    // Find storage
+	    var structure_storage = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
+	    filter: (s) => (
             ( s.structureType == STRUCTURE_STORAGE )
-          )});
+      )});
+
+      // find the sending links
+      
 
       if ( creep.room.controller.ticksToDowngrade < 500 ) {
           // Emergency controller upgrade

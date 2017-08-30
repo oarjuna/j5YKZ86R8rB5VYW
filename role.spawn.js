@@ -62,7 +62,7 @@ module.exports = {
    // if not enough deliverers
     else if (numDeli < MinDeli) {
         console.log(spawn_name + " -- spawning deliverer");
-        name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'deliverer',dest,spawn_name);
+        name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'deliverer',Empire.receiving_link[spawn_num],spawn_name);
     }
    // if not enough energy movers
     else if (numEnMo < MinEner) {
@@ -167,7 +167,7 @@ module.exports = {
       else if ( link_obj != undefined && ( link != Empire.receiving_link[spawn_num])  ) {
         if ( link_obj.energy == link_obj.energyCapacity ) {
           var status = link_obj.transferEnergy(receiving_link);
-          console.log("send link: " + status + " : " + link_obj);
+          console.log("link xfer status: " + status + " : " + link_obj);
         }
       }
 
