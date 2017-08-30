@@ -53,11 +53,25 @@ module.exports = function() {
           var body = [ WORK,WORK,WORK,WORK,WORK,WORK,  // 600
                       MOVE, MOVE,MOVE,MOVE,             // 200
                       CARRY, CARRY ];                  // 100
-        }         // 900
+      }         // 900
 
-      else if (roleName == 'deliverer')   { var body = [ WORK,WORK,WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; }  // 750
-      else if (roleName == 'upgrader')    { var body = [ WORK,WORK,WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ];  } // 750
-      else if (roleName == 'builder')     { var body = [ WORK,WORK,WORK, WORK, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY ];  }  // 750
+      else if (roleName == 'deliverer')   {
+        var body = [ WORK,WORK,WORK,WORK,WORK,WORK,  // 600
+                  MOVE, MOVE,MOVE,MOVE,             // 200
+                  CARRY, CARRY ];                  // 100
+      }
+      else if (roleName == 'upgrader')    {
+        var body = [ WORK,WORK,WORK,WORK,WORK,WORK,  // 600
+                  MOVE, MOVE,MOVE,MOVE,             // 200
+                  CARRY, CARRY ];                  // 100
+      } // 900
+
+      else if (roleName == 'builder')     {
+         var body = [ WORK,WORK,WORK,WORK,WORK,WORK,  // 600
+                  MOVE, MOVE,MOVE,MOVE,             // 200
+                  CARRY, CARRY ];                  // 100
+      }  // 900
+
       else if (roleName == 'repairer')    { var body = [ WORK,WORK,WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY ];  }         // 750
 
       else if (roleName == "remote_harv") { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; } // 700 }
@@ -79,7 +93,7 @@ module.exports = function() {
                      MOVE,MOVE,                                             // 100 - 2
                      ATTACK,ATTACK,ATTACK,ATTACK                            // 320 - 4
                    ]; }     // 1000 total - balanced fatigue
-                   
+
       else if (roleName == "soldier_melee") {
         var body = [ TOUGH,TOUGH,TOUGH,TOUGH,                               // 40 - 4
                      TOUGH,TOUGH,TOUGH,TOUGH,                               // 40 - 4
