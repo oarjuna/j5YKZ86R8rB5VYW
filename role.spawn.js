@@ -158,18 +158,22 @@ module.exports = {
 
     // Local Link control
     for ( let link of Empire.links[spawn_num]) {
+      // Find the receiving link
       var link_obj = Game.getObjectById(link);
-
       if ( link_obj != undefined && ( link == Empire.receiving_link[spawn_num]) ) {
         console.log("rec link: " + link_obj);
         var receiving_link = link_obj;
       }
-      else if ( link_obj != undefined && ( link != Empire.receiving_link[spawn_num])  ) {
+    }
+    for ( let link of Empire.links[spawn_num]) {
+      var link_obj = Game.getObjectById(link);
+      if ( link_obj != undefined && ( link != Empire.receiving_link[spawn_num])  ) {
         if ( link_obj.energy == link_obj.energyCapacity ) {
           var status = link_obj.transferEnergy(receiving_link);
           console.log("link xfer status: " + status + " : " + link_obj);
         }
       }
+    }
 
     }
 
