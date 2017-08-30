@@ -165,6 +165,8 @@ module.exports = {
         var receiving_link = link_obj;
       }
     }
+
+    // check if the sending lnks are full, xfer if so
     for ( let link of Empire.links[spawn_num]) {
       var link_obj = Game.getObjectById(link);
       if ( link_obj != undefined && ( link != Empire.receiving_link[spawn_num])  ) {
@@ -175,7 +177,7 @@ module.exports = {
       }
     }
 
-  
+
 
 }
 };
