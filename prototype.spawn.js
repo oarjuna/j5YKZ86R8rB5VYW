@@ -53,24 +53,24 @@ module.exports = function() {
           var body = [ WORK,WORK,WORK,WORK,WORK,WORK,  // 600
                       MOVE, MOVE,MOVE,MOVE,             // 200
                       CARRY, CARRY ];                  // 100
-      }         // 900
+      }         // 700
 
       else if (roleName == 'deliverer')   {
-        var body = [ WORK,WORK,WORK,WORK,WORK,WORK,  // 600
+        var body = [ WORK,WORK,WORK,WORK,  // 400
                   MOVE, MOVE,MOVE,MOVE,             // 200
                   CARRY, CARRY ];                  // 100
       }
       else if (roleName == 'upgrader')    {
-        var body = [ WORK,WORK,WORK,WORK,WORK,WORK,  // 600
+        var body = [ WORK,WORK,WORK,WORK,  // 400
                   MOVE, MOVE,MOVE,MOVE,             // 200
                   CARRY, CARRY ];                  // 100
-      } // 900
+      } // 700
 
       else if (roleName == 'builder')     {
-         var body = [ WORK,WORK,WORK,WORK,WORK,WORK,  // 600
+        var body = [ WORK,WORK,WORK,WORK,  // 400
                   MOVE, MOVE,MOVE,MOVE,             // 200
                   CARRY, CARRY ];                  // 100
-      }  // 900
+      }  // 700
 
       else if (roleName == 'repairer')    { var body = [ WORK,WORK,WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY ];  }         // 750
 
