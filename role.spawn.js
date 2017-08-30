@@ -156,11 +156,12 @@ module.exports = {
           tower.repair(repair_target);
         }
     }
-
-    //
+ 
+    // Local Link control
     for ( let link of Empire.links[spawn_num]) {
       var link_obj = Game.getObjectById(link);
-      if ( link_obj != undefined ) {
+      if ( link_obj != undefined && ( link == Empire.receiving_link) ) {
+
         console.log("link: " + link);
       }
     }
