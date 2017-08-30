@@ -10,7 +10,7 @@ module.exports = {
 			// Find receiving link w/ energy
 			let rec_link_id = creep.memory.destid;
 			tmp_c = Game.getObjectById(rec_link_id);
-			console.log("xxxx " + tmp_c + " " + rec_link_id);
+			//console.log("xxxx " + tmp_c + " " + rec_link_id);
 			if ( tmp_c.energy > 90 ) { container = tmp_c; }
 		}
 
