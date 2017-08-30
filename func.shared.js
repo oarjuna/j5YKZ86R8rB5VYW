@@ -18,7 +18,7 @@ module.exports = {
 		if ( creep.memory.role == 'upgrader' ) {
 			let foo = creep.memory.destid;
 			tmp_c = Game.getObjectById(foo);
-			console.log("xxxx " + creep.memory.destid);
+			console.log("xxxx " + tmp_c + " " + foo);
 			//if ( tmp_c.energy > 90 ) { container = tmp_c; }
 		}
 
