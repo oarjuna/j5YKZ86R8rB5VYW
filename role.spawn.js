@@ -42,11 +42,6 @@ module.exports = {
           name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'soldier_healer','Attack',spawn_name);
         }
 
-   // if not enough deliverers
-    else if (numDeli < MinDeli) {
-        console.log(spawn_name + " -- spawning deliverer");
-        name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'deliverer',dest,spawn_name);
-    }
    // if not enough harvesters
    // TODO -- deliver_to_spawn memory flag
 
@@ -64,6 +59,11 @@ module.exports = {
     }
 
 
+   // if not enough deliverers
+    else if (numDeli < MinDeli) {
+        console.log(spawn_name + " -- spawning deliverer");
+        name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'deliverer',dest,spawn_name);
+    }
    // if not enough energy movers
     else if (numEnMo < MinEner) {
 
