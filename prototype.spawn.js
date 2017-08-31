@@ -62,9 +62,9 @@ module.exports = function() {
       } // 700
       else if (roleName == 'upgrader')    {
         var body = [ WORK,WORK,WORK,WORK,  // 400
-                  MOVE, MOVE,MOVE,MOVE,             // 200
+                  MOVE, MOVE,             // 100
                   CARRY, CARRY ];                  // 100
-      } // 700
+      } // 600
 
       else if (roleName == 'builder')     {
         var body = [ WORK,WORK,WORK,WORK,  // 400
