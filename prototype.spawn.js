@@ -55,25 +55,17 @@ module.exports = function() {
                       CARRY, CARRY ];                  // 100
       }         // 900
 
-      else if (roleName == 'deliverer')   {
-        var body = [ WORK,WORK,WORK,WORK,  // 400
-                  MOVE,MOVE,MOVE,MOVE,             // 200
-                  CARRY, CARRY ];                  // 100
-      } // 700
-
       else if (roleName == 'upgrader')    {
         var body = [ WORK,WORK,WORK,WORK,  // 400
                   MOVE, MOVE,             // 100
-                  CARRY, CARRY ];                  // 100
+                  CARRY, CARRY ];          // 100
       } // 600
 
-      else if (roleName == 'builder')     {
+      else if (roleName == 'deliverer' || roleName == 'builder' || roleName == 'repairer')     {
         var body = [ WORK,WORK,WORK,WORK,  // 400
                   MOVE, MOVE,MOVE,MOVE,             // 200
                   CARRY, CARRY ];                  // 100
       }  // 700
-
-      else if (roleName == 'repairer')  { var body = [ WORK, MOVE, MOVE, CARRY, CARRY ]; } // 300
 
       else if (roleName == "remote_harv") { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; } // 700 }
       else if (roleName == "claimer")     { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ];  }//  700 }
