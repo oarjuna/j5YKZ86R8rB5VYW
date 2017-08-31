@@ -57,7 +57,7 @@ module.exports = function() {
 
       else if (roleName == 'deliverer')   {
         var body = [ WORK,WORK,WORK,WORK,  // 400
-                  MOVE, MOVE,MOVE,MOVE,             // 200
+                  MOVE,MOVE,MOVE,MOVE,             // 200
                   CARRY, CARRY ];                  // 100
       } // 700
       else if (roleName == 'upgrader')    {
