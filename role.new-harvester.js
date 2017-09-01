@@ -36,7 +36,7 @@ module.exports = {
       var structure_link = creep.pos.findInRange(FIND_MY_STRUCTURES, 6, {
         filter: (s) => (
           ( s.structureType == STRUCTURE_LINK && s.energy != s.energyCapacity )
-      )});
+      )}[0]);
 
       console.log(creep + " SL:  " + structure_link);
       var structure_link = undefined;
