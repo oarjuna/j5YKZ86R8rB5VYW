@@ -69,12 +69,11 @@ module.exports = {
         creep.say("deliv.ST");
 			}
 
-
     if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
         // move towards it
         creep.moveTo(structure);
       }
-    
+    }    
     // END unload
     else {
       // START HARVESTING
