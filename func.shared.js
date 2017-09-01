@@ -5,7 +5,7 @@ module.exports = {
 	{
 
 
-	// TODO ?????? This is not good
+	// TODO ?????? This is not good, clean it up
 		if ( ( creep.memory.role == 'upgrader' || creep.memory.role == 'deliverer' ) && creep.memory.destid != '000000000000000000000001' ) {
 			// upgraders, with destids Find receiving link w/ energy
 			let rec_link_id = creep.memory.destid;

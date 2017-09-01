@@ -22,7 +22,7 @@ module.exports = {
         var numEnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthplace == spawn_name);
 
         var energy_avail = Game.spawns[spawn_name].room.energyCapacityAvailable;
-	      if ( spawn_name == 'Spawn2' || spawn_name == 'Spawn3' ) { energy_avail = 300; }
+	      //if ( spawn_name == 'Spawn2' || spawn_name == 'Spawn3' ) { energy_avail = 300; }
 
         // soldiers
         if (numSold < MinSold) {
