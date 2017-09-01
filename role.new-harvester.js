@@ -73,7 +73,7 @@ module.exports = {
         // move towards it
         creep.moveTo(structure);
       }
-    }    
+    }
     // END unload
     else {
       // START HARVESTING
@@ -86,7 +86,7 @@ module.exports = {
       else {
         var source = target_source;
       }
-      creep.say("harvest");
+      creep.say("H+");
     //console.log(creep + " dest " + target_source);
 		  if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
 		    creep.moveTo(source);
