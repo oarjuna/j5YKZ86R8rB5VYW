@@ -39,6 +39,7 @@ module.exports = {
             s.energy < s.energyCapacity
       )}, 6);
 */
+      var structure_link = undefined;
       console.log(creep + " SL:  " + structure_link);
 
       // Find storage
