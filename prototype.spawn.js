@@ -63,9 +63,9 @@ module.exports = function() {
 
       else if (roleName == 'deliverer' || roleName == 'builder' || roleName == 'repairer')     {
         var body = [ WORK,WORK,WORK,WORK,  // 400
-                  MOVE, MOVE,MOVE,MOVE,             // 200
-                  CARRY, CARRY ];                  // 100
-      }  // 700
+                  MOVE, MOVE,MOVE,MOVE, MOVE, MOVE            // 300
+                  CARRY, CARRY, CARRY, CARRY ];                  // 200
+      }  // 900
 
       else if (roleName == "remote_harv") { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; } // 700 }
       else if (roleName == "claimer")     { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ];  }//  700 }
