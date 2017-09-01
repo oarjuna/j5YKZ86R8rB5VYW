@@ -38,7 +38,7 @@ module.exports.loop = function () {
     harvs_per_source: [
                         [1,1], // Spawn1
                         [1,1], // Spawn2
-                        [0,2], // Spawn3
+                        [1,1], // Spawn3
                         [0,0]  // Spawn4
                       ],
     links: [
