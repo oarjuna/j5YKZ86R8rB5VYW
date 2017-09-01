@@ -170,10 +170,8 @@ module.exports = {
     for ( let link of Empire.links[spawn_num]) {
       var link_obj = Game.getObjectById(link);
       if ( link_obj != undefined && ( link != Empire.receiving_link[spawn_num])  ) {
-        if ( link_obj.energy == link_obj.energyCapacity ) {
           var status = link_obj.transferEnergy(receiving_link);
           console.log("link xfer status: " + status + " : " + link_obj);
-        }
       }
     }
 
