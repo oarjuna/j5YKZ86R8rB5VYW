@@ -37,9 +37,10 @@ module.exports = {
           filter: (s) => (
             s.structureType == STRUCTURE_LINK &&
             s.energy < s.energyCapacity
-      )},6);
+      )}, 6);
 
       console.log(creep + " SL:  " + structure_link);
+
       // Find storage
       var structure_storage = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
       filter: (s) => (
