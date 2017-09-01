@@ -13,8 +13,9 @@ module.exports = {
 			//console.log("xxxx " + tmp_c + " " + rec_link_id);
 			if ( tmp_c.energy > 90 ) { container = tmp_c; }
 		}
+		console.log(creep + "--" + creep.memory.role + " ++ " + container);
 
-		else {
+		if ( container == undefined ) {
 			// Find containers with energy
 			var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
 	    	filter: (s) =>

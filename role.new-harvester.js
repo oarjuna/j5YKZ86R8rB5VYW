@@ -52,18 +52,18 @@ module.exports = {
           var structure = creep.room.controller;
           creep.say("deliv-ER");
       }
+      else if ( structure_container != null ) {
+        // Load a container
+        var structure = structure_container;
+        creep.say("deliv-cn");
+      }
       else if ( structure_link[0] != undefined ){
         // Load the closest link
         var structure = structure_link[0];
         creep.say("deliv.li");
         var deliv_link = true;
       }
-      else if ( structure_container != null ) {
-        // Load a container
-        var structure = structure_container;
-        creep.say("deliv-cn");
-      }
-			else {
+      else {
         // drop off at storage
         var structure = structure_storage;
         creep.say("deliv.ST");
