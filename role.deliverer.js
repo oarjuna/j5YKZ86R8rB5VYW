@@ -74,7 +74,7 @@ module.exports = {
         var structure = structure_tower;
         creep.say("deliv-tw");
       }
-      else if ( structure_link != undefined && structure_link.energy < structure_link.energyCapacity ) {
+      else if ( structure_link != undefined && structure_link.energy < structure_link.energyCapacity - 200) {
         // Load a sending link
         var structure = structure_link;
         creep.say("deliv-li");
