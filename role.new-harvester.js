@@ -35,7 +35,7 @@ module.exports = {
       // Find links
       var structure_link = creep.pos.findInRange(FIND_MY_STRUCTURES, 6, {
           filter: (s) => (
-            structureType: STRUCTURE_LINK &&
+            structureType == STRUCTURE_LINK &&
             s.energy < s.energyCapacity
       )})[0];
 
