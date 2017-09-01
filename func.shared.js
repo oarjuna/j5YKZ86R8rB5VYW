@@ -13,7 +13,6 @@ module.exports = {
 			//console.log("xxxx " + tmp_c + " " + rec_link_id);
 			if ( tmp_c.energy > 90 ) { container = tmp_c; }
 		}
-		console.log(creep + "--" + creep.memory.role + " ++ " + container);
 
 		if ( container == undefined ) {
 			// Find containers with energy
@@ -29,6 +28,7 @@ module.exports = {
 			// otherwise, go to storage
 			container = creep.room.storage;
 		}
+		console.log(creep + "+@" + creep.memory.role + " ++ " + container);
 
 		creep.say("++");
 		//console.log(creep + "--" + creep.memory.role + " ++ " + container);
