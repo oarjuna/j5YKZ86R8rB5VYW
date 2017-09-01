@@ -33,11 +33,11 @@ module.exports = {
           )});
 
       // Find links
-      var structure_link = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
+      var structure_link = creep.pos.findInRange(FIND_MY_STRUCTURES, {
           filter: (s) => (
             s.structureType == STRUCTURE_LINK &&
             s.energy < s.energyCapacity
-      )});
+      )},6);
 
       // Find storage
       var structure_storage = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
