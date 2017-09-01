@@ -33,7 +33,6 @@ module.exports = {
 		console.log(creep + " ++ " + container);
 
 		if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-			console.log(creep + " --- " + container);
 			creep.moveTo(container);
 		}
 	}
