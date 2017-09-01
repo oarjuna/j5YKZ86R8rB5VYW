@@ -38,8 +38,8 @@ module.exports = {
           ( s.structureType == STRUCTURE_LINK && s.energy != s.energyCapacity )
       )});
 
-      var structure_link = undefined;
       console.log(creep + " SL:  " + structure_link);
+      var structure_link = undefined;
 
       // Find storage
       var structure_storage = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
