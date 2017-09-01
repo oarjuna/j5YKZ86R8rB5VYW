@@ -35,7 +35,7 @@ module.exports = {
       // Find links
       var structure_link = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
         filter: (s) => (
-          ( s.structureType == STRUCTURE_LINK )
+          ( s.structureType == STRUCTURE_LINK && s.energy != s.energyCapacity )
       )});
 
       //var structure_link = undefined;
