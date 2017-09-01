@@ -52,9 +52,9 @@ module.exports = {
           var structure = creep.room.controller;
           creep.say("deliv-ER");
       }
-      else if ( structure_link != undefined ){
+      else if ( structure_link[0] != undefined ){
         // Load the closest link
-        var structure = structure_link;
+        var structure = structure_link[0];
         creep.say("deliv.li");
         var deliv_link = true;
       }
