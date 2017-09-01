@@ -26,7 +26,7 @@ module.exports.loop = function () {
                 [
                   [ 2, 3, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0], // Spawn1
                   [ 2, 3, 2, 1, 0, 0, 0, 0, 1, 0, 0, 0], // Spawn2
-                  [ 4, 3, 2, 1, 0, 0, 0, 0, 1, 0, 0, 0], // Spawn3
+                  [ 2, 3, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0], // Spawn3
                   [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]  // Spawn4
                 ],
     sources:    [
@@ -38,7 +38,7 @@ module.exports.loop = function () {
     harvs_per_source: [
                         [1,1], // Spawn1
                         [1,1], // Spawn2
-                        [2,2], // Spawn3
+                        [1,1], // Spawn3
                         [0,0]  // Spawn4
                       ],
     links: [
