@@ -161,7 +161,7 @@ module.exports = {
       // Find the receiving link
       var link_obj = Game.getObjectById(link);
       if ( link_obj != undefined && ( link == Empire.receiving_link[spawn_num]) ) {
-        console.log("rec link: " + link_obj);
+        //console.log("rec link: " + link_obj);
         var receiving_link = link_obj;
       }
     }
