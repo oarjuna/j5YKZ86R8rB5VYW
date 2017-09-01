@@ -27,13 +27,13 @@ module.exports = {
       // START UNLOAD
 
       // Find CONTAINERS
-      var structure_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+      var structure_container = creep.pos.findClosestByPath(FIND_STRUCTURES, {
           filter: (s) => (
             ( s.structureType == STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] < s.storeCapacity - 100)
           )});
 
       // Find links
-      var structure_link = creep.pos.findInRange(FIND_MY_STRUCTURES, 6, {
+      var structure_link = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
           filter: (s) => (
             s.structureType == STRUCTURE_LINK &&
             s.energy < s.energyCapacity
