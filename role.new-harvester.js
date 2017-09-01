@@ -39,7 +39,7 @@ module.exports = {
       )});
 
       console.log(creep + " SL:  " + structure_link[0]);
-      var structure_link = undefined;
+      //var structure_link = undefined;
 
       // Find storage
       var structure_storage = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
