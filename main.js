@@ -23,7 +23,7 @@ var stats = require('screepsplus');
 // START
 module.exports.loop = function () {
 
-  var Empire = {
+  var Hive = {
     spawn_names: ['Spawn1','Spawn2','Spawn3','Spawn4'],
     spawn_levels:
                 //  Harvest, Deliv, Upgrade, Build, Energy, RemoteHarv, Claim, Soldier, Repair, Sol-M ,Sol-R, Sol-H
@@ -56,8 +56,11 @@ module.exports.loop = function () {
                     '59a76b55b9e281705d3b9dea', // Spawn2
                     '000000000000000000000001', // Spawn3
                     '000000000000000000000001' // Spawn4
-                    ]
-
+                  ],
+    squad : {
+        members : ['foo','foo','foo'],
+        leader : 'foo'
+    }
   };
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
@@ -81,13 +84,13 @@ module.exports.loop = function () {
 
   }
 
-  roleSpawn.run(0,Empire);
-  roleSpawn.run(1,Empire);
-  roleSpawn.run(2,Empire);
+  roleSpawn.run(0,Hive);
+  roleSpawn.run(1,Hive);
+  roleSpawn.run(2,Hive);
 
-  gameStatus.display_status(0,Empire);
-  gameStatus.display_status(1,Empire);
-	gameStatus.display_status(2,Empire);
+  gameStatus.display_status(0,Hive);
+  gameStatus.display_status(1,Hive);
+	gameStatus.display_status(2,Hive);
 
   console.log("#-------------------------------------------------------#  H, U, R, B, RH, C, De, EM, S");
   stats.collect_stats();
