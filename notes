@@ -1,6 +1,24 @@
 
 
 
-// leader for combat, gives orders
 
-// melee, rushes 
+// combat ai
+// defender melee, ranged, healer
+// attacking next
+
+// global FIND_* cache instead of each creep calling it's own find
+
+
+// economy AI to manage creep pickup and dropoff based on need
+// rather than the
+source -> container -> storage -> link -> controller  flow currently in place.
+
+.. it would be good to say 10% 80% 10% of all energy production split up into use categories
+
+% for controller Upgrade
+creep production
+tower energy
+construction
+
+
+//fix remote harvesters,do right
