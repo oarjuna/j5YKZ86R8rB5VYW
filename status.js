@@ -1,8 +1,8 @@
 module.exports = {
 
-   display_status: function(spawn_num,Empire) {
-     [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa,MinSolM,MinSolR,MinSolH] =  Empire.spawn_levels[spawn_num];
-     var spawn_name = Empire.spawn_names[spawn_num];
+   display_status: function(spawn_num,Hive) {
+     [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa,MinSolM,MinSolR,MinSolH] =  Hive.spawn_levels[spawn_num];
+     var spawn_name = Hive.spawn_names[spawn_num];
 
         // count the number of creeps alive for each role and according to spawn
         var numHarv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthplace == spawn_name);
@@ -24,7 +24,7 @@ module.exports = {
 
 
         // Graphs Game.spawns[spawn_name].room.energyAvailable;
-      
+
       //  Memory.stats["room." + Game.spawns[spawn_name].room.name + ".energyCapacityAvailable"] = Game.spawns[spawn_name].room.energyCapacityAvailable;
       //  Memory.stats["room." + Game.spawns[spawn_name].room.name + ".controllerProgress"] = Game.spawns[spawn_name].room.controller.progress;
 
@@ -59,8 +59,8 @@ module.exports = {
 
         // source status information
         var msg = '';
-        for ( let source_id in Empire.sources[spawn_num]) {
-          var source = Game.getObjectById(Empire.sources[spawn_num][source_id]);
+        for ( let source_id in Hive.sources[spawn_num]) {
+          var source = Game.getObjectById(Hive.sources[spawn_num][source_id]);
           var source_energy = source.energy;
           var source_energy_cap = source.energyCapacity;
           var source_ticks = source.ticksToRegeneration;
