@@ -55,7 +55,7 @@ module.exports = {
         var lvl =  Game.spawns[spawn_name].room.controller.level;
 
         console.log(spawn_name + " : lvl" + lvl + status11 + status12 + " C: "+ total_status + " -- " + status1 + status2 + status3 + status4 + status5 + status7 + status8 + status9 + status10);
-        console.log("\t" + status21 + status22 + status23);
+        //console.log("\t" + status21 + status22 + status23);
 
         // source status information
         var msg = '';
