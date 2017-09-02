@@ -28,7 +28,7 @@ module.exports = {
 			// otherwise, go to storage
 			container = creep.room.storage;
 		}
-		console.log(creep + "+@" + creep.memory.role + " ++ " + container);
+		//console.log(creep + "+@" + creep.memory.role + " ++ " + container);
 
 		creep.say("++");
 		//console.log(creep + "--" + creep.memory.role + " ++ " + container);
