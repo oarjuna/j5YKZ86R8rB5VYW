@@ -6,13 +6,13 @@
 function Callback() {
     this.handlers = [];  // observers
 }
- 
+
 Callback.prototype = {
- 
+
     subscribe: function(fn) {
         this.handlers.push(fn);
     },
- 
+
     unsubscribe: function(fn) {
         this.handlers = this.handlers.filter(
             function(item) {
@@ -22,7 +22,7 @@ Callback.prototype = {
             }
         );
     },
- 
+
     fire: function(o, thisObj) {
         // TODO: Put error handling around the call?
         this.handlers.forEach(function(item) {
@@ -34,7 +34,7 @@ Callback.prototype = {
         });
     }
 }
- 
+
 module.exports = {
     Callback
 };
