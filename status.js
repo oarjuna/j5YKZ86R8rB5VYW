@@ -22,7 +22,12 @@ module.exports = {
         var cur_energy = Game.spawns[spawn_name].room.energyAvailable;
         var cur_energy_cap = Game.spawns[spawn_name].room.energyCapacityAvailable;
 
-        
+
+        // Graphs Game.spawns[spawn_name].room.energyAvailable;
+        Memory.stats["room." + Game.spawns[spawn_name].room.name + ".energyAvailable"] = cur_energy;
+      //  Memory.stats["room." + Game.spawns[spawn_name].room.name + ".energyCapacityAvailable"] = Game.spawns[spawn_name].room.energyCapacityAvailable;
+      //  Memory.stats["room." + Game.spawns[spawn_name].room.name + ".controllerProgress"] = Game.spawns[spawn_name].room.controller.progress;
+
 
         var status1 = numHarv + "/" + MinHarv + " ";
         var status2 = numUpgr + "/" + MinUgra + " ";
@@ -63,5 +68,8 @@ module.exports = {
           //var msg = msg + out;
           console.log(out);
         }
+
+
+
   }
 };
