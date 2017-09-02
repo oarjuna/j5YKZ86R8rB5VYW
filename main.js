@@ -68,7 +68,7 @@ module.exports.loop = function () {
     }
   };
 
-  console.log("A:" + army.squad[0].leader);
+  console.log("A:" + Hive.army.squad[0].leader);
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
   for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
