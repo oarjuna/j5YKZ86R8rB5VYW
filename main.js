@@ -18,6 +18,8 @@ var roleSpawn = require('role.spawn');
 
 var stats = require('screepsplus');
 
+stats.collect_stats();
+
 // START
 module.exports.loop = function () {
 
