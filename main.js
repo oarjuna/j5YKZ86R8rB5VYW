@@ -59,6 +59,7 @@ module.exports.loop = function () {
                   ],
     army : {
       squad : {
+          id            :
           members       : ['foo1','foo2','foo3'],
           leader        : 'foo_leader',
           movedest      : 'foo_dest',
@@ -66,6 +67,8 @@ module.exports.loop = function () {
       }
     }
   };
+
+  console.log("A:" + army.squad[0].leader);
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
   for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
