@@ -16,7 +16,7 @@ var roleSoldier_healer = require('role.soldier_healer');
 var gameStatus = require('status');
 var roleSpawn = require('role.spawn');
 
-var stats = require('screepsplus')
+var stats = require('screepsplus');
 
 // START
 module.exports.loop = function () {
