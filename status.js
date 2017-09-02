@@ -25,7 +25,7 @@ module.exports = {
 
         // Graphs Game.spawns[spawn_name].room.energyAvailable;
         if ( spawn_name == 'Spawn1' ) {
-          Memory.stats[W28S81].energyAvailable = Game.spawns[spawn_name].room.controller.progress;
+          Memory.stats["room.W28S81.energyAvailable"].energyAvailable = Game.spawns[spawn_name].room.controller.progress;
         }
       //  Memory.stats["room." + Game.spawns[spawn_name].room.name + ".energyCapacityAvailable"] = Game.spawns[spawn_name].room.energyCapacityAvailable;
       //  Memory.stats["room." + Game.spawns[spawn_name].room.name + ".controllerProgress"] = Game.spawns[spawn_name].room.controller.progress;
