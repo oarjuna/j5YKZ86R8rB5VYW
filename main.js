@@ -57,9 +57,13 @@ module.exports.loop = function () {
                     '000000000000000000000001', // Spawn3
                     '000000000000000000000001' // Spawn4
                   ],
-    squad : {
-        members : ['foo','foo','foo'],
-        leader : 'foo'
+    army : {
+      squad : {
+          members       : ['foo','foo','foo'],
+          leader        : 'foo',
+          movedest      : 'foo',
+          attacktarget  : 'foo'
+      }
     }
   };
 
