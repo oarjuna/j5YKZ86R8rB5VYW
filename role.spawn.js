@@ -176,9 +176,9 @@ module.exports = {
     }
 
     // Graphs Game.spawns[spawn_name].room.energyAvailable;
-    Memory.stats["room." + Game.spawns[spawn_name].room + ".energyAvailable"] = Game.spawns[spawn_name].room.energyAvailable;
-    Memory.stats["room." + Game.spawns[spawn_name].room + ".energyCapacityAvailable"] = Game.spawns[spawn_name].room.energyCapacityAvailable;
-    Memory.stats["room." + Game.spawns[spawn_name].room + ".controllerProgress"] = Game.spawns[spawn_name].room.controller.progress;
+    Memory.stats["room." +  Game.spawns[spawn_name].name + ".energyAvailable"] = Game.spawns[spawn_name].room.energyAvailable;
+    Memory.stats["room." +  Game.spawns[spawn_name].name + ".energyCapacityAvailable"] = Game.spawns[spawn_name].room.energyCapacityAvailable;
+    Memory.stats["room." +  Game.spawns[spawn_name].name + ".controllerProgress"] = Game.spawns[spawn_name].room.controller.progress;
 
 
 }
