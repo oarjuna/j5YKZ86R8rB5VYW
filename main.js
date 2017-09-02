@@ -59,7 +59,7 @@ module.exports.loop = function () {
                   ],
     army : {
       squad : {
-          id            :
+          id            : 0,
           members       : ['foo1','foo2','foo3'],
           leader        : 'foo_leader',
           movedest      : 'foo_dest',
