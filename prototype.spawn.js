@@ -56,10 +56,10 @@ module.exports = function() {
       }         // 1000
 
       else if (roleName == 'upgrader')    {
-        var body = [ WORK,WORK,WORK,WORK,  // 400
+        var body = [ WORK,WORK,WORK,WORK,WORK,WORK,  // 600
                   MOVE, MOVE,             // 100
                   CARRY, CARRY ];          // 100
-      } // 600
+      } // 800
 
       else if (roleName == 'deliverer' || roleName == 'builder' || roleName == 'repairer')     {
         var body = [ WORK,WORK,WORK,WORK,  // 400
