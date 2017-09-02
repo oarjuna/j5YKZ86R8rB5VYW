@@ -57,7 +57,7 @@ module.exports.loop = function () {
                     '000000000000000000000001', // Spawn3
                     '000000000000000000000001' // Spawn4
                   ],
-    army : {
+    army : [
       squad : {
           id            : 0,
           members       : ['foo1','foo2','foo3'],
@@ -65,7 +65,7 @@ module.exports.loop = function () {
           movedest      : 'foo_dest',
           attacktarget  : 'foo_attack'
       }
-    }
+    ]
   };
 
   console.log("A:" + Hive.army.squad.leader);
