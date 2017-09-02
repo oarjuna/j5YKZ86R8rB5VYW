@@ -3,9 +3,9 @@ module.exports = {
     /*
       Harvest, Deliv, Upgrade, Build, Energy, RemoHarv, Claim, Soldier, Repair
     */
-    run: function(spawn_num,Empire) {
-      [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa,MinSolM,MinSolR,MinSolH] =  Empire.spawn_levels[spawn_num];
-      var spawn_name = Empire.spawn_names[spawn_num];
+    run: function(spawn_num,Hive) {
+      [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa,MinSolM,MinSolR,MinSolH] =  Hive.spawn_levels[spawn_num];
+      var spawn_name = Hive.spawn_names[spawn_num];
 
         // count the number of creeps alive for each role born at
         var numHarv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthplace == spawn_name);
@@ -46,11 +46,11 @@ module.exports = {
    // TODO -- deliver_to_spawn memory flag
 
    else  if (numHarv < MinHarv) {
-      for (let xx in Empire.sources[spawn_num] ) {
-        var h_tmp = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.destid == Empire.sources[spawn_num][xx]);
-        //console.log(spawn_name + " -- " + h_tmp  + " " +  Empire.harvs_per_source[spawn_num][xx]);
-        if ( h_tmp < Empire.harvs_per_source[spawn_num][xx]) {
-           var dest =  Empire.sources[spawn_num][xx];
+      for (let xx in Hive.sources[spawn_num] ) {
+        var h_tmp = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.destid == Hive.sources[spawn_num][xx]);
+        //console.log(spawn_name + " -- " + h_tmp  + " " +  Hive.harvs_per_source[spawn_num][xx]);
+        if ( h_tmp < Hive.harvs_per_source[spawn_num][xx]) {
+           var dest =  Hive.sources[spawn_num][xx];
         }
       }
         // try to spawn one
@@ -62,7 +62,7 @@ module.exports = {
    // if not enough deliverers
     else if (numDeli < MinDeli) {
         console.log(spawn_name + " -- spawning deliverer");
-        name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'deliverer',Empire.receiving_link[spawn_num],spawn_name);
+        name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'deliverer',Hive.receiving_link[spawn_num],spawn_name);
     }
    // if not enough energy movers
     else if (numEnMo < MinEner) {
@@ -75,8 +75,8 @@ module.exports = {
     }
     // if not enough upgraders
     else if (numUpgr < MinUgra) {
-        console.log(spawn_name + " -- spawning upgrader - dest: " + Empire.receiving_link[spawn_num]);
-        name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'upgrader',Empire.receiving_link[spawn_num],spawn_name);
+        console.log(spawn_name + " -- spawning upgrader - dest: " + Hive.receiving_link[spawn_num]);
+        name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'upgrader',Hive.receiving_link[spawn_num],spawn_name);
     }
     // if not enough repairers
     else if (numRepa < MinRepa) {
@@ -157,21 +157,21 @@ module.exports = {
     }
 
     // Local Link control
-    for ( let link of Empire.links[spawn_num]) {
+    for ( let link of Hive.links[spawn_num]) {
       // Find the receiving link
       var link_obj = Game.getObjectById(link);
-      if ( link_obj != undefined && ( link == Empire.receiving_link[spawn_num]) ) {
+      if ( link_obj != undefined && ( link == Hive.receiving_link[spawn_num]) ) {
         //console.log("rec link: " + link_obj);
         var receiving_link = link_obj;
       }
     }
 
     // check if the sending lnks are full, xfer if so
-    for ( let link of Empire.links[spawn_num]) {
+    for ( let link of Hive.links[spawn_num]) {
       var link_obj = Game.getObjectById(link);
-      if ( link_obj != undefined && ( link != Empire.receiving_link[spawn_num])  ) {
+      if ( link_obj != undefined && ( link != Hive.receiving_link[spawn_num])  ) {
           var status = link_obj.transferEnergy(receiving_link);
-          console.log("link xfer status: " + status + " : " + link_obj);
+          //console.log("link xfer status: " + status + " : " + link_obj);
       }
     }
 
