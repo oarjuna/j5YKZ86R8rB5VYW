@@ -18,7 +18,7 @@ var roleSpawn = require('role.spawn');
 
 var stats = require('screepsplus');
 
-stats.collect_stats();
+
 
 // START
 module.exports.loop = function () {
@@ -90,7 +90,7 @@ module.exports.loop = function () {
 	gameStatus.display_status(2,Empire);
 
   console.log("#-------------------------------------------------------#  H, U, R, B, RH, C, De, EM, S");
-
+  stats.collect_stats();
   //for (var spawn in Game.spawns){
     //roleSpawn.run(spawn);
 	//}
