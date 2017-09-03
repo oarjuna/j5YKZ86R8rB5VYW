@@ -227,6 +227,11 @@ module.exports = {
     );
 
     // detect idle creep that are empty
+    var full_creeps = _.filter(Game.creeps, (c) =>
+      ( c.memory.birthplace == spawn_name ) &&
+      ( .sum(c.carry) == 0 ) &&
+      ( c.memory.state == 'idle' )
+    );
 
     // detect sources to harvest ( there is always a need to harvest, ensure there is a job on the queue
 
