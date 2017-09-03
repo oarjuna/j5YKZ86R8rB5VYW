@@ -42,10 +42,7 @@ module.exports = {
           )});
 
 	    // Find storage
-	    var structure_storage = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
-	    filter: (s) => (
-            ( s.structureType == STRUCTURE_STORAGE )
-      )});
+	    var structure_storage = creep.room.storage;
 
       // find the sending links
       var rec_link = creep.memory.destid;
