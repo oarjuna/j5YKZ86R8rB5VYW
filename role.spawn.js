@@ -221,7 +221,7 @@ module.exports = {
 
     // detect idle creeps full of energy needing to unload
     var full_creeps = _.filter(Game.creeps, function(c) {
-      ( c.carryCapacity == _.sum(c.carry) ) &&
+    //  ( c.carryCapacity == _.sum(c.carry) ) &&
       ( c.memory.destid == spawn_name )
     });
 
