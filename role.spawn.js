@@ -274,9 +274,9 @@ module.exports = {
 
 
     // if jobs found
-    if ( ( full_creeps.length != 0 ) && ( empty_creeps.length != 0 ) && ( sources.length != 0 ) &&
-         ( containers.length != 0 ) && ( towers.length != 0 ) && ( links.length != 0 ) &&
-         ( controller != undefined ) && ( spawns.length != 0 ) && ( construction.length != 0 ) ) {
+    if ( ( full_creeps.length != 0 ) || ( empty_creeps.length != 0 ) || ( sources.length != 0 ) ||
+         ( containers.length != 0 ) || ( towers.length != 0 ) || ( links.length != 0 ) ||
+         ( controller != undefined ) || ( spawns.length != 0 ) || ( construction.length != 0 ) ) {
            // create job ojbect, add to job queue
            // update related working variable
            console.log("NS: " + full_creeps.length);
