@@ -225,7 +225,10 @@ module.exports = {
       ( c.memory.birthplace == spawn_name )
     });
 
-    var full_creeps = _.filter(Game.creeps, (c) =>  c.memory.birthplace == spawn_name );
+    var full_creeps = _.filter(Game.creeps, (c) =>
+      ( c.memory.birthplace == spawn_name ) &&
+      ( c.carryCapacity == _.sum(c.carry) )
+    );
 
     console.log("NP full :" + full_creeps );
 
