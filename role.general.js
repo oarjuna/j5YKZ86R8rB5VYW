@@ -24,5 +24,7 @@ module.exports = {
     //sq1.delMember(3);
     //console.log("A:" + Hive.military_squad[0].member[3]);
 
+// name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'soldier','Attack',spawn_name,squad,leader);
+
   }
 };
