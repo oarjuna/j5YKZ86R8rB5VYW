@@ -106,7 +106,7 @@ module.exports = {
         else { var dest = 'error'; }
 
         console.log(spawn_name + " -- spawning remote_harv");
-        name =Game.spawns[spawn_name].createCustomCreep(energy_avail, 'remote_harv',dest,spawn_name);
+        name =Game.spawns[spawn_name].createCustomCreep(energy_avail,'remote_harv',dest,spawn_name,return_id);
         var creep = Game.creeps[name];
         creep.memory.storage =  Game.spawns[spawn_name].room.storage;
     }
