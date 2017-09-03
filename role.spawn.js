@@ -225,11 +225,6 @@ module.exports = {
       // creep - update job status as complete
       // creep - set state to idle
 
-    // spawn to harvester flow
-      // creep - harest from source
-      // creep - when full, transer energy to container
-      // creep - update container working + 200
-
     */
   }
 };
