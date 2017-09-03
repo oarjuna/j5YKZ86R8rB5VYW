@@ -275,9 +275,13 @@ module.exports = {
     console.log("NS: " + full_creeps.length);
 
     // if jobs found
-    //if ( full_creeps != undefined )
-      // create job ojbect, add to job queue
-      // update related working variable
+    if ( ( full_creeps.length != 0 ) && ( empty_creeps.length != 0 ) && ( sources.length != 0 ) &&
+         ( containers.length != 0 ) && ( towers.length != 0 ) && ( links.length != 0 ) &&
+         ( controller != undefined ) && ( spawns.length != 0 ) ) {
+           // create job ojbect, add to job queue
+           // update related working variable
+
+         }
 
     // assign idle creeps to jobs
       // factors - creep state, energy carried, body type
