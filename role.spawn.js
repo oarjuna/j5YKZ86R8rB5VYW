@@ -273,9 +273,9 @@ module.exports = {
     // TODO?
 
     console.log("NS: " + full_creeps);
-    
+
     // if jobs found
-    if ( full_creeps != undefined )
+    //if ( full_creeps != undefined )
       // create job ojbect, add to job queue
       // update related working variable
 
