@@ -220,7 +220,7 @@ module.exports = {
       // update container working variables ( working = actual ) when any job finishes, times out, or is abandoned
 
     // detect idle creeps full of energy needing to unload
-    var full_creeps = _.filter(Game.creep, function(c) {
+    var full_creeps = _.filter(Game.creeps, function(c) {
       ( c.carryCapacity == _.sum(c.carry) ) &&
       ( c.memory.destid == spawn_name )
     });
