@@ -257,7 +257,7 @@ module.exports = {
       )});
 
     // detect things needing to be built or repaired ( flag working queue as true for this object id)
-    var construction = creep.pos.Game.spawns[spawn_name].room.find(FIND_CONSTRUCTION_SITES);
+    var construction = Game.spawns[spawn_name].room.find(FIND_CONSTRUCTION_SITES);
 
     // detect resources laying on the ground ( update working var, not actual)
     // TODO?
