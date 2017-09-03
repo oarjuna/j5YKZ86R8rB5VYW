@@ -272,15 +272,21 @@ module.exports = {
     // detect resources laying on the ground ( update working var, not actual)
     // TODO?
 
-    console.log("NS: " + full_creeps.length);
 
     // if jobs found
     if ( ( full_creeps.length != 0 ) && ( empty_creeps.length != 0 ) && ( sources.length != 0 ) &&
          ( containers.length != 0 ) && ( towers.length != 0 ) && ( links.length != 0 ) &&
-         ( controller != undefined ) && ( spawns.length != 0 ) ) {
+         ( controller != undefined ) && ( spawns.length != 0 ) && ( construction.length != 0 ) ) {
            // create job ojbect, add to job queue
            // update related working variable
-
+           console.log("NS: " + full_creeps.length);
+           console.log("NS: " + empty_creeps.length);
+           console.log("NS: " + sources.length);
+           console.log("NS: " + containers.length);
+           console.log("NS: " + towers.length);
+           console.log("NS: " + links.length);
+           console.log("NS: " + spawns.length);
+           console.log("NS: " + construction.length);
          }
 
     // assign idle creeps to jobs
