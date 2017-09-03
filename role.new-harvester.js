@@ -42,10 +42,7 @@ module.exports = {
       //var structure_link = undefined;
 
       // Find storage
-      var structure_storage = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
-      filter: (s) => (
-                ( s.structureType == STRUCTURE_STORAGE )
-              )});
+      var structure_storage = creep.room.storage;
 
       if ( creep.room.controller.ticksToDowngrade < 200 ) {
           // Emergency controller upgrade
