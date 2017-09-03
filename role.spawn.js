@@ -283,7 +283,7 @@ module.exports = {
            console.log("NS: " + spawn_name +  "EC " + empty_creeps.length);
            console.log("NS: " + spawn_name +  "SO " + sources.length);
            console.log("NS: " + spawn_name +  "CT " + containers.length);
-           console.log("NS: " + spawn_name +  " TW " + towers.length);
+           console.log("NS: " + spawn_name +  "TW " + towers.length);
            console.log("NS: " + spawn_name +  "LI " + links.length);
            console.log("NS: " + spawn_name +  "SP " + spawns.length);
            console.log("NS: " + spawn_name +  "CO" + construction.length);
