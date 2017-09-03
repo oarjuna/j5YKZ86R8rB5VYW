@@ -58,7 +58,7 @@ module.exports.loop = function () {
                     '000000000000000000000001' // Spawn4
                   ],
     army : [],
-/*    squad : {
+    squad : {
         id            : 0,
         members       : ['foo1','foo2','foo3'],
         leader        : 'foo_leader',
@@ -66,7 +66,6 @@ module.exports.loop = function () {
         attacktarget  : 'foo_attack'
     }
 
-*/
   };
 
   function Squad(leader,members,movedest,attacktarget) {
@@ -75,7 +74,7 @@ module.exports.loop = function () {
     this.movedest = movedest;
     this.attacktarget = attacktarget;
   }
-  
+
   console.log("A:" + Hive.army.squad.leader);
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
