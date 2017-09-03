@@ -17,6 +17,7 @@ var gameStatus = require('status');
 var roleSpawn = require('role.spawn');
 
 var stats = require('screepsplus');
+var general = require('role.general');
 
 
 
@@ -81,7 +82,8 @@ module.exports.loop = function () {
   console.log("A:" + Hive.military_squad[0].member[3]);
   sq1.delMember(3);
   console.log("A:" + Hive.military_squad[0].member[3]);
-  
+
+  general.run(Hive);
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
   for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
