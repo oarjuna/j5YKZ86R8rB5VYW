@@ -176,8 +176,6 @@ module.exports = {
       }
     }
 
-    // create job queue object in main, pass to all creeps and spawns
-
     // Types of jobs
     // 01 - fill from somewhere
       // aa - source - harvesters
@@ -201,23 +199,71 @@ module.exports = {
     // container info - actual energy / working energy
     // job states - assigned / complete / abandoned / timed out
     // creep state - source_bound / dest_bound / working / idle
-    // job object - type, priority, state, body_type, dest_id, tick_issued
+
+    // job object prototype - type, priority, state, body_type, dest_id, tick_issued
+    function Job (type,priority,state,body_type_req,dest_id,tick_issued) {
+        this.type = type;
+        this.priority = priority;
+        this.state = state;
+        this.body_type_req = body_type_req;
+        this.dest_id = dest_id;
+        this.tick_issued = tick_issued;
+    }
+
+    var container_energy_floor = 100;
+    var tower_energy_ceiling = 250;
+    var link_energy_celiing = 100;
 
     // spawn flow
     // check for timed out, complete, or abandoned jobs
       // remove these jobs from the queue
       // update container working variables ( working = actual ) when any job finishes, times out, or is abandoned
 
-    // find new jobs to do
     // detect idle creeps full of energy needing to unload
-    // detect sources to harvest ( there is always a need to harvest, ensure there is a job on the queue )
+    var full_creeps = _.sum(Game.creeps,(c) => c.carryCapacity == _.sum(c.carry) && c.memory.destid == spawn_name);
+    console.log("NP full :" + full_creeps );
+
+    // detect idle creep that are empty
+
+    // detect sources to harvest ( there is always a need to harvest, ensure there is a job on the queue
+
     // detect containers with energy (working variable >= SOME_VALUE, not actual) needing empty
+    var containers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
+      filter: (s) => (
+        ( s.structureType == STRUCTURE_CONTAINER && s.energy >= container_energy_floor )
+    )});
+
     // detect towers needing energy ( update working var, not actual)
+    var towers =  Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
+       filter: (s) => (
+          ( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity - tower_energy_ceiling )
+    )});
+
     // detect sending links needing filling
+    var rec_link = Hive.receiving_link[spawn_num];
+    var links = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
+      filter: (s) => (
+        ( s.structureType == STRUCTURE_LINK && s.id != rec_link && s.energy < s.energyCapacity - link_energy_celiing )
+    )});
+
     // detect controllers needing upgrading ( update working var )
-    // detect spawns and extensions to deliver to
+    var controller = Game.spawns[spawn_name].room.controller;
+
+    // detect spawns and extensions needing delivery
+    var spawns = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
+      filter: (s) => (
+        ( s.structureType == STRUCTURE_SPAWN && s.energy < s.energyCapacity ) ||
+        ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
+      )});
+
     // detect things needing to be built or repaired ( flag working queue as true for this object id)
+    var construction = creep.pos.Game.spawns[spawn_name].room.find(FIND_CONSTRUCTION_SITES);
+
     // detect resources laying on the ground ( update working var, not actual)
+    // TODO?
+
+    // console
+    //console.log("NS: " + )
 
     // if jobs found
       // prioritize them
