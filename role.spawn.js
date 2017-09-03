@@ -98,7 +98,7 @@ module.exports = {
         var c_flag3 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harv' && c.memory.destid == spawn_name + 'Flag3');
         var c_flag4 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harv' && c.memory.destid == spawn_name + 'Flag4');
 
-        // one remote harvester per flag
+        // one remote harvester per flag, four flags per spawn
         if ( c_flag1 == 0 ) { var dest = spawn_name + 'Flag1'; }
         else if ( c_flag2 == 0 ) { var dest = spawn_name +'Flag2'; }
         else if ( c_flag3 == 0 ) { var dest = spawn_name + 'Flag3'; }
