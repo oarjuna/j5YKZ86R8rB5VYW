@@ -279,7 +279,7 @@ module.exports = {
          ( controller != undefined ) || ( spawns.length != 0 ) || ( construction.length != 0 ) ) {
            // create job ojbect, add to job queue
            // update related working variable
-           console.log("NS: FC  " + full_creeps.length);
+           console.log("NS: FC " + full_creeps.length);
            console.log("NS: EC " + empty_creeps.length);
            console.log("NS: SO " + sources.length);
            console.log("NS: CT " + containers.length);
