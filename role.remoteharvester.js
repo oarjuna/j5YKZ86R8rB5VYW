@@ -3,6 +3,7 @@ module.exports = {
 
     // get your assignment
     var dest_flag = creep.memory.destid;
+    console.log("RH " + dest_flag);
     var gotoFlag = Game.flag.dest_flag;
 
     /*
