@@ -1,6 +1,7 @@
 
 
-
+// ssh -i "screeps-grafana.pem" ubuntu@ec2-34-214-54-56.us-west-2.compute.amazonaws.com
+ // sudo screepsplus-agent
 
 // combat ai
 // defender melee, ranged, healer
