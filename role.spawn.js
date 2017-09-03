@@ -201,8 +201,9 @@ module.exports = {
       // ff - construction sites - builder
       // gg - repair jobs - builder
 
-    // container states - actual / working
+    // container info - actual energy / working energy
     // job states - assigned / complete / abandoned
+    // creep state - source bound / dest bound / idle
 
     // job - type, priority, state, body_type, source_id, dest_id, tick_issued
 
@@ -217,7 +218,8 @@ module.exports = {
 
       // spawn -- find the right creep for the job
         // factors - creep state, energy carried, body type
-      // creep - mark the job as assigned
+      // spawn - assign the creep to the job
+      // spawn - mark the job as assigned
 
     // creep flow
       // creep - if the job is a FILL type job
