@@ -229,7 +229,7 @@ module.exports = {
     // detect idle creep that are empty
     var empty_creeps = _.filter(Game.creeps, (c) =>
       ( c.memory.birthplace == spawn_name ) &&
-      ( c.carryCapacity == _.sum(c.carry) ) &&
+      ( _.sum(c.carry) == 0 ) &&
       ( c.memory.state == 'idle' )
     );
 
