@@ -9,7 +9,7 @@ module.exports = function() {
 // 1300
 
   StructureSpawn.prototype.createCustomCreep =
-  function(energy_avail, roleName, dest, birthplace) {
+  function(energy_avail, roleName, dest, birthplace,squad,leader) {
     // 300 - 549 energy_avail --- initial spawn
     if ( energy_avail < 550 ) {
       if      (roleName == 'harvester') { var body = [ WORK, WORK, MOVE, CARRY ]; } // 300
