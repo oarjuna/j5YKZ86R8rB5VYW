@@ -21,8 +21,8 @@ module.exports = {
     sq1.addMember('mem4');
     console.log("A:" + Hive.military_squad[0].member[3]);
 
-    sq1.delMember(3);
-    console.log("A:" + Hive.military_squad[0].member[3]);
+    //sq1.delMember(3);
+    //console.log("A:" + Hive.military_squad[0].member[3]);
 
   }
 };
