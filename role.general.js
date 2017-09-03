@@ -15,8 +15,8 @@ module.exports = {
       }
     }
 
-    var sq1 = new Squad(1,'leader1',['mem1','mem2','mem3'],'movedest','attack');
-    Hive.military_squad.push(sq1);
+//    var sq1 = new Squad(1,'leader1',['mem1','mem2','mem3'],'movedest','attack');
+//    Hive.military_squad.push(sq1);
 
 //    sq1.addMember('mem4');
 //    console.log("A:" + Hive.military_squad[0].member[3]);
