@@ -19,8 +19,6 @@ var roleSpawn = require('role.spawn');
 var stats = require('screepsplus');
 var general = require('role.general');
 
-
-
 // START
 module.exports.loop = function () {
 

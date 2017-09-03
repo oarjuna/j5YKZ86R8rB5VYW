@@ -176,6 +176,56 @@ module.exports = {
       }
     }
 
+    // create job queue object in main, pass to all creeps and spawns
+    /* 
 
-}
+    // job type, priority, state (waiting for assignment/assigned/other?), body type needed, source_id, dest_id, tick_issued
+    jobQueue {
+
+    }
+
+
+    // find jobs and add them to the job queue
+    // harvesters exist based on Empire config for now, they don't use the job queue
+
+    // 01 - fill from somewhere - deliver to somewhere
+      // aa - container - deliverer
+      // bb - spawns extensions - deliverer
+      // cc - towers - deliverer
+      // dd - controller - upgrader
+      // ee - storage - deliverer
+      // ff - resources on the ground - builder
+
+    // 02 - construction/repair jobs
+      // ff - construction sites - builder
+      // gg - repair jobs - builder
+
+    // container states - actual / working
+
+    // check for timed out, complete, or abandoned jobs
+
+    // update working state ( working = actual ) when any job finishes or times out
+
+    // spawn to creep flow
+      // spawn - detects container (working >= 200) needing empty
+      // spawn - creates job, add to job queue
+      // spawn - update container state ( working - 200 )
+
+      // creep - watch job queue for open jobs which match their body type
+      // creep - mark the job as assigned
+      // creep - if the job is a FILL type job
+        // creep - move to source_id
+        // creep - transfer from source_id
+      // creep - move to dest_id
+      // creep - transfer/upgrade/repair to dest_id
+      // creep - update job status as complete
+      // creep - set state to idle
+
+    // spawn to harvester flow
+      // creep - harest from source
+      // creep - when full, transer energy to container
+      // creep - update container working + 200
+
+    */
+  }
 };
