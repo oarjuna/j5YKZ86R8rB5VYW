@@ -272,7 +272,7 @@ module.exports = {
     // detect resources laying on the ground ( update working var, not actual)
     // TODO?
 
-    console.log("NS: " + full_creeps);
+    console.log("NS: " + full_creeps.length);
 
     // if jobs found
     //if ( full_creeps != undefined )
