@@ -177,7 +177,7 @@ module.exports = {
     }
 
     // create job queue object in main, pass to all creeps and spawns
-    /* 
+    /*
 
     // job type, priority, state (waiting for assignment/assigned/other?), body type needed, source_id, dest_id, tick_issued
     jobQueue {
@@ -202,15 +202,19 @@ module.exports = {
 
     // container states - actual / working
 
-    // check for timed out, complete, or abandoned jobs
 
-    // update working state ( working = actual ) when any job finishes or times out
 
-    // spawn to creep flow
+
+    // spawn flow
+      // spawn - check for timed out, complete, or abandoned jobs
+        // spawn - remove these jobs from the queue
+        // spawn - update container working state ( working = actual ) when any job finishes or times out
+
       // spawn - detects container (working >= 200) needing empty
       // spawn - creates job, add to job queue
       // spawn - update container state ( working - 200 )
 
+    // creep flow
       // creep - watch job queue for open jobs which match their body type
       // creep - mark the job as assigned
       // creep - if the job is a FILL type job
