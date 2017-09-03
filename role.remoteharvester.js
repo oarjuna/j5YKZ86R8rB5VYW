@@ -31,7 +31,7 @@ module.exports = {
 
     	 if (creep.memory.working == true) {
         // drop off
-        var container = creep.memory.storage;
+        var container = creep.memory.return_id;
         var structure = Game.getObjectById(container);
     		var action_status = creep.transfer(structure, RESOURCE_ENERGY);
 
