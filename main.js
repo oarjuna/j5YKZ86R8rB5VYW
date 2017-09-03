@@ -66,6 +66,9 @@ module.exports.loop = function () {
     this.member = members;
     this.movedest = movedest;
     this.attacktarget = attacktarget;
+    this.addMember = function (newMember) {
+      this.member.push(newMember)
+    }
   }
 
   var sq1 = new Squad(1,'leader1',['mem1','mem2','mem3'],'movedest','attack');
