@@ -26,14 +26,17 @@ module.exports = {
       // Find the SPAWN
       var structure_spawn = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
         filter: (s) => (
-          ( s.structureType == STRUCTURE_SPAWN )
+          ( s.structureType == STRUCTURE_SPAWN && s.energy < s.energyCapacity ) ||
+          ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
         )});
 
+/*
       // Find EXTENSTIONs
       var structure_extension = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
          filter: (s) => (
             ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
           )});
+*/
 
       // Find Towers
       var structure_tower = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
@@ -54,32 +57,35 @@ module.exports = {
       if ( creep.room.controller.ticksToDowngrade < 500 ) {
           // Emergency controller upgrade
           var structure = creep.room.controller;
-          creep.say("deliv-co");
+          creep.say("d.co");
       }
+      /*
       else if ( structure_spawn.energy < structure_spawn.energyCapacity) {
         // load the spawn
         var structure = structure_spawn;
         creep.say("deliv-s");
       }
-      else if (structure_extension != null) {
-        // Load the extension
-        var structure = structure_extension;
-        creep.say("deliv.ex");
+      */
+      else if (structure_spawn != null) {
+        // Load the extension or spawn
+        var structure = structure_spawn;
+        creep.say("d.se");
       }
+
       else if ( structure_tower != null ) {
         // Load a container
         var structure = structure_tower;
-        creep.say("deliv-tw");
+        creep.say("d.tw");
       }
       else if ( structure_link != undefined && structure_link.energy < structure_link.energyCapacity - 200) {
         // Load a sending link
         var structure = structure_link;
-        creep.say("deliv-li");
+        creep.say("d.li");
       }
       else {
         // drop off at storage
         var structure = structure_storage;
-        creep.say("deliv.ST");
+        creep.say("d.st");
 	}
 
       if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
