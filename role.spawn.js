@@ -179,15 +179,12 @@ module.exports = {
     // create job queue object in main, pass to all creeps and spawns
     /*
 
-    jobQueue {
-
-    }
-
+    // Types of jobs
     // 01 - fill from somewhere
       // aa - source - harvesters
       // bb - container - deliverers
       // cc - storage - deliverers / upgraders
-      // dd - links - upgraders
+      // dd - receiving links - upgraders
       // ee - resources on the ground - builder
 
     // 02 - deliver to somewhere
@@ -196,39 +193,47 @@ module.exports = {
       // cc - towers - deliverer
       // dd - controller - upgrader
       // ee - storage - deliverer
+      // ff - closest avail container - harvesters
+      // gg - sending links - harvesters
 
     // 03 - construction/repair jobs
       // ff - construction sites - builder
       // gg - repair jobs - builder
 
     // container info - actual energy / working energy
-    // job states - assigned / complete / abandoned
-    // creep state - source bound / dest bound / idle
-
-    // job - type, priority, state, body_type, source_id, dest_id, tick_issued
+    // job states - assigned / complete / abandoned / timed out
+    // creep state - source_bound / dest_bound / working / idle
+    // job object - type, priority, state, body_type, dest_id, tick_issued
 
     // spawn flow
-      // spawn - check for timed out, complete, or abandoned jobs
-        // spawn - remove these jobs from the queue
-        // spawn - update container working state ( working = actual ) when any job finishes or times out
+      // check for timed out, complete, or abandoned jobs
+        // remove these jobs from the queue
+        //  update container working variables ( working = actual ) when any job related finishes or times out
 
-      // spawn - detects container (working >= 200) needing empty
-      // spawn - creates job, add to job queue
-      // spawn - update container state ( working - 200 )
+      // find new jobs to do
+        // detect need to harvest ( there is always a need to harvest, ensure there is a job on the queue )
+        // detect containers (working variable >= SOME_VALUE, not actual) needing empty
+        // detect things needing energy delivered ( update working var, not actual)
+        // detect things needing to be built or repaired ( flag working queue as true for this object id)
+        // detect resources laying on the ground ( update working var, not actual)
 
-      // spawn -- find the right creep for the job
+      // if jobs found
+        // prioritize them
+        // create job ojbect, add to job queue
+        // update related working variable
+
+      // find the right creep for the job
         // factors - creep state, energy carried, body type
-      // spawn - assign the creep to the job
-      // spawn - mark the job as assigned
+      // assign the creep to the job
+      // mark the job as assigned
 
     // creep flow
-      // creep - if the job is a FILL type job
-        // creep - move to source_id
-        // creep - transfer from source_id
-      // creep - move to dest_id
-      // creep - transfer/upgrade/repair to dest_id
-      // creep - update job status as complete
-      // creep - set state to idle
+      // receive orders
+      // move to dest_id
+      // if in range of dest_id
+        // transfer from/transfer to/upgrade/repair to dest_id until energy is empty or full or build/repair is complete.
+        // update job status as complete
+        // set state to idle
 
     */
   }
