@@ -56,7 +56,8 @@ module.exports.loop = function () {
                     '000000000000000000000001', // Spawn3
                     '000000000000000000000001' // Spawn4
                   ],
-    military_squad : []
+    military_squad : [],
+    job_queue : []
   };
 
 

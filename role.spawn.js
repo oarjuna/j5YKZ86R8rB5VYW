@@ -177,7 +177,6 @@ module.exports = {
     }
 
     // create job queue object in main, pass to all creeps and spawns
-    /*
 
     // Types of jobs
     // 01 - fill from somewhere
@@ -188,12 +187,11 @@ module.exports = {
       // ee - resources on the ground - builder
 
     // 02 - deliver to somewhere
-      // aa - container - deliverer / harvesters
+      // aa - closest container - harvesters
       // bb - spawns extensions - deliverer
       // cc - towers - deliverer
       // dd - controller - upgrader
       // ee - storage - deliverer
-      // ff - closest avail container - harvesters
       // gg - sending links - harvesters
 
     // 03 - construction/repair jobs
@@ -206,35 +204,30 @@ module.exports = {
     // job object - type, priority, state, body_type, dest_id, tick_issued
 
     // spawn flow
-      // check for timed out, complete, or abandoned jobs
-        // remove these jobs from the queue
-        //  update container working variables ( working = actual ) when any job related finishes or times out
+    // check for timed out, complete, or abandoned jobs
+      // remove these jobs from the queue
+      // update container working variables ( working = actual ) when any job finishes, times out, or is abandoned
 
-      // find new jobs to do
-        // detect need to harvest ( there is always a need to harvest, ensure there is a job on the queue )
-        // detect containers (working variable >= SOME_VALUE, not actual) needing empty
-        // detect things needing energy delivered ( update working var, not actual)
-        // detect things needing to be built or repaired ( flag working queue as true for this object id)
-        // detect resources laying on the ground ( update working var, not actual)
+    // find new jobs to do
+    // detect idle creeps full of energy needing to unload
+    // detect sources to harvest ( there is always a need to harvest, ensure there is a job on the queue )
+    // detect containers with energy (working variable >= SOME_VALUE, not actual) needing empty
+    // detect towers needing energy ( update working var, not actual)
+    // detect sending links needing filling
+    // detect controllers needing upgrading ( update working var )
+    // detect spawns and extensions to deliver to
+    // detect things needing to be built or repaired ( flag working queue as true for this object id)
+    // detect resources laying on the ground ( update working var, not actual)
 
-      // if jobs found
-        // prioritize them
-        // create job ojbect, add to job queue
-        // update related working variable
+    // if jobs found
+      // prioritize them
+      // create job ojbect, add to job queue
+      // update related working variable
 
-      // find the right creep for the job
-        // factors - creep state, energy carried, body type
+    // assign idle creeps to jobs
+      // factors - creep state, energy carried, body type
       // assign the creep to the job
       // mark the job as assigned
 
-    // creep flow
-      // receive orders
-      // move to dest_id
-      // if in range of dest_id
-        // transfer from/transfer to/upgrade/repair to dest_id until energy is empty or full or build/repair is complete.
-        // update job status as complete
-        // set state to idle
-
-    */
   }
 };
