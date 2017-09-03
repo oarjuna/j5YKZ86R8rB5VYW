@@ -93,21 +93,22 @@ module.exports = {
     // TODO -- remote harv do_building flag
     else if (numReHa < MinReHa) {
         // count the number of remote harvs per flag
-        var c_flag1 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harv' && c.memory.destid == 'Flag1');
-        var c_flag2 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harv' && c.memory.destid == 'Flag2');
-        var c_flag3 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harv' && c.memory.destid == 'Flag3');
-        var c_flag4 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harv' && c.memory.destid == 'Flag4');
-        var c_flag5 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harv' && c.memory.destid == 'Flag5');
+        var c_flag1 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harv' && c.memory.destid == spawn_name + 'Flag1');
+        var c_flag2 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harv' && c.memory.destid == spawn_name + 'Flag2');
+        var c_flag3 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harv' && c.memory.destid == spawn_name + 'Flag3');
+        var c_flag4 = _.sum(Game.creeps,(c) => c.memory.role == 'remote_harv' && c.memory.destid == spawn_name + 'Flag4');
 
-        if ( c_flag1 < 3 ) { var dest = 'Flag1'; }
-        else if ( c_flag2 == 9999999 ) { var dest = 'Flag2'; }
-        else if ( c_flag3 == 0 ) { var dest = 'Flag3'; }
-        else if ( c_flag4 == 0 ) { var dest = 'Flag4'; }
-        else if ( c_flag5 == 0 ) { var dest = 'Flag5'; }
+        // one remote harvester per flag
+        if ( c_flag1 == 0 ) { var dest = spawn_name + 'Flag1'; }
+        else if ( c_flag2 == 0 ) { var dest = spawn_name +'Flag2'; }
+        else if ( c_flag3 == 0 ) { var dest = spawn_name + 'Flag3'; }
+        else if ( c_flag4 == 0 ) { var dest = spawn_name + 'Flag4'; }
         else { var dest = 'error'; }
 
         console.log(spawn_name + " -- spawning remote_harv");
         name =Game.spawns[spawn_name].createCustomCreep(energy_avail, 'remote_harv',dest,spawn_name);
+        var creep = Game.creeps[name];
+        creep.memory.storage =  Game.spawns[spawn_name].room.storage;
     }
         // claimers
     else if (numClai < MinClai) {

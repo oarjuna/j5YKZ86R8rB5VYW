@@ -2,12 +2,15 @@ module.exports = {
   run: function(creep) {
 
     // get your assignment
-    var dest_key = creep.memory.destid;
-    if ( dest_key == 'Flag1') {  var gotoFlag = Game.flags.Flag1; }
-    else if ( dest_key == 'Flag2') {  var gotoFlag = Game.flags.Flag2; }
-    else if ( dest_key == 'Flag3') {  var gotoFlag = Game.flags.Flag3; }
-    else if ( dest_key == 'Flag4') {  var gotoFlag = Game.flags.Flag4; }
-    else if ( dest_key == 'Flag5') {  var gotoFlag = Game.flags.Flag5; }
+    var dest_flag = creep.memory.destid;
+    var gotoFlag = Game.flag[dest_flag];
+
+    /*
+    if ( dest_flag == 'Flag1') {  var gotoFlag = Game.flags.Flag1; }
+    else if ( dest_flag == 'Flag2') {  var gotoFlag = Game.flags.Flag2; }
+    else if ( dest_flag == 'Flag3') {  var gotoFlag = Game.flags.Flag3; }
+    else if ( dest_flag == 'Flag4') {  var gotoFlag = Game.flags.Flag4; }
+    */
 
     // are we in the room with the flag?
     if ( creep.pos.roomName != gotoFlag.pos.roomName && creep.memory.working != true ) {
@@ -28,7 +31,7 @@ module.exports = {
 
     	 if (creep.memory.working == true) {
         // drop off
-        var container = creep.memory.destid;
+        var container = creep.memory.storage;
         var structure = Game.getObjectById(container);
     		var action_status = creep.transfer(structure, RESOURCE_ENERGY);
 
