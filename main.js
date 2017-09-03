@@ -68,12 +68,15 @@ module.exports.loop = function () {
 
   };
 
-  function Squad(leader,members,movedest,attacktarget) {
+  function Squad(id,leader,members,movedest,attacktarget) {
+    this.id = id;
     this.leader = leader;
     this.members = members;
     this.movedest = movedest;
     this.attacktarget = attacktarget;
   }
+
+ss  var sq1 = new Squad(1,'leader1',['mem1','mem2','mem3'],'movedest','attack');
 
   console.log("A:" + Hive.squad.leader);
 
