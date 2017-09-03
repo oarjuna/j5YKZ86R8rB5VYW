@@ -76,7 +76,7 @@ module.exports.loop = function () {
     this.attacktarget = attacktarget;
   }
 
-ss  var sq1 = new Squad(1,'leader1',['mem1','mem2','mem3'],'movedest','attack');
+  var sq1 = new Squad(1,'leader1',['mem1','mem2','mem3'],'movedest','attack');
 
   console.log("A:" + Hive.squad.leader);
 
