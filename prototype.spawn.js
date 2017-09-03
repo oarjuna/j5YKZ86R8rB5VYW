@@ -36,7 +36,9 @@ module.exports = function() {
     // 800 energy_avail
     else if ( energy_avail >= 850 && energy_avail < 1000 ) {
       if      (roleName == 'harvester')   { var body = [ WORK,WORK,WORK, WORK, WORK, WORK, MOVE, MOVE, CARRY, CARRY ];  }         // 800
-      else if (roleName == 'deliverer')   { var body = [ WORK,WORK,WORK, WORK, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; }  // 800
+      else if (roleName == 'deliverer')   { var body = [ MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY,
+                                                         MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY
+                                          ]; }  // 800
       else if (roleName == 'upgrader')    { var body = [ WORK,WORK,WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ];  } // 750
       else if (roleName == 'builder')     { var body = [ WORK,WORK,WORK, WORK, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY ];  }  // 750
       else if (roleName == 'repairer')    { var body = [ WORK,WORK,WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY ];  }         // 750
