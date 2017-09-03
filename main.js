@@ -64,13 +64,14 @@ module.exports.loop = function () {
         leader        : 'foo_leader',
         movedest      : 'foo_dest',
         attacktarget  : 'foo_attack'
-    }*/
+    }
     function Squad(leader,members,movedest,attacktarget) {
       this.leader = leader;
       this.members = members;
       this.movedest = movedest;
       this.attacktarget = attacktarget;
     }
+*/
   };
 
   console.log("A:" + Hive.army.squad.leader);
