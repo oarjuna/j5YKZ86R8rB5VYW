@@ -69,7 +69,7 @@ module.exports.loop = function () {
   }
 
   var sq1 = new Squad(1,'leader1',['mem1','mem2','mem3'],'movedest','attack');
-  Hive.army.push(sq1);
+  Hive..military_squad.push(sq1);
 
   console.log("A:" + Hive.military_squad[0]);
 
