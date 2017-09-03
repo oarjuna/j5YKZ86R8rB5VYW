@@ -225,6 +225,8 @@ module.exports = {
       ( c.memory.birthplace == spawn_name )
     });
 
+    var full_creeps = _.sum(Game.creeps, (c) =>  c.memory.birthplace == spawn_name );
+
     console.log("NP full :" + full_creeps );
 
     // detect idle creep that are empty
