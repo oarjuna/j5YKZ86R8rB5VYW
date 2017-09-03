@@ -213,6 +213,7 @@ module.exports = {
     var container_energy_floor = 100;
     var tower_energy_ceiling = 250;
     var link_energy_celiing = 100;
+    var empty = 0;
 
     // spawn flow
     // check for timed out, complete, or abandoned jobs
@@ -229,11 +230,12 @@ module.exports = {
     // detect idle creep that are empty
     var empty_creeps = _.filter(Game.creeps, (c) =>
       ( c.memory.birthplace == spawn_name ) &&
-      ( _.sum(c.carry) == 0 ) &&
+      ( _.sum(c.carry) == empty ) &&
       ( c.memory.state == 'idle' )
     );
 
-    // detect sources to harvest ( there is always a need to harvest, ensure there is a job on the queue
+    // detect sources to harvest
+    var sources = Hive.sources[spawn_num];
 
     // detect containers with energy (working variable >= SOME_VALUE, not actual) needing empty
     var containers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
@@ -270,11 +272,10 @@ module.exports = {
     // detect resources laying on the ground ( update working var, not actual)
     // TODO?
 
-    // console
-    //console.log("NS: " + )
-
+    console.log("NS: " + full_creeps);
+    
     // if jobs found
-      // prioritize them
+    if ( full_creeps != undefined )
       // create job ojbect, add to job queue
       // update related working variable
 
