@@ -6,13 +6,6 @@ module.exports = {
     console.log("RH " + dest_flag);
     var gotoFlag = Game.flags[dest_flag];
 
-    /*
-    if ( dest_flag == 'Flag1') {  var gotoFlag = Game.flags.Flag1; }
-    else if ( dest_flag == 'Flag2') {  var gotoFlag = Game.flags.Flag2; }
-    else if ( dest_flag == 'Flag3') {  var gotoFlag = Game.flags.Flag3; }
-    else if ( dest_flag == 'Flag4') {  var gotoFlag = Game.flags.Flag4; }
-    */
-
     // are we in the room with the flag?
     if ( creep.pos.roomName != gotoFlag.pos.roomName && creep.memory.working != true ) {
 	     // not in the room with the flag, move towards the flag
