@@ -67,7 +67,7 @@ module.exports.loop = function () {
     this.movedest = movedest;
     this.attacktarget = attacktarget;
     this.addMember = function (newMember) {
-      this.member.push(newMember)
+      this.member.push(newMember);
     }
   }
 
