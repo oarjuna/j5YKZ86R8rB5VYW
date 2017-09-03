@@ -71,7 +71,7 @@ module.exports.loop = function () {
   var sq1 = new Squad(1,'leader1',['mem1','mem2','mem3'],'movedest','attack');
   Hive.military_squad.push(sq1);
 
-  console.log("A:" + Hive.military_squad[0]);
+  console.log("A:" + Hive.military_squad[0].leader);
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
   for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
