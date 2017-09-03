@@ -279,14 +279,14 @@ module.exports = {
          ( controller != undefined ) || ( spawns.length != 0 ) || ( construction.length != 0 ) ) {
            // create job ojbect, add to job queue
            // update related working variable
-           console.log("NS: " + full_creeps.length);
-           console.log("NS: " + empty_creeps.length);
-           console.log("NS: " + sources.length);
-           console.log("NS: " + containers.length);
-           console.log("NS: " + towers.length);
-           console.log("NS: " + links.length);
-           console.log("NS: " + spawns.length);
-           console.log("NS: " + construction.length);
+           console.log("NS: FC  " + full_creeps.length);
+           console.log("NS: EC " + empty_creeps.length);
+           console.log("NS: SO " + sources.length);
+           console.log("NS: CT " + containers.length);
+           console.log("NS: TW " + towers.length);
+           console.log("NS: LI " + links.length);
+           console.log("NS: SP " + spawns.length);
+           console.log("NS: CO" + construction.length);
          }
 
     // assign idle creeps to jobs
