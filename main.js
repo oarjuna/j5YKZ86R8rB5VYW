@@ -75,7 +75,7 @@ module.exports.loop = function () {
     this.attacktarget = attacktarget;
   }
 
-  console.log("A:" + Hive.army.squad.leader);
+  console.log("A:" + Hive.squad.leader);
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
   for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
