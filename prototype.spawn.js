@@ -63,7 +63,14 @@ module.exports = function() {
                   CARRY, CARRY ];          // 100
       } // 800
 
-      else if (roleName == 'deliverer' || roleName == 'builder' || roleName == 'repairer')     {
+      else if (roleName == 'deliverer')     {
+        var body = [
+          
+                  MOVE, MOVE, MOVE,MOVE, MOVE, MOVE, MOVE, MOVE,           // 300
+                  CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY ];                  // 400
+      }  // 900
+
+      else if ( roleName == 'builder' || roleName == 'repairer')     {
         var body = [ WORK,WORK,WORK,WORK,  // 400
                   MOVE, MOVE,MOVE,MOVE, MOVE, MOVE,            // 300
                   CARRY, CARRY, CARRY, CARRY ];                  // 200
