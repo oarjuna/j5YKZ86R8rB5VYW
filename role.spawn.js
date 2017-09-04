@@ -274,20 +274,11 @@ module.exports = {
 
 
     // if jobs found
-    if ( ( full_creeps.length != 0 ) || ( empty_creeps.length != 0 ) || ( sources.length != 0 ) ||
-         ( containers.length != 0 ) || ( towers.length != 0 ) || ( links.length != 0 ) ||
-         ( controller != undefined ) || ( spawns.length != 0 ) || ( construction.length != 0 ) ) {
-           // create job ojbect, add to job queue
-           // update related working variable
-           //console.log("NS: " + spawn_name +  " FC " + full_creeps.length);
-           //console.log("NS: " + spawn_name +  " EC " + empty_creeps.length);
-           //console.log("NS: " + spawn_name +  " SO " + sources.length);
-           console.log("NS: " + spawn_name +  " CT " + containers.length);
-           console.log("NS: " + spawn_name +  " TW " + towers.length);
-           console.log("NS: " + spawn_name +  " LI " + links.length);
-           console.log("NS: " + spawn_name +  " SP " + spawns.length);
-           //console.log("NS: " + spawn_name +  " CO " + construction.length);
-         }
+    if ( containers.length != 0 ) {
+      for ( let y of containers) {
+        console.log("NS: cont " + container.energy);
+      }
+    }
 
     // assign idle creeps to jobs
       // factors - creep state, energy carried, body type
