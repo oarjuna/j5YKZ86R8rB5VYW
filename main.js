@@ -22,6 +22,29 @@ var general = require('role.general');
 // START
 module.exports.loop = function () {
 
+  Object.defineProperty(StructureContainer.prototype, 'memory', {
+      configurable: true,
+      get: function() {
+          if(_.isUndefined(Memory.myContainersMemory)) {
+              Memory.myContainersMemory = {};
+          }
+          if(!_.isObject(Memory.myContainersMemory)) {
+              return undefined;
+          }
+          return Memory.myContainersMemory[this.id] =
+                  Memory.myContainersMemory[this.id] || {};
+      },
+      set: function(value) {
+          if(_.isUndefined(Memory.myContainersMemory)) {
+              Memory.myContainersMemory = {};
+          }
+          if(!_.isObject(Memory.myContainersMemory)) {
+              throw new Error('Could not set source memory');
+          }
+          Memory.myContainersMemory[this.id] = value;
+      }
+  });
+
   var Hive = {
     spawn_names: ['Spawn1','Spawn2','Spawn3','Spawn4'],
     spawn_levels:
