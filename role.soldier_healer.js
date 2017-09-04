@@ -20,7 +20,7 @@ module.exports = {
   			filter: (s) => s.structureType==STRUCTURE_TOWER
   	});
 
-  	var other_target = creep.pos.findClosestByRanqge(FIND_HOSTILE_STRUCTURES, {
+  	var other_target = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES, {
   			filter: (s) => s.structureType==STRUCTURE_SPAWN  ||
   					s.structureType==STRUCTURE_EXTENSION
   	});
