@@ -38,7 +38,7 @@ creep.moveTo(gotoFlag);
 
 
     // attack hostile creep
-  	else if ( creep_target != undefined ) {
+  	 if ( creep_target != undefined ) {
   		console.log(creep + "SOLDIER -- attacking hostile creep!" + creep_target);
         if(creep.attack(creep_target) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(creep_target);
