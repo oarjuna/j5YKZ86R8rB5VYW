@@ -12,7 +12,7 @@ module.exports = {
     var needs_healing = creep.pos.findClosestByRange(FIND_MY_CREEPS, {
         filter: (s) => creep.hits < creep.hitsMax
     });
-    
+
     var creep_target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
 
   	var hostile_tower = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES, {
@@ -23,6 +23,11 @@ module.exports = {
   			filter: (s) => s.structureType==STRUCTURE_SPAWN  ||
   					s.structureType==STRUCTURE_EXTENSION
   	});
+
+    // heal
+    if (needs_healing != undefined) {
+      console.log(creep + "healing target : " + needs_healing);
+    }
 
     // attack tower
     if( hostile_tower != undefined ) {
