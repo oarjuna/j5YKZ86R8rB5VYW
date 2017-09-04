@@ -242,7 +242,7 @@ module.exports = {
     var containers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
       filter: (s) => (
       //  ( s.structureType == STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= container_energy_floor )
-        ( s.structureType == STRUCTURE_CONTAINER && s.working_count >= container_energy_floor )
+        ( s.structureType == STRUCTURE_CONTAINER && s.memory.working_count >= container_energy_floor )
     )});
 
 //    for ( let c of containers ) { if ( working_var[c.id] == undefined ) {  working_var[c.id] = c.store[RESOURCE_ENERGY]; } }
