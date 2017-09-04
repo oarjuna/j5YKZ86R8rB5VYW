@@ -277,7 +277,7 @@ module.exports = {
         //y.memory.working_count -= deliver_carry_cap;
       }
     }
-    // 01 - fill - cc - storage - deliverers / upgraders ***
+    // 01 - fill - cc - storage - deliverers / upgraders *** TODO
 
     // 01 - fill - dd - receiving links - upgraders
     // 01 - fill - ee - resources on the ground - builder
@@ -285,9 +285,9 @@ module.exports = {
     // 02 - deliv - aa - closest container - harvesters
     // 02 - deliv - bb - sending links - harvesters
 
-    // 02 - deliv - cc - spawns extensions - deliverer ***
-    // 02 - deliv - dd - towers - deliverer ***
-    // 02 - deliv - ee - storage - deliverer ***
+    // 02 - deliv - cc - spawns extensions - deliverer *** TODO
+    // 02 - deliv - dd - towers - deliverer *** TODO
+    // 02 - deliv - ee - storage - deliverer *** TODO
 
     // 02 - deliv - ff - controller - upgrader
 
