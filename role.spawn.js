@@ -161,6 +161,9 @@ module.exports = {
         tower.room.visual.circle(tower.pos,
             {fill: 'transparent', radius: 20, stroke: 'red'});
 
+        tower.room.visual.circle(tower.pos,
+            {fill: 'transparent', radius: 10, stroke: 'blue'});
+
         if (target != undefined) {
           console.log(tower + " -- attacking " + target);
           //Game.notify(tower + " -- attacking " + target,5);
