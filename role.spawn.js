@@ -277,7 +277,7 @@ module.exports = {
     console.log("NS : " + containers);
     if ( containers.length != 0 ) {
       for ( let y of containers) {
-        console.log("NS: cont " + y.energy);
+        console.log("NS: cont " + y.store[RESOURCE_ENERGY]);
       }
     }
 
