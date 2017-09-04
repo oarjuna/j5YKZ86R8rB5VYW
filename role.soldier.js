@@ -24,6 +24,9 @@ module.exports = {
   					s.structureType==STRUCTURE_EXTENSION
   	});
 
+
+creep.moveTo(gotoFlag);
+
     // attack tower
     if( hostile_tower != undefined ) {
             console.log(creep + "SOLDIER -- attacking hostile tower!" + hostile_tower);
@@ -32,6 +35,9 @@ module.exports = {
             }
     }
 
+
+
+
     // attack hostile creep
   	else if ( creep_target != undefined ) {
   		console.log(creep + "SOLDIER -- attacking hostile creep!" + creep_target);
@@ -39,7 +45,6 @@ module.exports = {
                 creep.moveTo(creep_target);
         }
   	}
-
 /*
     // attack spawn or extensions
     else if ( other_target != undefined && false ) {
@@ -54,8 +59,6 @@ module.exports = {
     else if (needs_healing != undefined) {
       console.log(creep + "healing target : " + needs_healing);
     }
-
-
     // move towards the flag
     else {
   		creep.moveTo(gotoFlag);
