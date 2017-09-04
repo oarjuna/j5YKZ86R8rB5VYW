@@ -296,7 +296,7 @@ module.exports = {
 
     // display the queue
     for ( let i of Hive.memory.job_queue ) {
-      console.log("JQ " + i.type + " tick - " + i.tick_issued);
+      console.log("JQ " + i.type + " tick - " + i.dest_id);
     }
 
     // assign idle creeps to unassinged jobs
