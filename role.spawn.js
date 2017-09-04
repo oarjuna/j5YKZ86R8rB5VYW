@@ -229,7 +229,7 @@ module.exports = {
 
     for ( let c of containers ) {
       c.memory.working_count = c.store[RESOURCE_ENERGY];
-      console.log("NS con -" + c + " -- " + c.memory.working_count);
+      //console.log("NS con -" + c + " -- " + c.memory.working_count);
     }
 
     // detect towers needing energy ( update working var, not actual)
@@ -288,11 +288,6 @@ module.exports = {
     // 02 - deliv - ff - sending links - harvesters
     // 03 - work - aa - construction sites - builder
     // 03 - work - bb - repair jobs - builder
-
-    // display the queue
-    for ( let i of Hive.memory.job_queue ) {
-      console.log("JQ " + i.type + " dest - " + i.dest_id);
-    }
 
     // assign idle creeps to unassinged jobs
       // factors - creep state, energy carried, body type
