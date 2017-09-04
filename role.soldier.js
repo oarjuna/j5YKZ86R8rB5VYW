@@ -8,8 +8,6 @@ module.exports = {
     if ( dest_key == 'Attack1') {  var gotoFlag = Game.flags.Attack1; }
     if ( dest_key == 'Attack2') {  var gotoFlag = Game.flags.Attack2; }
 
-	  else { var gotoFlag = creep.room.spawn; }
-
 	  // collect targets
     var needs_healing = creep.pos.findClosestByRange(FIND_MY_CREEPS, {
         filter: (s) => creep.hits < creep.hitsMax
