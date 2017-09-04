@@ -34,6 +34,13 @@ module.exports = {
       creep.heal(needs_healing);
     }
 
+    // attack tower
+    if( hostile_tower != undefined ) {
+            console.log(creep + "SOLDIER -- attacking hostile tower!" + hostile_tower);
+            if(creep.attack(hostile_tower) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(hostile_tower);
+            }
+    }
 
     // attack hostile creep
   	 if ( creep_target != undefined ) {
@@ -44,13 +51,7 @@ module.exports = {
 
 
 /*
-    // attack tower
-    if( hostile_tower != undefined ) {
-            console.log(creep + "SOLDIER -- attacking hostile tower!" + hostile_tower);
-            if(creep.attack(hostile_tower) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(hostile_tower);
-            }
-    }
+
 */
 
 
