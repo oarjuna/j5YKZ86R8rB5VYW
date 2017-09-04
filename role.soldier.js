@@ -40,15 +40,7 @@ module.exports = {
             }
     }
 
-/*
-    // attack hostile creep
-  	 if ( creep_target != undefined ) {
-  		console.log(creep + "SOLDIER -- attacking hostile creep!" + creep_target);
-        if(creep.attack(creep_target) == ERR_NOT_IN_RANGE) {
-          creep.moveTo(creep_target);
-      }
-  	}
-*/
+
     // attack spawn or extensions
      if ( other_target != undefined ) {
       console.log(creep + "SOLDIER -- attacking hostile target!" + other_target);
@@ -57,6 +49,14 @@ module.exports = {
       }
     }
 
+
+    // attack hostile creep
+	 else if ( creep_target != undefined ) {
+		console.log(creep + "SOLDIER -- attacking hostile creep!" + creep_target);
+      if(creep.attack(creep_target) == ERR_NOT_IN_RANGE) {
+        creep.moveTo(creep_target);
+    }
+	}
 
 /*
 
