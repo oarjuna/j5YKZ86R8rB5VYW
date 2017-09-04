@@ -91,7 +91,7 @@ module.exports.loop = function () {
     links: [
             ['59a411fd06b5240409f8b847','59a446a802722c0fd674afdf'], // Spawn1
             ['59a76b55b9e281705d3b9dea','59a76faf7ced283f9816ea6d'], // Spawn2
-            ['000000000000000000000001','000000000000000000000001'], // Spawn3
+            ['59ad5f7548ab72269b30f527','000000000000000000000001'], // Spawn3
             ['000000000000000000000001','000000000000000000000001'], // Spawn4
           ],
     receiving_link: [
@@ -184,7 +184,7 @@ Hive.memory.job_queue = [];
 
   // display the job queue
   for ( let i of Hive.memory.job_queue ) {
-    let foo = Game.getObjectById(i.dest_id);
+    let foo = Game.getObjectById(i.dest_id);1
     console.log("JQ " + i.type + " dest - " + foo.store[RESOURCE_ENERGY]);
   }
   console.log("#-------------------------------------------------------#  H, U, R, B, RH, C, De, EM, S");
