@@ -284,13 +284,14 @@ module.exports = {
     // if jobs found
     if ( containers.length != 0 ) {
       for ( let y of containers) {
+        // create a job for each container
         var job = new Job('01bb',1,'unassigned','deliverer',y.id,Game.time);
         //console.log("NS: job " + job.type);
-        Hive.memoryjob_queue.push(job);
+        // push the job onto the job_queue
+        Hive.memory.job_queue.push(job);
         y.memory.working_count -= deliver_carry_cap;
       }
     }
-
 
     // display the queue
     for ( let i of Hive.memory.job_queue ) {
