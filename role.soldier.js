@@ -10,8 +10,8 @@ module.exports = {
 
     // are we in the room with the flag?
     if ( creep.pos.roomName != gotoFlag.pos.roomName && creep.memory.working != true ) {
-	     // not in the room with the flag, move towards the flag
-	     creep.moveTo(gotoFlag);
+       // not in the room with the flag, move towards the flag
+       creep.moveTo(gotoFlag);
        creep.say("\u2694.!!");
     }
     else {
@@ -66,30 +66,14 @@ module.exports = {
         }
       }
 
-      // attack hostile creep
-  	 else if ( creep_target != undefined ) {
-  		console.log(creep + "SOLDIER -- attacking hostile creep!" + creep_target);
-        if(creep.attack(creep_target) == ERR_NOT_IN_RANGE) {
-          creep.moveTo(creep_target);
+       // attack hostile creep
+    	 else if ( creep_target != undefined ) {
+    		console.log(creep + "SOLDIER -- attacking hostile creep!" + creep_target);
+          if(creep.attack(creep_target) == ERR_NOT_IN_RANGE) {
+            creep.moveTo(creep_target);
+        }
+    	 }
       }
-  	}
-}
-/*
 
-*/
-
-
-
-/*
-
-*/
-
-
-/*
-    // move towards the flag
-    else {
-  		creep.moveTo(gotoFlag);
-  	}
-*/
   }
 };
