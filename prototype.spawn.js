@@ -91,9 +91,10 @@ module.exports = function() {
         var body = [ TOUGH,TOUGH,TOUGH,TOUGH,                               // 40 - 4
                      TOUGH,TOUGH,TOUGH,TOUGH,                               // 40 - 4
                      MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,     // 500 - 10
-                     MOVE,MOVE,                                             // 100 - 2
-                     ATTACK,ATTACK,ATTACK,ATTACK                            // 320 - 4
-                   ]; }     // 1000 total - balanced fatigue
+                     MOVE,                                                   //  50 - 1
+                     ATTACK,ATTACK,                                          // 160 - 2
+                     HEAL                                                   // 250 - 1
+                   ]; }     // 1040 total - balanced fatigue
 
       else if (roleName == "soldier_melee") {
         var body = [ TOUGH,TOUGH,TOUGH,TOUGH,                               // 40 - 4
