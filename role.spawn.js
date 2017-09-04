@@ -241,9 +241,10 @@ module.exports = {
     // detect containers with energy (working variable >= SOME_VALUE, not actual) needing empty
     var containers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
       filter: (s) => (
-      //  ( s.structureType == STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= container_energy_floor )
-        ( s.structureType == STRUCTURE_CONTAINER && s.memory.working_count >= container_energy_floor )
+        ( s.structureType == STRUCTURE_CONTAINER )
+        // ( s.structureType == STRUCTURE_CONTAINER && s.memory.working_count >= container_energy_floor )
     )});
+
 
     for ( let c of containers ) {
       c.memory.working_count = c.store[RESOURCE_ENERGY];
@@ -288,8 +289,8 @@ module.exports = {
         var job = new Job('01bb',1,'unassigned','deliverer',y.id,Game.time);
         console.log("NS: job " + job.type);
         // push the job onto the job_queue
-        Hive.memory.job_queue.push(job);
-        y.memory.working_count -= deliver_carry_cap;
+        //Hive.memory.job_queue.push(job);
+        //y.memory.working_count -= deliver_carry_cap;
       }
     }
 
