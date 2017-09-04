@@ -58,7 +58,7 @@ module.exports = {
         //console.log("\t" + status21 + status22 + status23);
 
         // source status information
-        var msg = '';
+/*        var msg = '';
         for ( let source_id in Hive.sources[spawn_num]) {
           var source = Game.getObjectById(Hive.sources[spawn_num][source_id]);
           var source_energy = source.energy;
@@ -68,7 +68,7 @@ module.exports = {
           //var msg = msg + out;
           console.log(out);
         }
-
+*/
 
 
   }
