@@ -176,25 +176,7 @@ module.exports = {
       }
     }
 
-    // Types of jobs
-    // 01 - fill from somewhere
-      // aa - source - harvesters
-      // bb - container - deliverers
-      // cc - storage - deliverers / upgraders
-      // dd - receiving links - upgraders
-      // ee - resources on the ground - builder
 
-    // 02 - deliver to somewhere
-      // aa - closest container - harvesters
-      // bb - spawns extensions - deliverer
-      // cc - towers - deliverer
-      // dd - controller - upgrader
-      // ee - storage - deliverer
-      // gg - sending links - harvesters
-
-    // 03 - construction/repair jobs
-      // ff - construction sites - builder
-      // gg - repair jobs - builder
 
     // container info - actual energy / working energy
     // job states - assigned / complete / abandoned / timed out
@@ -282,7 +264,11 @@ module.exports = {
 
     // job states - assigned / complete / abandoned / timed out / unasssigned
 
-    // if jobs found
+    // create jobs for each Types of job
+
+    // 01 - fill - aa - source - harvesters
+    
+    // 01 - fill - bb - container - deliverers
     if ( containers.length != 0 ) {
       for ( let y of containers) {
         // create a job for each container
@@ -293,6 +279,17 @@ module.exports = {
         //y.memory.working_count -= deliver_carry_cap;
       }
     }
+    // 01 - fill - cc - storage - deliverers / upgraders
+    // 01 - fill - dd - receiving links - upgraders
+    // 01 - fill - ee - resources on the ground - builder
+    // 02 - deliv - aa - closest container - harvesters
+    // 02 - deliv - bb - spawns extensions - deliverer
+    // 02 - deliv - cc - towers - deliverer
+    // 02 - deliv - dd - controller - upgrader
+    // 02 - deliv - ee - storage - deliverer
+    // 02 - deliv - ff - sending links - harvesters
+    // 03 - work - aa - construction sites - builder
+    // 03 - work - bb - repair jobs - builder
 
     // display the queue
     for ( let i of Hive.memory.job_queue ) {
