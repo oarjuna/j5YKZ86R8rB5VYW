@@ -53,7 +53,7 @@ module.exports = {
               creep.moveTo(containers_target);
       }
     }
-
+/*
     // attack containers
     else if ( other_target != undefined ) {
       console.log(creep + "SOLDIER -- attacking hostile target!" + other_target);
@@ -61,7 +61,7 @@ module.exports = {
               creep.moveTo(other_target);
       }
     }
-
+*/
     // attack hostile creep
 	 else if ( creep_target != undefined ) {
 		console.log(creep + "SOLDIER -- attacking hostile creep!" + creep_target);
