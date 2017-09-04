@@ -158,6 +158,9 @@ module.exports = {
           ( s.structureType == STRUCTURE_RAMPART && s.hits < 40000)
         });
 
+        tower.room.visual.circle(tower.pos,
+            {fill: 'transparent', radius: 1, stroke: 'red'});
+
         if (target != undefined) {
           console.log(tower + " -- attacking " + target);
           //Game.notify(tower + " -- attacking " + target,5);
