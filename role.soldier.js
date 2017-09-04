@@ -24,7 +24,7 @@ module.exports = {
   					s.structureType==STRUCTURE_EXTENSION
   	});
 
-
+/*
 creep.moveTo(gotoFlag);
     // attack tower
     if( hostile_tower != undefined ) {
@@ -33,7 +33,7 @@ creep.moveTo(gotoFlag);
                     creep.moveTo(hostile_tower);
             }
     }
-
+*/
 
 
 
