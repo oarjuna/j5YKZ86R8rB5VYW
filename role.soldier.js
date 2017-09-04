@@ -28,7 +28,8 @@ module.exports = {
 
     	var other_target = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES, {
     			filter: (s) => s.structureType==STRUCTURE_SPAWN  ||
-    					s.structureType==STRUCTURE_EXTENSION
+    					s.structureType==STRUCTURE_EXTENSION /* ||
+              s.structureType==STRUCTURE_STORAGE */
     	});
 
       var containers_target = creep.pos.findClosestByRange(FIND_STRUCTURES, {
