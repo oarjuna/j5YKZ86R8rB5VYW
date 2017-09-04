@@ -24,6 +24,11 @@ module.exports = {
   					s.structureType==STRUCTURE_EXTENSION
   	});
 
+    var containers_target = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+  			filter: (s) => s.structureType==STRUCTURE_CONTAINER
+  	});
+
+
     // creep.moveTo(gotoFlag);
 
     // heal
@@ -42,13 +47,20 @@ module.exports = {
 
 
     // attack spawn or extensions
+    else if ( containers_target != undefined ) {
+      console.log(creep + "SOLDIER -- attacking hostile target!" + containers_target);
+      if(creep.attack(containers_target) == ERR_NOT_IN_RANGE) {
+              creep.moveTo(containers_target);
+      }
+    }
+
+    // attack containers
     else if ( other_target != undefined ) {
       console.log(creep + "SOLDIER -- attacking hostile target!" + other_target);
       if(creep.attack(other_target) == ERR_NOT_IN_RANGE) {
               creep.moveTo(other_target);
       }
     }
-
 
     // attack hostile creep
 	 else if ( creep_target != undefined ) {
