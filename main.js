@@ -104,8 +104,8 @@ module.exports.loop = function () {
     job_queue : []
   };
 
-/*
-  Object.defineProperty(Hive.prototype, 'memory', {
+
+  Object.defineProperty(Hive, 'memory', {
       configurable: true,
       get: function() {
           if(_.isUndefined(Memory.HiveMemory)) {
@@ -127,7 +127,7 @@ module.exports.loop = function () {
           Memory.HiveMemory[this.id] = value;
       }
   });
-*/
+
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
   for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
