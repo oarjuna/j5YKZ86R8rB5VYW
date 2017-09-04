@@ -159,7 +159,7 @@ module.exports = {
         });
 
         tower.room.visual.circle(tower.pos,
-            {fill: 'transparent', radius: 2, stroke: 'red'});
+            {fill: 'transparent', radius: 20, stroke: 'red'});
 
         if (target != undefined) {
           console.log(tower + " -- attacking " + target);
