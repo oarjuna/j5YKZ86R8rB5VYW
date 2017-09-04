@@ -24,9 +24,7 @@ module.exports = {
   					s.structureType==STRUCTURE_EXTENSION
   	});
 
-
-
-  //  creep.moveTo(gotoFlag);
+    // creep.moveTo(gotoFlag);
 
     // heal
      if (needs_healing != undefined) {
@@ -51,7 +49,7 @@ module.exports = {
   	}
 
     // attack spawn or extensions
-     if ( other_target != undefined && false ) {
+     if ( other_target != undefined ) {
       console.log(creep + "SOLDIER -- attacking hostile target!" + other_target);
       if(creep.attack(other_target) == ERR_NOT_IN_RANGE) {
               creep.moveTo(other_target);
