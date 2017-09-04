@@ -104,6 +104,28 @@ module.exports.loop = function () {
     job_queue : []
   };
 
+  Object.defineProperty(Hive.prototype, 'memory', {
+      configurable: true,
+      get: function() {
+          if(_.isUndefined(Memory.HiveMemory)) {
+              Memory.HiveMemory = {};
+          }
+          if(!_.isObject(Memory.HiveMemory)) {
+              return undefined;
+          }
+          return Memory.HiveMemory[this.id] =
+                  Memory.HiveMemory[this.id] || {};
+      },
+      set: function(value) {
+          if(_.isUndefined(Memory.HiveMemory)) {
+              Memory.HiveMemory = {};
+          }
+          if(!_.isObject(Memory.HiveMemory)) {
+              throw new Error('Could not set source memory');
+          }
+          Memory.HiveMemory[this.id] = value;
+      }
+  });
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
   for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
