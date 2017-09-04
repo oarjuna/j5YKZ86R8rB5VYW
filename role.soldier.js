@@ -27,6 +27,14 @@ module.exports = {
 
 
 creep.moveTo(gotoFlag);
+
+
+    // heal
+     if (needs_healing != undefined) {
+      console.log(creep + "healing target : " + needs_healing);
+    }
+
+
 /*
     // attack tower
     if( hostile_tower != undefined ) {
@@ -56,12 +64,7 @@ creep.moveTo(gotoFlag);
       }
     }
 */
-/*
-    // heal
-     if (needs_healing != undefined) {
-      console.log(creep + "healing target : " + needs_healing);
-    }
-*/
+
 
 /*
     // move towards the flag
