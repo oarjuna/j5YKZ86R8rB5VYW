@@ -26,12 +26,12 @@ module.exports = {
 
 
 
-creep.moveTo(gotoFlag);
-
+    creep.moveTo(gotoFlag);
 
     // heal
      if (needs_healing != undefined) {
       console.log(creep + "healing target : " + needs_healing);
+      creep.heal(needs_healing);
     }
 
 
