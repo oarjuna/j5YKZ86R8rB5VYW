@@ -178,6 +178,8 @@ Hive.memory.job_queue = [];
   roleSpawn.run(1,Hive);
   roleSpawn.run(2,Hive);
 
+  console.log("#-------------------------------------------------------#  H, U, R, B, RH, C, De, EM, S");
+
   gameStatus.display_status(0,Hive);
   gameStatus.display_status(1,Hive);
 	gameStatus.display_status(2,Hive);
