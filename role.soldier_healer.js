@@ -50,7 +50,7 @@ module.exports = {
     }
 
     // heal
-    if (needs_healing != undefined) {
+    else if (needs_healing != undefined) {
       console.log(creep + "healing target : " + needs_healing);
     }
 
