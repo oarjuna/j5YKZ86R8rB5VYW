@@ -281,7 +281,7 @@ module.exports = {
     // if jobs found
     if ( containers.length != 0 ) {
       for ( let y of containers) {
-        console.log("NS: cont " + y.store[RESOURCE_ENERGY]);
+        //console.log("NS: cont " + y.store[RESOURCE_ENERGY]);
         var job = new Job('01bb',1,'unassigned','deliverer',y.id,Game.time);
         Hive.job_queue.push(job);
         //working_var[y.id] -= deliver_carry_cap;
