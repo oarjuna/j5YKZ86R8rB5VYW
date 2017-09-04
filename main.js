@@ -45,6 +45,27 @@ module.exports.loop = function () {
       }
   });
 
+  Object.defineProperty(StructureContainer.prototype, 'working_count', {
+    get: function () {
+        if (this._working_count == undefined) {
+            if (this.memory.working_count == undefined) {
+                this.memory.working_count = this.store[RESOURCE_ENERGY];
+                this._working_count = this.store[RESOURCE_ENERGY];
+            }
+            this._working_count = this.memory.working_count;
+          }
+        return this._working_count;
+    },
+    set: function(newValue) {
+    // when storing in memory you will want to change the setter
+    // to set the memory value as well as the local value
+    this.memory.working_count = newValue;
+    this._sources = newValue;
+},
+    enumerable: false,
+    configurable: true
+});
+
   var Hive = {
     spawn_names: ['Spawn1','Spawn2','Spawn3','Spawn4'],
     spawn_levels:
