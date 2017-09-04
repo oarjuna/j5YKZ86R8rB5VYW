@@ -285,12 +285,13 @@ module.exports = {
     // if jobs found
     if ( containers.length != 0 ) {
       for ( let y of containers) {
-        //console.log("NS: cont " + y.store[RESOURCE_ENERGY]);
         var job = new Job('01bb',1,'unassigned','deliverer',y.id,Game.time);
         Hive.job_queue.push(job);
-        //working_var[y.id] -= deliver_carry_cap;
+        y.memory.working_count -= deliver_carry_cap;
       }
     }
+    console.log("NS: job " + job);
+
 
     // assign idle creeps to unassinged jobs
       // factors - creep state, energy carried, body type
