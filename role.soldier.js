@@ -8,68 +8,75 @@ module.exports = {
     if ( dest_key == 'Attack1') {  var gotoFlag = Game.flags.Attack1; }
     if ( dest_key == 'Attack2') {  var gotoFlag = Game.flags.Attack2; }
 
-	  // collect targets
-    var needs_healing = creep.pos.findClosestByRange(FIND_MY_CREEPS, {
-        filter: (s) => creep.hits < creep.hitsMax
-    });
-
-    var creep_target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-
-  	var hostile_tower = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES, {
-  			filter: (s) => s.structureType==STRUCTURE_TOWER
-  	});
-
-  	var other_target = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES, {
-  			filter: (s) => s.structureType==STRUCTURE_SPAWN  ||
-  					s.structureType==STRUCTURE_EXTENSION
-  	});
-
-    /*var containers_target = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-  			filter: (s) => s.structureType==STRUCTURE_CONTAINER
-  	});
-*/
-
-    creep.moveTo(gotoFlag);
-
-    // heal
-     if (needs_healing != undefined) {
-      console.log(creep + "healing target : " + needs_healing);
-      creep.heal(needs_healing);
+    // are we in the room with the flag?
+    if ( creep.pos.roomName != gotoFlag.pos.roomName && creep.memory.working != true ) {
+	     // not in the room with the flag, move towards the flag
+	     creep.moveTo(gotoFlag);
+       creep.say("rh.!!");
     }
+    else {
+  	  // collect targets
+      var needs_healing = creep.pos.findClosestByRange(FIND_MY_CREEPS, {
+          filter: (s) => creep.hits < creep.hitsMax
+      });
 
-    // attack tower
-    if( hostile_tower != undefined ) {
-            console.log(creep + "SOLDIER -- attacking hostile tower!" + hostile_tower);
-            if(creep.attack(hostile_tower) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(hostile_tower);
-            }
-    }
+      var creep_target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
 
-/*
-    // attack spawn or extensions
-    else if ( containers_target != undefined ) {
-      console.log(creep + "SOLDIER -- attacking hostile target!" + containers_target);
-      if(creep.attack(containers_target) == ERR_NOT_IN_RANGE) {
-              creep.moveTo(containers_target);
+    	var hostile_tower = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES, {
+    			filter: (s) => s.structureType==STRUCTURE_TOWER
+    	});
+
+    	var other_target = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES, {
+    			filter: (s) => s.structureType==STRUCTURE_SPAWN  ||
+    					s.structureType==STRUCTURE_EXTENSION
+    	});
+
+      /*var containers_target = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+    			filter: (s) => s.structureType==STRUCTURE_CONTAINER
+    	});
+  */
+
+      creep.moveTo(gotoFlag);
+
+      // heal
+       if (needs_healing != undefined) {
+        console.log(creep + "healing target : " + needs_healing);
+        creep.heal(needs_healing);
       }
-    }
 
-    // attack containers
-    else if ( other_target != undefined ) {
-      console.log(creep + "SOLDIER -- attacking hostile target!" + other_target);
-      if(creep.attack(other_target) == ERR_NOT_IN_RANGE) {
-              creep.moveTo(other_target);
+      // attack tower
+      if( hostile_tower != undefined ) {
+              console.log(creep + "SOLDIER -- attacking hostile tower!" + hostile_tower);
+              if(creep.attack(hostile_tower) == ERR_NOT_IN_RANGE) {
+                      creep.moveTo(hostile_tower);
+              }
       }
-    }
-*/
-    // attack hostile creep
-	 else if ( creep_target != undefined ) {
-		console.log(creep + "SOLDIER -- attacking hostile creep!" + creep_target);
-      if(creep.attack(creep_target) == ERR_NOT_IN_RANGE) {
-        creep.moveTo(creep_target);
-    }
-	}
 
+  /*
+      // attack spawn or extensions
+      else if ( containers_target != undefined ) {
+        console.log(creep + "SOLDIER -- attacking hostile target!" + containers_target);
+        if(creep.attack(containers_target) == ERR_NOT_IN_RANGE) {
+                creep.moveTo(containers_target);
+        }
+      }
+
+      // attack containers
+      else if ( other_target != undefined ) {
+        console.log(creep + "SOLDIER -- attacking hostile target!" + other_target);
+        if(creep.attack(other_target) == ERR_NOT_IN_RANGE) {
+                creep.moveTo(other_target);
+        }
+      }
+  */
+      // attack hostile creep
+  	 else if ( creep_target != undefined ) {
+  		console.log(creep + "SOLDIER -- attacking hostile creep!" + creep_target);
+        if(creep.attack(creep_target) == ERR_NOT_IN_RANGE) {
+          creep.moveTo(creep_target);
+      }
+  	}
+}
 /*
 
 */
