@@ -24,10 +24,10 @@ module.exports = {
   					s.structureType==STRUCTURE_EXTENSION
   	});
 
-    var containers_target = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+    /*var containers_target = creep.pos.findClosestByRange(FIND_STRUCTURES, {
   			filter: (s) => s.structureType==STRUCTURE_CONTAINER
   	});
-
+*/
 
     // creep.moveTo(gotoFlag);
 
