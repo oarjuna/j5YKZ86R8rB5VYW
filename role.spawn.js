@@ -177,7 +177,7 @@ module.exports = {
     }
 
 
-
+    // ----- Below here lies job control
     // container info - actual energy / working energy
     // job states - assigned / complete / abandoned / timed out
     // creep state - source_bound / dest_bound / working / idle
@@ -277,15 +277,20 @@ module.exports = {
         //y.memory.working_count -= deliver_carry_cap;
       }
     }
-    // 01 - fill - cc - storage - deliverers / upgraders
+    // 01 - fill - cc - storage - deliverers / upgraders ***
+
     // 01 - fill - dd - receiving links - upgraders
     // 01 - fill - ee - resources on the ground - builder
+
     // 02 - deliv - aa - closest container - harvesters
-    // 02 - deliv - bb - spawns extensions - deliverer
-    // 02 - deliv - cc - towers - deliverer
-    // 02 - deliv - dd - controller - upgrader
-    // 02 - deliv - ee - storage - deliverer
-    // 02 - deliv - ff - sending links - harvesters
+    // 02 - deliv - bb - sending links - harvesters
+
+    // 02 - deliv - cc - spawns extensions - deliverer ***
+    // 02 - deliv - dd - towers - deliverer ***
+    // 02 - deliv - ee - storage - deliverer ***
+
+    // 02 - deliv - ff - controller - upgrader
+
     // 03 - work - aa - construction sites - builder
     // 03 - work - bb - repair jobs - builder
 
