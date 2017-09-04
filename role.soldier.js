@@ -1,7 +1,7 @@
 module.exports = {
   // a function to run the logic for this role
   run: function(creep) {
-    creep.say("^-!");
+    creep.say("\u2694");
 
     // get your assignment
     var dest_key = creep.memory.destid;
@@ -47,7 +47,7 @@ module.exports = {
               creep.moveTo(other_target);
       }
     }
-    
+
     // heal
     if (needs_healing != undefined) {
       console.log(creep + "healing target : " + needs_healing);
