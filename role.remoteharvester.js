@@ -42,7 +42,7 @@ module.exports = {
       	});
 
         //if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
-        if (creep.transfer(source, RESOURCE_ENERGYs) == ERR_NOT_IN_RANGE) {
+        if (creep.transfer(source, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
   		    creep.moveTo(source);
           creep.say("rh.so");
         }
