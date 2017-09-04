@@ -91,13 +91,13 @@ module.exports.loop = function () {
     links: [
             ['59a411fd06b5240409f8b847','59a446a802722c0fd674afdf'], // Spawn1
             ['59a76b55b9e281705d3b9dea','59a76faf7ced283f9816ea6d'], // Spawn2
-            ['59ad5f7548ab72269b30f527','000000000000000000000001'], // Spawn3
+            ['59ad5f7548ab72269b30f527','59ad81d6cdfbbf72a0df0c3a'], // Spawn3
             ['000000000000000000000001','000000000000000000000001'], // Spawn4
           ],
     receiving_link: [
                     '59a446a802722c0fd674afdf', // Spawn1
                     '59a76b55b9e281705d3b9dea', // Spawn2
-                    '000000000000000000000001', // Spawn3
+                    '59ad81d6cdfbbf72a0df0c3a', // Spawn3
                     '000000000000000000000001' // Spawn4
                   ],
     military_squad : [],
