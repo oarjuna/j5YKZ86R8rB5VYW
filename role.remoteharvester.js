@@ -37,7 +37,9 @@ module.exports = {
         // find closest source and fill up
         //var source = creep.pos.findClosestByPath(FIND_SOURCES);
 
-        var source = creep.pos.findClosestByPath(STRUCTURE_STORAGE);
+        var source = creep.pos.findClosestByPath(FIND_HOSTILE_STRUCTURES, {
+      			filter: (s) => s.structureType==STRUCTURE_STORAGE
+      	});
 
         //if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
         if (creep.transfer(source, RESOURCE_ENERGYs) == ERR_NOT_IN_RANGE) {
