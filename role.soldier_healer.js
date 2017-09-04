@@ -9,13 +9,18 @@ module.exports = {
 	  else { var gotoFlag = creep.room.spawn; }
 
 	  // collect targets
+    // collect targets
+    var needs_healing = creep.pos.findClosestByRange(FIND_MY_CREEPS, {
+        filter: (s) => creep.hits < creep.hitsMax
+    });
+
     var creep_target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
 
   	var hostile_tower = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES, {
   			filter: (s) => s.structureType==STRUCTURE_TOWER
   	});
 
-  	var other_target = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES, {
+  	var other_target = creep.pos.findClosestByRanqge(FIND_HOSTILE_STRUCTURES, {
   			filter: (s) => s.structureType==STRUCTURE_SPAWN  ||
   					s.structureType==STRUCTURE_EXTENSION
   	});
