@@ -148,6 +148,7 @@ module.exports.loop = function () {
     configurable: true
 });
 
+Hive.memory.job_queue = [];
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
   for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
