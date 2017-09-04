@@ -104,7 +104,6 @@ module.exports.loop = function () {
     job_queue : []
   };
 
-
   Object.defineProperty(Hive, 'memory', {
       configurable: true,
       get: function() {
@@ -127,6 +126,27 @@ module.exports.loop = function () {
           Memory.HiveMemory[this.id] = value;
       }
   });
+
+  Object.defineProperty(Hive , 'job_queue', {
+    get: function () {
+        if (this._job_queue == undefined) {
+            if (this.memory.job_queue == undefined) {
+                this.memory.job_queue = [];
+                this._job_queue = [];
+            }
+            this._job_queue = this.memory.job_queue;
+          }
+        return this._job_queue;
+    },
+    set: function(newValue) {
+      // when storing in memory you will want to change the setter
+      // to set the memory value as well as the local value
+      this.memory.job_queue = newValue;
+      this._sources = newValue;
+    },
+    enumerable: false,
+    configurable: true
+});
 
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
