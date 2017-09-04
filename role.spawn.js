@@ -286,10 +286,11 @@ module.exports = {
       for ( let y of containers) {
         var job = new Job('01bb',1,'unassigned','deliverer',y.id,Game.time);
         //console.log("NS: job " + job.type);
-        //Hive.memoryjob_queue.push(job);
+        Hive.memoryjob_queue.push(job);
         y.memory.working_count -= deliver_carry_cap;
       }
     }
+
 
     // display the queue
     for ( let i of Hive.memory.job_queue ) {
