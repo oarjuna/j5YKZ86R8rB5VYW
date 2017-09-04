@@ -184,7 +184,8 @@ Hive.memory.job_queue = [];
 
   // display the job queue
   for ( let i of Hive.memory.job_queue ) {
-    console.log("JQ " + i.type + " dest - " + i.dest_id);
+    let foo = Game.getObjectById(i.dest_id);
+    console.log("JQ " + i.type + " dest - " + foo.store[RESOURCE_ENERGY]);
   }
   console.log("#-------------------------------------------------------#  H, U, R, B, RH, C, De, EM, S");
   stats.collect_stats();
