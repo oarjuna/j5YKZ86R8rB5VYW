@@ -243,7 +243,7 @@ module.exports = {
       filter: (s) => (
         ( s.structureType == STRUCTURE_CONTAINER && working_var[s.id] >= container_energy_floor )
     )});
-    for ( let c of containers ) {if ( working_var[c.id] == undefined ) {  working_var[c.id] = c.store[RESOURCE_ENERGY]; }
+    for ( let c of containers ) { if ( working_var[c.id] == undefined ) {  working_var[c.id] = c.store[RESOURCE_ENERGY]; }}
 
     // detect towers needing energy ( update working var, not actual)
     var towers =  Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
