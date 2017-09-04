@@ -56,14 +56,12 @@ module.exports = {
         var structure = structure_tower;
         creep.say("d.tw");
       }
-      
+
       else if (structure_spawn != null) {
         // Load the extension or spawn
         var structure = structure_spawn;
         creep.say("d.se");
       }
-
-
       else if ( structure_link != undefined && structure_link.energy < structure_link.energyCapacity - 200) {
         // Load a sending link
         var structure = structure_link;
