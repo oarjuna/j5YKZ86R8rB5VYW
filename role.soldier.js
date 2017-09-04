@@ -29,7 +29,7 @@ module.exports = {
   	});
 */
 
-    // creep.moveTo(gotoFlag);
+    creep.moveTo(gotoFlag);
 
     // heal
      if (needs_healing != undefined) {
