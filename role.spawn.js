@@ -35,15 +35,24 @@ module.exports = {
          }
          else if (numSolM < MinSolM) {
             console.log(spawn_name + " -- spawning soldier_melee");
-            name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'soldier_melee','Attack',spawn_name);
+            if ( spawn_name == 'Spawn1' ) { var attackFlag = 'Attack1'; }
+            if ( spawn_name == 'Spawn2' ) { var attackFlag = 'Attack2'; }
+            if ( spawn_name == 'Spawn3' ) { var attackFlag = 'Attack2'; }
+            name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'soldier_melee',attackFlag,spawn_name);
         }
         else if (numSolR < MinSolR) {
            console.log(spawn_name + " -- spawning soldier_ranged");
-           name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'soldier_ranged','Attack',spawn_name);
+           if ( spawn_name == 'Spawn1' ) { var attackFlag = 'Attack1'; }
+           if ( spawn_name == 'Spawn2' ) { var attackFlag = 'Attack2'; }
+           if ( spawn_name == 'Spawn3' ) { var attackFlag = 'Attack2'; }
+           name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'soldier_ranged',attackFlag,spawn_name);
         }
         else if (numSolH < MinSolH) {
           console.log(spawn_name + " -- spawning soldier_healer");
-          name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'soldier_healer','Attack',spawn_name);
+          if ( spawn_name == 'Spawn1' ) { var attackFlag = 'Attack1'; }
+          if ( spawn_name == 'Spawn2' ) { var attackFlag = 'Attack2'; }
+          if ( spawn_name == 'Spawn3' ) { var attackFlag = 'Attack2'; }
+          name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'soldier_healer',attackFlag,spawn_name);
         }
 
    // if not enough harvesters
