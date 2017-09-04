@@ -214,6 +214,7 @@ module.exports = {
     var tower_energy_ceiling = 250;
     var link_energy_celiing = 100;
     var empty = 0;
+    var deliver_carry_cap = 50;
 
     // spawn flow
     // check for timed out, complete, or abandoned jobs
@@ -240,8 +241,9 @@ module.exports = {
     // detect containers with energy (working variable >= SOME_VALUE, not actual) needing empty
     var containers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
       filter: (s) => (
-        ( s.structureType == STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= container_energy_floor )
+        ( s.structureType == STRUCTURE_CONTAINER && working_var[s.id] >= container_energy_floor )
     )});
+    for ( let c of containers ) {if ( working_var[c.id] == undefined ) {  working_var[c.id] = c.store[RESOURCE_ENERGY]; }
 
     // detect towers needing energy ( update working var, not actual)
     var towers =  Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
@@ -272,16 +274,19 @@ module.exports = {
     // detect resources laying on the ground ( update working var, not actual)
     // TODO?
 
+    // job states - assigned / complete / abandoned / timed out / unasssigned
 
     // if jobs found
-    //console.log("NS : " + containers);
     if ( containers.length != 0 ) {
       for ( let y of containers) {
         console.log("NS: cont " + y.store[RESOURCE_ENERGY]);
+        var job = new Job('01bb',1,'unassigned','deliverer',y.id,Game.time);
+        Hive.job_queue.push(job);
+        working_var[y.id] -= deliver_carry_cap;
       }
     }
 
-    // assign idle creeps to jobs
+    // assign idle creeps to unassinged jobs
       // factors - creep state, energy carried, body type
       // assign the creep to the job
       // mark the job as assigned
