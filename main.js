@@ -57,11 +57,11 @@ module.exports.loop = function () {
         return this._working_count;
     },
     set: function(newValue) {
-    // when storing in memory you will want to change the setter
-    // to set the memory value as well as the local value
-    this.memory.working_count = newValue;
-    this._sources = newValue;
-},
+      // when storing in memory you will want to change the setter
+      // to set the memory value as well as the local value
+      this.memory.working_count = newValue;
+      this._sources = newValue;
+    },
     enumerable: false,
     configurable: true
 });
