@@ -223,7 +223,7 @@ module.exports = {
     // detect containers with energy (working variable >= SOME_VALUE, not actual) needing empty
     var containers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
       filter: (s) => (
-        ( s.structureType == STRUCTURE_CONTAINER )
+        ( s.structureType == STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] > 1 )
         // ( s.structureType == STRUCTURE_CONTAINER && s.memory.working_count >= container_energy_floor )
     )});
 
@@ -265,9 +265,8 @@ module.exports = {
     // job states - assigned / complete / abandoned / timed out / unasssigned
 
     // create jobs for each Types of job
-
     // 01 - fill - aa - source - harvesters
-    
+
     // 01 - fill - bb - container - deliverers
     if ( containers.length != 0 ) {
       for ( let y of containers) {
