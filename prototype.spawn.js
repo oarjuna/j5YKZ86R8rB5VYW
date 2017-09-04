@@ -94,7 +94,7 @@ module.exports = function() {
                      MOVE,                                                   //  50 - 1
                      ATTACK,ATTACK,                                          // 160 - 2
                      HEAL                                                   // 250 - 1
-                   ]; }     // 1040 total - balanced fatigue
+                   ]; }     // 1040 total - balanced fatigue -- 66 to spawn - TTL 1500 - HITS 2200
 
       else if (roleName == "soldier_melee") {
         var body = [ TOUGH,TOUGH,TOUGH,TOUGH,                               // 40 - 4
