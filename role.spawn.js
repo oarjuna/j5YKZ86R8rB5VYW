@@ -227,7 +227,6 @@ module.exports = {
         // ( s.structureType == STRUCTURE_CONTAINER && s.memory.working_count >= container_energy_floor )
     )});
 
-
     for ( let c of containers ) {
       c.memory.working_count = c.store[RESOURCE_ENERGY];
       console.log("NS con -" + c + " -- " + c.memory.working_count);
