@@ -245,7 +245,14 @@ module.exports = {
         ( s.structureType == STRUCTURE_CONTAINER && s.memory.working_count >= container_energy_floor )
     )});
 
-    for ( let c of containers ) { console.log("NS con -" + c + " -- " + c.working_count); }
+    for ( let c of containers ) { 
+      console.log("NS con -" + c + " -- " + c.working_count);
+      c.working_count = c.store[RESOURCE_ENERGY];
+      console.log("NS con -" + c + " -- " + c.working_count);
+
+    }
+
+
 
     // detect towers needing energy ( update working var, not actual)
     var towers =  Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
