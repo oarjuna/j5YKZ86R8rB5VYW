@@ -289,7 +289,7 @@ module.exports = {
         var job = new Job('01bb',1,'unassigned','deliverer',y.id,Game.time);
         console.log("NS: job " + job.type);
         // push the job onto the job_queue
-        //Hive.memory.job_queue.push(job);
+        Hive.memory.job_queue.push(job);
         //y.memory.working_count -= deliver_carry_cap;
       }
     }
