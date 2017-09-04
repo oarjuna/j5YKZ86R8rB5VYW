@@ -69,10 +69,7 @@ module.exports = {
           console.log(out);
         }
 
-        // display the queue
-        for ( let i of Hive.memory.job_queue ) {
-          console.log("JQ " + i.type + " dest - " + i.dest_id);
-        }
+
 
   }
 };

@@ -150,6 +150,7 @@ module.exports.loop = function () {
 
 Hive.memory.job_queue = [];
 
+
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
   for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
 
@@ -181,6 +182,10 @@ Hive.memory.job_queue = [];
   gameStatus.display_status(1,Hive);
 	gameStatus.display_status(2,Hive);
 
+  // display the job queue
+  for ( let i of Hive.memory.job_queue ) {
+    console.log("JQ " + i.type + " dest - " + i.dest_id);
+  }
   console.log("#-------------------------------------------------------#  H, U, R, B, RH, C, De, EM, S");
   stats.collect_stats();
   //for (var spawn in Game.spawns){
