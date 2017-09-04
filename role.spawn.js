@@ -276,7 +276,7 @@ module.exports = {
     // if jobs found
     if ( containers.length != 0 ) {
       for ( let y of containers) {
-        console.log("NS: cont " + container.energy);
+        console.log("NS: cont " + y.energy);
       }
     }
 
