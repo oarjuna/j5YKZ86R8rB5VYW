@@ -26,7 +26,6 @@ module.exports = {
 
 
 creep.moveTo(gotoFlag);
-/*
     // attack tower
     if( hostile_tower != undefined ) {
             console.log(creep + "SOLDIER -- attacking hostile tower!" + hostile_tower);
@@ -63,6 +62,6 @@ creep.moveTo(gotoFlag);
     else {
   		creep.moveTo(gotoFlag);
   	}
-*/
+
   }
 };
