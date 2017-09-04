@@ -49,7 +49,7 @@ creep.moveTo(gotoFlag);
 /*
 /*
     // attack spawn or extensions
-    else if ( other_target != undefined && false ) {
+     if ( other_target != undefined && false ) {
       console.log(creep + "SOLDIER -- attacking hostile target!" + other_target);
       if(creep.attack(other_target) == ERR_NOT_IN_RANGE) {
               creep.moveTo(other_target);
@@ -58,9 +58,12 @@ creep.moveTo(gotoFlag);
 */
 /*
     // heal
-    else if (needs_healing != undefined) {
+     if (needs_healing != undefined) {
       console.log(creep + "healing target : " + needs_healing);
     }
+*/
+
+/*
     // move towards the flag
     else {
   		creep.moveTo(gotoFlag);
