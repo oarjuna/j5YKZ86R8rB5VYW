@@ -24,11 +24,6 @@ module.exports = {
   					s.structureType==STRUCTURE_EXTENSION
   	});
 
-    // heal
-    if (needs_healing != undefined) {
-      console.log(creep + "healing target : " + needs_healing);
-    }
-
     // attack tower
     if( hostile_tower != undefined ) {
             console.log(creep + "SOLDIER -- attacking hostile tower!" + hostile_tower);
@@ -52,6 +47,12 @@ module.exports = {
               creep.moveTo(other_target);
       }
     }
+    
+    // heal
+    if (needs_healing != undefined) {
+      console.log(creep + "healing target : " + needs_healing);
+    }
+
 
     // move towards the flag
     else {
