@@ -291,7 +291,7 @@ module.exports = {
         y.memory.working_count -= deliver_carry_cap;
       }
     }
-    for ( let i of Hive.job.queue ) {
+    for ( let i of Hive.job_queue ) {
       console.log("JQ " + i.type);
     }
 
