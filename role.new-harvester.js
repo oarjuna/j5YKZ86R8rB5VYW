@@ -47,26 +47,26 @@ module.exports = {
       if ( creep.room.controller.ticksToDowngrade < 200 ) {
           // Emergency controller upgrade
           var structure = creep.room.controller;
-          creep.say("\u1F69A .ER");
+          creep.say('\u1F69A');
       }
 
       else if ( structure_link[0] != undefined ){
         // Load the closest link
         var structure = structure_link[0];
-        creep.say("\u1F69A.li");
+        creep.say('\u1F69A');
         var deliv_link = true;
       }
 
       else if ( structure_container != null ) {
         // Load a container
         var structure = structure_container;
-        creep.say("\u1F69A.cn");
+        creep.say('\u1F69A');
       }
 
       else {
         // drop off at storage
         var structure = structure_storage;
-        creep.say("\u1F69A.ST");
+        creep.say('\u1F69A');
 			}
 
     if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
