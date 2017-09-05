@@ -2,7 +2,7 @@ var shared  = require('func.shared');
 
 module.exports = {
     run: function(creep) {
-	     creep.say("🔨");
+	     creep.say('\uD83D\uDD28'); // 🔨
         // if creep is trying to complete a constructionSite but has no energy left
         if (creep.memory.working == true && creep.carry.energy == 0) {
             // switch state

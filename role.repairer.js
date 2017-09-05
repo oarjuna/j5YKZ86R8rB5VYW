@@ -21,7 +21,7 @@ module.exports = {
             // if we find one
             if (structure != undefined) {
                 // try to repair it, if it is out of range
-		            creep.say("🛠️");
+		            creep.say('\uD83D\uDEE0\uFE0F'); // 🛠️
               //  console.log(creep + " -- repairer --repair -- " + structure );
                 if (creep.repair(structure) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(structure);
@@ -29,7 +29,7 @@ module.exports = {
             }
             else {
                 // look for construction sites
-                creep.say("🛠️");
+                creep.say('\uD83D\uDEE0\uFE0F');  // 🛠️
                 roleBuilder.run(creep);
             }
         }

@@ -9,7 +9,7 @@ module.exports = {
     if ( creep.pos.roomName != gotoFlag.pos.roomName && creep.memory.working != true ) {
 	     // not in the room with the flag, move towards the flag
 	     creep.moveTo(gotoFlag);
-       creep.say("rh.!!");
+       creep.say("\uD83D\uDE9A.!!");
     }
     else {
       // switch states
@@ -29,7 +29,7 @@ module.exports = {
     		var action_status = creep.transfer(structure, RESOURCE_ENERGY);
 
       	if (action_status == ERR_NOT_IN_RANGE) {
-				  creep.say("rh.st");
+				  creep.say("\uD83D\uDE9A.st");
           creep.moveTo(structure);
         }
       }
@@ -44,7 +44,7 @@ module.exports = {
         //if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
         if (creep.withdraw(source, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
   		    creep.moveTo(source);
-          creep.say("rh.so");
+          creep.say("\uD83D\uDE9A.so");
         }
 
 	    }
