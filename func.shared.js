@@ -30,7 +30,7 @@ module.exports = {
 		}
 		//console.log(creep + "+@" + creep.memory.role + " ++ " + container);
 
-		creep.say('\uD83D\uDE9A.++'); // 🚚);
+		creep.say('\uD83D\uDE9A pu'); // 🚚);
 		//console.log(creep + "--" + creep.memory.role + " ++ " + container);
 
 		if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
