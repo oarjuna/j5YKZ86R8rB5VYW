@@ -86,7 +86,7 @@ module.exports = {
       else {
         var source = target_source;
       }
-      creep.say('\U+26CF');
+      creep.say('\u26CF');
     //console.log(creep + " dest " + target_source);
 		  if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
 		    creep.moveTo(source);
