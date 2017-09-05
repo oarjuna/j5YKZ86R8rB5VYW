@@ -154,8 +154,8 @@ module.exports = {
         filter: (s) =>
           ( s.structureType == STRUCTURE_ROAD && s.hits < s.hitsMax - 1000) ||
           ( s.structureType == STRUCTURE_CONTAINER && s.hits < s.hitsMax - 25000 ) ||
-          ( s.structureType == STRUCTURE_WALL && s.hits < 40000 ) ||
-          ( s.structureType == STRUCTURE_RAMPART && s.hits < 40000)
+          ( s.structureType == STRUCTURE_WALL && s.hits < 45000 ) ||
+          ( s.structureType == STRUCTURE_RAMPART && s.hits < 45000)
         });
 
         tower.room.visual.circle(tower.pos,
