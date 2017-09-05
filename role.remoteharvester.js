@@ -35,14 +35,16 @@ module.exports = {
       }
       else {
         // find closest source and fill up
-        //var source = creep.pos.findClosestByPath(FIND_SOURCES);
+        var source = creep.pos.findClosestByPath(FIND_SOURCES);
 
+/*
         var source = creep.pos.findClosestByPath(FIND_HOSTILE_STRUCTURES, {
       			filter: (s) => s.structureType==STRUCTURE_STORAGE
       	});
+*/
 
-        //if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
-        if (creep.withdraw(source, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+        if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
+        //if (creep.withdraw(source, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
   		    creep.moveTo(source);
           creep.say("\uD83D\uDE9A.so");
         }
