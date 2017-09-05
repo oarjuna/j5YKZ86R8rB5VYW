@@ -49,28 +49,28 @@ module.exports = {
       if ( creep.room.controller.ticksToDowngrade < 500 ) {
           // Emergency controller upgrade
           var structure = creep.room.controller;
-          creep.say("d.co");
+          creep.say("🚚.co");
       }
       else if ( structure_tower != null ) {
         // Load a container
         var structure = structure_tower;
-        creep.say("d.tw");
+        creep.say("🚚.tw");
       }
 
       else if (structure_spawn != null) {
         // Load the extension or spawn
         var structure = structure_spawn;
-        creep.say("d.se");
+        creep.say("🚚.se");
       }
       else if ( structure_link != undefined && structure_link.energy < structure_link.energyCapacity - 200) {
         // Load a sending link
         var structure = structure_link;
-        creep.say("d.li");
+        creep.say("🚚.li");
       }
       else {
         // drop off at storage
         var structure = structure_storage;
-        creep.say("d.st");
+        creep.say("🚚.st");
 	}
 
       if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
