@@ -54,12 +54,11 @@ module.exports = {
         var status12 = " UP: " + Game.spawns[spawn_name].room.controller.progress + "/" + Game.spawns[spawn_name].room.controller.progressTotal;
         var lvl =  Game.spawns[spawn_name].room.controller.level;
 
-
         if (spawn_name == 'Spawn1') { var url = '<A HREF=https://screeps.com/a/#!/room/shard0/W28S81>Spawn1</a>'};
         if (spawn_name == 'Spawn2') { var url = '<A HREF=https://screeps.com/a/#!/room/shard0/W27S81>Spawn2</a>'};
         if (spawn_name == 'Spawn3') { var url = '<A HREF=https://screeps.com/a/#!/room/shard0/W26S81>Spawn3</a>'};
 
-        console.log(spawn_name + " : lvl" + lvl + status11 + status12 + " C: "+ total_status + " -- " + status1 + status2 + status3 + status4 + status5 + status7 + status8 + status9 + status10);
+        console.log(url + " : lvl" + lvl + status11 + status12 + " C: "+ total_status + " -- " + status1 + status2 + status3 + status4 + status5 + status7 + status8 + status9 + status10);
         console.log("\t" + status21 + status22 + status23);
 
         // source status information
