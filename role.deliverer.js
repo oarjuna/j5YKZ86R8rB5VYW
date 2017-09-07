@@ -51,17 +51,19 @@ module.exports = {
           var structure = creep.room.controller;
           creep.say('\uD83D\uDE9A.ER'); // 🚚
       }
-      else if ( structure_tower != null ) {
-        // Load a container
-        var structure = structure_tower;
-        creep.say('\uD83D\uDE9A.tw'); // 🚚
-      }
 
       else if (structure_spawn != null) {
         // Load the extension or spawn
         var structure = structure_spawn;
         creep.say('\uD83D\uDE9A.sp'); // 🚚;
       }
+      
+      else if ( structure_tower != null ) {
+        // Load a container
+        var structure = structure_tower;
+        creep.say('\uD83D\uDE9A.tw'); // 🚚
+      }
+
       else if ( structure_link != undefined && structure_link.energy < structure_link.energyCapacity - 200) {
         // Load a sending link
         var structure = structure_link;
