@@ -318,9 +318,12 @@ module.exports = {
     // 03 - work - aa - construction sites - builder
     // 03 - work - bb - repair jobs - builder
 
+    var x = 0;
     // now, assign jobs to creeps
-    for ( let job_num of Hive.memory.job_queue) {
-      console.log("JQ: " + job_num );
+    for ( let job of Hive.memory.job_queue) {
+      x++;
+      console.log("JQ: " + x + " job.type " job.type );
+
       // factors - creep state, energy carried, body type
 
       // assign the creep to the job
