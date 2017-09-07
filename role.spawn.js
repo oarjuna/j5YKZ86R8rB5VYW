@@ -319,7 +319,7 @@ module.exports = {
     // 03 - work - bb - repair jobs - builder
 
     // now, assign jobs to creeps
-    for ( let job_num of Hive.memory.job_queue)
+    for ( let job_num of Hive.memory.job_queue) {
 
       // factors - creep state, energy carried, body type
 
@@ -328,6 +328,6 @@ module.exports = {
 
       // mark the job as assigned
 
-
+    }
   }
 };
