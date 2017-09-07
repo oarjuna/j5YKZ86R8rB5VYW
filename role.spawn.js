@@ -247,10 +247,7 @@ module.exports = {
         // ( s.structureType == STRUCTURE_CONTAINER && s.memory.working_count >= container_energy_floor )
     )});
 
-    for ( let c of containers ) {
-      c.memory.working_count = c.store[RESOURCE_ENERGY];
-      //console.log("NS con -" + c + " -- " + c.memory.working_count);
-    }
+
 
     // detect towers needing energy ( update working var, not actual)
     var towers =  Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
@@ -281,6 +278,12 @@ module.exports = {
     // detect resources laying on the ground ( update working var, not actual)
     // TODO?
 
+    // update the working_counts debugging
+    for ( let c of containers ) {
+      c.memory.working_count = c.store[RESOURCE_ENERGY];
+      //console.log("NS con -" + c + " -- " + c.memory.working_count);
+    }
+
     // job states - assigned / complete / abandoned / timed out / unasssigned
 
     // create jobs for each Types of job
@@ -293,7 +296,8 @@ module.exports = {
         var job = new Job('01bb',1,'unassigned','deliverer',y.id,Game.time);
         //console.log("NS: job " + job.type);
         // push the job onto the job_queue
-        Hive.memory.job_queue.push(job);
+         Hive.memory.job_queue.push(job);
+         // record the desired resource state
         //y.memory.working_count -= deliver_carry_cap;
       }
     }
@@ -314,10 +318,16 @@ module.exports = {
     // 03 - work - aa - construction sites - builder
     // 03 - work - bb - repair jobs - builder
 
-    // assign idle creeps to unassinged jobs
+    // now, assign jobs to creeps
+    for ( let job_num of Hive.memory.job_queue)
+
       // factors - creep state, energy carried, body type
+
       // assign the creep to the job
+      //creep.memory.job = job_num;
+
       // mark the job as assigned
+
 
   }
 };
