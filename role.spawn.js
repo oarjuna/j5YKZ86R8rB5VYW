@@ -287,9 +287,9 @@ module.exports = {
     // job states - assigned / complete / abandoned / timed out / unasssigned
 
     // create jobs for each Types of job
-    // 01 - fill - aa - source - harvesters
+    // 01 - fillfrom - aa - source - harvesters
 
-    // 01 - fill - bb - container - deliverers
+    // 01 - fillfrom - bb - container - deliverers
     if ( containers.length != 0 ) {
       for ( let y of containers) {
         // create a job for each container
@@ -301,19 +301,19 @@ module.exports = {
         //y.memory.working_count -= deliver_carry_cap;
       }
     }
-    // 01 - fill - cc - storage - deliverers / upgraders *** TODO
+    // 01 - fillfrom - cc - storage - deliverers / upgraders *** TODO
 
-    // 01 - fill - dd - receiving links - upgraders
-    // 01 - fill - ee - resources on the ground - builder
+    // 01 - fillfrom - dd - receiving links - upgraders
+    // 01 - fillfrom - ee - resources on the ground - builder
 
-    // 02 - deliv - aa - closest container - harvesters
-    // 02 - deliv - bb - sending links - harvesters
+    // 02 - delivto - aa - closest container - harvesters
+    // 02 - delivto - bb - sending links - harvesters
 
-    // 02 - deliv - cc - spawns extensions - deliverer *** TODO
-    // 02 - deliv - dd - towers - deliverer *** TODO
-    // 02 - deliv - ee - storage - deliverer *** TODO
+    // 02 - delivto - cc - spawns extensions - deliverer *** TODO
+    // 02 - delivto - dd - towers - deliverer *** TODO
+    // 02 - delivto - ee - storage - deliverer *** TODO
 
-    // 02 - deliv - ff - controller - upgrader
+    // 02 - delivto - ff - controller - upgrader
 
     // 03 - work - aa - construction sites - builder
     // 03 - work - bb - repair jobs - builder
