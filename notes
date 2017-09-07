@@ -26,4 +26,5 @@ construction
 
 // creep recycling worthwhile?
 
-// if a room is wiped out, set energy_avil to 300 until the hive regenerates, then switch back to normal levels
+!!! // if a room is wiped out, set energy_avil to 300 until the hive regenerates, then switch back to normal levels
+
