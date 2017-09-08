@@ -171,7 +171,7 @@ module.exports = {
         }
         else {
           Game.spawns[spawn_name].room.controller.memory.alert_state = 'blue';
-          console.log("TW: alert " +  Game.spawns[spawn_name].room.controller.memory.alert_state); 
+          console.log("TW: alert " +  Game.spawns[spawn_name].room.controller.memory.alert_state);
         }
 
 
@@ -345,7 +345,7 @@ module.exports = {
     // now, assign jobs to creeps
     for ( let job of Hive.memory.job_queue) {
       x++;
-      console.log("JQ: " + spawn_name+ " " + x + " t " + job.type + " " + job.dest_id);
+      //console.log("JQ: " + spawn_name+ " " + x + " t " + job.type + " " + job.dest_id);
 
       // factors - creep state, energy carried, body type
 
