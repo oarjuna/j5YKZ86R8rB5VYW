@@ -167,11 +167,11 @@ module.exports = {
           console.log("TW: " + spawn_name+ " " + target); // We are under attack!
           // set alert flag for room to 'red'
           Game.spawns[spawn_name].room.controller.memory.alert_state = 'red';
-          console.log("TW: alert " + spawn_name+ " " + Game.spawns[spawn_name].room.controller.memory.alert_state);
+          //console.log("TW: alert " + spawn_name+ " " + Game.spawns[spawn_name].room.controller.memory.alert_state);
         }
         else {
           Game.spawns[spawn_name].room.controller.memory.alert_state = 'blue';
-          console.log("TW: alert " + spawn_name+ " " + Game.spawns[spawn_name].room.controller.memory.alert_state);
+          //console.log("TW: alert " + spawn_name+ " " + Game.spawns[spawn_name].room.controller.memory.alert_state);
         }
 
 
