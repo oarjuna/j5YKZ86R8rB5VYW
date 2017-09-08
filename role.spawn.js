@@ -151,8 +151,6 @@ module.exports = {
     var wall_ramp_str = 47000;
 
     for (let tower of towers) {
-//      var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-
       var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
         filter: (s) => (
           s.getActiveBodyparts(ATTACK) != 0         ||
