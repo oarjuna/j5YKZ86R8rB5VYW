@@ -3,7 +3,7 @@ var shared  = require('func.shared');
 module.exports = {
   run: function(creep) {
     // Switch States
-    //console.log("BODY:" + creep.body );
+    console.log("BODY:" + creep.body.0 );
     // when creep is xfering energy to a structure and has no energy left to xfer
     if (creep.memory.working == true && creep.carry.energy == 0) {
       // switch state
