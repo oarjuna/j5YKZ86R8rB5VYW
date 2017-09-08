@@ -67,14 +67,6 @@ module.exports = {
         }
 			}
 
-			// repair jobs
-			else if ( repairStructure != undefined  && creep.memory.working == true ) {
-				//console.log(creep + " claimer -- repairing");
-      	if ( creep.repair(repairStructure) == ERR_NOT_IN_RANGE ) {
-        	creep.moveTo(repairStructure);
-        }
-      }
-
 			// drop stuff off
 			else {
 				var container = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
