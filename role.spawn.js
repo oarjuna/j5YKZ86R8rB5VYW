@@ -151,14 +151,15 @@ module.exports = {
     var wall_ramp_str = 45000;
 
     for (let tower of towers) {
-      var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS) {
+      var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
         filter: (s) => (
           s.body.includes(ATTACK) ||
           s.body.includes(RANGED_ATTACK) ||
           s.body.includes(CLAIM) ||
           s.body.includes(HEAL) ||
           s.body.includes(WORK)
-         )});
+         )
+        });
 
          if ( target ) { console.log("TW: " + target.body); }
 
