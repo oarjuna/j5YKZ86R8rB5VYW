@@ -52,10 +52,10 @@ module.exports = {
           creep.say('\uD83D\uDE9A.ER'); // 🚚
       }
 
-      else if ( structure_tower != null ) {
+      else if ( Game.spawns[spawn_name].room.controller.memory.alert_state == 'red' && structure_tower != null ) {
         // Load a container
         var structure = structure_tower;
-        creep.say('\uD83D\uDE9A.tw'); // 🚚
+        creep.say('\u26A0.tw'); // 🚚
       }
 
       else if ( structure_spawn != null ) {
@@ -64,20 +64,11 @@ module.exports = {
         creep.say('\uD83D\uDE9A.sp'); // 🚚;
       }
 
-/*
-      else if ( structure_spawn != null || structure_tower != null ) {
-        if ( Game.spawns[spawn_name].room.controller.memory.alert_state == 'green' && structure_spawn != null ) {
-          // Load the extension or spawn
-          var structure = structure_spawn;
-          creep.say('\uD83D\uDE9A.sp'); // 🚚;
-        }
-        else if ( Game.spawns[spawn_name].room.controller.memory.alert_state == 'red' && structure_tower != null) {
-          // Load a container
-          var structure = structure_tower;
-          creep.say('\uD83D\uDE9A.tw'); // 🚚
-        }
+      else if ( structure_tower != null ) {
+        // Load a container
+        var structure = structure_tower;
+        creep.say('\uD83D\uDE9A.tw'); // 🚚
       }
-*/
 
       else if ( structure_link != undefined && structure_link.energy < structure_link.energyCapacity - 200) {
         // Load a sending link
