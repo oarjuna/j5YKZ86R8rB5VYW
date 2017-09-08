@@ -164,7 +164,7 @@ module.exports = {
          if ( target ) { console.log("TW: " + target.body); }
 
            var target2 = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-           console.log("TW:" + target2.body.0);
+           console.log("TW:" + target2.body);
 
       // WORK, ATTACK, RANGED_ATTACK, HEAL, or CLAIM
       var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
