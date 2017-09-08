@@ -160,7 +160,7 @@ module.exports = {
           s.body.type.includes('WORK')
          )});
 
-      console.log("TW: " + target.body);
+         if ( target ) { console.log("TW: " + target.body); }
 
       // WORK, ATTACK, RANGED_ATTACK, HEAL, or CLAIM
       var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
