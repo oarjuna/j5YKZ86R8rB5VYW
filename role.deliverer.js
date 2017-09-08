@@ -3,12 +3,6 @@ var shared  = require('func.shared');
 module.exports = {
   run: function(creep) {
 
-    //console.log("DELIV: " + creep.body[0].type);
-
-    var bodyfoo = creep.body.indexOf('move');
-
-    console.log("DELIV: " + bodyfoo);
-
     // Switch States
     // when creep is xfering energy to a structure and has no energy left to xfer
     if (creep.memory.working == true && creep.carry.energy == 0) {
