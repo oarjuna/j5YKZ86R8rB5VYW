@@ -161,7 +161,7 @@ module.exports = {
          )});
 
          var weak_targets = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
-           filter (s) => (
+           filter: (s) => (
              s.hits < 100
          )});
 
