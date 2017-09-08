@@ -111,6 +111,14 @@ Object.defineProperty(StructureContainer.prototype, 'alert_state', {
   configurable: true
 });
 
+Creep.prototype.hasActiveBodypart = function (type) {
+	for (let i = this.body.length - 1; i >= 0; i--) {
+		if (this.body[i].hits <= 0) return false;
+		if (this.body[i].type === type) return true;
+	}
+	return false;
+};
+
   var Hive = {
     spawn_names: ['Spawn1','Spawn2','Spawn3','Spawn4'],
     spawn_levels:
