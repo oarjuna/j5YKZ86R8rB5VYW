@@ -54,7 +54,7 @@ module.exports = {
         var status12 = " UP: " + Game.spawns[spawn_name].room.controller.progress + "/" + Game.spawns[spawn_name].room.controller.progressTotal;
         var lvl =  Game.spawns[spawn_name].room.controller.level;
 
-        if (spawn_name == 'Spawn1') { var url = '<A HREF=https://screeps.com/a/#!/room/shard0/W28S81  style="color:#FF0000;"">Spawn1</a>'};
+        if (spawn_name == 'Spawn1') { var url = '<A HREF=https://screeps.com/a/#!/room/shard0/W28S81  style="color:#FF0000;">Spawn1</a>'};
         if (spawn_name == 'Spawn2') { var url = '<A HREF=https://screeps.com/a/#!/room/shard0/W27S81  style="color:#FF0000;">Spawn2</a>'};
         if (spawn_name == 'Spawn3') { var url = '<A HREF=https://screeps.com/a/#!/room/shard0/W26S81  style="color:#FF0000;">Spawn3</a>'};
 
