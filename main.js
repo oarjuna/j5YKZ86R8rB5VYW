@@ -111,6 +111,7 @@ Object.defineProperty(StructureContainer.prototype, 'alert_state', {
   configurable: true
 });
 
+// xsinx
 Creep.prototype.hasActiveBodypart = function (type) {
 	for (let i = this.body.length - 1; i >= 0; i--) {
 		if (this.body[i].hits <= 0) return false;
