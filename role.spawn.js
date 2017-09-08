@@ -148,7 +148,7 @@ module.exports = {
         filter: (s) => s.structureType == STRUCTURE_TOWER
     });
 
-    var wall_ramp_str = 45000;
+    var wall_ramp_str = 47000;
 
     for (let tower of towers) {
 //      var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
