@@ -1,4 +1,5 @@
 var shared  = require('func.shared');
+var roleDeliverer = require('role.deliverer');
 
 module.exports = {
     // a function to run the logic for this role
@@ -25,9 +26,15 @@ module.exports = {
             //creep.signController(creep.room.controller,"Non Servium");
             //creep.moveTo(creep.room.controller);
 
-            if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+            // if red alert, act like a deliverer
+            if ( creep.room.controller.memory.alert_state == 'red' ) {
+              roleDeliverer.run(creep);
+            }
+            else if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(creep.room.controller);
             }
+
+
         }
         else {
                // find closest container with energy and fill up
