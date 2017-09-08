@@ -181,7 +181,6 @@ module.exports = {
 
         if (target != undefined) {
           console.log(tower + " -- attacking " + target);
-          //Game.notify(tower + " -- attacking " + target,5);
           tower.attack(target);
         }
         else if (repair_target != undefined && tower.energy > 200 ) { // combat reserve
