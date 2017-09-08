@@ -312,7 +312,32 @@ module.exports = {
     // job states - assigned / complete / abandoned / timed out / unasssigned
 
     // create jobs for each Types of job
+
     // 01 - fillfrom - aa - source - harvesters
+    for ( let source of sources ) { // foreach source
+      // if there is not a fillfrom job for the source
+      if (! Hive.memory.job_queue.find(source) ) {
+        // find idle, empty creep with memory.destid = source.id
+        let idle_empty_sticky_creep = _.find(Game.creeps, (c) =>
+          ( c.memory.birthplace == spawn_name ) &&
+          ( _.sum(c.carry) == empty ) &&
+          ( c.memory.state == 'idle' ) &&
+          ( c.memory.destid == dest_id )
+        );
+
+        // if no creeps found, find any idle, empty harvester body
+        if ( idle_empty__sticky_creep = undefined ) {
+          let idle_empty_creep = _.find(Game.creeps, (c) =>
+            ( c.memory.birthplace == spawn_name ) &&
+            ( _.sum(c.carry) == empty ) &&
+            ( c.memory.state == 'idle' ) &&
+            ( c.memory.destid == dest_id ) /// BODY TYPE -- TODO
+          );
+        }
+          // assign source to this creep.memory.destid
+          // if candidate found, asssign job to creep
+      }
+    }
 
     // 01 - fillfrom - bb - container - deliverers
     if ( containers.length != 0 ) {
