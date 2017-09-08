@@ -171,7 +171,6 @@ module.exports = {
           //console.log("TW: alert " + spawn_name+ " " + Game.spawns[spawn_name].room.controller.memory.alert_state);
         }
 
-      // WORK, ATTACK, RANGED_ATTACK, HEAL, or CLAIM
       var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
         filter: (s) =>
           ( s.structureType == STRUCTURE_ROAD && s.hits < s.hitsMax - 1000) ||
