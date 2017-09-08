@@ -162,7 +162,18 @@ module.exports = {
           s.getActiveBodyparts(WORK)
          )});
 
-         if ( target ) { console.log("TW: " + target); }
+
+       if ( target ) {
+          console.log("TW: " + target); // We are under attack!
+          // set alert flag for room to 'red'
+          Game.spawns[spawn_name].room.controller.memory.alert_state = 'red';
+          console.log("TW: alert " +  Game.spawns[spawn_name].room.controller.memory.alert_state);
+        }
+        else {
+          Game.spawns[spawn_name].room.controller.memory.alert_state = 'blue';
+          console.log("TW: alert " +  Game.spawns[spawn_name].room.controller.memory.alert_state); 
+        }
+
 
       // WORK, ATTACK, RANGED_ATTACK, HEAL, or CLAIM
       var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {

@@ -67,6 +67,50 @@ module.exports.loop = function () {
     configurable: true
 });
 
+Object.defineProperty(StructureController.prototype, 'memory', {
+    configurable: true,
+    get: function() {
+        if(_.isUndefined(Memory.myControllersMemory)) {
+            Memory.myControllersMemory = {};
+        }
+        if(!_.isObject(Memory.myControllersMemory)) {
+            return undefined;
+        }
+        return Memory.myControllersMemory[this.id] =
+                Memory.myControllersMemory[this.id] || {};
+    },
+    set: function(value) {
+        if(_.isUndefined(Memory.myControllersMemory)) {
+            Memory.myControllersMemory = {};
+        }
+        if(!_.isObject(Memory.myControllersMemory)) {
+            throw new Error('Could not set source memory');
+        }
+        Memory.myControllersMemory[this.id] = value;
+    }
+});
+
+Object.defineProperty(StructureContainer.prototype, 'alert_state', {
+  get: function () {
+      if (this._alert_state == undefined) {
+          if (this.memory.alert_state == undefined) {
+              this.memory.alert_state = this.store[RESOURCE_ENERGY];
+              this._alert_state = this.store[RESOURCE_ENERGY];
+          }
+          this._alert_state = this.memory.alert_state;
+        }
+      return this._alert_state;
+  },
+  set: function(newValue) {
+    // when storing in memory you will want to change the setter
+    // to set the memory value as well as the local value
+    this.memory.alert_state = newValue;
+    this._sources = newValue;
+  },
+  enumerable: false,
+  configurable: true
+});
+
   var Hive = {
     spawn_names: ['Spawn1','Spawn2','Spawn3','Spawn4'],
     spawn_levels:
