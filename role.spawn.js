@@ -156,7 +156,6 @@ module.exports = {
       var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
         filter: (s) => (
           s.getActiveBodyparts(ATTACK) != 0         ||
-          s.getActiveBodyparts(ATTACK) != 0         ||
           s.getActiveBodyparts(RANGED_ATTACK) != 0  ||
           s.getActiveBodyparts(CLAIM) != 0          ||
           s.getActiveBodyparts(HEAL) != 0          ||
