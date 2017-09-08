@@ -158,8 +158,7 @@ module.exports = {
           s.getActiveBodyparts(ATTACK) != 0         ||
           s.getActiveBodyparts(RANGED_ATTACK) != 0  ||
           s.getActiveBodyparts(CLAIM) != 0          ||
-          s.getActiveBodyparts(HEAL) != 0          ||
-          s.getActiveBodyparts(WORK)
+          s.getActiveBodyparts(HEAL) != 0
          )});
 
          if ( target ) { console.log("TW: " + target); }
