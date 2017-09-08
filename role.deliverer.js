@@ -52,7 +52,7 @@ module.exports = {
           creep.say('\uD83D\uDE9A.ER'); // 🚚
       }
 
-      else if ( Game.spawns[spawn_name].room.controller.memory.alert_state == 'red' && structure_tower != null ) {
+      else if ( Game.spawns[this].room.controller.memory.alert_state == 'red' && structure_tower != null ) {
         // Load a container
         var structure = structure_tower;
         creep.say('\u26A0.tw'); // 🚚
