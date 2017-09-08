@@ -52,7 +52,6 @@ module.exports = {
           creep.say('\uD83D\uDE9A.ER'); // 🚚
       }
 
-
       else if ( creep.room.controller.memory.alert_state == 'red' && structure_tower != null ) {
         // Load a container
         var structure = structure_tower;
