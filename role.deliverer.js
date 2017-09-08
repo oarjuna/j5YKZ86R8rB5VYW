@@ -5,6 +5,10 @@ module.exports = {
 
     console.log("DELIV: " + creep.body[0].type);
 
+    var bodyfoo = creep.body.indexOf(MOVE);
+
+    console.log("DELIV: " + bodyfoo);
+
     // Switch States
     // when creep is xfering energy to a structure and has no energy left to xfer
     if (creep.memory.working == true && creep.carry.energy == 0) {
