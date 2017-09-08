@@ -63,6 +63,7 @@ module.exports = {
         var structure = structure_spawn;
         creep.say('\uD83D\uDE9A.sp'); // 🚚;
       }
+
 /*
       else if ( structure_spawn != null || structure_tower != null ) {
         if ( Game.spawns[spawn_name].room.controller.memory.alert_state == 'green' && structure_spawn != null ) {
@@ -77,6 +78,7 @@ module.exports = {
         }
       }
 */
+
       else if ( structure_link != undefined && structure_link.energy < structure_link.energyCapacity - 200) {
         // Load a sending link
         var structure = structure_link;
