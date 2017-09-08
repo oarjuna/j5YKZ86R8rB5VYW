@@ -314,9 +314,10 @@ module.exports = {
     // create jobs for each Types of job
 
     // 01 - fillfrom - aa - source - harvesters
+    /*  
     for ( let source of sources ) { // foreach source
       // if there is not a fillfrom job for the source
-    /*  
+
       if (! Hive.memory.job_queue.find(source) ) {
         // find idle, empty creep with memory.destid = source.id
         let idle_empty_sticky_creep = _.filter(Game.creeps, (c) =>
