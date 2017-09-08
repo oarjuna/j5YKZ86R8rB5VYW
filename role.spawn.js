@@ -160,10 +160,12 @@ module.exports = {
           s.getActiveBodyparts(WORK)
          )});
 
-         var weak_targets = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
+         var weak_target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
            filter: (s) => (
              s.hits < 100
          )});
+
+         if ( target == undefined ) { target = weak_target; }
 
        if ( target ) {
           console.log("TW: " + spawn_name+ " " + target); // We are under attack!
