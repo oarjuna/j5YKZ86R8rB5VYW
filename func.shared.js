@@ -11,12 +11,12 @@ module.exports = {
 			let rec_link_id = creep.memory.destid;
 			tmp_c = Game.getObjectById(rec_link_id);
 			//console.log("xxxx " + tmp_c + " " + rec_link_id);
-			if ( tmp_c.energy > 90 ) { container = tmp_c; var out = ".li";
+			if ( tmp_c.energy > 90 ) { container = tmp_c; var out = ".-li";
  }
 		}
 
 		if ( container == undefined ) {
-			var out = ".ct";
+			var out = ".-ct";
 
 			// Find containers with energy
 			var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
@@ -30,7 +30,7 @@ module.exports = {
 		if ( container == undefined ) {
 			// otherwise, go to storage
 			container = creep.room.storage;
-			var out = ".ST";
+			var out = ".-ST";
 		}
 		//console.log(creep + "+@" + creep.memory.role + " ++ " + container);
 
