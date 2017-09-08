@@ -162,7 +162,6 @@ module.exports = {
           s.getActiveBodyparts(WORK)
          )});
 
-
        if ( target ) {
           console.log("TW: " + spawn_name+ " " + target); // We are under attack!
           // set alert flag for room to 'red'
@@ -173,7 +172,6 @@ module.exports = {
           Game.spawns[spawn_name].room.controller.memory.alert_state = 'green';
           //console.log("TW: alert " + spawn_name+ " " + Game.spawns[spawn_name].room.controller.memory.alert_state);
         }
-
 
       // WORK, ATTACK, RANGED_ATTACK, HEAL, or CLAIM
       var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
