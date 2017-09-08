@@ -5,7 +5,7 @@ module.exports = {
 
     //console.log("DELIV: " + creep.body[0].type);
 
-    var bodyfoo = creep.body.indexOf(MOVE);
+    var bodyfoo = creep.body.indexOf('move');
 
     console.log("DELIV: " + bodyfoo);
 
