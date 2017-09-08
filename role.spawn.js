@@ -153,11 +153,11 @@ module.exports = {
     for (let tower of towers) {
       var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
         filter: (s) => (
-          s.body.type.includes('ATTACK') ||
-          s.body.type.includes('RANGED_ATTACK') ||
-          s.body.type.includes('CLAIM') ||
-          s.body.type.includes('HEAL') ||
-          s.body.type.includes('WORK')
+          s.body.includes('ATTACK') ||
+          s.body.includes('RANGED_ATTACK') ||
+          s.body.includes('CLAIM') ||
+          s.body.includes('HEAL') ||
+          s.body.includes('WORK')
          )});
 
          if ( target ) { console.log("TW: " + target.body); }
