@@ -160,6 +160,11 @@ module.exports = {
           s.getActiveBodyparts(WORK)
          )});
 
+         var weak_targets = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
+           filter (s) => (
+             s.hits < 100
+         )});
+
        if ( target ) {
           console.log("TW: " + spawn_name+ " " + target); // We are under attack!
           // set alert flag for room to 'red'
@@ -221,13 +226,15 @@ module.exports = {
     // creep state - source_bound / dest_bound / working / idle
 
     // job object prototype - type, priority, state, body_type, dest_id, tick_issued
-    function Job (type,priority,state,body_type_req,dest_id,tick_issued) {
+    function Job (type,priority,state,body_type_req,dest_id,tick_issued,tick_complete) {
         this.type = type;
         this.priority = priority;
         this.state = state;
         this.body_type_req = body_type_req;
         this.dest_id = dest_id;
         this.tick_issued = tick_issued;
+        this.tick_complete = tick_complete;
+
     }
 
     var container_energy_floor = 100;
@@ -309,7 +316,7 @@ module.exports = {
     if ( containers.length != 0 ) {
       for ( let y of containers) {
         // create a job for each container
-        var job = new Job('01bb',1,'unassigned','deliverer',y.id,Game.time);
+        var job = new Job('01bb',1,'unassigned','deliverer',y.id,Game.time,'');
         //console.log("NS: job " + job.type);
         // push the job onto the job_queue
          Hive.memory.job_queue.push(job);
