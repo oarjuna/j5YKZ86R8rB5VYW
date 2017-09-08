@@ -151,21 +151,20 @@ module.exports = {
     var wall_ramp_str = 45000;
 
     for (let tower of towers) {
-      var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);/*, {
+//      var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+
+      var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
         filter: (s) => (
-          s.body.includes(ATTACK) ||
-          s.body.includes(RANGED_ATTACK) ||
-          s.body.includes(CLAIM) ||
-          s.body.includes(HEAL) ||
-          s.body.includes(WORK)
-         )
-        });
+          s.getActiveBodyparts(ATTACK) != 0         ||
+          s.getActiveBodyparts(ATTACK) != 0         ||
+          s.getActiveBodyparts(RANGED_ATTACK) != 0  ||
+          s.getActiveBodyparts(CLAIM) != 0          ||
+          s.getActiveBodyparts(HEAL) != 0          ||
+          s.getActiveBodyparts(WORK)
+         )});
 
-         if ( target ) { console.log("TW: " + target.body); }
+         if ( target ) { console.log("TW: " + target.name); }
 
-           var target2 = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-           console.log("TW:" + target2.body);
-*/
       // WORK, ATTACK, RANGED_ATTACK, HEAL, or CLAIM
       var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
         filter: (s) =>
