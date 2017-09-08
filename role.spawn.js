@@ -151,7 +151,7 @@ module.exports = {
     var wall_ramp_str = 45000;
 
     for (let tower of towers) {
-      var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
+      var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);/*, {
         filter: (s) => (
           s.body.includes(ATTACK) ||
           s.body.includes(RANGED_ATTACK) ||
@@ -165,7 +165,7 @@ module.exports = {
 
            var target2 = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
            console.log("TW:" + target2.body);
-
+*/
       // WORK, ATTACK, RANGED_ATTACK, HEAL, or CLAIM
       var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
         filter: (s) =>
