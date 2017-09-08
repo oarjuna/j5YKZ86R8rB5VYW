@@ -52,12 +52,14 @@ module.exports = {
           creep.say('\uD83D\uDE9A.ER'); // 🚚
       }
 
-/*      else if ( Game.spawns[this].room.controller.memory.alert_state == 'red' && structure_tower != null ) {
+/*
+      else if ( Game.spawns[this].room.controller.memory.alert_state == 'red' && structure_tower != null ) {
         // Load a container
         var structure = structure_tower;
         creep.say('\u26A0.tw'); // 🚚
       }
 */
+
       else if ( structure_spawn != null ) {
         // Load the extension or spawn
         var structure = structure_spawn;
