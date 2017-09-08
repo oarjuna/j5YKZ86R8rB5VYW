@@ -162,7 +162,7 @@ module.exports = {
           s.getActiveBodyparts(WORK)
          )});
 
-         if ( target ) { console.log("TW: " + target.name); }
+         if ( target ) { console.log("TW: " + target); }
 
       // WORK, ATTACK, RANGED_ATTACK, HEAL, or CLAIM
       var repair_target = tower.pos.findClosestByRange(FIND_STRUCTURES, {
