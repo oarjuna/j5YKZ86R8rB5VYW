@@ -3,7 +3,7 @@ var shared  = require('func.shared');
 module.exports = {
   run: function(creep) {
 
-    console.log("DELIV: " + creep.body[0].type);
+    //console.log("DELIV: " + creep.body[0].type);
 
     var bodyfoo = creep.body.indexOf(MOVE);
 
