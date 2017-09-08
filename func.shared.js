@@ -11,10 +11,13 @@ module.exports = {
 			let rec_link_id = creep.memory.destid;
 			tmp_c = Game.getObjectById(rec_link_id);
 			//console.log("xxxx " + tmp_c + " " + rec_link_id);
-			if ( tmp_c.energy > 90 ) { container = tmp_c; }
+			if ( tmp_c.energy > 90 ) { container = tmp_c; var out = ".li";
+ }
 		}
 
 		if ( container == undefined ) {
+			var out = ".ct";
+
 			// Find containers with energy
 			var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
 	    	filter: (s) =>
@@ -27,10 +30,11 @@ module.exports = {
 		if ( container == undefined ) {
 			// otherwise, go to storage
 			container = creep.room.storage;
+			var out = ".ST";
 		}
 		//console.log(creep + "+@" + creep.memory.role + " ++ " + container);
 
-		creep.say('\uD83D\uDE9A pu'); // 🚚);
+		creep.say('\uD83D\uDE9A' + out); // 🚚);
 
 		// console.log(creep + "--" + creep.memory.role + " ++ " + container);
 
