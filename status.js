@@ -59,7 +59,7 @@ module.exports = {
         if (spawn_name == 'Spawn3') { var url = "<A HREF=https://screeps.com/a/#!/room/shard0/W26S81  style=color:" + Game.spawns[spawn_name].room.controller.memory.alert_state + ";\">Spawn3</a>"; }
 
         console.log(url + " : lvl" + lvl + status11 + status12 + " C: "+ total_status + " -- " + status1 + status2 + status3 + status4 + status5 + status7 + status8 + status9 + status10);
-        console.log("\t" + status21 + status22 + status23);
+        //console.log("\t" + status21 + status22 + status23);
 
         // source status information
 /*        var msg = '';

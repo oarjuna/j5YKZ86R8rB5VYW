@@ -253,7 +253,7 @@ module.exports = {
     // detect sources to harvest
     var sources = Hive.sources[spawn_num];
 
-    // detect containers with energy (working variable >= SOME_VALUE, not actual) needing empty
+    // detect containers with energy (working variable >= SOME_VALUE,vs  not actual) needing empty
     var containers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
       filter: (s) => (
         //( s.structureType == STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= deliver_carry_cap ) // TODO ??
