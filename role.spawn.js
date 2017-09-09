@@ -228,7 +228,8 @@ module.exports = {
     // creep state - source_bound / dest_bound / working / idle
 
     // job object prototype - type, priority, state, body_type, dest_id, tick_issued
-    function Job (type,priority,state,body_type_req,dest_id,tick_issued,tick_complete) {
+    function Job (spawn_name,type,priority,state,body_type_req,dest_id,tick_issued,tick_complete) {
+        this.spawn_name = spawn_name;
         this.type = type;
         this.priority = priority;
         this.state = state;
@@ -339,7 +340,7 @@ module.exports = {
           // if candidate found, asssign job to creep
           console.log(spawn_name + " ha: " + harvester + " dest " + harvester.memory.destid );
           // create the job object
-          var job = new Job('01aa',1,'assigned','harvester',source,Game.time,'');
+          var job = new Job(spawn_name,'01aa',1,'assigned','harvester',source,Game.time,'');
           // push the job onto the job_queue
           Hive.memory.job_queue.push(job);
           // get the index -- job.length - 1
@@ -357,7 +358,7 @@ module.exports = {
     if ( containers.length != 0 ) {
       for ( let y of containers) {
         // create a job for each container
-        var job = new Job('01bb',1,'unassigned','deliverer',y.id,Game.time,'');
+        var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer',y.id,Game.time,'');
         //console.log("NS: job " + job.type);
         // push the job onto the job_queue
          Hive.memory.job_queue.push(job);
