@@ -313,9 +313,11 @@ module.exports = {
 
     // job states - assigned / complete / abandoned / timed out / unasssigned
 
+    var job_TTL = 10;
+
     // remove timed out and abandonded jobs from the queue
     var removed = _.remove(Hive.memory.job_queue, function(s) {
-        return  (( Game.time - s.tick_issued ) > 10 || s.state == 'abandoned');
+        return  (( Game.time - s.tick_issued ) > job_TTL || s.state == 'abandoned');
       });
 
     for ( let x of removed ) {
