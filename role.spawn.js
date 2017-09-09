@@ -329,7 +329,7 @@ module.exports = {
           ( _.sum(c.carry) == empty ) &&
           ( c.memory.state == 'idle' ) &&
           ( c.memory.role == 'harvester' ) &&
-          ( c.memory.destid == dest_id )
+          ( c.memory.destid == job.dest_id )
         );
 
         console.log(spawn_name + " ha: " + harvester);
