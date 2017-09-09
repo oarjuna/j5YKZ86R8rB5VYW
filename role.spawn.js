@@ -357,8 +357,8 @@ module.exports = {
         Hive.memory.job_queue.push(job);
         // record the desired resource state
         y.memory.working_count = y.memory.working_count - deliver_carry_cap;
-        var adjustmest = rm_container_obj.memory.working_count - deliver_carry_cap;
-        console.log("XX: " + spawn_name + " curr: " + y.memory.working_count + " adj: " + adjustmest);
+        var adjustmest = y.working_count - deliver_carry_cap;
+        console.log("XX: " + spawn_name + " curr: " + y.memory.working_count + " --adj: " + adjustmest);
       }
     }
     // END -- 01bb
