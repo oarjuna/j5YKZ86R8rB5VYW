@@ -332,7 +332,7 @@ module.exports = {
           ( c.memory.destid == source )
         );
 
-        console.log(spawn_name + " ha: " + harvester);
+        console.log(spawn_name + " ha: " + harvester + " dest " +c.memory.destid );
         // if candidate found, asssign job to creep
 
       }
