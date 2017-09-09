@@ -17,6 +17,8 @@ var roleSoldier_healer = require('role.soldier_healer');
 var gameStatus = require('status');
 var roleSpawn = require('role.spawn');
 
+var roleGeneric = require('role.generic-creep');
+
 var stats = require('screepsplus');
 var general = require('role.general');
 
