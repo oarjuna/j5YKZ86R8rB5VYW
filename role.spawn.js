@@ -343,12 +343,10 @@ module.exports = {
           // push the job onto the job_queue
           Hive.memory.job_queue.push(job);
           // get the index -- job.length - 1
-          job_index = job.length - 1;
+          job_index = Hive.memory.job_queue.length - 1;
           // assign the job to the creep
           harvester.memory.job = job_index;
-
           console.log("assigning -- " + job + " to "+ harvester + " index " + job_index);
-
         }
       }
     }
