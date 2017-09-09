@@ -248,7 +248,7 @@ module.exports = {
     var link_energy_celiing = 100;
     var empty = 0;
     var deliver_carry_cap = 50;
-    var job_TTL = 2;
+    var job_TTL = 20;
 
     // detect sources to harvest
     var sources = Hive.sources[spawn_num];
