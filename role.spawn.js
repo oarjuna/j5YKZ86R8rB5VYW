@@ -314,6 +314,10 @@ module.exports = {
     // job states - assigned / complete / abandoned / timed out / unasssigned
 
     // remove timed out and abandonded jobs from the queue
+    var removed = _.remove(Hive.memory.job_queue, function(s) {
+        return  (( Game.time - s.tick_issued ) > 100 || s.state == 'abandoned');
+      });
+      
 
     // create jobs for each Types of job, add them to the queue
 
@@ -321,7 +325,7 @@ module.exports = {
     for ( let source of sources ) { // foreach source in the room
       // search jobs for any jobs with a dest_id == source
       var result = _.find(Hive.memory.job_queue, { 'dest_id' : source });
-      
+
       if ( result == undefined ) {
         // if no jobs are found, create a fillfrom job for this source
         console.log(spawn_name + " source " + source + " job " + result );
