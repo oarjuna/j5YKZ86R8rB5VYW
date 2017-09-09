@@ -353,6 +353,7 @@ module.exports = {
 
 
     // 01 - fillfrom - bb - container - deliverers
+    /*
     if ( containers.length != 0 ) {
       for ( let y of containers) {
         // create a job for each container
@@ -364,6 +365,7 @@ module.exports = {
         //y.memory.working_count -= deliver_carry_cap;
       }
     }
+    */
     // 01 - fillfrom - cc - storage - deliverers / upgraders *** TODO
 
     // 01 - fillfrom - dd - receiving links - upgraders
