@@ -382,7 +382,6 @@ module.exports = {
     }
     // END -- 01bb
 
-
     // 01 - fillfrom - cc - storage - deliverers / upgraders *** TODO
 
     // 01 - fillfrom - dd - receiving links - upgraders
@@ -402,13 +401,14 @@ module.exports = {
 
     // now, try to assign jobs to creeps
     for ( let job of Hive.memory.job_queue) {
+
       //Fillfrom -- 01aa - source - harv          // 01bb - container - deliv     // 01cc - storage - deliv/upgraders
       //Fillfrom -- 01dd - rec link - upgraders   // 01ee - ground - builder
       //Delivto  -- 02aa - closest cont - harv    // 02bb - send links - harv     // 02cc - spawn - deliv
       //Delivto  -- 02dd - tower - deliv          // 02ee - storage - deliv       // 02ff - controller - upgrader
       //Work     -- 03aa - contruct - builder     // 03bb - repair - builder
 
-      console.log("JQ: assign " + job.id);
+      console.log("JQ: assign " + job.id + " t: " job.type);
 /*
       // find local, empty, idle, harvester, with memory.destid = source
       var harvester = _.find(Game.creeps, (c) =>
