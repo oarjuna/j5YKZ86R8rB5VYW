@@ -259,7 +259,7 @@ Creep.prototype.hasActiveBodypart = function (type) {
     x++;
   }
 
-  console.log("#-------------------------------------------------------#  H, U, R, B, RH, C, De, EM, S");
+  //console.log("#-------------------------------------------------------#  H, U, R, B, RH, C, De, EM, S");
   stats.collect_stats();
   //for (var spawn in Game.spawns){
     //roleSpawn.run(spawn);
