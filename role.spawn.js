@@ -321,6 +321,7 @@ module.exports = {
       console.log(spawn_name + " " + result);
 
       //var result = undefined;
+
       if ( result == undefined ) {
         // find idle, harvester, empty with memory.destid = source.id
         let harvester = _.filter(Game.creeps, (c) =>
@@ -331,7 +332,7 @@ module.exports = {
           ( c.memory.destid == dest_id )
         );
 
-        console.log(spawn_name + " ha: " + harvster);
+        console.log(spawn_name + " ha: " + harvester);
         // if candidate found, asssign job to creep
 
       }
