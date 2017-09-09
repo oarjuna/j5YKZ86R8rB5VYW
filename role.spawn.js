@@ -241,7 +241,7 @@ module.exports = {
         this.tick_complete = tick_complete;
 
 
-        function uuid()  {
+        this.uuid = function uuid()  {
           var uuid = "", i, random;
           for (i = 0; i < 32; i++) {
             random = Math.random() * 16 | 0;
@@ -252,7 +252,7 @@ module.exports = {
           }
           return uuid;
         };
-        
+
         this.id = this.uuid();
     }
 
