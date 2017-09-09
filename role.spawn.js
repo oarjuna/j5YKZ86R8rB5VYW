@@ -239,8 +239,6 @@ module.exports = {
         this.dest_id = dest_id;
         this.tick_issued = tick_issued;
         this.tick_complete = tick_complete;
-
-
         this.uuid = function uuid()  {
           var uuid = "", i, random,uuidlen = 12;
 
@@ -253,7 +251,6 @@ module.exports = {
           }
           return uuid;
         };
-
         this.id = this.uuid();
     }
 
