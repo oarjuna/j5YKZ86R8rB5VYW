@@ -317,13 +317,11 @@ module.exports = {
 
     for ( let source of sources ) { // foreach source
       // if there is not a fillfrom job for the source
+      var result = _.find(Hive.memory.job_queue, { 'dest_id' : source }); // TODO <-- fix
+      console.log(spawn_name + " " + result);
 
-
-      var foo = _.find(Hive.memory.job_queue, { 'dest_id' : source }); // TODO <-- fix
-      console.log(spawn_name + " " + foo);
-
-      var result = undefined;
-      if ( result != undefined ) {
+      //var result = undefined;
+      if ( result == undefined ) {
         // find idle, harvester, empty with memory.destid = source.id
         let harvester = _.filter(Game.creeps, (c) =>
           ( c.memory.birthplace == spawn_name ) &&
@@ -333,6 +331,7 @@ module.exports = {
           ( c.memory.destid == dest_id )
         );
 
+        console.log(spawn_name + " ha: " + harvster);
         // if candidate found, asssign job to creep
 
       }
