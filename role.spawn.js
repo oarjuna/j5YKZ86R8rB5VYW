@@ -242,9 +242,9 @@ module.exports = {
 
 
         this.uuid = function uuid()  {
-          var uuid = "", i, random,uuidlen = 32;
+          var uuid = "", i, random,uuidlen = 12;
 
-          for (i = 0; i < 8; i++) {
+          for (i = 0; i < uuidlen; i++) {
             random = Math.random() * 16 | 0;
             if (i == 8 || i == 12 || i == 16 || i == 20) {
               uuid += "-";
