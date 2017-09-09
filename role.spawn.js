@@ -320,7 +320,7 @@ module.exports = {
 
       var result = undefined;
 //      var result = _find(Hive.memory.job_queue, 'dest_id' : source);
-      if ( result != undefined ) ) { // TODO <-- fix
+      if ( result != undefined ) { // TODO <-- fix
 
         // find idle, harvester, empty with memory.destid = source.id
         let harvester = _.filter(Game.creeps, (c) =>
