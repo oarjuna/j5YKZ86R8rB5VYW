@@ -319,7 +319,7 @@ module.exports = {
       });
 
     for ( let x of remove ) {
-      console.log("JQ: removing " + result.dest_id);
+      console.log("JQ: removing " + x.dest_id);
     }
 
     // create jobs for each Types of job, add them to the queue
