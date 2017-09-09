@@ -314,7 +314,7 @@ module.exports = {
     // create jobs for each Types of job
 
     // 01 - fillfrom - aa - source - harvesters
-
+/*
     for ( let source of sources ) { // foreach source
       // if there is not a fillfrom job for the source
       if (! Hive.memory.job_queue.find(source) ) { // TODO <-- fix
@@ -332,7 +332,7 @@ module.exports = {
 
       }
     }
-
+*/
 
     // 01 - fillfrom - bb - container - deliverers
     if ( containers.length != 0 ) {
