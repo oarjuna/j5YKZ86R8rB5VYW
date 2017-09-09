@@ -432,6 +432,7 @@ module.exports = {
         else {
           // no creep for the job
         }
+
       } // END 01aa
 
     } // END job assignment
