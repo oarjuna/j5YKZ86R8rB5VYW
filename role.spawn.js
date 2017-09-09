@@ -322,6 +322,8 @@ module.exports = {
 
     for ( let x of removed ) {
       console.log("JQ: removing " + x.dest_id);
+      // find any creep with this job still assigned and remove it from their memory.job
+
     }
 
     // create jobs for each Types of job, add them to the queue
@@ -335,7 +337,7 @@ module.exports = {
         // if no jobs are found, create a fillfrom job for this source
         console.log("JQ: " + spawn_name + " creating job " + source + " job " + result );
         // create a job object
-        var job = new Job(spawn_name,'01aa',1,'unassinged','harvester',source,Game.time,'');
+        var job = new Job(spawn_name,'01aa',1,'unassigned','harvester',source,Game.time,'');
         // push the job onto the job_queue
         Hive.memory.job_queue.push(job);
       }
