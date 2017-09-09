@@ -352,9 +352,6 @@ module.exports = {
         'state' : 'unassigned'
       }); // filter on dest_id AND job.state == unassigned
 
-
-
-
       if ( result == undefined ) {
         console.log("DEBUG: " + result);
         // if no jobs are found, create a fillfrom job for this source
@@ -366,8 +363,9 @@ module.exports = {
         Hive.memory.job_queue.push(job);
       }
       else {
-        console.log("DEBUG: " + result.id);
+        console.log("DEBUG: " + result.dest + " " + result.state);
       }
+
     }
     // END -- 01aa
 
