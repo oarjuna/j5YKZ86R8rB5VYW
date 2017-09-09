@@ -409,16 +409,18 @@ module.exports = {
       //Work     -- 03aa - contruct - builder     // 03bb - repair - builder
 
       console.log("JQ: assign " + job.id + " t: " + job.type);
-/*
-      // find local, empty, idle, harvester, with memory.destid = source
-      var harvester = _.find(Game.creeps, (c) =>
-        ( c.memory.birthplace == spawn_name ) &&
-        ( _.sum(c.carry) == empty ) &&
-        ( c.memory.state == 'idle' ) &&
-        ( c.memory.role == 'harvester' ) &&
-        ( c.memory.destid == source )
-      );
-*/
+      if ( job.type == '01aa') {
+        // find local, empty, idle, harvester, with memory.destid = job.dest_id (this is assigned at spawn)
+        var creep = _.find(Game.creeps, (c) =>
+          ( c.memory.birthplace == job.spawn_name ) &&
+          ( _.sum(c.carry) == empty ) &&
+          ( c.memory.state == 'idle' ) &&
+          ( c.memory.role == 'harvester' ) &&
+          ( c.memory.destid == job.dest_id )
+        );
+        console.log("\tXX: " + creep + " assgn to "+ job.id);
+
+      }
       // assign the job to the creep
 
       // mark the job as assigned
