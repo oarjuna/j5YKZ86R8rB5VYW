@@ -256,7 +256,7 @@ module.exports = {
     // detect containers with energy (working variable >= SOME_VALUE, not actual) needing empty
     var containers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
       filter: (s) => (
-        ( s.structureType == STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] > 1 )
+        ( s.structureType == STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= deliver_carry_cap )
         // ( s.structureType == STRUCTURE_CONTAINER && s.memory.working_count >= container_energy_floor )
     )});
 
@@ -288,10 +288,8 @@ module.exports = {
 
     // detect resources laying on the ground ( update working var, not actual) <<< --- TODO?
 
-
-
-
-    // when any job is completed, times out, or is abandoned, remove it from the job_queue
+    // when a job is completed, times out, or is abandoned, remove it from the job_queue
+    // find those jobs and remove them
     var removed = _.remove(Hive.memory.job_queue, function(s) {
         return  (( Game.time - s.tick_issued ) > job_TTL || s.state == 'abandoned' || s.state == 'complete');
       });
@@ -324,7 +322,6 @@ module.exports = {
    )});
 
    for ( let c of all_containers ) {
-
       //c.memory.working_count = c.store[RESOURCE_ENERGY]; // debugging
       console.log("JQ: " + spawn_name + " cont: " + c + " - total - " + c.memory.working_count);
     }
@@ -338,32 +335,31 @@ module.exports = {
 
       if ( result == undefined ) {
         // if no jobs are found, create a fillfrom job for this source
-        console.log("JQ: " + spawn_name + " creating job " + source + " job " + result );
         // create a job object
         var job = new Job(spawn_name,'01aa',1,'unassigned','harvester',source,Game.time,'');
+        console.log("JQ: " + spawn_name + " newjob " + source + " job " + job.type );
+
         // push the job onto the job_queue
         Hive.memory.job_queue.push(job);
       }
     }
     // END -- 01aa
 
-
     // 01 - fillfrom - bb - container - deliverers
-    /*
     if ( containers.length != 0 ) {
       for ( let y of containers) {
         // create a job for each container
         var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer',y.id,Game.time,'');
-        //console.log("NS: job " + job.type);
+        console.log("JQ: " + spawn_name + " newjob " + y + " job " + job.type );
         // push the job onto the job_queue
-         Hive.memory.job_queue.push(job);
-         // record the desired resource state
-        //y.memory.working_count -= deliver_carry_cap;
+        Hive.memory.job_queue.push(job);
+        // record the desired resource state
+        y.memory.working_count -= deliver_carry_cap;
       }
     }
     // END -- 01bb
 
-    */
+
     // 01 - fillfrom - cc - storage - deliverers / upgraders *** TODO
 
     // 01 - fillfrom - dd - receiving links - upgraders
