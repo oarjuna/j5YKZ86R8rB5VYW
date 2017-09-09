@@ -221,13 +221,12 @@ Creep.prototype.hasActiveBodypart = function (type) {
     else if (creep.memory.role == 'soldier_healer') { roleSoldier_healer.run(creep); }
     else if (creep.memory.role == 'harvester')      { roleHarvester.run(creep); }
   	else if (creep.memory.role == 'deliverer')      { roleDeliverer.run(creep); }
-  	else if (creep.memory.role == 'energy_mover')   { roleEnergyMover.run(creep); }
+  	else if (creep.memory.role == 'harvester' && creep.name == '')        { roleGeneric.run(creep); }
   	else if (creep.memory.role == 'upgrader')       { roleUpgrader.run(creep); }
   	else if (creep.memory.role == 'builder')        { roleBuilder.run(creep); }
   	else if (creep.memory.role == 'claimer')        { roleClaimer.run(creep); }
   	else if (creep.memory.role == 'repairer')       { roleRepairer.run(creep); }
   	else if (creep.memory.role == 'remote_harv')    { roleRemoteHarvester.run(creep); }
-
   }
 
   general.run(Hive);
