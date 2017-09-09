@@ -342,11 +342,13 @@ module.exports = {
           var job = new Job('01aa',1,'assigned','harvester',source,Game.time,'');
           // push the job onto the job_queue
           Hive.memory.job_queue.push(job);
-          console.log("assigning -- " + job + " to "+ harvester);
           // get the index -- job.length - 1
           job_index = job.length - 1;
           // assign the job to the creep
           harvester.memory.job = job_index;
+
+          console.log("assigning -- " + job + " to "+ harvester + " index " + job_index);
+
         }
       }
     }
