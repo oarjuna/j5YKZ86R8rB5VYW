@@ -265,10 +265,9 @@ module.exports = {
     // detect sources to harvest
     var sources = Hive.sources[spawn_num];
 
-    // detect containers with energy (working variable >= SOME_VALUE,vs  not actual) needing empty
+    // detect containers with energy needing empyting (use working count >=carry cap, not actual store.energy )
     var containers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
       filter: (s) => (
-        //( s.structureType == STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= deliver_carry_cap ) // TODO ??
         ( s.structureType == STRUCTURE_CONTAINER && s.memory.working_count >= deliver_carry_cap )
     )});
 
@@ -308,7 +307,7 @@ module.exports = {
 
     // do things for each removed job
     for ( let x of removed ) {
-      console.log("JQ: " + spawn_name + " removed job " + x.type + " dest " + x.dest_id);
+      console.log("JQ: " + spawn_name + " removed job " + x.id + " dest " + x.dest_id);
       // if the job was timed out or abandoned, adjust any associated containers working_count
       if (( Game.time - x.tick_issued ) > job_TTL || x.state == 'abandoned' ) {
           // get the container associated with the removed job
@@ -324,7 +323,7 @@ module.exports = {
           }
       }
 
-      // find any creep with this job still assigned and remove it from their memory.job // TODO
+      // find any creep with this job's id still assigned and remove it from their memory.job // TODO
 
     }
 

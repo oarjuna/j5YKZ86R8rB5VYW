@@ -25,7 +25,7 @@ module.exports = {
 			// set state to working
 			creep.memory.state = 'working';
 			// receive orders
-			var job = Hive.memory.job_queue[assigned_job];
+			var job = Hive.memory.job_queue[assigned_job]; // this will not work without uuid // TODO
 			var type = job.type;
 			var type2 = type.slice(0,2);
 			var type3 = type.slice(2);
