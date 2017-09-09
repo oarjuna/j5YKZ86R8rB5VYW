@@ -327,7 +327,9 @@ module.exports = {
       //c.memory.working_count = c.store[RESOURCE_ENERGY]; // debugging
       //Hive.memory.job_queue = [];
 
-      console.log("JQ: " + spawn_name + " cont: " + c + " - total - " + c.memory.working_count);
+      if ( c.store[RESOURCE_ENERGY] > 0 ) {
+        console.log("JQ: " + spawn_name + " cont: " + c + " - total - " + c.memory.working_count);
+      }
     }
 
     // now, look for the need for a jobs for each type of job, add them to the queue
