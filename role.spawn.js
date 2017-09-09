@@ -256,8 +256,8 @@ module.exports = {
     // detect containers with energy (working variable >= SOME_VALUE, not actual) needing empty
     var containers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
       filter: (s) => (
-        ( s.structureType == STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= deliver_carry_cap )
-        // ( s.structureType == STRUCTURE_CONTAINER && s.memory.working_count >= container_energy_floor )
+        //( s.structureType == STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= deliver_carry_cap ) // TODO ??
+        ( s.structureType == STRUCTURE_CONTAINER && s.memory.working_count >= deliver_carry_cap )
     )});
 
     // detect towers needing energy ( update working var, not actual)
