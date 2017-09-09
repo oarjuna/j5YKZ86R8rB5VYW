@@ -421,17 +421,19 @@ module.exports = {
           ( c.memory.destid == job.dest_id )
         );
 
-      }
-      if ( creep != undefined ) {
-        console.log("\tXX: " + creep + " @ " + job.spawn_name + " assgn to "+ job.id);
-        // assign the job to the creep
-        creep.memory.job = job.id;
-        // mark the job as assigned
-        job.state = 'assigned';
-      }
-      else {
-        // no creep for the job
-      }
+
+        if ( creep != undefined ) {
+          console.log("\tXX: " + creep + " @ " + job.spawn_name + " assgn to "+ job.id);
+          // assign the job to the creep
+          creep.memory.job = job.id;
+          // mark the job as assigned
+          job.state = 'assigned';
+        }
+        else {
+          // no creep for the job
+        }
+      } // END 01aa
+
     } // END job assignment
 
   }
