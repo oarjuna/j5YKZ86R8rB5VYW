@@ -239,7 +239,7 @@ module.exports = {
         this.dest_id = dest_id;
         this.tick_issued = tick_issued;
         this.tick_complete = tick_complete;
-        this.id = this.uuid();
+
 
         function uuid()  {
           var uuid = "", i, random;
@@ -252,7 +252,8 @@ module.exports = {
           }
           return uuid;
         };
-
+        
+        this.id = this.uuid();
     }
 
     // variables
