@@ -352,8 +352,8 @@ module.exports = {
         'state' : 'unassigned'
       }); // filter on dest_id AND job.state == unassigned
 
-      console.log("DEBUG: " + result.id);
-      
+      console.log("DEBUG: " + result);
+
       if ( result == undefined ) {
         // if no jobs are found, create a fillfrom job for this source
         // create a job object
