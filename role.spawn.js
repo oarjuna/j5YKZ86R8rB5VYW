@@ -360,7 +360,7 @@ module.exports = {
         Hive.memory.job_queue.push(job);
         // record the desired resource state
         var adjustmest = y.working_count - deliver_carry_cap;
-        if ( adjustment < 0 ) { adjustmest = 0; }
+        if ( adjustmest < 0 ) { adjustmest = 0; }
         console.log("XX: " + spawn_name + " id: " + y.id + " curr: " + y.memory.working_count + " --adj: " + adjustmest );
 
         y.memory.working_count = y.memory.working_count - deliver_carry_cap;
