@@ -315,7 +315,7 @@ module.exports = {
 
     // remove timed out and abandonded jobs from the queue
     var removed = _.remove(Hive.memory.job_queue, function(s) {
-        return  (( Game.time - s.tick_issued ) > 100 || s.state == 'abandoned');
+        return  (( Game.time - s.tick_issued ) > 10 || s.state == 'abandoned');
       });
 
     for ( let x of removed ) {
