@@ -304,10 +304,20 @@ module.exports = {
     // do things for each removed job
     for ( let x of removed ) {
       console.log("JQ: removed " + x.dest_id);
-      // adjust container working_var according to the job that completes
+      // if the job was timed out or abandoned, adjust any associated containers working_var
+      if (( Game.time - s.tick_issued ) > job_TTL || s.state == 'abandoned' ) {           
+          // get the container associated with the removed job
+          let rm_container_id = s.dest_id;
+          // get its object
+          let rm_container_obj = Game.getObjectById(rm_container_id);
+          // if the obj is a container
+          if ( rm_container_obj.structureType == STRUCTURE_CONTAINER ) {
+            // add deliver_carry_cap back to container working_var since the job did not complete
+            rm_container_obj.memory.working_count += deliver_carry_cap;
+          }
+      }
 
-
-      // find any creep with this job still assigned and remove it from their memory.job
+      // find any creep with this job still assigned and remove it from their memory.job // TODO
 
     }
 
@@ -363,7 +373,6 @@ module.exports = {
     // 03 - work - aa - construction sites - builder
     // 03 - work - bb - repair jobs - builder
 
-    var x = 0;
 
     // now, try to assign jobs to creeps
     job_index = 0;
