@@ -348,8 +348,9 @@ module.exports = {
     for ( let source of sources ) { // foreach source in the room
       // search jobs for any jobs with a dest_id == source
       var result = _.find(Hive.memory.job_queue, {
-        'dest_id' : source
-      }); // TODO -- make this filter on AND job.state == unassigned
+        'dest_id' : source,
+        'state' : 'unassigned'
+      }); // filter on dest_id AND job.state == unassigned
 
       if ( result == undefined ) {
         // if no jobs are found, create a fillfrom job for this source
