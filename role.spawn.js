@@ -352,9 +352,11 @@ module.exports = {
         'state' : 'unassigned'
       }); // filter on dest_id AND job.state == unassigned
 
-      console.log("DEBUG: " + result);
+
+
 
       if ( result == undefined ) {
+        console.log("DEBUG: " + result);
         // if no jobs are found, create a fillfrom job for this source
         // create a job object
         var job = new Job(spawn_name,'01aa',1,'unassigned','harvester',source,Game.time,'');
@@ -362,6 +364,9 @@ module.exports = {
 
         // push the job onto the job_queue
         Hive.memory.job_queue.push(job);
+      }
+      else {
+        console.log("DEBUG: " + result.id);
       }
     }
     // END -- 01aa
