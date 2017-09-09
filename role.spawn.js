@@ -297,7 +297,7 @@ module.exports = {
     // do things for each removed job
     for ( let x of removed ) {
       console.log("JQ: removed " + x.dest_id);
-      // if the job was timed out or abandoned, adjust any associated containers working_var
+      // if the job was timed out or abandoned, adjust any associated containers working_count
       if (( Game.time - x.tick_issued ) > job_TTL || x.state == 'abandoned' ) {
           // get the container associated with the removed job
           let rm_container_id = x.dest_id;
@@ -305,7 +305,7 @@ module.exports = {
           let rm_container_obj = Game.getObjectById(rm_container_id);
           // if the obj is a container
           if ( rm_container_obj.structureType == STRUCTURE_CONTAINER ) {
-            // add deliver_carry_cap back to container working_var since the job did not complete
+            // add deliver_carry_cap back to container working_count since the job did not complete
             var adjustmest = rm_container_obj.memory.working_count + deliver_carry_cap;
             console.log("XX: " + spawn_name + " curr: " + rm_container_obj.memory.working_count + " ++adj: " + adjustmest);
             rm_container_obj.memory.working_count = rm_container_obj.memory.working_count + deliver_carry_cap;
@@ -327,7 +327,7 @@ module.exports = {
       //c.memory.working_count = c.store[RESOURCE_ENERGY]; // debugging
       //Hive.memory.job_queue = [];
 
-      if ( c.store[RESOURCE_ENERGY] > 0 ) {
+      if ( c.memory.working_count > 0 ) {
         console.log("JQ: " + spawn_name + " cont: " + c + " - total - " + c.memory.working_count);
       }
     }
