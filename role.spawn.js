@@ -368,7 +368,7 @@ module.exports = {
         while ( y.memory.working_count >= deliver_carry_cap) {
           // create a job for each container
           var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer',y.id,Game.time,'');
-          console.log("JQ: " + spawn_name + " newjob " + y + " job " + job.type );
+          console.log("JQ: " + spawn_name + " newjob " + y + " job " + job.type + " j_id: " + job.id );
           // push the job onto the job_queue
           Hive.memory.job_queue.push(job);
           // record the desired resource state
