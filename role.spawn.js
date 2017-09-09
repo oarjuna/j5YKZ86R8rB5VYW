@@ -296,7 +296,7 @@ module.exports = {
 
     // do things for each removed job
     for ( let x of removed ) {
-      console.log("JQ: removed " + x.dest_id);
+      console.log("JQ: " + spawn_name + " removed " + x.dest_id);
       // if the job was timed out or abandoned, adjust any associated containers working_count
       if (( Game.time - x.tick_issued ) > job_TTL || x.state == 'abandoned' ) {
           // get the container associated with the removed job
@@ -317,7 +317,7 @@ module.exports = {
     }
 
 
-    // Display container counts
+    // Display container counts // debugging
    var all_containers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
      filter: (s) => (
        ( s.structureType == STRUCTURE_CONTAINER  )
@@ -326,7 +326,6 @@ module.exports = {
    for ( let c of all_containers ) {
       //c.memory.working_count = c.store[RESOURCE_ENERGY]; // debugging
       //Hive.memory.job_queue = [];
-
       if ( c.memory.working_count > 0 ) {
         console.log("JQ: " + spawn_name + " cont: " + c + " - total - " + c.memory.working_count);
       }
