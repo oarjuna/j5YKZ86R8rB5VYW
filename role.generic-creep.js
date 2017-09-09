@@ -19,22 +19,26 @@ module.exports = {
 
     // idea - move to spawn for recyling when close to death
 
-    // receive orders
-		var assigned_job = creep.memory.job;
-		var job = Hive.memory.job_queue[assigned_job];
-		var type = job.type;
-		var type2 = type.slice(0,2);
-		var type3 = type.slice(2);
-		// job object prototype - type, priority, state, body_type, dest_id, tick_issued, tick_complete
+		if ( assigned_job != 'undefined') {
+			creep.memory.state = 'working';
+			// receive orders
+			var assigned_job = creep.memory.job;
+			var job = Hive.memory.job_queue[assigned_job];
+			var type = job.type;
+			var type2 = type.slice(0,2);
+			var type3 = type.slice(2);
+			// job object prototype - type, priority, state, body_type, dest_id, tick_issued, tick_complete
 
-		// get the dest_id and object
-		var dest_id = job.dest_id;
-		var dest_obj =Game.getObjectById(dest_id);
+			// get the dest_id and object
+			var dest_id = job.dest_id;
+			var dest_obj =Game.getObjectById(dest_id);
 
-		if ( assigned_job != 'undefined') { creep.memory.state = 'working'; }
-		else { creep.memory.state = 'idle'; }
+			console.log("GEN: " + type + " " + type2 + " " + type3 + " " + dest_id);
+		}
+		else {
+			creep.memory.state = 'idle';
+		}
 
-		console.log("GEN: " + type1 + " " + type2 + " " + type3 + " " + dest_id);
 
 		// if the dest_obj in range
 		if(creep.pos.isNearTo(dest_obj)) { 	// harvest/transfer/withdraw/upgrade/repair dest_id
