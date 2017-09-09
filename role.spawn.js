@@ -335,13 +335,14 @@ module.exports = {
         // job object prototype - type, priority, state, body_type, dest_id, tick_issued, tick_complete
 
         if ( harvester != undefined ) {
-          console.log("assigning -- " + harvester);
+
           // if candidate found, asssign job to creep
           console.log(spawn_name + " ha: " + harvester + " dest " + harvester.memory.destid );
           // create the job object
           var job = new Job('01aa',1,'assigned','harvester',source,Game.time,'');
           // push the job onto the job_queue
           Hive.memory.job_queue.push(job);
+          console.log("assigning -- " + job + " to "+ harvester);
           // get the index -- job.length - 1
           job_index = job.length - 1;
           // assign the job to the creep
