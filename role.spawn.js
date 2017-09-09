@@ -314,16 +314,15 @@ module.exports = {
     // create jobs for each Types of job
 
     // 01 - fillfrom - aa - source - harvesters
-
     for ( let source of sources ) { // foreach source
       // if there is not a fillfrom job for the source
       var result = _.find(Hive.memory.job_queue, { 'dest_id' : source }); // TODO <-- fix
-      console.log(spawn_name + " source " + source + " job " + result);
+      console.log(spawn_name + " source " + source + " job " + result.type );
 
       //var result = undefined;
 
       if ( result == undefined ) {
-        // find idle, harvester, empty with memory.destid = source.id
+        // find idle, harvester, empty with memory.destid = source
         var harvester = _.find(Game.creeps, (c) =>
           ( c.memory.birthplace == spawn_name ) &&
           ( _.sum(c.carry) == empty ) &&
@@ -331,11 +330,20 @@ module.exports = {
           ( c.memory.role == 'harvester' ) &&
           ( c.memory.destid == source )
         );
+
+        // job states - assigned / complete / abandoned / timed out / unasssigned
+        // job object prototype - type, priority, state, body_type, dest_id, tick_issued, tick_complete
+
         if ( harvester != undefined ) {
           // if candidate found, asssign job to creep
           console.log(spawn_name + " ha: " + harvester + " dest " + harvester.memory.destid );
+          // create the job object
+          var job = new Job('01aa',1,'assigned','harvester',source,Game.time,'');
+          // get the index -- job.length - 1
+          job_index = job.length - 1;
+          // assign the job to the creep
+          harvester.memory.job = job_index;
         }
-
       }
     }
 
@@ -373,7 +381,7 @@ module.exports = {
     // now, assign jobs to creeps
     for ( let job of Hive.memory.job_queue) {
       x++;
-      //console.log("JQ: " + spawn_name+ " " + x + " t " + job.type + " " + job.dest_id);
+      console.log("JQ: " + spawn_name+ " " + x + " t " + job.type + " " + job.dest_id);
 
       // factors - creep state, energy carried, body type
 

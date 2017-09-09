@@ -21,17 +21,17 @@ module.exports = {
 
     // receive orders
 		var assigned_job = creep.memory.job;
-		var job = Hive.memory.job_queue(assigned_job);
-		var type1 = job.type;
-		var type2 = job.type.slice(0,2);
-		var type3 = job.type.slice(2);
+		var job = Hive.memory.job_queue[assigned_job];
+		var type = job.type;
+		var type2 = type.slice(0,2);
+		var type3 = type.slice(2);
 		// job object prototype - type, priority, state, body_type, dest_id, tick_issued, tick_complete
 
 		// get the dest_id and object
 		var dest_id = job.dest_id;
 		var dest_obj =Game.getObjectById(dest_id);
 
-		if ( assinged_job != 'undefined') { creep.memory.state = 'working'; }
+		if ( assigned_job != 'undefined') { creep.memory.state = 'working'; }
 		else { creep.memory.state = 'idle'; }
 
 		console.log("GEN: " + type1 + " " + type2 + " " + type3 + " " + dest_id);
