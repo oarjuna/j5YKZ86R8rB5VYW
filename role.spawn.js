@@ -296,7 +296,7 @@ module.exports = {
 
     // do things for each removed job
     for ( let x of removed ) {
-      console.log("JQ: " + spawn_name + " removed " + x.dest_id);
+      console.log("JQ: " + spawn_name + " removed job " + x.dest_id);
       // if the job was timed out or abandoned, adjust any associated containers working_count
       if (( Game.time - x.tick_issued ) > job_TTL || x.state == 'abandoned' ) {
           // get the container associated with the removed job
