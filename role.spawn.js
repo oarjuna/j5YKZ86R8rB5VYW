@@ -324,7 +324,7 @@ module.exports = {
    )});
 
    for ( let c of all_containers ) {
-      c.memory.working_count = c.store[RESOURCE_ENERGY]; // debugging
+      //c.memory.working_count = c.store[RESOURCE_ENERGY]; // debugging
       //Hive.memory.job_queue = [];
 
       if ( c.memory.working_count > 0 ) {
