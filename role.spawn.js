@@ -227,7 +227,7 @@ module.exports = {
     // job states - assigned / complete / abandoned / timed out
     // creep state - source_bound / dest_bound / working / idle
 
-    // job object prototype - type, priority, state, body_type, dest_id, tick_issued
+    // job object prototype - spawn_name,type, priority, state, body_type, dest_id, tick_issued, tick_complete
     function Job (spawn_name,type,priority,state,body_type_req,dest_id,tick_issued,tick_complete) {
         this.spawn_name = spawn_name;
         this.type = type;
@@ -247,9 +247,6 @@ module.exports = {
     var deliver_carry_cap = 50;
 
     // spawn flow
-    // check for timed out, complete, or abandoned jobs
-      // remove these jobs from the queue
-      // update container working variables ( working = actual ) when any job finishes, times out, or is abandoned
 
     // detect idle creeps full of energy needing to unload
     var full_creeps = _.filter(Game.creeps, (c) =>
@@ -315,14 +312,17 @@ module.exports = {
 
     var job_TTL = 10;
 
-    // remove timed out and abandonded jobs from the queue
+
+    // when any job is completed, times out, or is abandoned, remove it from the job_queue
     var removed = _.remove(Hive.memory.job_queue, function(s) {
-        return  (( Game.time - s.tick_issued ) > job_TTL || s.state == 'abandoned');
+        return  (( Game.time - s.tick_issued ) > job_TTL || s.state == 'abandoned' || s.state == 'complete');
       });
 
     for ( let x of removed ) {
-      console.log("JQ: removing " + x.dest_id);
+      // adjust container working_var according to the job that completes
       // find any creep with this job still assigned and remove it from their memory.job
+
+      console.log("JQ: removed " + x.dest_id);
 
     }
 
