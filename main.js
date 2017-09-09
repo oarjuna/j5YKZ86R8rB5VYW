@@ -250,6 +250,12 @@ Creep.prototype.hasActiveBodypart = function (type) {
 
   }
 */
+  var x = 0;
+  // display the job queue
+  for ( let job of Hive.memory.job_queue) {
+    console.log("JQ: " + job.spawn_name+ " index " + x + " type " + job.type + " " + job.dest_id);
+    x++;
+  }
 
   console.log("#-------------------------------------------------------#  H, U, R, B, RH, C, De, EM, S");
   stats.collect_stats();
