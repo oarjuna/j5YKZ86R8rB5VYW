@@ -288,13 +288,8 @@ module.exports = {
 
     // detect resources laying on the ground ( update working var, not actual) <<< --- TODO?
 
-/*
-    // update the working_counts --- debugging
-    for ( let c of containers ) {
-      c.memory.working_count = c.store[RESOURCE_ENERGY];
-      //console.log("NS con -" + c + " -- " + c.memory.working_count);
-    }
-*/
+
+
 
     // when any job is completed, times out, or is abandoned, remove it from the job_queue
     var removed = _.remove(Hive.memory.job_queue, function(s) {
@@ -319,6 +314,11 @@ module.exports = {
 
       // find any creep with this job still assigned and remove it from their memory.job // TODO
 
+    }
+
+   for ( let c of containers ) {
+      //c.memory.working_count = c.store[RESOURCE_ENERGY]; // debugging
+      console.log("JQ: cont: " + c + " - total - " + c.memory.working_count);
     }
 
     // now, look for the need for a jobs for each type of job, add them to the queue
