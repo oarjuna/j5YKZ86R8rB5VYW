@@ -317,7 +317,7 @@ module.exports = {
     for ( let source of sources ) { // foreach source
       // if there is not a fillfrom job for the source
       var result = _.find(Hive.memory.job_queue, { 'dest_id' : source }); // TODO <-- fix
-      console.log(spawn_name + " source " + source + " job " + result.type );
+      console.log(spawn_name + " source " + source + " job " + result );
 
       //var result = undefined;
 
