@@ -203,7 +203,7 @@ Creep.prototype.hasActiveBodypart = function (type) {
     configurable: true
 });
 
-//Hive.memory.job_queue = [];
+Hive.memory.job_queue = [];
 
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
@@ -212,6 +212,7 @@ Creep.prototype.hasActiveBodypart = function (type) {
 	// run the roles per creep
   for (let name in Game.creeps) {
   	var creep = Game.creeps[name];
+    creep.memory.job = undefined;
     if (creep.memory.role == 'soldier')             { roleSoldier.run(creep); }
     else if (creep.memory.role == 'soldier_melee')  { roleSoldier_melee.run(creep); }
     else if (creep.memory.role == 'soldier_ranged') { roleSoldier_ranged.run(creep); }
