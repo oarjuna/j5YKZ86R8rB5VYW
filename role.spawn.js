@@ -366,8 +366,8 @@ module.exports = {
           console.log("XX: " + spawn_name + " id: " + y.id + " curr: " + y.memory.working_count + " --adj: " + adjustmest );
           y.memory.working_count = y.memory.working_count - deliver_carry_cap;
           if ( y.memory.working_count < 0 ) { y.memory.working_count = 0;  }
+        }
       }
-
     }
     // END -- 01bb
 
