@@ -316,9 +316,17 @@ module.exports = {
 
     }
 
-   for ( let c of containers ) {
+
+    // Display container counts
+   var all_containers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
+     filter: (s) => (
+       ( s.structureType == STRUCTURE_CONTAINER  )
+   )});
+
+   for ( let c of all_containers ) {
+
       //c.memory.working_count = c.store[RESOURCE_ENERGY]; // debugging
-      console.log("JQ: cont: " + c + " - total - " + c.memory.working_count);
+      console.log("JQ: " + spawn_name + " cont: " + c + " - total - " + c.memory.working_count);
     }
 
     // now, look for the need for a jobs for each type of job, add them to the queue
