@@ -258,7 +258,7 @@ Creep.prototype.hasActiveBodypart = function (type) {
     console.log("JQ: " + job.spawn_name+ " index " + x + " type " + job.type + " " + job.state + " " + job.dest_id + " time_in_q " + ( Game.time - job.tick_issued));
     x++;
   }
-  console.log("------ job actions ------");
+  console.log("------ actions ------");
   //console.log("#-------------------------------------------------------#  H, U, R, B, RH, C, De, EM, S");
   stats.collect_stats();
   //for (var spawn in Game.spawns){
