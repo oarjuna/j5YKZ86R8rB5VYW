@@ -318,7 +318,7 @@ module.exports = {
         return  (( Game.time - s.tick_issued ) > 100 || s.state == 'abandoned');
       });
 
-    for ( let x of remove ) {
+    for ( let x of removed ) {
       console.log("JQ: removing " + x.dest_id);
     }
 
