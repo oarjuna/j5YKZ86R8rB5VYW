@@ -89,8 +89,8 @@ Object.defineProperty(StructureController.prototype, 'memory', {
         Memory.myControllersMemory[this.id] = value;
     }
 });
-
-Object.defineProperty(StructureContainer.prototype, 'alert_state', {
+/*
+Object.defineProperty(StructureController.prototype, 'alert_state', {
   get: function () {
       if (this._alert_state == undefined) {
           if (this.memory.alert_state == undefined) {
@@ -110,7 +110,7 @@ Object.defineProperty(StructureContainer.prototype, 'alert_state', {
   enumerable: false,
   configurable: true
 });
-
+*/
 // xsinx
 Creep.prototype.hasActiveBodypart = function (type) {
 	for (let i = this.body.length - 1; i >= 0; i--) {

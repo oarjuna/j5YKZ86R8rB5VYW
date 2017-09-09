@@ -322,7 +322,7 @@ module.exports = {
       //var result = undefined;
 
       if ( result == undefined ) {
-        // find idle, harvester, empty with memory.destid = source
+        // find local, empty, idle, harvester, with memory.destid = source
         var harvester = _.find(Game.creeps, (c) =>
           ( c.memory.birthplace == spawn_name ) &&
           ( _.sum(c.carry) == empty ) &&
