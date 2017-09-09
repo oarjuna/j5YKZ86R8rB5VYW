@@ -388,7 +388,7 @@ module.exports = {
     // now, assign jobs to creeps
     for ( let job of Hive.memory.job_queue) {
 
-      console.log("JQ: " + spawn_name+ " index " + x + " type " + job.type + " " + job.dest_id);
+      console.log("JQ: " + job.spawn_name+ " index " + x + " type " + job.type + " " + job.dest_id);
       x++;
       // factors - creep state, energy carried, body type
 
