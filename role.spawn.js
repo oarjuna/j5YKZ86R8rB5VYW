@@ -307,7 +307,7 @@ module.exports = {
           if ( rm_container_obj.structureType == STRUCTURE_CONTAINER ) {
             // add deliver_carry_cap back to container working_count since the job did not complete
             var adjustmest = rm_container_obj.memory.working_count + deliver_carry_cap;
-            console.log("XX: " + spawn_name + " curr: " + rm_container_obj.memory.working_count + " ++adj: " + adjustmest);
+            console.log("\tXX: " + spawn_name + " curr: " + rm_container_obj.memory.working_count + " ++adj: " + adjustmest);
             rm_container_obj.memory.working_count = rm_container_obj.memory.working_count + deliver_carry_cap;
           }
       }
