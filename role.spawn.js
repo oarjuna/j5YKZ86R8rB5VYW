@@ -408,7 +408,7 @@ module.exports = {
       //Delivto  -- 02dd - tower - deliv          // 02ee - storage - deliv       // 02ff - controller - upgrader
       //Work     -- 03aa - contruct - builder     // 03bb - repair - builder
 
-      console.log("JQ: assign " + job.id + " t: " job.type);
+      console.log("JQ: assign " + job.id + " t: " + job.type);
 /*
       // find local, empty, idle, harvester, with memory.destid = source
       var harvester = _.find(Game.creeps, (c) =>
