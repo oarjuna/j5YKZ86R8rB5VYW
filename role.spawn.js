@@ -331,9 +331,10 @@ module.exports = {
           ( c.memory.role == 'harvester' ) &&
           ( c.memory.destid == source )
         );
-
-        console.log(spawn_name + " ha: " + harvester + " dest " + harvester.memory.destid );
-        // if candidate found, asssign job to creep
+        if ( harvester != undefined ) {
+          // if candidate found, asssign job to creep
+          console.log(spawn_name + " ha: " + harvester + " dest " + harvester.memory.destid );
+        }
 
       }
     }
