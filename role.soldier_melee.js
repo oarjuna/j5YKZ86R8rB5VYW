@@ -1,7 +1,7 @@
 module.exports = {
   // a function to run the logic for this role
   run: function(creep) {
-    creep.say("^-!");
+    creep.say("\u2694");
 
     // get your assignment
     var dest_key = creep.memory.destid;

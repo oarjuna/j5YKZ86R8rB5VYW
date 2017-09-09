@@ -26,5 +26,12 @@ construction
 
 // creep recycling worthwhile?
 
-!!! // if a room is wiped out, set energy_avil to 300 until the hive regenerates, then switch back to normal levels
+// if a room is wiped out, set energy_avil to 300 until the hive regenerates, then switch back to normal levels
 
+// stop hosing with the job queue thing for now and sort out basic attack/defense
+
+towers
+Attack effectiveness	600 hits at range ≤5 to 150 hits at range ≥20
+100 capacity @ 10 per action == 6000 max damage until empty
+
+Heals self or another creep restoring 12 hits per tick in short range or 4 hits per tick at a distance

@@ -34,7 +34,7 @@ module.exports = {
 		}
 		//console.log(creep + "+@" + creep.memory.role + " ++ " + container);
 
-		creep.say('\uD83D\uDE9A' + out); // 🚚);
+		creep.say('\uD83D\uDE9A'); // 🚚
 
 		// console.log(creep + "--" + creep.memory.role + " ++ " + container);
 
