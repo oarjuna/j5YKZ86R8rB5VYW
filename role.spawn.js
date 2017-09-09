@@ -305,9 +305,9 @@ module.exports = {
     for ( let x of removed ) {
       console.log("JQ: removed " + x.dest_id);
       // if the job was timed out or abandoned, adjust any associated containers working_var
-      if (( Game.time - s.tick_issued ) > job_TTL || s.state == 'abandoned' ) {           
+      if (( Game.time - x.tick_issued ) > job_TTL || x.state == 'abandoned' ) {
           // get the container associated with the removed job
-          let rm_container_id = s.dest_id;
+          let rm_container_id = x.dest_id;
           // get its object
           let rm_container_obj = Game.getObjectById(rm_container_id);
           // if the obj is a container
