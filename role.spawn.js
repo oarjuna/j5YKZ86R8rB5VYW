@@ -333,7 +333,7 @@ module.exports = {
 
       if ( result == undefined ) {
         // if no jobs are found, create a fillfrom job for this source
-        console.log(spawn_name + " source " + source + " job " + result );
+        console.log("JQ: " + spawn_name + " creating job " + source + " job " + result );
         // create a job object
         var job = new Job(spawn_name,'01aa',1,'unassinged','harvester',source,Game.time,'');
         // push the job onto the job_queue
