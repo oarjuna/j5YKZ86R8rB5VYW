@@ -408,7 +408,7 @@ module.exports = {
       //Delivto  -- 02dd - tower - deliv          // 02ee - storage - deliv       // 02ff - controller - upgrader
       //Work     -- 03aa - contruct - builder     // 03bb - repair - builder
 
-      console.log("JQ: assign " + job.id + " t: " + job.type);
+      console.log("JQ: trying to assign " + job.id + " t: " + job.type);
       if ( job.type == '01aa') {
         // find local, empty, idle, harvester, with memory.destid = job.dest_id (this is assigned at spawn)
         var creep = _.find(Game.creeps, (c) =>
