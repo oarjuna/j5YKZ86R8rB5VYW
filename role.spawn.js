@@ -335,7 +335,7 @@ module.exports = {
         // job object prototype - type, priority, state, body_type, dest_id, tick_issued, tick_complete
 
         if ( harvester != undefined ) {
-            console.log("assigning -- " + harvester);
+          console.log("assigning -- " + harvester);
           // if candidate found, asssign job to creep
           console.log(spawn_name + " ha: " + harvester + " dest " + harvester.memory.destid );
           // create the job object
