@@ -340,6 +340,8 @@ module.exports = {
           console.log(spawn_name + " ha: " + harvester + " dest " + harvester.memory.destid );
           // create the job object
           var job = new Job('01aa',1,'assigned','harvester',source,Game.time,'');
+          // push the job onto the job_queue
+          Hive.memory.job_queue.push(job);
           // get the index -- job.length - 1
           job_index = job.length - 1;
           // assign the job to the creep
