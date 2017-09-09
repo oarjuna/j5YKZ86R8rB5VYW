@@ -354,7 +354,7 @@ module.exports = {
     if ( containers.length != 0 ) {
       for ( let y of containers) {
         // while there is energy in the container, create jobs
-        while ( y.memory.working_count > deliver_carry_cap) {
+        while ( y.memory.working_count >= deliver_carry_cap) {
           // create a job for each container
           var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer',y.id,Game.time,'');
           console.log("JQ: " + spawn_name + " newjob " + y + " job " + job.type );
