@@ -255,7 +255,7 @@ Creep.prototype.hasActiveBodypart = function (type) {
   console.log("---- Job Queue ---- " + Game.time);
   // display the job queue
   for ( let job of Hive.memory.job_queue) {
-    console.log("JQ: " + job.spawn_name+ " index " + x + " type " + job.type + " " + job.dest_id + " time: " + job.tick_issued);
+    console.log("JQ: " + job.spawn_name+ " index " + x + " type " + job.type + " " + job.dest_id + " time: " + job.tick_issued + " time_in_q " + Game.time - job.tick_issued);
     x++;
   }
 
