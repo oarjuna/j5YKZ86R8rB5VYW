@@ -314,10 +314,12 @@ module.exports = {
     // create jobs for each Types of job
 
     // 01 - fillfrom - aa - source - harvesters
-/*
+
     for ( let source of sources ) { // foreach source
       // if there is not a fillfrom job for the source
-      if (! Hive.memory.job_queue.find(source) ) { // TODO <-- fix
+
+      var result = _find(Hive.memory.job_queue, 'dest_id' : source)
+      if ( result != undefined ) ) { // TODO <-- fix
 
         // find idle, harvester, empty with memory.destid = source.id
         let harvester = _.filter(Game.creeps, (c) =>
@@ -332,7 +334,7 @@ module.exports = {
 
       }
     }
-*/
+
 
     // 01 - fillfrom - bb - container - deliverers
     if ( containers.length != 0 ) {
