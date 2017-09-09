@@ -193,11 +193,11 @@ module.exports = {
             {fill: 'transparent', radius: 10, stroke: 'blue'});
 
         if (target != undefined) {
-          console.log(tower + " -- attacking " + target);
+          console.log(spawn_name + " " + tower + " -- attacking " + target);
           tower.attack(target);
         }
         else if (repair_target != undefined && tower.energy > 200 ) { // combat reserve
-          console.log(tower + " -- repairing " + repair_target);
+          console.log(spawn_name + " " + tower + " -- repairing " + repair_target);
           tower.repair(repair_target);
         }
     }
