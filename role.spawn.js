@@ -303,6 +303,7 @@ module.exports = {
 
     // detect resources laying on the ground ( update working var, not actual)
     // TODO?
+    // job states - assigned / complete / abandoned / timed out / unasssigned
 
     // update the working_counts debugging
     for ( let c of containers ) {
@@ -312,45 +313,25 @@ module.exports = {
 
     // job states - assigned / complete / abandoned / timed out / unasssigned
 
-    // create jobs for each Types of job
+    // remove timed out and abandonded jobs from the queue
+
+    // create jobs for each Types of job, add them to the queue
 
     // 01 - fillfrom - aa - source - harvesters
-    for ( let source of sources ) { // foreach source
-      // if there is not a fillfrom job for the source
-      var result = _.find(Hive.memory.job_queue, { 'dest_id' : source }); // TODO <-- fix
-      console.log(spawn_name + " source " + source + " job " + result );
-
-      //var result = undefined;
-
+    for ( let source of sources ) { // foreach source in the room
+      // search jobs for any jobs with a dest_id == source
+      var result = _.find(Hive.memory.job_queue, { 'dest_id' : source });
+      
       if ( result == undefined ) {
-        // find local, empty, idle, harvester, with memory.destid = source
-        var harvester = _.find(Game.creeps, (c) =>
-          ( c.memory.birthplace == spawn_name ) &&
-          ( _.sum(c.carry) == empty ) &&
-          ( c.memory.state == 'idle' ) &&
-          ( c.memory.role == 'harvester' ) &&
-          ( c.memory.destid == source )
-        );
-
-        // job states - assigned / complete / abandoned / timed out / unasssigned
-        // job object prototype - type, priority, state, body_type, dest_id, tick_issued, tick_complete
-
-        if ( harvester != undefined ) {
-
-          // if candidate found, asssign job to creep
-          console.log(spawn_name + " ha: " + harvester + " dest " + harvester.memory.destid );
-          // create the job object
-          var job = new Job(spawn_name,'01aa',1,'assigned','harvester',source,Game.time,'');
-          // push the job onto the job_queue
-          Hive.memory.job_queue.push(job);
-          // get the index -- job.length - 1
-          job_index = Hive.memory.job_queue.length - 1;
-          // assign the job to the creep
-          harvester.memory.job = job_index;
-          console.log("assigning -- " + job + " to "+ harvester + " index " + job_index);
-        }
+        // if no jobs are found, create a fillfrom job for this source
+        console.log(spawn_name + " source " + source + " job " + result );
+        // create a job object
+        var job = new Job(spawn_name,'01aa',1,'unassinged','harvester',source,Game.time,'');
+        // push the job onto the job_queue
+        Hive.memory.job_queue.push(job);
       }
     }
+
 
 
     // 01 - fillfrom - bb - container - deliverers
@@ -385,11 +366,27 @@ module.exports = {
     // 03 - work - bb - repair jobs - builder
 
     var x = 0;
-    // now, assign jobs to creeps
+
+    // now, try to assign jobs to creeps
+    job_index = 0;
     for ( let job of Hive.memory.job_queue) {
+/*
+      if ( result == undefined ) {
+        // find local, empty, idle, harvester, with memory.destid = source
+        var harvester = _.find(Game.creeps, (c) =>
+          ( c.memory.birthplace == spawn_name ) &&
+          ( _.sum(c.carry) == empty ) &&
+          ( c.memory.state == 'idle' ) &&
+          ( c.memory.role == 'harvester' ) &&
+          ( c.memory.destid == source )
+        );
+*/
+      // assign the job to the creep
+      //harvester.memory.job = job_index;
+      //console.log("assigning -- " + job + " to "+ harvester + " index " + job_index);
 
       //console.log("JQ: " + job.spawn_name+ " index " + x + " type " + job.type + " " + job.dest_id);
-      x++;
+      job_index++;
       // factors - creep state, energy carried, body type
 
       // assign the creep to the job
