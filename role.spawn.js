@@ -418,7 +418,7 @@ module.exports = {
           ( c.memory.role == 'harvester' ) &&
           ( c.memory.destid == job.dest_id )
         );
-        console.log("\tXX: " + creep + " assgn to "+ job.id);
+        console.log("\tXX: " + creep + " @ " + job.spawn_name + " assgn to "+ job.id);
 
       }
       // assign the job to the creep
