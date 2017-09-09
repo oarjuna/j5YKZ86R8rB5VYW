@@ -307,7 +307,7 @@ module.exports = {
           if ( rm_container_obj.structureType == STRUCTURE_CONTAINER ) {
             // add deliver_carry_cap back to container working_var since the job did not complete
             console.log("XX: " + spawn_name + " curr: " + rm_container_obj.memory.working_count + " adj: " + rm_container_obj.memory.working_count + deliver_carry_cap);
-            rm_container_obj.memory.working_count += deliver_carry_cap;
+            rm_container_obj.memory.working_count = rm_container_obj.memory.working_count + deliver_carry_cap;
           }
       }
 
@@ -355,7 +355,7 @@ module.exports = {
         // push the job onto the job_queue
         Hive.memory.job_queue.push(job);
         // record the desired resource state
-        y.memory.working_count -= deliver_carry_cap;
+        y.memory.working_count = y.memory.working_count - deliver_carry_cap;
       }
     }
     // END -- 01bb
