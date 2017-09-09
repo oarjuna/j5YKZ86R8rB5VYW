@@ -324,7 +324,7 @@ module.exports = {
 
       if ( result == undefined ) {
         // find idle, harvester, empty with memory.destid = source.id
-        let harvester = _.find(Game.creeps, (c) =>
+        var harvester = _.find(Game.creeps, (c) =>
           ( c.memory.birthplace == spawn_name ) &&
           ( _.sum(c.carry) == empty ) &&
           ( c.memory.state == 'idle' ) &&
