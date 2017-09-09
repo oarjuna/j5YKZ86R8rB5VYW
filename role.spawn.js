@@ -361,6 +361,7 @@ module.exports = {
     }
     // END -- 01aa
 
+/*
     // 01 - fillfrom - bb - container - deliverers
     if ( containers.length != 0 ) {
       for ( let y of containers) {
@@ -381,6 +382,7 @@ module.exports = {
       }
     }
     // END -- 01bb
+*/
 
     // 01 - fillfrom - cc - storage - deliverers / upgraders *** TODO
 
@@ -407,7 +409,6 @@ module.exports = {
       //Delivto  -- 02aa - closest cont - harv    // 02bb - send links - harv     // 02cc - spawn - deliv
       //Delivto  -- 02dd - tower - deliv          // 02ee - storage - deliv       // 02ff - controller - upgrader
       //Work     -- 03aa - contruct - builder     // 03bb - repair - builder
-
 
       if ( job.type == '01aa') {
         console.log("JQ: trying to assign " + spawn_name + " id " + job.id + " t: " + job.type + " d: " + job.dest_id);
