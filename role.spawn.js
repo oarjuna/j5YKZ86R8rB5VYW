@@ -408,8 +408,9 @@ module.exports = {
       //Delivto  -- 02dd - tower - deliv          // 02ee - storage - deliv       // 02ff - controller - upgrader
       //Work     -- 03aa - contruct - builder     // 03bb - repair - builder
 
-      console.log("JQ: trying to assign " + job.id + " t: " + job.type);
+
       if ( job.type == '01aa') {
+        console.log("JQ: trying to assign " + job.id + " t: " + job.type);
         // find local, empty, idle, harvester, with memory.destid = job.dest_id (this is assigned at spawn)
         var creep = _.find(Game.creeps, (c) =>
           ( c.memory.birthplace == job.spawn_name ) &&
@@ -425,6 +426,9 @@ module.exports = {
         creep.memory.job = job.id;
         // mark the job as assigned
         job.state = 'assigned';
+      }
+      else {
+        // no creep for the job
       }
     } // END job assignment
 
