@@ -422,7 +422,7 @@ module.exports = {
         );
 
       }
-      if ( creep ) {
+      if ( creep != undefined ) {
         console.log("\tXX: " + creep + " @ " + job.spawn_name + " assgn to "+ job.id);
         // assign the job to the creep
         creep.memory.job = job.id;
