@@ -228,6 +228,8 @@ module.exports = {
     // creep state - source_bound / dest_bound / working / idle
 
     // job object prototype - spawn_name,type, priority, state, body_type, dest_id, tick_issued, tick_complete
+    //    states - assigned / complete / abandoned / timed out / unasssigned
+
     function Job (spawn_name,type,priority,state,body_type_req,dest_id,tick_issued,tick_complete) {
         this.spawn_name = spawn_name;
         this.type = type;
@@ -240,27 +242,13 @@ module.exports = {
 
     }
 
+    // variables
     var container_energy_floor = 100;
     var tower_energy_ceiling = 250;
     var link_energy_celiing = 100;
     var empty = 0;
     var deliver_carry_cap = 50;
-
-    // spawn flow
-
-    // detect idle creeps full of energy needing to unload
-    var full_creeps = _.filter(Game.creeps, (c) =>
-      ( c.memory.birthplace == spawn_name ) &&
-      ( c.carryCapacity == _.sum(c.carry) ) &&
-      ( c.memory.state == 'idle' )
-    );
-
-    // detect idle creep that are empty
-    var empty_creeps = _.filter(Game.creeps, (c) =>
-      ( c.memory.birthplace == spawn_name ) &&
-      ( _.sum(c.carry) == empty ) &&
-      ( c.memory.state == 'idle' )
-    );
+    var job_TTL = 10;
 
     // detect sources to harvest
     var sources = Hive.sources[spawn_num];
@@ -298,35 +286,32 @@ module.exports = {
     // detect things needing to be built or repaired ( flag working queue as true for this object id)
     var construction = Game.spawns[spawn_name].room.find(FIND_CONSTRUCTION_SITES);
 
-    // detect resources laying on the ground ( update working var, not actual)
-    // TODO?
-    // job states - assigned / complete / abandoned / timed out / unasssigned
+    // detect resources laying on the ground ( update working var, not actual) <<< --- TODO?
 
-    // update the working_counts debugging
+/*
+    // update the working_counts --- debugging
     for ( let c of containers ) {
       c.memory.working_count = c.store[RESOURCE_ENERGY];
       //console.log("NS con -" + c + " -- " + c.memory.working_count);
     }
-
-    // job states - assigned / complete / abandoned / timed out / unasssigned
-
-    var job_TTL = 10;
-
+*/
 
     // when any job is completed, times out, or is abandoned, remove it from the job_queue
     var removed = _.remove(Hive.memory.job_queue, function(s) {
         return  (( Game.time - s.tick_issued ) > job_TTL || s.state == 'abandoned' || s.state == 'complete');
       });
 
+    // do things for each removed job
     for ( let x of removed ) {
-      // adjust container working_var according to the job that completes
-      // find any creep with this job still assigned and remove it from their memory.job
-
       console.log("JQ: removed " + x.dest_id);
+      // adjust container working_var according to the job that completes
+
+
+      // find any creep with this job still assigned and remove it from their memory.job
 
     }
 
-    // create jobs for each Types of job, add them to the queue
+    // now, look for the need for a jobs for each type of job, add them to the queue
 
     // 01 - fillfrom - aa - source - harvesters
     for ( let source of sources ) { // foreach source in the room
@@ -342,7 +327,7 @@ module.exports = {
         Hive.memory.job_queue.push(job);
       }
     }
-
+    // END -- 01aa
 
 
     // 01 - fillfrom - bb - container - deliverers
@@ -358,6 +343,8 @@ module.exports = {
         //y.memory.working_count -= deliver_carry_cap;
       }
     }
+    // END -- 01bb
+
     */
     // 01 - fillfrom - cc - storage - deliverers / upgraders *** TODO
 
