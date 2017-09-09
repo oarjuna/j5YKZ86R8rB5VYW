@@ -318,7 +318,7 @@ module.exports = {
     for ( let source of sources ) { // foreach source
       // if there is not a fillfrom job for the source
 
-      var result = _find(Hive.memory.job_queue, dest_id : source);
+      var result = _find(Hive.memory.job_queue, 'dest_id' : source);
       if ( result != undefined ) ) { // TODO <-- fix
 
         // find idle, harvester, empty with memory.destid = source.id
