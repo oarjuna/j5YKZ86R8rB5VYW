@@ -240,7 +240,7 @@ module.exports = {
         this.tick_issued = tick_issued;
         this.tick_complete = tick_complete;
 
-        this.id = function uuid() {
+        this.id = function() {
           var uuid = "", i, random;
           for (i = 0; i < 32; i++) {
             random = Math.random() * 16 | 0;
