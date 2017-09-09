@@ -323,7 +323,7 @@ module.exports = {
    )});
 
    for ( let c of all_containers ) {
-      //c.memory.working_count = c.store[RESOURCE_ENERGY]; // debugging
+      c.memory.working_count = c.store[RESOURCE_ENERGY]; // debugging
       console.log("JQ: " + spawn_name + " cont: " + c + " - total - " + c.memory.working_count);
     }
 
