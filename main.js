@@ -240,13 +240,13 @@ Creep.prototype.hasActiveBodypart = function (type) {
   gameStatus.display_status(1,Hive);
 	gameStatus.display_status(2,Hive);
 
-/*
+
   // display the job queue
   for ( let i of Hive.memory.job_queue ) {
     let foo = Game.getObjectById(i.dest_id);1
     console.log("JQ " + i.type + " dest - " + foo.store[RESOURCE_ENERGY]);
   }
-  */
+
   console.log("#-------------------------------------------------------#  H, U, R, B, RH, C, De, EM, S");
   stats.collect_stats();
   //for (var spawn in Game.spawns){
