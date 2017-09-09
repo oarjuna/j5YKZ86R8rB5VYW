@@ -203,7 +203,7 @@ Creep.prototype.hasActiveBodypart = function (type) {
     configurable: true
 });
 
-Hive.memory.job_queue = [];
+//Hive.memory.job_queue = [];
 
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
