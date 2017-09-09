@@ -317,7 +317,10 @@ module.exports = {
     var removed = _.remove(Hive.memory.job_queue, function(s) {
         return  (( Game.time - s.tick_issued ) > 100 || s.state == 'abandoned');
       });
-      
+
+    for ( let x of remove ) {
+      console.log("JQ: removing " + result.dest_id);
+    }
 
     // create jobs for each Types of job, add them to the queue
 
