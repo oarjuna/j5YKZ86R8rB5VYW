@@ -421,9 +421,9 @@ module.exports = {
         console.log("\tXX: " + creep + " @ " + job.spawn_name + " assgn to "+ job.id);
       }
       // assign the job to the creep
-      c.memory.job = job.id;
+      //creep.memory.job = job.id;
       // mark the job as assigned
-      job.state = 'assigned';
+      //job.state = 'assigned';
 
     } // END job assignment
 
