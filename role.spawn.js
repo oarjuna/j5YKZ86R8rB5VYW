@@ -410,7 +410,7 @@ module.exports = {
 
 
       if ( job.type == '01aa') {
-        console.log("JQ: trying to assign " + job.id + " t: " + job.type);
+        console.log("JQ: trying to assign " + job.id + " t: " + job.type + " d: " + job.dest_id);
         // find local, empty, idle, harvester, with memory.destid = job.dest_id (this is assigned at spawn)
         var creep = _.find(Game.creeps, (c) =>
           ( c.memory.birthplace == job.spawn_name ) &&
