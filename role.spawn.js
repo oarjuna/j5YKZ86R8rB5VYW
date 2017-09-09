@@ -353,19 +353,21 @@ module.exports = {
     // 01 - fillfrom - bb - container - deliverers
     if ( containers.length != 0 ) {
       for ( let y of containers) {
-        // create a job for each container
-        var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer',y.id,Game.time,'');
-        console.log("JQ: " + spawn_name + " newjob " + y + " job " + job.type );
-        // push the job onto the job_queue
-        Hive.memory.job_queue.push(job);
-        // record the desired resource state
-        var adjustmest = y.working_count - deliver_carry_cap;
-        if ( adjustmest < 0 ) { adjustmest = 0; }
-        console.log("XX: " + spawn_name + " id: " + y.id + " curr: " + y.memory.working_count + " --adj: " + adjustmest );
-
-        y.memory.working_count = y.memory.working_count - deliver_carry_cap;
-        if ( y.memory.working_count < 0 ) { y.memory.working_count = 0;  }
+        // while there is energy in the container, create jobs
+        while ( y.memory.working_count > deliver_carry_cap) {
+          // create a job for each container
+          var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer',y.id,Game.time,'');
+          console.log("JQ: " + spawn_name + " newjob " + y + " job " + job.type );
+          // push the job onto the job_queue
+          Hive.memory.job_queue.push(job);
+          // record the desired resource state
+          var adjustmest = y.working_count - deliver_carry_cap;
+          if ( adjustmest < 0 ) { adjustmest = 0; }
+          console.log("XX: " + spawn_name + " id: " + y.id + " curr: " + y.memory.working_count + " --adj: " + adjustmest );
+          y.memory.working_count = y.memory.working_count - deliver_carry_cap;
+          if ( y.memory.working_count < 0 ) { y.memory.working_count = 0;  }
       }
+
     }
     // END -- 01bb
 
