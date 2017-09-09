@@ -318,10 +318,12 @@ module.exports = {
     for ( let source of sources ) { // foreach source
       // if there is not a fillfrom job for the source
 
-      var result = undefined;
-//      var result = _find(Hive.memory.job_queue, 'dest_id' : source); // TODO <-- fix
-      if ( result != undefined ) {
 
+      var foo = _find(Hive.memory.job_queue, { 'dest_id' : source }); // TODO <-- fix
+      console.log(spawn_name + " " + foo);
+
+      var result = undefined;
+      if ( result != undefined ) {
         // find idle, harvester, empty with memory.destid = source.id
         let harvester = _.filter(Game.creeps, (c) =>
           ( c.memory.birthplace == spawn_name ) &&
