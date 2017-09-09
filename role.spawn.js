@@ -319,7 +319,7 @@ module.exports = {
       // if there is not a fillfrom job for the source
 
 
-      var foo = _find(Hive.memory.job_queue, { 'dest_id' : source }); // TODO <-- fix
+      var foo = _.find(Hive.memory.job_queue, { 'dest_id' : source }); // TODO <-- fix
       console.log(spawn_name + " " + foo);
 
       var result = undefined;
