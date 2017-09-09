@@ -400,12 +400,16 @@ module.exports = {
     // 03 - work - aa - construction sites - builder
     // 03 - work - bb - repair jobs - builder
 
-
     // now, try to assign jobs to creeps
-    job_index = 0;
     for ( let job of Hive.memory.job_queue) {
+      //Fillfrom -- 01aa - source - harv          // 01bb - container - deliv     // 01cc - storage - deliv/upgraders
+      //Fillfrom -- 01dd - rec link - upgraders   // 01ee - ground - builder
+      //Delivto  -- 02aa - closest cont - harv    // 02bb - send links - harv     // 02cc - spawn - deliv
+      //Delivto  -- 02dd - tower - deliv          // 02ee - storage - deliv       // 02ff - controller - upgrader
+      //Work     -- 03aa - contruct - builder     // 03bb - repair - builder
+
+      console.log("JQ: assign " + job.id);
 /*
-    if ( result == undefined ) {
       // find local, empty, idle, harvester, with memory.destid = source
       var harvester = _.find(Game.creeps, (c) =>
         ( c.memory.birthplace == spawn_name ) &&
@@ -416,19 +420,9 @@ module.exports = {
       );
 */
       // assign the job to the creep
-      //harvester.memory.job = job_index;
-      //console.log("assigning -- " + job + " to "+ harvester + " index " + job_index);
-
-      //console.log("JQ: " + job.spawn_name+ " index " + x + " type " + job.type + " " + job.dest_id);
-      // factors - creep state, energy carried, body type
-
-      // assign the creep to the job
-      //creep.memory.job = job_num;
 
       // mark the job as assigned
 
-      // increment the job index
-      job_index++;
     } // END job assignment
 
   }
