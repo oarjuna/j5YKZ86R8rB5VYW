@@ -324,7 +324,7 @@ module.exports = {
    )});
 
    for ( let c of all_containers ) {
-      //c.memory.working_count = c.store[RESOURCE_ENERGY]; // debugging
+      c.memory.working_count = c.store[RESOURCE_ENERGY]; // debugging
       //Hive.memory.job_queue = [];
 
       if ( c.memory.working_count > 0 ) {
@@ -395,15 +395,15 @@ module.exports = {
     job_index = 0;
     for ( let job of Hive.memory.job_queue) {
 /*
-      if ( result == undefined ) {
-        // find local, empty, idle, harvester, with memory.destid = source
-        var harvester = _.find(Game.creeps, (c) =>
-          ( c.memory.birthplace == spawn_name ) &&
-          ( _.sum(c.carry) == empty ) &&
-          ( c.memory.state == 'idle' ) &&
-          ( c.memory.role == 'harvester' ) &&
-          ( c.memory.destid == source )
-        );
+    if ( result == undefined ) {
+      // find local, empty, idle, harvester, with memory.destid = source
+      var harvester = _.find(Game.creeps, (c) =>
+        ( c.memory.birthplace == spawn_name ) &&
+        ( _.sum(c.carry) == empty ) &&
+        ( c.memory.state == 'idle' ) &&
+        ( c.memory.role == 'harvester' ) &&
+        ( c.memory.destid == source )
+      );
 */
       // assign the job to the creep
       //harvester.memory.job = job_index;
@@ -419,5 +419,6 @@ module.exports = {
       // mark the job as assigned
 
     }
+
   }
 };
