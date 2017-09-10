@@ -419,6 +419,13 @@ module.exports = {
             ( s.structureType == STRUCTURE_LINK && s.id != rec_link && s.energy < s.energyCapacity - link_energy_celiing )
         )});
 
+        if ( structure_link[0] != 'undefined') {
+
+        }
+        else if ( container != 'undefined') {
+          
+        }
+
 
       }
     }
