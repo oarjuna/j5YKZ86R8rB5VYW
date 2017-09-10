@@ -348,9 +348,15 @@ module.exports = {
     for ( let source of sources ) { // foreach source in the room
       // search jobs for any jobs with a dest_id == source AND job.state == unassigned
       let result = _.find(Hive.memory.job_queue, {
+        return ( o.dest_id == source && o.state != 'unassigned' );
+      });
+
+/*
+        {
         'dest_id' : source,
         'state' : 'unassigned'
       });
+*/
 
       if ( result == undefined ) {
         console.log("DEBUG1: " + result);
