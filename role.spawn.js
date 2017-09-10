@@ -399,7 +399,7 @@ module.exports = {
     // this will create an assigned job for a specific harvesters
     // get a list of local, full, idle harvesters
     var harvesters = _.find(Game.creeps, (c) =>
-      ( c.memory.birthplace == job.spawn_name ) &&
+      ( c.memory.birthplace == spawn_name ) &&
       ( _.sum(c.carry) == c.carryCapacity ) &&
       ( c.memory.state == 'idle' ) &&
       ( c.memory.role == 'harvester' )
