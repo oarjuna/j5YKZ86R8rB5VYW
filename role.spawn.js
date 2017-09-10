@@ -352,8 +352,9 @@ module.exports = {
         'state' : 'unassigned'
       });
 
-      if ( result == undefined ) {
-        console.log("DEBUG1: " + result);
+
+      if ( result[0] == undefined ) {
+        console.log("DEBUG1: " + result[0]);
         // if no jobs are found, create a fillfrom job for this source
         // create a job object
         var job = new Job(spawn_name,'01aa',1,'unassigned','harvester',source,Game.time,'');
@@ -363,7 +364,7 @@ module.exports = {
         Hive.memory.job_queue.push(job);
       }
       else {
-        console.log("DEBUG2: " + result + " " + result.dest_id + " " + result.state);
+        console.log("DEBUG2: " + result[0] + " " + result[0].dest_id + " " + result[0].state);
       }
 
     }
