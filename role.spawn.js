@@ -407,6 +407,7 @@ module.exports = {
 
     if ( harvesters != undefined ) {
       for ( let harv of harvesters ) { // foreach harvester
+        console.log("JQ: full harv: " + harv);
         // find the closest non-full container or non-full sending link
         let container = harv.pos.findClosestByRange(FIND_STRUCTURES, {
           filter: (s) => (
