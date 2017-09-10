@@ -272,20 +272,20 @@ module.exports = {
       filter: (s) => (
         ( s.structureType == STRUCTURE_CONTAINER && s.memory.working_count >= deliver_carry_cap )
     )});
-
+/*
     // detect towers needing energy ( update working var, not actual)
     var towers =  Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
        filter: (s) => (
           ( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity - tower_energy_ceiling )
     )});
-
+*/
     // detect sending links needing filling
     var rec_link = Hive.receiving_link[spawn_num];
 
 
     // detect controllers needing upgrading ( update working var )
     var controller = Game.spawns[spawn_name].room.controller;
-
+/*
     // detect spawns and extensions needing delivery
     var spawns = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
       filter: (s) => (
@@ -295,7 +295,7 @@ module.exports = {
 
     // detect things needing to be built or repaired ( flag working queue as true for this object id)
     var construction = Game.spawns[spawn_name].room.find(FIND_CONSTRUCTION_SITES);
-
+*/
     // detect resources laying on the ground ( update working var, not actual) <<< --- TODO?
 
     // when a job is completed, times out, or is abandoned, remove it from the job_queue
@@ -342,6 +342,8 @@ module.exports = {
     }*/
 
     // now, look for the need for a jobs for each type of job, add them to the queue
+
+  //Hive.memory.job_queue = [];
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // 01 - fillfrom - aa - source - harvesters
