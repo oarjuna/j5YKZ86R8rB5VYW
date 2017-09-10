@@ -76,8 +76,7 @@ module.exports = function() {
       }  // 900
 
       else if (roleName == "remote_harv") { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; } // 700 }
-      else if (roleName == "claimer")     { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ];  }//  700 }
-      else if (roleName == "claimer_lg")  { var body = [ CLAIM, MOVE, MOVE, MOVE, WORK, CARRY]; roleName = "claimer";  } // 750 }
+      else if (roleName == "claimer")     { var body = [ CLAIM, MOVE, MOVE, MOVE, WORK, CARRY ];  }//  800 }
       else if (roleName == "energy_mover"){ var body = [ WORK, WORK, WORK, WORK, WORK, MOVE, CARRY, CARRY ]; } // 1100}
 
       // HEAL 250,RANGED_ATTACK 150,MOVE 50,ATTACK 80,TOUGH 10
