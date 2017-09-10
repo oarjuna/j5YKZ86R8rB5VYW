@@ -256,10 +256,12 @@ module.exports = {
 
     // variables
     var container_energy_floor = 100;
+    var container_energy_ceiling = deliver_carry_cap;
     var tower_energy_ceiling = 250;
     var link_energy_celiing = 100;
     var empty = 0;
     var deliver_carry_cap = 50;
+    var harvester_carry_cap = 50;
     var job_TTL = 20;
 
     // detect sources to harvest
@@ -279,10 +281,7 @@ module.exports = {
 
     // detect sending links needing filling
     var rec_link = Hive.receiving_link[spawn_num];
-    var links = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
-      filter: (s) => (
-        ( s.structureType == STRUCTURE_LINK && s.id != rec_link && s.energy < s.energyCapacity - link_energy_celiing )
-    )});
+
 
     // detect controllers needing upgrading ( update working var )
     var controller = Game.spawns[spawn_name].room.controller;
@@ -396,9 +395,30 @@ module.exports = {
     // 01 - fillfrom - dd - receiving links - upgraders
     // 01 - fillfrom - ee - resources on the ground - builder
 
-    // 02 - delivto - aa - closest container - harvesters TODO
+    // 02 - delivto - aa - closest container or sending link - harvesters TODO
+    // this will create an assigned job for a specific harvesters
+    // get a list of local, full, idle harvesters
+    var harvesters = _.find(Game.creeps, (c) =>
+      ( c.memory.birthplace == job.spawn_name ) &&
+      ( _.sum(c.carry) == c.carryCapacity ) &&
+      ( c.memory.state == 'idle' ) &&
+      ( c.memory.role == 'harvester' )
+    );
+    for ( let harv of harvesters ) { // foreach harvester
+      // find the closest non-full container or non-full sending link
+      let container = harv.pos.findClosestByRange(FIND_STRUCTURES, {
+        filter: (s) => (
+          ( s.structureType == STRUCTURE_CONTAINER && s.memory.working_count < ( s.memory.working_count - harvester_carry_cap ) ) &&
+      )});
 
-    // 02 - delivto - bb - sending links - harvesters TODO
+      var links = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
+        filter: (s) => ( // this should use s.memory.working count -- need to setup memory for links
+          ( s.structureType == STRUCTURE_LINK && s.id != rec_link && s.energy < s.energyCapacity - link_energy_celiing )
+      )});
+
+
+
+    }
 
     // 02 - delivto - cc - spawns extensions - deliverer
     // 02 - delivto - dd - towers - deliverer
@@ -428,7 +448,6 @@ module.exports = {
           ( c.memory.role == 'harvester' ) &&
           ( c.memory.destid == job.dest_id )
         );
-
 
         if ( creep != undefined ) {
           console.log("\tXX: " + creep + " @ " + job.spawn_name + " assgn to "+ job.id);
