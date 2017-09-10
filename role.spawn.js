@@ -396,7 +396,7 @@ module.exports = {
     // 01 - fillfrom - ee - resources on the ground - builder
 
     // 02 - delivto - aa - closest container or sending link - harvesters TODO
-    // this will create an assigned job for a specific harvesters
+    // this will create an assigned job for a specific harvester
     // get a list of local, full, idle harvesters
     var harvesters = _.filter(Game.creeps, (c) =>
       ( c.memory.birthplace == spawn_name ) &&
@@ -407,7 +407,6 @@ module.exports = {
 
     if ( harvesters != undefined ) {
       for ( let harv of harvesters ) { // foreach harvester
-        console.log("JQ: full harv: " + harv);
         // find the closest non-full container or non-full sending link
         var container = harv.pos.findClosestByRange(FIND_STRUCTURES, {
           filter: (s) => (
@@ -418,17 +417,26 @@ module.exports = {
           filter: (s) => ( // this should use s.memory.working count -- need to setup memory for links
             ( s.structureType == STRUCTURE_LINK && s.id != rec_link && s.energy < s.energyCapacity - link_energy_celiing )
         )});
+        console.log("JQ: full harv: " + harv);
 
         if ( structure_link[0] != undefined ) {
           console.log("\t link : full harv dest: " + structure_link[0]);
+          var dest = structure_link[0];
+
         }
         else if ( container != undefined ) {
           console.log("\t cont: full harv dest: " + container);
+          var dest = container;
         }
         else {
-          console.log("\t link : full harv dest: " + structure_link[0]);
-          console.log("\t cont: full harv dest: " + container);
+          // no destination
         }
+        // create a new job
+        var job = new Job(spawn_name,'02aa',1,'assigned','harvester',dest.id,Game.time,'');
+        // assign the job to the creep
+        harv.memory.job = job.id;
+        // mark the job as assigned
+        job.state = 'assigned';
 
       }
     }
