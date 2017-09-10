@@ -434,6 +434,7 @@ module.exports = {
         // create a new job
         if ( dest != undefined ) {
           var job = new Job(spawn_name,'02aa',1,'assigned','harvester',dest.id,Game.time,'');
+          console.log("JQ: " + spawn_name + " newjob " + dest.id + " job " + job.type + " j_id: " + job.id );
           // assign the job to the creep
           harv.memory.job = job.id;
           // mark the job as assigned
