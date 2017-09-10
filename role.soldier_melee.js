@@ -49,7 +49,7 @@ module.exports = {
            creep.moveTo(creep_target);
        }
       }
-
+/*
       // attack spawn or extensions
       else if ( containers_target != undefined ) {
         console.log(creep + "SOLDIER -- attacking hostile target!" + containers_target);
@@ -57,8 +57,8 @@ module.exports = {
                 creep.moveTo(containers_target);
         }
       }
+*/
 
-/*
       // attack containers
       else if ( other_target != undefined ) {
         console.log(creep + "SOLDIER -- attacking hostile target!" + other_target);
@@ -66,7 +66,7 @@ module.exports = {
                 creep.moveTo(other_target);
         }
       }
-*/
+
       else {  creep.moveTo(gotoFlag); }
 
       }
