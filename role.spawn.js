@@ -411,7 +411,7 @@ module.exports = {
         // find the closest non-full container or non-full sending link
         var container = harv.pos.findClosestByRange(FIND_STRUCTURES, {
           filter: (s) => (
-            ( s.structureType == STRUCTURE_CONTAINER && ( s.memory.working_count > ( s.memory.working_count - harvester_carry_cap )))
+            ( s.structureType == STRUCTURE_CONTAINER && ( s.memory.working_count < s.storeCapacity - harvester_carry_cap ) )
         )});
 
         var structure_link = harv.pos.findInRange(FIND_MY_STRUCTURES, 2, {
