@@ -327,13 +327,13 @@ module.exports = {
 
     }
 
-
+/*
     // Display container counts // debugging
    var all_containers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
      filter: (s) => (
        ( s.structureType == STRUCTURE_CONTAINER  )
    )});
-
+*/
 /*   for ( let c of all_containers ) {
       //c.memory.working_count = c.store[RESOURCE_ENERGY]; // debugging
       //Hive.memory.job_queue = [];
