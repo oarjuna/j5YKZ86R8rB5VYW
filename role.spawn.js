@@ -432,12 +432,13 @@ module.exports = {
           // no destination
         }
         // create a new job
-        var job = new Job(spawn_name,'02aa',1,'assigned','harvester',dest.id,Game.time,'');
-        // assign the job to the creep
-        harv.memory.job = job.id;
-        // mark the job as assigned
-        job.state = 'assigned';
-
+          if ( dest != undefined ) {
+          var job = new Job(spawn_name,'02aa',1,'assigned','harvester',dest.id,Game.time,'');
+          // assign the job to the creep
+          harv.memory.job = job.id;
+          // mark the job as assigned
+          job.state = 'assigned';
+        }
       }
     }
 
