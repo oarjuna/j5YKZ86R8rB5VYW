@@ -361,8 +361,8 @@ module.exports = {
         var mem_source = harv.memory.destid;
         var dest = Game.getObjectById(mem_source);
         // create a job object
-        var job = new Job(spawn_name,'01aa',1,'assigned','harvester',dest,Game.time,'');
-        console.log("JQ: " + spawn_name + " newjob " + dest + " job " + job.type + " j_id: " + job.id );
+        var job = new Job(spawn_name,'01aa',1,'assigned','harvester',dest.id,Game.time,'');
+        console.log("JQ: " + spawn_name + " newjob " + dest.id + " job " + job.type + " j_id: " + job.id );
         // push the job onto the job_queue
         Hive.memory.job_queue.push(job);
         // assign the job to the creep
