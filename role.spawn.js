@@ -425,7 +425,10 @@ module.exports = {
         else if ( container != undefined ) {
           console.log("\t cont: full harv dest: " + container);
         }
-
+        else {
+          console.log("\t link : full harv dest: " + structure_link[0]);
+          console.log("\t cont: full harv dest: " + container);
+        }
 
       }
     }
