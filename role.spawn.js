@@ -355,28 +355,19 @@ module.exports = {
       ( c.memory.role == 'harvester' )
     );
 
-    // here TODO -- rewrite this so it checks each harvester for instead of each source.
-    
-    for ( let source of sources ) { // foreach source in the room
-      // search jobs for any jobs with a dest_id == source
-      let result = _.find(Hive.memory.job_queue, function(o) {
-        return ( o.dest_id == source );
-      });
-
-      if ( result == undefined ) {
-        // no jobs are found, create a fillfrom job for this source
+    if ( harvesters != undefined ) {
+      for ( let harv of harvesters ) { // foreach harvester
+        // find it's source
+        var mem_source = harv.memory.destid;
+        var dest = Game.getObjectById(mem_source);
         // create a job object
-        var job = new Job(spawn_name,'01aa',1,'unassigned','harvester',source,Game.time,'');
+        var job = new Job(spawn_name,'01aa',1,'assigned','harvester',dest,Game.time,'');
         console.log("JQ: " + spawn_name + " newjob " + source + " job " + job.type + " j_id: " + job.id );
-
         // push the job onto the job_queue
         Hive.memory.job_queue.push(job);
+        // assign the job to the creep
+        harv.memory.job = job.id;
       }
-      else {
-        // found a matching job for this source
-        //console.log("DEBUG2: " + result + " " + result.dest_id + " " + result.state);
-      }
-
     }
     // END -- 01aa
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -454,8 +445,6 @@ module.exports = {
           Hive.memory.job_queue.push(job);
           // assign the job to the creep
           harv.memory.job = job.id;
-          // mark the job as assigned
-          job.state = 'assigned';
         }
       }
     }
