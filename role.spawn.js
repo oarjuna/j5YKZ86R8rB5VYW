@@ -29,28 +29,28 @@ module.exports = {
            console.log(spawn_name + " -- spawning soldier");
            if ( spawn_name == 'Spawn1' ) { var attackFlag = 'Attack1'; }
            if ( spawn_name == 'Spawn2' ) { var attackFlag = 'Attack2'; }
-           if ( spawn_name == 'Spawn3' ) { var attackFlag = 'Attack2'; }
+           if ( spawn_name == 'Spawn3' ) { var attackFlag = 'Attack3'; }
            name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'soldier',attackFlag,spawn_name);
          }
          else if (numSolM < MinSolM) {
             console.log(spawn_name + " -- spawning soldier_melee");
             if ( spawn_name == 'Spawn1' ) { var attackFlag = 'Attack1'; }
             if ( spawn_name == 'Spawn2' ) { var attackFlag = 'Attack2'; }
-            if ( spawn_name == 'Spawn3' ) { var attackFlag = 'Attack2'; }
+            if ( spawn_name == 'Spawn3' ) { var attackFlag = 'Attack3'; }
             name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'soldier_melee',attackFlag,spawn_name);
         }
         else if (numSolR < MinSolR) {
            console.log(spawn_name + " -- spawning soldier_ranged");
            if ( spawn_name == 'Spawn1' ) { var attackFlag = 'Attack1'; }
            if ( spawn_name == 'Spawn2' ) { var attackFlag = 'Attack2'; }
-           if ( spawn_name == 'Spawn3' ) { var attackFlag = 'Attack2'; }
+           if ( spawn_name == 'Spawn3' ) { var attackFlag = 'Attack3'; }
            name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'soldier_ranged',attackFlag,spawn_name);
         }
         else if (numSolH < MinSolH) {
           console.log(spawn_name + " -- spawning soldier_healer");
           if ( spawn_name == 'Spawn1' ) { var attackFlag = 'Attack1'; }
           if ( spawn_name == 'Spawn2' ) { var attackFlag = 'Attack2'; }
-          if ( spawn_name == 'Spawn3' ) { var attackFlag = 'Attack2'; }
+          if ( spawn_name == 'Spawn3' ) { var attackFlag = 'Attack3'; }
           name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'soldier_healer',attackFlag,spawn_name);
         }
 
