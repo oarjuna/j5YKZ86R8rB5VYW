@@ -363,7 +363,7 @@ module.exports = {
       }
       else {
         // found a matching job for this source
-        console.log("DEBUG2: " + result + " " + result.dest_id + " " + result.state);
+        //console.log("DEBUG2: " + result + " " + result.dest_id + " " + result.state);
       }
 
     }
