@@ -91,7 +91,7 @@ module.exports = {
 					// set creep state to idle
 					creep.memory.state = 'idle';
 					// mark job as complete in job_queue
-					job.state = 'conplete';
+					job.state = 'complete';
 					// set jobs tick_complete
 					job.tick_complete = Game.time;
 					// null out this creep's job memory
