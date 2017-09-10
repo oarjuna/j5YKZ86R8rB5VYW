@@ -460,7 +460,7 @@ module.exports = {
 
     // 03 - work - aa - construction sites - builder
     // 03 - work - bb - repair jobs - builder
-
+/*
     // now, try to assign jobs to creeps
     for ( let job of Hive.memory.job_queue) {
 
@@ -495,6 +495,6 @@ module.exports = {
       } // END 01aa
 
     } // END job assignment
-
+*/
   }
 };
