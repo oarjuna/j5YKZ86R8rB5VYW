@@ -351,16 +351,9 @@ module.exports = {
         return ( o.dest_id == source && o.state == 'unassigned' );
       });
 
-/*
-        {
-        'dest_id' : source,
-        'state' : 'unassigned'
-      });
-*/
-
       if ( result == undefined ) {
         console.log("DEBUG1: " + result);
-        // if no jobs are found, create a fillfrom job for this source
+        // no jobs are found, create a fillfrom job for this source
         // create a job object
         var job = new Job(spawn_name,'01aa',1,'unassigned','harvester',source,Game.time,'');
         console.log("JQ: " + spawn_name + " newjob " + source + " job " + job.type + " j_id: " + job.id );
@@ -369,6 +362,7 @@ module.exports = {
         Hive.memory.job_queue.push(job);
       }
       else {
+        // found a matching job for this source
         console.log("DEBUG2: " + result + " " + result.dest_id + " " + result.state);
       }
 
