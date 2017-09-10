@@ -434,7 +434,7 @@ module.exports = {
           // assign the job to the creep
           creep.memory.job = job.id;
           // mark the job as assigned
-          //job.state = 'assigned';
+          job.state = 'assigned';
         }
         else {
           // no creep for the job
