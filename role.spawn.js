@@ -352,7 +352,6 @@ module.exports = {
       });
 
       if ( result == undefined ) {
-        //console.log("DEBUG1: " + result);
         // no jobs are found, create a fillfrom job for this source
         // create a job object
         var job = new Job(spawn_name,'01aa',1,'unassigned','harvester',source,Game.time,'');
