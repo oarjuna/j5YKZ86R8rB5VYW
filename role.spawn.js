@@ -363,7 +363,7 @@ module.exports = {
         Hive.memory.job_queue.push(job);
       }
       else {
-        console.log("DEBUG2: " + result.dest + " " + result.state);
+        console.log("DEBUG2: " + result + result.dest + " " + result.state);
       }
 
     }
