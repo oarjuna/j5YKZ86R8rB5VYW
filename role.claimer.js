@@ -34,8 +34,8 @@ module.exports = {
       }
 
 			// claim the controller if necessary
-			var status = creep.claimController(creep.room.controller);
-			creep.signController(creep.room.controller,"Non Servium");
+			creep.claimController(creep.room.controller);
+			var status = creep.signController(creep.room.controller,"Non Servium");
 			console.log(creep + " claimer -- controller status " + status);
 
 			if (status == ERR_NOT_IN_RANGE ) {
