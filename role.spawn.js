@@ -345,6 +345,14 @@ module.exports = {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // 01 - fillfrom - aa - source - harvesters
+    // find all local, idle, empty, harvs
+    // this will create an assigned job for a specific harvester
+    var harvesters = _.filter(Game.creeps, (c) =>
+      ( c.memory.birthplace == spawn_name ) &&
+      ( _.sum(c.carry) == 0 ) &&
+      ( c.memory.state == 'idle' ) &&
+      ( c.memory.role == 'harvester' )
+    );
     for ( let source of sources ) { // foreach source in the room
       // search jobs for any jobs with a dest_id == source
       let result = _.find(Hive.memory.job_queue, function(o) {
