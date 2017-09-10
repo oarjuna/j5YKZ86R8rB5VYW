@@ -414,10 +414,12 @@ module.exports = {
             ( s.structureType == STRUCTURE_CONTAINER && s.memory.working_count < ( s.memory.working_count - harvester_carry_cap ))
         )});
 
-        var links = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
+        var structure_link = harv.pos.findInRange(FIND_MY_STRUCTURES, 2, {
           filter: (s) => ( // this should use s.memory.working count -- need to setup memory for links
             ( s.structureType == STRUCTURE_LINK && s.id != rec_link && s.energy < s.energyCapacity - link_energy_celiing )
         )});
+
+
       }
     }
 
