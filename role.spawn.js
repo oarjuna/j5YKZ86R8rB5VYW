@@ -334,7 +334,7 @@ module.exports = {
        ( s.structureType == STRUCTURE_CONTAINER  )
    )});
 
-   for ( let c of all_containers ) {
+/*   for ( let c of all_containers ) {
       //c.memory.working_count = c.store[RESOURCE_ENERGY]; // debugging
       //Hive.memory.job_queue = [];
     /*  if ( c.memory.working_count > 0 ) {
