@@ -50,7 +50,7 @@ module.exports = {
        }
       }
 /*
-      // attack spawn or extensions
+      // attack containers
       else if ( containers_target != undefined ) {
         console.log(creep + "SOLDIER -- attacking hostile target!" + containers_target);
         if(creep.attack(containers_target) == ERR_NOT_IN_RANGE) {
@@ -58,8 +58,7 @@ module.exports = {
         }
       }
 */
-
-      // attack containers
+      // attack spawn or extensions
       else if ( other_target != undefined ) {
         console.log(creep + "SOLDIER -- attacking hostile target!" + other_target);
         if(creep.attack(other_target) == ERR_NOT_IN_RANGE) {
