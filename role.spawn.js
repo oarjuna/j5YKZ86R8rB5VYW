@@ -398,13 +398,14 @@ module.exports = {
     // 02 - delivto - aa - closest container or sending link - harvesters TODO
     // this will create an assigned job for a specific harvesters
     // get a list of local, full, idle harvesters
-    var harvesters = _.find(Game.creeps, (c) =>
+    var harvesters = _.filter(Game.creeps, (c) =>
       ( c.memory.birthplace == spawn_name ) &&
       ( _.sum(c.carry) == c.carryCapacity ) &&
       ( c.memory.state == 'idle' ) &&
       ( c.memory.role == 'harvester' )
     );
-      if ( harvesters != undefined ) {
+
+    if ( harvesters != undefined ) {
       for ( let harv of harvesters ) { // foreach harvester
         // find the closest non-full container or non-full sending link
         let container = harv.pos.findClosestByRange(FIND_STRUCTURES, {
