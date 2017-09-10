@@ -391,17 +391,18 @@ module.exports = {
     // END -- 01bb
 */
 
-    // 01 - fillfrom - cc - storage - deliverers / upgraders *** TODO
+    // 01 - fillfrom - cc - storage - deliverers / upgraders
 
     // 01 - fillfrom - dd - receiving links - upgraders
     // 01 - fillfrom - ee - resources on the ground - builder
 
-    // 02 - delivto - aa - closest container - harvesters
-    // 02 - delivto - bb - sending links - harvesters
+    // 02 - delivto - aa - closest container - harvesters TODO
 
-    // 02 - delivto - cc - spawns extensions - deliverer *** TODO
-    // 02 - delivto - dd - towers - deliverer *** TODO
-    // 02 - delivto - ee - storage - deliverer *** TODO
+    // 02 - delivto - bb - sending links - harvesters TODO
+
+    // 02 - delivto - cc - spawns extensions - deliverer
+    // 02 - delivto - dd - towers - deliverer
+    // 02 - delivto - ee - storage - deliverer
 
     // 02 - delivto - ff - controller - upgrader
 
