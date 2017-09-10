@@ -404,7 +404,7 @@ module.exports = {
       ( c.memory.state == 'idle' ) &&
       ( c.memory.role == 'harvester' )
     );
-      if ( harvesters.length != 0 ) {
+      if ( harvesters != undefined ) {
       for ( let harv of harvesters ) { // foreach harvester
         // find the closest non-full container or non-full sending link
         let container = harv.pos.findClosestByRange(FIND_STRUCTURES, {
