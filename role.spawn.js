@@ -395,7 +395,8 @@ module.exports = {
     // 01 - fillfrom - dd - receiving links - upgraders
     // 01 - fillfrom - ee - resources on the ground - builder
 
-    // 02 - delivto - aa - closest container or sending link - harvesters TODO
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // 02 - delivto - aa - closest container or sending link - harvesters
     // this will create an assigned job for a specific harvester
     // get a list of local, full, idle harvesters
     var harvesters = _.filter(Game.creeps, (c) =>
@@ -444,6 +445,9 @@ module.exports = {
         }
       }
     }
+    // END 02aa
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
     // 02 - delivto - cc - spawns extensions - deliverer
     // 02 - delivto - dd - towers - deliverer
