@@ -342,10 +342,10 @@ module.exports = {
       }
     }*/
 
-    // now, look for the need for a jobs for each type of job, add them to the queue
 
-  //Hive.memory.job_queue = [];
+//Hive.memory.job_queue = [];
 
+// look for idle creeps and find a task for them
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // 01 - fillfrom - aa - source - harvesters
 
