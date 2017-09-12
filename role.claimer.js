@@ -32,7 +32,7 @@ module.exports = {
 			else if (creep.memory.working == false && creep.carry.energy == creep.carryCapacity) {
 				creep.memory.working = true;
       }
-
+/*
 			// claim the controller if possible
 			if ( creep.room.controller.owner != 'Arjuna') {
 				creep.claimController(creep.room.controller);
@@ -45,9 +45,10 @@ module.exports = {
 	      	creep.moveTo(creep.room.controller);
 	      }
 			}
-      // harvesting
+*/
+	    // harvesting
 
-			else if ( harvestSite != undefined  && creep.memory.working == false ) {
+			if ( harvestSite != undefined  && creep.memory.working == false ) {
 				//console.log(creep + " claimer -- harvesting");
         if ( creep.harvest(harvestSite) == ERR_NOT_IN_RANGE ) {
                 creep.moveTo(harvestSite);
