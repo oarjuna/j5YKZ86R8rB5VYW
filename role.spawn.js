@@ -80,7 +80,7 @@ module.exports = {
     else if (numClReg < MinClReg) {
       console.log(spawn_name + " -- spawning claimer_Reg");
       var return_id =  Game.spawns[spawn_name].room.storage.id;
-      name =Game.spawns[spawn_name].createCustomCreep(energy_avail,'claimer_reg','CFlag1',spawn_namess);
+      name =Game.spawns[spawn_name].createCustomCreep(energy_avail,'claimer_reg','CFlag1',spawn_name);
     }
     // if not enough soldiers
     else if (numSold < MinSold) {
