@@ -1,7 +1,7 @@
 module.exports = {
 
    display_status: function(spawn_num,Hive) {
-     [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa,MinSolM,MinSolR,MinSolH] =  Hive.spawn_levels[spawn_num];
+     [MinHarv,MinDeli,MinUgra,MinBuil,MinClRg,MinReHa,MinClai,MinSold,MinRepa,MinSolM,MinSolR,MinSolH] =  Hive.spawn_levels[spawn_num];
      var spawn_name = Hive.spawn_names[spawn_num];
 
         // count the number of creeps alive for each role and according to spawn
@@ -17,7 +17,7 @@ module.exports = {
         var numSolH = _.sum(Game.creeps, (c) => c.memory.role == 'soldier_healer' && c.memory.birthplace == spawn_name);
         var numRepa = _.sum(Game.creeps, (c) => c.memory.role == 'repairer' && c.memory.birthplace == spawn_name);
         var numDeli = _.sum(Game.creeps, (c) => c.memory.role == 'deliverer' && c.memory.birthplace == spawn_name);
-        var numEnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthplace == spawn_name);
+        var numClRg = _.sum(Game.creeps, (c) => c.memory.role == 'claimer_reg' && c.memory.birthplace == spawn_name);
 
         var cur_energy = Game.spawns[spawn_name].room.energyAvailable;
         var cur_energy_cap = Game.spawns[spawn_name].room.energyCapacityAvailable;
@@ -36,11 +36,11 @@ module.exports = {
         var status5 = numReHa + "/" + MinReHa + " ";
         var status7 = numClai + "/" + MinClai + " ";
         var status8 = numDeli + "/" + MinDeli + " ";
-        var status9 = numEnMo  + "/" + MinEner + " ";
+        var status9 = numClRg  + "/" + MinClRg + " ";
         var status10 = numSold + "/" + MinSold;
 
-        var total_have = numHarv + numUpgr + numRepa + numBuil + numReHa + numClai + numDeli + numEnMo + numSold;
-        var total_want = MinHarv + MinUgra + MinRepa + MinBuil + MinReHa + MinClai + MinDeli + MinEner + MinSold;
+        var total_have = numHarv + numUpgr + numRepa + numBuil + numReHa + numClai + numDeli + numClRg + numSold;
+        var total_want = MinHarv + MinUgra + MinRepa + MinBuil + MinReHa + MinClai + MinDeli + MinClRg + MinSold;
         var total_status = total_have + "/" + total_want;
 
         var status21 = "SM: " + numSolM + "/" + MinSolM;
