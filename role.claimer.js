@@ -38,15 +38,16 @@ module.exports = {
 				creep.claimController(creep.room.controller);
 				var status = creep.signController(creep.room.controller,"Non Servium");
 				console.log(creep + " claimer -- controller status " + status);
+
+
+				if (status == ERR_NOT_IN_RANGE ) {
+					console.log(creep + " claimer -- claiming ");
+	      	creep.moveTo(creep.room.controller);
+	      }
 			}
-
-			if (status == ERR_NOT_IN_RANGE ) {
-				console.log(creep + " claimer -- claiming ");
-      	creep.moveTo(creep.room.controller);
-      }
-
       // harvesting
-      else if ( harvestSite != undefined  && creep.memory.working == false ) {
+
+			else if ( harvestSite != undefined  && creep.memory.working == false ) {
 				//console.log(creep + " claimer -- harvesting");
         if ( creep.harvest(harvestSite) == ERR_NOT_IN_RANGE ) {
                 creep.moveTo(harvestSite);
