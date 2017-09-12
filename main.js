@@ -131,19 +131,19 @@ Creep.prototype.hasActiveBodypart = function (type) {
                   [ 2, 3, 3, 1, 0, 1, 0, 0, 0, 0, 0, 0], // Spawn1
                   [ 2, 3, 2, 1, 2, 1, 0, 0, 0, 0, 0, 0], // Spawn2
                   [ 2, 3, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0], // Spawn3
-                  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]  // Spawn4
+                  [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]  // Spawn4
                 ],
     sources:    [
                   [ '5873bcc211e3e4361b4d81ec','5873bcc211e3e4361b4d81ed'], // Spawn1
                   [ '5873bcc511e3e4361b4d822e','5873bcc511e3e4361b4d822f'], // Spawn2
                   [ '5873bcc711e3e4361b4d827e','5873bcc711e3e4361b4d827f'], // Spawn3
-                  [ '000000000000000000000001','000000000000000000000002']  // Spawn4
+                  [ '5873bcc911e3e4361b4d82e1','5873bcc911e3e4361b4d82e2']  // Spawn4
                 ],
     harvs_per_source: [
                         [1,1], // Spawn1
                         [1,1], // Spawn2
                         [1,1], // Spawn3
-                        [0,0]  // Spawn4
+                        [1,1]  // Spawn4
                       ],
     links: [
             ['59a411fd06b5240409f8b847','59a446a802722c0fd674afdf'], // Spawn1
@@ -236,7 +236,7 @@ Creep.prototype.hasActiveBodypart = function (type) {
   roleSpawn.run(0,Hive);
   roleSpawn.run(1,Hive);
   roleSpawn.run(2,Hive);
-  //roleSpawn.run(3,Hive);
+  roleSpawn.run(3,Hive);
 
 
   console.log("#-------------------------------------------------------#  H, U, R, B, RH, C, De, EM, S");
@@ -244,7 +244,7 @@ Creep.prototype.hasActiveBodypart = function (type) {
   gameStatus.display_status(0,Hive);
   gameStatus.display_status(1,Hive);
 	gameStatus.display_status(2,Hive);
-  //gameStatus.display_status(3,Hive);
+  gameStatus.display_status(3,Hive);
 
 /*
   // display the job queue
