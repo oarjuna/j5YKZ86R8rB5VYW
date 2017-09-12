@@ -76,8 +76,8 @@ module.exports = {
 
 			// drop stuff off
 			else {
-				var container = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
-					filter: (s) => s.structureType==STRUCTURE_SPAWN
+				var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+					filter: (s) => s.structureType==STRUCTURE_CONTAINER
           });
 
 				//console.log(creep + " claimer -- transfering energy.");
