@@ -132,7 +132,7 @@ module.exports = {
         var c_flag5 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'CFlag5');
 
         var role;
-        if ( c_flag1 < 10 ) { var dest = 'CFlag1'; role = "claimer"; }
+        if ( c_flag1 < 2 ) { var dest = 'CFlag1'; role = "claimer"; }
         else if ( c_flag2 == 0 ) { var dest = 'CFlag1'; role = "claimer"; }
         else if ( c_flag3 == 0 ) { var dest = 'CFlag1'; role = "claimer"; }
         else if ( c_flag4 == 0 ) { var dest = 'CFlag1'; role = "claimer"; }
