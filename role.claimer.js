@@ -59,7 +59,7 @@ module.exports = {
       }
 
 			// upgrade the controller
-			else if ( creep.room.controller.ticksToDowngrade < 5000  && creep.memory.working == true ) {
+			else if ( creep.room.controller.ticksToDowngrade < 2000  && creep.memory.working == true ) {
 				//console.log(creep + " claimer -- upgrading");
 				if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
 						creep.moveTo(creep.room.controller);
