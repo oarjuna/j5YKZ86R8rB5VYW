@@ -1,7 +1,7 @@
 
 module.exports = {
     /*
-      Harvest, Deliv, Upgrade, Build, Energy, RemoHarv, Claim, Soldier, Repair
+      Harvest, Deliv, Upgrade, Build, ClaimrREg, RemoHarv, Claim, Soldier, Repair
     */
     run: function(spawn_num,Hive) {
       [MinHarv,MinDeli,MinUgra,MinBuil,MinClReg,MinReHa,MinClai,MinSold,MinRepa,MinSolM,MinSolR,MinSolH] =  Hive.spawn_levels[spawn_num];
