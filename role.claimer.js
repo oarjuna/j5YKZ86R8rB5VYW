@@ -23,7 +23,10 @@ module.exports = {
                         var repairStructure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
                                 filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
                         });
-			var harvestSite = creep.pos.findClosestByPath(FIND_SOURCES);
+			var harvestSite = creep.pos.findClosestByPath(FIND_SOURCES, {
+							filter: (s) => s.energy > 0
+
+			});
 
 			// Switch states
 			if (creep.memory.working == true && creep.carry.energy == 0) {
