@@ -131,7 +131,7 @@ Creep.prototype.hasActiveBodypart = function (type) {
                   [ 2, 3, 3, 1, 0, 1, 0, 0, 0, 1, 0, 0], // Spawn1
                   [ 2, 3, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0], // Spawn2
                   [ 2, 3, 2, 1, 0, 1, 0, 0, 0, 0, 0, 0], // Spawn3
-                  [ 2, 1, 4, 0, 0, 0, 0, 0, 1, 0, 0, 0]  // Spawn4
+                  [ 3, 1, 4, 0, 0, 0, 0, 0, 1, 0, 0, 0]  // Spawn4
                 ],
     sources:    [
                   [ '5873bcc211e3e4361b4d81ec','5873bcc211e3e4361b4d81ed'], // Spawn1
@@ -143,7 +143,7 @@ Creep.prototype.hasActiveBodypart = function (type) {
                         [1,1], // Spawn1
                         [1,1], // Spawn2
                         [1,1], // Spawn3
-                        [1,1]  // Spawn4
+                        [2,1]  // Spawn4
                       ],
     links: [
             ['59a411fd06b5240409f8b847','59a446a802722c0fd674afdf'], // Spawn1
