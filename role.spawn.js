@@ -4,7 +4,7 @@ module.exports = {
       Harvest, Deliv, Upgrade, Build, Energy, RemoHarv, Claim, Soldier, Repair
     */
     run: function(spawn_num,Hive) {
-      [MinHarv,MinDeli,MinUgra,MinBuil,MinEner,MinReHa,MinClai,MinSold,MinRepa,MinSolM,MinSolR,MinSolH] =  Hive.spawn_levels[spawn_num];
+      [MinHarv,MinDeli,MinUgra,MinBuil,MinClReg,MinReHa,MinClai,MinSold,MinRepa,MinSolM,MinSolR,MinSolH] =  Hive.spawn_levels[spawn_num];
       var spawn_name = Hive.spawn_names[spawn_num];
 
         // count the number of creeps alive for each role born at
@@ -19,7 +19,7 @@ module.exports = {
         var numSolR = _.sum(Game.creeps, (c) => c.memory.role == 'soldier_ranged' && c.memory.birthplace == spawn_name);
         var numSolH = _.sum(Game.creeps, (c) => c.memory.role == 'soldier_healer' && c.memory.birthplace == spawn_name);
         var numRepa = _.sum(Game.creeps, (c) => c.memory.role == 'repairer' && c.memory.birthplace == spawn_name);
-        var numEnMo = _.sum(Game.creeps, (c) => c.memory.role == 'energy_mover' && c.memory.birthplace == spawn_name);
+        var numClReg = _.sum(Game.creeps, (c) => c.memory.role == 'claimer_reg' && c.memory.birthplace == spawn_name);
 
         var energy_avail = Game.spawns[spawn_name].room.energyCapacityAvailable;
 	//     if ( spawn_name == 'Spawn2' ) { energy_avail = 300; }
@@ -77,7 +77,7 @@ module.exports = {
         name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'deliverer',Hive.receiving_link[spawn_num],spawn_name);
     }
    // if not enough energy movers
-    else if (numEnMo < MinEner) {
+    else if (numClReg < MinClReg) {
 
     }
     // if not enough soldiers
