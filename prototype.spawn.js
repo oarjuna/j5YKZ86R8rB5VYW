@@ -12,11 +12,11 @@ module.exports = function() {
   function(energy_avail, roleName, dest, birthplace,return_id) {
     // 300 - 549 energy_avail --- initial spawn
     if ( energy_avail < 550 ) {
-      if      (roleName == 'harvester') { var body = [ WORK, WORK, MOVE, CARRY ]; } // 300
+      if      (roleName == 'harvester') { var body = [ WORK, WORK, MOVE, CARRY ]; } // 250
       else if (roleName == 'builder')   { var body = [ WORK, MOVE, MOVE, CARRY, CARRY ]; } // 300
       else if (roleName == 'repairer')  { var body = [ WORK, MOVE, MOVE, CARRY, CARRY ]; } // 300
-      else if (roleName == 'upgrader')  { var body = [ WORK, MOVE, MOVE, CARRY, CARRY ]; } // 300
-      else if (roleName == 'deliverer') { var body = [ MOVE, MOVE, CARRY, CARRY ]; } // 300
+      else if (roleName == 'upgrader')  { var body = [ WORK, MOVE, MOVE, CARRY ]; } // 250
+      else if (roleName == 'deliverer') { var body = [ MOVE, MOVE, CARRY, CARRY, CARRY ]; } // 250
       else if (roleName == "soldier")   { var body = [ TOUGH, TOUGH, TOUGH, TOUGH, MOVE, ATTACK ,MOVE, ATTACK]; } // 300
     }
 
