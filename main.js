@@ -226,7 +226,6 @@ Creep.prototype.hasActiveBodypart = function (type) {
   	else if (creep.memory.role == 'builder')        { roleBuilder.run(creep); }
   	else if (creep.memory.role == 'claimer')        { roleClaimer.run(creep); }
     else if (creep.memory.role == 'claimer_reg')        { roleClaimer.run(creep); }
-
   	else if (creep.memory.role == 'repairer')       { roleRepairer.run(creep); }
 
   	else if (creep.memory.role == 'remote_harv')    { roleRemoteHarvester.run(creep); }
@@ -237,12 +236,15 @@ Creep.prototype.hasActiveBodypart = function (type) {
   roleSpawn.run(0,Hive);
   roleSpawn.run(1,Hive);
   roleSpawn.run(2,Hive);
+  //roleSpawn.run(3,Hive);
+
 
   console.log("#-------------------------------------------------------#  H, U, R, B, RH, C, De, EM, S");
 
   gameStatus.display_status(0,Hive);
   gameStatus.display_status(1,Hive);
 	gameStatus.display_status(2,Hive);
+  //gameStatus.display_status(3,Hive);
 
 /*
   // display the job queue
