@@ -11,7 +11,7 @@ module.exports = function() {
   StructureSpawn.prototype.createCustomCreep =
   function(energy_avail, roleName, dest, birthplace,return_id) {
     // 300 - 549 energy_avail --- initial spawn
-    if ( energy_avail < 550 ) {
+    if ( energy_avail <= 550 ) {
       if      (roleName == 'harvester') { var body = [ WORK, WORK, MOVE, CARRY ]; } // 250
       else if (roleName == 'builder')   { var body = [ WORK, MOVE, MOVE, CARRY, CARRY ]; } // 300
       else if (roleName == 'repairer')  { var body = [ WORK, MOVE, MOVE, CARRY, CARRY ]; } // 300
@@ -21,7 +21,7 @@ module.exports = function() {
     }
 
     // 550 - 799 energy_avail
-    else if ( energy_avail >= 550 && energy_avail < 850 ) {
+    else if ( energy_avail > 550 && energy_avail < 850 ) {
       if      (roleName == 'harvester')   { var body = [ WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY ]; }                          // 550
       else if (roleName == 'deliverer')   { var body = [ MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; }                  // 400
       else if (roleName == 'upgrader')    { var body = [WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; }                   // 550
