@@ -32,7 +32,7 @@ module.exports = {
             }
             else {
               stru = creep.pos.findInRange(creep.room.controller, 2);
-
+              console.log("STRU: " + stru);
               if (stru[0] != undefined) {
                 status = creep.upgradeController(creep.room.controller);
                 console.log("DEB: " + str + " " + creep);
