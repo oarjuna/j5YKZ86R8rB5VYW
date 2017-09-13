@@ -32,7 +32,7 @@ module.exports = {
             }
             else {
               if (creep.pos.findInRange(creep.room.controller, 3)) {
-                creep.upgradeController(creep.room.controller)
+                creep.upgradeController(creep.room.controller);
               }
               else {
                 creep.moveTo(creep.room.controller);
