@@ -91,14 +91,16 @@ module.exports = {
       } // End UNLOAD
 
       else {
-/*
-        // Find containers with resoures
+
+        // Find container with resoures
         var res_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
           filter: (s) =>
             (
               ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= 100 )
         )});
+        console.log(spawn_name + " " + creep + " RES: " + res_container);
 
+/*
         if ( res_container != undefined ) {
           for(const resourceType in creep.carry) {
               status = creep.transfer(res_container, resourceType);
