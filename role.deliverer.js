@@ -5,7 +5,7 @@ module.exports = {
 
     // Switch States
     // when creep is xfering energy to a structure and has no energy left to xfer
-    if (creep.memory.working == true && _.sum(creep.carry == 0)) {
+    if (creep.memory.working == true && _.sum(creep.carry) == 0) {
       // switch state
       //console.log(creep + " -- deliv -- out of energy");
       creep.memory.working = false;
@@ -119,7 +119,7 @@ module.exports = {
         console.log(creep + " RES: " + res_container);
 
 
-        if ( res_container && ryanflag == true ) {
+          if ( res_container && ryanflag == true ) {
           status = creep.withdraw(res_container, RESOURCE_KEANIUM);
         //  for(const resourceType in creep.carry) {
           //    status = creep.transfer(res_container, RESOURCE_KEANIUM);
