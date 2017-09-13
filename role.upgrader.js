@@ -31,7 +31,9 @@ module.exports = {
               roleDeliverer.run(creep);
             }
             else {
-              if (creep.pos.findInRange(creep.room.controller, 2)) {
+              stru = creep.pos.findInRange(creep.room.controller, 2);
+
+              if (stru[0] != undefined) {
                 status = creep.upgradeController(creep.room.controller);
                 console.log("DEB: " + status + " " + creep);
               }
