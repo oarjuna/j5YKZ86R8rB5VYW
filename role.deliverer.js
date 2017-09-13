@@ -29,7 +29,7 @@ module.exports = {
       // Decide where to go
       if ( creep.memory.carrytype == 'mineral' ) {
         var structure = structure_storage;
-
+        creep.say('\u26A0.KK'); // 🚚
        for(const resourceType in creep.carry) {
            status = creep.transfer(structure, resourceType);
            if (status == ERR_NOT_IN_RANGE ) {
