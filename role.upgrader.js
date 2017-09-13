@@ -32,7 +32,8 @@ module.exports = {
             }
             else {
               if (creep.pos.findInRange(creep.room.controller, 3)) {
-                creep.upgradeController(creep.room.controller);
+                status = creep.upgradeController(creep.room.controller);
+                console.log("DEB: " + status);
               }
               else {
                 creep.moveTo(creep.room.controller);
