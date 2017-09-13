@@ -72,7 +72,7 @@ module.exports = {
         creep.say('\uD83D\uDE9A.+tw'); // 🚚
       }
 
-      else if ( structure_link != undefined && structure_link.energy < structure_link.energyCapacity - 200) {
+      else if ( structure_link != undefined && structure_link.energy < structure_link.energyCapacity - 500) {
         // Load a sending link
         var structure = structure_link;
         creep.say('\uD83D\uDE9A.+li'); // 🚚
