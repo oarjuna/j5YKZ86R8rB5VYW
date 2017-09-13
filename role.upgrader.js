@@ -35,7 +35,7 @@ module.exports = {
               console.log("STRU: " + stru[0]);
               if (stru[0] != '') {
                 status = creep.upgradeController(creep.room.controller);
-                console.log("DEB: " + str + " " + creep);
+                console.log("DEB: " + stru + " " + creep);
               }
               else {
                 creep.moveTo(creep.room.controller);
