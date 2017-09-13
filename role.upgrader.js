@@ -31,7 +31,7 @@ module.exports = {
               roleDeliverer.run(creep);
             }
             else {
-              if (creep.pos.isNearTo(creep.room.controller)) {
+              if (creep.pos.findInRange(creep.room.controller,2 )) {
                 creep.upgradeController(creep.room.controller)
               }
               else {
