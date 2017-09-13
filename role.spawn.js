@@ -22,7 +22,7 @@ module.exports = {
         var numClReg = _.sum(Game.creeps, (c) => c.memory.role == 'claimer_reg' && c.memory.birthplace == spawn_name);
 
         var energy_avail = Game.spawns[spawn_name].room.energyCapacityAvailable;
-	//     if ( spawn_name == 'Spawn2' ) { energy_avail = 300; }
+	      if ( spawn_name == 'Spawn4' ) { energy_avail = 550; }
 
         // soldiers
         if (numSold < MinSold) {
