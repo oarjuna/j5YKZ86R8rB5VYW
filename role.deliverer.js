@@ -5,7 +5,7 @@ module.exports = {
 
     // Switch States
     // when creep is xfering energy to a structure and has no energy left to xfer
-    if (creep.memory.working == true && creep.carry.energy == 0) {
+    if (creep.memory.working == true && creep.carry == 0) {
       // switch state
       //console.log(creep + " -- deliv -- out of energy");
       creep.memory.working = false;
