@@ -100,8 +100,8 @@ module.exports = {
         )});
         console.log(creep + " RES: " + res_container);
 
-/*
-        if ( res_container != undefined ) {
+
+        if ( res_container ) {
           for(const resourceType in creep.carry) {
               status = creep.transfer(res_container, resourceType);
           }
@@ -110,7 +110,7 @@ module.exports = {
             creep.moveTo(res_container);
           }
         }
-*/
+
         //else {
           // Pick up more energy
           shared.pickupEnergy(creep);
