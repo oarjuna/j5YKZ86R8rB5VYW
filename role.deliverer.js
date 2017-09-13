@@ -23,6 +23,7 @@ module.exports = {
       creep.memory.carrytype = 'mineral';
     }
 
+    var ryanflag = false;
     // Do stuff
 
     if (creep.memory.working == true) {
@@ -101,13 +102,10 @@ module.exports = {
   	     }
        }
 
-        status = creep.transfer(structure, RESOURCE_ENERGY);
-           if (status == ERR_NOT_IN_RANGE ) {
-               creep.moveTo(structure);
-           }
-
-
-
+       status = creep.transfer(structure, RESOURCE_ENERGY);
+       if (status == ERR_NOT_IN_RANGE ) {
+           creep.moveTo(structure);
+       }
       } // End UNLOAD
 
       else {
@@ -120,8 +118,8 @@ module.exports = {
         )});
         console.log(creep + " RES: " + res_container);
 
-//shared.pickupEnergy(creep);
-        if ( res_container ) {
+
+        if ( res_container && ryanflag == true ) {
           status = creep.withdraw(res_container, RESOURCE_KEANIUM);
         //  for(const resourceType in creep.carry) {
           //    status = creep.transfer(res_container, RESOURCE_KEANIUM);
