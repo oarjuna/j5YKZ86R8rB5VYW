@@ -15,6 +15,11 @@ module.exports = {
       // switch state
       //console.log(creep + " -- deliv -- energy capacity full");
       creep.memory.working = true;
+      creep.memory.carrytype = 'energy';
+    }
+    else if (creep.memory.working == false && creep.carry[RESOURCE_KEANIUM] == creep.carryCapacity){
+      creep.memory.working = true;
+      creep.memory.carrytype = 'mineral';
     }
 
     // Do stuff
@@ -91,7 +96,7 @@ module.exports = {
       } // End UNLOAD
 
       else {
-
+/*
         // Find container with resoures
         var res_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
           filter: (s) =>
@@ -115,6 +120,8 @@ module.exports = {
           // Pick up more energy
           shared.pickupEnergy(creep);
         }
+*/
+        shared.pickupEnergy(creep);
 
     } // EnD LOAD
 
