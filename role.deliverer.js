@@ -114,7 +114,7 @@ module.exports = {
 
 
         if ( res_container ) {
-          status = creep.transfer(res_container, RESOURCE_KEANIUM);
+          status = creep.withdraw(res_container, RESOURCE_KEANIUM);
         //  for(const resourceType in creep.carry) {
           //    status = creep.transfer(res_container, RESOURCE_KEANIUM);
         //  }
