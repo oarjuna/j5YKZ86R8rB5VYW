@@ -103,7 +103,7 @@ module.exports = {
               status = creep.transfer(res_container, resourceType);
           }
           if (status == ERR_NOT_IN_RANGE) {
-            creep.say("KK")
+            creep.say("KK");
             creep.moveTo(res_container);
           }
         }
