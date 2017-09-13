@@ -87,11 +87,18 @@ module.exports = {
         // drop off at storage
         var structure = structure_storage;
         creep.say('\uD83D\uDE9A.+st'); // 🚚
-	}
+	     }
 
-      if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-        creep.moveTo(structure);
-      }
+       if ( creep.memory.carrytype == 'mineral' ) {
+         var structure = structure_storage;
+       }
+
+       for(const resourceType in creep.carry) {
+           status = creep.transfer(res_container, resourceType);
+           if (status == ERR_NOT_IN_RANGE ) { 
+               creep.moveTo(structure);
+           }
+       }
 
       } // End UNLOAD
 
