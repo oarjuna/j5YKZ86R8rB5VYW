@@ -91,6 +91,7 @@ module.exports = {
       } // End UNLOAD
 
       else {
+/*
         // Find containers with resoures
         var res_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
           filter: (s) =>
@@ -106,11 +107,11 @@ module.exports = {
             creep.say("KK");
             creep.moveTo(res_container);
           }
-        }
-        else {
+      */  }
+        //else {
           // Pick up more energy
           shared.pickupEnergy(creep);
-        }
+        //}
 
     } // EnD LOAD
 
