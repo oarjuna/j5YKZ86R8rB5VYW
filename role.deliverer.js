@@ -9,6 +9,7 @@ module.exports = {
       // switch state
       //console.log(creep + " -- deliv -- out of energy");
       creep.memory.working = false;
+      creep.memory.carrytype = 'none';
     }
     // when creep is harvesting energy and becomes full
     else if (creep.memory.working == false && creep.carry.energy == creep.carryCapacity) {
