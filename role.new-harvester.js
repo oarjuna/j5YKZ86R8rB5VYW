@@ -70,7 +70,7 @@ module.exports = {
 			}
 
       for(const resourceType in creep.carry) {
-          status = creep.transfer(storage, resourceType);
+          status = creep.transfer(structure, resourceType);
       }
 
       if (status == ERR_NOT_IN_RANGE) {
