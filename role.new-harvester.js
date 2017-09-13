@@ -9,20 +9,20 @@ module.exports = {
     // TODO -- should be a creep.memory item
     var deliver_to_spawn = false;
 //_.sum(structure.store) < structure.storeCapacity
-    // if creep is bringing energy to a structure but has no energy left
+    // if creep is bringing a  resource to a structure but has no resource left
     if (creep.memory.working == true && _.sum(creep.carry) == 0) {
       // switch state
-      //console.log(creep + " -- harvester -- out of energy");
+      //console.log(creep + " -- harvester -- out of a resource");
       creep.memory.working = false;
     }
-    // if creep is harvesting energy but is full
+    // if creep is harvesting a resource but is full
     else if (creep.memory.working == false && _.sum(creep.carry) == creep.carryCapacity) {
       // switch state
-    //  console.log(creep + " -- harvester -- energy capacity full");
+    //  console.log(creep + " -- harvester -- capacity full");
       creep.memory.working = true;
     }
 
-    // if creep is supposed to transfer energy to a structure
+    // if creep is supposed to transfer a resource to a structure
     if (creep.memory.working == true) {
       // START UNLOAD
 
@@ -69,7 +69,7 @@ module.exports = {
         creep.say('\uD83D\uDE9A'); // 🚚
 			}
 
-    if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+    if (creep.transfer(structure, RESOURCE_ALL) == ERR_NOT_IN_RANGE) {
         // move towards it
         creep.moveTo(structure);
       }
