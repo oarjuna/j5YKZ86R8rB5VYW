@@ -46,6 +46,13 @@ module.exports = {
           ( s.structureType == STRUCTURE_LINK && s.id != rec_link )
       )});
 
+      // Find containers with resoures
+			var res_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+	    	filter: (s) =>
+					(
+						( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= 100 )
+	    )});
+
       if ( creep.room.controller.ticksToDowngrade < 500 ) {
           // Emergency controller upgrade
           var structure = creep.room.controller;
@@ -75,7 +82,7 @@ module.exports = {
         var structure = structure_link;
         creep.say('\uD83D\uDE9A.+li'); // 🚚
       }
-    
+
       else {
         // drop off at storage
         var structure = structure_storage;
@@ -88,9 +95,20 @@ module.exports = {
 
       } // End UNLOAD
       else {
-        // Pick up more energy
-        shared.pickupEnergy(creep);
-      } // EnD LOAD
+        if ( res_container != undefined ) {
+          for(const resourceType in creep.carry) {
+              status = creep.transfer(res_container, resourceType);
+          }
+          if (status == ERR_NOT_IN_RANGE) {
+            creep.moveTo(res_container);
+          }
+        }
+        else {
+          // Pick up more energy
+          shared.pickupEnergy(creep);
+        }
+      }
+    } // EnD LOAD
 
   }
 };
