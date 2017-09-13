@@ -29,7 +29,7 @@ module.exports = {
       // Find CONTAINERS
       var structure_container = creep.pos.findClosestByPath(FIND_STRUCTURES, {
           filter: (s) => (
-            ( s.structureType == STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] < s.storeCapacity - 100)
+            ( s.structureType == STRUCTURE_CONTAINER && _.sum(s.store) < s.storeCapacity - 100)
           )});
 
       // Find links
