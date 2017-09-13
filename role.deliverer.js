@@ -97,12 +97,13 @@ module.exports = {
             (
               ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= 100 )
         )});
-        
+
         if ( res_container != undefined ) {
           for(const resourceType in creep.carry) {
               status = creep.transfer(res_container, resourceType);
           }
           if (status == ERR_NOT_IN_RANGE) {
+            creep.say("KK")
             creep.moveTo(res_container);
           }
         }
