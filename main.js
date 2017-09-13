@@ -130,19 +130,19 @@ Creep.prototype.hasActiveBodypart = function (type) {
                 [// H  D  U  B Cr  Rh C  S  R Sm Sr SH
                   [ 2, 3, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0], // Spawn1
                   [ 2, 3, 2, 1, 0, 2, 0, 0, 0, 0, 0, 0], // Spawn2
-                  [ 2, 3, 2, 1, 0, 2, 0, 0, 0, 0, 0, 0], // Spawn3
+                  [ 3, 3, 2, 1, 0, 2, 0, 0, 0, 0, 0, 0], // Spawn3
                   [ 3, 1, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0]  // Spawn4
                 ],
     sources:    [
                   [ '5873bcc211e3e4361b4d81ec','5873bcc211e3e4361b4d81ed','5873c16c63ad7a7555b7b2e1'], // Spawn1
                   [ '5873bcc511e3e4361b4d822e','5873bcc511e3e4361b4d822f','5873c16d63ad7a7555b7b2f3'], // Spawn2
-                  [ '5873bcc711e3e4361b4d827e','5873bcc711e3e4361b4d827f'], // Spawn3
+                  [ '5873bcc711e3e4361b4d827e','5873bcc711e3e4361b4d827f','5873c16d63ad7a7555b7b302'], // Spawn3
                   [ '5873bcc911e3e4361b4d82e1','5873bcc911e3e4361b4d82e2']  // Spawn4
                 ],
     harvs_per_source: [
                         [1,1,0], // Spawn1
                         [1,1,0], // Spawn2
-                        [1,1], // Spawn3
+                        [1,1,1], // Spawn3
                         [2,1]  // Spawn4
                       ],
     links: [
