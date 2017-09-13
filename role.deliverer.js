@@ -28,7 +28,7 @@ module.exports = {
       // When Full
       // Decide where to go
       if ( creep.memory.carrytype == 'mineral' ) {
-        var structure = structure_storage;
+        var structure = creep.room.storage;
         creep.say('\u26A0.KK'); // 🚚
        for(const resourceType in creep.carry) {
            status = creep.transfer(structure, resourceType);
