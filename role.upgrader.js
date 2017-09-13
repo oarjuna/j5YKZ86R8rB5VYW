@@ -30,10 +30,20 @@ module.exports = {
             if ( creep.room.controller.memory.alert_state == 'red' ) {
               roleDeliverer.run(creep);
             }
-            else if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+            else {
+              if (creep.pos.isNearTo(creep.room.controller)) {
+                creep.upgradeController(creep.room.controller)
+              }
+              else {
                 creep.moveTo(creep.room.controller);
+              }
             }
 
+/*
+            if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+                creep.moveTo(creep.room.controller);
+            }
+*/
 
         }
         else {
