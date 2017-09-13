@@ -152,7 +152,12 @@ module.exports = {
 
     var wall_ramp_str = 55000;
 
+
+
     for (let tower of towers) {
+      if ( tower.room.controller.level < 3 ) { var wall_ramp_str = 1000; }
+      else { var wall_ramp_str = 55001; }
+
       var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
         filter: (s) => (
           s.getActiveBodyparts(ATTACK) != 0         ||
