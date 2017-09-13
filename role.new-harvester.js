@@ -69,7 +69,11 @@ module.exports = {
         creep.say('\uD83D\uDE9A'); // 🚚
 			}
 
-    if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+    for(const resourceType in creep.carry) {
+        status = creep.transfer(storage, resourceType);
+    }
+
+    if (status == ERR_NOT_IN_RANGE) {
         // move towards it
         creep.moveTo(structure);
       }
