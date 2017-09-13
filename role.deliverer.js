@@ -114,9 +114,10 @@ module.exports = {
 
 
         if ( res_container ) {
-          for(const resourceType in creep.carry) {
-              status = creep.transfer(res_container, resourceType);
-          }
+          status = creep.transfer(res_container, RESOURCE_KEANIUM);
+        //  for(const resourceType in creep.carry) {
+          //    status = creep.transfer(res_container, RESOURCE_KEANIUM);
+        //  }
           if (status == ERR_NOT_IN_RANGE) {
             creep.say("KK");
             creep.moveTo(res_container);
