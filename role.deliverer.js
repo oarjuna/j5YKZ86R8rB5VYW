@@ -115,7 +115,7 @@ module.exports = {
         )});
         console.log(creep + " RES: " + res_container);
 
-shared.pickupEnergy(creep);
+//shared.pickupEnergy(creep);
         if ( res_container ) {
           status = creep.withdraw(res_container, RESOURCE_KEANIUM);
         //  for(const resourceType in creep.carry) {
