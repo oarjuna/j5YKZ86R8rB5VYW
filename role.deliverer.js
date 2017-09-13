@@ -107,7 +107,7 @@ module.exports = {
           // Pick up more energy
           shared.pickupEnergy(creep);
         }
-      }
+      
     } // EnD LOAD
 
   }
