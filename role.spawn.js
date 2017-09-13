@@ -153,8 +153,9 @@ module.exports = {
     var wall_ramp_str = 55000;
 
 
-    console.log("RCL: " + tower.room.contoller.level);
     for (let tower of towers) {
+      console.log("RCL: " + tower.room.contoller.level);
+
       if ( tower.room.controller.level < 3 ) { var wall_ramp_str = 1000; }
       else { var wall_ramp_str = 55001; }
 
