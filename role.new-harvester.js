@@ -8,15 +8,15 @@ module.exports = {
 
     // TODO -- should be a creep.memory item
     var deliver_to_spawn = false;
-
+//_.sum(structure.store) < structure.storeCapacity
     // if creep is bringing energy to a structure but has no energy left
-    if (creep.memory.working == true && creep.carry.energy == 0) {
+    if (creep.memory.working == true && _.sum(creep.carry) == 0) {
       // switch state
       //console.log(creep + " -- harvester -- out of energy");
       creep.memory.working = false;
     }
     // if creep is harvesting energy but is full
-    else if (creep.memory.working == false && creep.carry.energy == creep.carryCapacity) {
+    else if (creep.memory.working == false && _.sum(creep.carry) == creep.carryCapacity) {
       // switch state
     //  console.log(creep + " -- harvester -- energy capacity full");
       creep.memory.working = true;
