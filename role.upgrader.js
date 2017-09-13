@@ -31,18 +31,16 @@ module.exports = {
               roleDeliverer.run(creep);
             }
             else {
-              stru = creep.pos.findInRange(creep.room.controller, 2);
-              console.log("STRU: " + stru[0]);
-              if (stru[0] != '') {
-                status = creep.upgradeController(creep.room.controller);
-                console.log("DEB: " + stru + " " + creep);
-              }
-              else {
-                creep.moveTo(creep.room.controller);
+              if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+                  creep.moveTo(creep.room.controller);
               }
             }
 
-
+/*
+            if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+                creep.moveTo(creep.room.controller);
+            }
+*/
 
         }
         else {
