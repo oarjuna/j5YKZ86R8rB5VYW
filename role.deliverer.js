@@ -98,7 +98,7 @@ module.exports = {
             (
               ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= 100 )
         )});
-        console.log(spawn_name + " " + creep + " RES: " + res_container);
+        console.log(creep + " RES: " + res_container);
 
 /*
         if ( res_container != undefined ) {
