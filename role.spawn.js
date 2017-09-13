@@ -157,7 +157,11 @@ module.exports = {
       console.log("RCL: " +  Game.spawns[spawn_name].room.controller.level);
 
       if (   Game.spawns[spawn_name].room.controller.level < 3 ) { var wall_ramp_str = 1000; }
-      else { var wall_ramp_str = 55001; }
+      else {
+      //  var wall_upgrades = 
+        var wall_ramp_str = 55001;
+
+      }
 
       var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {
         filter: (s) => (
