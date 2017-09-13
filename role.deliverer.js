@@ -101,6 +101,11 @@ module.exports = {
   	     }
        }
 
+        status = creep.transfer(structure, RESOURCE_ENERGY);
+           if (status == ERR_NOT_IN_RANGE ) {
+               creep.moveTo(structure);
+           }
+
 
 
       } // End UNLOAD
