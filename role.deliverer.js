@@ -107,7 +107,8 @@ module.exports = {
             creep.say("KK");
             creep.moveTo(res_container);
           }
-      */  }
+        }
+*/
         //else {
           // Pick up more energy
           shared.pickupEnergy(creep);
