@@ -69,15 +69,15 @@ module.exports = {
         creep.say('\uD83D\uDE9A'); // 🚚
 			}
 
-    for(const resourceType in creep.carry) {
-        status = creep.transfer(storage, resourceType);
-    }
-
-    if (status == ERR_NOT_IN_RANGE) {
-        // move towards it
-        creep.moveTo(structure);
+      for(const resourceType in creep.carry) {
+          status = creep.transfer(storage, resourceType);
       }
-    }
+
+      if (status == ERR_NOT_IN_RANGE) {
+          // move towards it
+          creep.moveTo(structure);
+        }
+      }
     // END unload
     else {
       // START HARVESTING
