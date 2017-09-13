@@ -103,7 +103,7 @@ module.exports = {
       } // End UNLOAD
 
       else {
-/*
+
         // Find container with resoures
         var res_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
           filter: (s) =>
@@ -127,8 +127,8 @@ module.exports = {
           // Pick up more energy
           shared.pickupEnergy(creep);
         }
-*/
-        shared.pickupEnergy(creep);
+
+        //shared.pickupEnergy(creep);
 
     } // EnD LOAD
 
