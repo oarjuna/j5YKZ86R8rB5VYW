@@ -234,7 +234,7 @@ module.exports = {
       }
     }
     // run job control
-    jobcontrol.run(spawn_num,Hive);
+    //jobcontrol.run(spawn_num,Hive);
 
   }
 };
