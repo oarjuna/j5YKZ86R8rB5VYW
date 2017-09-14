@@ -124,7 +124,7 @@ module.exports = {
     // Debugging - clear the queue
     //Hive.memory.job_queue = [];
     if (Memory.ryanflag == true) {
-      var job = new Job(spawn_name,'01ff',1,'assigned','deliverer',Game.spawns[spawn_name].storage.id,Game.time,'');
+      var job = new Job(spawn_name,'01ff',1,'assigned','deliverer',Game.spawns[spawn_name].room.storage.id,Game.time,'');
       console.log("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
       Memory.ryanflag = false;
     }
