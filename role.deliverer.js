@@ -107,8 +107,8 @@ module.exports = {
        }
       } // End UNLOAD
 
-      else {
-//*/
+      else { // LOAD
+
         // Find container with resoures
         var res_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
           filter: (s) =>
@@ -117,14 +117,15 @@ module.exports = {
               ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_LEMERGIUM] >= 400 ) ||
               ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_OXYGEN] >= 400 )
         )});
-
-        console.log(creep + " RES: " + res_container);
-
           var ryanflag = true;
 
           if ( res_container && ryanflag == true ) {
           //status = creep.withdraw(res_container, RESOURCE_KEANIUM);
           for(const resourceType in creep.carry) {
+            status = creep.withdraw(res_container, RESOURCE_OXYGEN);
+            //status = creep.withdraw(res_container, RESOURCE_KEANIUM);
+            //status = creep.withdraw(res_container, RESOURCE_KEANIUM);
+
               status = creep.withdraw(res_container, resourceType);
           }
           if (status == ERR_NOT_IN_RANGE) {
@@ -137,8 +138,6 @@ module.exports = {
           // Pick up more energy
           shared.pickupEnergy(creep);
         }
-//*/
-        //shared.pickupEnergy(creep);
 
     } // EnD LOAD
 
