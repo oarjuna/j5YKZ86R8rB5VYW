@@ -1,4 +1,4 @@
-var jobcontrol = require('jobcontrol');
+var jobcontrol = require('control_jobs');
 
 module.exports = {
     /*
