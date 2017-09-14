@@ -23,7 +23,6 @@ module.exports = {
       creep.memory.carrytype = 'mineral';
     }
 
-    var ryanflag = false;
     // Do stuff
 
     if (creep.memory.working == true) {
@@ -118,6 +117,7 @@ module.exports = {
         )});
         console.log(creep + " RES: " + res_container);
 
+          var ryanflag = true;
 
           if ( res_container && ryanflag == true ) {
           status = creep.withdraw(res_container, RESOURCE_KEANIUM);
