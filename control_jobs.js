@@ -121,13 +121,13 @@ module.exports = {
       }
     }*/
 
-    // Debugging - clear the queue
+    // Debugging - clear the queue or add jobs to it
     //Hive.memory.job_queue = [];
     if (Memory.ryanflag == true) {
       var job = new Job(spawn_name,'01ff',1,'assigned','deliverer',Game.spawns[spawn_name].room.storage.id,Game.time,'');
       Hive.memory.job_queue.push(job);
       console.log("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
-      
+
       Memory.ryanflag = false;
     }
 
@@ -264,7 +264,8 @@ module.exports = {
 
     // 03 - work - aa - construction sites - builder
     // 03 - work - bb - repair jobs - builder
-    /*
+
+
     // now, try to assign jobs to creeps
     for ( let job of Hive.memory.job_queue) {
 
@@ -278,31 +279,35 @@ module.exports = {
 
       //Work     -- 03aa - contruct - builder     // 03bb - repair - builder
 
-      if ( job.type == '01aa' && job.spawn_name == spawn_name ) {
-        console.log("JQ: trying to assign " + spawn_name + " id " + job.id + " t: " + job.type + " d: " + job.dest_id);
-        // find local, empty, idle, harvester, with memory.destid = job.dest_id (this is assigned at spawn)
-        let creep = _.find(Game.creeps, (c) =>
-          ( c.memory.birthplace == job.spawn_name ) &&
-          ( _.sum(c.carry) == empty ) &&
-          ( c.memory.state == 'idle' ) &&
-          ( c.memory.role == 'harvester' ) &&
-          ( c.memory.destid == job.dest_id )
-        );
+      if ( job.spawn_name == spawn_name ) {
+        switch(job.type) {
+          case '01aa':
+            console.log("JQ: trying to assign " + spawn_name + " id " + job.id + " t: " + job.type + " d: " + job.dest_id);
+            // find local, empty, idle, harvester, with memory.destid = job.dest_id (this is assigned at spawn)
+            let creep = _.find(Game.creeps, (c) =>
+              ( c.memory.birthplace == job.spawn_name ) &&
+              ( _.sum(c.carry) == empty ) &&
+              ( c.memory.state == 'idle' ) &&
+              ( c.memory.role == 'harvester' ) &&
+              ( c.memory.destid == job.dest_id )
+            );
 
-        if ( creep != undefined ) {
-          console.log("\tXX: " + creep + " @ " + job.spawn_name + " assgn to "+ job.id);
-          // assign the job to the creep
-          creep.memory.job = job.id;
-          // mark the job as assigned
-          job.state = 'assigned';
-        }
-        else {
-          // no creep for the job
-        }
+            if ( creep != undefined ) {
+              console.log("\tXX: " + creep + " @ " + job.spawn_name + " assgn to "+ job.id);
+              // assign the job to the creep
+              creep.memory.job = job.id;
+              // mark the job as assigned
+              job.state = 'assigned';
+            }
+            else {
+              // no creep for the job
+            }
+            break;
 
-      } // END 01aa
 
+        } // END switch
+      } // END spawn_name
     } // END job assignment
-  */
+
   }
 };
