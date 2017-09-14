@@ -120,7 +120,6 @@ module.exports = {
           var ryanflag = true;
 
           if ( res_container && ryanflag == true ) {
-          //status = creep.withdraw(res_container, RESOURCE_KEANIUM);
           for(const resourceType in creep.carry) {
             status = creep.withdraw(res_container, RESOURCE_OXYGEN);
             status = creep.withdraw(res_container, RESOURCE_KEANIUM);
