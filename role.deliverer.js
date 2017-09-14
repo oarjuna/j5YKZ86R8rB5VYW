@@ -114,8 +114,11 @@ module.exports = {
           filter: (s) =>
             (
               ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= 400 ) ||
-              ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_LEMERGIUM] >= 400 )
+              ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_LEMERGIUM] >= 400 ) ||
+              ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_OXYGEN] >= 400 )
+
         )});
+
         console.log(creep + " RES: " + res_container);
 
           var ryanflag = true;
