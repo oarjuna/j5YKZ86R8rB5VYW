@@ -124,7 +124,7 @@ module.exports = {
             status = creep.withdraw(res_container, resourceType);
           }
           if (status == ERR_NOT_IN_RANGE) {
-            creep.say("KK");
+            creep.say('\uD83D\uDE9A.-min'); // 🚚
             creep.moveTo(res_container);
           }
         }
