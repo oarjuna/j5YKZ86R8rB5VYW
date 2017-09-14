@@ -113,9 +113,9 @@ module.exports = {
         var res_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
           filter: (s) =>
             (
-              ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= 400 ) ||
-              ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_LEMERGIUM] >= 400 ) ||
-              ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_OXYGEN] >= 400 )
+              ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= 800 ) ||
+              ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_LEMERGIUM] >= 800 ) ||
+              ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_OXYGEN] >= 800 )
         )});
           var ryanflag = true;
 
