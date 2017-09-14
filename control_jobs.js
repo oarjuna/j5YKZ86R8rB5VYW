@@ -127,8 +127,8 @@ module.exports = {
       var job = new Job(spawn_name,'01ff',1,'assigned','deliverer',Game.spawns[spawn_name].storage.id,Game.time,'');
       console.log("JQ: " + spawn_name + " newjob " + job.id + " job " + job.type);
       ryanflag = false;
-  */  }
-
+    }
+*/
     // job object prototype - spawn_name,type, priority, state, body_type, dest_id, tick_issued, tick_complete
     //    states - assigned / complete / abandoned / timed out / unasssigned
 
