@@ -122,8 +122,8 @@ module.exports = {
       }
     }*/
 
-
-    Hive.memory.job_queue = [];
+    // Debugging - clear the queue
+    //Hive.memory.job_queue = [];
 
     // look for idle creeps and find a task for them
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
