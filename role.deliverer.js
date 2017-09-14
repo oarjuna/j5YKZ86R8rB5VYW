@@ -113,7 +113,8 @@ module.exports = {
         var res_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
           filter: (s) =>
             (
-              ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= 400 )
+              ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= 400 ) ||
+              ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_LEMERGIUM] >= 400 )
         )});
         console.log(creep + " RES: " + res_container);
 
@@ -123,6 +124,7 @@ module.exports = {
           //status = creep.withdraw(res_container, RESOURCE_KEANIUM);
           for(const resourceType in creep.carry) {
               status = creep.withdraw(res_container, RESOURCE_KEANIUM);
+              status = creep.withdraw(res_container, RESOURCE_LEMERGIUM);
           }
           if (status == ERR_NOT_IN_RANGE) {
             creep.say("KK");
