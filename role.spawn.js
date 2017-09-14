@@ -3,11 +3,12 @@ module.exports = {
     /*
       Harvest, Deliv, Upgrade, Build, ClaimrREg, RemoHarv, Claim, Soldier, Repair
     */
-    var jobcontrol = require('jobcontrol');
 
     run: function(spawn_num,Hive) {
       [MinHarv,MinDeli,MinUgra,MinBuil,MinClReg,MinReHa,MinClai,MinSold,MinRepa,MinSolM,MinSolR,MinSolH] =  Hive.spawn_levels[spawn_num];
       var spawn_name = Hive.spawn_names[spawn_num];
+      var jobcontrol = require('jobcontrol');
+
         // count the number of creeps alive for each role born at
         var numHarv = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.birthplace == spawn_name);
         var numReHa = _.sum(Game.creeps, (c) => c.memory.role == 'remote_harv' && c.memory.birthplace == spawn_name);
@@ -234,7 +235,7 @@ module.exports = {
       }
     }
     // run job control
-    //jobcontrol.run(spawn_num,Hive)
+    //jobcontrol.run(spawn_num,Hive);
 
   }
 };
