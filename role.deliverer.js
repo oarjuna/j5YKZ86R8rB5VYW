@@ -124,7 +124,7 @@ module.exports = {
             status = creep.withdraw(res_container, RESOURCE_OXYGEN);
             status = creep.withdraw(res_container, RESOURCE_KEANIUM);
             status = creep.withdraw(res_container, RESOURCE_LEMERGIUM);
-
+            console.log("XXXX: " + resourceType);
             status = creep.withdraw(res_container, resourceType);
           }
           if (status == ERR_NOT_IN_RANGE) {
