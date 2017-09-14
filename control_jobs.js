@@ -281,7 +281,7 @@ module.exports = {
 
       if ( job.spawn_name == spawn_name ) {
         switch(job.type) {
-          case '01aa':
+          case '01aa': //Fillfrom -- 01aa - source - harv
             console.log("JQ: trying to assign " + spawn_name + " id " + job.id + " t: " + job.type + " d: " + job.dest_id);
             // find local, empty, idle, harvester, with memory.destid = job.dest_id (this is assigned at spawn)
             let creep = _.find(Game.creeps, (c) =>
@@ -293,17 +293,17 @@ module.exports = {
             );
 
             if ( creep != undefined ) {
-              console.log("\tXX: " + creep + " @ " + job.spawn_name + " assgn to "+ job.id);
+              console.log("\tJQ: " + creep + " @ " + job.spawn_name + " assgn to "+ job.id);
               // assign the job to the creep
               creep.memory.job = job.id;
               // mark the job as assigned
               job.state = 'assigned';
             }
             else {
-              // no creep for the job
+              console.log("\tJQ: " + creep + " @ " + job.spawn_name + " J_id:" + job.id + " failed to assign");
             }
             break;
-          case '01ff':
+          case '01ff': // 01ff - mins from stor - deliv
             console.log("JQ: trying to assign " + spawn_name + " id " + job.id + " t: " + job.type + " d: " + job.dest_id);
             break;
 
