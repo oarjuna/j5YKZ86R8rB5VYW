@@ -304,6 +304,7 @@ module.exports = {
             }
             break;
           case '01ff':
+            console.log("JQ: trying to assign " + spawn_name + " id " + job.id + " t: " + job.type + " d: " + job.dest_id);
             break;
 
         } // END switch
