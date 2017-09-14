@@ -121,9 +121,9 @@ module.exports = {
 
           if ( res_container && ryanflag == true && creep.carry.energy == 0 ) {
           for(const resourceType in res_container.store) {
-            status = creep.withdraw(res_container, RESOURCE_OXYGEN);
-            status = creep.withdraw(res_container, RESOURCE_KEANIUM);
-            status = creep.withdraw(res_container, RESOURCE_LEMERGIUM);
+            //status = creep.withdraw(res_container, RESOURCE_OXYGEN);
+            //status = creep.withdraw(res_container, RESOURCE_KEANIUM);
+            //status = creep.withdraw(res_container, RESOURCE_LEMERGIUM);
             console.log("XXXX: " + resourceType);
             status = creep.withdraw(res_container, resourceType);
           }
