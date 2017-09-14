@@ -113,7 +113,7 @@ module.exports = {
         var res_container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
           filter: (s) =>
             (
-              ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= 100 )
+              ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= 400 )
         )});
         console.log(creep + " RES: " + res_container);
 
