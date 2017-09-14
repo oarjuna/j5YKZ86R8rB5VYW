@@ -18,7 +18,7 @@ module.exports = {
       creep.memory.working = true;
       creep.memory.carrytype = 'energy';
     }
-    else if (creep.memory.working == false && creep.carry[RESOURCE_KEANIUM] == creep.carryCapacity){
+    else if (creep.memory.working == false && _.sum(creep.carry) == creep.carryCapacity){
       creep.memory.working = true;
       creep.memory.carrytype = 'mineral';
     }
@@ -30,7 +30,7 @@ module.exports = {
       // Decide where to go
       if ( creep.memory.carrytype == 'mineral' ) {
         var structure = creep.room.storage;
-        creep.say('\u26A0.KK'); // 🚚 
+        creep.say('\u26A0.KK'); // 🚚
        for(const resourceType in creep.carry) {
            status = creep.transfer(structure, resourceType);
            if (status == ERR_NOT_IN_RANGE ) {
