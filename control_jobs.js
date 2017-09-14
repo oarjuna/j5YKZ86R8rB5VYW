@@ -303,7 +303,8 @@ module.exports = {
               // no creep for the job
             }
             break;
-
+          case '01ff':
+            break;
 
         } // END switch
       } // END spawn_name
