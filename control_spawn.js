@@ -153,9 +153,9 @@ module.exports = {
 
     // run the links
     linkcontrol.run(spawn_num,Hive);
-    
+
     // run job control
-    //jobcontrol.run(spawn_num,Hive);
+    jobcontrol.run(spawn_num,Hive);
 
   }
 };

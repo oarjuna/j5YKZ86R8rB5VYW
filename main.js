@@ -1,5 +1,6 @@
 // import modules
 require('prototype.spawn')();
+
 var roleHarvester = require('role.new-harvester');
 var roleDeliverer = require('role.deliverer');
 var roleRemoteHarvester = require('role.remoteharvester');
