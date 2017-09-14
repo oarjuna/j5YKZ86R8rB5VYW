@@ -126,7 +126,7 @@ module.exports = {
             status = creep.withdraw(res_container, RESOURCE_KEANIUM);
             status = creep.withdraw(res_container, RESOURCE_LEMERGIUM);
 
-              status = creep.withdraw(res_container, resourceType);
+            status = creep.withdraw(res_container, resourceType);
           }
           if (status == ERR_NOT_IN_RANGE) {
             creep.say("KK");
