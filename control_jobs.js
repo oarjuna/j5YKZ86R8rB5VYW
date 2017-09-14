@@ -9,7 +9,6 @@ module.exports = {
 
     // job object prototype - spawn_name,type, priority, state, body_type, dest_id, tick_issued, tick_complete
     //    states - assigned / complete / abandoned / timed out / unasssigned
-
     function Job (spawn_name,type,priority,state,body_type_req,dest_id,tick_issued,tick_complete) {
         this.spawn_name = spawn_name;
         this.type = type;
@@ -124,6 +123,24 @@ module.exports = {
 
     // Debugging - clear the queue
     //Hive.memory.job_queue = [];
+    if (Hive.memory.ryantest == true) {
+      var job = new Job(spawn_name,'01ff',1,'assigned','deliverer',Game.spawns[spawn_name].storage.id,Game.time,'');
+      console.log("JQ: " + spawn_name + " newjob " + job.id + " job " + job.type);
+
+    }
+
+    // job object prototype - spawn_name,type, priority, state, body_type, dest_id, tick_issued, tick_complete
+    //    states - assigned / complete / abandoned / timed out / unasssigned
+
+    //Fillfrom -- 01aa - source - harv          // 01bb - container - deliv     // 01cc - storage - deliv/upgraders
+    //Fillfrom -- 01dd - rec link - upgraders   // 01ee - ground - builder      // 01ff - mins from stor - deliv
+    //Fillfrom -- 00gg - mins from cont - deliv //
+
+    //Delivto  -- 02aa - closest cont - harv    // 02bb - send links - harv     // 02cc - spawn - deliv
+    //Delivto  -- 02dd - tower - deliv          // 02ee - storage - deliv       // 02ff - controller - upgrader
+    //Delivto  -- 00gg - mins to stor - deliv   // 02hh - mins to term - deliv  //
+
+    //Work     -- 03aa - contruct - builder     // 03bb - repair - builder
 
     // look for idle creeps and find a task for them
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -250,9 +267,13 @@ module.exports = {
     for ( let job of Hive.memory.job_queue) {
 
       //Fillfrom -- 01aa - source - harv          // 01bb - container - deliv     // 01cc - storage - deliv/upgraders
-      //Fillfrom -- 01dd - rec link - upgraders   // 01ee - ground - builder
+      //Fillfrom -- 01dd - rec link - upgraders   // 01ee - ground - builder      // 01ff - mins from stor - deliv
+      //Fillfrom -- 00gg - mins from cont - deliv //
+
       //Delivto  -- 02aa - closest cont - harv    // 02bb - send links - harv     // 02cc - spawn - deliv
       //Delivto  -- 02dd - tower - deliv          // 02ee - storage - deliv       // 02ff - controller - upgrader
+      //Delivto  -- 00gg - mins to stor - deliv   // 02hh - mins to term - deliv  //
+
       //Work     -- 03aa - contruct - builder     // 03bb - repair - builder
 
       if ( job.type == '01aa' && job.spawn_name == spawn_name ) {
