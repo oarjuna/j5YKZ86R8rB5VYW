@@ -124,7 +124,7 @@ module.exports = {
     // Debugging - clear the queue or add jobs to it
     //Hive.memory.job_queue = [];
     if (Memory.ryanflag == true) {
-      var job = new Job(spawn_name,'01ff',1,'assigned','deliverer',Game.spawns[spawn_name].room.storage.id,Game.time,'');
+      var job = new Job(spawn_name,'01ff',1,'unassigned','deliverer',Game.spawns[spawn_name].room.storage.id,Game.time,'');
       Hive.memory.job_queue.push(job);
       console.log("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
 
@@ -283,6 +283,7 @@ module.exports = {
         switch(job.type) {
           case '01aa': //Fillfrom -- 01aa - source - harv
             console.log("JQ: trying to assign " + spawn_name + " id " + job.id + " t: " + job.type + " d: " + job.dest_id);
+
             // find local, empty, idle, harvester, with memory.destid = job.dest_id (this is assigned at spawn)
             let creep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
@@ -305,11 +306,21 @@ module.exports = {
             break;
           case '01ff': // 01ff - mins from stor - deliv
             console.log("JQ: trying to assign " + spawn_name + " id " + job.id + " t: " + job.type + " d: " + job.dest_id);
+
+            // find local, empty, idle, harvester, with memory.destid = job.dest_id (this is assigned at spawn)
+            let creep = _.find(Game.creeps, (c) =>
+              ( c.memory.birthplace == job.spawn_name ) &&
+              ( _.sum(c.carry) == empty ) &&
+              ( c.memory.state == 'idle' ) &&
+              ( c.memory.role == 'deliverer' ) &&
+              ( c.memory.destid == job.dest_id )
+            );
+
             break;
 
-        } // END switch
-      } // END spawn_name
-    } // END job assignment
+        } // END switch block
+      } // END spawn_name check
+    } // END job assignment loop
 
-  }
-};
+  } // END function
+}; // END moduele.export
