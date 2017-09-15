@@ -321,7 +321,7 @@ module.exports = {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         } // END switch block
-      } // END spawn_name check
+
 
       // if we found a creep
       if ( tmpcreep != undefined ) {
@@ -337,7 +337,7 @@ module.exports = {
       }
 
       tmpcreep = undefined;
-
+      } // END spawn_name check
     } // END job assignment loop
 
   } // END function
