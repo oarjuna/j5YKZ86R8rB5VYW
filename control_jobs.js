@@ -123,8 +123,6 @@ module.exports = {
                     filter: (s) => (
                       ( s.structureType == STRUCTURE_CONTAINER && _.sum(s.store) <= s.storeCapacity - harvester_carry_cap)
                 )});
-                Log.debug("here" + near_cont);
-
               }
               else if ( job.type == '02bb' ){
                 var near_cont = tmpcreep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
