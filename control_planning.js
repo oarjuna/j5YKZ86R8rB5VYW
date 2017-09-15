@@ -124,7 +124,7 @@ module.exports = {
                   s.extra == x.store[res]
                 );});
 
-                Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex: " + job_count.length );
+                Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " jobs: " + job_count.length );
 
             // if not, spawn one
           }
