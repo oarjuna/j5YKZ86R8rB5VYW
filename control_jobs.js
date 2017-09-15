@@ -52,8 +52,10 @@ module.exports = {
     for ( let job of Hive.memory.job_queue) {
 
 
-      // 01cc - energy from storage - deliv/upgraders //Fillfrom -- 01dd - rec link - upgraders
-      // 01ee - ground - builder      // 01ff - mins from storage - deliv //Fillfrom -- 00gg - mins from cont - deliv //
+
+
+
+      // 01ee - ground - builder
 
       //Delivto  -- 02aa - closest cont - harv    // 02bb - send links - harv     // 02cc - spawn - deliv
       //Delivto  -- 02dd - tower - deliv          // 02ee - storage - deliv       // 02ff - controller - upgrader
@@ -82,8 +84,24 @@ module.exports = {
             }
           break; // END 01aa
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+          case '01dd': // Fillfrom - 01dd - rec link - upgraders
+          case '01hh': // Fillfrom - 01hh - energy from storage - upgraders
+          case '01ii': // Fillfrom - 01ii - energy from storage - upgraders
+          case '01jj': // Fillfrom - 01jj - energy from containers - upgraders
+          // local, empty, idle, upgrader
+          tmpcreep = _.find(Game.creeps, (c) =>
+            ( c.memory.birthplace == job.spawn_name ) &&
+            ( _.sum(c.carry) == 0 ) &&
+            ( c.memory.state == 'idle' ) &&
+            ( c.memory.ryantest == true) &&
+            ( c.memory.role == 'upgrader' )
+            );
+          break;
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '01bb': // Fillfrom - 01bb - energy from container -> deliv
-          case '01ff': // Fillfrom - 01ff - mins from storage -> deliv
+          case '01cc': // Fillfrom - 01cc - energy from storage   -> deliv
+          case '01ff': // Fillfrom - 01ff - mins from storage     -> deliv
+          case '01gg'  // Fillfrom - 01gg - mins from cont        -> deliv
             // local, empty, idle, deliverer
             tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
