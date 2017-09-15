@@ -137,9 +137,7 @@ module.exports = {
       var job = new Job(spawn_name,'02hh',1,'unassigned','deliverer',Game.spawns[spawn_name].room.storage.id,RESOURCE_KEANIUM,Game.time,'');
       Hive.memory.job_queue.push(job);
       Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
-
-
-      Memory.ryanflag = false;
+      Memory.addjobs = false;
     }
 
     // job object prototype - spawn_name,type, priority, state, body_type, dest_id, tick_issued, tick_complete
