@@ -118,7 +118,9 @@ module.exports = {
         //Log.debug("PL: " + x + " R "+ _.keys(x.store, function(o) { return o > 0;} ));
 
         for ( var res in x.store ) {
-          Log.debug("PL: " + x + " RES " + res + " " + x.store[res] );
+          if ( x.store[res] > 0 ) {
+            Log.debug("PL: " + x + " RES " + res + " " + x.store[res] );
+          }
         }
 
         var foo = _.filter(Hive.memory.job_queue, function(s) {
