@@ -117,14 +117,14 @@ module.exports = {
           if ( x.store[res] > 0 ) { // that is not empty
             // check to see if a pickup job for this exists
 
-              var foo = _.filter(Hive.memory.job_queue, function(s) {
+              var job_count = _.filter(Hive.memory.job_queue, function(s) {
                 return  (
                   ( s.type == '01bb' || s.type == '01jj' ) &&
                   s.spawn_name == spawn_name &&
                   s.extra == x.store[res]
                 );});
 
-                Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex: " + foo.length );
+                Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex: " + job_count.length );
 
             // if not, spawn one
           }
