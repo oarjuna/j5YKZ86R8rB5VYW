@@ -3,6 +3,7 @@ module.exports = {
     [MinHarv,MinDeli,MinUgra,MinBuil,MinClReg,MinReHa,MinClai,MinSold,MinRepa,MinSolM,MinSolR,MinSolH] =  Hive.spawn_levels[spawn_num];
     var spawn_name = Hive.spawn_names[spawn_num];
 
+    // Define the job object
     // job object prototype - spawn_name,type, priority, state, body_type_req, dest_id, extra, tick_issued, tick_complete
     //    states - assigned / complete / abandoned / timed out / unasssigned
     function Job (spawn_name,type,priority,state,body_type_req,dest_id,extra,tick_issued,tick_complete) {
@@ -30,8 +31,7 @@ module.exports = {
         this.id = this.uuid();
     }
 
-    // Debugging - clear the queue or add jobs to it
-
+    // Manual commands for testing
     if (Memory.clearqueue == true ){
       Memory.clearqueue = false;
       Hive.memory.job_queue = [];
@@ -58,8 +58,46 @@ module.exports = {
 
     }
 
-    // TYPES OF jobs
+    // TYPES OF actions
+    /////// FILL
+    // Fillfrom - 01aa - resource -> harv
+    // Fillfrom - 01dd - rec link - upgraders
+    // Fillfrom - 01hh - energy from storage - upgraders
+    // Fillfrom - 01jj - energy from containers - upgraders
+    // Fillfrom - 01bb - energy from container -> deliv
+    // Fillfrom - 01cc - energy from storage   -> deliv
+    // Fillfrom - 01ff - mins from storage     -> deliv
+    // Fillfrom - 01gg - mins from cont       -> deliv
+    ///////   DELIVER
+    // Deliverto - 02aa - energy to closest cont - harv
+    // Deliverto - 02bb - energy to closest sending link - harv
+    // Deliverto - 02cc - energy to spawn or extension - deliv
+    // Deliverto - 02dd - energy to tower - deliv
+    // Deliverto - 02ee - mins to storage - deliv
+    // Deliverto - 02ff - energy to controller - upgrader
+    // Deliverto - 02hh - mins to term - deliv
 
+    // Do I need to create jobs for:
+    // Harvesting from sources
+    var harvesting_jobs = _.filter(Hive.memory.job_queue, function(s) {
+      return  ( s.type == '01aa' );
+    });
+    var harvs_needed =  _.sum(Hive.harvs_per_source[spawn_num]);
+    Log.debug(spawn_name + " # of harv jobs: " + harvesting_jobs.length + " needed: " + harvs_needed )
+    if ( harvesting_jobs.length < harvs_needed ) {
+      // spawn a generic harvesting job
+      var job = new Job(spawn_name,'01aa',1,'unassigned','harvester','default',RESOURCE_ENERGY,Game.time,'');
+      Hive.memory.job_queue.push(job);
+      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
+    }
+
+    // Harvesting from minerals
+    // Emptying containers
+    // Filling Spawns and Extensions
+    // Filling Towers
+    // Filling Sending links
+    // Upgrading the Controller
+    // Bringing minerals to Terminal
 
   }
 };
