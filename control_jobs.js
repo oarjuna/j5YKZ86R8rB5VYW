@@ -334,6 +334,7 @@ module.exports = {
         } // END switch block
       } // END spawn_name check
 
+      // if we found a creep
       if ( tmpcreep != undefined ) {
         Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " assgn to "+ job.id);
         // assign the job to the creep
@@ -342,6 +343,7 @@ module.exports = {
         job.state = 'assigned';
       }
       else {
+        // if not
         Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " J_id:" + job.id + " failed to assign");
       }
 
