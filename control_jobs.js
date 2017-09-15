@@ -133,23 +133,23 @@ module.exports = {
             min_needed = job.extra; // energy
             tmpcreep = _.find(Game.creeps, (c) =>
              ( c.memory.birthplace == job.spawn_name ) &&
-             ( c.carry[min_needed] == c.carryCapacity ) &&
+             ( c.carry[min_needed] > 0 ) &&
              ( c.memory.state == 'idle' ) &&
              ( c.memory.ryantest == true) &&
              ( c.memory.role == 'harvester' )
             );
             if ( tmpcreep ) {
-              // Find nearby containers
+              // Find nearby containers with enough space for a full drop off
               let near_cont = tmpcreep.pos.findClosestByPath(FIND_STRUCTURES, {
                   filter: (s) => (
-                    ( s.structureType == STRUCTURE_CONTAINER && _.sum(s.store) < s.storeCapacity - harvester_carry_cap)
+                    ( s.structureType == STRUCTURE_CONTAINER && _.sum(s.store) <= s.storeCapacity - harvester_carry_cap)
               )});
               if ( near_cont ) {
                 // set job dest_id to container id
                 job.dest_id = near_cont.id;
               }
               else {
-                // no containers found? unset the creep.
+                // no containers found? weird? unset the creep and warn.
                 tmpcreep = undefined;
                 Log.warn("JQ: creep can't find nearby container");
               }
