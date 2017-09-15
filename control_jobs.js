@@ -9,11 +9,13 @@ module.exports = {
     // creep state - source_bound / dest_bound / working / idle
 
     // variables
+/*
     var container_energy_floor = 100;
     var container_energy_ceiling = deliver_carry_cap;
     var tower_energy_ceiling = 250;
     var link_energy_celiing = 100;
     var empty = 0;
+*/
     var deliver_carry_cap = 400;
     var harvester_carry_cap = 150;
     var job_TTL = 1000;
