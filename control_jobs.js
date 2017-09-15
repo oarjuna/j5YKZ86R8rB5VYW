@@ -308,7 +308,7 @@ module.exports = {
             }
             break;
           case '01ff': // 01ff - mins from stor - deliv
-            Log.debug("JQ: trying to assign " + job.id + " spawn " + job.spawn_name + " need " + job.body_type " t: " + job.type + " d: " + job.dest_id);
+            Log.debug("JQ: trying to assign " + job.id + " spawn " + job.spawn_name + " need " + job.body_type_req " t: " + job.type + " d: " + job.dest_id);
 
             let tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
