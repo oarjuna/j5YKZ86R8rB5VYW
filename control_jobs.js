@@ -42,7 +42,7 @@ module.exports = {
     var empty = 0;
     var deliver_carry_cap = 50;
     var harvester_carry_cap = 50;
-    var job_TTL = 2000;
+    var job_TTL = 10;
     var tmpcreep;
 
     // detect sources to harvest
