@@ -16,7 +16,7 @@ var roleSoldier_healer = require('role.soldier_healer');
 
 var gameStatus = require('status');
 var roleSpawn = require('control_spawn');
-var roleSpawn = require('control_planning');
+var rolePlan = require('control_planning');
 
 var roleGeneric = require('role.generic-creep');
 
