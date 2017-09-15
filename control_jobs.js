@@ -58,7 +58,17 @@ module.exports = {
         Log.debug("JQ: trying to assign " + job.id + " spawn " + job.spawn_name + " need " + job.body_type_req + " t: " + job.type + " d: " + job.dest_id + " x: " + job.extra);
         switch(job.type) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-          case '01aa': //Fillfrom -- 01aa - resource -> harv
+/////// FILL
+// Fillfrom - 01aa - resource -> harv
+// Fillfrom - 01dd - rec link - upgraders
+// Fillfrom - 01hh - energy from storage - upgraders
+// Fillfrom - 01jj - energy from containers - upgraders
+// Fillfrom - 01bb - energy from container -> deliv
+// Fillfrom - 01cc - energy from storage   -> deliv
+// Fillfrom - 01ff - mins from storage     -> deliv
+// Fillfrom - 01gg - mins from cont       -> deliv
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+          case '01aa': // Fillfrom - 01aa - resource -> harv
             // find local, empty, idle, harvester, with memory.destid = job.dest_id (this is assigned at spawn)
              tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
@@ -71,7 +81,6 @@ module.exports = {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '01dd': // Fillfrom - 01dd - rec link - upgraders
           case '01hh': // Fillfrom - 01hh - energy from storage - upgraders
-          case '01ii': // Fillfrom - 01ii - energy from storage - upgraders
           case '01jj': // Fillfrom - 01jj - energy from containers - upgraders
           // local, empty, idle, upgrader
           tmpcreep = _.find(Game.creeps, (c) =>
@@ -98,11 +107,13 @@ module.exports = {
           break; // END 01ff
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////   DELIVER
-//Delivto - 02aa - energy to closest cont - harv
-//Delivto - 02bb - energy to nearest sending link - harv
-
+// Deliverto - 02aa - energy to closest cont - harv
+// Deliverto - 02bb - energy to closest sending link - harv
 // Deliverto - 02cc - energy to spawn or extension - deliv
-
+// Deliverto - 02dd - energy to tower - deliv
+// Deliverto - 02ee - mins to storage - deliv
+// Deliverto - 02ff - energy to controller - upgrader
+// Deliverto - 02hh - mins to term - deliv
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '02aa': //Delivto - 02aa - energy to closest cont - harv
           case '02bb': //Delivto - 02bb - energy to nearest sending link - harv
