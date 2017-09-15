@@ -99,7 +99,18 @@ module.exports = {
       Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
     }
 //######################################################################################################################
-    // Emptying containers - are there containers wich need to be emptied?
+    // Emptying containers - are there containers which need to be emptied?
+    // Fillfrom - 01bb - energy from container -> deliv
+    // Fillfrom - 01jj - energy from containers - upgraders ( low RCL levels need this)
+    var res_container = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
+      filter: (s) =>
+        (
+          ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= 400 ) ||
+          ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= 400 ) ||
+          ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_LEMERGIUM] >= 400 ) ||
+          ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_OXYGEN] >= 400 )
+    )});
+
 
 
 //######################################################################################################################
