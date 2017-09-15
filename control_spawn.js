@@ -1,6 +1,7 @@
 var jobcontrol = require('control_jobs');
 var towercontrol = require('control_towers');
 var linkcontrol = require('control_links');
+var rolePlan = require('control_planning');
 
 module.exports = {
     /*
