@@ -7,15 +7,16 @@ module.exports = {
     // job states - assigned / complete / abandoned / timed out
     // creep state - source_bound / dest_bound / working / idle
 
-    // job object prototype - spawn_name,type, priority, state, body_type, dest_id, tick_issued, tick_complete
+    // job object prototype - spawn_name,type, priority, state, body_type_req, dest_id, extra, tick_issued, tick_complete
     //    states - assigned / complete / abandoned / timed out / unasssigned
-    function Job (spawn_name,type,priority,state,body_type_req,dest_id,tick_issued,tick_complete) {
+    function Job (spawn_name,type,priority,state,body_type_req,dest_id,extra,tick_issued,tick_complete) {
         this.spawn_name = spawn_name;
         this.type = type;
         this.priority = priority;
         this.state = state;
         this.body_type_req = body_type_req;
         this.dest_id = dest_id;
+        this.extra = extra;
         this.tick_issued = tick_issued;
         this.tick_complete = tick_complete;
         this.uuid = function uuid()  {
@@ -124,7 +125,7 @@ module.exports = {
     // Debugging - clear the queue or add jobs to it
     //Hive.memory.job_queue = [];
     if (Memory.ryanflag == true) {
-      var job = new Job(spawn_name,'01ff',1,'unassigned','deliverer',Game.spawns[spawn_name].room.storage.id,Game.time,'');
+      var job = new Job(spawn_name,'01ff',1,'unassigned','deliverer',Game.spawns[spawn_name].room.storage.id,RESOURCE_KEANIUM,Game.time,'');
       Hive.memory.job_queue.push(job);
       Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
 
@@ -308,7 +309,7 @@ module.exports = {
             }
             break;
           case '01ff': // 01ff - mins from stor - deliv
-            Log.debug("JQ: trying to assign " + job.id + " spawn " + job.spawn_name + " need " + job.body_type_req + " t: " + job.type + " d: " + job.dest_id);
+            Log.debug("JQ: trying to assign " + job.id + " spawn " + job.spawn_name + " need " + job.body_type_req + " t: " + job.type + " d: " + job.dest_id + " x: " + job.extra);
 
             let tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
