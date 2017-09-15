@@ -283,7 +283,7 @@ module.exports = {
       // job object prototype - spawn_name,type, priority, state, body_type, dest_id, tick_issued, tick_complete
       //    states - assigned / complete / abandoned / timed out / unasssigned
 
-      if ( job.spawn_name == spawn_name ) {
+      if ( job.spawn_name == spawn_name && job.state == 'unassigned' ) {
         switch(job.type) {
           case '01aa': //Fillfrom -- 01aa - source - harv
             Log.debug("JQ: trying to assign " + job.id + " spawn " + job.spawn_name + " t: " + job.type + " d: " + job.dest_id);
