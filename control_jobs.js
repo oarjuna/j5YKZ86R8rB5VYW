@@ -8,8 +8,6 @@ module.exports = {
     // job states - assigned / complete / abandoned / timed out
     // creep state - source_bound / dest_bound / working / idle
 
-
-
     // variables
     var container_energy_floor = 100;
     var container_energy_ceiling = deliver_carry_cap;
@@ -51,16 +49,8 @@ module.exports = {
     // now, try to assign jobs to creeps
     for ( let job of Hive.memory.job_queue) {
 
-
-
-
-
+      // TODO
       // 01ee - ground - builder
-
-      //Delivto  -- 02aa - closest cont - harv    // 02bb - send links - harv     // 02cc - spawn - deliv
-      //Delivto  -- 02dd - tower - deliv          // 02ee - storage - deliv       // 02ff - controller - upgrader
-      //Delivto  -- 00gg - mins to stor - deliv   // 02hh - mins to term - deliv  //
-
       //Work     -- 03aa - contruct - builder     // 03bb - repair - builder
 
       // job object prototype - spawn_name,type, priority, state, body_type, dest_id, tick_issued, tick_complete
@@ -110,8 +100,9 @@ module.exports = {
           break; // END 01ff
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////   DELIVER
+//Delivto - 02bb - energy to nearest sending link - harv
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-          case '02aa': //Delivto  -- 02aa - closest cont - harv
+          case '02aa': //Delivto - 02aa - closest cont - harv
             // find creep per normal
             tmpcreep = _.find(Game.creeps, (c) =>
              ( c.memory.birthplace == job.spawn_name ) &&
@@ -139,14 +130,28 @@ module.exports = {
             }
           break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+          case '02cc': // Deliverto - 02cc - energy to spawn or extension - deliv
+          case '02dd': // Deliverto - 02dd - energy to tower - deliv
+          case '02ee': // Deliverto - 02ee - mins to storage - deliv
           case '02hh': // Deliverto - 02hh - mins to term - deliv
-            // find a creep full of the needed mineral
+            // find a creep full of the needed resource
             tmpcreep = _.find(Game.creeps, (c) =>
              ( c.memory.birthplace == job.spawn_name ) &&
              ( c.carry[job.extra] == c.carryCapacity ) &&
              ( c.memory.state == 'idle' ) &&
              ( c.memory.ryantest == true) &&
              ( c.memory.role == 'deliverer' )
+            );
+          break;
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+          case '02ff': // Deliverto - 02ff - energy to controller - upgrader
+            // find a creep full of the needed resource
+            tmpcreep = _.find(Game.creeps, (c) =>
+             ( c.memory.birthplace == job.spawn_name ) &&
+             ( c.carry[job.extra] == c.carryCapacity ) &&
+             ( c.memory.state == 'idle' ) &&
+             ( c.memory.ryantest == true) &&
+             ( c.memory.role == 'upgrader' )
             );
           break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
