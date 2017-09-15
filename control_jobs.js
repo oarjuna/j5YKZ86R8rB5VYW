@@ -317,6 +317,7 @@ module.exports = {
               ( c.memory.state == 'idle' ) &&
               ( c.memory.role == 'deliverer' )
             );
+            
             Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " assgn to "+ job.id);
             // assign the job to the creep
             tmpcreep.memory.job = job.id;
