@@ -101,7 +101,7 @@ module.exports = {
           case '01bb': // Fillfrom - 01bb - energy from container -> deliv
           case '01cc': // Fillfrom - 01cc - energy from storage   -> deliv
           case '01ff': // Fillfrom - 01ff - mins from storage     -> deliv
-          case '01gg'  // Fillfrom - 01gg - mins from cont        -> deliv
+          case '01gg':  // Fillfrom - 01gg - mins from cont        -> deliv
             // local, empty, idle, deliverer
             tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
