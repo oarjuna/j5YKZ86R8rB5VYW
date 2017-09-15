@@ -88,6 +88,7 @@ module.exports = {
 			} // END BUILD / REPAIR
 
 			if ( complete == true ) {
+				console.debug("creep task complete!")
 				// set creep state to idle
 				creep.memory.state = 'idle';
 				// mark job as complete in job_queue
