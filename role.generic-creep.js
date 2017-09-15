@@ -14,6 +14,9 @@ module.exports = {
 			var type2 = type.slice(0,2);
 			var type3 = type.slice(2);
 
+			// job specfic changes
+			if ( job.type == '01aa') { job.dest_id = creep.memory.destid; }
+
 			// get the dest object object
 			var dest_obj =Game.getObjectById(job.dest_id);
 

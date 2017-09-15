@@ -79,9 +79,6 @@ module.exports = {
               ( c.memory.role == 'harvester' ) &&
               ( c.memory.ryantest == true)
             );
-            if ( tmpcreep ) {
-              job.dest_id = tmpcreep.memory.destid;
-            }
           break; // END 01aa
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '01dd': // Fillfrom - 01dd - rec link - upgraders
@@ -101,7 +98,7 @@ module.exports = {
           case '01bb': // Fillfrom - 01bb - energy from container -> deliv
           case '01cc': // Fillfrom - 01cc - energy from storage   -> deliv
           case '01ff': // Fillfrom - 01ff - mins from storage     -> deliv
-          case '01gg':  // Fillfrom - 01gg - mins from cont        -> deliv
+          case '01gg':  // Fillfrom - 01gg - mins from cont       -> deliv
             // local, empty, idle, deliverer
             tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
