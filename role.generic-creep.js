@@ -8,7 +8,8 @@ module.exports = {
 			creep.memory.state = 'working';
 			// receive orders
 			// find your job...
-			var job = Hive.memory.job_queue[assigned_job];
+
+			var job = _.find(Hive.memory.job_queue, {'uuid' : assigned_job});
 
 			var type = job.type;
 			var type2 = type.slice(0,2);
