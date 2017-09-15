@@ -78,9 +78,10 @@ module.exports = {
     // Deliverto - 02hh - mins to term - deliv
 
     // Do I need to create jobs for:
-    // Harvesting from sources
+//######################################################################################################################
+    // Harvesting from sources and minerals
     var harvesting_jobs = _.filter(Hive.memory.job_queue, function(s) {
-      return  ( s.type == '01aa' );
+      return  ( s.type == '01aa' && s.spawn_name == spawn_name );
     });
     var harvs_needed =  _.sum(Hive.harvs_per_source[spawn_num]);
     Log.debug(spawn_name + " # of harv jobs: " + harvesting_jobs.length + " needed: " + harvs_needed )
@@ -90,6 +91,7 @@ module.exports = {
       Hive.memory.job_queue.push(job);
       Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
     }
+//######################################################################################################################
 
     // Harvesting from minerals
     // Emptying containers
