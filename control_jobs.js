@@ -336,6 +336,8 @@ module.exports = {
         Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " J_id:" + job.id + " failed to assign");
       }
 
+      tmpcreep = undefined;
+
     } // END job assignment loop
 
   } // END function
