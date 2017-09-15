@@ -4,7 +4,7 @@ module.exports = {
     var assigned_job = creep.memory.job;
 		Log.debug(creep + " GEN: " + assigned_job);
 
-		if ( assigned_job != 'undefined') {
+		if ( assigned_job != undefined) {
 			// set state to working
 			creep.memory.state = 'working';
 			// receive orders
