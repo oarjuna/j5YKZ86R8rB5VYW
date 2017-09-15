@@ -8,7 +8,7 @@ module.exports = {
     // job states - assigned / complete / abandoned / timed out
     // creep state - source_bound / dest_bound / working / idle
 
-    
+
 
     // variables
     var container_energy_floor = 100;
@@ -72,19 +72,21 @@ module.exports = {
             // find local, empty, idle, harvester, with memory.destid = job.dest_id (this is assigned at spawn)
              tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
-              ( _.sum(c.carry) == empty ) &&
+              ( _.sum(c.carry) == 0 ) &&
               ( c.memory.state == 'idle' ) &&
               ( c.memory.role == 'harvester' ) &&
-              ( c.memory.ryantest == true) &&
-              ( c.memory.destid == job.dest_id )
+              ( c.memory.ryantest == true) 
             );
+            if ( tmpcreep ) {
+              job.dest_id = tmpcreep.memory.destid;
+            }
           break; // END 01aa
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '01ff': // Fillfrom - 01ff - mins from storage - deliv
             // find a creep
             tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
-              ( _.sum(c.carry) == empty ) &&
+              ( _.sum(c.carry) == 0 ) &&
               ( c.memory.state == 'idle' ) &&
               ( c.memory.ryantest == true) &&
               ( c.memory.role == 'deliverer' )
