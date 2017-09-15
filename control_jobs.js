@@ -129,7 +129,7 @@ module.exports = {
       Memory.clearqueue = false;
       Hive.memory.job_queue = [];
     }
-    if (Memory.ryanflag == true) {
+    if (Memory.addjobs == true) {
       var job = new Job(spawn_name,'01ff',1,'unassigned','deliverer',Game.spawns[spawn_name].room.storage.id,RESOURCE_KEANIUM,Game.time,'');
       Hive.memory.job_queue.push(job);
       Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
