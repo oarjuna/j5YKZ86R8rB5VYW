@@ -22,11 +22,10 @@ module.exports = {
 			var type2 = type.slice(0,2);
 			var type3 = type.slice(2);
 
-			// get the dest_id and object
-			var dest_id = job.dest_id;
-			var dest_obj =Game.getObjectById(dest_id);
+			// get the dest object object
+			var dest_obj =Game.getObjectById(job.dest_id);
 
-			console.log("GEN: " + type + " " + type2 + " " + type3 + " " + dest_id);
+			console.log("GEN: " + type + " " + type2 + " " + type3 + " " +  job.dest_id);
 		}
 		else {
 			creep.memory.state = 'idle';
@@ -38,19 +37,19 @@ module.exports = {
 		// hits
 
 		// if the dest_obj in range
-		if(creep.pos.isNearTo(dest_obj)) { 	// harvest/transfer/withdraw/upgrade/repair dest_id
+		if(creep.pos.isNearTo(dest_obj)) { 	// harvest/transfer/withdraw/upgrade/repair dest_obj
 
 			if ( type2 == '01' ) { // FILL up
 				if ( type3 == 'aa') { // from source == harvest
 					creep.harvest(dest_obj);
 				}
 				else if ( type3 == 'ff') {
-					creep.withdraw(dest_obj, job.extra); // from the dest_id
+					creep.withdraw(dest_obj, job.extra);
 					// if container, update dest_obj.memory.working_var with amount withdrawn
 					//if ( dest_obj.structureType == STRUCTURE_CONTAINER ) { dest_obj.memory.working_var -= creep.carryCapacity; }
 				}
 				else { // everything else uses transfer
-					creep.withdraw(dest_obj, RESOURCE_ENERGY); // from the dest_id
+					creep.withdraw(dest_obj, RESOURCE_ENERGY);
 					// if container, update dest_obj.memory.working_var with amount withdrawn
 					if ( dest_obj.structureType == STRUCTURE_CONTAINER ) { dest_obj.memory.working_var -= creep.carryCapacity; }
 				}
@@ -62,13 +61,11 @@ module.exports = {
 				if ( type3 == 'ff') { // to controller == upgrade
 					creep.upgrade(dest_obj);
 				}
-
 				else if ( type3 == 'hh') { // min to storage // deliver
 					creep.transfer(dest_obj, job.extra ); // from the creep
 					// if container, update dest_obj.memory.working_var with amount transfered
 					//if ( dest_obj.structureType == STRUCTURE_CONTAINER ) { dest_obj.memory.working_var += creep.carryCapacity; }
 				}
-
 				else { // everything else uses transfer
 					creep.transfer(dest_obj, RESOURCE_ENERGY); // from the creep
 					// if container, update dest_obj.memory.working_var with amount transfered
@@ -76,7 +73,8 @@ module.exports = {
 				}
 				// if creep energy is 0
 				if ( _.sum(creep.carry); == 0 ) { var complete = true; }
-			}
+
+			} // END DELIV
 
 			else if ( type2 == '03 ') { // BUILD/REPAIR
 				if ( type3 == 'aa') { // build
@@ -90,7 +88,7 @@ module.exports = {
 				if ( type3 == 'aa' && ( dest_obj.progress == dest_obj.progressTotal ) ) { var complete = true; }
 				// else if repair is complete
 				else if ( dest_obj.hits == dest_obj.hitsMax ) { var complete = true; }
-			}
+			} // END BUILD / REPAIR
 
 			if ( complete == true ) {
 				// set creep state to idle
@@ -104,7 +102,7 @@ module.exports = {
 			}
 		} // END is near to destination
 		else {
-			// else move towards dest_id
+			// else move towards dest_obj
 			creep.moveTo(dest_obj);
 		} // END move
 
