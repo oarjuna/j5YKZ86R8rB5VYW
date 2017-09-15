@@ -8,11 +8,9 @@ module.exports = {
 			// set state to working
 			creep.memory.state = 'working';
 			// receive orders
-			// find your job...
-			var job = _.find(Hive.memory.job_queue,  function(o) { return o.id == assigned_job; }); // TODO. this is the prob
-
+			// find your job
+			var job = _.find(Hive.memory.job_queue,  function(o) { return o.id == assigned_job; }); // TODO? 
 			var type = job.type;
-			//var type = '02hh';
 			var type2 = type.slice(0,2);
 			var type3 = type.slice(2);
 
