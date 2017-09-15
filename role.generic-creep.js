@@ -10,6 +10,7 @@ module.exports = {
 			// receive orders
 			// find your job
 			var job = _.find(Hive.memory.job_queue,  function(o) { return o.id == assigned_job; }); // TODO?
+			console.log("XXX: " + job);
 			var type = job.type;
 			var type2 = type.slice(0,2);
 			var type3 = type.slice(2);
