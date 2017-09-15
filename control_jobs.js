@@ -50,11 +50,9 @@ module.exports = {
     for ( let job of Hive.memory.job_queue) {
 
       // TODO
-      // 01ee - ground - builder
-      //Work     -- 03aa - contruct - builder     // 03bb - repair - builder
-
-      // job object prototype - spawn_name,type, priority, state, body_type, dest_id, tick_issued, tick_complete
-      //    states - assigned / complete / abandoned / timed out / unasssigned
+      //Fillfrom - 01ee - ground - builder
+      //Work - 03aa - contruct - builder
+      //Work - 03bb - repair - builder
 
       if ( job.spawn_name == spawn_name && job.state == 'unassigned' ) {
         Log.debug("JQ: trying to assign " + job.id + " spawn " + job.spawn_name + " need " + job.body_type_req + " t: " + job.type + " d: " + job.dest_id + " x: " + job.extra);
@@ -100,9 +98,9 @@ module.exports = {
           break; // END 01ff
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////   DELIVER
-//Delivto - 02bb - energy to nearest sending link - harv
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-          case '02aa': //Delivto - 02aa - closest cont - harv
+          case '02aa': //Delivto - 02aa - energy to closest cont - harv
+          case '02bb': //Delivto - 02bb - energy to nearest sending link - harv
             // find creep per normal
             tmpcreep = _.find(Game.creeps, (c) =>
              ( c.memory.birthplace == job.spawn_name ) &&
@@ -111,12 +109,24 @@ module.exports = {
              ( c.memory.ryantest == true) &&
              ( c.memory.role == 'harvester' )
             );
+
             if ( tmpcreep != undefined ) {
-              // Find nearby containers with enough space for a full drop off
-              let near_cont = tmpcreep.pos.findClosestByPath(FIND_STRUCTURES, {
-                  filter: (s) => (
-                    ( s.structureType == STRUCTURE_CONTAINER && _.sum(s.store) <= s.storeCapacity - harvester_carry_cap)
-              )});
+              // Find nearby structures with enough space for a full drop off
+
+              // Find different structuers based on job type
+              if ( job.type == '02aa' ) {
+                let near_cont = tmpcreep.pos.findClosestByPath(FIND_STRUCTURES, {
+                    filter: (s) => (
+                      ( s.structureType == STRUCTURE_CONTAINER && _.sum(s.store) <= s.storeCapacity - harvester_carry_cap)
+                )});
+              }
+              else if ( job.type == '02bb' ){
+                let near_cont = tmpcreep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
+                    filter: (s) => (
+                      ( s.structureType == STRUCTURE_LINK && s.energy <= s.storeCapacity - harvester_carry_cap )
+                )});
+              }
+
               if ( near_cont != undefined ) {
                 // set job dest_id to container id
                 job.dest_id = near_cont.id;
