@@ -11,9 +11,9 @@ module.exports = function() {
   StructureSpawn.prototype.createCustomCreep =
   function(energy_avail, roleName, dest, birthplace,return_id) {
 
-    //if ( birthplace == 'Spawn1' && roleName == 'harvester') { var ryantest = true; }
-    //else { var ryantest = false; }
-var ryantest = false;
+    if ( birthplace == 'Spawn1' && roleName == 'harvester') { var ryantest = true; }
+    else { var ryantest = false; }
+    //var ryantest = false;
     // 300 - 549 energy_avail --- initial spawn
     if ( energy_avail <= 550 ) {
       if      (roleName == 'harvester') { var body = [ WORK, WORK, MOVE, CARRY ]; } // 250
