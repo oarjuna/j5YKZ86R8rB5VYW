@@ -9,7 +9,7 @@ module.exports = {
 			creep.memory.state = 'working';
 			// receive orders
 			// find your job...
-			var job = _.find(Hive.memory.job_queue,  function(o) { return o.uuid == assigned_job; }); // TODO. this is the prob
+			var job = _.find(Hive.memory.job_queue,  function(o) { return o.id == assigned_job; }); // TODO. this is the prob
 
 			var type = job.type;
 			//var type = '02hh';
