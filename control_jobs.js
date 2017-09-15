@@ -285,7 +285,7 @@ module.exports = {
       if ( job.spawn_name == spawn_name ) {
         switch(job.type) {
           case '01aa': //Fillfrom -- 01aa - source - harv
-            Log.debug("JQ: trying to assign " + spawn_name + " id " + job.id + " t: " + job.type + " d: " + job.dest_id);
+            Log.debug("JQ: trying to assign " + job.id + " spawn " + job.spawn_name + " t: " + job.type + " d: " + job.dest_id);
 
             // find local, empty, idle, harvester, with memory.destid = job.dest_id (this is assigned at spawn)
             let creep = _.find(Game.creeps, (c) =>
