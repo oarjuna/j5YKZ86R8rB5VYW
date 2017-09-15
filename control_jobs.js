@@ -76,8 +76,8 @@ module.exports = {
     // now, try to assign jobs to creeps
     for ( let job of Hive.memory.job_queue) {
 
-      //Fillfrom -- 01aa - source - harv          // 01bb - container - deliv     // 01cc - storage - deliv/upgraders
-      //Fillfrom -- 01dd - rec link - upgraders   // 01ee - ground - builder      // 01ff - mins from stor - deliv
+      //Fillfrom -- 01aa - resource from source - harv          // 01bb - energy from container - deliv     // 01cc - energy from storage - deliv/upgraders
+      //Fillfrom -- 01dd - rec link - upgraders   // 01ee - ground - builder      // 01ff - mins from storage - deliv
       //Fillfrom -- 00gg - mins from cont - deliv //
 
       //Delivto  -- 02aa - closest cont - harv    // 02bb - send links - harv     // 02cc - spawn - deliv
@@ -105,7 +105,7 @@ module.exports = {
             );
           break; // END 01aa
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-          case '01ff': // Fillfrom - 01ff - mins from stor - deliv
+          case '01ff': // Fillfrom - 01ff - mins from storage - deliv
             // find a creep
             tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
