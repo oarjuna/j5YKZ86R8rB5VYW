@@ -1,5 +1,5 @@
 module.exports = {
-	run: function(Hive) {
+	run: function(creep,Hive) {
 
     var assigned_job = creep.memory.job;
 
