@@ -1,13 +1,5 @@
 module.exports = {
 	run: function(Hive) {
-		// creep states - source_bound / dest_bound / working / idle
-		// job object prototype - type, priority, state, body_type, dest_id, tick_issued, tick_complete
-
-		//Fillfrom -- 01aa - source - harv          // 01bb - container - deliv     // 01cc - storage - deliv/upgraders
-		//Fillfrom -- 01dd - rec link - upgraders   // 01ee - ground - builder
-		//Delivto  -- 02aa - closest cont - harv    // 02bb - send links - harv     // 02cc - spawn - deliv
-		//Delivto  -- 02dd - tower - deliv          // 02ee - storage - deliv       // 02ff - controller - upgrader
-		//Work     -- 03aa - contruct - builder     // 03bb - repair - builder
 
     // idea - move to spawn for recyling when close to death
 
