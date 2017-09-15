@@ -106,7 +106,7 @@ module.exports = {
       filter: (s) =>
         (
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= 150 ) ||
-          ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= 400 ) ||
+          ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= 200 ) ||
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_LEMERGIUM] >= 400 ) ||
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_OXYGEN] >= 400 )
     )});
@@ -114,6 +114,7 @@ module.exports = {
     // foreach container found, create a pickup job
     for ( let container of res_containers) {
         Log.debug("PL: " + spawn_name + " PU "+ container + " with " + _.keys(container.store) );
+
     }
 
 //######################################################################################################################
