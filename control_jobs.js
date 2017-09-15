@@ -98,6 +98,11 @@ module.exports = {
           break; // END 01ff
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////   DELIVER
+//Delivto - 02aa - energy to closest cont - harv
+//Delivto - 02bb - energy to nearest sending link - harv
+
+// Deliverto - 02cc - energy to spawn or extension - deliv
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '02aa': //Delivto - 02aa - energy to closest cont - harv
           case '02bb': //Delivto - 02bb - energy to nearest sending link - harv
@@ -112,9 +117,9 @@ module.exports = {
 
             if ( tmpcreep != undefined ) {
               // Find nearby structures with enough space for a full drop off
-
               // Find different structuers based on job type
               if ( job.type == '02aa' ) {
+                console.log("here");
                 let near_cont = tmpcreep.pos.findClosestByPath(FIND_STRUCTURES, {
                     filter: (s) => (
                       ( s.structureType == STRUCTURE_CONTAINER && _.sum(s.store) <= s.storeCapacity - harvester_carry_cap)
