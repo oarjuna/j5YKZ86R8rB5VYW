@@ -304,7 +304,7 @@ module.exports = {
               job.state = 'assigned';
             }
             else {
-              console.log("\tJQ: " + creep + " @ " + job.spawn_name + " J_id:" + job.id + " failed to assign");
+              log.debug("\tJQ: " + creep + " @ " + job.spawn_name + " J_id:" + job.id + " failed to assign");
             }
             break;
           case '01ff': // 01ff - mins from stor - deliv
@@ -316,8 +316,6 @@ module.exports = {
               ( c.memory.state == 'idle' ) &&
               ( c.memory.role == 'deliverer' )
             );
-            
-
 
             break;
 
