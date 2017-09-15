@@ -86,7 +86,7 @@ module.exports = {
 
     // do things for each removed job
     for ( let x of removed ) {
-      console.log("JQ: " + spawn_name + " removed job " + x.id + " dest " + x.dest_id);
+      Log.debug("JQ: " + spawn_name + " removed job " + x.id + " dest " + x.dest_id);
       // if the job was timed out or abandoned, adjust any associated containers working_count
       if (( Game.time - x.tick_issued ) > job_TTL || x.state == 'abandoned' ) {
           // get the container associated with the removed job
@@ -97,7 +97,7 @@ module.exports = {
           if ( rm_container_obj.structureType == STRUCTURE_CONTAINER ) {
             // add deliver_carry_cap back to container working_count since the job did not complete
             var adjustmest = rm_container_obj.memory.working_count + deliver_carry_cap;
-            console.log("\tXX: " + spawn_name + " curr: " + rm_container_obj.memory.working_count + " ++adj: " + adjustmest);
+            Log.debug("\tXX: " + spawn_name + " curr: " + rm_container_obj.memory.working_count + " ++adj: " + adjustmest);
             rm_container_obj.memory.working_count = rm_container_obj.memory.working_count + deliver_carry_cap;
           }
       }
@@ -117,7 +117,7 @@ module.exports = {
       //c.memory.working_count = c.store[RESOURCE_ENERGY]; // debugging
       //Hive.memory.job_queue = [];
     /*  if ( c.memory.working_count > 0 ) {
-        console.log("JQ: " + spawn_name + " cont: " + c + " - total - " + c.memory.working_count);
+        Log.debug("JQ: " + spawn_name + " cont: " + c + " - total - " + c.memory.working_count);
       }
     }*/
 
@@ -126,7 +126,7 @@ module.exports = {
     if (Memory.ryanflag == true) {
       var job = new Job(spawn_name,'01ff',1,'unassigned','deliverer',Game.spawns[spawn_name].room.storage.id,Game.time,'');
       Hive.memory.job_queue.push(job);
-      console.log("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
+      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
 
       Memory.ryanflag = false;
     }
@@ -164,7 +164,7 @@ module.exports = {
         var dest = Game.getObjectById(mem_source);
         // create a job object
         var job = new Job(spawn_name,'01aa',1,'assigned','harvester',dest.id,Game.time,'');
-        console.log("JQ: " + spawn_name + " newjob " + dest.id + " job " + job.type + " j_id: " + job.id );
+        Log.debug("JQ: " + spawn_name + " newjob " + dest.id + " job " + job.type + " j_id: " + job.id );
         // push the job onto the job_queue
         Hive.memory.job_queue.push(job);
         // assign the job to the creep
@@ -183,13 +183,13 @@ module.exports = {
         while ( y.memory.working_count >= deliver_carry_cap) {
           // create a job for each container
           var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer',y.id,Game.time,'');
-          console.log("JQ: " + spawn_name + " newjob " + y + " job " + job.type + " j_id: " + job.id );
+          Log.debug("JQ: " + spawn_name + " newjob " + y + " job " + job.type + " j_id: " + job.id );
           // push the job onto the job_queue
           Hive.memory.job_queue.push(job);
           // record the desired resource state
           var adjustmest = y.memory.working_count - deliver_carry_cap;
           if ( adjustmest < 0 ) { adjustmest = 0; }
-          console.log("\tXX: " + spawn_name + " id: " + y.id + " curr: " + y.memory.working_count + " --adj: " + adjustmest );
+          Log.debug("\tXX: " + spawn_name + " id: " + y.id + " curr: " + y.memory.working_count + " --adj: " + adjustmest );
           y.memory.working_count = y.memory.working_count - deliver_carry_cap;
           if ( y.memory.working_count < 0 ) { y.memory.working_count = 0;  }
         }
@@ -227,15 +227,15 @@ module.exports = {
           filter: (s) => ( // this should use s.memory.working count -- need to setup memory for links
             ( s.structureType == STRUCTURE_LINK && s.id != rec_link && s.energy < s.energyCapacity - link_energy_celiing )
         )});
-        console.log("JQ: full harv: " + harv);
+        Log.debug("JQ: full harv: " + harv);
 
         if ( structure_link[0] != undefined ) {
-          console.log("\t link : full harv dest: " + structure_link[0]);
+          Log.debug("\t link : full harv dest: " + structure_link[0]);
           var dest = structure_link[0];
 
         }
         else if ( container != undefined ) {
-          console.log("\t cont: full harv dest: " + container);
+          Log.debug("\t cont: full harv dest: " + container);
           var dest = container;
         }
         else {
@@ -244,7 +244,7 @@ module.exports = {
         // create a new job
         if ( dest != undefined ) {
           var job = new Job(spawn_name,'02aa',1,'assigned','harvester',dest.id,Game.time,'');
-          console.log("JQ: " + spawn_name + " newjob " + dest.id + " job " + job.type + " j_id: " + job.id );
+          Log.debug("JQ: " + spawn_name + " newjob " + dest.id + " job " + job.type + " j_id: " + job.id );
           // push the job onto the job_queue
           Hive.memory.job_queue.push(job);
           // assign the job to the creep
@@ -285,7 +285,7 @@ module.exports = {
       if ( job.spawn_name == spawn_name ) {
         switch(job.type) {
           case '01aa': //Fillfrom -- 01aa - source - harv
-            console.log("JQ: trying to assign " + spawn_name + " id " + job.id + " t: " + job.type + " d: " + job.dest_id);
+            Log.debug("JQ: trying to assign " + spawn_name + " id " + job.id + " t: " + job.type + " d: " + job.dest_id);
 
             // find local, empty, idle, harvester, with memory.destid = job.dest_id (this is assigned at spawn)
             let creep = _.find(Game.creeps, (c) =>
@@ -297,7 +297,7 @@ module.exports = {
             );
 
             if ( creep != undefined ) {
-              console.log("\tJQ: " + creep + " @ " + job.spawn_name + " assgn to "+ job.id);
+              Log.debug("\tJQ: " + creep + " @ " + job.spawn_name + " assgn to "+ job.id);
               // assign the job to the creep
               creep.memory.job = job.id;
               // mark the job as assigned
