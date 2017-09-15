@@ -113,7 +113,7 @@ module.exports = {
 
     // foreach container found, create a pickup job
     for ( let container of res_containers) {
-        Log.debug("PL: " + container " with " + _.foreach(container.store));
+        Log.debug("PL: " + container + " with " + _.foreach(container.store) );
     }
 
 //######################################################################################################################
