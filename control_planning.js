@@ -114,7 +114,7 @@ module.exports = {
     if ( res_containers.length > 0) {
       // foreach container needing pickup, see if there is a job already
       for ( let x of res_containers ) {
-        Log.debug("PL: " + x + " R "+ _.keys(x.store, function(o) { return o[0];} ));
+        Log.debug("PL: " + x + " R "+ _.keys(x.store, function(o) { return o > 0;} ));
         var foo = _.filter(Hive.memory.job_queue, function(s) {
           return  (
             ( s.type == '01bb' || s.type == '01jj' ) &&
