@@ -46,7 +46,7 @@ module.exports = {
 				else { // everything else uses transfer
 					creep.withdraw(dest_obj, RESOURCE_ENERGY);
 					// if container, update dest_obj.memory.working_var with amount withdrawn
-					if ( dest_obj.structureType == STRUCTURE_CONTAINER ) { dest_obj.memory.working_var -= creep.carryCapacity; }
+					//if ( dest_obj.structureType == STRUCTURE_CONTAINER ) { dest_obj.memory.working_var -= creep.carryCapacity; }
 				}
 				// creep energy is full
 				if ( _.sum(creep.carry) == creep.carryCapacity ) { var complete = true; }
