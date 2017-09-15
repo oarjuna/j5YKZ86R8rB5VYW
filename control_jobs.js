@@ -187,6 +187,8 @@ module.exports = {
           tmpcreep.memory.job = job.id;
           // mark the job as assigned
           job.state = 'assigned';
+          // mark the creep as working
+          tmpcreep.memory.state = 'assigned';
         }
         else {
           // if not
