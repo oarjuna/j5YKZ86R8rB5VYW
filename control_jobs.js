@@ -285,6 +285,7 @@ module.exports = {
 
       if ( job.spawn_name == spawn_name && job.state == 'unassigned' ) {
         switch(job.type) {
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '01aa': //Fillfrom -- 01aa - source - harv
             Log.debug("JQ: trying to assign " + job.id + " spawn " + job.spawn_name + " t: " + job.type + " d: " + job.dest_id);
 
@@ -307,7 +308,8 @@ module.exports = {
             else {
               Log.debug("\tJQ: " + creep + " @ " + job.spawn_name + " J_id:" + job.id + " failed to assign");
             }
-            break;
+          break; // END 01aa
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '01ff': // 01ff - mins from stor - deliv
             Log.debug("JQ: trying to assign " + job.id + " spawn " + job.spawn_name + " need " + job.body_type_req + " t: " + job.type + " d: " + job.dest_id + " x: " + job.extra);
 
@@ -325,10 +327,13 @@ module.exports = {
               job.state = 'assigned';
             }
             else {
-              Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " J_id:" + job.id + " failed to assign");              
+              Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " J_id:" + job.id + " failed to assign");
             }
+          break; // END 01ff
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            break;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         } // END switch block
       } // END spawn_name check
