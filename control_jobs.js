@@ -109,12 +109,13 @@ module.exports = {
               );
           break; // END 01ff
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////   DELIVER
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '02aa': //Delivto  -- 02aa - closest cont - harv
             // find creep per normal
-            min_needed = job.extra; // energy
             tmpcreep = _.find(Game.creeps, (c) =>
              ( c.memory.birthplace == job.spawn_name ) &&
-             ( c.carry[min_needed] > 0 ) &&
+             ( c.carry[job.extra] > 0 ) &&
              ( c.memory.state == 'idle' ) &&
              ( c.memory.ryantest == true) &&
              ( c.memory.role == 'harvester' )
@@ -140,10 +141,9 @@ module.exports = {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '02hh': // Deliverto - 02hh - mins to term - deliv
             // find a creep full of the needed mineral
-            min_needed = job.extra;
             tmpcreep = _.find(Game.creeps, (c) =>
              ( c.memory.birthplace == job.spawn_name ) &&
-             ( c.carry[min_needed] == c.carryCapacity ) &&
+             ( c.carry[job.extra] == c.carryCapacity ) &&
              ( c.memory.state == 'idle' ) &&
              ( c.memory.ryantest == true) &&
              ( c.memory.role == 'deliverer' )
