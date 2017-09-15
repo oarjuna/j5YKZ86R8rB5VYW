@@ -1,7 +1,7 @@
 var jobcontrol = require('control_jobs');
 var towercontrol = require('control_towers');
 var linkcontrol = require('control_links');
-var rolePlan = require('control_planning');
+var plancontrol = require('control_planning');
 
 module.exports = {
     /*
@@ -154,6 +154,9 @@ module.exports = {
 
     // run the links
     linkcontrol.run(spawn_num,Hive);
+
+    // run the planner
+    plancontrol.run(spawn_num,Hive);
 
     // run job control
     jobcontrol.run(spawn_num,Hive);
