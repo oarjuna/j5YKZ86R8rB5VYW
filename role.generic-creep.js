@@ -20,7 +20,7 @@ module.exports = {
 			// get the dest object object
 			var dest_obj =Game.getObjectById(job.dest_id);
 
-			console.log("GEN: " + type + " " + type2 + " " + type3 + " " +  job.dest_id);
+			//console.log("GEN: " + type + " " + type2 + " " + type3 + " " +  job.dest_id);
 		}
 		else {
 			creep.memory.state = 'idle';
