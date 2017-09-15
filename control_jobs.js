@@ -304,7 +304,7 @@ module.exports = {
             );
           break; // END 01aa
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-          case '01ff': // 01ff - mins from stor - deliv
+          case '01ff': // Fillfrom - 01ff - mins from stor - deliv
             // find a creep
             tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
@@ -314,7 +314,7 @@ module.exports = {
               );
           break; // END 01ff
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-          case '02hh': // 02hh - mins to term - deliv
+          case '02hh': // Deliverto - 02hh - mins to term - deliv
             // find a creep full of the needed mineral
             let min_needed = job.extra;
             tmpcreep = _.find(Game.creeps, (c) =>
