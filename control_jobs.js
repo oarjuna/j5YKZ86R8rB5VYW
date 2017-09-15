@@ -317,12 +317,17 @@ module.exports = {
               ( c.memory.state == 'idle' ) &&
               ( c.memory.role == 'deliverer' )
             );
-            
-            Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " assgn to "+ job.id);
-            // assign the job to the creep
-            tmpcreep.memory.job = job.id;
-            // mark the job as assigned
-            job.state = 'assigned';
+            if ( tmpcreep != undefined) {
+              Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " assgn to "+ job.id);
+              // assign the job to the creep
+              tmpcreep.memory.job = job.id;
+              // mark the job as assigned
+              job.state = 'assigned';
+            }
+            else {
+              Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " J_id:" + job.id + " failed to assign");              
+            }
+
             break;
 
         } // END switch block
