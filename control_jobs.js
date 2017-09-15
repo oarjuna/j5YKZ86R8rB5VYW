@@ -304,11 +304,11 @@ module.exports = {
               job.state = 'assigned';
             }
             else {
-              log.debug("\tJQ: " + creep + " @ " + job.spawn_name + " J_id:" + job.id + " failed to assign");
+              Log.debug("\tJQ: " + creep + " @ " + job.spawn_name + " J_id:" + job.id + " failed to assign");
             }
             break;
           case '01ff': // 01ff - mins from stor - deliv
-            log.debug("JQ: trying to assign " + spawn_name + " id " + job.id + " t: " + job.type + " d: " + job.dest_id);
+            Log.debug("JQ: trying to assign " + spawn_name + " id " + job.id + " t: " + job.type + " d: " + job.dest_id);
 
             let tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
