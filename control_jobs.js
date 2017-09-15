@@ -123,7 +123,7 @@ module.exports = {
                     filter: (s) => (
                       ( s.structureType == STRUCTURE_CONTAINER && _.sum(s.store) <= s.storeCapacity - harvester_carry_cap)
                 )});
-                console.debug("here" + near_cont);
+                Log.debug("here" + near_cont);
 
               }
               else if ( job.type == '02bb' ){
