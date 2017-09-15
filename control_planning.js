@@ -113,7 +113,7 @@ module.exports = {
 
     if ( res_containers.length > 0) {
       // foreach container needing pickup, see if there is a job already
-      for ( let x of res_containers ) {
+      for ( var x of res_containers ) {
 
         //Log.debug("PL: " + x + " R "+ _.keys(x.store, function(o) { return o > 0;} ));
 
