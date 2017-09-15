@@ -52,7 +52,7 @@ module.exports = {
       //Work - 03bb - repair - builder
 
       if ( job.spawn_name == spawn_name && job.state == 'unassigned' ) {
-        Log.debug("JQ: trying to assign " + job.id + " spawn " + job.spawn_name + " need " + job.body_type_req + " t: " + job.type + " d: " + job.dest_id + " x: " + job.extra);
+        //Log.debug("JQ: trying to assign " + job.id + " spawn " + job.spawn_name + " need " + job.body_type_req + " t: " + job.type + " d: " + job.dest_id + " x: " + job.extra);
         switch(job.type) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////// FILL
@@ -192,7 +192,7 @@ module.exports = {
         }
         else {
           // if not
-          Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " J_id:" + job.id + " failed to assign");
+          //Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " J_id:" + job.id + " failed to assign");
         }
         // clear the creep
         tmpcreep = undefined;
