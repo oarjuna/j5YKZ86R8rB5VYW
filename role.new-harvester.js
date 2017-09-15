@@ -93,7 +93,8 @@ module.exports = {
       creep.say('\u26CF'); //  ⛏
     console.log(creep + " dest " + source);
 		  if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
-		    creep.moveTo(source);
+		    status = creep.moveTo(source);
+        Log.debug(creep + " "+ status );
       }
 
     } // END HARVEST
