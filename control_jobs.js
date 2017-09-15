@@ -25,21 +25,6 @@ module.exports = {
 
     // do things for each removed job
     for ( let x of removed ) {
-      Log.debug("JQ: " + spawn_name + " removed job " + x.id + " dest " + x.dest_id);
-      // if the job was timed out or abandoned, adjust any associated containers working_count
-      if (( Game.time - x.tick_issued ) > job_TTL || x.state == 'abandoned' ) {
-          // get the container associated with the removed job
-          let rm_container_id = x.dest_id;
-          // get its object
-          let rm_container_obj = Game.getObjectById(rm_container_id);
-          // if the obj is a container
-          if ( rm_container_obj.structureType == STRUCTURE_CONTAINER ) { // TODO - errors here occassinally?
-            // add deliver_carry_cap back to container working_count since the job did not complete
-            var adjustmest = rm_container_obj.memory.working_count + deliver_carry_cap;
-            Log.debug("\tXX: " + spawn_name + " curr: " + rm_container_obj.memory.working_count + " ++adj: " + adjustmest);
-            rm_container_obj.memory.working_count = rm_container_obj.memory.working_count + deliver_carry_cap;
-          }
-      }
       // find any creep with this job's id still assigned and remove it from their memory.job // TODO
     }
 
@@ -175,7 +160,7 @@ module.exports = {
             // find a creep full of the needed resource
             tmpcreep = _.find(Game.creeps, (c) =>
              ( c.memory.birthplace == job.spawn_name ) &&
-             ( c.spawning != true ) && 
+             ( c.spawning != true ) &&
              ( c.carry[job.extra] == c.carryCapacity ) &&
              ( c.memory.state == 'idle' ) &&
              ( c.memory.ryantest == true) &&
