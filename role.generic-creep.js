@@ -64,7 +64,7 @@ module.exports = {
 					if ( dest_obj.structureType == STRUCTURE_CONTAINER ) { dest_obj.memory.working_var += creep.carryCapacity; }
 				}
 				// if creep energy is 0
-				if ( _.sum(creep.carry); == 0 ) { var complete = true; }
+				if ( _.sum(creep.carry) == 0 ) { var complete = true; }
 
 			} // END DELIV
 
