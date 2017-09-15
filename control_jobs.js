@@ -300,6 +300,7 @@ module.exports = {
               ( _.sum(c.carry) == empty ) &&
               ( c.memory.state == 'idle' ) &&
               ( c.memory.role == 'harvester' ) &&
+              ( c.memory.ryantest == true) &&
               ( c.memory.destid == job.dest_id )
             );
           break; // END 01aa
@@ -310,6 +311,7 @@ module.exports = {
               ( c.memory.birthplace == job.spawn_name ) &&
               ( _.sum(c.carry) == empty ) &&
               ( c.memory.state == 'idle' ) &&
+              ( c.memory.ryantest == true) &&
               ( c.memory.role == 'deliverer' )
               );
           break; // END 01ff
@@ -321,6 +323,7 @@ module.exports = {
              ( c.memory.birthplace == job.spawn_name ) &&
              ( _.sum(c.carry[min_needed]) == c.carryCapacity ) &&
              ( c.memory.state == 'idle' ) &&
+             ( c.memory.ryantest == true) &&
              ( c.memory.role == 'deliverer' )
             );
           break;
