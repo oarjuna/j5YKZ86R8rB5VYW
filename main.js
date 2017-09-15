@@ -22,7 +22,7 @@ var roleGeneric = require('role.generic-creep');
 var stats = require('screepsplus');
 var general = require('role.general');
 
-var ryanflag = false;
+global.Log = require('Log')
 
 // START
 module.exports.loop = function () {
