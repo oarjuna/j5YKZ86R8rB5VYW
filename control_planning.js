@@ -83,8 +83,10 @@ module.exports = {
     var harvesting_jobs = _.filter(Hive.memory.job_queue, function(s) {
       return  ( s.type == '01aa' && s.spawn_name == spawn_name );
     });
+    // count the number of total # of harvs each room will spawn
     var harvs_needed =  _.sum(Hive.harvs_per_source[spawn_num]);
-    Log.debug(spawn_name + " # of harv jobs: " + harvesting_jobs.length + " needed: " + harvs_needed )
+
+    // if we have less jobs than harvs_needed
     if ( harvesting_jobs.length < harvs_needed ) {
       // spawn a generic harvesting job
       var job = new Job(spawn_name,'01aa',1,'unassigned','harvester','default',RESOURCE_ENERGY,Game.time,'');
