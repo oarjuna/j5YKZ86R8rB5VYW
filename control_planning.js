@@ -105,15 +105,23 @@ module.exports = {
     var res_containers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
       filter: (s) =>
         (
-          ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= 150 ) ||
-          ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= 200 ) ||
+          ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= 400 ) ||
+          ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= 400 ) ||
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_LEMERGIUM] >= 400 ) ||
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_OXYGEN] >= 400 )
     )});
 
-    // foreach container found, create a pickup job
-    for ( let container of res_containers) {
-        Log.debug("PL: " + spawn_name + " PU "+ container + " with " + _.keys(container.store) );
+    // get the number of outstanding 01bb && 01jj orders - use this to deltermine need to spawn another job
+    var num_pickup_jobs = _.filter(Hive.memory.job_queue, function(s) {
+      return  ( ( s.type == '01bb' || s.type == '01jj' ) && s.spawn_name == spawn_name );
+    });
+
+    // get the number of containers needing pickup
+    var num_jobs_needed = res_containers.length;
+
+    //
+    if ( num_pickup_jobs < num_jobs_needed ) {
+      // spawn a pickup job
 
     }
 
