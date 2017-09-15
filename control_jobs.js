@@ -44,7 +44,7 @@ module.exports = {
     var deliver_carry_cap = 400;
     var harvester_carry_cap = 150;
     var job_TTL = 1000;
-    var tmpcreep;
+    var tmpcreep, min_needed;
 
 
     // when a job is completed, times out, or is abandoned, remove it from the job_queue
@@ -118,7 +118,7 @@ module.exports = {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '02hh': // Deliverto - 02hh - mins to term - deliv
             // find a creep full of the needed mineral
-            let min_needed = job.extra;
+            min_needed = job.extra;
             tmpcreep = _.find(Game.creeps, (c) =>
              ( c.memory.birthplace == job.spawn_name ) &&
              ( c.carry[min_needed] == c.carryCapacity ) &&
@@ -130,7 +130,7 @@ module.exports = {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '02aa': //Delivto  -- 02aa - closest cont - harv
             // find creep per normal
-            let min_needed = job.extra; // energy
+            min_needed = job.extra; // energy
             tmpcreep = _.find(Game.creeps, (c) =>
              ( c.memory.birthplace == job.spawn_name ) &&
              ( c.carry[min_needed] == c.carryCapacity ) &&
