@@ -29,14 +29,14 @@ module.exports = {
         };
         this.id = this.uuid();
     }
-    
+
     // Debugging - clear the queue or add jobs to it
 
     if (Memory.clearqueue == true ){
       Memory.clearqueue = false;
       Hive.memory.job_queue = [];
     }
-    if (Memory.addjobs == true) {
+    if (Memory.addjobs_min_deliv == true) {
       var job = new Job(spawn_name,'01ff',1,'unassigned','deliverer',Game.spawns[spawn_name].room.storage.id,RESOURCE_KEANIUM,Game.time,'');
       Hive.memory.job_queue.push(job);
       Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
