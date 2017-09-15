@@ -7,7 +7,7 @@ module.exports = {
 			// set state to working
 			creep.memory.state = 'working';
 			// receive orders
-			var job = Hive.memory.job_queue[assigned_job]; 
+			var job = Hive.memory.job_queue[assigned_job];
 			var type = job.type;
 			var type2 = type.slice(0,2);
 			var type3 = type.slice(2);
@@ -46,7 +46,7 @@ module.exports = {
 					if ( dest_obj.structureType == STRUCTURE_CONTAINER ) { dest_obj.memory.working_var -= creep.carryCapacity; }
 				}
 				// creep energy is full
-				if ( _.sum(creep.carry); == creep.carryCapacity ) { var complete = true; }
+				if ( _.sum(creep.carry) == creep.carryCapacity ) { var complete = true; }
 			}
 
 			else if ( type2 == '02') { // DELIV
