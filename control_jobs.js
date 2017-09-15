@@ -134,7 +134,7 @@ module.exports = {
       Hive.memory.job_queue.push(job);
       Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
 
-      var job = new Job(spawn_name,'02hh',1,'unassigned','deliverer',Game.spawns[spawn_name].room.storage.id,RESOURCE_KEANIUM,Game.time,'');
+      var job = new Job(spawn_name,'02hh',1,'unassigned','deliverer',Game.spawns[spawn_name].room.terminal.id,RESOURCE_KEANIUM,Game.time,'');
       Hive.memory.job_queue.push(job);
       Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
       Memory.addjobs = false;
