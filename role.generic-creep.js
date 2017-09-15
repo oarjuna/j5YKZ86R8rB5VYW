@@ -3,13 +3,13 @@ module.exports = {
 
     var assigned_job = creep.memory.job;
 		Log.debug(creep + " GEN: " + assigned_job);
-		
+
 		if ( assigned_job != 'undefined') {
 			// set state to working
 			creep.memory.state = 'working';
 			// receive orders
 			// find your job...
-			var job = _.find(Hive.memory.job_queue,  function(o) { return o.uuid == assigned_job; }); // TODO.??
+			var job = _.find(Hive.memory.job_queue,  function(o) { return o.uuid == assigned_job; }); // TODO. this is the prob
 
 			var type = job.type;
 			//var type = '02hh';
