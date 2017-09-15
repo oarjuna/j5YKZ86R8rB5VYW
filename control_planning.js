@@ -111,20 +111,32 @@ module.exports = {
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_OXYGEN] >= 400 )
     )});
 
-    // get the number of outstanding 01bb && 01jj orders - use this to deltermine need to spawn another job
-    var num_pickup_jobs = _.filter(Hive.memory.job_queue, function(s) {
-      return  ( ( s.type == '01bb' || s.type == '01jj' ) && s.spawn_name == spawn_name );
-    });
+    if ( res_containers.length > 0) {
+      // foreach container needing pickup, see if there is a job already
+      for ( let x of res_containers ) {
+        Log.debug("PL: " + x + " "+ x.store);
+        var foo = _.filter(Hive.memory.job_queue, function(s) {
+          return  (
+            ( s.type == '01bb' || s.type == '01jj' ) &&
+            s.spawn_name == spawn_name &&
+            s.extra == x.store
+          );});
+      }
 
-    // get the number of containers needing pickup
-    var num_jobs_needed = res_containers.length;
+      // get the number of outstanding 01bb && 01jj orders - use this to deltermine need to spawn another job
+      var num_pickup_jobs = _.filter(Hive.memory.job_queue, function(s) {
+        return  ( ( s.type == '01bb' || s.type == '01jj' ) && s.spawn_name == spawn_name );
+      });
 
-    //
-    if ( num_pickup_jobs < num_jobs_needed ) {
-      // spawn a pickup job
-      var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer','closest',RESOURCE_ENERGY,Game.time,'');
-      //Hive.memory.job_queue.push(job);
-      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
+      // get the number of containers needing pickup
+      var num_jobs_needed = res_containers.length;
+
+      if ( num_pickup_jobs < num_jobs_needed ) {
+        // spawn a pickup job
+        var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer','closest',RESOURCE_ENERGY,Game.time,'');
+        //Hive.memory.job_queue.push(job);
+        Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
+      }
     }
 
 //######################################################################################################################
