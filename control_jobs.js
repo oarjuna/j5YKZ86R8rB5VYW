@@ -325,7 +325,7 @@ module.exports = {
              ( c.memory.birthplace == job.spawn_name ) &&
              ( _.sum(c.carry[min_needed]) == c.carryCapacity ) &&
              ( c.memory.state == 'idle' ) &&
-             //( c.memory.ryantest == true) &&
+             ( c.memory.ryantest == true) &&
              ( c.memory.role == 'deliverer' )
             );
           break;
