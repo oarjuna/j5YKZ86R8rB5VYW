@@ -17,7 +17,6 @@ module.exports = {
     var job_TTL = 1000;
     var tmpcreep, min_needed;
 
-
     // when a job is completed, times out, or is abandoned, remove it from the job_queue
     // find those jobs and remove them
     var removed = _.remove(Hive.memory.job_queue, function(s) {
@@ -70,16 +69,16 @@ module.exports = {
             // find local, empty, idle, harvester, with memory.destid = job.dest_id (this is assigned at spawn)
              tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
-              ( _.sum(c.carry) == 0 ) &&
+              ( _.sum(c.carry) < c.carryCapacity ) &&
               ( c.memory.state == 'idle' ) &&
               ( c.memory.role == 'harvester' ) &&
               ( c.memory.ryantest == true)
             );
           break; // END 01aa
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-          case '01dd': // Fillfrom - 01dd - rec link - upgraders
+          case '01dd': // Fillfrom - 01dd - closest rec link - upgraders // TODO - complete this
           case '01hh': // Fillfrom - 01hh - energy from storage - upgraders
-          case '01jj': // Fillfrom - 01jj - energy from containers - upgraders
+          case '01jj': // Fillfrom - 01jj - energy from closest containers - upgraders // TODO - complete this
           // local, empty, idle, upgrader
           tmpcreep = _.find(Game.creeps, (c) =>
             ( c.memory.birthplace == job.spawn_name ) &&
