@@ -1,9 +1,7 @@
 module.exports = {
 	run: function(Hive) {
 
-    // idea - move to spawn for recyling when close to death
-
-		var assigned_job = creep.memory.job;
+    var assigned_job = creep.memory.job;
 
 		if ( assigned_job != 'undefined') {
 			// set state to working
@@ -25,6 +23,8 @@ module.exports = {
 
 		// TODO
 		// if the creep is about to die or is taking damage, it should abandon its job.
+		// idea - move to spawn for recyling when close to death
+		
 		// TTL
 		// hits
 
