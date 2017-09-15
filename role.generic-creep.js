@@ -2,7 +2,7 @@ module.exports = {
 	run: function(creep,Hive) {
 
     var assigned_job = creep.memory.job;
-		Log.info(creep + " GEN: " + assigned_job);
+		Log.debug(creep + " GEN: " + assigned_job);
 
 		if ( assigned_job != 'undefined') {
 			// set state to working
@@ -90,7 +90,7 @@ module.exports = {
 			} // END BUILD / REPAIR
 
 			if ( complete == true ) {
-				console.debug("creep task complete!")
+				Log.debug("creep task complete!")
 				// set creep state to idle
 				creep.memory.state = 'idle';
 				// mark job as complete in job_queue
