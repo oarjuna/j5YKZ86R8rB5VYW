@@ -101,8 +101,8 @@ module.exports = {
 //######################################################################################################################
     // Emptying containers - are there containers which need to be emptied?
     // Fillfrom - 01bb - energy from container -> deliv
-    // Fillfrom - 01jj - energy from containers - upgraders ( low RCL levels need this)
-    var res_container = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
+    // Fillfrom - 01jj - energy from containers - upgraders ( low RCL levels need this) // TODO
+    var res_containers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
       filter: (s) =>
         (
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= 400 ) ||
@@ -111,17 +111,22 @@ module.exports = {
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_OXYGEN] >= 400 )
     )});
 
-
+    // foreach container found, create a pickup job
+    for ( let container of res_containers) {
+        Log.debug("PL: " + container " with " + _.foreach(container.store));
+    }
 
 //######################################################################################################################
 
-    // Filling Spawns and Extensions
-    // Filling Towers
-    // Filling Sending links
-    // Filling storage
+    // Assign idle creeps with full inventories
+    //// Filling Spawns and Extensions
+    //// Filling Towers
+    //// Filling Sending links
+    //// Filling storage
 
-    // Upgrading the Controller
-    // Bringing minerals to Terminal
+    //// Upgrading the Controller
+    //// Bringing minerals to Terminal
+
     // Building and Repairing
 
   }
