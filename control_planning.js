@@ -92,6 +92,11 @@ module.exports = {
       var job = new Job(spawn_name,'01aa',1,'unassigned','harvester','default',RESOURCE_ENERGY,Game.time,'');
       Hive.memory.job_queue.push(job);
       Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
+
+      // and the corresponding unload to nearest container job
+      var job = new Job(spawn_name,'02aa',1,'unassigned','harvester','closest',RESOURCE_ENERGY,Game.time,'');
+      Hive.memory.job_queue.push(job);
+      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
     }
 //######################################################################################################################
 
