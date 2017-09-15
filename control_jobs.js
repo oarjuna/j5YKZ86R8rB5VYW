@@ -43,6 +43,7 @@ module.exports = {
     var deliver_carry_cap = 50;
     var harvester_carry_cap = 50;
     var job_TTL = 20;
+    var tmpcreep;
 
     // detect sources to harvest
     var sources = Hive.sources[spawn_num];
@@ -289,7 +290,7 @@ module.exports = {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '01aa': //Fillfrom -- 01aa - source - harv
             // find local, empty, idle, harvester, with memory.destid = job.dest_id (this is assigned at spawn)
-            let tmpcreep = _.find(Game.creeps, (c) =>
+             tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
               ( _.sum(c.carry) == empty ) &&
               ( c.memory.state == 'idle' ) &&
@@ -311,7 +312,7 @@ module.exports = {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '01ff': // 01ff - mins from stor - deliv
 
-            let tmpcreep = _.find(Game.creeps, (c) =>
+             tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
               ( _.sum(c.carry) == empty ) &&
               ( c.memory.state == 'idle' ) &&
