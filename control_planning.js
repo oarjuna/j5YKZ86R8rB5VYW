@@ -87,7 +87,7 @@ module.exports = {
     var harvs_needed =  _.sum(Hive.harvs_per_source[spawn_num]);
 
     // if we have less jobs than harvs_needed
-    while ( harvesting_jobs.length < harvs_needed ) {
+    if ( harvesting_jobs.length < harvs_needed ) {
       // spawn a generic harvesting job
       var job = new Job(spawn_name,'01aa',1,'unassigned','harvester','default',RESOURCE_ENERGY,Game.time,'');
       Hive.memory.job_queue.push(job);
