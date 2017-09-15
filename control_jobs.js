@@ -3,11 +3,7 @@ module.exports = {
     [MinHarv,MinDeli,MinUgra,MinBuil,MinClReg,MinReHa,MinClai,MinSold,MinRepa,MinSolM,MinSolR,MinSolH] =  Hive.spawn_levels[spawn_num];
     var spawn_name = Hive.spawn_names[spawn_num];
 
-    // ----- Below here lies job control
-    // container info - actual energy / working energy
-    // job states - assigned / complete / abandoned / timed out
-    // creep state - source_bound / dest_bound / working / idle
-
+    // ----- Below here lies job assignment logic
     // variables
 /*
     var container_energy_floor = 100;
