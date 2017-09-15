@@ -321,10 +321,10 @@ module.exports = {
           case '02hh': // Deliverto - 02hh - mins to term - deliv
             // find a creep full of the needed mineral
             let min_needed = job.extra;
-            Log.warn("min--" + min_needed);
+
             tmpcreep = _.find(Game.creeps, (c) =>
              ( c.memory.birthplace == job.spawn_name ) &&
-             ( _.sum(c.carry[min_needed]) == c.carryCapacity ) &&
+             ( c.carry[min_needed] == c.carryCapacity ) &&
              ( c.memory.state == 'idle' ) &&
              ( c.memory.ryantest == true) &&
              ( c.memory.role == 'deliverer' )
