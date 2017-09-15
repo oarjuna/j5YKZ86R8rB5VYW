@@ -218,6 +218,7 @@ Creep.prototype.hasActiveBodypart = function (type) {
   	var creep = Game.creeps[name];
     //creep.memory.job = undefined;
     if (creep.memory.role == 'soldier')             { roleSoldier.run(creep); }
+      else if (creep.memory.ryantest == true ) { roleGeneric.run(creep); }
     else if (creep.memory.role == 'soldier_melee')  { roleSoldier_melee.run(creep); }
     else if (creep.memory.role == 'soldier_ranged') { roleSoldier_ranged.run(creep); }
     else if (creep.memory.role == 'soldier_healer') { roleSoldier_healer.run(creep); }
@@ -230,7 +231,7 @@ Creep.prototype.hasActiveBodypart = function (type) {
   	else if (creep.memory.role == 'repairer')       { roleRepairer.run(creep); }
   	else if (creep.memory.role == 'remote_harv')    { roleRemoteHarvester.run(creep); }
 
-    else if (creep.memory.ryantest == true ) { roleGeneric.run(creep); }
+
   }
 
   general.run(Hive);
