@@ -9,10 +9,15 @@ module.exports = {
 			creep.memory.state = 'working';
 			// receive orders
 			// find your job
-			var job = _.find(Hive.memory.job_queue,  function(o) { return o.id == assigned_job; }); // TODO? 
+			var job = _.find(Hive.memory.job_queue,  function(o) { return o.id == assigned_job; }); // TODO?
 			var type = job.type;
 			var type2 = type.slice(0,2);
 			var type3 = type.slice(2);
+
+			// are we going to the closest structure of some kind?
+			if ( dest_id == 'closest' ) {
+				
+			}
 
 			// get the dest object object
 			var dest_obj =Game.getObjectById(job.dest_id);

@@ -41,8 +41,8 @@ module.exports = {
     var tower_energy_ceiling = 250;
     var link_energy_celiing = 100;
     var empty = 0;
-    var deliver_carry_cap = 50;
-    var harvester_carry_cap = 50;
+    var deliver_carry_cap = 400;
+    var harvester_carry_cap = 150;
     var job_TTL = 1000;
     var tmpcreep;
 
@@ -76,7 +76,7 @@ module.exports = {
     // now, try to assign jobs to creeps
     for ( let job of Hive.memory.job_queue) {
 
-      //Fillfrom -- 01aa - resource from source - harv          // 01bb - energy from container - deliv     // 01cc - energy from storage - deliv/upgraders
+      //Fillfrom -- 01aa - resource from source - harv // 01bb - energy from container - deliv // 01cc - energy from storage - deliv/upgraders
       //Fillfrom -- 01dd - rec link - upgraders   // 01ee - ground - builder      // 01ff - mins from storage - deliv
       //Fillfrom -- 00gg - mins from cont - deliv //
 
@@ -126,6 +126,34 @@ module.exports = {
              ( c.memory.ryantest == true) &&
              ( c.memory.role == 'deliverer' )
             );
+          break;
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+          case '02aa': //Delivto  -- 02aa - closest cont - harv
+            // find creep per normal
+            let min_needed = job.extra; // energy
+            tmpcreep = _.find(Game.creeps, (c) =>
+             ( c.memory.birthplace == job.spawn_name ) &&
+             ( c.carry[min_needed] == c.carryCapacity ) &&
+             ( c.memory.state == 'idle' ) &&
+             ( c.memory.ryantest == true) &&
+             ( c.memory.role == 'harvester' )
+            );
+            if ( tmpcreep ) {
+              // Find nearby containers
+              let near_cont = tmpcreep.pos.findClosestByPath(FIND_STRUCTURES, {
+                  filter: (s) => (
+                    ( s.structureType == STRUCTURE_CONTAINER && _.sum(s.store) < s.storeCapacity - harvester_carry_cap)
+              )});
+              if ( near_cont ) {
+                // set job dest_id to container id
+                job.dest_id = near_cont.id;
+              }
+              else {
+                // no containers found? unset the creep.
+                tmpcreep = undefined;
+                Log.warn("JQ: creep can't find nearby container");
+              }
+            }
           break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
