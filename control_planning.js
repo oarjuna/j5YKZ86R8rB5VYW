@@ -122,7 +122,9 @@ module.exports = {
     //
     if ( num_pickup_jobs < num_jobs_needed ) {
       // spawn a pickup job
-
+      var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer','closest',RESOURCE_ENERGY,Game.time,'');
+      //Hive.memory.job_queue.push(job);
+      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
     }
 
 //######################################################################################################################
