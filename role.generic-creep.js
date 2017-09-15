@@ -44,21 +44,26 @@ module.exports = {
 				if ( type3 == 'aa') { // from source == harvest
 					creep.harvest(dest_obj);
 				}
+				else if ( type3 == 'ff') {
+					creep.withdraw(dest_obj, job.extra); // from the dest_id
+					// if container, update dest_obj.memory.working_var with amount withdrawn
+					//if ( dest_obj.structureType == STRUCTURE_CONTAINER ) { dest_obj.memory.working_var -= creep.carryCapacity; }
+				}
 				else { // everything else uses transfer
 					creep.withdraw(dest_obj, RESOURCE_ENERGY); // from the dest_id
 					// if container, update dest_obj.memory.working_var with amount withdrawn
 					if ( dest_obj.structureType == STRUCTURE_CONTAINER ) { dest_obj.memory.working_var -= creep.carryCapacity; }
 				}
 				// creep energy is full
-				if ( creep.carry.energy == creep.carryCapacity ) { var complete = true; }
+				if ( _.sum(creep.carry); == creep.carryCapacity ) { var complete = true; }
 			}
 
 			else if ( type2 == '02') { // DELIV
 				if ( type3 == 'ff') { // to controller == upgrade
 					creep.upgrade(dest_obj);
 				}
-				
-				else if ( type3 == 'gg') { // min to storage // deliver
+
+				else if ( type3 == 'hh') { // min to storage // deliver
 					creep.transfer(dest_obj, job.extra ); // from the creep
 					// if container, update dest_obj.memory.working_var with amount transfered
 					//if ( dest_obj.structureType == STRUCTURE_CONTAINER ) { dest_obj.memory.working_var += creep.carryCapacity; }
@@ -70,7 +75,7 @@ module.exports = {
 					if ( dest_obj.structureType == STRUCTURE_CONTAINER ) { dest_obj.memory.working_var += creep.carryCapacity; }
 				}
 				// if creep energy is 0
-				if ( creep.carry.energy == 0 ) { var complete = true; }
+				if ( _.sum(creep.carry); == 0 ) { var complete = true; }
 			}
 
 			else if ( type2 == '03 ') { // BUILD/REPAIR
@@ -85,26 +90,23 @@ module.exports = {
 				if ( type3 == 'aa' && ( dest_obj.progress == dest_obj.progressTotal ) ) { var complete = true; }
 				// else if repair is complete
 				else if ( dest_obj.hits == dest_obj.hitsMax ) { var complete = true; }
-
-				if ( complete == true ) {
-					// set creep state to idle
-					creep.memory.state = 'idle';
-					// mark job as complete in job_queue
-					job.state = 'complete';
-					// set jobs tick_complete
-					job.tick_complete = Game.time;
-					// null out this creep's job memory
-					creep.memory.job = undefined;
-				}
-
 			}
 
-		}
+			if ( complete == true ) {
+				// set creep state to idle
+				creep.memory.state = 'idle';
+				// mark job as complete in job_queue
+				job.state = 'complete';
+				// set jobs tick_complete
+				job.tick_complete = Game.time;
+				// null out this creep's job memory
+				creep.memory.job = undefined;
+			}
+		} // END is near to destination
 		else {
 			// else move towards dest_id
-			creep.moveTo(dest_id);
-		}
+			creep.moveTo(dest_obj);
+		} // END move
 
-
-  }
-};
+	} // END FUNCTION
+}; // END MODULE
