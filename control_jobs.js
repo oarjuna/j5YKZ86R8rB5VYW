@@ -42,7 +42,7 @@ module.exports = {
     var empty = 0;
     var deliver_carry_cap = 50;
     var harvester_carry_cap = 50;
-    var job_TTL = 10;
+    var job_TTL = 100;
     var tmpcreep;
 
     // detect sources to harvest
@@ -124,7 +124,11 @@ module.exports = {
     }*/
 
     // Debugging - clear the queue or add jobs to it
-    //Hive.memory.job_queue = [];
+
+    if (Memory.clearqueue == true ){
+      Memory.clearqueue = false;
+      Hive.memory.job_queue = [];
+    }
     if (Memory.ryanflag == true) {
       var job = new Job(spawn_name,'01ff',1,'unassigned','deliverer',Game.spawns[spawn_name].room.storage.id,RESOURCE_KEANIUM,Game.time,'');
       Hive.memory.job_queue.push(job);
