@@ -111,24 +111,24 @@ module.exports = {
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_OXYGEN] >= 400 )
     )});
 
-    if ( res_containers.length > 0) {
-      // foreach container needing pickup, see if there is a job already
-      for ( var x of res_containers ) {
+    if ( res_containers.length > 0) { // if there are containers needing pickup
+      for ( var x of res_containers ) { // for each container with stuff
+        for ( var res in x.store ) { // for each resource type in each container's store list
+          if ( x.store[res] > 0 ) { // that is not empty
+            // check to see if a pickup job for this exists
 
-        //Log.debug("PL: " + x + " R "+ _.keys(x.store, function(o) { return o > 0;} ));
+              var foo = _.filter(Hive.memory.job_queue, function(s) {
+                return  (
+                  ( s.type == '01bb' || s.type == '01jj' ) &&
+                  s.spawn_name == spawn_name &&
+                  s.extra == x.store[res]
+                );});
 
-        for ( var res in x.store ) {
-          if ( x.store[res] > 0 ) {
-            Log.debug("PL: " + x + " RES " + res + " " + x.store[res] );
+                Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex: " + foo.length );
+
+            // if not, spawn one
           }
         }
-
-        var foo = _.filter(Hive.memory.job_queue, function(s) {
-          return  (
-            ( s.type == '01bb' || s.type == '01jj' ) &&
-            s.spawn_name == spawn_name &&
-            s.extra == x.store
-          );});
       }
 
       // get the number of outstanding 01bb && 01jj orders - use this to deltermine need to spawn another job
