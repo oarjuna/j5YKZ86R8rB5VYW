@@ -119,11 +119,12 @@ module.exports = {
               // Find nearby structures with enough space for a full drop off
               // Find different structuers based on job type
               if ( job.type == '02aa' ) {
-                console.log("here");
                 let near_cont = tmpcreep.pos.findClosestByPath(FIND_STRUCTURES, {
                     filter: (s) => (
                       ( s.structureType == STRUCTURE_CONTAINER && _.sum(s.store) <= s.storeCapacity - harvester_carry_cap)
                 )});
+                console.debug("here" + near_cont);
+
               }
               else if ( job.type == '02bb' ){
                 let near_cont = tmpcreep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
