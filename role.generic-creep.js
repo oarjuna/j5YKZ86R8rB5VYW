@@ -7,7 +7,7 @@ module.exports = {
 			// set state to working
 			creep.memory.state = 'working';
 			// receive orders
-			var job = Hive.memory.job_queue[assigned_job]; // this will not work without uuid // TODO
+			var job = Hive.memory.job_queue[assigned_job]; 
 			var type = job.type;
 			var type2 = type.slice(0,2);
 			var type3 = type.slice(2);
@@ -24,7 +24,7 @@ module.exports = {
 		// TODO
 		// if the creep is about to die or is taking damage, it should abandon its job.
 		// idea - move to spawn for recyling when close to death
-		
+
 		// TTL
 		// hits
 
