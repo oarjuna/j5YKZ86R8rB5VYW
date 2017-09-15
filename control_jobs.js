@@ -297,17 +297,6 @@ module.exports = {
               ( c.memory.role == 'harvester' ) &&
               ( c.memory.destid == job.dest_id )
             );
-
-            if ( tmpcreep != undefined ) {
-              Log.debug("\tJQ: " + creep + " @ " + job.spawn_name + " assgn to "+ job.id);
-              // assign the job to the creep
-              creep.memory.job = job.id;
-              // mark the job as assigned
-              job.state = 'assigned';
-            }
-            else {
-              Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " J_id:" + job.id + " failed to assign");
-            }
           break; // END 01aa
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '01ff': // 01ff - mins from stor - deliv
