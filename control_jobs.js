@@ -138,20 +138,21 @@ module.exports = {
              ( c.memory.ryantest == true) &&
              ( c.memory.role == 'harvester' )
             );
-            if ( tmpcreep ) {
+            if ( tmpcreep != undefined ) {
               // Find nearby containers with enough space for a full drop off
               let near_cont = tmpcreep.pos.findClosestByPath(FIND_STRUCTURES, {
                   filter: (s) => (
                     ( s.structureType == STRUCTURE_CONTAINER && _.sum(s.store) <= s.storeCapacity - harvester_carry_cap)
               )});
-              if ( near_cont ) {
+              if ( near_cont != undefined ) {
                 // set job dest_id to container id
                 job.dest_id = near_cont.id;
+                Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " container found "+ job.dest_id);
               }
               else {
                 // no containers found? weird? unset the creep and warn.
                 tmpcreep = undefined;
-                Log.warn("JQ: creep can't find nearby container");
+                Log.warn("\tJQ: creep can't find nearby container");
               }
             }
           break;

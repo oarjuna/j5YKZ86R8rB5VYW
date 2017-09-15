@@ -14,11 +14,6 @@ module.exports = {
 			var type2 = type.slice(0,2);
 			var type3 = type.slice(2);
 
-			// are we going to the closest structure of some kind?
-			if ( dest_id == 'closest' ) {
-				
-			}
-
 			// get the dest object object
 			var dest_obj =Game.getObjectById(job.dest_id);
 
@@ -71,7 +66,7 @@ module.exports = {
 				else { // everything else uses transfer
 					creep.transfer(dest_obj, RESOURCE_ENERGY); // from the creep
 					// if container, update dest_obj.memory.working_var with amount transfered
-					if ( dest_obj.structureType == STRUCTURE_CONTAINER ) { dest_obj.memory.working_var += creep.carryCapacity; }
+					//if ( dest_obj.structureType == STRUCTURE_CONTAINER ) { dest_obj.memory.working_var += creep.carryCapacity; }
 				}
 				// if creep energy is 0
 				if ( _.sum(creep.carry) == 0 ) { var complete = true; }
