@@ -318,6 +318,10 @@ module.exports = {
               ( c.memory.role == 'deliverer' )
             );
             Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " assgn to "+ job.id);
+            // assign the job to the creep
+            creep.memory.job = job.id;
+            // mark the job as assigned
+            job.state = 'assigned';
             break;
 
         } // END switch block
