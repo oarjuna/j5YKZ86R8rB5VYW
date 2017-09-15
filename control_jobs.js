@@ -124,7 +124,7 @@ module.exports = {
     }*/
 
     // Debugging - clear the queue or add jobs to it
-    //Hive.memory.job_queue = [];
+    Hive.memory.job_queue = [];
     if (Memory.ryanflag == true) {
       var job = new Job(spawn_name,'01ff',1,'unassigned','deliverer',Game.spawns[spawn_name].room.storage.id,RESOURCE_KEANIUM,Game.time,'');
       Hive.memory.job_queue.push(job);
