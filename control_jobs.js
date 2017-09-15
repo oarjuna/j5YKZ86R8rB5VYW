@@ -279,6 +279,9 @@ module.exports = {
 
       //Work     -- 03aa - contruct - builder     // 03bb - repair - builder
 
+      // job object prototype - spawn_name,type, priority, state, body_type, dest_id, tick_issued, tick_complete
+      //    states - assigned / complete / abandoned / timed out / unasssigned
+
       if ( job.spawn_name == spawn_name ) {
         switch(job.type) {
           case '01aa': //Fillfrom -- 01aa - source - harv
@@ -307,14 +310,14 @@ module.exports = {
           case '01ff': // 01ff - mins from stor - deliv
             console.log("JQ: trying to assign " + spawn_name + " id " + job.id + " t: " + job.type + " d: " + job.dest_id);
 
-            // find local, empty, idle, harvester, with memory.destid = job.dest_id (this is assigned at spawn)
             let tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
               ( _.sum(c.carry) == empty ) &&
               ( c.memory.state == 'idle' ) &&
-              ( c.memory.role == 'deliverer' ) &&
-              ( c.memory.destid == job.dest_id )
+              ( c.memory.role == 'deliverer' )
             );
+            
+
 
             break;
 
