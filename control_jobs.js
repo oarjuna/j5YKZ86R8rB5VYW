@@ -284,13 +284,12 @@ module.exports = {
       //    states - assigned / complete / abandoned / timed out / unasssigned
 
       if ( job.spawn_name == spawn_name && job.state == 'unassigned' ) {
+        Log.debug("JQ: trying to assign " + job.id + " spawn " + job.spawn_name + " need " + job.body_type_req + " t: " + job.type + " d: " + job.dest_id + " x: " + job.extra);
         switch(job.type) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '01aa': //Fillfrom -- 01aa - source - harv
-            Log.debug("JQ: trying to assign " + job.id + " spawn " + job.spawn_name + " t: " + job.type + " d: " + job.dest_id);
-
             // find local, empty, idle, harvester, with memory.destid = job.dest_id (this is assigned at spawn)
-            let creep = _.find(Game.creeps, (c) =>
+            let tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
               ( _.sum(c.carry) == empty ) &&
               ( c.memory.state == 'idle' ) &&
@@ -298,7 +297,7 @@ module.exports = {
               ( c.memory.destid == job.dest_id )
             );
 
-            if ( creep != undefined ) {
+            if ( tmpcreep != undefined ) {
               Log.debug("\tJQ: " + creep + " @ " + job.spawn_name + " assgn to "+ job.id);
               // assign the job to the creep
               creep.memory.job = job.id;
@@ -306,12 +305,11 @@ module.exports = {
               job.state = 'assigned';
             }
             else {
-              Log.debug("\tJQ: " + creep + " @ " + job.spawn_name + " J_id:" + job.id + " failed to assign");
+              Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " J_id:" + job.id + " failed to assign");
             }
           break; // END 01aa
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '01ff': // 01ff - mins from stor - deliv
-            Log.debug("JQ: trying to assign " + job.id + " spawn " + job.spawn_name + " need " + job.body_type_req + " t: " + job.type + " d: " + job.dest_id + " x: " + job.extra);
 
             let tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
@@ -319,7 +317,8 @@ module.exports = {
               ( c.memory.state == 'idle' ) &&
               ( c.memory.role == 'deliverer' )
             );
-            if ( tmpcreep != undefined) {
+
+            if ( tmpcreep != undefined ) {
               Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " assgn to "+ job.id);
               // assign the job to the creep
               tmpcreep.memory.job = job.id;
@@ -331,8 +330,10 @@ module.exports = {
             }
           break; // END 01ff
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+          case '02hh': // 02hh - mins to term - deliv
 
 
+          break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         } // END switch block
