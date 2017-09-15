@@ -130,6 +130,11 @@ module.exports = {
       Hive.memory.job_queue.push(job);
       Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
 
+      var job = new Job(spawn_name,'02hh',1,'unassigned','deliverer',Game.spawns[spawn_name].room.storage.id,RESOURCE_KEANIUM,Game.time,'');
+      Hive.memory.job_queue.push(job);
+      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
+
+
       Memory.ryanflag = false;
     }
 
@@ -310,10 +315,11 @@ module.exports = {
           break; // END 01ff
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '02hh': // 02hh - mins to term - deliv
-            // find a creep
+            // find a creep full of the needed mineral
+            let min_needed = job.extra;
             tmpcreep = _.find(Game.creeps, (c) =>
              ( c.memory.birthplace == job.spawn_name ) &&
-             ( _.sum(c.carry) == empty ) &&
+             ( _.sum(c.carry[min_needed]) == c.carryCapacity ) &&
              ( c.memory.state == 'idle' ) &&
              ( c.memory.role == 'deliverer' )
             );
