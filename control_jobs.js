@@ -311,34 +311,40 @@ module.exports = {
           break; // END 01aa
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '01ff': // 01ff - mins from stor - deliv
-
-             tmpcreep = _.find(Game.creeps, (c) =>
+            // find a creep
+            tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
               ( _.sum(c.carry) == empty ) &&
               ( c.memory.state == 'idle' ) &&
               ( c.memory.role == 'deliverer' )
-            );
-
-            if ( tmpcreep != undefined ) {
-              Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " assgn to "+ job.id);
-              // assign the job to the creep
-              tmpcreep.memory.job = job.id;
-              // mark the job as assigned
-              job.state = 'assigned';
-            }
-            else {
-              Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " J_id:" + job.id + " failed to assign");
-            }
+              );
           break; // END 01ff
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '02hh': // 02hh - mins to term - deliv
-
-
+            // find a creep
+            tmpcreep = _.find(Game.creeps, (c) =>
+             ( c.memory.birthplace == job.spawn_name ) &&
+             ( _.sum(c.carry) == empty ) &&
+             ( c.memory.state == 'idle' ) &&
+             ( c.memory.role == 'deliverer' )
+            );
           break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         } // END switch block
       } // END spawn_name check
+
+      if ( tmpcreep != undefined ) {
+        Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " assgn to "+ job.id);
+        // assign the job to the creep
+        tmpcreep.memory.job = job.id;
+        // mark the job as assigned
+        job.state = 'assigned';
+      }
+      else {
+        Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " J_id:" + job.id + " failed to assign");
+      }
+
     } // END job assignment loop
 
   } // END function
