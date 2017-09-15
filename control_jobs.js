@@ -308,7 +308,7 @@ module.exports = {
             console.log("JQ: trying to assign " + spawn_name + " id " + job.id + " t: " + job.type + " d: " + job.dest_id);
 
             // find local, empty, idle, harvester, with memory.destid = job.dest_id (this is assigned at spawn)
-            let creep = _.find(Game.creeps, (c) =>
+            let tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
               ( _.sum(c.carry) == empty ) &&
               ( c.memory.state == 'idle' ) &&
