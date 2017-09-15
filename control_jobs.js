@@ -33,7 +33,7 @@ module.exports = {
           // get its object
           let rm_container_obj = Game.getObjectById(rm_container_id);
           // if the obj is a container
-          if ( rm_container_obj.structureType == STRUCTURE_CONTAINER ) {
+          if ( rm_container_obj.structureType == STRUCTURE_CONTAINER ) { // TODO - errors here occassinally?
             // add deliver_carry_cap back to container working_count since the job did not complete
             var adjustmest = rm_container_obj.memory.working_count + deliver_carry_cap;
             Log.debug("\tXX: " + spawn_name + " curr: " + rm_container_obj.memory.working_count + " ++adj: " + adjustmest);
@@ -69,6 +69,7 @@ module.exports = {
             // find local, empty, idle, harvester, with memory.destid = job.dest_id (this is assigned at spawn)
              tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
+              ( c.spawning != true ) &&
               ( _.sum(c.carry) < c.carryCapacity ) &&
               ( c.memory.state == 'idle' ) &&
               ( c.memory.role == 'harvester' ) &&
@@ -82,6 +83,7 @@ module.exports = {
           // local, empty, idle, upgrader
           tmpcreep = _.find(Game.creeps, (c) =>
             ( c.memory.birthplace == job.spawn_name ) &&
+            ( c.spawning != true ) &&
             ( _.sum(c.carry) == 0 ) &&
             ( c.memory.state == 'idle' ) &&
             ( c.memory.ryantest == true) &&
@@ -96,6 +98,7 @@ module.exports = {
             // local, empty, idle, deliverer
             tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
+              ( c.spawning != true ) &&
               ( _.sum(c.carry) == 0 ) &&
               ( c.memory.state == 'idle' ) &&
               ( c.memory.ryantest == true) &&
@@ -117,6 +120,7 @@ module.exports = {
             // find creep per normal
             tmpcreep = _.find(Game.creeps, (c) =>
              ( c.memory.birthplace == job.spawn_name ) &&
+             ( c.spawning != true ) &&
              ( c.carry[job.extra] > 0 ) &&
              ( c.memory.state == 'idle' ) &&
              ( c.memory.ryantest == true) &&
@@ -159,6 +163,7 @@ module.exports = {
             // find a creep full of the needed resource
             tmpcreep = _.find(Game.creeps, (c) =>
              ( c.memory.birthplace == job.spawn_name ) &&
+             ( c.spawning != true ) &&
              ( c.carry[job.extra] == c.carryCapacity ) &&
              ( c.memory.state == 'idle' ) &&
              ( c.memory.ryantest == true) &&
@@ -170,6 +175,7 @@ module.exports = {
             // find a creep full of the needed resource
             tmpcreep = _.find(Game.creeps, (c) =>
              ( c.memory.birthplace == job.spawn_name ) &&
+             ( c.spawning != true ) && 
              ( c.carry[job.extra] == c.carryCapacity ) &&
              ( c.memory.state == 'idle' ) &&
              ( c.memory.ryantest == true) &&
