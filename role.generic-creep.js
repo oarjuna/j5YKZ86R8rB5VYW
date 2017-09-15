@@ -57,6 +57,13 @@ module.exports = {
 				if ( type3 == 'ff') { // to controller == upgrade
 					creep.upgrade(dest_obj);
 				}
+				
+				else if ( type3 == 'gg') { // min to storage // deliver
+					creep.transfer(dest_obj, job.extra ); // from the creep
+					// if container, update dest_obj.memory.working_var with amount transfered
+					//if ( dest_obj.structureType == STRUCTURE_CONTAINER ) { dest_obj.memory.working_var += creep.carryCapacity; }
+				}
+
 				else { // everything else uses transfer
 					creep.transfer(dest_obj, RESOURCE_ENERGY); // from the creep
 					// if container, update dest_obj.memory.working_var with amount transfered
