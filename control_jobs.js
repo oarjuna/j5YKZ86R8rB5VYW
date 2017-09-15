@@ -51,9 +51,9 @@ module.exports = {
     // now, try to assign jobs to creeps
     for ( let job of Hive.memory.job_queue) {
 
-      //Fillfrom -- 01aa - resource from source - harv // 01bb - energy from container - deliv // 01cc - energy from storage - deliv/upgraders
-      //Fillfrom -- 01dd - rec link - upgraders   // 01ee - ground - builder      // 01ff - mins from storage - deliv
-      //Fillfrom -- 00gg - mins from cont - deliv //
+
+      // 01cc - energy from storage - deliv/upgraders //Fillfrom -- 01dd - rec link - upgraders
+      // 01ee - ground - builder      // 01ff - mins from storage - deliv //Fillfrom -- 00gg - mins from cont - deliv //
 
       //Delivto  -- 02aa - closest cont - harv    // 02bb - send links - harv     // 02cc - spawn - deliv
       //Delivto  -- 02dd - tower - deliv          // 02ee - storage - deliv       // 02ff - controller - upgrader
@@ -68,7 +68,7 @@ module.exports = {
         Log.debug("JQ: trying to assign " + job.id + " spawn " + job.spawn_name + " need " + job.body_type_req + " t: " + job.type + " d: " + job.dest_id + " x: " + job.extra);
         switch(job.type) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-          case '01aa': //Fillfrom -- 01aa - source - harv
+          case '01aa': //Fillfrom -- 01aa - resource -> harv
             // find local, empty, idle, harvester, with memory.destid = job.dest_id (this is assigned at spawn)
              tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
@@ -82,8 +82,9 @@ module.exports = {
             }
           break; // END 01aa
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-          case '01ff': // Fillfrom - 01ff - mins from storage - deliv
-            // find a creep
+          case '01bb': // Fillfrom - 01bb - energy from container -> deliv
+          case '01ff': // Fillfrom - 01ff - mins from storage -> deliv
+            // local, empty, idle, deliverer
             tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
               ( _.sum(c.carry) == 0 ) &&
