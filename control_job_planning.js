@@ -187,10 +187,7 @@ module.exports = {
     // Deliverto - 02dd - energy to tower - deliv
     job_count = _.filter(Hive.memory.job_queue, function(s) {
       return  (
-        s.type == '02dd' &&
-        s.spawn_name == spawn_name &&
-        s.dest_id == x.id &&
-        s.extra == res
+        s.type == '02dd'
       );});
 
 
