@@ -26,9 +26,7 @@ module.exports = {
 				creep.memory.job = undefined;
 				creep.memory.state = 'idle';
 				job.state = 'abandoned';
-			}
-			else {
-				creep.say('\u26CF'); //  ⛏
+				return;
 			}
 
 			//console.log("GEN: " + type + " " + type2 + " " + type3 + " " +  job.dest_id);
@@ -50,8 +48,8 @@ module.exports = {
 		if(creep.pos.isNearTo(dest_obj)) { 	// harvest/transfer/withdraw/upgrade/repair dest_obj
 
 			if ( type2 == '01' ) { // FILL up
-				//creep.say('\u26CF'); //  ⛏
 				if ( type3 == 'aa') { // from source == harvest
+					creep.say('\u26CF'); //  ⛏
 					creep.harvest(dest_obj);
 				}
 				else { // everything else uses withdraw
@@ -64,8 +62,6 @@ module.exports = {
 			}
 
 			else if ( type2 == '02') { // DELIV
-				//creep.say('\u26A0.D'); // 🚚
-
 				if ( type3 == 'ff') { // to controller == upgrade
 					creep.upgrade(dest_obj);
 				}
