@@ -209,6 +209,7 @@ Creep.prototype.hasActiveBodypart = function (type) {
 
 
 
+console.log("------ START ------");
 
   // housekeeping -- check for memory entries of dead creeps by iterating over Memory.creeps
   for (let name in Memory.creeps) { if (Game.creeps[name] == undefined) { delete Memory.creeps[name]; } }
@@ -233,7 +234,6 @@ Creep.prototype.hasActiveBodypart = function (type) {
 
 
   }
-  console.log("------ START ------");
   general.run(Hive);
 
   roleSpawn.run(0,Hive);
