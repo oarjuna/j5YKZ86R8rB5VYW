@@ -2,7 +2,7 @@ module.exports = {
 	run: function(creep,Hive) {
 
     var assigned_job = creep.memory.job;
-		return;
+		//return;
 		Log.debug(creep + " GEN: " + assigned_job);
 
 		if ( assigned_job != undefined) {
