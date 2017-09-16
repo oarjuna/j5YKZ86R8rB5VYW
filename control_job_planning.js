@@ -193,7 +193,7 @@ module.exports = {
       Log.debug("PL: job_count towers: " + job_count.length,'Planner');
       if (  job_count.length < structure_towers.length ) {
         // spawn a job for this tower
-        Log.debug("NEW job - 02dd - dest: " + t.id + " type " + t.structureType,'Planner');
+        //Log.debug("NEW job - 02dd - dest: " + t.id + " type " + t.structureType,'Planner');
         var job = new Job(spawn_name,'01dd',1,'unassigned','deliverer',t.id,RESOURCE_ENERGY,Game.time,'','');
         //Hive.memory.job_queue.push(job);
         Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + t.structureType,'Planner');
