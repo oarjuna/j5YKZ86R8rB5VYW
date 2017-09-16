@@ -151,7 +151,7 @@ module.exports = {
               );});
 
             // count how many jobs we need per resource type
-            if ( need_count.res == undefined ) { need_count[res] = 1;}
+            if ( need_count[res] == undefined ) { need_count[res] = 1;}
             else {need_count[res]++; }
 
             Log.debug("REs: " + res);
