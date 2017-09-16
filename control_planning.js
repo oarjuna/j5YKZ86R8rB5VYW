@@ -178,7 +178,7 @@ module.exports = {
                  //( c.carry[RESOURCES_ALL] == c.carryCapacity ) &&
                  ( c.carry[RESOURCES_ALL] > 0  ) &&
                  ( c.memory.state == 'idle' ) &&
-                 ( c.memory.ryantest == true) &&
+                 //( c.memory.ryantest == true) &&
                  ( c.memory.role == 'deliverer' )
                 );
     Log.debug("PL: " + idle_full_deliverers.length);
