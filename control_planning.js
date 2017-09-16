@@ -139,8 +139,8 @@ module.exports = {
             }
 
           } // END empty check
+          need_count = 0;
         } // END foreach res type
-        need_count = 0;
       } // END foreach container with stuff
     } // END if >0 check
 
