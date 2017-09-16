@@ -61,8 +61,8 @@ module.exports = {
     if ( Memory.clearjob != 'xxx' ) {
         var removed = _.remove(Hive.memory.job_queue, function(s) {
           return  ( s.id = Memory.clearjob );
-          Memory.clearjob = 'xxx';
         });
+        Memory.clearjob = 'xxx';
         Log.debug("removed " + removed);
     }
 
