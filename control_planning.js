@@ -189,13 +189,23 @@ module.exports = {
     for ( let creep of idle_full_deliverers ) {
       // assign a dest based on resource type and priority
       if ( creep.carry[RESOURCE_ENERGY] ) {
+        // get a lists of towers needing energy
+        var structure_towers = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
+           filter: (s) => (
+              ( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity - 250 )
+        )});
+        // get a list of spawns and extensions needing energy
+
+        // get a list of sending links needing energy
+
+
         if ( Game.spawns[spawn_name].room.controller.memory.alert_state == 'red' ) {
           // Deliverto - 02dd - Towers
         }
         else {
           // Deliverto - 02cc - Spawns and Extensions
         }
-        
+
         if ( Game.spawns[spawn_name].room.controller.memory.alert_state != 'red' ) {
           // Deliverto - 02cc - Spawns and Extensions
         }
