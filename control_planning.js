@@ -58,10 +58,10 @@ module.exports = {
       Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
       Memory.addjobs_harv = false;
     }
-    if ( Memory.clearjob != undefined ) {
+    if ( Memory.clearjob != 'xxx' ) {
         var removed = _.remove(Hive.memory.job_queue, function(s) {
           return  ( s.id = Memory.clearjob );
-          Memory.clearjob = undefined;
+          Memory.clearjob = 'xxx';
         });
         Log.debug("removed " + removed);
     }
