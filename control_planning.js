@@ -130,9 +130,9 @@ module.exports = {
           } // END empty check
 
         } // END foreach res type
-        Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex jobs: " + existing_count + " need: " + need_count);
 
       } // END foreach container with stuff
+      Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex jobs: " + existing_count + " need: " + need_count);
 
       // get the number of outstanding 01bb && 01jj orders - use this to deltermine need to spawn another job
       var num_pickup_jobs = _.filter(Hive.memory.job_queue, function(s) {
