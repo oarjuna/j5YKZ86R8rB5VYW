@@ -123,7 +123,7 @@ module.exports = {
                 s.spawn_name == spawn_name &&
                 s.extra == x.store[res]
               );});
-              tmp_count++;
+              tmp_count += job_count.length;
           } // END empty check
 
         } // END foreach res type
