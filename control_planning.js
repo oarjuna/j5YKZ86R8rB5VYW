@@ -129,7 +129,7 @@ module.exports = {
                 s.extra == res
               );});
 
-            need_count[res] ++;
+            need_count.res++l
 
             Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex jobs: " + job_count.length + " need: " + need_count[res]);
 
