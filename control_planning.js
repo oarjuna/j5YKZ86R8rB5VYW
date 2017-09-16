@@ -244,7 +244,7 @@ module.exports = {
         }
       } // END else
 
-      Log.debug(creep + " dest " + dest.structureType);
+      Log.debug(creep + " dest " + dest.structureType,'Planner');
     } // END foreach idle creep
 
     // Spawn the job
