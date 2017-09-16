@@ -176,7 +176,8 @@ module.exports = {
                  ( c.memory.birthplace == job.spawn_name ) &&
                  ( c.spawning != true ) &&
                  //( c.carry[RESOURCES_ALL] == c.carryCapacity ) &&
-                 ( ( c.carry[RESOURCE_ENERGY] || c.carry[RESOURCE_KEANIUM] ))  &&
+                 (( c.carry[RESOURCE_ENERGY] || c.carry[RESOURCE_KEANIUM] || 
+                   c.carry[RESOURCE_OXYGEN] || c.carry[RESOURCE_LEMERGIUM] ))  &&
                  ( c.memory.state == 'idle' ) &&
                  //( c.memory.ryantest == true) &&
                  ( c.memory.role == 'deliverer' )
