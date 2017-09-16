@@ -122,7 +122,8 @@ module.exports = {
             var job_count = _.filter(Hive.memory.job_queue, function(s) {
               return  (
                 ( s.type == '01bb' || s.type == '01jj' ) &&
-                s.spawn_name == spawn_name /* &&
+                s.spawn_name == spawn_name &&
+                s.dest_id == x.id /*
                 s.extra == x.store[res] &&
                 s.dest_id == x.id */
               );});
