@@ -173,13 +173,26 @@ module.exports = {
 //######################################################################################################################
     // Ensure jobs exist for towers, spawns, extensions, and sending_linsks needing energy
     // DO NOT ASSIGN CREEPS JOBS IN PLANNING, however tempting!
-      
+
     // get a lists of towers needing energy
     var structure_towers = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
        filter: (s) => (
           ( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity - 100 )
     )});
     Log.debug("PL: structure_towers: " + structure_towers.length,'Planner');
+
+    // Foreach tower needing energy, ensure a job exists.
+
+    // get a list of  02dd  jobs in the queue
+    // Deliverto - 02dd - energy to tower - deliv
+    job_count = _.filter(Hive.memory.job_queue, function(s) {
+      return  (
+        s.type == '02dd' &&
+        s.spawn_name == spawn_name &&
+        s.dest_id == x.id &&
+        s.extra == res
+      );});
+
 
     // get a list of spawns and extensions needing energy
     var structure_spawns_extensions = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
