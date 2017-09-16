@@ -130,9 +130,9 @@ module.exports = {
 
             // count how many jobs we need per resource type
             if (! need_count.indexOf(res) ) { need_count.push(res);}
-            need_count[res][0]++;
+            //need_count[res][0]++;
 
-            Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex jobs: " + job_count.length + " need: " + need_count[res][0]);
+            Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex jobs: " + job_count.length + " need: " + need_count[res]);
 
             if ( job_count.length < 999999  ) {
               var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer',x.id,res,Game.time,'');
