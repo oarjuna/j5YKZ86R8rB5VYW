@@ -207,6 +207,7 @@ module.exports = {
     )});
     Log.debug("PL: structure_sending_links: " + structure_sending_links.length,'Planner');
 
+    /*
     var dest;
     // foreach idle creep
     for ( let creep of idle_full_deliverers ) {
@@ -244,25 +245,26 @@ module.exports = {
         }
       } // END else
 
+
+
       Log.debug(creep + " dest " + dest.structureType,'Planner');
     } // END foreach idle creep
+
+    */
 
     // Spawn the job
 
 
 //######################################################################################################################
 
-    // Assign idle upgraders with full inv
+    /// create jobs to upgrade the controller
     //// Upgrading the Controller
     // Deliverto - 02ff - energy to controller - upgrader
-
-    // Assign idle delivers to  with full min invertory
-
-
 
 //######################################################################################################################
 
     // Building and Repairing
+    // create jobs to build and repair
 
   }
 };
