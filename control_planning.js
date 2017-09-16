@@ -182,6 +182,8 @@ module.exports = {
                  //( c.memory.ryantest == true) &&
                  ( c.memory.role == 'deliverer' )
                 );
+    Log.debug("PL: idle_full_deliverers: " + idle_full_deliverers.length);
+
 
     // get a lists of towers needing energy
     var structure_towers = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
