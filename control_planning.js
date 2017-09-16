@@ -60,12 +60,23 @@ module.exports = {
       Memory.addjobs_harv = false;
     }
     if ( Memory.clearjob != 'xxx' ) {
-        var removed = _.remove(Hive.memory.job_queue, function(s) {
-          return  ( s.id = Memory.clearjob );
+        // get owning creep, if any
+        var job = _.find(Hive.memory.job_queue, function(s) {
+          return  ( s.id == Memory.clearjob && s.state == 'assigned' );
         });
-        // remove from creep
-        
 
+        //  if there is a job owner, clear it's job
+        if ( job != undefined) {
+          let c_obj = Game.getObjectById(job.assigned_creep);
+          c.obj.job = undefined;
+        }
+
+        // remove the job
+        var removed = _.remove(Hive.memory.job_queue, function(s) {
+          return  ( s.id == Memory.clearjob );
+        });
+
+        // clear the Memory flag
         Memory.clearjob = 'xxx';
         Log.debug("removed " + removed);
     }
