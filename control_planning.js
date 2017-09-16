@@ -42,21 +42,21 @@ module.exports = {
     if (Memory.addjobs_min_deliv == true) {
       var job = new Job(spawn_name,'01ff',1,'unassigned','deliverer',Game.spawns[spawn_name].room.storage.id,RESOURCE_KEANIUM,Game.time,'','');
       Hive.memory.job_queue.push(job);
-      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
+      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type,'Planner');
 
       var job = new Job(spawn_name,'02hh',1,'unassigned','deliverer',Game.spawns[spawn_name].room.terminal.id,RESOURCE_KEANIUM,Game.time,'','');
       Hive.memory.job_queue.push(job);
-      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
+      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type,'Planner');
       Memory.addjobs = false;
     }
     if (Memory.addjobs_harv == true ) {
       var job = new Job(spawn_name,'01aa',1,'unassigned','harvester','default',RESOURCE_ENERGY,Game.time,'','');
       Hive.memory.job_queue.push(job);
-      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
+      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type,'Planner');
 
       var job = new Job(spawn_name,'02aa',1,'unassigned','harvester','closest',RESOURCE_ENERGY,Game.time,'','');
       Hive.memory.job_queue.push(job);
-      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
+      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type,'Planner');
       Memory.addjobs_harv = false;
     }
     if ( Memory.clearjob != 'xxx' ) {
@@ -78,7 +78,7 @@ module.exports = {
 
         // clear the Memory flag
         Memory.clearjob = 'xxx';
-        Log.debug("removed " + removed);
+        Log.debug("removed " + removed,'Planner');
     }
 
     // TYPES OF actions
@@ -115,12 +115,12 @@ module.exports = {
       // spawn a generic harvesting job
       var job = new Job(spawn_name,'01aa',1,'unassigned','harvester','default',RESOURCE_ENERGY,Game.time,'','');
       Hive.memory.job_queue.push(job);
-      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
+      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type,'Planner');
 
       // and the corresponding unload to nearest container job
       var job = new Job(spawn_name,'02aa',1,'unassigned','harvester','closest',RESOURCE_ENERGY,Game.time,'','');
       Hive.memory.job_queue.push(job);
-      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
+      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type,'Planner');
     }
 //######################################################################################################################
     // Emptying containers - are there containers which need to be emptied?
@@ -155,14 +155,14 @@ module.exports = {
             if ( need_count[res] == undefined ) { need_count[res] = 1;}
             else {need_count[res]++; }
 
-            Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex jobs: " + job_count.length + " need: " + need_count[res]);
+            Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex jobs: " + job_count.length + " need: " + need_count[res],'Planner');
 
             // if there are more jobs than existing jobs
             if ( job_count.length < need_count[res]  ) {
               // spawn a new job
               var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer',x.id,res,Game.time,'','');
               //Hive.memory.job_queue.push(job);
-              //Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " type " + job.type + " res " + res + " dest " + x.id);
+              //Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " type " + job.type + " res " + res + " dest " + x.id,'Planner');
             }
 
           } // END empty check
@@ -182,15 +182,14 @@ module.exports = {
                  //( c.memory.ryantest == true) &&
                  ( c.memory.role == 'deliverer' )
                 );
-    Log.debug("PL: idle_full_deliverers: " + idle_full_deliverers.length);
-
+    Log.debug("PL: idle_full_deliverers: " + idle_full_deliverers.length,'Planner');
 
     // get a lists of towers needing energy
     var structure_towers = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
        filter: (s) => (
           ( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity - 100 )
     )});
-    Log.debug("PL: structure_towers: " + structure_towers.length);
+    Log.debug("PL: structure_towers: " + structure_towers.length,'Planner');
 
     // get a list of spawns and extensions needing energy
     var structure_spawns_extensions = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
@@ -198,14 +197,14 @@ module.exports = {
          ( s.structureType == STRUCTURE_SPAWN && s.energy < s.energyCapacity ) ||
          ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
     )});
-    Log.debug("PL: structure_spawns_extensions: " + structure_spawns_extensions.length);
+    Log.debug("PL: structure_spawns_extensions: " + structure_spawns_extensions.length,'Planner');
 
     // get a list of sending links needing energy
     var structure_sending_links = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
        filter: (s) => (
          ( s.structureType == STRUCTURE_LINK && s.id != Hive.receiving_link[spawn_num] )
     )});
-    Log.debug("PL: structure_sending_links: " + structure_sending_links.length);
+    Log.debug("PL: structure_sending_links: " + structure_sending_links.length,'Planner');
 
     // foreach idle creep
     for ( let creep of idle_full_deliverers ) {
