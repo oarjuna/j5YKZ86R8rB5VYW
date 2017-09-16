@@ -195,9 +195,14 @@ module.exports = {
          ( s.structureType == STRUCTURE_SPAWN && s.energy < s.energyCapacity ) ||
          ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
     )});
-    Log.debug("PL: " + structure_spawns_extensions.length);
+    Log.debug("PL: structure_spawns_extensions: " + structure_spawns_extensions.length);
 
     // get a list of sending links needing energy
+    var structure_sending_links = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
+       filter: (s) => (
+         ( s.structureType == STRUCTURE_LINK && s.id != Hive.receiving_link[spawn_num] )
+    )});
+    Log.debug("PL:structure_sending_links: " + structure_sending_links.length);
 
     // foreach idle creep
     for ( let creep of idle_full_deliverers ) {
