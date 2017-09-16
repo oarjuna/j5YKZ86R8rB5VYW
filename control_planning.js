@@ -161,7 +161,7 @@ module.exports = {
               // spawn a new job
               var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer',x.id,res,Game.time,'','');
               //Hive.memory.job_queue.push(job);
-              Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " type " + job.type + " res " + res + " dest " + x.id);
+              //Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " type " + job.type + " res " + res + " dest " + x.id);
             }
 
           } // END empty check
@@ -170,17 +170,33 @@ module.exports = {
     } // END if >0 check
 
 //######################################################################################################################
-    // Assign idle creeps with full inventories // TODO next
+    // Create jobs for each idle deliverer that has with full inventory // TODO next
 
+    var idle_full_deliverers = _.filter(Game.creeps, (c) =>
+                 ( c.memory.birthplace == job.spawn_name ) &&
+                 ( c.spawning != true ) &&
+                 ( c.carry[RESOURCES_ALL] == c.carryCapacity ) &&
+                 ( c.memory.state == 'idle' ) &&
+                 ( c.memory.ryantest == true) &&
+                 ( c.memory.role == 'deliverer' )
+                );
+    Log.debug("PL: " )
+
+    // assign the dest based on current need
     //// Filling Towers to 20%
     //// Filling Spawns and Extensions
     //// Filling Towers to 100%
     //// Filling Sending links
     //// Filling Storage
 
-    //// Upgrading the Controller
-    //// Bringing minerals to Terminal
+//######################################################################################################################
 
+    // Assign idle upgraders with full inv
+    //// Upgrading the Controller
+
+    // Assign idle delivers to  with full min invertory
+    //// Bringing minerals to Terminal
+    //// Bringing minerals to storage
 
 //######################################################################################################################
 
