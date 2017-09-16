@@ -151,8 +151,8 @@ module.exports = {
               );});
 
             // count how many jobs we need per resource type
-            if (! need_count.indexOf(res) ) { need_count.push({res : 0});}
-            need_count[res]++;
+            //if (! need_count.indexOf(res) ) { need_count.push({res : 0});}
+            //need_count[res]++;
 
             Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex jobs: " + job_count.length + " need: " + need_count[res]);
 
