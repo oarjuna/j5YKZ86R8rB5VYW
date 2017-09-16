@@ -152,8 +152,8 @@ module.exports = {
 
             // count how many jobs we need per resource type
             if ( need_count.res == undefined ) { need_count.res = '1';}
-            else { need_count.res++; }
-            
+            else { Log.debug("REs: " + res); need_count.res++; }
+
             Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex jobs: " + job_count.length + " need: " + need_count.res);
 
             if ( job_count.length < 999999  ) {
