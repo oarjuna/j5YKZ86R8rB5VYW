@@ -244,11 +244,10 @@ module.exports = {
         }
       } // END else
 
-      Log.debug(creep + " dest " + dest.id);
+      Log.debug(creep + " dest " + dest.type);
     } // END foreach idle creep
 
     // Spawn the job
-    //
 
 
 //######################################################################################################################
