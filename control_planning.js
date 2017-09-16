@@ -105,6 +105,7 @@ module.exports = {
     var res_containers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
       filter: (s) =>
         (
+          ( spawn_name == 'Spawn1') &&
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= 100 ) ||
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= 150 ) || //TODO -- make these globals
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_LEMERGIUM] >= 400 ) ||
