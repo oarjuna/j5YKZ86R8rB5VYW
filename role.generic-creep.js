@@ -28,7 +28,7 @@ module.exports = {
 				job.state = 'abandoned';
 			}
 			else {
-				creep.say("not today!");
+//				creep.say("not today!");
 			}
 
 			//console.log("GEN: " + type + " " + type2 + " " + type3 + " " +  job.dest_id);
