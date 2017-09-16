@@ -22,13 +22,12 @@ module.exports = {
 			var dest_obj =Game.getObjectById(job.dest_id);
 
 			if ( creep.ticksToLive < 10 ) {
-				creep.say('\u1F480'); // 💀
 				creep.memory.job = undefined;
 				creep.memory.state = 'idle';
 				job.state = 'abandoned';
 			}
 			else {
-//				creep.say("not today!");
+				creep.say('\u1F480'); // 💀
 			}
 
 			//console.log("GEN: " + type + " " + type2 + " " + type3 + " " +  job.dest_id);
