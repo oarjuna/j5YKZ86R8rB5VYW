@@ -171,7 +171,7 @@ module.exports = {
     } // END if >0 check
 
 //######################################################################################################################
-    // Create jobs for each idle deliverer that has with full inventory // TODO next
+    // Create jobs for each idle deliverer that has a full inventory
 
     var idle_full_deliverers = _.filter(Game.creeps, (c) =>
                  ( c.memory.birthplace == job.spawn_name ) &&
@@ -182,6 +182,7 @@ module.exports = {
                  //( c.memory.ryantest == true) &&
                  ( c.memory.role == 'deliverer' )
                 );
+
     Log.debug("PL: idle_full_deliverers: " + idle_full_deliverers.length,'Planner');
 
     // get a lists of towers needing energy
@@ -206,38 +207,48 @@ module.exports = {
     )});
     Log.debug("PL: structure_sending_links: " + structure_sending_links.length,'Planner');
 
+    var dest;
     // foreach idle creep
     for ( let creep of idle_full_deliverers ) {
       // assign a dest based on resource type and priority
       if ( creep.carry[RESOURCE_ENERGY] ) {
-
-
-
-        if ( Game.spawns[spawn_name].room.controller.memory.alert_state == 'red' ) {
+        if ( structure_towers.length > 0 && Game.spawns[spawn_name].room.controller.memory.alert_state == 'red' ) {
+          // Deliverto - 02dd - Towers ( red alerts gives towers priority )
+          dest = creep.pos.findClosestByPath(structure_towers);
+        }
+        else if ( structure_spawns_extensions.length > 0 ) {
+          // Deliverto - 02cc - Spawns and Extensions
+          dest = creep.pos.findClosestByPath(structure_spawns_extensions);
+        }
+        else if ( structure_towers.length > 0 ) {
           // Deliverto - 02dd - Towers
+          dest = creep.pos.findClosestByPath(structure_towers);
+        }
+        else if ( structure_sending_links.length > 0 ) {
+          // Deliverto - 02bb - Sending links #3
+          dest = creep.pos.findClosestByPath(structure_sending_links);
         }
         else {
-          // Deliverto - 02cc - Spawns and Extensions
+          // Deliverto - 02gg - Storage #4
+          dest = creep.room.storage;
         }
-
-        if ( Game.spawns[spawn_name].room.controller.memory.alert_state != 'red' ) {
-          // Deliverto - 02cc - Spawns and Extensions
-        }
-        else {
-          // Deliverto - 02dd - Towers
-        }
-
-        // Deliverto - 02bb - Closest Sending links #3
-
-        // Deliverto - 02gg - Storage #4
       }
       else {
-        // Deliverto - 02hh - minerals to Terminal
-
-        // Deliverto - 02ee - minerals to storage
-      }
-    }
+        if ( Memory.marketorder == true ) {
+          // Deliverto - 02hh - minerals to Terminal
+          dest = creep.room.terminal;
+        }
+        else {
+          // Deliverto - 02ee - minerals to storage
+          dest = creep.room.storage;
+        }
+      } // END else
+    } // END foreach idle creep
+    
     // Spawn the job
+    Log.debug(creep + " dest " + dest.id);
+
+
 //######################################################################################################################
 
     // Assign idle upgraders with full inv
