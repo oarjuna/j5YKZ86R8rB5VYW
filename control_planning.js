@@ -57,6 +57,12 @@ module.exports = {
       Hive.memory.job_queue.push(job);
       Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
       Memory.addjobs_harv = false;
+    }
+    if ( Memory.clearjob != undefined ) {
+        _.remove(Hive.memory.job_queue, function(s) {
+          return  ( s.id = Memory.clearjob );
+          Memory.clearjob = undefined;
+        });
 
     }
 
