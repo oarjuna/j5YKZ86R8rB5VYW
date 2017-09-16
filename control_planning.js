@@ -115,21 +115,22 @@ module.exports = {
       for ( var x of res_containers ) { // for each container with stuff
         for ( var res in x.store ) { // for each resource type in each container's store list
           if ( x.store[res] > 0 ) { // that is not empty
-            // check to see if a pickup job for this exists
+            // get a count of existing jobs for this resource type
+            var job_count = _.filter(Hive.memory.job_queue, function(s) {
+              return  (
+                ( s.type == '01bb' || s.type == '01jj' ) &&
+                s.spawn_name == spawn_name &&
+                s.extra == x.store[res]
+              );});
 
-              var job_count = _.filter(Hive.memory.job_queue, function(s) {
-                return  (
-                  ( s.type == '01bb' || s.type == '01jj' ) &&
-                  s.spawn_name == spawn_name &&
-                  s.extra == x.store[res]
-                );});
 
-                Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " jobs: " + job_count.length );
+          } // END empty check
+            Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " jobs: " + job_count.length + " need: " + res_containers.length);
 
-            // if not, spawn one
-          }
-        }
-      }
+        } // END foreach res type
+
+
+      } // END foreach container with stuff
 
       // get the number of outstanding 01bb && 01jj orders - use this to deltermine need to spawn another job
       var num_pickup_jobs = _.filter(Hive.memory.job_queue, function(s) {
