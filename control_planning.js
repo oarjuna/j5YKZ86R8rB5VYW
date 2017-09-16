@@ -185,22 +185,24 @@ module.exports = {
 
     Log.debug("PL: " + idle_full_deliverers.length);
 
-    //// assign a dest based on resource type and priority
-    //if ( c.carry[RESOURCE_ENERGY] ) {
-      // Deliverto - 02dd - Towers ( #1 ifGame.spawns[spawn_name].room.controller.memory.alert_state == 'red') ( #2 if not ))
+    // foreach idle creep
+    for ( let creep of idle_full_deliverers ) {
+      // assign a dest based on resource type and priority
+      if ( c.carry[RESOURCE_ENERGY] ) {
+        // Deliverto - 02dd - Towers ( #1 ifGame.spawns[spawn_name].room.controller.memory.alert_state == 'red') ( #2 if not ))
 
-      // Deliverto - 02cc - Spawns and Extensions ( #2 if Game.spawns[spawn_name].room.controller.memory.alert_state == 'red' ( #1 if not))
+        // Deliverto - 02cc - Spawns and Extensions ( #2 if Game.spawns[spawn_name].room.controller.memory.alert_state == 'red' ( #1 if not))
 
-      // Deliverto - 02bb - Closest Sending links #3
+        // Deliverto - 02bb - Closest Sending links #3
 
-      // Deliverto - 02gg - Storage #4
-    //}
-    //else {
-      // Deliverto - 02hh - minerals to Terminal
+        // Deliverto - 02gg - Storage #4
+      }
+      else {
+        // Deliverto - 02hh - minerals to Terminal
 
-      // Deliverto - 02ee - minerals to storage
-    //}
-
+        // Deliverto - 02ee - minerals to storage
+      }
+    }
     // Spawn the job
 //######################################################################################################################
 
