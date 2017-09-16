@@ -111,7 +111,8 @@ module.exports = {
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_OXYGEN] >= 400 )
     )});
 
-    var tmp_count = 0;
+    var existing_count = 0;
+    var need_count = 0;
     if ( res_containers.length > 0) { // if there are containers needing pickup
       for ( var x of res_containers ) { // for each container with stuff
         for ( var res in x.store ) { // for each resource type in each container's store list
@@ -123,12 +124,13 @@ module.exports = {
                 s.spawn_name == spawn_name &&
                 s.extra == x.store[res]
               );});
-              tmp_count += job_count.length;
+              existing_count += job_count.length;
+              need_count++;
+
           } // END empty check
 
         } // END foreach res type
-        Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " jobs: " + tmp_count + " need: " + res_containers.length);
-
+        Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " jobs: " + existing_count + " need: " + need_count);
 
       } // END foreach container with stuff
 
