@@ -141,7 +141,7 @@ module.exports = {
             }
 
           } // END empty check
-          //existing_count = 0;
+          existing_count = 0;
         } // END foreach res type
       } // END foreach container with stuff
     } // END if >0 check
