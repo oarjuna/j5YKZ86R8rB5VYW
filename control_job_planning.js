@@ -171,21 +171,9 @@ module.exports = {
     } // END if >0 check
 
 //######################################################################################################################
-    // Create jobs for each idle deliverer that has a full inventory
-    // DO NOT ASSIGN IN PLANNING, however tempting!
-    
-    var idle_full_deliverers = _.filter(Game.creeps, (c) =>
-                 ( c.memory.birthplace == job.spawn_name ) &&
-                 ( c.spawning != true ) &&
-                 (( c.carry[RESOURCE_ENERGY] || c.carry[RESOURCE_KEANIUM] ||
-                   c.carry[RESOURCE_OXYGEN] || c.carry[RESOURCE_LEMERGIUM] ))  &&
-                 ( c.memory.state == 'idle' ) &&
-                 //( c.memory.ryantest == true) &&
-                 ( c.memory.role == 'deliverer' )
-                );
-
-    Log.debug("PL: idle_full_deliverers: " + idle_full_deliverers.length,'Planner');
-
+    // Ensure jobs exist for towers, spawns, extensions, and sending_linsks needing energy
+    // DO NOT ASSIGN CREEPS JOBS IN PLANNING, however tempting!
+      
     // get a lists of towers needing energy
     var structure_towers = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
        filter: (s) => (
@@ -207,6 +195,7 @@ module.exports = {
          ( s.structureType == STRUCTURE_LINK && s.id != Hive.receiving_link[spawn_num] )
     )});
     Log.debug("PL: structure_sending_links: " + structure_sending_links.length,'Planner');
+
 
     /*
     var dest;
