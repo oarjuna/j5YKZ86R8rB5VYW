@@ -4,7 +4,7 @@ module.exports = {
     var spawn_name = Hive.spawn_names[spawn_num];
 
     if ( spawn_name != 'Spawn1') { return; }
-
+    Memory.Log.Planner = Log.LEVEL_DEBUG;
     // Define the job object
     // job object prototype - spawn_name,type, priority, state, body_type_req, dest_id, extra, tick_issued, tick_complete
     //    states - assigned / complete / abandoned / timed out / unasssigned
