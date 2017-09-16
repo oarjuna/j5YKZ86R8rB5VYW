@@ -243,10 +243,12 @@ module.exports = {
           dest = creep.room.storage;
         }
       } // END else
+
+      Log.debug(creep + " dest " + dest.id);
     } // END foreach idle creep
 
     // Spawn the job
-    //Log.debug(creep + " dest " + dest.id);
+    //
 
 
 //######################################################################################################################
