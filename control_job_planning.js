@@ -189,6 +189,9 @@ module.exports = {
       return  (
         s.type == '02dd'
       );});
+    Log.debug("PL: job_count towers: " + job_count.length,'Planner');
+
+
 
 
     // get a list of spawns and extensions needing energy
