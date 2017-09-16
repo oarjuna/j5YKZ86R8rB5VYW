@@ -181,7 +181,7 @@ module.exports = {
     )});
     Log.debug("PL: structure_towers: " + structure_towers.length,'Planner');
 
-    // Foreach tower needing energy, ensure a job exists.
+    // Foreach tower needing energy, ensure a job exists. assigned or otherwise
     for ( let t of structure_towers ) {
       // get a list of  02dd  jobs in the queue for this tower
       // Deliverto - 02dd - energy to tower - deliv
@@ -190,9 +190,13 @@ module.exports = {
           s.type == '02dd' &&
           s.dest_id == t.id
         );});
-      Log.debug("PL: job_count towers: " + job_count.length,'Planner');
-    }
 
+      Log.debug("PL: job_count towers: " + job_count.length,'Planner');
+      if (  job_count.length < structure_towers.length ) {
+        // spawn a job for this tower
+        Log.debug(" NEW job - o2dd - dest: " + t.id  );
+      }
+    }
 
     // get a list of spawns and extensions needing energy
     var structure_spawns_extensions = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
