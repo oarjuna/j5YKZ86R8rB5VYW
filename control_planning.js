@@ -130,7 +130,7 @@ module.exports = {
           } // END empty check
 
         } // END foreach res type
-        Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " jobs: " + existing_count + " need: " + need_count);
+        Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex jobs: " + existing_count + " need: " + need_count);
 
       } // END foreach container with stuff
 
