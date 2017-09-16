@@ -124,7 +124,7 @@ module.exports = {
                 ( s.type == '01bb' || s.type == '01jj' ) &&
                 s.spawn_name == spawn_name &&
                 s.dest_id == x.id &&
-                s.extra == res 
+                s.extra == res
               );});
 
             existing_count += job_count.length;
@@ -140,6 +140,7 @@ module.exports = {
 
           } // END empty check
         } // END foreach res type
+        need_count = 0;
       } // END foreach container with stuff
     } // END if >0 check
 
