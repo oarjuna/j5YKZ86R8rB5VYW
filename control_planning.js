@@ -114,8 +114,7 @@ module.exports = {
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_OXYGEN] >= 400 )
     )});
 
-    var existing_count = 0;
-    var need_count =[];
+    var need_count = [];
     if ( res_containers.length > 0) { // if there are containers needing pickup
       for ( var x of res_containers ) { // for each container with stuff
         for ( var res in x.store ) { // for each resource type in each container's store list
@@ -130,10 +129,10 @@ module.exports = {
               );});
 
             // count how many jobs we need per resource type
-            if (! need_count.indexOf(res) ) { need_count.push(res)}
-            need_count.res++;
+            if (! need_count.indexOf(res) ) { need_count.push(res);}
+            need_count[res][0]++;
 
-            Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex jobs: " + job_count.length + " need: " + need_count.res);
+            Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex jobs: " + job_count.length + " need: " + need_count[res][0]);
 
             if ( job_count.length < 999999  ) {
               var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer',x.id,res,Game.time,'');
@@ -142,7 +141,6 @@ module.exports = {
             }
 
           } // END empty check
-          existing_count = 0;
         } // END foreach res type
       } // END foreach container with stuff
     } // END if >0 check
