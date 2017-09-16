@@ -172,7 +172,8 @@ module.exports = {
 
 //######################################################################################################################
     // Create jobs for each idle deliverer that has a full inventory
-
+    // DO NOT ASSIGN IN PLANNING, however tempting!
+    
     var idle_full_deliverers = _.filter(Game.creeps, (c) =>
                  ( c.memory.birthplace == job.spawn_name ) &&
                  ( c.spawning != true ) &&
@@ -244,8 +245,6 @@ module.exports = {
           dest = creep.room.storage;
         }
       } // END else
-
-
 
       Log.debug(creep + " dest " + dest.structureType,'Planner');
     } // END foreach idle creep
