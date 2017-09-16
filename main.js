@@ -267,7 +267,7 @@ Creep.prototype.hasActiveBodypart = function (type) {
     if ( tmp_obj != undefined ) { name = tmp_obj.name;}
     else { name = 'undefined'; }
 
-    console.log("JQ: " + job.spawn_name+ " j_id: " + job.id + " type " + job.type + " st: " + job.state + " cr: " + name + " d: " + job.dest_id + " extra: " + job.extra + " time_in_q " + ( Game.time - job.tick_issued));
+    console.log("JQ: " + job.spawn_name+ " j_id: " + job.id + " type " + job.type + " st: " + job.state + " cr: " + name + " d: " + job.dest_id + " ex: " + job.extra + " t_in_q " + ( Game.time - job.tick_issued));
   }
   console.log("------ actions ------");
   //console.log("#-------------------------------------------------------#  H, U, R, B, RH, C, De, EM, S");
