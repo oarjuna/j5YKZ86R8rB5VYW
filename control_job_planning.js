@@ -194,7 +194,7 @@ module.exports = {
       Log.debug("PL: job_count towers: " + job_count.length,'Planner');
       if (  job_count.length < structure_towers.length ) {
         // spawn a job for this tower
-        Log.debug(" NEW job - o2dd - dest: " + t.id  );
+        Log.debug(" NEW job - 02dd - dest: " + t.id  );
       }
     }
 
