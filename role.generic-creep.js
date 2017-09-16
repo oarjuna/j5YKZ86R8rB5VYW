@@ -5,7 +5,6 @@ module.exports = {
 		Log.debug(creep + " GEN: " + creep.memory.job + " TTL " + creep.ticksToLive);
 
 		if ( creep.memory.job != undefined) {
-			Log.debug(creep + " GEN: " + creep.memory.job + " TTL " + creep.ticksToLive);
 			// set state to working
 			creep.memory.state = 'working';
 			// receive orders
