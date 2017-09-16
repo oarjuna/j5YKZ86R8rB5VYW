@@ -115,7 +115,7 @@ module.exports = {
     )});
 
     var existing_count = 0;
-    var need_count = 0;
+    var need_count =[];
     if ( res_containers.length > 0) { // if there are containers needing pickup
       for ( var x of res_containers ) { // for each container with stuff
         for ( var res in x.store ) { // for each resource type in each container's store list
