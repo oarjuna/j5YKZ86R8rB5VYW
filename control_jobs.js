@@ -37,7 +37,7 @@ module.exports = {
       //Work - 03bb - repair - builder
 
       if ( job.spawn_name == spawn_name && job.state == 'unassigned' ) {
-        //Log.debug("JQ: trying to assign " + job.id + " spawn " + job.spawn_name + " need " + job.body_type_req + " t: " + job.type + " d: " + job.dest_id + " x: " + job.extra);
+        Log.debug("trying to assign " + job.id + " spawn " + job.spawn_name + " need " + job.body_type_req + " t: " + job.type + " d: " + job.dest_id + " x: " + job.extra,'Jobber');
         switch(job.type) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////// FILL
@@ -131,7 +131,7 @@ module.exports = {
               if ( near_cont != undefined ) {
                 // set job dest_id to container id
                 job.dest_id = near_cont.id;
-                Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " container found "+ job.dest_id);
+                Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " container found "+ job.dest_id,'Jobber');
               }
               else {
                 // no containers found? weird? unset the creep and warn.
@@ -173,7 +173,7 @@ module.exports = {
 
         // if we found a creep
         if ( tmpcreep != undefined ) {
-          Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " assgn to "+ job.id);
+          Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " assgn to "+ job.id,'Jobber');
           // assign the job to the creep
           tmpcreep.memory.job = job.id;
           // mark the job as assigned
@@ -185,7 +185,7 @@ module.exports = {
         }
         else {
           // if not
-          //Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " J_id:" + job.id + " failed to assign");
+          //Log.debug("\tJQ: " + tmpcreep + " @ " + job.spawn_name + " J_id:" + job.id + " failed to assign",'Jobber');
         }
         // clear the creep
         tmpcreep = undefined;
