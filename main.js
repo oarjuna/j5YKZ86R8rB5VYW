@@ -264,7 +264,7 @@ Creep.prototype.hasActiveBodypart = function (type) {
   for ( let job of Hive.memory.job_queue) {
 
     let tmp_obj = Game.getObjectById(job.assigned_creep);
-    if ( tmp_obj.name != undefined ) { name = tmp_obj.name;}
+    if ( tmp_obj != undefined ) { name = tmp_obj.name;}
     else { name = 'undefined'; }
 
     console.log("JQ: " + job.spawn_name+ " j_id: " + job.id + " type " + job.type + " st: " + job.state + " cr: " + name + " d: " + job.dest_id + " extra: " + job.extra + " time_in_q " + ( Game.time - job.tick_issued));
