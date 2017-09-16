@@ -125,31 +125,21 @@ module.exports = {
                 s.spawn_name == spawn_name &&
                 s.extra == x.store[res]
               );});
-              existing_count += job_count.length;
-              need_count++;
+            existing_count += job_count.length;
+            need_count++;
+
+            Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex jobs: " + existing_count + " need: " + need_count);
+
+            if ( need_count < existing_count ) {
+              var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer',x.id,res,Game.time,'');
+              //Hive.memory.job_queue.push(job);
+              Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " type " + job.type + " res " + res + " dest " + x.id);
+            }
 
           } // END empty check
-
         } // END foreach res type
-        Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex jobs: " + existing_count + " need: " + need_count);
-
       } // END foreach container with stuff
-
-      // get the number of outstanding 01bb && 01jj orders - use this to deltermine need to spawn another job
-      var num_pickup_jobs = _.filter(Hive.memory.job_queue, function(s) {
-        return  ( ( s.type == '01bb' || s.type == '01jj' ) && s.spawn_name == spawn_name );
-      });
-
-      // get the number of containers needing pickup
-      var num_jobs_needed = res_containers.length;
-
-      if ( num_pickup_jobs < num_jobs_needed ) {
-        // spawn a pickup job
-        var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer','closest',RESOURCE_ENERGY,Game.time,'');
-        //Hive.memory.job_queue.push(job);
-        Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type);
-      }
-    }
+    } // END if >0 check
 
 //######################################################################################################################
 
