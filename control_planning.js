@@ -123,9 +123,10 @@ module.exports = {
               return  (
                 ( s.type == '01bb' || s.type == '01jj' ) &&
                 s.spawn_name == spawn_name &&
-                s.extra == x.store[res] &&
-                s.dest_id == x.id
+                s.extra == x.store[res] /*&&
+                s.dest_id == x.id */
               );});
+
             existing_count += job_count.length;
             need_count++;
 
