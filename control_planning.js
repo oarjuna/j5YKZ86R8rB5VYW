@@ -188,9 +188,14 @@ module.exports = {
        filter: (s) => (
           ( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity - 100 )
     )});
-    Log.debug("PL: " + structure_towers.length);
 
     // get a list of spawns and extensions needing energy
+    var structure_spawns_extensions = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
+       filter: (s) => (
+         ( s.structureType == STRUCTURE_SPAWN && s.energy < s.energyCapacity ) ||
+         ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
+    )});
+    Log.debug("PL: " + structure_spawns_extensions.length);
 
     // get a list of sending links needing energy
 
