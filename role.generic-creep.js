@@ -48,7 +48,7 @@ module.exports = {
 		if(creep.pos.isNearTo(dest_obj)) { 	// harvest/transfer/withdraw/upgrade/repair dest_obj
 
 			if ( type2 == '01' ) { // FILL up
-				creep.say('\u26A0.F'); // 🚚
+				creep.say('\u26CF'); //  ⛏
 				if ( type3 == 'aa') { // from source == harvest
 					creep.harvest(dest_obj);
 				}
