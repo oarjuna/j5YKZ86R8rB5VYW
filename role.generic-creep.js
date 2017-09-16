@@ -5,12 +5,13 @@ module.exports = {
 		Log.debug(creep + " GEN: " + creep.memory.job + " TTL " + creep.ticksToLive);
 
 		if ( creep.memory.job != undefined) {
+			Log.debug(creep + " GEN: " + creep.memory.job + " TTL " + creep.ticksToLive);
 			// set state to working
 			creep.memory.state = 'working';
 			// receive orders
 			// find your job
-			var job = _.find(Hive.memory.job_queue,  function(o) { return o.id == creep.memory.job; }); // TODO?
-			//console.log("XXX: " + job);
+			var job = _.find(Hive.memory.job_queue,  function(o) { return o.id == creep.memory.job; });
+			console.log("GEN: " + job.id + " ttl: " creep.ticksToLive);
 			var type = job.type;
 			var type2 = type.slice(0,2);
 			var type3 = type.slice(2);
