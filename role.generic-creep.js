@@ -22,7 +22,7 @@ module.exports = {
 			var dest_obj =Game.getObjectById(job.dest_id);
 
 			if ( creep.ticksToLive < 10 ) {
-				creep.say('\1F480'); // 💀
+				creep.say('\u1F480'); // 💀
 				creep.memory.job = undefined;
 				creep.memory.state = 'idle';
 				job.state = 'abandoned';
