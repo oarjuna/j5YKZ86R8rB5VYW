@@ -123,12 +123,10 @@ module.exports = {
                 s.extra == x.store[res]
               );});
 
-
           } // END empty check
             Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " jobs: " + job_count.length + " need: " + res_containers.length);
 
         } // END foreach res type
-
 
       } // END foreach container with stuff
 
