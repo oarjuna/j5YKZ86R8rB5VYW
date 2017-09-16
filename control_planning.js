@@ -180,7 +180,7 @@ module.exports = {
                  ( c.memory.ryantest == true) &&
                  ( c.memory.role == 'deliverer' )
                 );
-    Log.debug("PL: " );
+    Log.debug("PL: " + idle_full_deliverers);
 
     // assign the dest based on current need
     //// Filling Towers to 20%
