@@ -59,11 +59,11 @@ module.exports = {
       Memory.addjobs_harv = false;
     }
     if ( Memory.clearjob != undefined ) {
-        _.remove(Hive.memory.job_queue, function(s) {
+        var removed = _.remove(Hive.memory.job_queue, function(s) {
           return  ( s.id = Memory.clearjob );
           Memory.clearjob = undefined;
         });
-
+        Log.debug("removed " + removed);
     }
 
     // TYPES OF actions
