@@ -122,9 +122,9 @@ module.exports = {
                 s.spawn_name == spawn_name &&
                 s.extra == x.store[res]
               );});
+              Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " jobs: " + job_count.length + " need: " + res_containers.length);
 
           } // END empty check
-            Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " jobs: " + job_count.length + " need: " + res_containers.length);
 
         } // END foreach res type
 
