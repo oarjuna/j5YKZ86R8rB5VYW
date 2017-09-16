@@ -135,11 +135,12 @@ module.exports = {
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_OXYGEN] >= 400 )
     )});
 
-    var need_count = [];
+    var need_count = {};
     if ( res_containers.length > 0) { // if there are containers needing pickup
       for ( var x of res_containers ) { // for each container with stuff
         for ( var res in x.store ) { // for each resource type in each container's store list
           if ( x.store[res] > 0 ) { // that is not empty
+
             // get a count of existing jobs for this resource and pickup location
             var job_count = _.filter(Hive.memory.job_queue, function(s) {
               return  (
@@ -151,7 +152,7 @@ module.exports = {
 
             // count how many jobs we need per resource type
             if (! need_count.indexOf(res) ) { need_count.push({res : 0});}
-            //need_count[res]++;
+            need_count[res]++;
 
             Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex jobs: " + job_count.length + " need: " + need_count[res]);
 
