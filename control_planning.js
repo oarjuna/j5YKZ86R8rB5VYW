@@ -131,7 +131,7 @@ module.exports = {
 
             need_count++;
 
-            Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex jobs: " + existing_count + " need: " + need_count);
+            Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex jobs: " + job_count.length + " need: " + need_count);
 
             if ( job_count.length < need_count ) {
               var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer',x.id,res,Game.time,'');
