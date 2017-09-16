@@ -195,11 +195,13 @@ module.exports = {
 
       // Deliverto - 02gg - Storage #4
     }
-    else {}
+    else {
       // Deliverto - 02hh - minerals to Terminal
 
       // Deliverto - 02ee - minerals to storage
     }
+
+    // Spawn the job
 //######################################################################################################################
 
     // Assign idle upgraders with full inv
