@@ -170,7 +170,7 @@ module.exports = {
     } // END if >0 check
 
 //######################################################################################################################
-    // Assign idle creeps with full inventories
+    // Assign idle creeps with full inventories // TODO next
 
     //// Filling Towers to 20%
     //// Filling Spawns and Extensions
