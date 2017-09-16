@@ -63,6 +63,9 @@ module.exports = {
         var removed = _.remove(Hive.memory.job_queue, function(s) {
           return  ( s.id = Memory.clearjob );
         });
+        // remove from creep
+        
+
         Memory.clearjob = 'xxx';
         Log.debug("removed " + removed);
     }
