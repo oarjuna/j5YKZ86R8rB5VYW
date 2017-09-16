@@ -182,16 +182,16 @@ module.exports = {
     Log.debug("PL: structure_towers: " + structure_towers.length,'Planner');
 
     // Foreach tower needing energy, ensure a job exists.
-
-    // get a list of  02dd  jobs in the queue
-    // Deliverto - 02dd - energy to tower - deliv
-    job_count = _.filter(Hive.memory.job_queue, function(s) {
-      return  (
-        s.type == '02dd'
-      );});
-    Log.debug("PL: job_count towers: " + job_count.length,'Planner');
-
-
+    for ( let t of structure_towers ) {
+      // get a list of  02dd  jobs in the queue for this tower
+      // Deliverto - 02dd - energy to tower - deliv
+      job_count = _.filter(Hive.memory.job_queue, function(s) {
+        return  (
+          s.type == '02dd' &&
+          s.dest_id == t.id
+        );});
+      Log.debug("PL: job_count towers: " + job_count.length,'Planner');
+    }
 
 
     // get a list of spawns and extensions needing energy
