@@ -27,7 +27,7 @@ module.exports = {
 				job.state = 'abandoned';
 			}
 			else {
-				creep.say('\u1F480'); // 💀
+				creep.say('\uD83D\uDC80'); // 💀
 			}
 
 			//console.log("GEN: " + type + " " + type2 + " " + type3 + " " +  job.dest_id);
