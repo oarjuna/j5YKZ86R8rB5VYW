@@ -175,7 +175,8 @@ module.exports = {
     var idle_full_deliverers = _.filter(Game.creeps, (c) =>
                  ( c.memory.birthplace == job.spawn_name ) &&
                  ( c.spawning != true ) &&
-                 ( c.carry[RESOURCES_ALL] == c.carryCapacity ) &&
+                 //( c.carry[RESOURCES_ALL] == c.carryCapacity ) &&
+                 ( c.carry[RESOURCES_ALL] > 0  ) &&
                  ( c.memory.state == 'idle' ) &&
                  ( c.memory.ryantest == true) &&
                  ( c.memory.role == 'deliverer' )
