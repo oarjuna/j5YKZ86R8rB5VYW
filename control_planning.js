@@ -67,8 +67,8 @@ module.exports = {
 
         //  if there is a job owner, clear it's job
         if ( job != undefined) {
-          let c_obj = Game.getObjectById(job.assigned_creep);
-          c_obj.job = undefined;
+          //let c_obj = Game.getObjectById(job.assigned_creep);
+          //c_obj.job = undefined;
         }
 
         // remove the job
