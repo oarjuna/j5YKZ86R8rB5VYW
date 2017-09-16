@@ -68,7 +68,7 @@ module.exports = {
         //  if there is a job owner, clear it's job
         if ( job != undefined) {
           let c_obj = Game.getObjectById(job.assigned_creep);
-          c.obj.job = undefined;
+          c_obj.job = undefined;
         }
 
         // remove the job
@@ -172,16 +172,17 @@ module.exports = {
 //######################################################################################################################
     // Assign idle creeps with full inventories
 
-
-//######################################################################################################################
-
+    //// Filling Towers to 20%
     //// Filling Spawns and Extensions
-    //// Filling Towers
+    //// Filling Towers to 100%
     //// Filling Sending links
-    //// Filling storage
+    //// Filling Storage
 
     //// Upgrading the Controller
     //// Bringing minerals to Terminal
+
+
+//######################################################################################################################
 
     // Building and Repairing
 
