@@ -188,6 +188,7 @@ module.exports = {
        filter: (s) => (
           ( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity - 100 )
     )});
+    Log.debug("PL: structure_towers: " + structure_towers.length);
 
     // get a list of spawns and extensions needing energy
     var structure_spawns_extensions = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
@@ -202,7 +203,7 @@ module.exports = {
        filter: (s) => (
          ( s.structureType == STRUCTURE_LINK && s.id != Hive.receiving_link[spawn_num] )
     )});
-    Log.debug("PL:structure_sending_links: " + structure_sending_links.length);
+    Log.debug("PL: structure_sending_links: " + structure_sending_links.length);
 
     // foreach idle creep
     for ( let creep of idle_full_deliverers ) {
