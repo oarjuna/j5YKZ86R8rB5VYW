@@ -1,16 +1,15 @@
 module.exports = {
 	run: function(creep,Hive) {
 
-    var assigned_job = creep.memory.job;
 		//return;
-		Log.debug(creep + " GEN: " + assigned_job);
+		Log.debug(creep + " GEN: " + creep.memory.job);
 
-		if ( assigned_job != undefined) {
+		if ( creep.memory.job != undefined) {
 			// set state to working
 			creep.memory.state = 'working';
 			// receive orders
 			// find your job
-			var job = _.find(Hive.memory.job_queue,  function(o) { return o.id == assigned_job; }); // TODO?
+			var job = _.find(Hive.memory.job_queue,  function(o) { return o.id == creep.memory.job; }); // TODO?
 			//console.log("XXX: " + job);
 			var type = job.type;
 			var type2 = type.slice(0,2);
