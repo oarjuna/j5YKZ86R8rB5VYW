@@ -93,11 +93,12 @@ module.exports = {
     // Fillfrom - 01gg - mins from cont       -> deliv
     ///////   DELIVER
     // Deliverto - 02aa - energy to closest cont - harv
-    // Deliverto - 02bb - energy to closest sending link - harv
+    // Deliverto - 02bb - energy to closest sending link - deliv
     // Deliverto - 02cc - energy to spawn or extension - deliv
     // Deliverto - 02dd - energy to tower - deliv
     // Deliverto - 02ee - mins to storage - deliv
     // Deliverto - 02ff - energy to controller - upgrader
+    // Deliverto - 02gg - energy to storage - deliv
     // Deliverto - 02hh - mins to term - deliv
 
     // Do I need to create jobs for:
@@ -175,30 +176,37 @@ module.exports = {
     var idle_full_deliverers = _.filter(Game.creeps, (c) =>
                  ( c.memory.birthplace == job.spawn_name ) &&
                  ( c.spawning != true ) &&
-                 //( c.carry[RESOURCES_ALL] == c.carryCapacity ) &&
-                 (( c.carry[RESOURCE_ENERGY] || c.carry[RESOURCE_KEANIUM] || 
+                 (( c.carry[RESOURCE_ENERGY] || c.carry[RESOURCE_KEANIUM] ||
                    c.carry[RESOURCE_OXYGEN] || c.carry[RESOURCE_LEMERGIUM] ))  &&
                  ( c.memory.state == 'idle' ) &&
                  //( c.memory.ryantest == true) &&
                  ( c.memory.role == 'deliverer' )
                 );
+
     Log.debug("PL: " + idle_full_deliverers.length);
 
-    // assign the dest based on current need
-    //// Filling Towers to 20%
-    //// Filling Spawns and Extensions
-    //// Filling Towers to 100%
-    //// Filling Sending links
-    //// Filling Storage
+    //// assign the dest based on priority
+    //
+    // Deliverto - 02dd - Towers ( #1 if room.controller.memory.alert_state == 'red') ( #2 if not ))
 
+    // Deliverto - 02cc - Spawns and Extensions ( #2 if room.controller.memory.alert_state == 'red' ( #1 if not))
+
+    // Deliverto - 02bb - Closest Sending links #3
+
+    // Deliverto - 02gg - Storage #4
+
+    //// Deliverto - 02hh - minerals to Terminal
+
+    //// Deliverto - 02ee - minerals to storage
 //######################################################################################################################
 
     // Assign idle upgraders with full inv
     //// Upgrading the Controller
+    // Deliverto - 02ff - energy to controller - upgrader
 
     // Assign idle delivers to  with full min invertory
-    //// Bringing minerals to Terminal
-    //// Bringing minerals to storage
+
+
 
 //######################################################################################################################
 
