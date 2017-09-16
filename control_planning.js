@@ -8,7 +8,7 @@ module.exports = {
     // Define the job object
     // job object prototype - spawn_name,type, priority, state, body_type_req, dest_id, extra, tick_issued, tick_complete
     //    states - assigned / complete / abandoned / timed out / unasssigned
-    function Job (spawn_name,type,priority,state,body_type_req,dest_id,extra,tick_issued,tick_complete) {
+    function Job (spawn_name,type,priority,state,body_type_req,dest_id,extra,tick_issued,tick_complete,assigned_creep) {
         this.spawn_name = spawn_name;
         this.type = type;
         this.priority = priority;
@@ -18,6 +18,7 @@ module.exports = {
         this.extra = extra;
         this.tick_issued = tick_issued;
         this.tick_complete = tick_complete;
+        this.assigned_creep = assigned_creep;
         this.uuid = function uuid()  {
           var uuid = "", i, random,uuidlen = 12;
 
