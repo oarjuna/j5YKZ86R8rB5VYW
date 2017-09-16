@@ -183,7 +183,6 @@ module.exports = {
                  ( c.memory.role == 'deliverer' )
                 );
 
-    Log.debug("PL: " + idle_full_deliverers.length);
 
     // foreach idle creep
     for ( let creep of idle_full_deliverers ) {
@@ -194,6 +193,8 @@ module.exports = {
            filter: (s) => (
               ( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity - 250 )
         )});
+        Log.debug("PL: " + structure_towers.length);
+
         // get a list of spawns and extensions needing energy
 
         // get a list of sending links needing energy
