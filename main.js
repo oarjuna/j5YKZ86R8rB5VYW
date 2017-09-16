@@ -233,7 +233,7 @@ Creep.prototype.hasActiveBodypart = function (type) {
 
 
   }
-
+  console.log("------ START ------");
   general.run(Hive);
 
   roleSpawn.run(0,Hive);
@@ -269,7 +269,7 @@ Creep.prototype.hasActiveBodypart = function (type) {
 
     console.log("JQ: " + job.spawn_name+ " j_id: " + job.id + " type " + job.type + " st: " + job.state + " cr: " + name + " d: " + job.dest_id + " ex: " + job.extra + " t_in_q " + ( Game.time - job.tick_issued));
   }
-  console.log("------ actions ------");
+  console.log("------ END ------");
   //console.log("#-------------------------------------------------------#  H, U, R, B, RH, C, De, EM, S");
   stats.collect_stats();
   //for (var spawn in Game.spawns){
