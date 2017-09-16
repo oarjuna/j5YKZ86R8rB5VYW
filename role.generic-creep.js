@@ -26,7 +26,9 @@ module.exports = {
 				creep.memory.job = undefined;
 				creep.memory.state = 'idle';
 				job.state = 'abandoned';
-
+			}
+			else {
+				creep.say("not today!");
 			}
 
 			//console.log("GEN: " + type + " " + type2 + " " + type3 + " " +  job.dest_id);
