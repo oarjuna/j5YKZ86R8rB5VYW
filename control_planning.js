@@ -129,12 +129,11 @@ module.exports = {
                 s.extra == res
               );});
 
-            existing_count += job_count.length;
             need_count++;
 
             Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex jobs: " + existing_count + " need: " + need_count);
 
-            if ( existing_count < need_count ) {
+            if ( job_count.length < need_count ) {
               var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer',x.id,res,Game.time,'');
               Hive.memory.job_queue.push(job);
               Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " type " + job.type + " res " + res + " dest " + x.id);
