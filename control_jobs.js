@@ -14,7 +14,7 @@ module.exports = {
 */
     var deliver_carry_cap = 400;
     var harvester_carry_cap = 150;
-    var job_TTL = 20;
+    var job_TTL = 30;
     var tmpcreep, min_needed;
 
     // when a job is completed, times out, or is abandoned, remove it from the job_queue
