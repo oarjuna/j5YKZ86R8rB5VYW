@@ -13,6 +13,7 @@ module.exports = {
     var empty = 0;
 */
     var deliver_carry_cap = 400;
+    var Hive.deliverer_carry_cap = 400;
     var harvester_carry_cap = 150;
     var job_TTL = 200;
     var tmpcreep, min_needed;
@@ -100,6 +101,7 @@ module.exports = {
 // Deliverto - 02ff - energy to controller - upgrader
 // Deliverto - 02gg - energy to closest sending link - deliv
 // Deliverto - 02hh - mins to term - deliv
+// Deliverto - 02ii - energy to storage - deliv
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '02aa': //Delivto - 02aa - energy to closest cont - harv
           case '02bb': //Delivto - 02bb - energy to nearest sending link - harv
