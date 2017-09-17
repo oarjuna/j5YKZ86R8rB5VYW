@@ -81,7 +81,7 @@ module.exports = {
 				}
 				// if creep carry is 0
 				//if ( _.sum(creep.carry) == 0 ) { var complete = true; }
-				if ( dest_obj.energy == dest_obj.energyCapacity ) { var complete = true; }
+				if ( dest_obj.energy == dest_obj.energyCapacity ||  _.sum(creep.carry) == 0 ) { var complete = true; }
 
 			} // END DELIV
 
