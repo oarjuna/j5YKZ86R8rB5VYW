@@ -98,7 +98,6 @@ module.exports = {
       var job = new Job(spawn_name,'01aa',5,'unassigned','harvester','default',RESOURCE_ENERGY,Game.time,'','');
       Hive.memory.job_queue.push(job);
       Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
-
     }
 //######################################################################################################################
     // Ensure jobs exists to tell full harvs to drop stuff off
