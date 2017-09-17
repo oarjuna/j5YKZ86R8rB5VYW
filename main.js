@@ -275,7 +275,7 @@ console.log("------ START ------");
 
     var dest_obj = Game.getObjectById(job.dest_id);
 
-    console.log("JQ: " + dest_obj.id);
+    console.log("JQ: " + dest_obj);;
 
     if ( job.dest_id == 'closest' || _.find(Hive.sources[0], job.dest_id )  ) {  dest_type =  job.dest_id; }
     else { dest_type = dest_obj.structureType; }
