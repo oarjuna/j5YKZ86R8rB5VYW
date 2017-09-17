@@ -160,7 +160,13 @@ Creep.prototype.hasActiveBodypart = function (type) {
                     '000000000000000000000001' // Spawn4
                   ],
     military_squad : [],
-    job_queue : []
+    job_queue : [],
+    deliverer_carry_cap : [
+                          '400', // Spawn1
+                          '400', // Spawn2
+                          '400', // Spawn3
+                          '400'  // Spawn4
+    ]
   };
 
   Object.defineProperty(Hive, 'memory', {
