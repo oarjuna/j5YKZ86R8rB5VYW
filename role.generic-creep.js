@@ -61,13 +61,15 @@ module.exports = {
 				if ( type3 == 'aa') { // from source == harvest
 					creep.say('\u26CF'); //  ⛏
 					creep.harvest(dest_obj);
+					if ( _.sum(creep.carry) == creep.carryCapacity || _.sum(dest_obj.energy) == 0 ) { var complete = true; }
 				}
 				else { // everything else uses withdraw
 					creep.say('\uD83D\uDD3A'); // 🔺
 					creep.withdraw(dest_obj, job.extra);
+					if ( _.sum(creep.carry) == creep.carryCapacity || _.sum(dest_obj.energy) == 0 ) { var complete = true; }
 				}
 				// creep carry is full // TODO or the container is empty
-				if ( _.sum(creep.carry) == creep.carryCapacity || _.sum(dest_obj.energy) == 0 ) { var complete = true; }
+
 
 				// TODO work off of job.extra instead of energy
 				//if ( _.sum(creep.carry) == creep.carryCapacity || _.sum(dest_obj.energy) == dest_obj.energyCapacity ) { var complete = true; }
