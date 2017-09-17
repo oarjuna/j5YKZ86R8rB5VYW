@@ -18,7 +18,7 @@ module.exports = {
 				return;
 			}
 
-			Log.debug("GEN: " + job.id + " ttl: " + creep.ticksToLive  +  " jst: " + job.state );
+			Log.info("GEN: " + job.id + " ttl: " + creep.ticksToLive  +  " jst: " + job.state );
 			var type = job.type;
 			var type2 = type.slice(0,2);
 			var type3 = type.slice(2);
@@ -99,7 +99,7 @@ module.exports = {
 			} // END BUILD / REPAIR
 
 			if ( complete == true ) {
-				Log.debug(creep + "GEN: task complete -- " + job.id)
+				Log.info(creep + "GEN: task complete -- " + job.id)
 				// set creep state to idle
 				creep.memory.state = 'idle';
 				// mark job as complete in job_queue
