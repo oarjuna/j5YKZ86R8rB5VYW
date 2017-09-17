@@ -66,8 +66,8 @@ module.exports = {
 					creep.say('\uD83D\uDD3A'); // 🔺
 					creep.withdraw(dest_obj, job.extra);
 				}
-				// creep carry is full
-				if ( _.sum(creep.carry) == creep.carryCapacity ) { var complete = true; }
+				// creep carry is full // TODO or the container is empty
+				if ( _.sum(creep.carry) == creep.carryCapacity || _.sum(dest_obj.energy) == dest_obj.energyCapacity ) { var complete = true; }
 			}
 
 			else if ( type2 == '02') { // DELIV
