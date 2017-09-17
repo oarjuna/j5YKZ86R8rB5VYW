@@ -155,11 +155,13 @@ module.exports = {
             tmpcreep = _.find(Game.creeps, (c) =>
              ( c.memory.birthplace == job.spawn_name ) &&
              ( c.spawning != true ) &&
-             ( c.carry[job.extra] == c.carryCapacity ) &&
+             ( c.carry[job.extra] > 0 ) &&
              ( c.memory.state == 'idle' ) &&
              ( c.memory.ryantest == true) &&
              ( c.memory.role == 'deliverer' )
             );
+            // TODO -- find the closest job for this creep.
+
           break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '02ff': // Deliverto - 02ff - energy to controller - upgrader
