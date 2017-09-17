@@ -218,6 +218,8 @@ module.exports = {
       if ( t.structureType == STRUCTURE_SPAWN ) { energy_needed = energy_needed + 300; }
       else { energy_needed = energy_needed + 50; }
 
+      Log.debug(" EN" + energy_needed);
+      
       num_of_jobs_needed = energy_needed / Hive.deliverer_carry_cap[spawn_num];
 
       Log.debug("PL: job_count sp & ext: " + t.id + " " + job_count.length + "/" + num_of_jobs_needed,'Planner');
