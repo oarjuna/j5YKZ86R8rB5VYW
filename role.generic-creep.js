@@ -66,6 +66,7 @@ module.exports = {
 				else { // everything else uses withdraw
 					creep.say('\uD83D\uDD3A'); // 🔺
 					creep.withdraw(dest_obj, job.extra);
+					Log.debug("creep.carry" + creep.carry + "/" + creep.carryCapacity + " dest " + dest_obj.energy );
 					if ( _.sum(creep.carry) == creep.carryCapacity || _.sum(dest_obj.energy) == 0 ) { var complete = true; }
 				}
 				// creep carry is full // TODO or the container is empty
