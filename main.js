@@ -267,7 +267,9 @@ console.log("------ START ------");
 */
   console.log("---- Job Queue ---- len: " + Hive.memory.job_queue.length);
   // display the job queue
-  for ( let job of Hive.memory.job_queue) {
+  var sorted_job_queue = _.sortBy(Hive.memory.job_queue, ['priority']);
+
+  for ( let job of sorted_job_queue) {
 
     let tmp_obj = Game.getObjectById(job.assigned_creep);
     if ( tmp_obj != undefined ) { name = tmp_obj.name;}
