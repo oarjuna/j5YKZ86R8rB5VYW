@@ -28,8 +28,12 @@ module.exports = {
       // find any creep with this job's id still assigned and remove it from their memory.job // TODO
     }
 
+    // sort the joq queue based on job.priority priority
+    var sorted_job_queue = _.sort(Hive.memory.job_queue, ['priority']);
+
     // now, try to assign jobs to creeps
-    for ( let job of Hive.memory.job_queue) {
+    for ( let job of sorted_job_queue) {
+    //for ( let job of Hive.memory.job_queue) {
 
       // TODO
       //Fillfrom - 01ee - ground - builder
