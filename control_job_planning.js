@@ -175,7 +175,7 @@ module.exports = {
     )});
 
     // Foreach tower needing energy, ensure a job exists. assigned or otherwise
-    for ( let t of structure_towers ) {
+    for ( var t of structure_towers ) {
       // get a list of  02dd  jobs in the queue for this tower
       // Deliverto - 02dd - energy to tower - deliv
       job_count = _.filter(Hive.memory.job_queue, function(s) {
@@ -202,7 +202,7 @@ module.exports = {
     )});
 
     // Foreach spawn or extension needing energy, ensure a job exists. assigned or otherwise
-    for ( let t of structure_spawns_extensions ) {
+    for ( var t of structure_spawns_extensions ) {
       // get a list of  02cc  jobs in the queue for this spawn or extension
       // Deliverto - 02cc - energy to spawn or extension - deliv
 
@@ -229,7 +229,7 @@ module.exports = {
     )});
 
     // Foreach sending links needing energy, ensure a job exists. assigned or otherwise
-    for ( let t of structure_sending_links ) {
+    for ( var t of structure_sending_links ) {
       // get a list of  02gg  jobs in the queue for this spawn or extension
       // Deliverto - 02gg - energy to sending link - deliv
 
