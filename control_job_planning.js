@@ -215,7 +215,7 @@ module.exports = {
           s.dest_id == t.id
         );});
 
-      if ( t.structureType == STRUTURE_SPAWN ) { energy_needed += 300; }
+      if ( t.structureType == STRUCTURE_SPAWN ) { energy_needed += 300; }
       else { energy_needed += 50; }
 
       num_of_jobs_needed = energy_needed / Hive.deliverer_carry_cap[spawn_num];
