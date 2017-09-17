@@ -162,7 +162,7 @@ Creep.prototype.hasActiveBodypart = function (type) {
     military_squad : [],
     job_queue : [],
     deliverer_carry_cap : [
-                          '400', // Spawn1
+                          '150', // Spawn1
                           '400', // Spawn2
                           '400', // Spawn3
                           '400'  // Spawn4
