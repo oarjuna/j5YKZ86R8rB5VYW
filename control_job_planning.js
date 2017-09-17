@@ -90,6 +90,7 @@ module.exports = {
     // count the number of total # of harvs each room will spawn
     var harvs_needed =  _.sum(Hive.harvs_per_source[spawn_num]);
 
+    Log.Debug("harvesting " + harvesting_jobs);
     // if we have less jobs than harvs_needed
     if ( harvesting_jobs.length < harvs_needed ) {
       // spawn a generic harvesting job
@@ -295,7 +296,7 @@ module.exports = {
     // Fillfrom - 01cc - energy from storage   -> deliv
     // TODO - next!
 
-    
+
 
 //######################################################################################################################
 
