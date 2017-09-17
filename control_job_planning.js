@@ -73,12 +73,12 @@ module.exports = {
     // Fillfrom - 01ff - mins from storage     -> deliv
     // Fillfrom - 01gg - mins from cont       -> deliv
     ///////   DELIVER
-    // Deliverto - 02aa - energy to closest cont - harv
+    // Deliverto - 02aa - energy to closest cont/link - harv
     // Deliverto - 02cc - energy to spawn or extension - deliv
     // Deliverto - 02dd - energy to tower - deliv
     // Deliverto - 02ee - mins to storage - deliv
     // Deliverto - 02ff - energy to controller - upgrader
-    // Deliverto - 02gg - energy to sending ling - deliv
+    // Deliverto - 02gg - energy to sending link - deliv
     // Deliverto - 02ii - energy to storage - deliv
     // Deliverto - 02hh - mins to term - deliv
 
