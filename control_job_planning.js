@@ -281,7 +281,7 @@ module.exports = {
          s.type == '02ii'
        );});
 
-      var storage = Game.spawns[spawn_name].room.storage;
+      var storage = Game.spawns[spawn_name].room.storage.id;
 
      if ( deliv_job_count < Hive.spawn_levels[spawn_num][1] ) {
        var job = new Job(spawn_name,'02ii',10,'unassigned','deliverer',storage,RESOURCE_ENERGY,Game.time,'','');
