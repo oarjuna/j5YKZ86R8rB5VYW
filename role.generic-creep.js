@@ -12,7 +12,7 @@ module.exports = {
 			var job = _.find(Hive.memory.job_queue,  function(o) { return o.id == creep.memory.job; });
 
 			if ( job == undefined ) {
-				// something happened to the job.
+				// something happened to my job object. start over
 				creep.memory.job = undefined;
 				creep.memory.state = 'idle';
 				return;
