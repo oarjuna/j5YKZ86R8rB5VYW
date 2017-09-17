@@ -18,7 +18,7 @@ module.exports = {
 				return;
 			}
 
-			Log.debug("GEN: " + job.id + " ttl: " + creep.ticksToLive  +  " jst: " + job.state );
+			Log.debug("GEN: " + job.id + " ttl: " + creep.ticksToLive  +  " jst: " + job.state,'Generic' );
 
 			var type = job.type;
 			var type2 = type.slice(0,2);
@@ -65,7 +65,7 @@ module.exports = {
 				else { // everything else uses withdraw
 					creep.say('\uD83D\uDD3A'); // 🔺
 					creep.withdraw(dest_obj, job.extra);
-					Log.debug("GEN: creep.carry " + _.sum(creep.carry) + "/" + creep.carryCapacity + " dest_obj " + dest_obj.store[job.extra]);
+					Log.debug("GEN: creep.carry " + _.sum(creep.carry) + "/" + creep.carryCapacity + " dest_obj " + dest_obj.store[job.extra],'Generic');
 					if ( _.sum(creep.carry) == creep.carryCapacity || dest_obj.store[job.extra] == 0 ) { var complete = true; }
 				}
 			}
@@ -104,7 +104,7 @@ module.exports = {
 			} // END BUILD / REPAIR
 
 			if ( complete == true ) {
-				Log.debug(creep.name + "GEN: task complete -- " + job.id)
+				Log.debug(creep.name + "GEN: task complete -- " + job.id,'Generic')
 				// set creep state to idle
 				creep.memory.state = 'idle';
 				// mark job as complete in job_queue
