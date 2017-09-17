@@ -283,7 +283,7 @@ module.exports = {
 
       var storage = Game.spawns[spawn_name].room.storage;
 
-     if ( deliv_job_count == Hive.spawn_levels[spawn_num][1] ) {
+     if ( deliv_job_count < Hive.spawn_levels[spawn_num][1] ) {
        var job = new Job(spawn_name,'02ii',10,'unassigned','deliverer',storage,RESOURCE_ENERGY,Game.time,'','');
        Hive.memory.job_queue.push(job);
        Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
