@@ -130,7 +130,7 @@ Creep.prototype.hasActiveBodypart = function (type) {
     spawn_levels:
                 //  Harvest, Deliv, Upgrade, Build, Energy, RemoteHarv, Claim, Soldier, Repair, Sol-M ,Sol-R, Sol-H
                 [// H  D  U  B Cr  Rh C  S  R Sm Sr SH
-                  [ 2, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0], // Spawn1
+                  [ 2, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0], // Spawn1
                   [ 2, 3, 3, 1, 0, 2, 0, 0, 0, 0, 0, 0], // Spawn2
                   [ 2, 3, 3, 1, 0, 2, 0, 0, 0, 0, 0, 0], // Spawn3
                   [ 2, 1, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0]  // Spawn4
@@ -271,7 +271,7 @@ console.log("------ START ------");
   var sorted_job_queue = Hive.memory.job_queue.sort(function(a, b) {
     return parseFloat(a.priority) - parseFloat(b.priority);
   });
-  
+
   //var sorted_job_queue = _.sortBy(Hive.memory.job_queue,  [function(o) { return o.type; }] );
 
   for ( let job of sorted_job_queue) {
