@@ -267,7 +267,7 @@ console.log("------ START ------");
 */
   console.log("---- Job Queue ---- len: " + Hive.memory.job_queue.length);
   // display the job queue
-  var sorted_job_queue = _.sortBy(Hive.memory.job_queue, ['priority']);
+  var sorted_job_queue = _.sortBy(Hive.memory.job_queue,  [function(o) { return o.priority; }] );
 
   for ( let job of sorted_job_queue) {
 
