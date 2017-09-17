@@ -278,6 +278,8 @@ console.log("------ START ------");
   if ( job.dest_id == 'closest' || job.dest_id == 'default' )  {  dest_type =  job.dest_id; }
   else { dest_type = dest_obj.structureType; }
 
+  if ( dest_obj == undefined ) { dest_obj = 'source'; }
+
 
     console.log("JQ: " + job.spawn_name+ " j_id: " + job.id + " type " + job.type + " st: " + job.state + " cr: " + name + " d: " + dest_type + " ex: " + job.extra + " tq " + ( Game.time - job.tick_issued));
   }
