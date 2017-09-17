@@ -247,6 +247,8 @@ module.exports = {
           s.dest_id == t.id
         );});
 
+      //num_of_jobs_needed = energy_needed / Hive.deliverer_carry_cap[spawn_num];
+
       Log.debug("PL: job_count send links : " + job_count.length + "/" + structure_sending_links.length,'Planner');
 
       if (  job_count.length < structure_sending_links.length ) {
