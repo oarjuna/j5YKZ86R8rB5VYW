@@ -221,7 +221,7 @@ module.exports = {
       //num_of_jobs_needed = energy_needed / Hive.deliverer_carry_cap[spawn_num];
       num_jobs_needed = num_jobs_needed + 1;
 
-      Log.debug("PL: job_count sp & ext: " + t.id + " " + job_count.length + "/" + num_of_jobs_needed,'Planner');
+      Log.debug("PL: job_count sp & ext: " + t.id + " " + job_count.length + "/" + num_jobs_needed,'Planner');
 
       if (  job_count.length < num_of_jobs_needed ) {
         // spawn a job for this sp or ext
