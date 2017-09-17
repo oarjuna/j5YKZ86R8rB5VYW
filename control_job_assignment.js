@@ -101,7 +101,7 @@ module.exports = {
 // Deliverto - 02hh - mins to term - deliv
 // Deliverto - 02ii - energy to storage - deliv
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-          case '02aa': //Delivto - 02aa - energy to closest cont/link - harv
+          case '02aa': // Delivto - 02aa - energy to closest cont/link - harv
             // find creep per normal
             tmpcreep = _.find(Game.creeps, (c) =>
              ( c.memory.birthplace == job.spawn_name ) &&
@@ -141,6 +141,8 @@ module.exports = {
               }
             }
           break;
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '02cc': // Deliverto - 02cc - energy to spawn or extension - deliv
           case '02dd': // Deliverto - 02dd - energy to tower - deliv
