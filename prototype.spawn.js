@@ -12,7 +12,7 @@ module.exports = function() {
   function(energy_avail, roleName, dest, birthplace,return_id) {
 
     if ( birthplace == 'Spawn1' && roleName == 'harvester') { var ryantest = true; }
-    //else if ( birthplace == 'Spawn1' && roleName == 'deliverer') { var ryantest = true; } // TODO - ready to test
+    else if ( birthplace == 'Spawn1' && roleName == 'deliverer') { var ryantest = true; } // TODO - ready to test
     else { var ryantest = false; }
     //var ryantest = false;
     // 300 - 549 energy_avail --- initial spawn
