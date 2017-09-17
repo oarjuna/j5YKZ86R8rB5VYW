@@ -135,7 +135,8 @@ module.exports = {
                   ( s.structureType == STRUCTURE_LINK && s.id != rec_link )
               )});
 */
-              var near_link = tmpcreep.pos.findInRange(structure_links,1);
+//              var near_link = tmpcreep.pos.findInRange(structure_links,1);
+              var near_link = undefined;
 
               if ( near_link  != undefined ) {
                 // set job dest_id to send link id
