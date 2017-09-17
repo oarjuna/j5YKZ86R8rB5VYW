@@ -45,9 +45,6 @@ module.exports = {
 		// if the creep is taking damage, it should abandon its job.
 		// idea - move to spawn for recyling when close to death
 
-		// TTL
-		// hits
-
 		// if the dest_obj in range
 		if(creep.pos.isNearTo(dest_obj)) { 	// harvest/transfer/withdraw/upgrade/repair dest_obj
 
