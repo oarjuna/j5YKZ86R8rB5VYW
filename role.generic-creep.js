@@ -81,7 +81,9 @@ module.exports = {
 				}
 				// if creep carry is 0
 				//if ( _.sum(creep.carry) == 0 ) { var complete = true; }
-				if ( dest_obj.energy == dest_obj.energyCapacity ||  _.sum(creep.carry) == 0 ) { var complete = true; }
+				if ( dest_obj.store[job.extra] == dest_obj.storeCapacity ||  _.sum(creep.carry) == 0 ) { var complete = true; }
+//				if ( dest_obj.energy == dest_obj.energyCapacity ||  _.sum(creep.carry) == 0 ) { var complete = true; }
+
 
 			} // END DELIV
 
@@ -115,7 +117,7 @@ module.exports = {
 		} // END is near to destination
 		else {
 			// else move towards dest_obj
-			creep.say(job.type); 
+			creep.say(job.type);
 			creep.moveTo(dest_obj);
 		} // END move
 
