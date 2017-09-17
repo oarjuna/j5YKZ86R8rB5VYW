@@ -283,7 +283,7 @@ console.log("------ START ------");
   //if ( dest_type == undefined ) { dest_type = 'source'; }
 
 
-    console.log("JQ: " + job.spawn_name+ " j_id: " + job.id + " type " + job.type + " st: " + job.state + " cr: " + name + " d: " + job.dest_id + " ex: " + job.extra + " tq " + ( Game.time - job.tick_issued));
+    console.log("JQ: " + job.spawn_name+ " j_id: " + job.id + " type " + job.type + " st: " + job.state + " cr: " + name + " p: " + job.priority + " ex: " + job.extra + " tq " + ( Game.time - job.tick_issued));
   }
   console.log("------ END ------");
   //console.log("#-------------------------------------------------------#  H, U, R, B, RH, C, De, EM, S");
