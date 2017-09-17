@@ -142,7 +142,7 @@ module.exports = {
                 job.dest_id = near_link.id;
                 Log.debug(tmpcreep + " @ " + job.spawn_name + " container found "+ job.dest_id,'Jobber');
               }
-              elses if ( near_cont  != undefined ) {
+              else if ( near_cont  != undefined ) {
                 // set job dest_id to container id
                 job.dest_id = near_cont.id;
                 Log.debug(tmpcreep + " @ " + job.spawn_name + " container found "+ job.dest_id,'Jobber');
