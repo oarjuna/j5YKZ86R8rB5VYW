@@ -214,6 +214,8 @@ module.exports = {
           s.dest_id == t.id
         );});
 
+//      num_of_jobs_needed = ( job_count * t.energyCapacity ) / Hive.deliverer_carry_cap[spawn_num];
+
       Log.debug("PL: job_count sp & ext: " + t.id + " " + job_count.length + "/" + structure_spawns_extensions.length,'Planner');
 
       if (  job_count.length < structure_spawns_extensions.length ) {
