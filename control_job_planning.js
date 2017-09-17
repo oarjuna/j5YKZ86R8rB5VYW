@@ -115,12 +115,12 @@ module.exports = {
       // spawn a generic harvesting job
       var job = new Job(spawn_name,'01aa',1,'unassigned','harvester','default',RESOURCE_ENERGY,Game.time,'','');
       Hive.memory.job_queue.push(job);
-      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type,'Planner');
+      Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
 
       // and the corresponding unload to nearest container job
       var job = new Job(spawn_name,'02aa',1,'unassigned','harvester','closest',RESOURCE_ENERGY,Game.time,'','');
       Hive.memory.job_queue.push(job);
-      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type,'Planner');
+      Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
     }
 //######################################################################################################################
     // Emptying containers - are there containers which need to be emptied?
