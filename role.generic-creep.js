@@ -31,6 +31,10 @@ module.exports = {
 
 			//console.log("GEN: " + type + " " + type2 + " " + type3 + " " +  job.dest_id);
 		}
+		else if ( creep.memory.state == 'ttdie' ) {
+			creep.say('\uD83D\uDC80'); // 💀
+			return;
+		}
 		else {
 			creep.say('\uD83C\uDFB6'); // 🎶
 			creep.memory.state = 'idle';
@@ -38,7 +42,7 @@ module.exports = {
 		}
 
 		// TODO
-		// if the creep is about to die or is taking damage, it should abandon its job.
+		// if the creep is taking damage, it should abandon its job.
 		// idea - move to spawn for recyling when close to death
 
 		// TTL
