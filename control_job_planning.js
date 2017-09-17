@@ -184,9 +184,11 @@ module.exports = {
           s.dest_id == t.id
         );});
 
-      Log.debug("PL: job_count towers: " + job_count.length + "/" + structure_towers.length,'Planner');
+      num_of_jobs_needed =  ( t.energyCapacity - t.energy ) / Hive.deliverer_carry_cap[spawn_num];
 
-      if (  job_count.length < structure_towers.length ) {
+      Log.debug("PL: job_count towers: " + job_count.length + "/" + num_of_jobs_needed,'Planner');
+
+      if (  job_count.length < num_of_jobs_needed ) {
         // spawn a job for this tower
         var job = new Job(spawn_name,'02dd',1,'unassigned','deliverer',t.id,RESOURCE_ENERGY,Game.time,'','');
         Hive.memory.job_queue.push(job);
