@@ -10,6 +10,14 @@ module.exports = {
 			// receive orders
 			// find your job
 			var job = _.find(Hive.memory.job_queue,  function(o) { return o.id == creep.memory.job; });
+
+			if ( job == undefined ) {
+				// something happened to the job.
+				creep.memory.job = undefined;
+				creep.memory.state = 'idle';
+				return;
+			}
+
 			Log.debug("GEN: " + job.id + " ttl: " + creep.ticksToLive  +  " jst: " + job.state );
 			var type = job.type;
 			var type2 = type.slice(0,2);
