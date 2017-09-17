@@ -119,14 +119,13 @@ module.exports = {
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_OXYGEN] >= 400 )
     )});
 
-    var need_count = {};
     if ( res_containers.length > 0) { // if there are containers needing pickup
       for ( var x of res_containers ) { // for each container with stuff
         for ( var res in x.store ) { // for each resource type in each container's store list
           if ( x.store[res] > 0 ) { // that is not empty
 
             // get the amount of resource to pickup = resources / carry cap
-            num_of_jobs =  x.store[res] / Hive.deliverer_carry_cap[spawn_num];
+            num_of_jobs_needed =  x.store[res] / Hive.deliverer_carry_cap[spawn_num];
 
             // get a count of existing jobs for this resource and pickup location
             var job_count = _.filter(Hive.memory.job_queue, function(s) {
@@ -139,18 +138,12 @@ module.exports = {
 
             Log.debug(x.id + " RES " + res + " " + x.store[res] + " ex jobs: " + job_count.length + " num: " + num_of_jobs,'Planner');
 
-            //TODO
-            // count how many jobs we need per resource type
-            //if ( need_count[res] == undefined ) { need_count[res] = 1;}
-            //else {need_count[res]++; }
-
-
             // if there are more jobs than existing jobs
-            if ( job_count.length < need_count[res]  ) {
+            if ( job_count.length < num_of_jobs_needed ) {
               // spawn a new job
-              //var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer',x.id,res,Game.time,'','');
+              var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer',x.id,res,Game.time,'','');
               //Hive.memory.job_queue.push(job);
-              //Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " type " + job.type + " res " + res + " dest " + x.id,'Planner');
+              Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + x.structureType + " " + x.id,'Planner');
             }
 
           } // END empty check
