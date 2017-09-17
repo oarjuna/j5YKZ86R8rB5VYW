@@ -275,11 +275,11 @@ console.log("------ START ------");
 
     var dest_obj = Game.getObjectById(job.dest_id);
 
-    // if ( job.dest_id != 'closest' || dest_obj !=  ) {  dest_type = dest_obj.structureType; }
-    // else { dest_type = job.dest_id; }
-    var dest_type = 'foo';
+    if ( job.dest_id == 'closest' || _.find(Hive.sources[spawn_num], job.dest_id )  ) {  dest_type =  job.dest_id; }
+    else { dest_type = dest_obj.structureType; }
+//    var dest_type = 'foo';
 
-    console.log("JQ: type" + job.type + " " + dest_type);
+    console.log("JQ: type " + job.type + " " + dest_type);
     console.log("JQ: " + job.spawn_name+ " j_id: " + job.id + " type " + job.type + " st: " + job.state + " cr: " + name + " d: " + job.dest_id + " ex: " + job.extra + " tq " + ( Game.time - job.tick_issued));
   }
   console.log("------ END ------");
