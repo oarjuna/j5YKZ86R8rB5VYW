@@ -272,7 +272,7 @@ console.log("------ START ------");
     let tmp_obj = Game.getObjectById(job.assigned_creep);
     if ( tmp_obj != undefined ) { name = tmp_obj.name;}
     else { name = 'undefined'; }
-    if ( job.dest_id ) { var dest_obj = Game.getObjectById(job.dest_id); dest_type = dest_obj.structureType; }
+    if ( job.dest_id ) { var dest_obj = Game.getObjectById(job.dest_id); dest_type = dest_obj.id; }
     else { dest_type = 'unassigned'; }
 
     console.log("JQ: " + job.spawn_name+ " j_id: " + job.id + " type " + job.type + " st: " + job.state + " cr: " + name + " d: " + dest_type + " ex: " + job.extra + " tq " + ( Game.time - job.tick_issued));
