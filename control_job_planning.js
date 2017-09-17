@@ -217,7 +217,7 @@ module.exports = {
       if (  job_count.length < structure_spawns_extensions.length ) {
         // spawn a job for this sp or ext
         var job = new Job(spawn_name,'02cc',5,'unassigned','deliverer',t.id,RESOURCE_ENERGY,Game.time,'','');
-        //Hive.memory.job_queue.push(job);
+        Hive.memory.job_queue.push(job);
         Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + t.structureType + " " + t.id,'Planner');
       }
     }
