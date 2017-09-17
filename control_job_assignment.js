@@ -138,12 +138,7 @@ module.exports = {
 //              var near_link = tmpcreep.pos.findInRange(structure_links,1);
               var near_link = undefined;
 
-              if ( near_link  != undefined ) {
-                // set job dest_id to send link id
-                job.dest_id = near_link.id;
-                Log.debug(tmpcreep + " @ " + job.spawn_name + " container found "+ job.dest_id,'Jobber');
-              }
-              else if ( near_cont  != undefined ) {
+               if ( near_cont  != undefined ) {
                 // set job dest_id to container id
                 job.dest_id = near_cont.id;
                 Log.debug(tmpcreep + " @ " + job.spawn_name + " container found "+ job.dest_id,'Jobber');
