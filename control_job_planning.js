@@ -74,12 +74,13 @@ module.exports = {
     // Fillfrom - 01gg - mins from cont       -> deliv
     ///////   DELIVER
     // Deliverto - 02aa - energy to closest cont - harv
-    // Deliverto - 02bb - energy to closest sending link - deliv
+    // Deliverto - 02bb - energy to closest sending link - harv
     // Deliverto - 02cc - energy to spawn or extension - deliv
     // Deliverto - 02dd - energy to tower - deliv
     // Deliverto - 02ee - mins to storage - deliv
     // Deliverto - 02ff - energy to controller - upgrader
-    // Deliverto - 02gg - energy to storage - deliv
+    // Deliverto - 02gg - energy to closest sending ling - deliv
+    // Deliverto - 02ii - energy to storage - deliv
     // Deliverto - 02hh - mins to term - deliv
 
     // Do I need to create jobs for:
@@ -133,11 +134,13 @@ module.exports = {
                 s.extra == res
               );});
 
-            // count how many jobs we need per resource type
-            if ( need_count[res] == undefined ) { need_count[res] = 1;}
-            else {need_count[res]++; }
+            Log.debug(x.id + " RES " + res + " " + x.store[res] + " ex jobs: " + job_count.length,'Planner');
 
-            //Log.debug("PL: " + x + " RES " + res + " " + x.store[res] + " ex jobs: " + job_count.length + " need: " + need_count[res],'Planner');
+            //TODO
+            // count how many jobs we need per resource type
+            //if ( need_count[res] == undefined ) { need_count[res] = 1;}
+            //else {need_count[res]++; }
+
 
             // if there are more jobs than existing jobs
             if ( job_count.length < need_count[res]  ) {
@@ -153,7 +156,7 @@ module.exports = {
     } // END if >0 check
 
 //######################################################################################################################
-    // Ensure jobs exist for towers, spawns, extensions, and sending_linsks needing energy
+    // Ensure jobs exist for towers, spawns, extensions, and sending_links needing energy
     // DO NOT ASSIGN CREEPS JOBS IN PLANNING, however tempting!
 
     // get a lists of towers needing energy
