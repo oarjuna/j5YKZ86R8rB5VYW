@@ -29,8 +29,9 @@ module.exports = {
     }
 
     // sort the joq queue based on job.priority priority
-    var sorted_job_queue = _.sortBy(Hive.memory.job_queue, ['priority']);
-
+    var sorted_job_queue = Hive.memory.job_queue.sort(function(a, b) {
+      return parseFloat(a.priority) - parseFloat(b.priority);
+    });
     // now, try to assign jobs to creeps
     for ( let job of sorted_job_queue) {
     //for ( let job of Hive.memory.job_queue) {
