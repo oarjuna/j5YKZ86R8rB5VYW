@@ -67,7 +67,7 @@ module.exports = {
 					creep.withdraw(dest_obj, job.extra);
 				}
 				// creep carry is full // TODO or the container is empty
-				if ( _.sum(creep.carry) == creep.carryCapacity || _.sum(dest_obj.energy) == dest_obj.energyCapacity ) { var complete = true; }
+				if ( _.sum(creep.carry) == creep.carryCapacity || _.sum(dest_obj.energy) == 0 ) { var complete = true; }
 
 				// TODO work off of job.extra instead of energy
 				//if ( _.sum(creep.carry) == creep.carryCapacity || _.sum(dest_obj.energy) == dest_obj.energyCapacity ) { var complete = true; }
