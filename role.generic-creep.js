@@ -69,11 +69,6 @@ module.exports = {
 					Log.warn("GEN: creep.carry " + _.sum(creep.carry) + "/" + creep.carryCapacity + " dest_obj " + dest_obj.store[job.extra]);
 					if ( _.sum(creep.carry) == creep.carryCapacity || dest_obj.store[job.extra] == 0 ) { var complete = true; }
 				}
-				// creep carry is full // TODO or the container is empty
-
-
-				// TODO work off of job.extra instead of energy
-				//if ( _.sum(creep.carry) == creep.carryCapacity || _.sum(dest_obj.energy) == dest_obj.energyCapacity ) { var complete = true; }
 
 			}
 
