@@ -273,7 +273,7 @@ console.log("------ START ------");
     if ( tmp_obj != undefined ) { name = tmp_obj.name;}
     else { name = 'undefined'; }
     //if ( job.dest_id ) { var dest_obj = Game.getObjectById(job.dest_id); dest_type = dest_obj.structureType; }
-    e//lse { dest_type = 'unassigned'; }
+    //lse { dest_type = 'unassigned'; }
 
     console.log("JQ: " + job.spawn_name+ " j_id: " + job.id + " type " + job.type + " st: " + job.state + " cr: " + name + " d: " + job.dest_id + " ex: " + job.extra + " tq " + ( Game.time - job.tick_issued));
   }
