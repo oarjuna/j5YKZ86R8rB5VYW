@@ -126,7 +126,7 @@ module.exports = {
           if ( x.store[res] > 0 ) { // that is not empty
 
             // get the amount of resource to pickup = resources / carry cap
-            num_of_jobs =  Hive.deliverer_carry_cap[spawn_num];
+            num_of_jobs =  x.store[res] / Hive.deliverer_carry_cap[spawn_num];
 
             // get a count of existing jobs for this resource and pickup location
             var job_count = _.filter(Hive.memory.job_queue, function(s) {
