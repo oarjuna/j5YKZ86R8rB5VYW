@@ -212,7 +212,7 @@ module.exports = {
           s.dest_id == t.id
         );});
 
-      Log.debug("PL: job_count sp & ext: " + job_count.length + "/" + structure_spawns_extensions.length,'Planner');
+      Log.debug("PL: job_count sp & ext: " t.id + " " + job_count.length + "/" + structure_spawns_extensions.length,'Planner');
 
       if (  job_count.length < structure_spawns_extensions.length ) {
         // spawn a job for this sp or ext
