@@ -83,7 +83,6 @@ module.exports = {
     // Deliverto - 02ii - energy to storage - deliv
     // Deliverto - 02hh - mins to term - deliv
 
-    // Do I need to create jobs for:
 //######################################################################################################################
     // Ensure jobs exists to Harvesting from sources and minerals
     var harvesting_jobs = _.filter(Hive.memory.job_queue, function(s) {
@@ -189,7 +188,7 @@ module.exports = {
 
       if (  job_count.length < structure_towers.length ) {
         // spawn a job for this tower
-        var job = new Job(spawn_name,'01dd',1,'unassigned','deliverer',t.id,RESOURCE_ENERGY,Game.time,'','');
+        var job = new Job(spawn_name,'02dd',1,'unassigned','deliverer',t.id,RESOURCE_ENERGY,Game.time,'','');
         //Hive.memory.job_queue.push(job);
         Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + t.structureType + " " + t.id,'Planner');
       }
@@ -232,7 +231,7 @@ module.exports = {
     // Foreach sending links needing energy, ensure a job exists. assigned or otherwise
     for ( let t of structure_sending_links ) {
       // get a list of  02gg  jobs in the queue for this spawn or extension
-      // Deliverto - 02gg - energy to closest sending link - deliv
+      // Deliverto - 02gg - energy to sending link - deliv
 
       job_count = _.filter(Hive.memory.job_queue, function(s) {
         return  (
@@ -244,7 +243,7 @@ module.exports = {
 
       if (  job_count.length < structure_sending_links.length ) {
         // spawn a job for this sp or ext
-        var job = new Job(spawn_name,'02cc',5,'unassigned','deliverer',t.id,RESOURCE_ENERGY,Game.time,'','');
+        var job = new Job(spawn_name,'02gg',5,'unassigned','deliverer',t.id,RESOURCE_ENERGY,Game.time,'','');
         //Hive.memory.job_queue.push(job);
         Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + t.structureType + " " + t.id,'Planner');
       }

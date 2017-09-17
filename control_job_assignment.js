@@ -98,7 +98,7 @@ module.exports = {
 // Deliverto - 02dd - energy to tower - deliv
 // Deliverto - 02ee - mins to storage - deliv
 // Deliverto - 02ff - energy to controller - upgrader
-// Deliverto - 02gg - energy to closest sending link - deliv
+// Deliverto - 02gg - energy to sending link - deliv
 // Deliverto - 02hh - mins to term - deliv
 // Deliverto - 02ii - energy to storage - deliv
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -123,7 +123,7 @@ module.exports = {
                       ( s.structureType == STRUCTURE_CONTAINER && _.sum(s.store) <= s.storeCapacity - harvester_carry_cap)
                 )});
               }
-              else if ( job.type == '02bb' ){
+              else if ( job.type == '02bb' ){ // TODO -- only sending links!
                 var near_cont = tmpcreep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
                     filter: (s) => (
                       ( s.structureType == STRUCTURE_LINK && s.energy <= s.storeCapacity - harvester_carry_cap )
@@ -146,7 +146,7 @@ module.exports = {
           case '02cc': // Deliverto - 02cc - energy to spawn or extension - deliv
           case '02dd': // Deliverto - 02dd - energy to tower - deliv
           case '02ee': // Deliverto - 02ee - mins to storage - deliv
-          case '02gg': // Deliverto - 02gg - energy to closest sending link - deliv
+          case '02gg': // Deliverto - 02gg - energy to sending link - deliv
           case '02hh': // Deliverto - 02hh - mins to term - deliv
             // find a creep full of the needed resource
             tmpcreep = _.find(Game.creeps, (c) =>
