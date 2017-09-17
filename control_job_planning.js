@@ -74,7 +74,6 @@ module.exports = {
     // Fillfrom - 01gg - mins from cont       -> deliv
     ///////   DELIVER
     // Deliverto - 02aa - energy to closest cont - harv
-    // Deliverto - 02bb - energy to closest sending link - harv
     // Deliverto - 02cc - energy to spawn or extension - deliv
     // Deliverto - 02dd - energy to tower - deliv
     // Deliverto - 02ee - mins to storage - deliv

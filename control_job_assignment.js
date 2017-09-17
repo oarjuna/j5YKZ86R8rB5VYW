@@ -93,7 +93,6 @@ module.exports = {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////   DELIVER
 // Deliverto - 02aa - energy to closest cont - harv
-// Deliverto - 02bb - energy to closest sending link - harv
 // Deliverto - 02cc - energy to spawn or extension - deliv
 // Deliverto - 02dd - energy to tower - deliv
 // Deliverto - 02ee - mins to storage - deliv
@@ -103,7 +102,6 @@ module.exports = {
 // Deliverto - 02ii - energy to storage - deliv
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '02aa': //Delivto - 02aa - energy to closest cont - harv
-          case '02bb': //Delivto - 02bb - energy to nearest sending link - harv
             // find creep per normal
             tmpcreep = _.find(Game.creeps, (c) =>
              ( c.memory.birthplace == job.spawn_name ) &&
@@ -119,19 +117,21 @@ module.exports = {
               // Find different structuers based on job type
               // TODO -- prioritize sending_links if they are in 1 sq
 
-              if ( job.type == '02aa' ) {
-                var near_cont = tmpcreep.pos.findClosestByPath(FIND_STRUCTURES, {
-                    filter: (s) => (
-                      ( s.structureType == STRUCTURE_CONTAINER && _.sum(s.store) <= s.storeCapacity - harvester_carry_cap)
-                )});
-              }
+              var near_cont = tmpcreep.pos.findClosestByPath(FIND_STRUCTURES, {
+                  filter: (s) => (
+                    ( s.structureType == STRUCTURE_CONTAINER && _.sum(s.store) <= s.storeCapacity - harvester_carry_cap)
+              )});
 
-              else if ( job.type == '02bb' ){ // TODO -- only sending links!
-                var near_cont = tmpcreep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
-                    filter: (s) => (
-                      ( s.structureType == STRUCTURE_LINK && s.energy <= s.storeCapacity - harvester_carry_cap )
-                )});
-              }
+            // get rid of 02bb and make close containers and close empty links the same.
+            // prioritize links
+            // TODO -- only sending links! and limit range to 1 sq away. m
+
+            var near_links = tmpcreep.pos.findInRange(FIND_MY_STRUCTURES, {
+                filter: (s) => (
+                  ( s.structureType == STRUCTURE_LINK && s.energy <= s.storeCapacity - harvester_carry_cap )
+            )});
+
+
 
               if ( near_cont != undefined ) {
                 // set job dest_id to container id
