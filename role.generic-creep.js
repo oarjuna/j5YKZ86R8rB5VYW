@@ -67,7 +67,7 @@ module.exports = {
 					creep.withdraw(dest_obj, job.extra);
 				}
 				// creep carry is full // TODO or the container is empty
-				if ( _.sum(creep.carry) == creep.carryCapacity || _.sum(dest_obj.energy) == dest_obj.energyCapacity ) { var complete = true; }
+				if ( _.sum(creep.carry) == creep.carryCapacity || _.sum(dest_obj.store[job.extra]) == dest_obj.storeCapacity ) { var complete = true; }
 			}
 
 			else if ( type2 == '02') { // DELIV
