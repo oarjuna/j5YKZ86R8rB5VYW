@@ -179,7 +179,6 @@ module.exports = {
        filter: (s) => (
           ( s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity - 100 )
     )});
-    Log.debug("PL: structure_towers: " + structure_towers.length,'Planner');
 
     // Foreach tower needing energy, ensure a job exists. assigned or otherwise
     for ( let t of structure_towers ) {
@@ -206,15 +205,12 @@ module.exports = {
          ( s.structureType == STRUCTURE_SPAWN && s.energy < s.energyCapacity ) ||
          ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
     )});
-    Log.debug("PL: structure_spawns_extensions: " + structure_spawns_extensions.length,'Planner');
 
     // get a list of sending links needing energy
     var structure_sending_links = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
        filter: (s) => (
          ( s.structureType == STRUCTURE_LINK && s.id != Hive.receiving_link[spawn_num] )
     )});
-    Log.debug("PL: structure_sending_links: " + structure_sending_links.length,'Planner');
-
 
     /*
     var dest;
