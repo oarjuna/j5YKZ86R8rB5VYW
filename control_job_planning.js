@@ -94,7 +94,7 @@ module.exports = {
     // if we have less jobs than harvs_needed
     if ( harvesting_jobs.length < harvs_needed ) {
       // spawn a generic harvesting job
-      var job = new Job(spawn_name,'01aa',5,'unassigned','harvester','default',RESOURCE_ENERGY,Game.time,'','');
+      var job = new Job(spawn_name,'01aa',1,'unassigned','harvester','default',RESOURCE_ENERGY,Game.time,'','');
       Hive.memory.job_queue.push(job);
       Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
     }
@@ -113,7 +113,7 @@ module.exports = {
       );});
 
     if ( deliv_job_count < harvest_job_count ) {
-      var job = new Job(spawn_name,'02aa',5,'unassigned','harvester','closest',RESOURCE_ENERGY,Game.time,'','');
+      var job = new Job(spawn_name,'02aa',1,'unassigned','harvester','closest',RESOURCE_ENERGY,Game.time,'','');
       Hive.memory.job_queue.push(job);
       Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
     }
