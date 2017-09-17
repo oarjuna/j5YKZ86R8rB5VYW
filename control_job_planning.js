@@ -79,7 +79,7 @@ module.exports = {
     // Deliverto - 02dd - energy to tower - deliv
     // Deliverto - 02ee - mins to storage - deliv
     // Deliverto - 02ff - energy to controller - upgrader
-    // Deliverto - 02gg - energy to closest sending ling - deliv
+    // Deliverto - 02gg - energy to sending ling - deliv
     // Deliverto - 02ii - energy to storage - deliv
     // Deliverto - 02hh - mins to term - deliv
 
@@ -155,7 +155,7 @@ module.exports = {
             if ( job_count.length < num_of_jobs_needed ) {
               // spawn a new job
               var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer',x.id,res,Game.time,'','');
-              //Hive.memory.job_queue.push(job);
+              Hive.memory.job_queue.push(job);
               Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + x.structureType + " " + x.id,'Planner');
             }
 
