@@ -42,9 +42,9 @@ module.exports = {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////// FILL
 // Fillfrom - 01aa - resource -> harv
-// Fillfrom - 01dd - rec link - upgraders
-// Fillfrom - 01hh - energy from storage - upgraders
-// Fillfrom - 01jj - energy from containers - upgraders
+// Fillfrom - 01dd - rec link - upgraders // TODO
+// Fillfrom - 01hh - energy from storage - upgraders // TODO
+// Fillfrom - 01jj - energy from containers - upgraders // TODO
 // Fillfrom - 01bb - energy from container -> deliv
 // Fillfrom - 01cc - energy from storage   -> deliv
 // Fillfrom - 01ff - mins from storage     -> deliv
@@ -62,14 +62,14 @@ module.exports = {
             );
           break; // END 01aa
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-          case '01dd': // Fillfrom - 01dd - closest rec link - upgraders // TODO - complete this
-          case '01hh': // Fillfrom - 01hh - energy from storage - upgraders
-          case '01jj': // Fillfrom - 01jj - energy from closest containers - upgraders // TODO - complete this
+          case '01dd': // Fillfrom - 01dd - closest rec link - upgraders // TODO
+          case '01hh': // Fillfrom - 01hh - energy from storage - upgraders // TODO
+          case '01jj': // Fillfrom - 01jj - energy from closest containers - upgraders // TODO
           // local, empty, idle, upgrader
           tmpcreep = _.find(Game.creeps, (c) =>
             ( c.memory.birthplace == job.spawn_name ) &&
             ( c.spawning != true ) &&
-            ( _.sum(c.carry) == 0 ) &&
+            ( _.sum(c.carry) < c.carryCapacity ) &&
             ( c.memory.state == 'idle' ) &&
             ( c.memory.ryantest == true) &&
             ( c.memory.role == 'upgrader' )
@@ -84,12 +84,12 @@ module.exports = {
             tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
               ( c.spawning != true ) &&
-              ( _.sum(c.carry) == 0 ) &&
+              ( _.sum(c.carry) < c.carryCapacity ) &&
               ( c.memory.state == 'idle' ) &&
               ( c.memory.ryantest == true) &&
               ( c.memory.role == 'deliverer' )
               );
-          break; // END 01ff
+          break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////   DELIVER
 // Deliverto - 02aa - energy to closest cont/link - harv
@@ -166,7 +166,7 @@ module.exports = {
             tmpcreep = _.find(Game.creeps, (c) =>
              ( c.memory.birthplace == job.spawn_name ) &&
              ( c.spawning != true ) &&
-             ( c.carry[job.extra] == c.carryCapacity ) &&
+             ( c.carry[job.extra] > 0 ) &&
              ( c.memory.state == 'idle' ) &&
              ( c.memory.ryantest == true) &&
              ( c.memory.role == 'upgrader' )
