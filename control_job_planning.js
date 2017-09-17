@@ -222,7 +222,7 @@ module.exports = {
 
       Log.debug("PL: job_count sp & ext: " + t.id + " " + job_count.length + "/" + num_of_jobs_needed.length,'Planner');
 
-      if (  job_count.length < structure_spawns_extensions.length ) {
+      if (  job_count.length < num_of_jobs_needed ) {
         // spawn a job for this sp or ext
         var job = new Job(spawn_name,'02cc',5,'unassigned','deliverer',t.id,RESOURCE_ENERGY,Game.time,'','');
         //Hive.memory.job_queue.push(job);
