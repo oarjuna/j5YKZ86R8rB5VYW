@@ -85,7 +85,7 @@ module.exports = {
 
     // Do I need to create jobs for:
 //######################################################################################################################
-    // Harvesting from sources and minerals
+    // Ensure jobs exists to Harvesting from sources and minerals
     var harvesting_jobs = _.filter(Hive.memory.job_queue, function(s) {
       return  ( s.type == '01aa' && s.spawn_name == spawn_name );
     });
@@ -106,7 +106,12 @@ module.exports = {
       Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
     }
 //######################################################################################################################
-    // Emptying containers - are there containers which need to be emptied?
+    // Ensure jobs exists to tell full harvs to drop stuff off
+    // TODO
+
+
+//######################################################################################################################
+    // Ensure jobs exist to Emptying containers
     // Fillfrom - 01bb - energy from container -> deliv
     // Fillfrom - 01jj - energy from containers - upgraders ( low RCL levels need this) // TODO
     var res_containers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
