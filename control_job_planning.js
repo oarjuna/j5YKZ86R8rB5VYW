@@ -206,13 +206,12 @@ module.exports = {
     var energy_needed = 0;
     // Foreach spawn or extension needing energy, ensure a job exists. assigned or otherwise
     for ( var t of structure_spawns_extensions ) {
-      // get a list of  02cc  jobs in the queue for this spawn or extension
       // Deliverto - 02cc - energy to spawn or extension - deliv
 
+      // count all jobs for spawns or extensions
       job_count = _.filter(Hive.memory.job_queue, function(s) {
         return  (
-          s.type == '02cc' &&
-          s.dest_id == t.id
+          s.type == '02cc'
         );});
 
       if ( t.structureType == STRUCTURE_SPAWN ) { energy_needed = energy_needed + 300; }
@@ -247,7 +246,7 @@ module.exports = {
           s.dest_id == t.id
         );});
 
-      //num_of_jobs_needed = energy_needed / Hive.deliverer_carry_cap[spawn_num];
+      num_of_jobs_needed = energy_needed / Hive.deliverer_carry_cap[spawn_num];
 
       Log.debug("PL: job_count send links : " + job_count.length + "/" + structure_sending_links.length,'Planner');
 
