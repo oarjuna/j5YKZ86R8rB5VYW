@@ -287,7 +287,7 @@ console.log("------ START ------");
 
   //if ( dest_type == undefined ) { dest_type = 'source'; }
 
-  Log.table(['spawn','j_id'], [job.spawn_name,job.id]);
+  //Log.table(['spawn','j_id'], [job.spawn_name,job.id]);
 
     if ( job.state == 'assigned') {
       Log.info(job.spawn_name+ " j_id: " + job.id + "\tt: " + job.type + "\tp: " + job.priority + "\tex: " + job.extra + "\ttq " + ( Game.time - job.tick_issued) + "\tcr: " + name ,'Queue');
