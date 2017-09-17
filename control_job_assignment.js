@@ -123,16 +123,19 @@ module.exports = {
               var near_cont = tmpcreep.pos.findClosestByPath(FIND_STRUCTURES, {
                   filter: (s) => (
                     ( s.structureType == STRUCTURE_CONTAINER && _.sum(s.store) <= s.storeCapacity - harvester_carry_cap)
+                    ( s.structureType == STRUCTURE_LINK && s.energy <= s.storeCapacity - harvester_carry_cap )
               )});
 
               // TODO -- have harvs make use of links and containers. prioritize empty links
-              // TODO -- and limit range to 1 sq away.
+              // TODO -- and limit range to 1 sq away. -- NEXT!!!!!
               /*
               var near_links = tmpcreep.pos.findInRange(FIND_MY_STRUCTURES, {
                   filter: (s) => (
                     ( s.structureType == STRUCTURE_LINK && s.energy <= s.storeCapacity - harvester_carry_cap )
               )});
               */
+
+
 
               if ( near_cont != undefined ) {
                 // set job dest_id to container id
