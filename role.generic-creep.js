@@ -24,7 +24,7 @@ module.exports = {
 			if ( creep.ticksToLive < 10 ) {
 				creep.say('\uD83D\uDC80'); // 💀
 				creep.memory.job = undefined;
-				creep.memory.state = 'idle';
+				creep.memory.state = 'ttdie';
 				job.state = 'abandoned';
 				return;
 			}
