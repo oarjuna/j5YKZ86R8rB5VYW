@@ -98,6 +98,7 @@ module.exports = {
 // Deliverto - 02dd - energy to tower - deliv
 // Deliverto - 02ee - mins to storage - deliv
 // Deliverto - 02ff - energy to controller - upgrader
+// Deliverto - 02gg - energy to closest sending link - deliv
 // Deliverto - 02hh - mins to term - deliv
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '02aa': //Delivto - 02aa - energy to closest cont - harv
@@ -144,6 +145,7 @@ module.exports = {
           case '02cc': // Deliverto - 02cc - energy to spawn or extension - deliv
           case '02dd': // Deliverto - 02dd - energy to tower - deliv
           case '02ee': // Deliverto - 02ee - mins to storage - deliv
+          case '02gg': // Deliverto - 02gg - energy to closest sending link - deliv
           case '02hh': // Deliverto - 02hh - mins to term - deliv
             // find a creep full of the needed resource
             tmpcreep = _.find(Game.creeps, (c) =>

@@ -39,26 +39,7 @@ module.exports = {
       Memory.clearqueue = false;
       Hive.memory.job_queue = [];
     }
-    if (Memory.addjobs_min_deliv == true) {
-      var job = new Job(spawn_name,'01ff',1,'unassigned','deliverer',Game.spawns[spawn_name].room.storage.id,RESOURCE_KEANIUM,Game.time,'','');
-      Hive.memory.job_queue.push(job);
-      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type,'Planner');
 
-      var job = new Job(spawn_name,'02hh',1,'unassigned','deliverer',Game.spawns[spawn_name].room.terminal.id,RESOURCE_KEANIUM,Game.time,'','');
-      Hive.memory.job_queue.push(job);
-      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type,'Planner');
-      Memory.addjobs = false;
-    }
-    if (Memory.addjobs_harv == true ) {
-      var job = new Job(spawn_name,'01aa',1,'unassigned','harvester','default',RESOURCE_ENERGY,Game.time,'','');
-      Hive.memory.job_queue.push(job);
-      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type,'Planner');
-
-      var job = new Job(spawn_name,'02aa',1,'unassigned','harvester','closest',RESOURCE_ENERGY,Game.time,'','');
-      Hive.memory.job_queue.push(job);
-      Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " job " + job.type,'Planner');
-      Memory.addjobs_harv = false;
-    }
     if ( Memory.clearjob != 'xxx' ) {
         // get owning creep, if any
         var job = _.find(Hive.memory.job_queue, function(s) {
@@ -113,12 +94,13 @@ module.exports = {
     // if we have less jobs than harvs_needed
     if ( harvesting_jobs.length < harvs_needed ) {
       // spawn a generic harvesting job
-      var job = new Job(spawn_name,'01aa',1,'unassigned','harvester','default',RESOURCE_ENERGY,Game.time,'','');
+      var job = new Job(spawn_name,'01aa',5,'unassigned','harvester','default',RESOURCE_ENERGY,Game.time,'','');
       Hive.memory.job_queue.push(job);
       Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
 
       // and the corresponding unload to nearest container job
-      var job = new Job(spawn_name,'02aa',1,'unassigned','harvester','closest',RESOURCE_ENERGY,Game.time,'','');
+      // TODO -- this should be done when the harv is full and idle, not automatiically
+      var job = new Job(spawn_name,'02aa',5,'unassigned','harvester','closest',RESOURCE_ENERGY,Game.time,'','');
       Hive.memory.job_queue.push(job);
       Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
     }
@@ -194,7 +176,6 @@ module.exports = {
 
       if (  job_count.length < structure_towers.length ) {
         // spawn a job for this tower
-        // Log.debug("NEW job - 02dd - dest: " + t.id + " type " + t.structureType,'Planner');
         var job = new Job(spawn_name,'01dd',1,'unassigned','deliverer',t.id,RESOURCE_ENERGY,Game.time,'','');
         //Hive.memory.job_queue.push(job);
         Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + t.structureType + " " + t.id,'Planner');
@@ -208,56 +189,54 @@ module.exports = {
          ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
     )});
 
+    // Foreach spawn or extension needing energy, ensure a job exists. assigned or otherwise
+    for ( let t of structure_spawns_extensions ) {
+      // get a list of  02cc  jobs in the queue for this spawn or extension
+      // Deliverto - 02cc - energy to spawn or extension - deliv
+
+      job_count = _.filter(Hive.memory.job_queue, function(s) {
+        return  (
+          s.type == '02cc' &&
+          s.dest_id == t.id
+        );});
+
+      Log.debug("PL: job_count sp & ext: " + job_count.length,'Planner');
+
+      if (  job_count.length < structure_spawns_extensions.length ) {
+        // spawn a job for this sp or ext
+        var job = new Job(spawn_name,'02cc',5,'unassigned','deliverer',t.id,RESOURCE_ENERGY,Game.time,'','');
+        //Hive.memory.job_queue.push(job);
+        Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + t.structureType + " " + t.id,'Planner');
+      }
+    }
+
     // get a list of sending links needing energy
     var structure_sending_links = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
        filter: (s) => (
          ( s.structureType == STRUCTURE_LINK && s.id != Hive.receiving_link[spawn_num] )
     )});
 
-    /*
-    var dest;
-    // foreach idle creep
-    for ( let creep of idle_full_deliverers ) {
-      // assign a dest based on resource type and priority
-      if ( creep.carry[RESOURCE_ENERGY] ) {
-        if ( structure_towers.length > 0 && Game.spawns[spawn_name].room.controller.memory.alert_state == 'red' ) {
-          // Deliverto - 02dd - Towers ( red alerts gives towers priority )
-          dest = creep.pos.findClosestByPath(structure_towers);
-        }
-        else if ( structure_spawns_extensions.length > 0 ) {
-          // Deliverto - 02cc - Spawns and Extensions
-          dest = creep.pos.findClosestByPath(structure_spawns_extensions);
-        }
-        else if ( structure_towers.length > 0 ) {
-          // Deliverto - 02dd - Towers
-          dest = creep.pos.findClosestByPath(structure_towers);
-        }
-        else if ( structure_sending_links.length > 0 ) {
-          // Deliverto - 02bb - Sending links #3
-          dest = creep.pos.findClosestByPath(structure_sending_links);
-        }
-        else {
-          // Deliverto - 02gg - Storage #4
-          dest = creep.room.storage;
-        }
+    // Foreach sending links needing energy, ensure a job exists. assigned or otherwise
+    for ( let t of structure_sending_links ) {
+      // get a list of  02gg  jobs in the queue for this spawn or extension
+      // Deliverto - 02gg - energy to closest sending link - deliv
+
+      job_count = _.filter(Hive.memory.job_queue, function(s) {
+        return  (
+          s.type == '02gg' &&
+          s.dest_id == t.id
+        );});
+
+      Log.debug("PL: job_count send links : " + job_count.length,'Planner');
+
+      if (  job_count.length < structure_sending_links.length ) {
+        // spawn a job for this sp or ext
+        var job = new Job(spawn_name,'02cc',5,'unassigned','deliverer',t.id,RESOURCE_ENERGY,Game.time,'','');
+        //Hive.memory.job_queue.push(job);
+        Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + t.structureType + " " + t.id,'Planner');
       }
-      else {
-        if ( Memory.marketorder == true ) {
-          // Deliverto - 02hh - minerals to Terminal
-          dest = creep.room.terminal;
-        }
-        else {
-          // Deliverto - 02ee - minerals to storage
-          dest = creep.room.storage;
-        }
-      } // END else
+    }
 
-      Log.debug(creep + " dest " + dest.structureType,'Planner');
-    } // END foreach idle creep
-
-    */
-
-    // Spawn the job
 
 
 //######################################################################################################################
