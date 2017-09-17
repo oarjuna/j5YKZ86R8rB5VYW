@@ -289,6 +289,15 @@ module.exports = {
        Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
      }
 //######################################################################################################################
+    // if there are unasigned jobs needing energy
+    // and there are idle, empty deliverers
+    // create jobs to bring energy from storage
+    // Fillfrom - 01cc - energy from storage   -> deliv
+    // TODO - next!
+
+    
+
+//######################################################################################################################
 
   }
 };
