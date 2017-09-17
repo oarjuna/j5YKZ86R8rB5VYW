@@ -127,22 +127,28 @@ module.exports = {
 
               // TODO -- have harvs make use of links and containers. prioritize empty links
               // TODO -- and limit range to 1 sq away. -- NEXT!!!!!
-              /*
-              var near_links = tmpcreep.pos.findInRange(FIND_MY_STRUCTURES, {
-                  filter: (s) => (
-                    ( s.structureType == STRUCTURE_LINK && s.energy <= s.storeCapacity - harvester_carry_cap )
+
+              // find the sending links
+              var rec_link = creep.memory.destid;
+              var structure_links = creep.pos.find(FIND_MY_STRUCTURES, {
+                filter: (s) => (
+                  ( s.structureType == STRUCTURE_LINK && s.id != rec_link )
               )});
-              */
 
+              var near_link = tmpcreep.pos.findInRange(structure_links,1);
 
-
-              if ( near_cont != undefined ) {
+              if ( near_link  != undefined ) {
+                // set job dest_id to send link id
+                job.dest_id = near_link.id;
+                Log.debug(tmpcreep + " @ " + job.spawn_name + " container found "+ job.dest_id,'Jobber');
+              }
+              elses if ( near_cont  != undefined ) {
                 // set job dest_id to container id
                 job.dest_id = near_cont.id;
                 Log.debug(tmpcreep + " @ " + job.spawn_name + " container found "+ job.dest_id,'Jobber');
               }
               else {
-                // no containers found? weird? unset the creep and warn.
+                // no containers or lins found? weird? unset the creep and warn.
                 tmpcreep = undefined;
                 Log.warn("\tJQ: creep can't find nearby container");
               }
