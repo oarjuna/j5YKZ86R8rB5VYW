@@ -118,7 +118,7 @@ module.exports = {
     }
 
 //######################################################################################################################
-    // Ensure jobs exist to Emptying containers
+    // Ensure jobs exist to Empty containers
     // Fillfrom - 01bb - energy from container -> deliv
     // Fillfrom - 01jj - energy from containers - upgraders ( low RCL levels need this) // TODO
     var res_containers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
