@@ -122,11 +122,12 @@ module.exports = {
 
               // TODO -- have harvs make use of links and containers. prioritize empty links
               // TODO -- and limit range to 1 sq away.
-
+              /*
               var near_links = tmpcreep.pos.findInRange(FIND_MY_STRUCTURES, {
                   filter: (s) => (
                     ( s.structureType == STRUCTURE_LINK && s.energy <= s.storeCapacity - harvester_carry_cap )
               )});
+              */
 
               if ( near_cont != undefined ) {
                 // set job dest_id to container id
@@ -146,6 +147,7 @@ module.exports = {
           case '02ee': // Deliverto - 02ee - mins to storage - deliv
           case '02gg': // Deliverto - 02gg - energy to sending link - deliv
           case '02hh': // Deliverto - 02hh - mins to term - deliv
+          case '02ii': // Deliverto - 02ii - energy to storage - deliv
             // find a creep full of the needed resource
             tmpcreep = _.find(Game.creeps, (c) =>
              ( c.memory.birthplace == job.spawn_name ) &&
