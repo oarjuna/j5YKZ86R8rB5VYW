@@ -56,7 +56,6 @@ module.exports = {
 
 		// if the dest_obj in range
 		if(creep.pos.isNearTo(dest_obj)) { 	// harvest/transfer/withdraw/upgrade/repair dest_obj
-
 			if ( type2 == '01' ) { // FILL up
 				if ( type3 == 'aa') { // from source == harvest
 					creep.say('\u26CF'); //  ⛏
@@ -69,7 +68,6 @@ module.exports = {
 					Log.warn("GEN: creep.carry " + _.sum(creep.carry) + "/" + creep.carryCapacity + " dest_obj " + dest_obj.store[job.extra]);
 					if ( _.sum(creep.carry) == creep.carryCapacity || dest_obj.store[job.extra] == 0 ) { var complete = true; }
 				}
-
 			}
 
 			else if ( type2 == '02') { // DELIV
@@ -117,6 +115,7 @@ module.exports = {
 		} // END is near to destination
 		else {
 			// else move towards dest_obj
+			creep.say(job.type); 
 			creep.moveTo(dest_obj);
 		} // END move
 
