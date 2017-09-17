@@ -204,6 +204,7 @@ module.exports = {
     )});
 
     var energy_needed = 0;
+    var num_jobs_needed = 0;
     // Foreach spawn or extension needing energy, ensure a job exists. assigned or otherwise
     for ( var t of structure_spawns_extensions ) {
       // Deliverto - 02cc - energy to spawn or extension - deliv
@@ -217,7 +218,8 @@ module.exports = {
       if ( t.structureType == STRUCTURE_SPAWN ) { energy_needed = energy_needed + 300; }
       else { energy_needed = energy_needed + 50; }
 
-      num_of_jobs_needed = energy_needed / Hive.deliverer_carry_cap[spawn_num];
+      //num_of_jobs_needed = energy_needed / Hive.deliverer_carry_cap[spawn_num];
+      num_jobs_needed = num_jobs_needed + 1;
 
       Log.debug("PL: job_count sp & ext: " + t.id + " " + job_count.length + "/" + num_of_jobs_needed,'Planner');
 
