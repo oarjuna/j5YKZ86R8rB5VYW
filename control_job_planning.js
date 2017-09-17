@@ -160,7 +160,7 @@ module.exports = {
             // if there are more jobs than existing jobs
             if ( job_count.length < need_count[res]  ) {
               // spawn a new job
-              var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer',x.id,res,Game.time,'','');
+              //var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer',x.id,res,Game.time,'','');
               //Hive.memory.job_queue.push(job);
               //Log.debug("JQ: ADDING : " + spawn_name + " newjob " + job.id + " type " + job.type + " res " + res + " dest " + x.id,'Planner');
             }
