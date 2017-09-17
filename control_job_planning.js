@@ -125,6 +125,9 @@ module.exports = {
         for ( var res in x.store ) { // for each resource type in each container's store list
           if ( x.store[res] > 0 ) { // that is not empty
 
+            // get the amount of resource to pickup
+            num_of_jobs =  x.store[res] / deliver_carry_cap;
+
             // get a count of existing jobs for this resource and pickup location
             var job_count = _.filter(Hive.memory.job_queue, function(s) {
               return  (
@@ -134,7 +137,7 @@ module.exports = {
                 s.extra == res
               );});
 
-            Log.debug(x.id + " RES " + res + " " + x.store[res] + " ex jobs: " + job_count.length,'Planner');
+            Log.debug(x.id + " RES " + res + " " + x.store[res] + " ex jobs: " + job_count.length + " num: " + num_of_jobs,'Planner');
 
             //TODO
             // count how many jobs we need per resource type
