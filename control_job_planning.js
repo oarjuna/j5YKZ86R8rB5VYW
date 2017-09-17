@@ -154,7 +154,7 @@ module.exports = {
             // if there are more jobs than existing jobs
             if ( job_count.length < num_of_jobs_needed ) {
               // spawn a new job
-              var job = new Job(spawn_name,'01bb',1,'unassigned','deliverer',x.id,res,Game.time,'','');
+              var job = new Job(spawn_name,'01bb',4,'unassigned','deliverer',x.id,res,Game.time,'','');
               Hive.memory.job_queue.push(job);
               Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + x.structureType + " " + x.id,'Planner');
             }
@@ -190,7 +190,7 @@ module.exports = {
 
       if (  job_count.length < num_of_jobs_needed ) {
         // spawn a job for this tower
-        var job = new Job(spawn_name,'02dd',1,'unassigned','deliverer',t.id,RESOURCE_ENERGY,Game.time,'','');
+        var job = new Job(spawn_name,'02dd',2,'unassigned','deliverer',t.id,RESOURCE_ENERGY,Game.time,'','');
         Hive.memory.job_queue.push(job);
         Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + t.structureType + " " + t.id,'Planner');
       }
@@ -223,7 +223,7 @@ module.exports = {
 
       if (  job_count.length < num_of_jobs_needed ) {
         // spawn a job for this sp or ext
-        var job = new Job(spawn_name,'02cc',5,'unassigned','deliverer',t.id,RESOURCE_ENERGY,Game.time,'','');
+        var job = new Job(spawn_name,'02cc',1,'unassigned','deliverer',t.id,RESOURCE_ENERGY,Game.time,'','');
         Hive.memory.job_queue.push(job);
         Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + t.structureType + " " + t.id,'Planner');
       }
@@ -252,7 +252,7 @@ module.exports = {
 
       if (  job_count.length < num_of_jobs_needed ) {
         // spawn a job for this sp or ext
-        var job = new Job(spawn_name,'02gg',5,'unassigned','deliverer',t.id,RESOURCE_ENERGY,Game.time,'','');
+        var job = new Job(spawn_name,'02gg',3,'unassigned','deliverer',t.id,RESOURCE_ENERGY,Game.time,'','');
         Hive.memory.job_queue.push(job);
         Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + t.structureType + " " + t.id,'Planner');
       }
