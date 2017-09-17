@@ -296,6 +296,7 @@ console.log("------ START ------");
   console.log("------ END ------");
   //console.log("#-------------------------------------------------------#  H, U, R, B, RH, C, De, EM, S");
   stats.collect_stats();
+  Memory.stats.job_queue_length = Hive.memory.job_queue.length;
   //for (var spawn in Game.spawns){
     //roleSpawn.run(spawn);
 	//}
