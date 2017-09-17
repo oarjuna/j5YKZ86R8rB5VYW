@@ -288,7 +288,7 @@ console.log("------ START ------");
   //if ( dest_type == undefined ) { dest_type = 'source'; }
 
     if ( job.state == 'assigned') {
-      Log.info(job.spawn_name+ " j_id: " + job.id + " type " + job.type + " p: " + job.priority + "\tex: " + job.extra + "\ttq " + ( Game.time - job.tick_issued) + "\tcr: " + name ,'Queue');
+      Log.info(job.spawn_name+ " j_id: " + job.id + " t: " + job.type + " p: " + job.priority + "\tex: " + job.extra + "\ttq " + ( Game.time - job.tick_issued) + "\tcr: " + name ,'Queue');
     }
   }
   console.log("------ END ------");
