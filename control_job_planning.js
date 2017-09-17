@@ -271,25 +271,24 @@ module.exports = {
     // create jobs to build and repair
 
 //######################################################################################################################
-// create jobs for full idle creeps - 02ii
- // Deliverto - 02ii - energy to storage - deliv
- // Ensure jobs exists to tell full idle delivs to drop stuff off
+    // create jobs for full idle creeps - 02ii
+     // Deliverto - 02ii - energy to storage - deliv
+     // Ensure jobs exists to tell full idle delivs to drop stuff off
 
- // get a list of 02ii jobs
- var deliv_job_count = _.filter(Hive.memory.job_queue, function(s) {
-   return  (
-     s.type == '02ii'
-   );});
+     // get a list of 02ii jobs
+     var deliv_job_count = _.filter(Hive.memory.job_queue, function(s) {
+       return  (
+         s.type == '02ii'
+       );});
 
-  var storage = Game.spawns[spawn_name].room.storage;
+      var storage = Game.spawns[spawn_name].room.storage;
 
- if ( deliv_job_count == Hive.spawn_levels[spawn_num][1] ) {
-   var job = new Job(spawn_name,'02ii',10,'unassigned','deliverer',storage,RESOURCE_ENERGY,Game.time,'','');
-   Hive.memory.job_queue.push(job);
-   Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
- }
-
-
+     if ( deliv_job_count == Hive.spawn_levels[spawn_num][1] ) {
+       var job = new Job(spawn_name,'02ii',10,'unassigned','deliverer',storage,RESOURCE_ENERGY,Game.time,'','');
+       Hive.memory.job_queue.push(job);
+       Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
+     }
+//######################################################################################################################
 
   }
 };
