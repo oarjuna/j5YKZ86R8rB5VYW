@@ -203,6 +203,7 @@ module.exports = {
          ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
     )});
 
+    var energy_needed;
     // Foreach spawn or extension needing energy, ensure a job exists. assigned or otherwise
     for ( var t of structure_spawns_extensions ) {
       // get a list of  02cc  jobs in the queue for this spawn or extension
@@ -214,9 +215,12 @@ module.exports = {
           s.dest_id == t.id
         );});
 
-//      num_of_jobs_needed = ( job_count * t.energyCapacity ) / Hive.deliverer_carry_cap[spawn_num];
+      if ( t.structureType == STRUTURE_SPAWN ) { energy_needed += 300; }
+      else { energy_needed += 50; }
 
-      Log.debug("PL: job_count sp & ext: " + t.id + " " + job_count.length + "/" + structure_spawns_extensions.length,'Planner');
+      num_of_jobs_needed = energy_needed / Hive.deliverer_carry_cap[spawn_num];
+
+      Log.debug("PL: job_count sp & ext: " + t.id + " " + job_count.length + "/" + num_of_jobs_needed.length,'Planner');
 
       if (  job_count.length < structure_spawns_extensions.length ) {
         // spawn a job for this sp or ext
