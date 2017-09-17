@@ -99,15 +99,9 @@ module.exports = {
       Hive.memory.job_queue.push(job);
       Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
 
-      // and the corresponding unload to nearest container job
-      // TODO -- this should be done when the harv is full and idle, not automatiically
-      //var job = new Job(spawn_name,'02aa',5,'unassigned','harvester','closest',RESOURCE_ENERGY,Game.time,'','');
-      //Hive.memory.job_queue.push(job);
-      //Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
     }
 //######################################################################################################################
     // Ensure jobs exists to tell full harvs to drop stuff off
-    // TODO
     // Get a list of 01aa jobs
     var harvest_job_count = _.filter(Hive.memory.job_queue, function(s) {
       return  (
