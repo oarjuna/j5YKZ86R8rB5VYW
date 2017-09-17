@@ -282,6 +282,8 @@ module.exports = {
          s.type == '02ii'
        );});
 
+       // only if there are no other energy needing jobs
+
       var storage = Game.spawns[spawn_name].room.storage.id;
 
      if ( deliv_job_count < Hive.spawn_levels[spawn_num][1] ) {
@@ -296,6 +298,18 @@ module.exports = {
     // Fillfrom - 01cc - energy from storage   -> deliv
     // TODO - next!
 
+    var deliv_job_count = _.filter(Hive.memory.job_queue, function(s) {
+      return  (
+        s.type == '01cc'
+    );});
+
+    var storage = Game.spawns[spawn_name].room.storage.id;
+
+    if ( deliv_job_count < 1 ) {
+      var job = new Job(spawn_name,'01cc',10,'unassigned','deliverer',storage,RESOURCE_ENERGY,Game.time,'','');
+      Hive.memory.job_queue.push(job);
+      Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
+    }
 
 
 
