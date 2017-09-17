@@ -146,7 +146,7 @@ module.exports = {
             }
           break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    /*      case '02cc': // Deliverto - 02cc - energy to spawn or extension - deliv
+          case '02cc': // Deliverto - 02cc - energy to spawn or extension - deliv
             // TODO make this go to closest
             // find a creep full of the needed resource
             tmpcreep = _.find(Game.creeps, (c) =>
@@ -159,9 +159,9 @@ module.exports = {
             );
           break;
           // TODO -- find the closest job for this creep.
-*/
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-          case '02cc': // Deliverto - 02cc - energy to spawn or extension - deliv
+    //      case '02cc': // Deliverto - 02cc - energy to spawn or extension - deliv
           case '02dd': // Deliverto - 02dd - energy to tower - deliv
           case '02ee': // Deliverto - 02ee - mins to storage - deliv
           case '02gg': // Deliverto - 02gg - energy to sending link - deliv
@@ -177,6 +177,7 @@ module.exports = {
              ( c.memory.role == 'deliverer' )
             );
             // TODO -- find the closest job for this creep.
+
 
           break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
