@@ -172,7 +172,7 @@ module.exports = {
           s.dest_id == t.id
         );});
 
-      Log.debug("PL: job_count towers: " + job_count.length,'Planner');
+      Log.debug("PL: job_count towers: " + job_count.length + "/" + structure_towers.length,'Planner');
 
       if (  job_count.length < structure_towers.length ) {
         // spawn a job for this tower
@@ -200,7 +200,7 @@ module.exports = {
           s.dest_id == t.id
         );});
 
-      Log.debug("PL: job_count sp & ext: " + job_count.length,'Planner');
+      Log.debug("PL: job_count sp & ext: " + job_count.length + "/" + structure_spawns_extensions.length,'Planner');
 
       if (  job_count.length < structure_spawns_extensions.length ) {
         // spawn a job for this sp or ext
@@ -227,7 +227,7 @@ module.exports = {
           s.dest_id == t.id
         );});
 
-      Log.debug("PL: job_count send links : " + job_count.length,'Planner');
+      Log.debug("PL: job_count send links : " + job_count.length + "/" + structure_sending_links.length,'Planner');
 
       if (  job_count.length < structure_sending_links.length ) {
         // spawn a job for this sp or ext
