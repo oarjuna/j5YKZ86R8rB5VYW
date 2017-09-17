@@ -129,7 +129,7 @@ module.exports = {
               // TODO -- and limit range to 1 sq away. -- NEXT!!!!!
 
               // find the sending links
-              var rec_link = creep.memory.destid;
+              var rec_link = Hive.receiving_link[spawn_num];
               var structure_links = creep.pos.find(FIND_MY_STRUCTURES, {
                 filter: (s) => (
                   ( s.structureType == STRUCTURE_LINK && s.id != rec_link )
