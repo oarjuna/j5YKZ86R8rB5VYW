@@ -45,7 +45,7 @@ module.exports = {
 			return;
 		}
 		else {
-			creep.say('\uD83C\uDFB6'); // 🎶
+			creep.say('\uD83C\uDFB5'); // 🎵
 			creep.memory.state = 'idle';
 			return;
 		}
@@ -63,33 +63,34 @@ module.exports = {
 					creep.harvest(dest_obj);
 				}
 				else { // everything else uses withdraw
+					creep.say('\uD83D\uDD3A'); // 🔺
 					creep.withdraw(dest_obj, job.extra);
-					// if container, update dest_obj.memory.working_var with amount withdrawn
-					//if ( dest_obj.structureType == STRUCTURE_CONTAINER ) { dest_obj.memory.working_var -= creep.carryCapacity; }
 				}
-				// creep energy is full
+				// creep carry is full
 				if ( _.sum(creep.carry) == creep.carryCapacity ) { var complete = true; }
 			}
 
 			else if ( type2 == '02') { // DELIV
 				if ( type3 == 'ff') { // to controller == upgrade
 					creep.upgrade(dest_obj);
+					creep.say('\u2699\uFE0F'); // ⚙️
 				}
 				else { // everything else uses transfer
 					creep.transfer(dest_obj, job.extra); // from the creep
-					// if container, update dest_obj.memory.working_var with amount transfered
-					//if ( dest_obj.structureType == STRUCTURE_CONTAINER ) { dest_obj.memory.working_var += creep.carryCapacity; }
+					creep.say('\uD83D\uDD3B'); // 🔻
 				}
-				// if creep energy is 0
+				// if creep carry is 0
 				if ( _.sum(creep.carry) == 0 ) { var complete = true; }
 
 			} // END DELIV
 
 			else if ( type2 == '03 ') { // BUILD/REPAIR
 				if ( type3 == 'aa') { // build
+					creep.say('\uD83D\uDD28'); // 🔨
 					creep.build(dest_obj);
 				}
 				else { // repair
+					creep.say('\uD83D\uDEE0\uFE0F'); // 🛠️
 					creep.repair(dest_obj);
 				}
 
