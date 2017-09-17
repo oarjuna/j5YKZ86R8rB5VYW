@@ -131,10 +131,10 @@ module.exports = {
               // find the sending links
               var rec_link = Hive.receiving_link[spawn_num];
               var structure_links = undefined;// tmpcreep.room.find(FIND_MY_STRUCTURES, {
-                filter: (s) => (
+            /*    filter: (s) => (
                   ( s.structureType == STRUCTURE_LINK && s.id != rec_link )
               )});
-
+*/
               var near_link = tmpcreep.pos.findInRange(structure_links,1);
 
               if ( near_link  != undefined ) {
