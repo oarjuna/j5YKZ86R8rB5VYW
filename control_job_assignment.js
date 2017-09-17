@@ -166,6 +166,7 @@ module.exports = {
 
           // find the closest creep by path to the dest
           var tmpcreep = dest_obj.pos.findClosestByPath(tmpcreeps);
+          Log.debug(tmpcreep + "XXX "+ dest_obj.pos,'Jobber');
 
           break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
