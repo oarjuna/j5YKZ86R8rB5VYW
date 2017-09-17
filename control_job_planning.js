@@ -203,7 +203,7 @@ module.exports = {
          ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
     )});
 
-    var energy_needed;
+    var energy_needed = 0;
     // Foreach spawn or extension needing energy, ensure a job exists. assigned or otherwise
     for ( var t of structure_spawns_extensions ) {
       // get a list of  02cc  jobs in the queue for this spawn or extension
@@ -219,7 +219,7 @@ module.exports = {
       else { energy_needed = energy_needed + 50; }
 
       Log.debug(" EN" + energy_needed);
-      
+
       num_of_jobs_needed = energy_needed / Hive.deliverer_carry_cap[spawn_num];
 
       Log.debug("PL: job_count sp & ext: " + t.id + " " + job_count.length + "/" + num_of_jobs_needed,'Planner');
