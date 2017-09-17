@@ -159,8 +159,6 @@ module.exports = {
              ( c.memory.role == 'deliverer' )
             );
 
-          // TODO -- next!!!!
-          // TODO -- find the nearest creep for this job
           // get the job dest_obj
           dest_obj = Game.getObjectById(job.dest_id);
 
