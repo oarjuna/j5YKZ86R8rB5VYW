@@ -150,7 +150,7 @@ module.exports = {
           case '02cc': // Deliverto - 02cc - energy to spawn or extension - deliv
             // TODO make this go to closest
             // find a creep full of the needed resource
-            tmpcreep = _.find(Game.creeps, (c) =>
+            tmpcreeps = _.filter(Game.creeps, (c) =>
              ( c.memory.birthplace == job.spawn_name ) &&
              ( c.spawning != true ) &&
              ( c.carry[job.extra] > 0 ) &&
@@ -158,11 +158,16 @@ module.exports = {
              ( c.memory.ryantest == true) &&
              ( c.memory.role == 'deliverer' )
             );
-          break;
-          // TODO -- find the closest job for this creep.
-          // TODO -- next!!!!
-          
 
+          // TODO -- next!!!!
+          // TODO -- find the nearest creep for this job
+          // get the job dest_obj
+          dest_obj = Game.getObjectById(job.dest_id);
+
+          // find the closest creep by path to the dest
+          var tmpcreep = dest_obj.pos.findClosestByPath(tmpcreeps);
+
+          break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //      case '02cc': // Deliverto - 02cc - energy to spawn or extension - deliv
           case '02dd': // Deliverto - 02dd - energy to tower - deliv
