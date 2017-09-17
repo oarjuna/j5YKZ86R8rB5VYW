@@ -130,7 +130,7 @@ module.exports = {
 
               // find the sending links
               var rec_link = Hive.receiving_link[spawn_num];
-              var structure_links = creep.pos.find(FIND_MY_STRUCTURES, {
+              var structure_links = tmpcreep.pos.find(FIND_MY_STRUCTURES, {
                 filter: (s) => (
                   ( s.structureType == STRUCTURE_LINK && s.id != rec_link )
               )});
