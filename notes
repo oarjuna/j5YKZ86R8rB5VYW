@@ -1,4 +1,21 @@
-
+/////// FILL
+// Fillfrom - 01aa - resource -> harv
+// Fillfrom - 01dd - rec link - upgraders
+// Fillfrom - 01hh - energy from storage - upgraders
+// Fillfrom - 01jj - energy from containers - upgraders
+// Fillfrom - 01bb - energy from container -> deliv
+// Fillfrom - 01cc - energy from storage   -> deliv
+// Fillfrom - 01ff - mins from storage     -> deliv
+// Fillfrom - 01gg - mins from cont       -> deliv
+///////   DELIVER
+// Deliverto - 02aa - energy to closest cont/link - harv
+// Deliverto - 02cc - energy to spawn or extension - deliv
+// Deliverto - 02dd - energy to tower - deliv
+// Deliverto - 02ee - mins to storage - deliv
+// Deliverto - 02ff - energy to controller - upgrader
+// Deliverto - 02gg - energy to sending link - deliv
+// Deliverto - 02ii - energy to storage - deliv
+// Deliverto - 02hh - mins to term - deliv
 
 // ssh -i "screeps-grafana.pem" ubuntu@ec2-34-214-54-56.us-west-2.compute.amazonaws.com
  // sudo screepsplus-agent
