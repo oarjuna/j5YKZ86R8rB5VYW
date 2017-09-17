@@ -136,7 +136,7 @@ module.exports = {
                 s.extra == res
               );});
 
-            Log.debug(x.id + " RES " + res + " " + x.store[res] + " ex jobs: " + job_count.length + " num: " + num_of_jobs,'Planner');
+            Log.debug(x.id + " RES " + res + " " + x.store[res] + " ex jobs: " + job_count.length + " num: " + num_of_jobs_needed,'Planner');
 
             // if there are more jobs than existing jobs
             if ( job_count.length < num_of_jobs_needed ) {
