@@ -277,8 +277,8 @@ console.log("------ START ------");
 
   //  console.log("JQ: " + dest_obj);
 
-  //  if ( job.dest_id == 'closest' || _.find(Hive.sources[0], job.dest_id )  ) {  dest_type =  job.dest_id; }
-//    else { dest_type = dest_obj.structureType; }
+  if ( job.dest_id == 'closest' || job.dest_id == 'default' )  ) {  dest_type =  job.dest_id; }
+  else { dest_type = dest_obj.structureType; }
 
 //    var dest_type = 'foo';
 
