@@ -26,7 +26,7 @@ module.exports = {
 
 			// job specfic changes
 			if ( job.type == '01aa') { job.dest_id = creep.memory.destid; }
-			
+
 			// get the dest object object
 			var dest_obj =Game.getObjectById(job.dest_id);
 
@@ -80,7 +80,8 @@ module.exports = {
 					creep.say('\uD83D\uDD3B'); // 🔻
 				}
 				// if creep carry is 0
-				if ( _.sum(creep.carry) == 0 ) { var complete = true; }
+				//if ( _.sum(creep.carry) == 0 ) { var complete = true; }
+				if ( dest_obj.energy == dest_obj.energyCapacity ) { var complete = true; }
 
 			} // END DELIV
 
