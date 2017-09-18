@@ -288,7 +288,7 @@ console.log("------ START ------");
   var type = job.type;
   var type2 = type.slice(0,2);
   if ( type2 == '01') { j_type = 'Fillfrom'; }
-  elseif ( type2 == '02') { j_type = 'Deliver'; }
+  else if ( type2 == '02' ) { j_type = 'Deliver'; }
 
 
     if ( job.state == 'assigned') {
