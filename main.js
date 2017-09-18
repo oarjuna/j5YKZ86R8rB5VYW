@@ -282,7 +282,7 @@ console.log("------ START ------");
 
     var dest_obj = Game.getObjectById(job.dest_id);
 
-  if ( job.dest_id == 'closest' || job.dest_id == 'default'  )  {  dest_type =  job.dest_id; }
+  if ( job.dest_id == 'closest' || job.dest_id == 'default' )  {  dest_type =  job.dest_id; }
   else { dest_type = dest_obj.structureType; }
 
   //if ( dest_type == undefined ) { dest_type = 'source'; }
@@ -290,7 +290,7 @@ console.log("------ START ------");
   //Log.table(['spawn','j_id'], [job.spawn_name,job.id]);
 
     if ( job.state == 'assigned') {
-      Log.info(job.spawn_name+ " j_id: " + job.id + "\tt: " + job.type + "\tp: " + job.priority + "\td: " + job.dest_id + "\ttq " + ( Game.time - job.tick_issued) + "\tcr: " + name ,'Queue');
+      Log.info(job.spawn_name+ " j_id: " + job.id + "\tt: " + job.type + "\tp: " + job.priority + "\td: " + dest_type + "\ttq " + ( Game.time - job.tick_issued) + "\tcr: " + name ,'Queue');
     }
   }
   console.log("------ END ------");
