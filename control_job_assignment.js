@@ -155,7 +155,7 @@ module.exports = {
           case '02cc': // Deliverto - 02cc - energy to spawn or extension - deliv
             // TODO make this go to closest
             // find a creep full of the needed resource
-            tmpcreeps = _.filter(Game.creeps, (c) =>
+            tmpcreep = _.find(Game.creeps, (c) =>
              ( c.memory.birthplace == job.spawn_name ) &&
              ( c.spawning != true ) &&
              ( c.carry[job.extra] > 0 ) &&
@@ -163,14 +163,30 @@ module.exports = {
              ( c.memory.ryantest == true) &&
              ( c.memory.role == 'deliverer' )
             );
+            
+          // TODO - change 02cc jobs to be 'closest' dest, not actual dest
 
-          // get the job dest_obj
-          dest_obj = Game.getObjectById(job.dest_id);
+          if ( tmpcreep != undefined ) {
+            // Find nearby structures with enough space for a full drop off
 
-          // find the closest creep by path to the dest // This is not working well // -- TODO
-          var tmpcreep = dest_obj.pos.findClosestByPath(tmpcreeps);
-          Log.debug("closest: "+ tmpcreep + " 02cc - spawn drop "+ dest_obj.pos,'Jobber');
+            // get the closest spawn or extensions needing energy
+            var structure_spawns_extension = tmpcreep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
+               filter: (s) => (
+                 ( s.structureType == STRUCTURE_SPAWN && s.energy < s.energyCapacity ) ||
+                 ( s.structureType == STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
+            )});
 
+             if ( structure_spawns_extension  != undefined ) {
+              // set job dest_id to container id
+              job.dest_id = structure_spawns_extension.id;
+              Log.debug(tmpcreep + " @ " + job.spawn_name + " container found "+ job.dest_id,'Jobber');
+            }
+            else {
+              // none found? weird? unset the creep and warn.
+              tmpcreep = undefined;
+              Log.warn("\tJQ: creep can't find nearby container");
+            }
+          }
           break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //      case '02cc': // Deliverto - 02cc - energy to spawn or extension - deliv
