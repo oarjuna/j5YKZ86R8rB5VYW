@@ -285,6 +285,10 @@ console.log("------ START ------");
   if ( job.dest_id == 'closest' || job.dest_id == 'default' )  {  dest_type =  job.dest_id; }
   else { dest_type = dest_obj.structureType; }
 
+  if ( dest_type == undefined ) {
+    dest_type = 'source';
+  }
+
   var type = job.type;
   var type2 = type.slice(0,2);
   if ( type2 == '01') { j_type = 'Fillfrom'; }
