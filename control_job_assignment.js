@@ -167,9 +167,9 @@ module.exports = {
           // get the job dest_obj
           dest_obj = Game.getObjectById(job.dest_id);
 
-          // find the closest creep by path to the dest
+          // find the closest creep by path to the dest // This is not working well // -- TODO
           var tmpcreep = dest_obj.pos.findClosestByPath(tmpcreeps);
-          Log.debug(tmpcreep + "XXX "+ dest_obj.pos,'Jobber');
+          Log.debug(tmpcreep + " XXX "+ dest_obj.pos,'Jobber');
 
           break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
