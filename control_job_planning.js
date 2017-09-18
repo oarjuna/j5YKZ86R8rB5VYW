@@ -299,7 +299,6 @@ module.exports = {
     // and there are idle, empty deliverers
     // create jobs to bring energy from storage
     // Fillfrom - 01cc - energy from storage   -> deliv
-    // TODO - next!
 
     var deliv_job_count = _.filter(Hive.memory.job_queue, function(s) {
       return  (
