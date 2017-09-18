@@ -66,7 +66,7 @@ module.exports = {
           tower.attack(target);
         }
         else if (repair_target != undefined && tower.energy > 200 ) { // combat reserve
-          console.log(spawn_name + " " + tower + " -- rep " + repair_target);
+          Log.debug(spawn_name + " " + tower + " -- rep " + repair_target,'Tower');
           tower.repair(repair_target);
         }
     }
