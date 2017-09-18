@@ -163,7 +163,7 @@ module.exports = {
              ( c.memory.ryantest == true) &&
              ( c.memory.role == 'deliverer' )
             );
-            
+
           // TODO - change 02cc jobs to be 'closest' dest, not actual dest
 
           if ( tmpcreep != undefined ) {
@@ -179,7 +179,7 @@ module.exports = {
              if ( structure_spawns_extension  != undefined ) {
               // set job dest_id to container id
               job.dest_id = structure_spawns_extension.id;
-              Log.debug(tmpcreep + " @ " + job.spawn_name + " container found "+ job.dest_id,'Jobber');
+              Log.debug(tmpcreep + " @ " + job.spawn_name + " spawn or ext found "+ job.dest_id,'Jobber');
             }
             else {
               // none found? weird? unset the creep and warn.
