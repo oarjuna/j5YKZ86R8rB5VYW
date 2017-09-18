@@ -11,7 +11,6 @@ module.exports = {
 
 
     for (let tower of towers) {
-      //console.log("RCL: " +  Game.spawns[spawn_name].room.controller.level);
 
       if (   Game.spawns[spawn_name].room.controller.level < 5 ) { var wall_ramp_str = 5000; }
       else {
@@ -37,7 +36,7 @@ module.exports = {
          if ( target == undefined ) { target = weak_target; }
 
        if ( target ) {
-          console.log("TW: " + spawn_name+ " " + target); // We are under attack!
+          //console.log("TW: " + spawn_name+ " " + target); // We are under attack!
           // set alert flag for room to 'red'
           Game.spawns[spawn_name].room.controller.memory.alert_state = 'red';
           //console.log("TW: alert " + spawn_name+ " " + Game.spawns[spawn_name].room.controller.memory.alert_state);
