@@ -169,7 +169,7 @@ module.exports = {
 
           // find the closest creep by path to the dest // This is not working well // -- TODO
           var tmpcreep = dest_obj.pos.findClosestByPath(tmpcreeps);
-          Log.debug(tmpcreep + "02cc - spawn drop "+ dest_obj.pos,'Jobber');
+          Log.debug("closest: "+ tmpcreep + " 02cc - spawn drop "+ dest_obj.pos,'Jobber');
 
           break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
