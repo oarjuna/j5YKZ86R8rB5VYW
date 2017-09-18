@@ -285,12 +285,14 @@ console.log("------ START ------");
   if ( job.dest_id == 'closest' || job.dest_id == 'default' )  {  dest_type =  job.dest_id; }
   else { dest_type = dest_obj.structureType; }
 
-  //if ( dest_type == undefined ) { dest_type = 'source'; }
+  var type = job.type;
+  var type2 = type.slice(0,2);
+  if ( type2 == '01') { j_type = 'Fillfrom'; }
+  elseif ( type2 == '02') { j_type = 'Deliver'; }
 
-  //Log.table(['spawn','j_id'], [job.spawn_name,job.id]);
 
     if ( job.state == 'assigned') {
-      Log.info(job.spawn_name+ " j_id: " + job.id + "\tt: " + job.type + "\tp: " + job.priority + "\td: " + dest_type + "\ttq " + ( Game.time - job.tick_issued) + "\tcr: " + name ,'Queue');
+      Log.info(job.spawn_name+ " j_id: " + job.id + "\tt: " + j_type + "\tp: " + job.priority + "\td: " + dest_type + "\ttq " + ( Game.time - job.tick_issued) + "\tcr: " + name ,'Queue');
     }
   }
   console.log("------ END ------");
