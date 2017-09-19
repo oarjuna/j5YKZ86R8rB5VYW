@@ -248,7 +248,7 @@ console.log("------ START ------");
   roleSpawn.run(3,Hive);
 
 
-  console.log("#-------------------------------------------------------#  H, U, R, B, RH, C, De, EM, S");
+  console.log("#-------------------------------------------------------#  H, U, De, R, B, RH, C, EM, S");
 
   gameStatus.display_status(0,Hive);
   gameStatus.display_status(1,Hive);
