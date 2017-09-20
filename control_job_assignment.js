@@ -139,7 +139,7 @@ module.exports = {
 
               links = _.filter(harv_deliv_targets, function(o) { return o.structureType != STRUCTURE_LINK; });
 
-              Log.debug(tmpcreep + "near " + dest ,'Jobber');
+              Log.debug(tmpcreep + "near " + links ,'Jobber');
 
                if ( near_cont  != undefined ) {
                 // set job dest_id to container id
