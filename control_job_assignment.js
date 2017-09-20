@@ -141,7 +141,7 @@ module.exports = {
                 if ( x.structureType == STRUCTURE_LINK ) {
                   dest = x.id;
                 }
-
+/// HERE -- TODO
               }
 */
               Log.debug(tmpcreep + "near " + structure_links ,'Jobber');
