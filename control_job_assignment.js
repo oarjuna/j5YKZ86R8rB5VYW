@@ -137,7 +137,7 @@ module.exports = {
 
               var near_link = tmpcreep.pos.findInRange(structure_links,8);
 
-              Log.debug("near " + near_link.id,'Jobber');
+              Log.debug("near " + near_link.id + " " + structure_links ,'Jobber');
 
                if ( near_cont  != undefined ) {
                 // set job dest_id to container id
@@ -153,7 +153,6 @@ module.exports = {
           break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '02cc': // Deliverto - 02cc - energy to spawn or extension - deliv
-            // TODO make this go to closest
             // find a creep full of the needed resource
             tmpcreep = _.find(Game.creeps, (c) =>
              ( c.memory.birthplace == job.spawn_name ) &&
@@ -163,8 +162,6 @@ module.exports = {
              ( c.memory.ryantest == true) &&
              ( c.memory.role == 'deliverer' )
             );
-
-          // TODO - change 02cc jobs to be 'closest' dest, not actual dest
 
           if ( tmpcreep != undefined ) {
             // Find nearby structures with enough space for a full drop off
