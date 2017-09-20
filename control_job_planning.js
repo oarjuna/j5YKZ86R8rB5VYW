@@ -230,7 +230,7 @@ module.exports = {
         Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + t.structureType + " " + t.id,'Planner');
       }
     }
-
+    
     // get a list of sending links needing energy
     var structure_sending_links = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
        filter: (s) => (
