@@ -130,21 +130,14 @@ module.exports = {
 
               // find the sending links
               var rec_link = Hive.receiving_link[spawn_num];
-              var structure_links = tmpcreep.pos.findInRange(FIND_STRUCTURES, 1, {
+              var harv_deliv_targets = tmpcreep.pos.findInRange(FIND_STRUCTURES, 1, {
                 filter: (s) => (
                   ( s.structureType == STRUCTURE_CONTAINER && _.sum(s.store) <= s.storeCapacity - harvester_carry_cap) ||
                   ( s.structureType == STRUCTURE_LINK && s.id != rec_link && ( s.energy + harvester_carry_cap <= s.energyCapacity ))
 //                  ( s.structureType == STRUCTURE_LINK && s.id != rec_link )
               )});
-/*
-              for ( let x of structure_links ) {
-                if ( x.structureType == STRUCTURE_LINK ) {
-                  var  dest = x.id;
-                  break;
-                }
-              }
-*/
-              dest = _.filter(structure_links, function(o) { return o.structureType == STRUCTURE_LINK; });
+
+              links = _.filter(harv_deliv_targets, function(o) { return o.structureType != STRUCTURE_LINK; });
 
               Log.debug(tmpcreep + "near " + dest ,'Jobber');
 
