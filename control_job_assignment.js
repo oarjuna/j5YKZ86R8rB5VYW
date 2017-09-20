@@ -136,15 +136,15 @@ module.exports = {
                   ( s.structureType == STRUCTURE_LINK && s.id != rec_link && ( s.energy + harvester_carry_cap <= s.energyCapacity ))
 //                  ( s.structureType == STRUCTURE_LINK && s.id != rec_link )
               )});
-/*
+
               for ( let x of structure_links ) {
                 if ( x.structureType == STRUCTURE_LINK ) {
-                  dest = x.id;
+                  var  dest = x.id;
+                  break;
                 }
-/// HERE -- TODO
               }
-*/
-              Log.debug(tmpcreep + "near " + structure_links ,'Jobber');
+
+              Log.debug(tmpcreep + "near " + dest ,'Jobber');
 
                if ( near_cont  != undefined ) {
                 // set job dest_id to container id
