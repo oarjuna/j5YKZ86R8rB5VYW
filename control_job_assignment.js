@@ -130,7 +130,7 @@ module.exports = {
 
               // find the sending links
               var rec_link = Hive.receiving_link[spawn_num];
-              var structure_links = tmpcreep.room.pos.findInRange(FIND_MY_STRUCTURES, 1, {
+              var structure_links = tmpcreep.pos.findInRange(FIND_MY_STRUCTURES, 1, {
                 filter: (s) => (
 //                  ( s.structureType == STRUCTURE_LINK && s.id != rec_link && ( s.energy + harvester_carry_cap <= s.energyCapacity ))
                   ( s.structureType == STRUCTURE_LINK && s.id != rec_link )
