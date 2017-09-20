@@ -136,13 +136,15 @@ module.exports = {
                   ( s.structureType == STRUCTURE_LINK && s.id != rec_link && ( s.energy + harvester_carry_cap <= s.energyCapacity ))
 //                  ( s.structureType == STRUCTURE_LINK && s.id != rec_link )
               )});
-
+/*
               for ( let x of structure_links ) {
                 if ( x.structureType == STRUCTURE_LINK ) {
                   var  dest = x.id;
                   break;
                 }
               }
+*/
+              dest = _.filter(structure_links, function(o) { return o.structureType == STRUCTURE_LINK;}
 
               Log.debug(tmpcreep + "near " + dest ,'Jobber');
 
