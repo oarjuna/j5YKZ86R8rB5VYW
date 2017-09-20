@@ -136,7 +136,7 @@ module.exports = {
                   ( s.structureType == STRUCTURE_LINK && s.id != rec_link )
               )});
 
-              Log.debug(tmpcreep + "near " + near_link + " " + structure_links ,'Jobber');
+              Log.debug(tmpcreep + "near " + structure_links ,'Jobber');
 
                if ( near_cont  != undefined ) {
                 // set job dest_id to container id
