@@ -144,7 +144,7 @@ module.exports = {
                 }
               }
 */
-              dest = _.filter(structure_links, function(o)) { return o.structureType == STRUCTURE_LINK; }
+              dest = _.filter(structure_links, function(o) { return o.structureType == STRUCTURE_LINK; });
 
               Log.debug(tmpcreep + "near " + dest ,'Jobber');
 
