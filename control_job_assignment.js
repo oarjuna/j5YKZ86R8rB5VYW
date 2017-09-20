@@ -130,15 +130,13 @@ module.exports = {
 
               // find the sending links
               var rec_link = Hive.receiving_link[spawn_num];
-              var structure_links = tmpcreep.room.find(FIND_MY_STRUCTURES, {
+              var structure_links = tmpcreep.room.find(FIND_MY_STRUCTURES, 1, {
                 filter: (s) => (
 //                  ( s.structureType == STRUCTURE_LINK && s.id != rec_link && ( s.energy + harvester_carry_cap <= s.energyCapacity ))
                   ( s.structureType == STRUCTURE_LINK && s.id != rec_link )
               )});
 
-              var near_link = tmpcreep.pos.findInRange(structure_links,2);
-
-              Log.debug(tmpcreep + "near " + near_link.id + " " + structure_links.id ,'Jobber');
+              Log.debug(tmpcreep + "near " + near_link + " " + structure_links ,'Jobber');
 
                if ( near_cont  != undefined ) {
                 // set job dest_id to container id
