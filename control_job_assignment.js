@@ -135,7 +135,7 @@ module.exports = {
                   ( s.structureType == STRUCTURE_LINK && s.id != rec_link && ( s.energy + harvester_carry_cap <= s.energyCapacity ))
               )});
 
-              var near_link = tmpcreep.pos.findInRange(structure_links,8);
+              var near_link = tmpcreep.pos.findInRange(structure_links,2);
 
               Log.debug("near " + near_link.id + " " + structure_links ,'Jobber');
 
