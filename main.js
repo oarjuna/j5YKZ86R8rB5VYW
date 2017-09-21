@@ -296,7 +296,7 @@ console.log("------ START ------");
 
 
     if ( job.state == 'assigned') {
-      Log.info(job.id + " @ " + job.spawn_name + "\tp: " + job.priority + "\tt: " + j_type + "\td: " + dest_type + "\ttq " + ( Game.time - job.tick_issued) + "\tcr: " + name ,'Queue');
+    //  Log.info(job.id + " @ " + job.spawn_name + "\tp: " + job.priority + "\tt: " + j_type + "\td: " + dest_type + "\ttq " + ( Game.time - job.tick_issued) + "\tcr: " + name ,'Queue');
     }
   }
   console.log("------ END ------");
