@@ -140,7 +140,12 @@ module.exports = {
               links = _.filter(harv_deliv_targets, function(o)   { return o.structureType == STRUCTURE_LINK; });
             //  if ( links == undefined ) { job.dest_id = links.id; }
 
-              if ( links[0] != undefined ) { Log.debug(tmpcreep + "near " + links[0].id ,'Jobber'); }
+              if ( links[0] != undefined ) {
+                Log.debug(tmpcreep + "near " + links[0].id ,'Jobber');
+              }
+              else {
+                Log.debug(tmpcreep + "near or " + harv_deliv_targets[0].id ,'Jobber');
+              }
 
                if ( near_cont  != undefined ) {
                 // set job dest_id to container id
