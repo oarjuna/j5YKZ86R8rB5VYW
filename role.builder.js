@@ -24,7 +24,7 @@ module.exports = {
             if ( constructionSite != undefined ) {
                 if (creep.build(constructionSite) == ERR_NOT_IN_RANGE) {
 		                creep.say("build");
-                    creep.travelTo(constructionSite);
+                    creep.travelTo(constructionSite,{ignoreStructures: true});
                 }
             }
         }
