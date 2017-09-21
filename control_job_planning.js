@@ -103,12 +103,14 @@ module.exports = {
     // Get a list of 01aa jobs
     var harvest_job_count = _.filter(Hive.memory.job_queue, function(s) {
       return  (
+        s.spawn_name == spawn_name &&
         s.type == '01aa'
       );});
 
     // get a list of 02aa jobs
     var deliv_job_count = _.filter(Hive.memory.job_queue, function(s) {
       return  (
+        s.spawn_name == spawn_name &&
         s.type == '02aa'
       );});
 
@@ -180,6 +182,7 @@ module.exports = {
       // Deliverto - 02dd - energy to tower - deliv
       job_count = _.filter(Hive.memory.job_queue, function(s) {
         return  (
+          s.spawn_name == spawn_name &&
           s.type == '02dd' &&
           s.dest_id == t.id
         );});
@@ -212,6 +215,7 @@ module.exports = {
       // count all jobs for spawns or extensions
       job_count = _.filter(Hive.memory.job_queue, function(s) {
         return  (
+          s.spawn_name == spawn_name &&
           s.type == '02cc'
         );});
 
@@ -244,6 +248,7 @@ module.exports = {
 
       job_count = _.filter(Hive.memory.job_queue, function(s) {
         return  (
+          s.spawn_name == spawn_name &&
           s.type == '02gg' &&
           s.dest_id == t.id
         );});
@@ -281,6 +286,7 @@ module.exports = {
      // get a list of 02ii jobs
      var deliv_job_count = _.filter(Hive.memory.job_queue, function(s) {
        return  (
+         s.spawn_name == spawn_name &&
          s.type == '02ii'
        );});
 
@@ -302,6 +308,7 @@ module.exports = {
 
     var deliv_job_count = _.filter(Hive.memory.job_queue, function(s) {
       return  (
+        s.spawn_name == spawn_name &&
         s.type == '01cc'
     );});
 
