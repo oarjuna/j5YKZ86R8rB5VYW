@@ -148,7 +148,7 @@ Creep.prototype.hasActiveBodypart = function (type) {
                         [2,1]  // Spawn4
                       ],
     links: [
-            ['59c1cd62baf545049a7066d6','59a446a802722c0fd674afdf'], // Spawn1
+            ['59c1cd62baf545049a7066d6','59a446a802722c0fd674afdf','59c30d1d69240636945779e5'], // Spawn1
             ['59a76b55b9e281705d3b9dea','59c1bae1b3aa556157a63c16'], // Spawn2
             ['59ad5f7548ab72269b30f527','59ad81d6cdfbbf72a0df0c3a','59c1f937b7d6df67346825d5'], // Spawn3
             ['59c1c1911a916c343fd50d4a','59c1bc24b983a432a49d6461'], // Spawn4
