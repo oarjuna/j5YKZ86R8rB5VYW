@@ -13,7 +13,7 @@ module.exports = {
 		// are we in the room with the flag?
 		if ( creep.pos.roomName != gotoFlag.pos.roomName ) {
 			// No
-			moveStatus = creep.moveTo(gotoFlag);
+			moveStatus = creep.travelTo(gotoFlag);
 		}
 		else {
 			// yes, in the room with the flag,
@@ -45,7 +45,7 @@ module.exports = {
 
 				if (status == ERR_NOT_IN_RANGE ) {
 					console.log(creep + " claimer -- claiming ");
-	      	creep.moveTo(creep.room.controller);
+	      	creep.travelTo(creep.room.controller);
 	      }
 			}
 */
@@ -54,7 +54,7 @@ module.exports = {
 			if ( harvestSite != undefined  && creep.memory.working == false ) {
 				//console.log(creep + " claimer -- harvesting");
         if ( creep.harvest(harvestSite) == ERR_NOT_IN_RANGE ) {
-                creep.moveTo(harvestSite);
+                creep.travelTo(harvestSite);
         }
       }
 
@@ -62,7 +62,7 @@ module.exports = {
 			else if ( creep.room.controller.ticksToDowngrade < 2000  && creep.memory.working == true ) {
 				//console.log(creep + " claimer -- upgrading");
 				if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
-						creep.moveTo(creep.room.controller);
+						creep.travelTo(creep.room.controller);
 				}
 			}
 
@@ -70,7 +70,7 @@ module.exports = {
       else if ( constructionSite != undefined  && creep.memory.working == true) {
 				//console.log(creep + " claimer -- building");
         if ( creep.build(constructionSite) == ERR_NOT_IN_RANGE ) {
-                creep.moveTo(constructionSite);
+                creep.travelTo(constructionSite);
         }
 			}
 
@@ -85,7 +85,7 @@ module.exports = {
 
 				//console.log(creep + " claimer -- transfering energy.");
         if ( creep.transfer(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE ) {
-					creep.moveTo(container);
+					creep.travelTo(container);
         }
 			}
 

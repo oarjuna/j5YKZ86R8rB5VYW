@@ -24,7 +24,7 @@ module.exports = {
 		            creep.say('\uD83D\uDEE0\uFE0F'); // 🛠️
               //  console.log(creep + " -- repairer --repair -- " + structure );
                 if (creep.repair(structure) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(structure);
+                    creep.travelTo(structure);
                 }
             }
             else {

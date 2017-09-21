@@ -25,7 +25,7 @@ module.exports = {
     if( hostile_tower != undefined ) {
             console.log(creep + "SOLDIER -- attacking hostile tower!" + hostile_tower);
             if(creep.attack(hostile_tower) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(hostile_tower);
+                    creep.travelTo(hostile_tower);
             }
     }
 
@@ -33,7 +33,7 @@ module.exports = {
   	else if ( creep_target != undefined ) {
   		console.log(creep + "SOLDIER -- attacking hostile creep!" + creep_target);
         if(creep.attack(creep_target) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(creep_target);
+                creep.travelTo(creep_target);
         }
   	}
 
@@ -41,13 +41,13 @@ module.exports = {
     else if ( other_target != undefined ) {
       console.log(creep + "SOLDIER -- attacking hostile target!" + other_target);
       if(creep.attack(other_target) == ERR_NOT_IN_RANGE) {
-              creep.moveTo(other_target);
+              creep.travelTo(other_target);
       }
     }
 
     // move towards the flag
     else {
-  		creep.moveTo(gotoFlag);
+  		creep.travelTo(gotoFlag);
   	}
 
   }

@@ -19,12 +19,12 @@ module.exports = {
         }
 
         if (creep.memory.working == true) {
-        //  creep.moveTo(creep.room.controller);
+        //  creep.travelTo(creep.room.controller);
         //  creep.signController(creep.room.controller,"Non Servium");
             creep.say('\u2699\uFE0F'); // ⚙️
             // upgrade the controller
             //creep.signController(creep.room.controller,"Non Servium");
-            //creep.moveTo(creep.room.controller);
+            //creep.travelTo(creep.room.controller);
 
             // if red alert, act like a deliverer
             if ( creep.room.controller.memory.alert_state == 'red' ) {
@@ -32,13 +32,13 @@ module.exports = {
             }
             else {
               if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
-                  creep.moveTo(creep.room.controller);
+                  creep.travelTo(creep.room.controller);
               }
             }
 
 /*
             if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(creep.room.controller);
+                creep.travelTo(creep.room.controller);
             }
 */
 
@@ -49,7 +49,7 @@ module.exports = {
                 var energy = creep.pos.findInRange(FIND_DROPPED_RESOURCES,5);
                 if (creep.pickup(energy) == ERR_NOT_IN_RANGE) {
                         creep.say("drop-pick");
-                        creep.moveTo(energy);
+                        creep.travelTo(energy);
 		            }
 		            else {
 			               shared.pickupEnergy(creep);

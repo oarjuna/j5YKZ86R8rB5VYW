@@ -34,7 +34,7 @@ module.exports = {
        for(const resourceType in creep.carry) {
            status = creep.transfer(structure, resourceType);
            if (status == ERR_NOT_IN_RANGE ) {
-               creep.moveTo(structure);
+               creep.travelTo(structure);
            }
        }
       }
@@ -103,7 +103,7 @@ module.exports = {
 
        status = creep.transfer(structure, RESOURCE_ENERGY);
        if (status == ERR_NOT_IN_RANGE ) {
-           creep.moveTo(structure);
+           creep.travelTo(structure);
        }
       } // End UNLOAD
 
@@ -125,7 +125,7 @@ module.exports = {
           }
           if (status == ERR_NOT_IN_RANGE) {
             creep.say('\uD83D\uDE9A.-min'); // 🚚
-            creep.moveTo(res_container);
+            creep.travelTo(res_container);
           }
         }
 

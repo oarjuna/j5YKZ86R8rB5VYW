@@ -75,7 +75,7 @@ module.exports = {
 
       if (status == ERR_NOT_IN_RANGE) {
           // move towards it
-          creep.moveTo(structure);
+          creep.travelTo(structure);
         }
       }
     // END unload
@@ -94,7 +94,7 @@ module.exports = {
       //console.log(creep + " dest " + source);
 
       if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
-		    status = creep.moveTo(source);
+		    status = creep.travelTo(source);
         //Log.debug(creep + " "+ status );
       }
 
