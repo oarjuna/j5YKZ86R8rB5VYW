@@ -118,7 +118,7 @@ module.exports = {
 		else {
 			// else move towards dest_obj
 			creep.say(job.type);
-			creep.moveTo(dest_obj);
+			creep.travelTo(dest_obj);
 		} // END move
 
 	} // END FUNCTION

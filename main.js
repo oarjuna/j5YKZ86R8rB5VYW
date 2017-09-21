@@ -21,7 +21,7 @@ var roleGeneric = require('role.generic-creep');
 
 var stats = require('screepsplus');
 var general = require('role.general');
-
+var Traveler = require('Traveler');
 global.Log = require('Log')
 
 // START
