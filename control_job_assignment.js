@@ -137,9 +137,10 @@ module.exports = {
 //                  ( s.structureType == STRUCTURE_LINK && s.id != rec_link )
               )});
 
-              links = _.filter(harv_deliv_targets, function(o) { return o.structureType != STRUCTURE_LINK; });
+              links = _.filter(harv_deliv_targets, function(o)   { return o.structureType == STRUCTURE_LINK; });
+            //  if ( links == undefined ) { job.dest_id = links.id; }
 
-              Log.debug(tmpcreep + "near " + links ,'Jobber');
+              Log.debug(tmpcreep + "near " + links.id ,'Jobber');
 
                if ( near_cont  != undefined ) {
                 // set job dest_id to container id
