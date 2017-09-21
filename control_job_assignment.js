@@ -120,13 +120,6 @@ module.exports = {
             if ( tmpcreep != undefined ) {
               // Find nearby structures with enough space for a full drop off
 
-
-              var near_cont = tmpcreep.pos.findClosestByPath(FIND_STRUCTURES, {
-                  filter: (s) => (
-                    ( s.structureType == STRUCTURE_CONTAINER && _.sum(s.store) <= s.storeCapacity - harvester_carry_cap)
-              )});
-
-
               // find very nearby sending links and containers, both with room
               var rec_link = Hive.receiving_link[spawn_num];
               var harv_deliv_targets = tmpcreep.pos.findInRange(FIND_STRUCTURES, 1, {
@@ -137,9 +130,6 @@ module.exports = {
 
               // get a list of just the links
               links = _.filter(harv_deliv_targets, function(o)   { return o.structureType == STRUCTURE_LINK; });
-              //Log.debug(tmpcreep + "harv closest " + links[0].id ,'Jobber');
-              //Log.debug(tmpcreep + "harv closest or " + harv_deliv_targets[0].id ,'Jobber');
-
 
               // if one exists, use it
               if ( links[0] != undefined ) {
@@ -157,19 +147,6 @@ module.exports = {
                 tmpcreep = undefined;
                 Log.warn("\tJQ: creep can't find nearby container");
               }
-
-/*
-               if ( near_cont  != undefined ) {
-                // set job dest_id to container id
-                job.dest_id = near_cont.id;
-                Log.debug(tmpcreep + " @ " + job.spawn_name + " container found "+ job.dest_id,'Jobber');
-              }
-              else {
-                // no containers or lins found? weird? unset the creep and warn.
-                tmpcreep = undefined;
-                Log.warn("\tJQ: creep can't find nearby container");
-              }
-*/
 
             }
           break;
