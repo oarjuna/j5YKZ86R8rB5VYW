@@ -135,12 +135,12 @@ module.exports = {
               if ( links[0] != undefined ) {
                 // set job dest_id to link id
                 job.dest_id = links[0].id;
-                Log.debug(tmpcreep + "harv closest link " + links[0].id ,'Jobber');
+                Log.debug(tmpcreep + " harv closest link " + links[0].id ,'Jobber');
               } // otherwise, use the first container found, which should always exist
               else if ( harv_deliv_targets[0] != undefined ) {
                 // set job dest_id to container id
                 job.dest_id =  harv_deliv_targets[0].id;
-                Log.debug(tmpcreep + "harv closest cont " + harv_deliv_targets[0].id ,'Jobber');
+                Log.debug(tmpcreep + " harv closest cont " + harv_deliv_targets[0].id ,'Jobber');
               }
               else {
                 // no containers or lins found? weird? unset the creep so no assignment and warn.
