@@ -137,8 +137,8 @@ module.exports = {
 
               // get a list of just the links
               links = _.filter(harv_deliv_targets, function(o)   { return o.structureType == STRUCTURE_LINK; });
-              Log.debug(tmpcreep + "harv closest " + links[0].id ,'Jobber');
-              Log.debug(tmpcreep + "harv closest or " + harv_deliv_targets[0].id ,'Jobber');
+              //Log.debug(tmpcreep + "harv closest " + links[0].id ,'Jobber');
+              //Log.debug(tmpcreep + "harv closest or " + harv_deliv_targets[0].id ,'Jobber');
 
 
               // if one exists, use it
