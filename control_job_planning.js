@@ -3,7 +3,7 @@ module.exports = {
     [MinHarv,MinDeli,MinUgra,MinBuil,MinClReg,MinReHa,MinClai,MinSold,MinRepa,MinSolM,MinSolR,MinSolH] =  Hive.spawn_levels[spawn_num];
     var spawn_name = Hive.spawn_names[spawn_num];
 
-    if ( spawn_name != 'Spawn1') { return; }
+    if ( spawn_name != 'Spawn1' || spawn_name != 'Spawn2') { return; }
 
     // Define the job object
     // job object prototype - spawn_name,type, priority, state, body_type_req, dest_id, extra, tick_issued, tick_complete
