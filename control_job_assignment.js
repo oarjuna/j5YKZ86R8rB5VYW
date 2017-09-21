@@ -140,11 +140,11 @@ module.exports = {
               Log.debug(tmpcreep + "harv closest " + links[0].id ,'Jobber');
               Log.debug(tmpcreep + "harv closest or " + harv_deliv_targets[0].id ,'Jobber');
 
-/*
+
               // if one exists, use it
               if ( links[0] != undefined ) {
                 // set job dest_id to link id
-                job.dest_id = links[0].id.id;
+                job.dest_id = links[0].id;
                 Log.debug(tmpcreep + "harv closest " + links[0].id ,'Jobber');
               } // otherwise, use the first container found, which should always exist
               else if ( harv_deliv_targets[0] != undefined ) {
@@ -157,8 +157,8 @@ module.exports = {
                 tmpcreep = undefined;
                 Log.warn("\tJQ: creep can't find nearby container");
               }
-*/
 
+/*
                if ( near_cont  != undefined ) {
                 // set job dest_id to container id
                 job.dest_id = near_cont.id;
@@ -169,6 +169,7 @@ module.exports = {
                 tmpcreep = undefined;
                 Log.warn("\tJQ: creep can't find nearby container");
               }
+*/
 
             }
           break;
