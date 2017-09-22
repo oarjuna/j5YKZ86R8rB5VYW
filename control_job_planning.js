@@ -95,8 +95,15 @@ module.exports = {
       );
   });
 
-  
+  var upgrader_jobs_needed = Hive.spawn_levels[spawn_num][2]; // upgraders
 
+  if ( upgrader_fill_jobs.length < upgrader_jobs_needed ) {
+    // spawn some jobs, prioritize filling from links first, then containers, then storage
+    // Find close by receiving links that have energy
+
+    // Find
+
+  }
 //######################################################################################################################
     // Ensure jobs exists to Harvesting from sources and minerals
     var harvesting_jobs = _.filter(Hive.memory.job_queue, function(s) {
@@ -171,7 +178,7 @@ module.exports = {
             // if there are more jobs than existing jobs
             if ( job_count.length < num_of_jobs_needed ) {
               // spawn a new job
-              var job = new Job(spawn_name,'01bb',4,'unassigned','deliverer',x.id,res,Game.time,'','');
+              var job = new Job(spawn_name,'01bb',4,'unassigned','deliv_or_upgrd',x.id,res,Game.time,'','');
               Hive.memory.job_queue.push(job);
               Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + x.structureType + " " + x.id,'Planner');
             }
