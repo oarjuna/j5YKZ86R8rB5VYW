@@ -72,12 +72,12 @@ module.exports = {
 							// no, there must be a container 1 sq away. move there.
 							var close_containers = creep.pos.findInRange(STRUCTURE_CONTAINER,2);
 							//creep.travelTo(close_containers[0]);
-							
+
 						}
 						else {
 							creep.memory.harv_found_cont = true;
 						}
-						Log.debug(creep + " GEN FOUND " + result + " " + close_containers,'Generic');
+						Log.debug(creep + " GEN FOUND " + result + " -- " + close_containers,'Generic');
 					}
 
 					creep.harvest(dest_obj);
