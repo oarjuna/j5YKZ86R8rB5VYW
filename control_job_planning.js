@@ -178,9 +178,15 @@ module.exports = {
         //for ( var res in res_list ) { // for each resource type we're dealing with // TODO == with this
 
           if ( x.store == undefined ) {
+            // we are a link
             eng_check = x.energy;
           }
+          else if ( x.store[res] == undefined ) {
+            // we are a container without the resource being checked
+            eng_check = -1;
+          }
           else {
+            // we are a container with the resource being checked
             eng_check = x.store[res];
           }
 
