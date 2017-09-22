@@ -91,8 +91,8 @@ module.exports = {
 
   // Ensure these jobs exist
   var upgrader_job_list = _.filter(Hive.memory.job_queue, function(s) {
-    return  ( s.type == '01aa' || s.type == '01hh' || s.type == '01jj' || s.type == '01bb') &&
-    s.spawn_name == spawn_name 
+    return  (( s.type == '01aa' || s.type == '01hh' || s.type == '01jj' || s.type == '01bb') &&
+    s.spawn_name == spawn_name
     );
   });
 
