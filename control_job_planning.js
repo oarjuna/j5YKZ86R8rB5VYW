@@ -68,7 +68,6 @@ module.exports = {
     // Fillfrom - 01aa - resource -> harv
     // Fillfrom - 01dd - rec link - upgraders
     // Fillfrom - 01hh - energy from storage - upgraders
-    // Fillfrom - 01jj - energy from containers - upgraders
     // Fillfrom - 01bb - energy from container -> deliv or deliver
     // Fillfrom - 01cc - energy from storage   -> deliv
     // Fillfrom - 01ff - mins from storage     -> deliv
@@ -85,13 +84,14 @@ module.exports = {
 
 //######################################################################################################################
 // Fillfrom - 01dd - rec link - upgraders
+  // Are there any receiving links needing emptying?
+
 // Fillfrom - 01hh - energy from storage - upgraders
-// Fillfrom - 01jj - energy from containers - upgraders
 // Fillfrom - 01bb - energy from container -> deliv or deliver
 
   // Ensure these jobs exist
   var upgrader_job_list = _.filter(Hive.memory.job_queue, function(s) {
-    return  (( s.type == '01dd' || s.type == '01hh' || s.type == '01jj' || s.type == '01bb') &&
+    return  (( s.type == '01dd' || s.type == '01hh' || s.type == '01bb') &&
     s.spawn_name == spawn_name
     );
   });
@@ -100,28 +100,15 @@ module.exports = {
   var num_of_upgraders = Hive.spawn_levels[spawn_num][2]; // deliverers
   Log.debug(" num of up " + num_of_upgraders + " num of jobs " + upgrader_job_list.length,"Planner");
 
-
-   /*idle_upgraders = _.filter(Game.creeps, (c) =>
-    ( c.memory.birthplace == job.spawn_name ) &&
-    ( c.spawning != true ) &&
-    ( _.sum(c.carry) < c.carryCapacity ) &&
-    ( c.memory.state == 'idle' ) &&
-    ( c.memory.ryantest == true) &&
-    ( c.memory.role == 'upgrader' )
-    );
-*/
-
-    // if there is an idle upgraders, it means it complete it's job. spawn a job for it.
     // do not assign, that happens in job assignment
-//  if (  idle_upgraders.length > 0 ) {
-    // spawn some jobs, prioritize filling from links first, then containers, then storage
+  if (  upgrader_job_list.length <  num_of_upgraders ) {
+    // spawn a job --  prioritize filling from links first, then containers, then storage
     // Find close by receiving links that have energy
 
-    // Find 01bb jobs
-
     // else create a "go to storage" job
-//
-  //}
+
+  }
+
 //######################################################################################################################
     // Ensure jobs exists to Harvesting from sources and minerals
     var harvesting_jobs = _.filter(Hive.memory.job_queue, function(s) {
@@ -162,12 +149,10 @@ module.exports = {
 
 //######################################################################################################################
     // Ensure jobs exist to Empty containers
-    // Fillfrom - 01bb - energy from container -> deliv
-    // Fillfrom - 01jj - energy from containers - upgraders ( low RCL levels need this) // TODO
+    // Fillfrom - 01bb - energy from container -> deliv or upgraders
     var res_containers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
       filter: (s) =>
         (
-        //  ( spawn_name == 'Spawn1') &&
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= Hive.deliverer_carry_cap[spawn_num] ) ||
         //  ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= Hive.deliverer_carry_cap[spawn_num] ) ||
         //  ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_LEMERGIUM] >= Hive.deliverer_carry_cap[spawn_num] ) ||
@@ -185,7 +170,7 @@ module.exports = {
             // get a count of existing jobs for this resource and pickup location
             var job_count = _.filter(Hive.memory.job_queue, function(s) {
               return  (
-                ( s.type == '01bb' || s.type == '01jj' ) &&
+                ( s.type == '01bb' || s.type == '01dd' ) && 
                 s.spawn_name == spawn_name &&
                 s.dest_id == x.id &&
                 s.extra == res
@@ -196,6 +181,9 @@ module.exports = {
             // if there are more jobs than existing jobs
             if ( job_count.length < num_of_jobs_needed ) {
               // spawn a new job
+              // if x.structureType == STRUCTURE_LINK
+
+              // else if x.structureType == STRUCTURE_CONTAINER
               var job = new Job(spawn_name,'01bb',4,'unassigned','deliv_or_upgrd',x.id,res,Game.time,'','');
               Hive.memory.job_queue.push(job);
               Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + x.structureType + " " + x.id,'Planner');

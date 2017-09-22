@@ -295,7 +295,7 @@ console.log("------ START ------");
   else if ( type2 == '02' ) { j_type = 'Deliver'; }
 
 
-    if ( job.state == 'assigned') {
+  if ( job.state == 'assigned' || job.type == '01bb' || job.type == '01dd') {
       Log.info(job.id + " @ " + job.spawn_name + "\tp: " + job.priority + "\tt: " + j_type + "\td: " + dest_type + "\ttq " + ( Game.time - job.tick_issued) + "\tcr: " + name ,'Queue');
     }
   }

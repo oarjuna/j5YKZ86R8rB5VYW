@@ -49,8 +49,7 @@ module.exports = {
 // Fillfrom - 01aa - resource -> harv
 // Fillfrom - 01dd - rec link - upgraders // TODO
 // Fillfrom - 01hh - energy from storage - upgraders // TODO
-// Fillfrom - 01jj - energy from containers - upgraders // TODO
-// Fillfrom - 01bb - energy from container -> deliv
+// Fillfrom - 01bb - energy from container -> deliv or upgradres
 // Fillfrom - 01cc - energy from storage   -> deliv
 // Fillfrom - 01ff - mins from storage     -> deliv
 // Fillfrom - 01gg - mins from cont       -> deliv
@@ -69,7 +68,6 @@ module.exports = {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '01dd': // Fillfrom - 01dd - closest rec link - upgraders // TODO
           case '01hh': // Fillfrom - 01hh - energy from storage - upgraders // TODO
-          case '01jj': // Fillfrom - 01jj - energy from closest containers - upgraders // TODO
           // local, empty, idle, upgrader
           tmpcreep = _.find(Game.creeps, (c) =>
             ( c.memory.birthplace == job.spawn_name ) &&
