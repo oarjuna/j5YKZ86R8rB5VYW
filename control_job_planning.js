@@ -178,8 +178,8 @@ module.exports = {
         else { res_list = x.store }
   */
         var res_list = [RESOURCE_ENERGY,RESOURCE_OXYGEN];
-        for ( var res in x.store ) { // for each resource type we're dealing with  // TODO -- here!!
-        //for ( var res in res_list ) { // for each resource type we're dealing with
+        for ( var res in x.store ) { // for each resource type we're dealing with  // TODO -- swap this
+        //for ( var res in res_list ) { // for each resource type we're dealing with // TODO == with this
           if ( ( x.structureType == STRUCTURE_LINK && x.energy > 0 ) ||  ( x.store[res] != undefined && x.store[res] > 0 )) { // that is not empty
 
             Log.warn("RES cont type " + x.structureType,'Planner');
