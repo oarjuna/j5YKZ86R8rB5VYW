@@ -98,7 +98,7 @@ module.exports = {
 
   //
   var num_of_upgraders = Hive.spawn_levels[spawn_num][2]; // deliverers
-  Log.debug(" num of up " + num_of_upgraders + " num of jobs " + upgrader_job_list.length,"Planner");
+  Log.debug(" num of up " + num_of_upgraders + " num of jobs " + upgrader_job_list,"Planner");
 
 
    /*idle_upgraders = _.filter(Game.creeps, (c) =>
