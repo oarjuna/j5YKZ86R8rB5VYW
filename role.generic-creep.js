@@ -67,9 +67,13 @@ module.exports = {
 					  return obj.structureType == STRUCTURE_CONTAINER;
 					});
 
-					Log.debug(creep + " GEN FOUND " + result,'Generic');
+					if ( result == undefined ) {
+						// no, there must be a container 1 sq away. move there.
+						var close_containers = findInRange(STRUCTURE_CONTAINER,1);
+					}
 
-					//if ( found.structureType != STRUCTURE_CONTAINER ) { }
+					Log.debug(creep + " GEN FOUND " + result + " " + close_containers,'Generic');
+
 
 					// if not, adjust to that container
 
