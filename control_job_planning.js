@@ -151,16 +151,23 @@ module.exports = {
     // Ensure jobs exist to Empty res_pickup_spots
     // Fillfrom - 01bb - energy from container -> deliv or upgraders
     // Fillfrom - 01dd - rec link - upgraders
-    var res_pickup_spots = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
+    var res_pickup_spots_cont = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
       filter: (s) =>
         (
           // TODO -- make this list handle resources better, not hardcoded
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= Hive.deliverer_carry_cap[spawn_num] ) ||
-          ( s.structureType== STRUCTURE_LINK && s.id == Hive.receiving_link[spawn_num] && s.energy >= Hive.upgrader_carry_cap[spawn_num] ) ||
         //  ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= Hive.deliverer_carry_cap[spawn_num] ) ||
         //  ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_LEMERGIUM] >= Hive.deliverer_carry_cap[spawn_num] ) ||
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_OXYGEN] >= Hive.deliverer_carry_cap[spawn_num] )
     )});
+
+    var res_pickup_spots_links = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
+      filter: (s) =>
+        (
+          ( s.structureType== STRUCTURE_LINK && s.id == Hive.receiving_link[spawn_num] && s.energy >= Hive.upgrader_carry_cap[spawn_num] )
+    )});
+
+    var res_pickup_spots = _.merge(res_pickup_spots_cont,res_pickup_spots_links)
 
     if ( res_pickup_spots.length > 0) { // if there are res_pickup_spots needing pickup
       for ( var x of res_pickup_spots ) { // for each res_pickup_spots with stuff
