@@ -179,12 +179,17 @@ module.exports = {
   */
         var res_list = [RESOURCE_ENERGY,RESOURCE_OXYGEN];
         for ( var res in x.store ) { // for each resource type we're dealing with  // TODO -- swap this
-        //for ( var res in res_list ) { // for each resource type we're dealing with // TODO == with this
-        //if ( x.store == undefined ) { continue; }
+          //for ( var res in res_list ) { // for each resource type we're dealing with // TODO == with this
+          if ( x.store == undefined ) {
+            eng_check = x.energy;
+          }
+          else {
+            eng_check = x.store[res];
+          }
 
           if (
-            ( x.structureType == STRUCTURE_LINK && x.energy > 0 && res == RESOURCE_ENERGY ) ||
-            ( x.structureType == STRUCTURE_CONTAINER &&x.store[res] > 0 ))
+            ( x.structureType == STRUCTURE_LINK && eng_check > 0 && res == RESOURCE_ENERGY ) ||
+            ( x.structureType == STRUCTURE_CONTAINER && eng_check > 0 ))
           {
 
             Log.warn("Res: " + res + " res_list " + res_list[0],'Planner');
