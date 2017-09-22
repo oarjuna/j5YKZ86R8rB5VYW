@@ -77,7 +77,7 @@ module.exports = {
 						else {
 							creep.memory.harv_found_cont = true;
 						}
-						Log.debug(creep + " GEN FOUND " + result + " -- " + close_containers,'Generic');
+						Log.debug(creep + " GEN FOUND " + result + " -- " + close_containers[0],'Generic');
 					}
 
 					creep.harvest(dest_obj);
