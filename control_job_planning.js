@@ -82,11 +82,20 @@ module.exports = {
     // Deliverto - 02gg - energy to sending link - deliv
     // Deliverto - 02ii - energy to storage - deliv
     // Deliverto - 02hh - mins to term - deliv
+
 //######################################################################################################################
 // Fillfrom - 01dd - rec link - upgraders
 // Fillfrom - 01hh - energy from storage - upgraders
 // Fillfrom - 01jj - energy from containers - upgraders
-// Ensure these jobs exist 
+  // Ensure these jobs exist
+  var upgrader_fill_jobs = _.filter(Hive.memory.job_queue, function(s) {
+    return  (
+      ( s.type == '01dd' || s.type == '01hh' || s.type == '01jj' ) &&
+      s.spawn_name == spawn_name
+      );
+  });
+
+  
 
 //######################################################################################################################
     // Ensure jobs exists to Harvesting from sources and minerals
