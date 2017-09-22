@@ -148,20 +148,22 @@ module.exports = {
     }
 
 //######################################################################################################################
-    // Ensure jobs exist to Empty containers
+    // Ensure jobs exist to Empty res_pickup_spots
     // Fillfrom - 01bb - energy from container -> deliv or upgraders
-    var res_containers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
+    // Fillfrom - 01dd - rec link - upgraders
+    var res_pickup_spots = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
       filter: (s) =>
         (
-          // TODO -- ADD receiving links with energy to this list
+          // TODO -- make this list handle resources better, not hardcoded
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= Hive.deliverer_carry_cap[spawn_num] ) ||
+          ( s.structureType== STRUCTURE_LINK && s.id == Hive.receiving_link[spawn_num] && s.energy >= Hive.upgrader_carry_cap[spawn_num] ) ||
         //  ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= Hive.deliverer_carry_cap[spawn_num] ) ||
         //  ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_LEMERGIUM] >= Hive.deliverer_carry_cap[spawn_num] ) ||
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_OXYGEN] >= Hive.deliverer_carry_cap[spawn_num] )
     )});
 
-    if ( res_containers.length > 0) { // if there are containers needing pickup
-      for ( var x of res_containers ) { // for each container with stuff
+    if ( res_pickup_spots.length > 0) { // if there are res_pickup_spots needing pickup
+      for ( var x of res_pickup_spots ) { // for each res_pickup_spots with stuff
         for ( var res in x.store ) { // for each resource type in each container's store list
           if ( x.store[res] > 0 ) { // that is not empty
 
@@ -187,7 +189,7 @@ module.exports = {
                 var job = new Job(spawn_name,'01bb',4,'unassigned','deliv_or_upgrd',x.id,res,Game.time,'','');
               }
               else if  ( x.structureType == STRUCTURE_LINK ) {
-                var job = new Job(spawn_name,'01dd',4,'unassigned','upgrader',x.id,res,Game.time,'','');
+                //var job = new Job(spawn_name,'01dd',4,'unassigned','upgrader',x.id,res,Game.time,'','');
               }
               Hive.memory.job_queue.push(job);
               Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + x.structureType + " " + x.id,'Planner');
