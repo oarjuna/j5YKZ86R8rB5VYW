@@ -172,7 +172,7 @@ module.exports = {
 
     if ( res_pickup_spots.length > 0) { // if there are res_pickup_spots needing pickup
       for ( var x of res_pickup_spots ) { // for each res_pickup_spots with stuff
-        for ( var res in x.store || ( x.structureType == STRUCTURE_LINK && x.energy > 0 ) ) { // for each resource type in each container's store list
+        for ( var res in x.store ) { // for each resource type in each container's store list
           if ( x.store[res] > 0 || ( x.structureType == STRUCTURE_LINK && x.energy > 0 ) ) { // that is not empty
 
             Log.debug("RES cont type " + x.structureType,'Planner');
