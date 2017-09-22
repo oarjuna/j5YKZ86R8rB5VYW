@@ -182,7 +182,6 @@ module.exports = {
         //for ( var res in res_list ) { // for each resource type we're dealing with // TODO == with this
           if ( ( x.structureType == STRUCTURE_LINK && x.energy > 0 ) ||  ( x.store[res] != undefined && x.store[res] > 0 )) { // that is not empty
 
-            Log.warn("RES cont type " + x.structureType,'Planner');
 
             // get the amount of resource to pickup = resources / carry cap
             if ( x.structureType == STRUCTURE_CONTAINER) {
@@ -216,6 +215,7 @@ module.exports = {
                 //var job = new Job(spawn_name,'01dd',4,'unassigned','upgrader',x.id,res,Game.time,'','');
                 //Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + x.structureType + " " + x.id,'Planner');
                 //Hive.memory.job_queue.push(job);
+                Log.warn("RES cont type " + x.structureType,'Planner');
               }
             }
 
