@@ -83,7 +83,6 @@ module.exports = {
     // Deliverto - 02hh - mins to term - deliv
 
 //######################################################################################################################
-// Fillfrom - 01dd - rec link - upgraders
   // Are there any receiving links needing emptying?
 // Fillfrom - 01hh - energy from storage - upgraders
 
@@ -102,7 +101,7 @@ module.exports = {
     // do not assign, that happens in job assignment
   if (  upgrader_job_list.length <  num_of_upgraders ) {
     // else create a "go to storage" job
-
+    // TODO
   }
 
 //######################################################################################################################
