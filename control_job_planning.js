@@ -161,7 +161,7 @@ module.exports = {
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_OXYGEN] >= Hive.deliverer_carry_cap[spawn_num] )
     )});
 
-    var res_pickup_spots_links = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
+    var res_pickup_spots_links = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
       filter: (s) =>
         (
           ( s.structureType== STRUCTURE_LINK && s.id == Hive.receiving_link[spawn_num] && s.energy >= Hive.upgrader_carry_cap[spawn_num] )
