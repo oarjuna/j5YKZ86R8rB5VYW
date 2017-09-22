@@ -174,8 +174,8 @@ module.exports = {
       for ( var x of res_pickup_spots ) { // for each res_pickup_spots with stuff
         var res_list = [RESOURCE_ENERGY,RESOURCE_OXYGEN];
 
-        for ( var res in x.store ) { // for each resource type we're dealing with  // TODO -- swap this
-        //for ( var res in res_list ) { // for each resource type we're dealing with // TODO == with this
+        //for ( var res in x.store ) { // for each resource type we're dealing with  // TODO -- swap this
+        for ( var res in res_list ) { // for each resource type we're dealing with // TODO == with this
 
           if ( x.store == undefined ) {
             // we are a link
