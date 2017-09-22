@@ -195,7 +195,7 @@ module.exports = {
             ( x.structureType == STRUCTURE_CONTAINER && eng_check > 0 ))
           {
 
-            Log.warn("Res: " + res + " res_list " + x.store[RESOURCE_OXYGEN],'Planner');
+            Log.warn("Res: " + res + " res_list " + eng_check,'Planner');
             // get the amount of resource to pickup = resources / carry cap
             if ( x.structureType == STRUCTURE_CONTAINER) {
               num_of_jobs_needed =  x.store[res] / Hive.deliverer_carry_cap[spawn_num];
