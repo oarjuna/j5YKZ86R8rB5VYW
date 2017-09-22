@@ -16,7 +16,7 @@ module.exports = {
     var harvester_carry_cap = 150;
     var job_TTL = 200;
     var tmpcreep, min_needed;
-return;
+//return;
     // when a job is completed, times out, or is abandoned, remove it from the job_queue
     // find those jobs and remove them
     var removed = _.remove(Hive.memory.job_queue, function(s) {
