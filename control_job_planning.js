@@ -182,7 +182,7 @@ module.exports = {
         //for ( var res in res_list ) { // for each resource type we're dealing with // TODO == with this
           if ( ( x.structureType == STRUCTURE_LINK && x.energy > 0 && res == RESOURCE_ENERGY ) ||  ( x.store[res] != undefined && x.store[res] > 0 )) { // that is not empty
 
-
+            Log.warn("Res: " + res + " ");
             // get the amount of resource to pickup = resources / carry cap
             if ( x.structureType == STRUCTURE_CONTAINER) {
               num_of_jobs_needed =  x.store[res] / Hive.deliverer_carry_cap[spawn_num];
