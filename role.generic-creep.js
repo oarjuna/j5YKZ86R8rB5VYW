@@ -75,7 +75,7 @@ module.exports = {
 					        (
 											s.structureType == STRUCTURE_CONTAINER
 									)});
-									moveto(dest_obj);
+									moveTo(dest_obj);
 									//creep.memory.harv_found_cont = true;
 						}
 						else {
