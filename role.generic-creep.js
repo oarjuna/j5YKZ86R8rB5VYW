@@ -18,7 +18,7 @@ module.exports = {
 				return;
 			}
 
-			Log.debug("GEN: " + job.id + " ttl: " + creep.ticksToLive  +  " jst: " + job.state,'Generic' );
+			//Log.debug("GEN: " + job.id + " ttl: " + creep.ticksToLive  +  " jst: " + job.state,'Generic' );
 
 			var type = job.type;
 			var type2 = type.slice(0,2);
@@ -62,7 +62,6 @@ module.exports = {
 
 					// am I on top of a container?
 					const found = creep.room.lookForAt(LOOK_STRUCTURES, creep.pos);
-//					Log.debug(creep + " GEN FOUND " + found[0].type.structure[0],'Generic');
 					var result = found.find(function( obj ) {
 					  return obj.structureType == STRUCTURE_CONTAINER;
 					});
