@@ -60,7 +60,7 @@ module.exports = {
 				if ( type3 == 'aa') { // from source == harvest
 					creep.say('\u26CF'); //  ⛏
 
-
+/*
 					if ( creep.memory.harv_found_cont == undefined ) {
 						// am I on top of a container?
 						const found = creep.room.lookForAt(LOOK_STRUCTURES, creep.pos);
@@ -83,7 +83,7 @@ module.exports = {
 						}
 						//Log.debug(creep + " GEN FOUND " + result + " -- " + close_containers[0],'Generic');
 					}
-
+*/
 					creep.harvest(dest_obj);
 
 					if ( _.sum(creep.carry) == creep.carryCapacity  ) { var complete = true; }
