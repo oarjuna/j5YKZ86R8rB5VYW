@@ -178,8 +178,8 @@ module.exports = {
         else { res_list = x.store }
   */
         var res_list = [RESOURCE_ENERGY,RESOURCE_OXYGEN];
-        for ( var res in x.store ) { // for each resource type we're dealing with  // TODO -- swap this
-        //for ( var res in res_list ) { // for each resource type we're dealing with // TODO == with this
+        //for ( var res in x.store ) { // for each resource type we're dealing with  // TODO -- swap this
+        for ( var res in res_list ) { // for each resource type we're dealing with // TODO == with this
           if ( ( x.structureType == STRUCTURE_LINK && x.energy > 0 && res == RESOURCE_ENERGY ) ||  ( x.store[res] != undefined && x.store[res] > 0 )) { // that is not empty
 
 
@@ -212,9 +212,9 @@ module.exports = {
                 Hive.memory.job_queue.push(job);
               }
               else if  ( x.structureType == STRUCTURE_LINK ) {
-                //var job = new Job(spawn_name,'01dd',4,'unassigned','upgrader',x.id,res,Game.time,'','');
-                //Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + x.structureType + " " + x.id,'Planner');
-                //Hive.memory.job_queue.push(job);
+                var job = new Job(spawn_name,'01dd',4,'unassigned','upgrader',x.id,res,Game.time,'','');
+                Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + x.structureType + " " + x.id,'Planner');
+                Hive.memory.job_queue.push(job);
                 Log.warn("RES cont type " + x.structureType,'Planner');
               }
             }
