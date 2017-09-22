@@ -70,7 +70,7 @@ module.exports = {
 
 						if ( result == undefined ) {
 							// no, there must be a container 1 sq away. move there.
-							var close_containers = creep.pos.findInRange(STRUCTURE_CONTAINER,2);
+							var close_containers = creep.pos.findInRange(STRUCTURE_CONTAINER,1);
 							//creep.travelTo(close_containers[0]);
 
 						}
