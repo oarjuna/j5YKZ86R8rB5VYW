@@ -90,9 +90,6 @@ module.exports = {
 // Fillfrom - 01bb - energy from container -> deliv or deliver
 
   // Ensure these jobs exist
-
-  var upgrader_jobs_needed = Hive.spawn_levels[spawn_num][2]; // upgraders
-
    idle_upgraders = _.filter(Game.creeps, (c) =>
     ( c.memory.birthplace == job.spawn_name ) &&
     ( c.spawning != true ) &&
