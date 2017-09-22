@@ -182,7 +182,7 @@ module.exports = {
         //for ( var res in res_list ) { // for each resource type we're dealing with
           if ( ( x.structureType == STRUCTURE_LINK && x.energy > 0 ) ||  ( x.store[res] != undefined && x.store[res] > 0 )) { // that is not empty
 
-            Log.debug("RES cont type " + x.structureType,'Planner');
+            Log.warn("RES cont type " + x.structureType,'Planner');
 
             // get the amount of resource to pickup = resources / carry cap
             if ( x.structureType == STRUCTURE_CONTAINER) {
