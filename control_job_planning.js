@@ -85,14 +85,13 @@ module.exports = {
 //######################################################################################################################
 // Fillfrom - 01dd - rec link - upgraders
   // Are there any receiving links needing emptying?
-
 // Fillfrom - 01hh - energy from storage - upgraders
-// Fillfrom - 01bb - energy from container -> deliv or deliver
 
   // Ensure these jobs exist
   var upgrader_job_list = _.filter(Hive.memory.job_queue, function(s) {
-    return  (( s.type == '01dd' || s.type == '01hh' || s.type == '01bb') &&
-    s.spawn_name == spawn_name
+    return  ((
+      s.type == '01hh' ) &&
+      s.spawn_name == spawn_name
     );
   });
 
@@ -102,9 +101,6 @@ module.exports = {
 
     // do not assign, that happens in job assignment
   if (  upgrader_job_list.length <  num_of_upgraders ) {
-    // spawn a job --  prioritize filling from links first, then containers, then storage
-    // Find close by receiving links that have energy
-
     // else create a "go to storage" job
 
   }
@@ -168,6 +164,7 @@ module.exports = {
     )});
 
 
+    // TODO -- put this into prod
     var res_pickup_spots = res_pickup_spots_cont;
     var res_pickup_spots_tmp = _.union(res_pickup_spots_cont,res_pickup_spots_links);
     Log.debug("RES: " + res_pickup_spots_tmp,'Planner' );

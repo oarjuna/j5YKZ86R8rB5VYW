@@ -66,7 +66,7 @@ module.exports = {
             );
           break; // END 01aa
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-          case '01dd': // Fillfrom - 01dd - closest rec link - upgraders // TODO
+          case '01dd': // Fillfrom - 01dd - rec link - upgraders 
           case '01hh': // Fillfrom - 01hh - energy from storage - upgraders // TODO
           // local, empty, idle, upgrader
           tmpcreep = _.find(Game.creeps, (c) =>
