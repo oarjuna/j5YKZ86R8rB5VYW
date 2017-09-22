@@ -165,9 +165,9 @@ module.exports = {
 
 
     // TODO -- put this into prod
-    var res_pickup_spots = res_pickup_spots_cont;
-    var res_pickup_spots_tmp = _.union(res_pickup_spots_cont,res_pickup_spots_links);
-    Log.debug("RES: " + res_pickup_spots_tmp,'Planner' );
+    //var res_pickup_spots = res_pickup_spots_cont;
+    var res_pickup_spots = _.union(res_pickup_spots_cont,res_pickup_spots_links);
+    //Log.debug("RES: " + res_pickup_spots_tmp,'Planner' );
 
 
     if ( res_pickup_spots.length > 0) { // if there are res_pickup_spots needing pickup
