@@ -156,7 +156,7 @@ module.exports = {
     linkcontrol.run(spawn_num,Hive);
 
     // run the planner
-    plancontrol.run(spawn_num,Hive);
+  //  plancontrol.run(spawn_num,Hive);
 
     // run job control
     jobcontrol.run(spawn_num,Hive);
