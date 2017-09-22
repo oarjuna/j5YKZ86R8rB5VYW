@@ -178,8 +178,8 @@ module.exports = {
         else { res_list = x.store }
   */
         var res_list = [RESOURCE_ENERGY,RESOURCE_OXYGEN];
-        for ( var res in x.store ) { // for each resource type we're dealing with  // TODO -- swap this
-        //for ( var res in res_list ) { // for each resource type we're dealing with // TODO == with this
+        //for ( var res in x.store ) { // for each resource type we're dealing with  // TODO -- swap this
+        for ( var res in res_list ) { // for each resource type we're dealing with // TODO == with this
         if ( x.store[res] == undefined ) { continue; }
 
           if (
