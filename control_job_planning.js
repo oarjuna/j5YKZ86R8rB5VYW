@@ -176,11 +176,13 @@ module.exports = {
 /*
         if ( x.structureType == STRUCTURE_LINK ) { var res_list = RESOURCE_ENERGY; }
         else { res_list = x.store }
-  */      
+  */
+
         for ( var res in x.store ) { // for each resource type in each container's store list
+
           if ( x.store[res] > 0 || ( x.structureType == STRUCTURE_LINK && x.energy > 0 ) ) { // that is not empty
 
-            Log.debug("RES cont type " + x.store,'Planner');
+            Log.debug("RES cont type " + x.store[0],'Planner');
 
             // get the amount of resource to pickup = resources / carry cap
             num_of_jobs_needed =  x.store[res] / Hive.deliverer_carry_cap[spawn_num];
