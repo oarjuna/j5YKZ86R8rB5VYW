@@ -99,17 +99,18 @@ module.exports = {
     ( c.memory.role == 'upgrader' )
     );
 */
+
     // if there is an idle upgraders, it means it complete it's job. spawn a job for it.
     // do not assign, that happens in job assignment
-  if (  idle_upgraders.length > 0 ) {
+//  if (  idle_upgraders.length > 0 ) {
     // spawn some jobs, prioritize filling from links first, then containers, then storage
     // Find close by receiving links that have energy
 
     // Find 01bb jobs
 
     // else create a "go to storage" job
-
-  }
+//
+  //}
 //######################################################################################################################
     // Ensure jobs exists to Harvesting from sources and minerals
     var harvesting_jobs = _.filter(Hive.memory.job_queue, function(s) {
