@@ -62,7 +62,7 @@ module.exports = {
         Memory.clearjob = 'xxx';
         Log.debug("removed " + removed,'Planner');
     }
-return;
+
     // TYPES OF actions
     /////// FILL
     // Fillfrom - 01aa - resource -> harv
