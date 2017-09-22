@@ -91,11 +91,15 @@ module.exports = {
 
   // Ensure these jobs exist
   var upgrader_job_list = _.filter(Hive.memory.job_queue, function(s) {
-    return  (( s.type == '01aa' || s.type == '01hh' || s.type == '01jj' || s.type == '01bb') &&
+    return  (( s.type == '01dd' || s.type == '01hh' || s.type == '01jj' || s.type == '01bb') &&
     s.spawn_name == spawn_name
     );
   });
 
+  //
+  var num_of_upgraders = Hive.spawn_levels[spawn_num][2]; // deliverers
+  Log.debug(" num " + num_of_upgraders,"Planner");
+  
    /*idle_upgraders = _.filter(Game.creeps, (c) =>
     ( c.memory.birthplace == job.spawn_name ) &&
     ( c.spawning != true ) &&
