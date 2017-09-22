@@ -69,7 +69,7 @@ module.exports = {
     // Fillfrom - 01dd - rec link - upgraders
     // Fillfrom - 01hh - energy from storage - upgraders
     // Fillfrom - 01jj - energy from containers - upgraders
-    // Fillfrom - 01bb - energy from container -> deliv
+    // Fillfrom - 01bb - energy from container -> deliv or deliver
     // Fillfrom - 01cc - energy from storage   -> deliv
     // Fillfrom - 01ff - mins from storage     -> deliv
     // Fillfrom - 01gg - mins from cont       -> deliv
@@ -87,21 +87,30 @@ module.exports = {
 // Fillfrom - 01dd - rec link - upgraders
 // Fillfrom - 01hh - energy from storage - upgraders
 // Fillfrom - 01jj - energy from containers - upgraders
+// Fillfrom - 01bb - energy from container -> deliv or deliver
+
   // Ensure these jobs exist
-  var upgrader_fill_jobs = _.filter(Hive.memory.job_queue, function(s) {
-    return  (
-      ( s.type == '01dd' || s.type == '01hh' || s.type == '01jj' ) &&
-      s.spawn_name == spawn_name
-      );
-  });
 
   var upgrader_jobs_needed = Hive.spawn_levels[spawn_num][2]; // upgraders
 
-  if ( upgrader_fill_jobs.length < upgrader_jobs_needed ) {
+   idle_upgraders = _.filter(Game.creeps, (c) =>
+    ( c.memory.birthplace == job.spawn_name ) &&
+    ( c.spawning != true ) &&
+    ( _.sum(c.carry) < c.carryCapacity ) &&
+    ( c.memory.state == 'idle' ) &&
+    ( c.memory.ryantest == true) &&
+    ( c.memory.role == 'upgrader' )
+    );
+
+    // if there is an idle upgraders, it means it complete it's job. spawn a job for it.
+    // do not assign, that happens in job assignment
+  if (  idle_upgraders.length > 0 ) {
     // spawn some jobs, prioritize filling from links first, then containers, then storage
     // Find close by receiving links that have energy
 
-    // Find
+    // Find 01bb jobs
+
+    // else create a "go to storage" job
 
   }
 //######################################################################################################################
