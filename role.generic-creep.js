@@ -70,6 +70,7 @@ module.exports = {
 					if ( result == undefined ) {
 						// no, there must be a container 1 sq away. move there.
 						var close_containers = findInRange(STRUCTURE_CONTAINER,1);
+						creep.travelTo(close_containers[0]);
 					}
 
 					Log.debug(creep + " GEN FOUND " + result + " " + close_containers,'Generic');
