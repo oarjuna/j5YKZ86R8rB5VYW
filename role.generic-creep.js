@@ -59,6 +59,16 @@ module.exports = {
 			if ( type2 == '01' ) { // FILL up
 				if ( type3 == 'aa') { // from source == harvest
 					creep.say('\u26CF'); //  ⛏
+
+					// am I on top of a container?
+					const found = creep.room.lookForAt(LOOK_STRUCTURES, creep.pos);
+					Log.debug(found[0].type,'Generic');
+
+					//if ( found.structureType != STRUCTURE_CONTAINER ) { }
+
+					// if not, adjust to that container
+
+
 					creep.harvest(dest_obj);
 					if ( _.sum(creep.carry) == creep.carryCapacity  ) { var complete = true; }
 				}
@@ -118,7 +128,7 @@ module.exports = {
 		else {
 			// else move towards dest_obj
 			creep.say(job.type);
-//			creep.travelTo(dest_obj,{ignoreStructures: true});
+//			creep.travelTo(dest_obj);
 	//		creep.travelTo(dest_obj,{ignoreStructures: false});
 			creep.moveTo(dest_obj);
 

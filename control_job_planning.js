@@ -82,6 +82,11 @@ module.exports = {
     // Deliverto - 02gg - energy to sending link - deliv
     // Deliverto - 02ii - energy to storage - deliv
     // Deliverto - 02hh - mins to term - deliv
+//######################################################################################################################
+// Fillfrom - 01dd - rec link - upgraders
+// Fillfrom - 01hh - energy from storage - upgraders
+// Fillfrom - 01jj - energy from containers - upgraders
+// Ensure these jobs exist 
 
 //######################################################################################################################
     // Ensure jobs exists to Harvesting from sources and minerals
@@ -306,6 +311,8 @@ module.exports = {
     // and there are idle, empty deliverers
     // create jobs to bring energy from storage
     // Fillfrom - 01cc - energy from storage   -> deliv
+
+    // TODO -- improve. it does not do the above, but it should
 
     var deliv_job_count = _.filter(Hive.memory.job_queue, function(s) {
       return  (
