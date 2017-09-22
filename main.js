@@ -295,9 +295,9 @@ console.log("------ START ------");
   else if ( type2 == '02' ) { j_type = 'Deliver'; }
 
 
-  //  if ( job.state == 'assigned') {
+    if ( job.state == 'assigned') {
       Log.info(job.id + " @ " + job.spawn_name + "\tp: " + job.priority + "\tt: " + j_type + "\td: " + dest_type + "\ttq " + ( Game.time - job.tick_issued) + "\tcr: " + name ,'Queue');
-  //  }
+    }
   }
   console.log("------ END ------");
   //console.log("#-------------------------------------------------------#  H, U, R, B, RH, C, De, EM, S");
