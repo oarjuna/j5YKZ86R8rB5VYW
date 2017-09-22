@@ -64,7 +64,7 @@ module.exports = {
 					const found = creep.room.lookForAt(LOOK_STRUCTURES, creep.pos);
 //					Log.debug(creep + " GEN FOUND " + found[0].type.structure[0],'Generic');
 					var result = found.find(function( obj ) {
-					  return obj.structuretyp == STRUCTURE_CONTAINER;
+					  return obj.structuretype == STRUCTURE_CONTAINER;
 					});
 
 					Log.debug(creep + " GEN FOUND " + result,'Generic');
