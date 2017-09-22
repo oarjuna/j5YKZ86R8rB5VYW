@@ -60,22 +60,28 @@ module.exports = {
 				if ( type3 == 'aa') { // from source == harvest
 					creep.say('\u26CF'); //  ⛏
 
-					// am I on top of a container?
-					const found = creep.room.lookForAt(LOOK_STRUCTURES, creep.pos);
-					var result = found.find(function( obj ) {
-					  return obj.structureType == STRUCTURE_CONTAINER;
-					});
+					if ( creep.memory.harv_found_cont == undefined ) {
+						// am I on top of a container?
+						const found = creep.room.lookForAt(LOOK_STRUCTURES, creep.pos);
+						var result = found.find(function( obj ) {
+						  return obj.structureType == STRUCTURE_CONTAINER;
+						});
 
-					if ( result == undefined ) {
-						// no, there must be a container 1 sq away. move there.
-						var close_containers = findInRange(STRUCTURE_CONTAINER,1);
-						creep.travelTo(close_containers[0]);
+						if ( result == undefined ) {
+							// no, there must be a container 1 sq away. move there.
+							var close_containers = findInRange(STRUCTURE_CONTAINER,1);
+							creep.travelTo(close_containers[0]);
+						}
+						else {
+							creep.memory.harv_found_cont = true;
+						}
+						Log.debug(creep + " GEN FOUND " + result + " " + close_containers,'Generic');
 					}
 
-					Log.debug(creep + " GEN FOUND " + result + " " + close_containers,'Generic');
-
 					creep.harvest(dest_obj);
+
 					if ( _.sum(creep.carry) == creep.carryCapacity  ) { var complete = true; }
+
 				}
 				else { // everything else uses withdraw
 					creep.say('\uD83D\uDD3A'); // 🔺
