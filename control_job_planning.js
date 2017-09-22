@@ -172,8 +172,11 @@ module.exports = {
 
     if ( res_pickup_spots.length > 0) { // if there are res_pickup_spots needing pickup
       for ( var x of res_pickup_spots ) { // for each res_pickup_spots with stuff
+
+/*
         if ( x.structureType == STRUCTURE_LINK ) { var res_list = RESOURCE_ENERGY; }
         else { res_list = x.store }
+  */      
         for ( var res in x.store ) { // for each resource type in each container's store list
           if ( x.store[res] > 0 || ( x.structureType == STRUCTURE_LINK && x.energy > 0 ) ) { // that is not empty
 
