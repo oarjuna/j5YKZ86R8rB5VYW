@@ -75,10 +75,6 @@ module.exports = {
 
 					Log.debug(creep + " GEN FOUND " + result + " " + close_containers,'Generic');
 
-
-					// if not, adjust to that container
-
-
 					creep.harvest(dest_obj);
 					if ( _.sum(creep.carry) == creep.carryCapacity  ) { var complete = true; }
 				}
