@@ -183,8 +183,9 @@ module.exports = {
             if ( job_count.length < num_of_jobs_needed ) {
               // spawn a new job
 
-              // if x.structureType == STRUCTURE_CONTAINER
-              var job = new Job(spawn_name,'01bb',4,'unassigned','deliv_or_upgrd',x.id,res,Game.time,'','');
+              if x.structureType == STRUCTURE_CONTAINER
+                var job = new Job(spawn_name,'01bb',4,'unassigned','deliv_or_upgrd',x.id,res,Game.time,'','');
+              }
               // else if x.structureType == STRUCTURE_LINK
              // var job = new Job(spawn_name,'01dd',4,'unassigned','upgrader',x.id,res,Game.time,'','');
 
