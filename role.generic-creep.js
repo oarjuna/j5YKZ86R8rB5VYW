@@ -62,7 +62,8 @@ module.exports = {
 
 					// am I on top of a container?
 					const found = creep.room.lookForAt(LOOK_STRUCTURES, creep.pos);
-					Log.debug(creep + " GEN FOUND " + found[0].type.structure[0],'Generic');
+//					Log.debug(creep + " GEN FOUND " + found[0].type.structure[0],'Generic');
+					Log.debug(creep + " GEN FOUND " + found,'Generic');
 
 					//if ( found.structureType != STRUCTURE_CONTAINER ) { }
 
