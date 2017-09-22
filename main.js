@@ -279,7 +279,7 @@ console.log("------ START ------");
   });
 
   //var sorted_job_queue = _.sortBy(Hive.memory.job_queue,  [function(o) { return o.type; }] );
-
+return;
   for ( let job of sorted_job_queue) {
 
     let tmp_obj = Game.getObjectById(job.assigned_creep);
