@@ -172,14 +172,11 @@ module.exports = {
 
     if ( res_pickup_spots.length > 0) { // if there are res_pickup_spots needing pickup
       for ( var x of res_pickup_spots ) { // for each res_pickup_spots with stuff
-
-/*
-        if ( x.structureType == STRUCTURE_LINK ) { var res_list = RESOURCE_ENERGY; }
-        else { res_list = x.store }
-  */
         var res_list = [RESOURCE_ENERGY,RESOURCE_OXYGEN];
+
         for ( var res in x.store ) { // for each resource type we're dealing with  // TODO -- swap this
-          //for ( var res in res_list ) { // for each resource type we're dealing with // TODO == with this
+        //for ( var res in res_list ) { // for each resource type we're dealing with // TODO == with this
+
           if ( x.store == undefined ) {
             eng_check = x.energy;
           }
@@ -192,7 +189,7 @@ module.exports = {
             ( x.structureType == STRUCTURE_CONTAINER && eng_check > 0 ))
           {
 
-            Log.warn("Res: " + res + " res_list " + res_list[0],'Planner');
+            Log.warn("Res: " + res + " res_list " + x.store[RESOURCE_OXYGEN],'Planner');
             // get the amount of resource to pickup = resources / carry cap
             if ( x.structureType == STRUCTURE_CONTAINER) {
               num_of_jobs_needed =  x.store[res] / Hive.deliverer_carry_cap[spawn_num];
