@@ -190,7 +190,7 @@ module.exports = {
             eng_check = x.store[res];
           }
 
-          Log.warn("Res: " + res + " res_list " + res_list[1] + " eng_check " + eng_check,'Planner');
+          Log.warn("Res: " + res + " res_list " + res_list[0] + " eng_check " + eng_check,'Planner');
 
           if (
             ( x.structureType == STRUCTURE_LINK && eng_check > 0 && res == RESOURCE_ENERGY ) ||
