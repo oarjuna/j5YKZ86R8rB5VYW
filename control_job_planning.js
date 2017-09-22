@@ -153,6 +153,7 @@ module.exports = {
     var res_containers = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
       filter: (s) =>
         (
+          // TODO -- ADD receiving links with energy to this list
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= Hive.deliverer_carry_cap[spawn_num] ) ||
         //  ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= Hive.deliverer_carry_cap[spawn_num] ) ||
         //  ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_LEMERGIUM] >= Hive.deliverer_carry_cap[spawn_num] ) ||
@@ -170,7 +171,7 @@ module.exports = {
             // get a count of existing jobs for this resource and pickup location
             var job_count = _.filter(Hive.memory.job_queue, function(s) {
               return  (
-                ( s.type == '01bb' || s.type == '01dd' ) && 
+                ( s.type == '01bb' || s.type == '01dd' ) &&
                 s.spawn_name == spawn_name &&
                 s.dest_id == x.id &&
                 s.extra == res
@@ -181,10 +182,12 @@ module.exports = {
             // if there are more jobs than existing jobs
             if ( job_count.length < num_of_jobs_needed ) {
               // spawn a new job
-              // if x.structureType == STRUCTURE_LINK
 
-              // else if x.structureType == STRUCTURE_CONTAINER
+              // if x.structureType == STRUCTURE_CONTAINER
               var job = new Job(spawn_name,'01bb',4,'unassigned','deliv_or_upgrd',x.id,res,Game.time,'','');
+              // else if x.structureType == STRUCTURE_LINK
+             // var job = new Job(spawn_name,'01dd',4,'unassigned','upgrader',x.id,res,Game.time,'','');
+
               Hive.memory.job_queue.push(job);
               Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + x.structureType + " " + x.id,'Planner');
             }
