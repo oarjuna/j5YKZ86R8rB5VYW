@@ -167,8 +167,9 @@ module.exports = {
           ( s.structureType== STRUCTURE_LINK && s.id == Hive.receiving_link[spawn_num] && s.energy >= Hive.upgrader_carry_cap[spawn_num] )
     )});
 
-    var res_pickup_spots = _.merge(res_pickup_spots_cont,res_pickup_spots_links)
-
+    //var res_pickup_spots = _.merge(res_pickup_spots_cont,res_pickup_spots_links)
+    var res_pickup_spots = res_pickup_spots_cont;
+    
     if ( res_pickup_spots.length > 0) { // if there are res_pickup_spots needing pickup
       for ( var x of res_pickup_spots ) { // for each res_pickup_spots with stuff
         for ( var res in x.store ) { // for each resource type in each container's store list
