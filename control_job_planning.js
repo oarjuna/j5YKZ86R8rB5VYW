@@ -342,7 +342,22 @@ module.exports = {
 
     /// create jobs to upgrade the controller
     //// Upgrading the Controller
+
     // Deliverto - 02ff - energy to controller - upgrader
+    // Ensure jobs exists to upgrade the controller
+    var upgrade_jobs = _.filter(Hive.memory.job_queue, function(s) {
+      return  ( s.type == '02ff' && s.spawn_name == spawn_name );
+    });
+    // count the number of total # of harvs each room will spawn
+    var upgraders_needed =  _.sum(Hive.spawn_levels[spawn_num][2]); // # of upgraders
+
+    // if we have less jobs than harvs_needed
+    if ( upgrade_jobs.length < upgraders_needed ) {
+      // spawn a generic upgrade job
+      var job = new Job(spawn_name,'02ff',1,'unassigned','upgrader','default',RESOURCE_ENERGY,Game.time,'','');
+      Hive.memory.job_queue.push(job);
+      Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
+    }
 
 //######################################################################################################################
 
