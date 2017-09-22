@@ -90,7 +90,7 @@ module.exports = {
 // Fillfrom - 01bb - energy from container -> deliv or deliver
 
   // Ensure these jobs exist
-   idle_upgraders = _.filter(Game.creeps, (c) =>
+   /*idle_upgraders = _.filter(Game.creeps, (c) =>
     ( c.memory.birthplace == job.spawn_name ) &&
     ( c.spawning != true ) &&
     ( _.sum(c.carry) < c.carryCapacity ) &&
@@ -98,7 +98,7 @@ module.exports = {
     ( c.memory.ryantest == true) &&
     ( c.memory.role == 'upgrader' )
     );
-
+*/
     // if there is an idle upgraders, it means it complete it's job. spawn a job for it.
     // do not assign, that happens in job assignment
   if (  idle_upgraders.length > 0 ) {
