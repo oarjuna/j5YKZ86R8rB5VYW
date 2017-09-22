@@ -209,12 +209,14 @@ module.exports = {
 
               if ( x.structureType == STRUCTURE_CONTAINER ) {
                 var job = new Job(spawn_name,'01bb',4,'unassigned','deliv_or_upgrd',x.id,res,Game.time,'','');
+                Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + x.structureType + " " + x.id,'Planner');
+                Hive.memory.job_queue.push(job);
               }
               else if  ( x.structureType == STRUCTURE_LINK ) {
                 //var job = new Job(spawn_name,'01dd',4,'unassigned','upgrader',x.id,res,Game.time,'','');
+                //Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + x.structureType + " " + x.id,'Planner');
+                //Hive.memory.job_queue.push(job);
               }
-              Hive.memory.job_queue.push(job);
-              Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + x.structureType + " " + x.id,'Planner');
             }
 
           } // END empty check
