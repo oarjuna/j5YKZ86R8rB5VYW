@@ -167,7 +167,7 @@ module.exports = {
           ( s.structureType== STRUCTURE_LINK && s.id == Hive.receiving_link[spawn_num] && s.energy >= Hive.upgrader_carry_cap[spawn_num] )
     )});
 
-    var res_pickup_spots_tmp = _.concat(res_pickup_spots_cont,res_pickup_spots_links)
+    var res_pickup_spots_tmp = _.merge(res_pickup_spots_cont,res_pickup_spots_links)
 
     Log.debug("RES: " + res_pickup_spots_tmp,'Planner' );
 
