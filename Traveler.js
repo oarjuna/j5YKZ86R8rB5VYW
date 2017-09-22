@@ -436,7 +436,7 @@ class Traveler {
                 matrix.set(structure.pos.x, structure.pos.y, roadCost);
             }
             else if (structure instanceof StructureContainer) {
-                matrix.set(structure.pos.x, structure.pos.y, 5);
+                matrix.set(structure.pos.x, structure.pos.y, roadCost);
             }
             else {
                 impassibleStructures.push(structure);
