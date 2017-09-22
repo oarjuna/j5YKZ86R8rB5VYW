@@ -273,13 +273,13 @@ console.log("------ START ------");
 */
   console.log("---- Job Queue ---- len: " + Hive.memory.job_queue.length);
   // display the job queue
+  return;
 
   var sorted_job_queue = Hive.memory.job_queue.sort(function(a, b) {
     return parseFloat(a.priority) - parseFloat(b.priority);
   });
 
   //var sorted_job_queue = _.sortBy(Hive.memory.job_queue,  [function(o) { return o.type; }] );
-return;
   for ( let job of sorted_job_queue) {
 
     let tmp_obj = Game.getObjectById(job.assigned_creep);
