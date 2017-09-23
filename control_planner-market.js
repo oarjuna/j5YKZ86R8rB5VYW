@@ -58,13 +58,13 @@ module.exports = {
         return parseFloat(a.price) - parseFloat(b.price);
       });
 
-      for(let i=0; i<orders.length; i++) {
+      for(let i=0; i<sorted_orders.length; i++) {
           const transferEnergyCost = Game.market.calcTransactionCost(
-              amountToSell, Game.spawns['Spawn1'].room.name, orders[i].roomName);
+              amountToSell, Game.spawns['Spawn1'].room.name, sorted_orders[i].roomName);
 
-          if(transferEnergyCost < maxTransferEnergyCost && orders[i].remainingAmount >= amountToSell ) {
+          if(transferEnergyCost < maxTransferEnergyCost && sorted_orders[i].remainingAmount >= amountToSell ) {
               //Game.market.deal(orders[i].id, amountToSell,  Game.spawns[spawn_name].room.name);
-              Log.debug("Possible order: "  + orders[i].id + " price: " + orders[i].price ,'Market')
+              Log.debug("Possible order: "  + sorted_orders[i].id + " price: " + sorted_orders[i].price ,'Market')
             //  break;
           }
       }
