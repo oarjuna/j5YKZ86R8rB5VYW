@@ -51,7 +51,7 @@ module.exports = {
     }
     if ( Memory.sell == true ) {
 
-      const amountToSell = 1000, maxTransferEnergyCost = 500;
+      const amountToSell = 1000, maxTransferEnergyCost = 1000;
       const orders = Game.market.getAllOrders({type: ORDER_BUY, resourceType: RESOURCE_KEANIUM});
 
       for(let i=0; i<orders.length; i++) {
