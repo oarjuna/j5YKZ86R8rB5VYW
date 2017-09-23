@@ -250,7 +250,7 @@ module.exports = {
 
     //######################################################################################################################
     // create jobs for full idle creeps - 02ee
-    // Deliverto - 02ee - energy to storage - deliv
+    // Deliverto - 02ee - mins to storage - deliv
     // Ensure jobs exists to tell full idle delivs to drop stuff off
 
     // get a list of 02ee jobs
@@ -265,7 +265,7 @@ module.exports = {
     var storage = Game.spawns[spawn_name].room.storage.id;
     //Log.debug("Hive " + deliv_job_count.length + "/" + Hive.spawn_levels[spawn_num][1],'Planner');
 
-    if ( deliv_job_count.length < Hive.spawn_levels[spawn_num][1] ) {
+    if ( deliv_job_count.length < 1 ) {
      var job = new Job(spawn_name,'02ee',10,'unassigned','deliverer',storage,'',Game.time,'','');
      Hive.memory.job_queue.push(job);
      Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
