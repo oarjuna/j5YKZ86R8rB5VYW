@@ -54,8 +54,10 @@ module.exports = {
 		// if the creep is taking damage, it should abandon its job.
 		// idea - move to spawn for recyling when close to death
 
-		// if the dest_obj in range
+		// if the dest_obj in range // TODO - rang is diff for controllers
+
 		if(creep.pos.isNearTo(dest_obj)) { 	// harvest/transfer/withdraw/upgrade/repair dest_obj
+
 			if ( type2 == '01' ) { // FILL up
 				if ( type3 == 'aa') { // from source == harvest
 					creep.say('\u26CF'); //  ⛏
