@@ -288,13 +288,14 @@ console.log("------ START ------");
     else { name = 'undefined'; }
 
     var dest_obj = Game.getObjectById(job.dest_id);
-    return;
-  if ( job.dest_id == 'closest' || job.dest_id == 'default' )  {  dest_type =  job.dest_id; }
-  else { dest_type = dest_obj.structureType; }
+  //  return;
 
-  if ( dest_type == undefined ) {
-    dest_type = 'source';
-  }
+//  if ( job.dest_id == 'closest' || job.dest_id == 'default' )  {  dest_type =  job.dest_id; }
+//  else { dest_type = dest_obj.structureType; }
+
+//  if ( dest_type == undefined ) {
+//    dest_type = 'source';
+//  }
 
   var type = job.type;
   var type2 = type.slice(0,2);
@@ -303,7 +304,7 @@ console.log("------ START ------");
 
 
   if ( job.type == '01ff' || job.type == '01hh' || job.type == '02hh' || job.type == '02ee' || job.type == '01gg') {
-      Log.info(job.id + " @ " + job.spawn_name + "\tp: " + job.priority + "\tt: " + j_type + "\td: " + dest_type + " (" + job.type + ") " + "\ttq " + ( Game.time - job.tick_issued) + "\tcr: " + name + " X: " + job.extra ,'Queue');
+      Log.info(job.id + " @ " + job.spawn_name + "\tp: " + job.priority + "\tt: " + j_type + "\td: " + job.type  + "\ttq " + ( Game.time - job.tick_issued) + "\tcr: " + name + " X: " + job.extra ,'Queue');
     }
   }
   console.log("------ END ------");
