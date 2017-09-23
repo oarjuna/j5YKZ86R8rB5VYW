@@ -66,6 +66,12 @@ module.exports = {
         Memory.clearjob = 'xxx';
         Log.debug("removed " + removed,'Planner');
     }
+
+    plan_harvs.run(spawn_num,Hive);
+    plan_market.run(spawn_num,Hive);
+    plan_upgrade.run(spawn_num,Hive);
+    plan_logistics.run(spawn_num,Hive);
+
 //return;
     // TYPES OF actions
     /////// FILL
@@ -85,6 +91,8 @@ module.exports = {
     // Deliverto - 02gg - energy to sending link - deliv
     // Deliverto - 02ii - energy to storage - deliv
     // Deliverto - 02hh - mins to term - deliv
+
+
 
 //######################################################################################################################
   // Are there any receiving links needing emptying?
@@ -108,38 +116,7 @@ module.exports = {
     // TODO
   }
 
-plan_harvs.run(spawn_num,Hive);
-plan_market.run(spawn_num,Hive);
-plan_upgrade.run(spawn_num,Hive);
-plan_logistics.run(spawn_num,Hive);
 
-
-
-
-//######################################################################################################################
-
-    /// create jobs to upgrade the controller
-    //// Upgrading the Controller
-
-    // Deliverto - 02ff - energy to controller - upgrader
-    // Ensure jobs exists to upgrade the controller
-    var upgrade_jobs = _.filter(Hive.memory.job_queue, function(s) {
-      return  ( s.type == '02ff' && s.spawn_name == spawn_name );
-    });
-    // count the number of total # of harvs each room will spawn
-    var upgraders_needed =  Hive.spawn_levels[spawn_num][2]; // # of upgraders
-
-    Log.debug(" 02ff " + upgrade_jobs.length + "/" + upgraders_needed,'Planner');
-
-    // if we have less jobs than harvs_needed
-    if ( upgrade_jobs.length < upgraders_needed ) {
-      // spawn a generic upgrade job
-      var job = new Job(spawn_name,'02ff',1,'unassigned','upgrader','default',RESOURCE_ENERGY,Game.time,'','');
-      Hive.memory.job_queue.push(job);
-      Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
-    }
-
-//######################################################################################################################
 
     // Building and Repairing
     // create jobs to build and repair
