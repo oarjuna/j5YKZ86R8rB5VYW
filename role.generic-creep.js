@@ -94,7 +94,7 @@ module.exports = {
 					creep.transfer(dest_obj, job.extra); // from the creep
 					for ( r of creep.carry ) {
 						Log.debug("res " + r ,'Generic');
-						creep.transfer(dest_obj, r); // from the creep
+				//		creep.transfer(dest_obj, r); // from the creep
 					}
 
 					creep.say('\uD83D\uDD3B'); // 🔻
