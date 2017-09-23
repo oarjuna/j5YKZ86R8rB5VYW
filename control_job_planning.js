@@ -349,7 +349,7 @@ module.exports = {
       return  ( s.type == '02ff' && s.spawn_name == spawn_name );
     });
     // count the number of total # of harvs each room will spawn
-    var upgraders_needed =  _.sum(Hive.spawn_levels[spawn_num][2]); // # of upgraders
+    var upgraders_needed =  Hive.spawn_levels[spawn_num][2]; // # of upgraders
 
     // if we have less jobs than harvs_needed
     if ( upgrade_jobs.length < upgraders_needed ) {
