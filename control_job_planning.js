@@ -189,7 +189,7 @@ module.exports = {
             eng_check = x.store[res];
           }
 
-          Log.warn("Res: " + res + " res_list " + res_list[0] + " eng_check " + eng_check,'Planner');
+          Log.debug("Res: " + res + " res_list " + res_list[0] + " eng_check " + eng_check,'Planner');
 
           if (
             ( x.structureType == STRUCTURE_LINK && eng_check > 0 && res == RESOURCE_ENERGY ) ||
@@ -228,7 +228,7 @@ module.exports = {
                 var job = new Job(spawn_name,'01dd',3,'unassigned','upgrader',x.id,res,Game.time,'','');
                 Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + x.structureType + " " + x.id,'Planner');
                 Hive.memory.job_queue.push(job);
-                Log.warn("RES cont type " + x.structureType,'Planner');
+                Log.debug("RES cont type " + x.structureType,'Planner');
               }
             }
 
