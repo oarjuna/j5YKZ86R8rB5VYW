@@ -13,7 +13,7 @@ module.exports = {
     var empty = 0;
 */
     var deliver_carry_cap = 400;
-    var harvester_carry_cap = 150;
+    var harvester_carry_cap = 100;
     var job_TTL = 200;
     var tmpcreep, min_needed;
 //return;
