@@ -54,7 +54,7 @@ module.exports = {
 		// if the creep is taking damage, it should abandon its job.
 		// idea - move to spawn for recyling when close to death
 
-		// if the dest_obj in range // TODO - rang is diff for controllers
+		// if the dest_obj in range // range is diff for controllers
 		if ( dest_obj.structureType == STRUCTURE_CONTROLLER) { var range = 3; }
 		else { var range = 1; }
 
