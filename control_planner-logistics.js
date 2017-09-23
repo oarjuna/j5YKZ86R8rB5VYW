@@ -94,7 +94,7 @@ module.exports = {
             // get a count of existing jobs for this resource and pickup location
             var job_count = _.filter(Hive.memory.job_queue, function(s) {
               return  (
-                ( s.type == '01bb' || s.type == '01dd' ) &&
+                ( s.type == '01bb' || s.type == '01dd' || s.type == '01gg' ) &&
                 s.spawn_name == spawn_name &&
                 s.dest_id == x.id &&
                 s.extra == res
@@ -107,9 +107,13 @@ module.exports = {
               // spawn a new job
 
               if ( x.structureType == STRUCTURE_CONTAINER ) {
-                var job = new Job(spawn_name,'01bb',4,'unassigned','deliv_or_upgrd',x.id,res,Game.time,'','');
+                if ( res == RESOURCE_ENERGY ) { var jobtype = '01bb'; var roletype = 'deliv_or_upgrd'; }
+                else { var jobtype = '01gg'; var roletype = 'deliverer'; }
+
+                var job = new Job(spawn_name,jobtype,4,'unassigned',roletype,x.id,res,Game.time,'','');
                 Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + x.structureType + " " + x.id,'Planner');
                 Hive.memory.job_queue.push(job);
+
               }
               else if  ( x.structureType == STRUCTURE_LINK ) {
                 var job = new Job(spawn_name,'01dd',3,'unassigned','upgrader',x.id,res,Game.time,'','');
