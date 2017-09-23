@@ -225,7 +225,7 @@ module.exports = {
             );
             if ( tmpcreep != undefined ) {
               job.dest_id == tmpcreep.room.controller.id;
-          }
+            }
           break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
