@@ -55,7 +55,7 @@ module.exports = {
       const orders = Game.market.getAllOrders({type: ORDER_BUY, resourceType: RESOURCE_KEANIUM});
 
       var sorted_orders = orders.sort(function(a, b) {
-        return parseFloat(a.price) - parseFloat(b.price);
+        return parseFloat(b.price) - parseFloat(a.price);
       });
 
       for(let i=0; i<sorted_orders.length; i++) {
