@@ -76,6 +76,7 @@ module.exports = {
 					}
 					else {
 						var res_has =  dest_obj.store[job.extra]
+						if ( res_has == undefined ) { res_has = 0; }
 					}
 					Log.debug(creep + " X "+ job.extra + " GEN: creep.carry " + _.sum(creep.carry) + "/" + creep.carryCapacity + " dest_obj has " + res_has,'Generic');
 					if ( _.sum(creep.carry) == creep.carryCapacity || res_has == 0 ) { var complete = true; }
