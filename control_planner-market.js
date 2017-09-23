@@ -30,7 +30,10 @@ module.exports = {
         };
         this.id = this.uuid();
     }
-    /// START LOGIC
+    /// START MAIN LOGIC
 
-  }
+
+
+
+  } // END MAIN LOGIC
 };
