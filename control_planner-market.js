@@ -54,6 +54,10 @@ module.exports = {
       const amountToSell = 1000, maxTransferEnergyCost = 1000;
       const orders = Game.market.getAllOrders({type: ORDER_BUY, resourceType: RESOURCE_KEANIUM});
 
+      var sorted_orders = orders.sort(function(a, b) {
+        return parseFloat(a.price) - parseFloat(b.price);
+      });
+
       for(let i=0; i<orders.length; i++) {
           const transferEnergyCost = Game.market.calcTransactionCost(
               amountToSell, Game.spawns['Spawn1'].room.name, orders[i].roomName);
