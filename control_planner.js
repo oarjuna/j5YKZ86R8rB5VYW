@@ -100,27 +100,6 @@ module.exports = {
     // create jobs to build and repair
 
 
-//######################################################################################################################
-    // if there are unasigned jobs needing energy
-    // and there are idle, empty deliverers
-    // create jobs to bring energy from storage
-    // Fillfrom - 01cc - energy from storage   -> deliv
-
-    // TODO -- improve. it does not do the above, but it should
-
-    var deliv_job_count = _.filter(Hive.memory.job_queue, function(s) {
-      return  (
-        s.spawn_name == spawn_name &&
-        s.type == '01cc'
-    );});
-
-    var storage = Game.spawns[spawn_name].room.storage.id;
-
-    if ( deliv_job_count < Hive.spawn_levels[spawn_num][1] ) {
-      var job = new Job(spawn_name,'01cc',10,'unassigned','deliverer',storage,RESOURCE_ENERGY,Game.time,'','');
-      Hive.memory.job_queue.push(job);
-      Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
-    }
 
 
 
