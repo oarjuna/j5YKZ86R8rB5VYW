@@ -1,4 +1,4 @@
-var plan_harvs = require('planner/plan-harv.js');
+var plan_harvs = require('planner/plan-harv');
 
 module.exports = {
   run: function(spawn_num,Hive) {
