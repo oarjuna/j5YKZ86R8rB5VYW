@@ -51,3 +51,16 @@ Attack effectiveness	600 hits at range ≤5 to 150 hits at range ≥20
 100 capacity @ 10 per action == 6000 max damage until empty
 
 Heals self or another creep restoring 12 hits per tick in short range or 4 hits per tick at a distance
+
+// Defensive AI
+-- set a state of alert
+  -- upgraders suicide and don't respawn during alert
+  -- spawn additional deliverers
+  -- prioritize tower filling over spawn filling
+
+-- create an army object
+-- set jobs on the queue for each room's spawner to produce soldiers
+-- assign newly spawned soldiers to an army
+-- order the army object to defensive position
+
+-- state of alert must be manually disabled

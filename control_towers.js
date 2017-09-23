@@ -15,7 +15,7 @@ module.exports = {
       if (   Game.spawns[spawn_name].room.controller.level < 5 ) { var wall_ramp_str = 5000; }
       else {
       //  var wall_upgrades =
-        var wall_ramp_str = 60000;
+        var wall_ramp_str = 70000;
 
       }
 
