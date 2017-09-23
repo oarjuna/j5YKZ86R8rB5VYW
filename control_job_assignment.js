@@ -102,7 +102,7 @@ module.exports = {
             ( c.memory.ryantest == true) &&
             ( c.memory.role == 'deliverer' )
             );
-            break;
+          break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '01ff':  // Fillfrom - 01ff - mins from storage     -> deliv
           // local, empty, idle, deliverer
