@@ -1,3 +1,5 @@
+var plan_harvs = require('planner/plan-harv.js');
+
 module.exports = {
   run: function(spawn_num,Hive) {
     [MinHarv,MinDeli,MinUgra,MinBuil,MinClReg,MinReHa,MinClai,MinSold,MinRepa,MinSolM,MinSolR,MinSolH] =  Hive.spawn_levels[spawn_num];
