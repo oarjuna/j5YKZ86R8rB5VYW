@@ -288,9 +288,9 @@ console.log("------ START ------");
     else { name = 'undefined'; }
 
     var dest_obj = Game.getObjectById(job.dest_id);
-
+    return;
   if ( job.dest_id == 'closest' || job.dest_id == 'default' )  {  dest_type =  job.dest_id; }
-//  else { dest_type = dest_obj.structureType; }
+  else { dest_type = dest_obj.structureType; }
 
   if ( dest_type == undefined ) {
     dest_type = 'source';
