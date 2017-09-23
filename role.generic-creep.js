@@ -86,10 +86,16 @@ module.exports = {
 				if ( type3 == 'ff') { // to controller == upgrade
 					creep.upgradeController(dest_obj);
 					creep.say('\u2699\uFE0F'); // ⚙️
+					if ( _.sum(creep.carry) == 0 ) {
+						var complete = true;
+					}
 				}
 				else { // everything else uses transfer
 					creep.transfer(dest_obj, job.extra); // from the creep
 					creep.say('\uD83D\uDD3B'); // 🔻
+					else if ( dest_obj.energy == dest_obj.energyCapacity ||  _.sum(creep.carry) == 0 ) {
+						var complete = true;
+					}
 				}
 
 				if ( dest_obj.structureType == STRUCTURE_CONTROLLER && _.sum(creep.carry) == 0 ) {
