@@ -1,5 +1,7 @@
 module.exports = {
   run: function(spawn_num,Hive) {
+    var spawn_name = Hive.spawn_names[spawn_num];
+
     // Define the job object
     // job object prototype - spawn_name,type, priority, state, body_type_req, dest_id, extra, tick_issued, tick_complete
     //    states - assigned / complete / abandoned / timed out / unasssigned
