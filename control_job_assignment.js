@@ -132,7 +132,7 @@ module.exports = {
              ( c.memory.birthplace == job.spawn_name ) &&
              ( c.spawning != true ) &&
              //( c.carry[job.extra] > 0 ) &&
-             ( _.sum(creep.carry) > 0 ) &&
+             ( _.sum(c.carry) > 0 ) &&
              ( c.memory.state == 'idle' ) &&
              ( c.memory.ryantest == true) &&
              ( c.memory.role == 'harvester' )
