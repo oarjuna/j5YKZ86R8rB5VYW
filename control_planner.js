@@ -7,10 +7,11 @@ module.exports = {
   run: function(spawn_num,Hive) {
     var spawn_name = Hive.spawn_names[spawn_num];
 
-
-    // Are there any receiving links needing emptying?
-    // Fillfrom - 01hh - energy from storage - upgraders
-    // Building and Repairing
+    // TODO --
+    // mineral hauling on the queue
+    // spawning on the queue
+    // Building and Repairing on the queue
+    // military items on the queue
 
     // Run the various sub actors
     plan_harvs.run(spawn_num,Hive);
