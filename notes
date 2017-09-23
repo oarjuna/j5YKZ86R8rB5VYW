@@ -6,8 +6,10 @@
 // Fillfrom - 01cc - energy from storage   -> deliv
 // Fillfrom - 01ff - mins from storage     -> deliv
 // Fillfrom - 01gg - mins from cont       -> deliv
+// Fillfrom - 01hh - mins from terminal --> deliv
+
 ///////   DELIVER
-// Deliverto - 02aa - energy to closest cont/link - harv
+// Deliverto - 02aa - energy or mins to closest cont or link - harv
 // Deliverto - 02cc - energy to spawn or extension - deliv
 // Deliverto - 02dd - energy to tower - deliv
 // Deliverto - 02ee - mins to storage - deliv
@@ -71,5 +73,5 @@ Heals self or another creep restoring 12 hits per tick in short range or 4 hits 
   - sells off room resources and buys level 3 resources for boosting.
   - maintains inventory in case of attack
 -- boosting / labs -- we won't win fights without boosted creeps
--- Spawning on the queue 
+-- Spawning on the queue
 -- repair / construction on the queue
