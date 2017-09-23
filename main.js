@@ -132,8 +132,8 @@ Creep.prototype.hasActiveBodypart = function (type) {
                 //  Harvest, Deliv, Upgrade, Build, Energy, RemoteHarv, Claim, Soldier, Repair, Sol-M ,Sol-R, Sol-H
                 [// H  D  U  B Cr  Rh C  S  R Sm Sr SH
                   [ 3, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0], // Spawn1
-                  [ 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0], // Spawn2
-                  [ 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0], // Spawn3
+                  [ 3, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0], // Spawn2
+                  [ 3, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0], // Spawn3
                   [ 2, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0]  // Spawn4
                 ],
     sources:    [
@@ -144,8 +144,8 @@ Creep.prototype.hasActiveBodypart = function (type) {
                 ],
     harvs_per_source: [
                         [1,1,1], // Spawn1
-                        [1,1,0], // Spawn2
-                        [1,1,0], // Spawn3
+                        [1,1,1], // Spawn2
+                        [1,1,1], // Spawn3
                         [2,1]  // Spawn4
                       ],
     links: [
