@@ -10,6 +10,7 @@ module.exports = {
     //if ( spawn_name != 'Spawn1' && spawn_name != 'Spawn2') { return; }
     //if ( spawn_name != 'Spawn1') { return; }
 
+/*
     // Define the job object
     // job object prototype - spawn_name,type, priority, state, body_type_req, dest_id, extra, tick_issued, tick_complete
     //    states - assigned / complete / abandoned / timed out / unasssigned
@@ -38,6 +39,10 @@ module.exports = {
         };
         this.id = this.uuid();
     }
+*/
+    // Are there any receiving links needing emptying?
+    // Fillfrom - 01hh - energy from storage - upgraders
+    // Building and Repairing
 
     // Run the various sub actors
     plan_harvs.run(spawn_num,Hive);
@@ -72,18 +77,5 @@ module.exports = {
         Memory.clearjob = 'xxx';
         Log.debug("removed " + removed,'Planner');
     }
-
-//######################################################################################################################
-
-// Are there any receiving links needing emptying?
-// Fillfrom - 01hh - energy from storage - upgraders
-
-
-// Building and Repairing
-// create jobs to build and repair
-
-
-//######################################################################################################################
-
   }
 };
