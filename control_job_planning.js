@@ -350,7 +350,8 @@ module.exports = {
     });
     // count the number of total # of harvs each room will spawn
     var upgraders_needed =  Hive.spawn_levels[spawn_num][2]; // # of upgraders
-
+    Log.debug(" 02ff " + upgrade_jobs.length + "/" + upgraders_needed);
+    
     // if we have less jobs than harvs_needed
     if ( upgrade_jobs.length < upgraders_needed ) {
       // spawn a generic upgrade job
