@@ -56,7 +56,7 @@ module.exports = {
 
       for(let i=0; i<orders.length; i++) {
           const transferEnergyCost = Game.market.calcTransactionCost(
-              amountToSell, Game.spawns[spawn_name].room.name, orders[i].roomName);
+              amountToSell, Game.spawns['Spawn1'].room.name, orders[i].roomName);
 
           if(transferEnergyCost < maxTransferEnergyCost) {
               //Game.market.deal(orders[i].id, amountToSell,  Game.spawns[spawn_name].room.name);
