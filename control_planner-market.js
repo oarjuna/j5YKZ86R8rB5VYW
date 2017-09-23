@@ -51,7 +51,19 @@ module.exports = {
     }
     if ( Memory.sell == true ) {
 
-      
+      const amountToSell = 1000, maxTransferEnergyCost = 500;
+      const orders = Game.market.getAllOrders({type: ORDER_BUY, resourceType: RESOURCE_KEANIUM});
+
+      for(let i=0; i<orders.length; i++) {
+          const transferEnergyCost = Game.market.calcTransactionCost(
+              amountToSell, Game.spawns[spawn_name].room.name, orders[i].roomName);
+
+          if(transferEnergyCost < maxTransferEnergyCost) {
+              //Game.market.deal(orders[i].id, amountToSell,  Game.spawns[spawn_name].room.name);
+              Log.debug("Possible order: "  + orders[i].id,'Market')
+              break;
+          }
+      }
       Memory.sell = false;
     }
 
