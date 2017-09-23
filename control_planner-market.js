@@ -37,6 +37,14 @@ module.exports = {
     // 01ff -- mins from storage -- priorty 7
     // 02hh -- mins to terminal -- priority 7
 
+    if ( Memory.minjob == true ) {
+      var job = new Job('Spawn1','01ff',7,'unassigned','deliverer',,RESOURCE_KEANIUM,Game.time,'','');
+      Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + x.structureType + " " + x.id,'Planner');
+      Hive.memory.job_queue.push(job);
+
+      Memory.minjob = false;
+    }
+
     // if we need 1000 of a mineral at the terminal
       // create enough 01ff jobs // 01ff -- mins from storage -- priorty 7
 

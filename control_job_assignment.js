@@ -91,10 +91,8 @@ module.exports = {
             );
           break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-          case '01ff':  // Fillfrom - 01ff - mins from storage     -> deliv
           case '01gg':  // Fillfrom - 01gg - mins from cont       -> deliv
           case '01hh':  // Fillfrom - 01hh - mins from terminal --> deliv
-
           // local, empty, idle, deliverer
           tmpcreep = _.find(Game.creeps, (c) =>
             ( c.memory.birthplace == job.spawn_name ) &&
@@ -104,7 +102,23 @@ module.exports = {
             ( c.memory.ryantest == true) &&
             ( c.memory.role == 'deliverer' )
             );
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+          case '01ff':  // Fillfrom - 01ff - mins from storage     -> deliv
+          // local, empty, idle, deliverer
+          tmpcreep = _.find(Game.creeps, (c) =>
+            ( c.memory.birthplace == job.spawn_name ) &&
+            ( c.spawning != true ) &&
+            ( _.sum(c.carry) == 0 ) &&
+            ( c.memory.state == 'idle' ) &&
+            ( c.memory.ryantest == true) &&
+            ( c.memory.role == 'deliverer' )
+            );
+            if ( tmpcreep != undefined ) {
+              job.dest_id = tmpcreep.room.storage.id;
+            }
           break;
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '01cc': // Fillfrom - 01cc - energy from storage   -> deliv
             // local, non-full, idle, deliverer
@@ -167,8 +181,8 @@ module.exports = {
               }
               else {
                 // no containers or lins found? weird? unset the creep so no assignment and warn.
+                Log.warn(tmpcreep + "\tJQ: creep can't find nearby container");
                 tmpcreep = undefined;
-                Log.warn("\tJQ: creep can't find nearby container");
               }
 
             }
