@@ -39,6 +39,13 @@ module.exports = {
         this.id = this.uuid();
     }
 
+    // Run the various sub actors  
+    plan_harvs.run(spawn_num,Hive);
+    plan_market.run(spawn_num,Hive);
+    plan_upgrade.run(spawn_num,Hive);
+    plan_logistics.run(spawn_num,Hive);
+
+
     // Manual commands for testing
     if (Memory.clearqueue == true ){
       Memory.clearqueue = false;
@@ -66,11 +73,6 @@ module.exports = {
         Memory.clearjob = 'xxx';
         Log.debug("removed " + removed,'Planner');
     }
-
-    plan_harvs.run(spawn_num,Hive);
-    plan_market.run(spawn_num,Hive);
-    plan_upgrade.run(spawn_num,Hive);
-    plan_logistics.run(spawn_num,Hive);
 
 //return;
     // TYPES OF actions
