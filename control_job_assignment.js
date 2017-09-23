@@ -92,6 +92,17 @@ module.exports = {
           break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '01gg':  // Fillfrom - 01gg - mins from cont       -> deliv
+          // local, empty, idle, deliverer
+          tmpcreep = _.find(Game.creeps, (c) =>
+            ( c.memory.birthplace == job.spawn_name ) &&
+            ( c.spawning != true ) &&
+            ( _.sum(c.carry) == 0 ) &&
+            ( c.memory.state == 'idle' ) &&
+            ( c.memory.ryantest == true) &&
+            ( c.memory.role == 'deliverer' )
+            );
+          break;
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '01hh':  // Fillfrom - 01hh - mins from terminal --> deliv
           // local, empty, idle, deliverer
           tmpcreep = _.find(Game.creeps, (c) =>
@@ -102,6 +113,9 @@ module.exports = {
             ( c.memory.ryantest == true) &&
             ( c.memory.role == 'deliverer' )
             );
+            if ( tmpcreep != undefined ) {
+              job.dest_id = tmpcreep.room.terminal.id;
+            }
           break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '01ff':  // Fillfrom - 01ff - mins from storage     -> deliv
