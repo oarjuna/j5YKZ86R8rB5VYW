@@ -215,7 +215,6 @@ module.exports = {
            ( c.memory.ryantest == true) &&
            ( c.memory.role == 'deliverer' )
           );
-          // TODO -- find the closest job for this creep.
           break;
 
     //      case '02cc': // Deliverto - 02cc - energy to spawn or extension - deliv
