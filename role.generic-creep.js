@@ -100,7 +100,7 @@ module.exports = {
 					}
 					else {
 						var res_has = dest_obj.energy;
-						var res_max = dest_obj.storeCapacity;
+						var res_max = dest_obj.energyCapacity;
 					}
 
 					if ( res_has == res_max ||  _.sum(creep.carry) == 0 ) {
