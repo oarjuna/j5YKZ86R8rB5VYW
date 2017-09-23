@@ -113,11 +113,9 @@ plan_market.run(spawn_num,Hive);
 plan_upgrade.run(spawn_num,Hive);
 plan_logistics.run(spawn_num,Hive);
 
-
+/*
 //######################################################################################################################
-    // Ensure jobs exist for towers, spawns, extensions, and sending_links needing energy
-    // DO NOT ASSIGN CREEPS JOBS IN PLANNING, however tempting!
-
+    // Ensure delivery jobs exist for towers, spawns, extensions, and sending_links needing energy
     // get a lists of towers needing energy
     var structure_towers = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
        filter: (s) => (
@@ -212,7 +210,7 @@ plan_logistics.run(spawn_num,Hive);
         Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + t.structureType + " " + t.id,'Planner');
       }
     }
-
+*/
 
 
 //######################################################################################################################
