@@ -40,12 +40,10 @@ module.exports = {
     if ( Memory.minjob == true ) {
       // Pickup minerals from storage
       var job = new Job('Spawn1','01ff',7,'unassigned','deliverer','',RESOURCE_KEANIUM,Game.time,'','');
-      Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + x.structureType + " " + x.id,'Planner');
       Hive.memory.job_queue.push(job);
 
       // deliver them to the terminal
       var job = new Job('Spawn1','02hh',7,'unassigned','deliverer','',RESOURCE_KEANIUM,Game.time,'','');
-      Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + x.structureType + " " + x.id,'Planner');
       Hive.memory.job_queue.push(job);
 
       // disable this action
