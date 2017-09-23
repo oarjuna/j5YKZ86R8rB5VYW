@@ -39,7 +39,7 @@ module.exports = {
     // Ensure jobs exist to Empty res_pickup_spots
     // Fillfrom - 01bb - resources from containers -> deliv or upgraders
     // Fillfrom - 01dd - rec link - upgraders
-    // Fillfrom - 01gg - mins from cont       -> deliv // TODO -- NEXT!!!!
+    // Fillfrom - 01gg - mins from cont       -> deliv
 
     var res_pickup_spots_cont = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
       filter: (s) =>
