@@ -250,7 +250,7 @@ module.exports = {
           tmpcreep = _.find(Game.creeps, (c) =>
            ( c.memory.birthplace == job.spawn_name ) &&
            ( c.spawning != true ) &&
-           (  _.sum(c.carry) > 0 && c.carry[RESOURCE_ENERGY] == 0 ) &&
+           ( c.carry[job.extra] > 0 ) &&
            ( c.memory.state == 'idle' ) &&
            ( c.memory.ryantest == true) &&
            ( c.memory.role == 'deliverer' )
