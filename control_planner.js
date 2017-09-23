@@ -106,9 +106,10 @@ module.exports = {
     // TODO
   }
 
-//plan_harvs.run(spawn_num,Hive);
+plan_harvs.run(spawn_num,Hive);
 plan_market.run(spawn_num,Hive);
 
+/*
 //######################################################################################################################
     // Ensure jobs exists to Harvesting from sources and minerals
     var harvesting_jobs = _.filter(Hive.memory.job_queue, function(s) {
@@ -147,6 +148,7 @@ plan_market.run(spawn_num,Hive);
       Hive.memory.job_queue.push(job);
       Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
     }
+*/
 
 //######################################################################################################################
     // Ensure jobs exist to Empty res_pickup_spots
