@@ -181,7 +181,7 @@ module.exports = {
               }
               else {
                 // no containers or lins found? weird? unset the creep so no assignment and warn.
-                Log.warn(tmpcreep + "\tJQ: creep can't find nearby container");
+                Log.warn(tmpcreep + " sp "+ spawn_name + ss"\tJQ: creep can't find nearby container");
                 tmpcreep = undefined;
               }
 
