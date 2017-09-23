@@ -47,7 +47,7 @@ module.exports = {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////// FILL
 // Fillfrom - 01aa - resource -> harv
-// Fillfrom - 01dd - rec link - upgraders // TODO
+// Fillfrom - 01dd - rec link - upgraders
 // Fillfrom - 01hh - energy from storage - upgraders // TODO
 // Fillfrom - 01bb - energy from container -> deliv or upgradres
 // Fillfrom - 01cc - energy from storage   -> deliv
