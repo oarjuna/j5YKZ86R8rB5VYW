@@ -163,13 +163,11 @@ module.exports = {
     )});
 
     var res_pickup_spots = _.union(res_pickup_spots_cont,res_pickup_spots_links);
-    var res_list = [ RESOURCE_ENERGY,RESOURCE_OXYGEN ];
+    var res_list = [ RESOURCE_ENERGY,RESOURCE_OXYGEN ]; // TODO - what to do with this?
 
     if ( res_pickup_spots.length > 0) { // if there are res_pickup_spots needing pickup
       for ( var x of res_pickup_spots ) { // for each res_pickup_spots with stuff
-
-        for ( var res of res_list ) { // for each resource type we're dealing with // TODO == with this
-
+        for ( var res of res_list ) { // for each resource type
           if ( x.store == undefined ) {
             // we are a link
             eng_check = x.energy;
