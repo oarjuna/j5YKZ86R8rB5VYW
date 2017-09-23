@@ -12,6 +12,7 @@ module.exports = {
     var link_energy_celiing = 100;
     var empty = 0;
 */
+  // TODO
     var deliver_carry_cap = 400;
     var harvester_carry_cap = 100;
     var job_TTL = 200;
