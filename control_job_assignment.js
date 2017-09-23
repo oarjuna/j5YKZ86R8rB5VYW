@@ -223,7 +223,9 @@ module.exports = {
              ( c.memory.ryantest == true) &&
              ( c.memory.role == 'upgrader' )
             );
-            job.dest_id == tmpcreep.room.controller.id;
+            if ( tmpcreep != undefined ) {
+              job.dest_id == tmpcreep.room.controller.id;
+          }
           break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
