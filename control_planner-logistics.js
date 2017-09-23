@@ -52,8 +52,7 @@ module.exports = {
     )});
 
     var res_list = [ RESOURCE_ENERGY,RESOURCE_OXYGEN,RESOURCE_KEANIUM,RESOURCE_LEMERGIUM ]; // TODO - what to do with this?
-
-
+    
     var res_pickup_spots_links = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
       filter: (s) =>
         (
