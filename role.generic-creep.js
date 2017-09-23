@@ -93,7 +93,7 @@ module.exports = {
 				else { // everything else uses transfer
 					creep.transfer(dest_obj, job.extra); // from the creep
 					creep.say('\uD83D\uDD3B'); // 🔻
-					else if ( dest_obj.energy == dest_obj.energyCapacity ||  _.sum(creep.carry) == 0 ) {
+					if ( dest_obj.energy == dest_obj.energyCapacity ||  _.sum(creep.carry) == 0 ) {
 						var complete = true;
 					}
 				}
