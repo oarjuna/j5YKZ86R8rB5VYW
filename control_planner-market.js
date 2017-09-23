@@ -60,7 +60,7 @@ module.exports = {
 
           if(transferEnergyCost < maxTransferEnergyCost) {
               //Game.market.deal(orders[i].id, amountToSell,  Game.spawns[spawn_name].room.name);
-              Log.debug("Possible order: "  + orders[i].id,'Market')
+              Log.debug("Possible order: "  + orders[i].id + " price: " + order[i].price ,'Market')
               break;
           }
       }
