@@ -105,7 +105,7 @@ module.exports = {
 
 			else if ( type2 == '02') { // DELIV
 				if ( type3 == 'ff') { // to controller == upgrade
-					creep.upgrade(dest_obj);
+					creep.upgradeController(dest_obj);
 					creep.say('\u2699\uFE0F'); // ⚙️
 				}
 				else { // everything else uses transfer
