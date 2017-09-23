@@ -34,9 +34,10 @@ module.exports = {
 
     // the market ai should be able to issue these jobs
 
-    // 02hh -- mins to term -- priority 7
-    // 01ff -- mins from storage -- priorty 7
+    // if we need 1000 of a mineral at the terminal
+      // create enough 01ff jobs // 01ff -- mins from storage -- priorty 7
 
+      // create enough 02hh jobs // 02hh -- mins to term -- priority 7
 
 
   } // END MAIN LOGIC
