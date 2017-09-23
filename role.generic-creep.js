@@ -63,31 +63,6 @@ module.exports = {
 			if ( type2 == '01' ) { // FILL up
 				if ( type3 == 'aa') { // from source == harvest
 					creep.say('\u26CF'); //  ⛏
-
-/*
-					if ( creep.memory.harv_found_cont == undefined ) {
-						// am I on top of a container?
-						const found = creep.room.lookForAt(LOOK_STRUCTURES, creep.pos);
-						var result = found.find(function( obj ) {
-						  return obj.structureType == STRUCTURE_CONTAINER;
-						});
-
-						if ( result == undefined ) {
-							// no, there must be a container 1 sq away. move there.
-							var close_containers = creep.pos.findInRange(FIND_STRUCTURES, 1 , {
-								filter: (s) =>
-					        (
-											s.structureType == STRUCTURE_CONTAINER
-									)});
-									creep.travelTo(close_containers[0]);
-									//creep.memory.harv_found_cont = true;
-						}
-						else {
-							creep.memory.harv_found_cont = true;
-						}
-						//Log.debug(creep + " GEN FOUND " + result + " -- " + close_containers[0],'Generic');
-					}
-*/
 					creep.harvest(dest_obj);
 
 					if ( _.sum(creep.carry) == creep.carryCapacity  ) { var complete = true; }
