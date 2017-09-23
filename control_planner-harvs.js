@@ -1,5 +1,41 @@
 module.exports = {
   run: function(spawn_num,Hive) {
+    // Ensure jobs exists to Harvesting from sources and minerals
+    var harvesting_jobs = _.filter(Hive.memory.job_queue, function(s) {
+      return  ( s.type == '01aa' && s.spawn_name == spawn_name );
+    });
+    // count the number of total # of harvs each room will spawn
+    var harvs_needed =  _.sum(Hive.harvs_per_source[spawn_num]);
+
+    //Log.debug("harvesting " + harvesting_jobs.length + "/" + harvs_needed);
+    // if we have less jobs than harvs_needed
+    if ( harvesting_jobs.length < harvs_needed ) {
+      // spawn a generic harvesting job
+      var job = new Job(spawn_name,'01aa',1,'unassigned','harvester','default',RESOURCE_ENERGY,Game.time,'','');
+      Hive.memory.job_queue.push(job);
+      Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
+    }
+//######################################################################################################################
+    // Ensure jobs exists to tell full harvs to drop stuff off
+    // Get a list of 01aa jobs
+    var harvest_job_count = _.filter(Hive.memory.job_queue, function(s) {
+      return  (
+        s.spawn_name == spawn_name &&
+        s.type == '01aa'
+      );});
+
+    // get a list of 02aa jobs
+    var deliv_job_count = _.filter(Hive.memory.job_queue, function(s) {
+      return  (
+        s.spawn_name == spawn_name &&
+        s.type == '02aa'
+      );});
+
+    if ( deliv_job_count < harvest_job_count ) {
+      var job = new Job(spawn_name,'02aa',1,'unassigned','harvester','closest',RESOURCE_ENERGY,Game.time,'','');
+      Hive.memory.job_queue.push(job);
+      Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
+    }
 
   }
 };
