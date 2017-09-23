@@ -225,7 +225,7 @@ module.exports = {
                 Hive.memory.job_queue.push(job);
               }
               else if  ( x.structureType == STRUCTURE_LINK ) {
-                var job = new Job(spawn_name,'01dd',4,'unassigned','upgrader',x.id,res,Game.time,'','');
+                var job = new Job(spawn_name,'01dd',3,'unassigned','upgrader',x.id,res,Game.time,'','');
                 Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + x.structureType + " " + x.id,'Planner');
                 Hive.memory.job_queue.push(job);
                 Log.warn("RES cont type " + x.structureType,'Planner');
