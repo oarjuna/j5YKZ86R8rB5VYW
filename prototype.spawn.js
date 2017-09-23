@@ -12,8 +12,10 @@ module.exports = function() {
   function(energy_avail, roleName, dest, birthplace,return_id) {
 
     if ( birthplace == 'Spawn1' && roleName == 'harvester') { var ryantest = true; }
+    else if ( birthplace == 'Spawn2' && roleName == 'harvester') { var ryantest = true; }
+
     else if ( birthplace == 'Spawn1' && roleName == 'deliverer') { var ryantest = true; }
-    else if ( birthplace == 'Spawn1' && roleName == 'upgrader') { var ryantest = true; } 
+    else if ( birthplace == 'Spawn1' && roleName == 'upgrader') { var ryantest = true; }
 
     else { var ryantest = false; }
     //var ryantest = false;
