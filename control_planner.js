@@ -39,12 +39,11 @@ module.exports = {
         this.id = this.uuid();
     }
 
-    // Run the various sub actors  
+    // Run the various sub actors
     plan_harvs.run(spawn_num,Hive);
     plan_market.run(spawn_num,Hive);
     plan_upgrade.run(spawn_num,Hive);
     plan_logistics.run(spawn_num,Hive);
-
 
     // Manual commands for testing
     if (Memory.clearqueue == true ){
@@ -74,28 +73,6 @@ module.exports = {
         Log.debug("removed " + removed,'Planner');
     }
 
-//return;
-    // TYPES OF actions
-    /////// FILL
-    // Fillfrom - 01aa - resource -> harv
-    // Fillfrom - 01dd - rec link - upgraders
-    // Fillfrom - 01hh - energy from storage - upgraders
-    // Fillfrom - 01bb - energy from container -> deliv or deliver
-    // Fillfrom - 01cc - energy from storage   -> deliv
-    // Fillfrom - 01ff - mins from storage     -> deliv
-    // Fillfrom - 01gg - mins from cont       -> deliv
-    ///////   DELIVER
-    // Deliverto - 02aa - energy to closest cont/link - harv
-    // Deliverto - 02cc - energy to spawn or extension - deliv
-    // Deliverto - 02dd - energy to tower - deliv
-    // Deliverto - 02ee - mins to storage - deliv
-    // Deliverto - 02ff - energy to controller - upgrader
-    // Deliverto - 02gg - energy to sending link - deliv
-    // Deliverto - 02ii - energy to storage - deliv
-    // Deliverto - 02hh - mins to term - deliv
-
-
-
 //######################################################################################################################
   // Are there any receiving links needing emptying?
 // Fillfrom - 01hh - energy from storage - upgraders
@@ -119,32 +96,10 @@ module.exports = {
   }
 
 
-
     // Building and Repairing
     // create jobs to build and repair
 
-//######################################################################################################################
-    // create jobs for full idle creeps - 02ii
-     // Deliverto - 02ii - energy to storage - deliv
-     // Ensure jobs exists to tell full idle delivs to drop stuff off
 
-     // get a list of 02ii jobs
-     var deliv_job_count = _.filter(Hive.memory.job_queue, function(s) {
-       return  (
-         s.spawn_name == spawn_name &&
-         s.type == '02ii'
-       );});
-
-       // only if there are no other energy needing jobs
-
-      var storage = Game.spawns[spawn_name].room.storage.id;
-      //Log.debug("Hive " + deliv_job_count.length + "/" + Hive.spawn_levels[spawn_num][1],'Planner');
-
-     if ( deliv_job_count.length < Hive.spawn_levels[spawn_num][1] ) {
-       var job = new Job(spawn_name,'02ii',10,'unassigned','deliverer',storage,RESOURCE_ENERGY,Game.time,'','');
-       Hive.memory.job_queue.push(job);
-       Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
-     }
 //######################################################################################################################
     // if there are unasigned jobs needing energy
     // and there are idle, empty deliverers
