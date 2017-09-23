@@ -125,7 +125,7 @@ module.exports = {
 				if ( dest_obj.structureType == STRUCTURE_CONTROLLER && _.sum(creep.carry) == 0 ) {
 					var complete = true;
 				}
-				else if (  dest_obj.structureType ! = STRUCTURE_CONTROLLER && ( dest_obj.energy == dest_obj.energyCapacity ||  _.sum(creep.carry) == 0 ) ){ var complete = true; }
+				else if (  dest_obj.structureType != STRUCTURE_CONTROLLER && ( dest_obj.energy == dest_obj.energyCapacity ||  _.sum(creep.carry) == 0 ) ){ var complete = true; }
 
 			} // END DELIV
 
