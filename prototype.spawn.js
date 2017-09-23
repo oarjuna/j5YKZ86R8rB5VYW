@@ -13,14 +13,21 @@ module.exports = function() {
 
     if ( birthplace == 'Spawn1' && roleName == 'harvester') { var ryantest = true; }
     else if ( birthplace == 'Spawn2' && roleName == 'harvester') { var ryantest = true; }
+    else if ( birthplace == 'Spawn3' && roleName == 'harvester') { var ryantest = true; }
+    else if ( birthplace == 'Spawn4' && roleName == 'harvester') { var ryantest = true; }
 
     else if ( birthplace == 'Spawn1' && roleName == 'deliverer') { var ryantest = true; }
     else if ( birthplace == 'Spawn2' && roleName == 'deliverer') { var ryantest = true; }
+    else if ( birthplace == 'Spawn3' && roleName == 'deliverer') { var ryantest = true; }
+    else if ( birthplace == 'Spawn4' && roleName == 'deliverer') { var ryantest = true; }
 
     else if ( birthplace == 'Spawn1' && roleName == 'upgrader') { var ryantest = true; }
     else if ( birthplace == 'Spawn2' && roleName == 'upgrader') { var ryantest = true; }
+    else if ( birthplace == 'Spawn3' && roleName == 'upgrader') { var ryantest = true; }
+    else if ( birthplace == 'Spawn4' && roleName == 'upgrader') { var ryantest = true; }
 
     else { var ryantest = false; }
+
     //var ryantest = false;
     // 300 - 549 energy_avail --- initial spawn
     if ( energy_avail <= 550 ) {
