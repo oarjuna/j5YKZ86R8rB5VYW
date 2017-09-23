@@ -46,7 +46,7 @@ module.exports = {
         (
           // TODO -- make this list handle resources better, not hardcoded
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= Hive.deliverer_carry_cap[spawn_num] ) ||
-        //  ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= Hive.deliverer_carry_cap[spawn_num] ) ||
+          ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= Hive.deliverer_carry_cap[spawn_num] ) ||
         //  ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_LEMERGIUM] >= Hive.deliverer_carry_cap[spawn_num] ) ||
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_OXYGEN] >= Hive.deliverer_carry_cap[spawn_num] )
     )});
@@ -58,7 +58,7 @@ module.exports = {
     )});
 
     var res_pickup_spots = _.union(res_pickup_spots_cont,res_pickup_spots_links);
-    var res_list = [ RESOURCE_ENERGY,RESOURCE_OXYGEN ]; // TODO - what to do with this?
+    var res_list = [ RESOURCE_ENERGY,RESOURCE_OXYGEN,RESOURCE_KEANIUM ]; // TODO - what to do with this?
 
     if ( res_pickup_spots.length > 0) { // if there are res_pickup_spots needing pickup
       for ( var x of res_pickup_spots ) { // for each res_pickup_spots with stuff
