@@ -18,7 +18,7 @@ module.exports = function() {
     else if ( birthplace == 'Spawn2' && roleName == 'deliverer') { var ryantest = true; }
 
     else if ( birthplace == 'Spawn1' && roleName == 'upgrader') { var ryantest = true; }
-  //  else if ( birthplace == 'Spawn2' && roleName == 'upgrader') { var ryantest = true; }
+    else if ( birthplace == 'Spawn2' && roleName == 'upgrader') { var ryantest = true; }
 
     else { var ryantest = false; }
     //var ryantest = false;
