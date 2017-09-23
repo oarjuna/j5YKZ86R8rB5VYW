@@ -91,10 +91,21 @@ module.exports = {
             );
           break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-          case '01cc': // Fillfrom - 01cc - energy from storage   -> deliv
           case '01ff': // Fillfrom - 01ff - mins from storage     -> deliv
           case '01gg':  // Fillfrom - 01gg - mins from cont       -> deliv
-            // local, empty, idle, deliverer
+          // local, empty, idle, deliverer
+          tmpcreep = _.find(Game.creeps, (c) =>
+            ( c.memory.birthplace == job.spawn_name ) &&
+            ( c.spawning != true ) &&
+            ( _.sum(c.carry) == 0 ) &&
+            ( c.memory.state == 'idle' ) &&
+            ( c.memory.ryantest == true) &&
+            ( c.memory.role == 'deliverer' )
+            );
+          break;
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+          case '01cc': // Fillfrom - 01cc - energy from storage   -> deliv
+            // local, non-full, idle, deliverer
             tmpcreep = _.find(Game.creeps, (c) =>
               ( c.memory.birthplace == job.spawn_name ) &&
               ( c.spawning != true ) &&

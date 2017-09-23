@@ -64,3 +64,12 @@ Heals self or another creep restoring 12 hits per tick in short range or 4 hits 
 -- order the army object to defensive position
 
 -- state of alert must be manually disabled
+
+***** TODO FIRST
+-- mineral hauling on the queue
+-- marketer ai
+  - sells off room resources and buys level 3 resources for boosting.
+  - maintains inventory in case of attack
+-- boosting / labs -- we won't win fights without boosted creeps
+-- Spawning on the queue 
+-- repair / construction on the queue
