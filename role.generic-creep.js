@@ -91,7 +91,9 @@ module.exports = {
 					}
 				}
 				else { // everything else uses transfer
-					creep.transfer(dest_obj, job.extra); // from the creep
+					creep.transfer(dest_obj); // from the creep
+//					creep.transfer(dest_obj, job.extra); // from the creep
+
 					creep.say('\uD83D\uDD3B'); // 🔻
 
 					if ( dest_obj.structureType == STRUCTURE_STORAGE || dest_obj.structureType == STRUCTURE_CONTAINER ) {
