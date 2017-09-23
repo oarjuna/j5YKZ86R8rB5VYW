@@ -105,6 +105,8 @@ module.exports = {
     // TODO
   }
 
+//plan_harvs.run(spawn_num,Hive);
+
 //######################################################################################################################
     // Ensure jobs exists to Harvesting from sources and minerals
     var harvesting_jobs = _.filter(Hive.memory.job_queue, function(s) {
@@ -121,6 +123,7 @@ module.exports = {
       Hive.memory.job_queue.push(job);
       Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
     }
+
 //######################################################################################################################
     // Ensure jobs exists to tell full harvs to drop stuff off
     // Get a list of 01aa jobs
