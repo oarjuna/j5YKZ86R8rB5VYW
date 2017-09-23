@@ -31,10 +31,16 @@ module.exports = {
         this.id = this.uuid();
     }
     /// START LOGIC
+
+    // Fillfrom - 01ff - mins from storage     -> deliv
+
+
     //######################################################################################################################
     // Ensure jobs exist to Empty res_pickup_spots
-    // Fillfrom - 01bb - energy from container -> deliv or upgraders
+    // Fillfrom - 01bb - resources from containers -> deliv or upgraders
     // Fillfrom - 01dd - rec link - upgraders
+    // Fillfrom - 01gg - mins from cont       -> deliv // TODO -- NEXT!!!!
+
     var res_pickup_spots_cont = Game.spawns[spawn_name].room.find(FIND_STRUCTURES, {
       filter: (s) =>
         (
@@ -59,22 +65,22 @@ module.exports = {
         for ( var res of res_list ) { // for each resource type
           if ( x.store == undefined ) {
             // we are a link
-            eng_check = x.energy;
+            res_check = x.energy;
           }
           else if ( x.store[res] == undefined ) {
             // we are a container without the resource being checked
-            eng_check = -1;
+            res_check = -1;
           }
           else {
             // we are a container with the resource being checked
-            eng_check = x.store[res];
+            res_check = x.store[res];
           }
 
-          Log.debug("Res: " + res + " res_list " + res_list[0] + " eng_check " + eng_check,'Planner');
+          Log.debug("Res: " + res + " res_list " + res_list[0] + " res_check " + res_check,'Planner');
 
           if (
-            ( x.structureType == STRUCTURE_LINK && eng_check > 0 && res == RESOURCE_ENERGY ) ||
-            ( x.structureType == STRUCTURE_CONTAINER && eng_check > 0 ))
+            ( x.structureType == STRUCTURE_LINK && res_check > 0 && res == RESOURCE_ENERGY ) ||
+            ( x.structureType == STRUCTURE_CONTAINER && res_check > 0 ))
           {
 
             // get the amount of resource to pickup = resources / carry cap
@@ -237,7 +243,7 @@ module.exports = {
      Hive.memory.job_queue.push(job);
      Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
     }
-    
+
     //######################################################################################################################
     // if there are unasigned jobs needing energy
     // and there are idle, empty deliverers
