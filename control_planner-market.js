@@ -49,6 +49,11 @@ module.exports = {
       // disable this action
       Memory.minjob = false;
     }
+    if ( Memory.sell == true ) {
+
+      
+      Memory.sell = false;
+    }
 
     // if we need 1000 of a mineral at the terminal
       // create enough 01ff jobs // 01ff -- mins from storage -- priorty 7
