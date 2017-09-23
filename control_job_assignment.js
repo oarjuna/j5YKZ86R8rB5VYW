@@ -216,10 +216,8 @@ module.exports = {
            ( c.memory.role == 'deliverer' )
           );
           break;
-
-    //      case '02cc': // Deliverto - 02cc - energy to spawn or extension - deliv
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '02dd': // Deliverto - 02dd - energy to tower - deliv
-          //case '02ee': // Deliverto - 02ee - mins to storage - deliv
           case '02gg': // Deliverto - 02gg - energy to sending link - deliv
           case '02hh': // Deliverto - 02hh - mins to term - deliv
           case '02ii': // Deliverto - 02ii - energy to storage - deliv
