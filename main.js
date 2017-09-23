@@ -303,7 +303,7 @@ console.log("------ START ------");
 
 
   if ( name == 'Stella') {
-      Log.info(job.id + " @ " + job.spawn_name + "\tp: " + job.priority + "\tt: " + j_type + "\td: " + dest_type + " (" + job.type + ") " + "\ttq " + ( Game.time - job.tick_issued) + "\tcr: " + name + " " + job.extra ,'Queue');
+      Log.info(job.id + " @ " + job.spawn_name + "\tp: " + job.priority + "\tt: " + j_type + "\td: " + dest_type + " (" + job.type + ") " + "\ttq " + ( Game.time - job.tick_issued) + "\tcr: " + name + " X: " + job.extra ,'Queue');
     }
   }
   console.log("------ END ------");
