@@ -74,33 +74,13 @@ module.exports = {
     }
 
 //######################################################################################################################
-  // Are there any receiving links needing emptying?
+
+// Are there any receiving links needing emptying?
 // Fillfrom - 01hh - energy from storage - upgraders
 
-  // Ensure these jobs exist
-  var upgrader_job_list = _.filter(Hive.memory.job_queue, function(s) {
-    return  ((
-      s.type == '01hh' ) &&
-      s.spawn_name == spawn_name
-    );
-  });
 
-  //
-  var num_of_upgraders = Hive.spawn_levels[spawn_num][2]; // deliverers
-  Log.debug(" num of up " + num_of_upgraders + " num of jobs " + upgrader_job_list.length,"Planner");
-
-    // do not assign, that happens in job assignment
-  if (  upgrader_job_list.length <  num_of_upgraders ) {
-    // else create a "go to storage" job
-    // TODO
-  }
-
-
-    // Building and Repairing
-    // create jobs to build and repair
-
-
-
+// Building and Repairing
+// create jobs to build and repair
 
 
 //######################################################################################################################
