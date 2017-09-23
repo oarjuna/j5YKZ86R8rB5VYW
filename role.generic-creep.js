@@ -26,7 +26,6 @@ module.exports = {
 
 			// job specfic changes
 			if ( job.type == '01aa') { job.dest_id = creep.memory.destid; }
-			//if ( job.type == '02ff') { job.dest_id = creep.room.controller; }
 
 			// get the dest object object
 			var dest_obj =Game.getObjectById(job.dest_id);
@@ -94,7 +93,13 @@ module.exports = {
 					creep.say('\uD83D\uDD3A'); // 🔺
 					creep.withdraw(dest_obj, job.extra);
 					//Log.debug("GEN: creep.carry " + _.sum(creep.carry) + "/" + creep.carryCapacity + " dest_obj " + dest_obj.store[job.extra],'Generic');
-					if ( _.sum(creep.carry) == creep.carryCapacity || dest_obj.store[job.extra] == 0 ) { var complete = true; }
+					if ( dest_obj.structureType == STRUCTURE_LINK ) {
+						var res_has = dest_obj.energy;
+					}
+					else {
+						var res_has =  dest_obj.store[job.extra]
+					}
+					if ( _.sum(creep.carry) == creep.carryCapacity || res_has == 0 ) { var complete = true; }
 				}
 			}
 
