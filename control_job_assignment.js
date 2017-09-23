@@ -237,6 +237,16 @@ module.exports = {
           break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '02ee': // Deliverto - 02ee - mins to storage - deliv
+          tmpcreep = _.find(Game.creeps, (c) =>
+           ( c.memory.birthplace == job.spawn_name ) &&
+           ( c.spawning != true ) &&
+           (  _.sum(c.carry) > 0 && c.carry[RESOURCE_ENERGY] == 0 ) &&
+           ( c.memory.state == 'idle' ) &&
+           ( c.memory.ryantest == true) &&
+           ( c.memory.role == 'deliverer' )
+          );
+          break;
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '02hh': // Deliverto - 02hh - mins to term - deliv
           tmpcreep = _.find(Game.creeps, (c) =>
            ( c.memory.birthplace == job.spawn_name ) &&
@@ -246,6 +256,9 @@ module.exports = {
            ( c.memory.ryantest == true) &&
            ( c.memory.role == 'deliverer' )
           );
+          if ( tmpcreep != undefined ) {
+            job.dest_id = tmpcreep.room.terminal.id;
+          }
           break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '02dd': // Deliverto - 02dd - energy to tower - deliv
