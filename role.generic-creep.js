@@ -92,7 +92,7 @@ module.exports = {
 				}
 				else { // everything else uses transfer
 					creep.transfer(dest_obj, job.extra); // from the creep
-					for ( r of creep.carry ) {
+					for ( r in creep.carry ) {
 						Log.debug("res " + r ,'Generic');
 				//		creep.transfer(dest_obj, r); // from the creep
 					}
