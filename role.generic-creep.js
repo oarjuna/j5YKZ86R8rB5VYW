@@ -92,7 +92,7 @@ module.exports = {
 				}
 				else { // everything else uses transfer
 					//creep.transfer(dest_obj, RESOURCES_ALL); // from the creep
-					for ( r of creep.carry ) {
+					for ( r of _.foreach(creep.carry) ) {
 						creep.transfer(dest_obj, r); // from the creep
 					}
 
