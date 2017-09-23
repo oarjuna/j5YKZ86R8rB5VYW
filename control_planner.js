@@ -1,4 +1,5 @@
 var plan_harvs = require('control_planner-harvs');
+var plan_market = require('control_planner-market');
 
 module.exports = {
   run: function(spawn_num,Hive) {
@@ -106,6 +107,7 @@ module.exports = {
   }
 
 //plan_harvs.run(spawn_num,Hive);
+plan_market.run(spawn_num,Hive);
 
 //######################################################################################################################
     // Ensure jobs exists to Harvesting from sources and minerals
