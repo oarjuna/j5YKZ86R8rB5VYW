@@ -93,9 +93,21 @@ module.exports = {
 				else { // everything else uses transfer
 					creep.transfer(dest_obj, job.extra); // from the creep
 					creep.say('\uD83D\uDD3B'); // 🔻
-					if ( dest_obj.energy == dest_obj.energyCapacity ||  _.sum(creep.carry) == 0 ) {
+
+					if ( dest_obj.structureType == STRUCTURE_STORAGE || dest_obj.structureType == STRUCTURE_CONTAINER ) {
+							var res_has =  dest_obj.store[job.extra];
+							var res_max = dest_obj.storeCapacity;
+					}
+					else {
+						var res_has = dest_obj.energy;
+						var res_max = dest_obj.storeCapacity;
+					}
+
+					if ( res_has == res_max ||  _.sum(creep.carry) == 0 ) {
 						var complete = true;
 					}
+
+
 				}
 
 			} // END DELIV
