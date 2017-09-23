@@ -47,11 +47,11 @@ module.exports = {
           // TODO -- make this list handle resources better, not hardcoded
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= Hive.deliverer_carry_cap[spawn_num] ) ||
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= Hive.deliverer_carry_cap[spawn_num] ) ||
-        //  ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_LEMERGIUM] >= Hive.deliverer_carry_cap[spawn_num] ) ||
+          ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_LEMERGIUM] >= Hive.deliverer_carry_cap[spawn_num] ) ||
           ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_OXYGEN] >= Hive.deliverer_carry_cap[spawn_num] )
     )});
 
-    var res_list = [ RESOURCE_ENERGY,RESOURCE_OXYGEN,RESOURCE_KEANIUM ]; // TODO - what to do with this?
+    var res_list = [ RESOURCE_ENERGY,RESOURCE_OXYGEN,RESOURCE_KEANIUM,RESOURCE_LEMERGIUM ]; // TODO - what to do with this?
 
 
     var res_pickup_spots_links = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
