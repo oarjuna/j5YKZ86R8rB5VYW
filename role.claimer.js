@@ -28,6 +28,12 @@ module.exports = {
 
 			});
 
+			var repairSite = creep.pos.findClosestByPath(FIND_STRUCTURES, {
+					filter: (s) =>
+						s.hits < s.hitsMax &&
+						( s.structureType == STRUCTURE_CONTAINER || s.structureType == STRUCTURE_ROAD )
+			});
+
 			// Switch states
 			if (creep.memory.working == true && creep.carry.energy == 0) {
 				creep.memory.working = false;
