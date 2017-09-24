@@ -52,7 +52,7 @@ module.exports = {
     )});
 
     var res_list = [ RESOURCE_ENERGY,RESOURCE_OXYGEN,RESOURCE_KEANIUM,RESOURCE_LEMERGIUM ]; // TODO - what to do with this?
-    
+
     var res_pickup_spots_links = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
       filter: (s) =>
         (
@@ -266,7 +266,7 @@ module.exports = {
     var storage = Game.spawns[spawn_name].room.storage.id;
     //Log.debug("Hive " + deliv_job_count.length + "/" + Hive.spawn_levels[spawn_num][1],'Planner');
 
-    if ( deliv_job_count.length < 1 ) {
+    if ( deliv_job_count.length < 2 ) {
      var job = new Job(spawn_name,'02ee',10,'unassigned','deliverer',storage,'',Game.time,'','');
      Hive.memory.job_queue.push(job);
      Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
