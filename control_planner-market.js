@@ -85,6 +85,7 @@ module.exports = {
 
     if ( Memory.sell != false ) {
       var order_id = Memory.sell;
+        const amountToSell = 1000;
       var status = Game.market.deal(order_id, amountToSell,  Game.spawns[spawn_name].room.name);
       Log.debug("Selling to: " + order_id + " Status: " + status );
       Memory.sell = false;
