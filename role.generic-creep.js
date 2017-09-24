@@ -55,36 +55,52 @@ module.exports = {
 			saytext = '\uD83D\uDCE6\u26CF'; // 📦⛏
 			break;
 			case '01dd' :// Fillfrom - 01dd - rec link - upgraders
+			saytext = '\uD83D\uDCE6\uD83D\uDCE1'; // 📦📡
 			break;
 			case '01hh' :// Fillfrom - 01hh - energy from storage - upgraders
+			saytext = '';
 			break;
 			case '01bb' :// Fillfrom - 01bb - energy from container -> deliv or upgrader
+			saytext = '';
 			break;
 			case '01cc' :// Fillfrom - 01cc - energy from storage   -> deliv
+			saytext = '';
 			break;
 			case '01ff' :// Fillfrom - 01ff - mins from storage     -> deliv
+			saytext = '';
 			break;
 			case '01gg' :// Fillfrom - 01gg - mins from cont       -> deliv
+			saytext = '';
 			break;
 			case '01hh' :// Fillfrom - 01hh - mins from terminal --> deliv
+			saytext = '';
 			break;
 			case '02aa' :// Deliverto - 02aa - energy or mins to closest cont or link - harv
+			saytext = '';
 			break;
 			case '02cc' :// Deliverto - 02cc - energy to spawn or extension - deliv
+			saytext = '';
 			break;
 			case '02dd' :// Deliverto - 02dd - energy to tower - deliv
+			saytext = '';
 			break;
 			case '02ee' :// Deliverto - 02ee - mins to storage - deliv
+			saytext = '';
 			break;
 			case '02ff' :// Deliverto - 02ff - energy to controller - upgrader
+			saytext = '';
 			break;
 			case '02gg' :// Deliverto - 02gg - energy to sending link - deliv
+			saytext = '';
 			break;
 			case '02ii' :// Deliverto - 02ii - energy to storage - deliv
+			saytext = '';
 			break;
 			case '02hh' :// Deliverto - 02hh - mins to term - deliv
+			saytext = '';
 			break;
 			case '02jj' :// Deliverto - 02jj - energy to term - deliv
+			saytext = '';
 			break;
 		}
 
@@ -100,14 +116,14 @@ module.exports = {
 
 			if ( type2 == '01' ) { // FILL up
 				if ( type3 == 'aa') { // from source == harvest
-					creep.say('\u26CF'); //  ⛏
+					//creep.say('\u26CF'); //  ⛏
 					creep.harvest(dest_obj);
 
 					if ( _.sum(creep.carry) == creep.carryCapacity  ) { var complete = true; }
 
 				}
 				else { // everything else uses withdraw
-					creep.say('\uD83D\uDD3A'); // 🔺
+					//creep.say('\uD83D\uDD3A'); // 🔺
 					creep.withdraw(dest_obj, job.extra);
 					if ( dest_obj.structureType == STRUCTURE_LINK ) {
 						var res_has = dest_obj.energy;
@@ -125,7 +141,7 @@ module.exports = {
 			else if ( type2 == '02') { // DELIV
 				if ( type3 == 'ff') { // to controller == upgrade
 					creep.upgradeController(dest_obj);
-					creep.say('\u2699\uFE0F'); // ⚙️
+					//creep.say('\u2699\uFE0F'); // ⚙️
 					if ( _.sum(creep.carry) == 0 ) {
 						var complete = true;
 					}
@@ -137,7 +153,7 @@ module.exports = {
 						creep.transfer(dest_obj, r); // from the creep
 					}
 
-					creep.say('\uD83D\uDD3B'); // 🔻
+					//creep.say('\uD83D\uDD3B'); // 🔻
 
 					if ( dest_obj.structureType == STRUCTURE_STORAGE || dest_obj.structureType == STRUCTURE_CONTAINER ) {
 							var res_has =  dest_obj.store[job.extra];
@@ -159,11 +175,11 @@ module.exports = {
 
 			else if ( type2 == '03 ') { // BUILD/REPAIR
 				if ( type3 == 'aa') { // build
-					creep.say('\uD83D\uDD28'); // 🔨
+					//creep.say('\uD83D\uDD28'); // 🔨
 					creep.build(dest_obj);
 				}
 				else { // repair
-					creep.say('\uD83D\uDEE0\uFE0F'); // 🛠️
+					//creep.say('\uD83D\uDEE0\uFE0F'); // 🛠️
 					creep.repair(dest_obj);
 				}
 
@@ -187,7 +203,7 @@ module.exports = {
 		} // END is near to destination
 		else {
 			// else move towards dest_obj
-			creep.say(job.type);
+			//creep.say(job.type);
 			creep.travelTo(dest_obj);
 	//		creep.travelTo(dest_obj,{ignoreStructures: false});
 			//creep.moveTo(dest_obj);
