@@ -33,9 +33,9 @@ module.exports = {
               s.structureType==STRUCTURE_STORAGE */
     	});
 
-      var containers_target = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-    			filter: (s) => s.structureType==STRUCTURE_CONTAINER
-    	});
+      //var containers_target = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+    	//		filter: (s) => s.structureType==STRUCTURE_CONTAINER
+    	//});
 
       // heal
        if (needs_healing != undefined) {
