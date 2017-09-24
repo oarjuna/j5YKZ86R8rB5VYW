@@ -52,7 +52,7 @@ module.exports = {
 
 		switch (job.type) {
 			case '01aa' : // Fillfrom - 01aa - resource -> harv
-			saytext = '\uD83D\uDD3A\u26A1\u26CF'; // 🔺⚡⛏
+			saytext = '\uD83D\uDD3A\u26CF'; // 🔺⛏
 			break;
 			case '01dd' :// Fillfrom - 01dd - rec link - upgraders
 			saytext = '\uD83D\uDD3A\u26A1\uD83D\uDCE1'; // 🔺⚡📡
