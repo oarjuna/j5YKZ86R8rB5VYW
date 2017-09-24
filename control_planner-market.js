@@ -77,7 +77,7 @@ module.exports = {
       }
 
       var sorted_orders = orders.sort(function(a, b) {
-        return parseFloat(b.transfercost) - parseFloat(a.transfercost);
+        return parseFloat(a.transfercost) - parseFloat(b.transfercost);
       });
 
       for(let i=0; i< sorted_orders.length; i++) {
