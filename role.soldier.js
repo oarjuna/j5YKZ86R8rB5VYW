@@ -10,7 +10,7 @@ module.exports = {
     if ( dest_key == 'Attack3') {  var gotoFlag = Game.flags.Attack3; }
 
     // are we in the room with the flag?
-    if ( creep.pos.roomName != gotoFlag.pos.roomName && creep.memory.working != true ) {
+    if ( creep.spawning != true && creep.pos.roomName != gotoFlag.pos.roomName && creep.memory.working != true ) {
        // not in the room with the flag, move towards the flag
        creep.travelTo(gotoFlag);
        creep.say("\u2694.!!");
