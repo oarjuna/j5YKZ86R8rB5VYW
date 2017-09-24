@@ -146,7 +146,7 @@ module.exports = {
         else { var dest = 'error'; }
 
         console.log(spawn_name + " -- spawning claimer " + dest + " body - " + role);
-        name = Game.spawns[spawn_name].createCustomCreep(energy_avail, role, dest,spawn_name, ryantest);
+        name = Game.spawns[spawn_name].createCustomCreep(energy_avail, role, dest,spawn_name);
     }
 
     // run the towers
