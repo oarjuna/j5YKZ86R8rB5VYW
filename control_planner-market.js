@@ -52,7 +52,7 @@ module.exports = {
       Memory.minjob = false;
     }
 
-    if ( Memory.eneryjob == true ) {
+    if ( Memory.energyjob == true ) {
       // deliver energy to the terminal
       var job = new Job('Spawn1','02jj',7,'unassigned','deliverer','default',RESOURCE_ENERGY,Game.time,'','');
       Hive.memory.job_queue.push(job);
