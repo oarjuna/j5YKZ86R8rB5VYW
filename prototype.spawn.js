@@ -96,7 +96,7 @@ module.exports = function() {
       }  // 900
 
       else if (roleName == "remote_harv") { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; } // 700 }
-      else if (roleName == "claimer")     { var body = [ CLAIM, CLAIM, MOVE, MOVE, MOVE, WORK, CARRY ];  } //  1550 }
+      else if (roleName == "claimer")     { var body = [ CLAIM, CLAIM, MOVE, MOVE ];  } //  1350 }
       else if (roleName == "claimer_reg") { var body = [  WORK, WORK, WORK, WORK, WORK,  //500
                                                           MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, //350
                                                           CARRY, CARRY // 100
