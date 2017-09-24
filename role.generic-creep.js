@@ -76,7 +76,7 @@ module.exports = {
 			saytext = '\uD83D\uDD3A\uD83D\uDC8E\uD83D\uDCDE'; // 🔺💎📞
 			break;
 			case '02aa' :// Deliverto - 02aa - energy or mins to closest cont or link - harv
-			saytext = ''; //
+			saytext = '\uD83D\uDD3B\uD83D\uDCE6\uD83D\uDCE1'; // 🔻📦📡
 			break;
 			case '02cc' :// Deliverto - 02cc - energy to spawn or extension - deliv
 			saytext = ''; //
