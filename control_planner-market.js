@@ -83,6 +83,14 @@ module.exports = {
       Memory.findbuyers = false;
     }
 
+    if ( Memory.sell != false ) {
+      var order_id = Memory.sell;
+      Log.debug("Selling to: " + orderid );
+      
+
+      Memory.sell = false;
+    }
+
 
   } // END MAIN LOGIC
 };
