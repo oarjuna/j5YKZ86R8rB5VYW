@@ -85,7 +85,7 @@ module.exports = {
 			saytext = '\uD83D\uDD3B\u26A1\uD83D\uDD2B'; // 🔻⚡🔫
 			break;
 			case '02ee' :// Deliverto - 02ee - mins to storage - deliv
-			saytext = ''; //
+			saytext = '\uD83D\uDD3B\uD83D\uDC8E\uD83C\uDFE7'; // 🔻💎🏧
 			break;
 			case '02ff' :// Deliverto - 02ff - energy to controller - upgrader
 			saytext = ''; //
