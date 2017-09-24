@@ -56,7 +56,7 @@ module.exports = {
       // deliver energy to the terminal
       var job = new Job('Spawn1','02jj',7,'unassigned','deliverer','default',RESOURCE_ENERGY,Game.time,'','');
       Hive.memory.job_queue.push(job);
-      Memory.eneryjob = false;
+      Memory.energyjob = false;
     }
 
     if ( Memory.sell == true ) {
