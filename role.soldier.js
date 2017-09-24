@@ -8,7 +8,7 @@ module.exports = {
     if ( dest_key == 'Attack1') {  var gotoFlag = Game.flags.Attack1; }
     if ( dest_key == 'Attack2') {  var gotoFlag = Game.flags.Attack2; }
     if ( dest_key == 'Attack3') {  var gotoFlag = Game.flags.Attack3; }
-    
+
     // are we in the room with the flag?
     if ( creep.pos.roomName != gotoFlag.pos.roomName && creep.memory.working != true ) {
        // not in the room with the flag, move towards the flag
@@ -59,17 +59,17 @@ module.exports = {
        }
       }
 
-      // attack spawn or extensions
+      // attack containers
       else if ( containers_target != undefined ) {
-        console.log(creep + "SOLDIER -- attacking hostile target!" + containers_target);
+        console.log(creep + "SOLDIER -- attacking hostile container!" + containers_target);
         if(creep.attack(containers_target) == ERR_NOT_IN_RANGE) {
                 creep.travelTo(containers_target);
         }
       }
 
-      // attack containers
+      // attack spawn or extensions
       else if ( other_target != undefined ) {
-        console.log(creep + "SOLDIER -- attacking hostile target!" + other_target);
+        console.log(creep + "SOLDIER -- attacking hostile spawn!" + other_target);
         if(creep.attack(other_target) == ERR_NOT_IN_RANGE) {
                 creep.travelTo(other_target);
         }
