@@ -61,19 +61,19 @@ module.exports = {
 			saytext = '\uD83D\uDD3A\u26A1\uD83C\uDFE7'; //  🔺⚡🏧
 			break;
 			case '01bb' :// Fillfrom - 01bb - energy from container -> deliv or upgrader
-			saytext = '';
+			saytext = '\uD83D\uDD3A\u26A1\uD83D\uDCE6'; // 🔺⚡📦
 			break;
 			case '01cc' :// Fillfrom - 01cc - energy from storage   -> deliv
-			saytext = '';
+			saytext = '\uD83D\uDD3A\u26A1\uD83C\uDFE7'; // 🔺⚡🏧
 			break;
 			case '01ff' :// Fillfrom - 01ff - mins from storage     -> deliv
-			saytext = '';
+			saytext = '\uD83D\uDD3A\uD83D\uDC8E\uD83C\uDFE7'; // 🔺💎🏧
 			break;
 			case '01gg' :// Fillfrom - 01gg - mins from cont       -> deliv
-			saytext = '';
+			saytext = '\uD83D\uDD3A\uD83D\uDC8E\uD83D\uDCE6'; // 🔺💎📦
 			break;
 			case '01hh' :// Fillfrom - 01hh - mins from terminal --> deliv
-			saytext = '';
+			saytext = ''; //
 			break;
 			case '02aa' :// Deliverto - 02aa - energy or mins to closest cont or link - harv
 			saytext = '';
