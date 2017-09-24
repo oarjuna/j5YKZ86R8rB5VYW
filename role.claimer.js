@@ -36,19 +36,7 @@ module.exports = {
 				creep.memory.working = true;
       }
 
-
-/*
-			// claim the controller if possible
-			if ( creep.room.controller.owner != 'Arjuna') {
-				creep.claimController(creep.room.controller);
-				var status = creep.signController(creep.room.controller,"Non Servium");
-				console.log(creep + " claimer -- controller status " + status);
-
-
-
-			}
-*/
-			if ( creep.getActiveBodyparts(CLAIM)) {
+			if ( creep.getActiveBodyparts(CLAIM) ) {
 				var status = creep.reserveController(creep.room.controller);
 				if (status == ERR_NOT_IN_RANGE ) {
 					console.log(creep + " claimer -- moving to controller ");
