@@ -94,13 +94,13 @@ module.exports = {
 			saytext = '\uD83D\uDD3B\u26A1\uD83D\uDCE1'; // 🔻⚡📡
 			break;
 			case '02ii' :// Deliverto - 02ii - energy to storage - deliv
-			saytext = ''; //
+			saytext = '\uD83D\uDD3B\u26A1\uD83C\uDFE7'; // 🔻⚡🏧
 			break;
 			case '02hh' :// Deliverto - 02hh - mins to term - deliv
-			saytext = ''; //
+			saytext = '\uD83D\uDD3B\uD83D\uDC8E\uD83D\uDCDE'; // 🔻💎📞
 			break;
 			case '02jj' :// Deliverto - 02jj - energy to term - deliv
-			saytext = ''; //
+			saytext = '\uD83D\uDD3B\u26A1\uD83D\uDCDE'; // 🔻⚡📞
 			break;
 		}
 
