@@ -47,13 +47,18 @@ module.exports = {
       var job = new Job('Spawn1','02hh',7,'unassigned','deliverer','default',RESOURCE_KEANIUM,Game.time,'','');
       Hive.memory.job_queue.push(job);
 
-      // deliver energy to the terminal
-      var job = new Job('Spawn1','02jj',7,'unassigned','deliverer','default',RESOURCE_ENERGY,Game.time,'','');
-      Hive.memory.job_queue.push(job);
 
       // disable this action
       Memory.minjob = false;
     }
+
+    if ( Memory.eneryjob == true ) {
+      // deliver energy to the terminal
+      var job = new Job('Spawn1','02jj',7,'unassigned','deliverer','default',RESOURCE_ENERGY,Game.time,'','');
+      Hive.memory.job_queue.push(job);
+      Memory.eneryjob = false;
+    }
+
     if ( Memory.sell == true ) {
 
       const amountToSell = 1000, maxTransferEnergyCost = 1000;
