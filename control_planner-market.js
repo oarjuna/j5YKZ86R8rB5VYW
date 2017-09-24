@@ -80,11 +80,12 @@ module.exports = {
         return parseFloat(b.transfercost) - parseFloat(a.transfercost);
       });
 
-      if( sorted_orders[i].remainingAmount >= amountToSell ) {
-        Log.debug("Possible order: cost: " + transferEnergyCost + " " +  sorted_orders[i].id + " price: " +  sorted_orders[i].price ,'Market')
-        //break;
+      for(let i=0; i< sorted_orders.length; i++) {
+        if( sorted_orders[i].remainingAmount >= amountToSell ) {
+          Log.debug("Possible order: cost: " + transferEnergyCost + " " +  sorted_orders[i].id + " price: " +  sorted_orders[i].price ,'Market')
+          //break;
+        }
       }
-
 
       //Game.market.deal(orders[i].id, amountToSell,  Game.spawns[spawn_name].room.name);
       Memory.sell = false;
