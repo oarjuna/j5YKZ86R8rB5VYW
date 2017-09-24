@@ -58,7 +58,7 @@ module.exports = {
 			saytext = '\uD83D\uDCE6\uD83D\uDCE1'; // 📦📡
 			break;
 			case '01hh' :// Fillfrom - 01hh - energy from storage - upgraders
-			saytext = '';
+			saytext = '\uD83D\uDCE6\u26A1\uD83C\uDFE7';
 			break;
 			case '01bb' :// Fillfrom - 01bb - energy from container -> deliv or upgrader
 			saytext = '';
@@ -104,6 +104,7 @@ module.exports = {
 			break;
 		}
 
+		creep.say(saytext);
 		// TODO
 		// if the creep is taking damage, it should abandon its job.
 		// idea - move to spawn for recyling when close to death
