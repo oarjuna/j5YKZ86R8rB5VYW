@@ -85,8 +85,8 @@ module.exports = {
 
     if ( Memory.sell != false ) {
       var order_id = Memory.sell;
-      Log.debug("Selling to: " + orderid );
-      
+      Log.debug("Selling to: " + order_id );
+
 
       Memory.sell = false;
     }
