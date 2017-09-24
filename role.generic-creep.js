@@ -52,13 +52,13 @@ module.exports = {
 
 		switch (job.type) {
 			case '01aa' : // Fillfrom - 01aa - resource -> harv
-			saytext = '\uD83D\uDCE6\u26CF'; // 📦⛏
+			saytext = '\uD83D\uDD3A\u26A1\u26CF'; // 📦⛏
 			break;
 			case '01dd' :// Fillfrom - 01dd - rec link - upgraders
-			saytext = '\uD83D\uDCE6\uD83D\uDCE1'; // 📦📡
+			saytext = ''; // 📦📡
 			break;
 			case '01hh' :// Fillfrom - 01hh - energy from storage - upgraders
-			saytext = '\uD83D\uDCE6\u26A1\uD83C\uDFE7';
+			saytext = ''; // 📦⚡🏧
 			break;
 			case '01bb' :// Fillfrom - 01bb - energy from container -> deliv or upgrader
 			saytext = '';
