@@ -80,7 +80,7 @@ module.exports = {
         }
       }
       //Game.market.deal(orders[i].id, amountToSell,  Game.spawns[spawn_name].room.name);
-      Memory.sell = false;
+      Memory.findbuyers = false;
     }
 
 
