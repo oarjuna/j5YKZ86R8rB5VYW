@@ -64,21 +64,29 @@ module.exports = {
       const amountToSell = 1000, maxTransferEnergyCost = 400;
       const orders = Game.market.getAllOrders({type: ORDER_BUY, resourceType: RESOURCE_KEANIUM});
 
+
+
+      for(let i=0; i< orders.length; i++) {
+          const transferEnergyCost = Game.market.calcTransactionCost(amountToSell, Game.spawns['Spawn1'].room.name,  orders[i].roomName);
+          orders.transfercost = transferEnergyCost;
+
+          //if(transferEnergyCost < maxTransferEnergyCost &&  orders[i].remainingAmount >= amountToSell ) {
+          //    Log.debug("Possible order: cost: " + transferEnergyCost + " " +  orders[i].id + " price: " +  orders[i].price ,'Market')
+          //  break;
+          //}
+      }
+
       var sorted_orders = orders.sort(function(a, b) {
-        return parseFloat(b.price) - parseFloat(a.price);
+        return parseFloat(b.transfercost) - parseFloat(a.transfercost);
       });
 
-      for(let i=0; i<sorted_orders.length; i++) {
-          const transferEnergyCost = Game.market.calcTransactionCost(
-              amountToSell, Game.spawns['Spawn1'].room.name, sorted_orders[i].roomName);
-
-          if(transferEnergyCost < maxTransferEnergyCost && sorted_orders[i].remainingAmount >= amountToSell ) {
-              //Game.market.deal(orders[i].id, amountToSell,  Game.spawns[spawn_name].room.name);
-              Log.debug("Possible order: cost: " + transferEnergyCost + " " + sorted_orders[i].id + " price: " + sorted_orders[i].price ,'Market')
-
-              break;
-          }
+      if( orders[i].remainingAmount >= amountToSell ) {
+        Log.debug("Possible order: cost: " + transferEnergyCost + " " +  orders[i].id + " price: " +  orders[i].price ,'Market')
+        //break;
       }
+
+
+      //Game.market.deal(orders[i].id, amountToSell,  Game.spawns[spawn_name].room.name);
       Memory.sell = false;
     }
 
