@@ -51,10 +51,41 @@ module.exports = {
 		}
 
 		switch (job.type) {
-			case '01aa' :
+			case '01aa' : // Fillfrom - 01aa - resource -> harv
 			saytext = '\uD83D\uDCE6\u26CF'; // 📦⛏
 			break;
-			
+			case '01dd' :// Fillfrom - 01dd - rec link - upgraders
+			break;
+			case '01hh' :// Fillfrom - 01hh - energy from storage - upgraders
+			break;
+			case '01bb' :// Fillfrom - 01bb - energy from container -> deliv or upgrader
+			break;
+			case '01cc' :// Fillfrom - 01cc - energy from storage   -> deliv
+			break;
+			case '01ff' :// Fillfrom - 01ff - mins from storage     -> deliv
+			break;
+			case '01gg' :// Fillfrom - 01gg - mins from cont       -> deliv
+			break;
+			case '01hh' :// Fillfrom - 01hh - mins from terminal --> deliv
+			break;
+			case '02aa' :// Deliverto - 02aa - energy or mins to closest cont or link - harv
+			break;
+			case '02cc' :// Deliverto - 02cc - energy to spawn or extension - deliv
+			break;
+			case '02dd' :// Deliverto - 02dd - energy to tower - deliv
+			break;
+			case '02ee' :// Deliverto - 02ee - mins to storage - deliv
+			break;
+			case '02ff' :// Deliverto - 02ff - energy to controller - upgrader
+			break;
+			case '02gg' :// Deliverto - 02gg - energy to sending link - deliv
+			break;
+			case '02ii' :// Deliverto - 02ii - energy to storage - deliv
+			break;
+			case '02hh' :// Deliverto - 02hh - mins to term - deliv
+			break;
+			case '02jj' :// Deliverto - 02jj - energy to term - deliv
+			break;
 		}
 
 		// TODO
