@@ -8,7 +8,7 @@ module.exports = {
     var spawn_name = Hive.spawn_names[spawn_num];
 
     // TODO --
-    // Building and Repairing on the queue
+    // Building and Repairing on the queue // TODO 1st!
     // remote harvesting on the queue
     // remote reserving on the queue
     // spawning on the queue
