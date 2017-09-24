@@ -79,7 +79,7 @@ module.exports = {
 			saytext = '\uD83D\uDD3B\uD83D\uDCE6\uD83D\uDCE1'; // 🔻📦📡
 			break;
 			case '02cc' :// Deliverto - 02cc - energy to spawn or extension - deliv
-			saytext = ''; //
+			saytext = '\uD83D\uDD3B\u26A1\uD83D\uDD06'; // 🔻⚡🔆
 			break;
 			case '02dd' :// Deliverto - 02dd - energy to tower - deliv
 			saytext = ''; //
