@@ -64,6 +64,10 @@ module.exports = {
 						creep.travelTo(creep.room.controller);
 				}
 			}
+			// repair stuff
+			else if ( false ) {
+
+			}
 			// drop stuff off
 			else {
 				var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
