@@ -58,7 +58,7 @@ module.exports = {
            creep.travelTo(creep_target);
        }
       }
-
+/*
       // attack containers
       else if ( containers_target != undefined ) {
         console.log(creep + "SOLDIER -- attacking hostile container!" + containers_target);
@@ -66,7 +66,7 @@ module.exports = {
                 creep.travelTo(containers_target);
         }
       }
-
+*/
       // attack spawn or extensions
       else if ( other_target != undefined ) {
         console.log(creep + "SOLDIER -- attacking hostile spawn!" + other_target);
