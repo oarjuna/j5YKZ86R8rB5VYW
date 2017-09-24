@@ -17,6 +17,7 @@
 // Deliverto - 02gg - energy to sending link - deliv
 // Deliverto - 02ii - energy to storage - deliv
 // Deliverto - 02hh - mins to term - deliv
+// Deliverto - 02jj - energy to term - deliv
 
 // ssh -i "screeps-grafana.pem" ubuntu@ec2-34-214-54-56.us-west-2.compute.amazonaws.com
  // sudo screepsplus-agent

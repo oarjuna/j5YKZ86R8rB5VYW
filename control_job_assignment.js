@@ -247,6 +247,7 @@ module.exports = {
           break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           case '02hh': // Deliverto - 02hh - mins to term - deliv
+          case '02jj': // Deliverto - 02hh - energy to term - deliv
           tmpcreep = _.find(Game.creeps, (c) =>
            ( c.memory.birthplace == job.spawn_name ) &&
            ( c.spawning != true ) &&

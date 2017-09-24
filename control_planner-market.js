@@ -36,6 +36,7 @@ module.exports = {
     // 01hh -- mins from terminal -- priority 7
     // 01ff -- mins from storage -- priorty 7
     // 02hh -- mins to terminal -- priority 7
+    // 02?? -- energy to terminal -- priority 7 /// TODO -- next!
 
     if ( Memory.minjob == true ) {
       // Pickup minerals from storage
