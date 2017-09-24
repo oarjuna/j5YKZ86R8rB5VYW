@@ -80,8 +80,8 @@ module.exports = {
         return parseFloat(b.transfercost) - parseFloat(a.transfercost);
       });
 
-      if( orders[i].remainingAmount >= amountToSell ) {
-        Log.debug("Possible order: cost: " + transferEnergyCost + " " +  orders[i].id + " price: " +  orders[i].price ,'Market')
+      if( sorted_orders[i].remainingAmount >= amountToSell ) {
+        Log.debug("Possible order: cost: " + transferEnergyCost + " " +  sorted_orders[i].id + " price: " +  sorted_orders[i].price ,'Market')
         //break;
       }
 
