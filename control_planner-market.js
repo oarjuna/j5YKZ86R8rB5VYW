@@ -48,7 +48,7 @@ module.exports = {
       Hive.memory.job_queue.push(job);
 
       // deliver energy to the terminal
-      var job = new Job('Spawn1','02jj',7,'unassigned','deliverer','default',RESOURCE_ENERGY,Game.time,'','');
+      //var job = new Job('Spawn1','02jj',7,'unassigned','deliverer','default',RESOURCE_ENERGY,Game.time,'','');
       Hive.memory.job_queue.push(job);
 
       // disable this action
