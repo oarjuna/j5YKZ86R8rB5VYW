@@ -82,7 +82,7 @@ module.exports = {
 
       for(let i=0; i< sorted_orders.length; i++) {
         if( sorted_orders[i].remainingAmount >= amountToSell ) {
-          Log.debug("Possible order: cost: " + transferEnergyCost + " " +  sorted_orders[i].id + " price: " +  sorted_orders[i].price ,'Market')
+          Log.debug("Possible order: cost: " + sorted_orders[i].transfercost + " " +  sorted_orders[i].id + " price: " +  sorted_orders[i].price ,'Market')
           //break;
         }
       }
