@@ -35,6 +35,8 @@ module.exports = {
 			else if (creep.memory.working == false && creep.carry.energy == creep.carryCapacity) {
 				creep.memory.working = true;
       }
+
+
 /*
 			// claim the controller if possible
 			if ( creep.room.controller.owner != 'Arjuna') {
@@ -43,21 +45,30 @@ module.exports = {
 				console.log(creep + " claimer -- controller status " + status);
 
 
-				if (status == ERR_NOT_IN_RANGE ) {
-					console.log(creep + " claimer -- claiming ");
-	      	creep.travelTo(creep.room.controller);
-	      }
+
 			}
 */
-	    // harvesting
-
-			if ( harvestSite != undefined  && creep.memory.working == false ) {
+			if ( creep.getActiveBodyparts(CLAIM)) {
+				var status = creep.reserveController(creep.room.controller);
+				if (status == ERR_NOT_IN_RANGE ) {
+					console.log(creep + " claimer -- moving to controller ");
+					creep.travelTo(creep.room.controller);
+				}
+			}
+			// harvesting
+			else if ( harvestSite != undefined  && creep.memory.working == false ) {
 				//console.log(creep + " claimer -- harvesting");
         if ( creep.harvest(harvestSite) == ERR_NOT_IN_RANGE ) {
                 creep.travelTo(harvestSite);
         }
       }
-
+			// construction jobs
+			else if ( constructionSite != undefined  && creep.memory.working == true) {
+				//console.log(creep + " claimer -- building");
+				if ( creep.build(constructionSite) == ERR_NOT_IN_RANGE ) {
+								creep.travelTo(constructionSite);
+				}
+			}
 			// upgrade the controller
 			else if ( creep.room.controller.ticksToDowngrade < 2000  && creep.memory.working == true ) {
 				//console.log(creep + " claimer -- upgrading");
@@ -65,15 +76,6 @@ module.exports = {
 						creep.travelTo(creep.room.controller);
 				}
 			}
-
-			// construction jobs
-      else if ( constructionSite != undefined  && creep.memory.working == true) {
-				//console.log(creep + " claimer -- building");
-        if ( creep.build(constructionSite) == ERR_NOT_IN_RANGE ) {
-                creep.travelTo(constructionSite);
-        }
-			}
-
 			// drop stuff off
 			else {
 				var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {

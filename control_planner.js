@@ -8,7 +8,8 @@ module.exports = {
     var spawn_name = Hive.spawn_names[spawn_num];
 
     // TODO --
-    // mineral hauling on the queue
+    // remote harvesting on the queue
+    // remote reserving on the queue
     // spawning on the queue
     // Building and Repairing on the queue
     // military items on the queue
