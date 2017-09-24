@@ -50,6 +50,13 @@ module.exports = {
 			return;
 		}
 
+		switch (job.type) {
+			case '01aa' :
+			saytext = '\uD83D\uDCE6\u26CF'; // 📦⛏
+			break;
+			
+		}
+
 		// TODO
 		// if the creep is taking damage, it should abandon its job.
 		// idea - move to spawn for recyling when close to death
