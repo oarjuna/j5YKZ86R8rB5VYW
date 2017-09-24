@@ -59,7 +59,7 @@ module.exports = {
       Memory.energyjob = false;
     }
 
-    if ( Memory.sell == true ) {
+    if ( Memory.findbuyers == true ) {
 
       const amountToSell = 1000, maxTransferEnergyCost = 400;
       const orders = Game.market.getAllOrders({type: ORDER_BUY, resourceType: RESOURCE_KEANIUM});
@@ -69,11 +69,6 @@ module.exports = {
       for(let i=0; i< orders.length; i++) {
           const transferEnergyCost = Game.market.calcTransactionCost(amountToSell, Game.spawns['Spawn1'].room.name,  orders[i].roomName);
           orders[i].transfercost = transferEnergyCost;
-
-          //if(transferEnergyCost < maxTransferEnergyCost &&  orders[i].remainingAmount >= amountToSell ) {
-          //    Log.debug("Possible order: cost: " + transferEnergyCost + " " +  orders[i].id + " price: " +  orders[i].price ,'Market')
-          //  break;
-          //}
       }
 
       var sorted_orders = orders.sort(function(a, b) {
@@ -86,15 +81,9 @@ module.exports = {
           //break;
         }
       }
-
       //Game.market.deal(orders[i].id, amountToSell,  Game.spawns[spawn_name].room.name);
       Memory.sell = false;
     }
-
-    // if we need 1000 of a mineral at the terminal
-      // create enough 01ff jobs // 01ff -- mins from storage -- priorty 7
-
-      // create enough 02hh jobs // 02hh -- mins to term -- priority 7
 
 
   } // END MAIN LOGIC
