@@ -45,7 +45,7 @@ module.exports = {
 			return;
 		}
 		else {
-			creep.say('\uD83C\uDFB5'); // 🎵
+			creep.say('\uD83D\uDCA4'); // 💤
 			creep.memory.state = 'idle';
 			return;
 		}
