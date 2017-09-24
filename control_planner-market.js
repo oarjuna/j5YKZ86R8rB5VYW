@@ -38,7 +38,7 @@ module.exports = {
     // 02hh -- mins to terminal -- priority 7
     // 02jj -- energy to terminal -- priority 7
 
-    if ( Memory.minjob == true ) {
+    if ( Memory.minjob == 'ddddd' ) {
       // Pickup minerals from storage
       var job = new Job('Spawn1','01ff',7,'unassigned','deliverer','default',RESOURCE_KEANIUM,Game.time,'','');
       Hive.memory.job_queue.push(job);
