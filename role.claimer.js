@@ -36,7 +36,7 @@ module.exports = {
 						( s.structureType == STRUCTURE_CONTAINER || s.structureType == STRUCTURE_ROAD )
 			});
 
-			//repairSite = undefined;
+			repairSite = undefined;
 
 			// Switch states
 			if (creep.memory.working == true && creep.carry.energy == 0) {
