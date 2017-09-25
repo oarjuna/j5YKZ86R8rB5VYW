@@ -34,19 +34,17 @@ module.exports = {
         }
       }
       else {
-        // find closest source and fill up
-        var source = creep.pos.findClosestByPath(FIND_SOURCES);
+        // find closest container with energy and fill up
+        var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+  	    	filter: (s) =>
+  					(
+  						( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= 100 )
+  	      )});
 
-/*
-        var source = creep.pos.findClosestByPath(FIND_HOSTILE_STRUCTURES, {
-      			filter: (s) => s.structureType==STRUCTURE_STORAGE
-      	});
-*/
-
-        if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
-        //if (creep.withdraw(source, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+        //if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
+        if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
   		    creep.travelTo(source);
-          creep.say("\uD83D\uDE9A.so");
+          creep.say("\uD83D\uDE9A.con");
         }
 
 	    }
