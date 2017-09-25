@@ -6,7 +6,7 @@ module.exports = {
     var gotoFlag = Game.flags[dest_flag];
 
     // are we in the room with the flag?
-    if ( creep.spawning != true && creep.pos.roomName != gotoFlag.pos.roomName && creep.memory.working != true ) {
+    if (creep.pos.roomName != gotoFlag.pos.roomName && creep.memory.working != true ) {
 	     // not in the room with the flag, move towards the flag
 	     creep.travelTo(gotoFlag);
        creep.say("\uD83D\uDE9A.!!");
