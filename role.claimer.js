@@ -33,7 +33,7 @@ module.exports = {
 			var repairSite = creep.pos.findClosestByPath(FIND_STRUCTURES, {
 					filter: (s) =>
 						s.hits < s.hitsMax &&
-						( s.structureType == STRUCTURE_CONTAINER || s.structureType == STRUCTURE_ROAD )
+						( s.structureType == STRUCTURE_CONTAINER  )
 			});
 
 			//repairSite = undefined;
