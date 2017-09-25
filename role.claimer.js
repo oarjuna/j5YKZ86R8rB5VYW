@@ -72,9 +72,8 @@ module.exports = {
 			}
 			// repair stuff
 			else if ( repairSite != undefined && creep.memory.working == true ) {
-				// try to repair it, if it is out of range
 				creep.say('\uD83D\uDEE0\uFE0F'); // 🛠️
-				//  console.log(creep + " -- repairer --repair -- " + structure );
+				console.log(creep + " -- repairer --repair -- " + repairSite );
 				if (creep.repair(repairSite) == ERR_NOT_IN_RANGE) {
 					creep.travelTo(repairSite);
 				}
