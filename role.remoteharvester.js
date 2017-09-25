@@ -43,7 +43,7 @@ module.exports = {
 	    creep.say("\uD83D\uDE9A.st");
             creep.travelTo(structure);
           }
-
+	}
       }
       else {
         // find closest container with energy and fill up
