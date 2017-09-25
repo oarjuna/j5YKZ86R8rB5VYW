@@ -48,10 +48,10 @@ module.exports = {
 				}
 			}
 			// harvesting
-			else if ( harvestSite != undefined  && creep.memory.working == false ) {
+			else if ( harvestSite[0] != undefined  && creep.memory.working == false ) {
 				//console.log(creep + " claimer -- harvesting");
-        if ( creep.harvest(harvestSite) == ERR_NOT_IN_RANGE ) {
-                creep.travelTo(harvestSite);
+        if ( creep.harvest(harvestSite[0]) == ERR_NOT_IN_RANGE ) {
+                creep.travelTo(harvestSite[0]);
         }
       }
 			// construction jobs
