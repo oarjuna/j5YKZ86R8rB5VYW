@@ -27,11 +27,10 @@ module.exports = {
 			});
 
 			var repairSite = creep.pos.findInRange(FIND_STRUCTURES, 1, {
-					filter: (s) =>
-						( s.structureType == STRUCTURE_CONTAINER && s.hits < 210000 )
+				filter: (s) =>
+				( s.structureType == STRUCTURE_CONTAINER && s.hits < 210000 )
 			});
 
-			//repairSite = undefined;
 
 			// Switch states
 			if (creep.memory.working == true && creep.carry.energy == 0) {
@@ -69,14 +68,16 @@ module.exports = {
 						creep.travelTo(creep.room.controller);
 				}
 			}
+
 			// repair stuff
 			else if ( ( repairSite != undefined  || repairSite != null ) && creep.memory.working == true ) {
 				creep.say('\uD83D\uDEE0\uFE0F'); // 🛠️
-				console.log(creep + " -- repairer --repair -- " + repairSite );
+				console.log(creep + " -- repairer --repair --" + repairSite + "--");
 				if (creep.repair(repairSite) == ERR_NOT_IN_RANGE) {
 					creep.travelTo(repairSite);
 				}
 			}
+
 			// drop stuff off
 			else {
 				var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
@@ -84,7 +85,7 @@ module.exports = {
 					( s.structureType==STRUCTURE_SPAWN && s.energy < s.energyCapacity ) ||
 					( s.structureType==STRUCTURE_EXTENSION && s.energy < s.energyCapacity ) ||
 					( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] < s.storeCapacity )
-          });
+         		 });
 
 				//console.log(creep + " claimer -- transfering energy.");
         if ( creep.transfer(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE ) {
