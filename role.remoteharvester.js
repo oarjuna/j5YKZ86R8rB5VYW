@@ -23,15 +23,27 @@ module.exports = {
     	}
 
     if (creep.memory.working == true) {
+
         // drop off
         var container = creep.memory.return_id;
         var structure = Game.getObjectById(container);
-    	var action_status = creep.transfer(structure, RESOURCE_ENERGY);
 
-      	if (action_status == ERR_NOT_IN_RANGE) {
-	  creep.say("\uD83D\uDE9A.st");
-          creep.travelTo(structure);
-        }
+        var repairSite = creep.pos.findInRange(FIND_STRUCTURES, 1, {
+            filter: (s) =>
+            ( s.structureType == STRUCTURE_ROAD && s.hits < 4000 )
+        });
+
+	if ( repairSite[0] != undefined ) {
+	  creep.say('\uD83D\uDEE0\uFE0F'); // 🛠️
+	  creep.repair(repairSite);		
+	}
+	else {
+    	  var action_status = creep.transfer(structure, RESOURCE_ENERGY);
+      	  if (action_status == ERR_NOT_IN_RANGE) {
+	    creep.say("\uD83D\uDE9A.st");
+            creep.travelTo(structure);
+          }
+
       }
       else {
         // find closest container with energy and fill up
