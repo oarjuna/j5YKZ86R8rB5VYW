@@ -22,14 +22,14 @@ module.exports = {
         creep.memory.working = true;
     	}
 
-    	 if (creep.memory.working == true) {
+    if (creep.memory.working == true) {
         // drop off
         var container = creep.memory.return_id;
         var structure = Game.getObjectById(container);
-    		var action_status = creep.transfer(structure, RESOURCE_ENERGY);
+    	var action_status = creep.transfer(structure, RESOURCE_ENERGY);
 
       	if (action_status == ERR_NOT_IN_RANGE) {
-				  creep.say("\uD83D\uDE9A.st");
+	  creep.say("\uD83D\uDE9A.st");
           creep.travelTo(structure);
         }
       }
