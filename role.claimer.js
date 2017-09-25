@@ -20,9 +20,11 @@ module.exports = {
 
 			// look for stuff to do
 			var constructionSite = creep.pos.findClosestByPath(FIND_MY_CONSTRUCTION_SITES);
-                        var repairStructure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
-                                filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
-                        });
+
+      var repairStructure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
+              filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
+      });
+
 			var harvestSite = creep.pos.findClosestByPath(FIND_SOURCES, {
 							filter: (s) => s.energy > 0
 
@@ -73,7 +75,7 @@ module.exports = {
 				}
 			}
 			// repair stuff
-			else if ( repairSite != undefined ) {
+			else if ( repairSite != undefined && creep.memory.working == true ) {
 				// try to repair it, if it is out of range
 				creep.say('\uD83D\uDEE0\uFE0F'); // 🛠️
 				//  console.log(creep + " -- repairer --repair -- " + structure );
