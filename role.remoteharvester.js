@@ -30,7 +30,7 @@ module.exports = {
 
         var repairSite = creep.pos.findInRange(FIND_STRUCTURES, 1, {
             filter: (s) =>
-            ( s.structureType == STRUCTURE_ROAD && s.hits < 4000 )
+            ( s.structureType == STRUCTURE_ROAD && s.hits < s.hitsMax )
         });
 
 	if ( repairSite[0] != undefined ) {
