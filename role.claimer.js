@@ -70,7 +70,7 @@ module.exports = {
 			}
 
 			// repair stuff
-			else if ( ( repairSite != undefined  || repairSite != null ) && creep.memory.working == true ) {
+			else if ( ( repairSite != undefined  || repairSite != '' ) && creep.memory.working == true ) {
 				creep.say('\uD83D\uDEE0\uFE0F'); // 🛠️
 				console.log(creep + " -- repairer --repair --" + repairSite + "--");
 				if (creep.repair(repairSite) == ERR_NOT_IN_RANGE) {
