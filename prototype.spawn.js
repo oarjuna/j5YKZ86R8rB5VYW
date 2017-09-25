@@ -95,7 +95,12 @@ module.exports = function() {
                   CARRY, CARRY, CARRY, CARRY ];                  // 200
       }  // 900
 
-      else if (roleName == "remote_harv") { var body = [ WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; } // 700 }
+      else if (roleName == "remote_harv")  {
+          var body = [
+            MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE,           // 400
+            CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY ];                  // 400
+          }  // 800
+
       else if (roleName == "claimer")     { var body = [ CLAIM, CLAIM, MOVE, MOVE ];  } //  1350 }
       else if (roleName == "claimer_reg") { var body = [  WORK, WORK, WORK, WORK, WORK,  //500
                                                           MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, //350
