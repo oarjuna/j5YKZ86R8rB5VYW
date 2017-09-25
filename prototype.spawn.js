@@ -97,6 +97,7 @@ module.exports = function() {
 
       else if (roleName == "remote_harv")  {
           var body = [
+	    WORK, WORK, 
             MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE,           // 400
             CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY ];                  // 400
           }  // 800
