@@ -35,6 +35,7 @@ module.exports = {
 
 	if ( repairSite[0] != undefined ) {
 	  creep.say('\uD83D\uDEE0\uFE0F'); // 🛠️
+          console.log(creep + " -- repairer --repair --" + repairSite[0] + "--");
 	  creep.repair(repairSite[0]);		
 	}
 	else {
