@@ -35,7 +35,7 @@ module.exports = {
 
 	if ( repairSite[0] != undefined ) {
 	  creep.say('\uD83D\uDEE0\uFE0F'); // 🛠️
-	  creep.repair(repairSite);		
+	  creep.repair(repairSite[0]);		
 	}
 	else {
     	  var action_status = creep.transfer(structure, RESOURCE_ENERGY);
