@@ -28,7 +28,7 @@ module.exports = {
         var container = creep.memory.return_id;
         var structure = Game.getObjectById(container);
 
-        var repairSite = creep.pos.findInRange(FIND_STRUCTURES, 0, {
+        var repairSite = creep.pos.findInRange(FIND_STRUCTURES, 1, {
             filter: (s) =>
             ( s.structureType == STRUCTURE_ROAD && s.hits < s.hitsMax ) ||
             ( s.structureType == STRUCTURE_CONTAINER && s.hits < s.hitsMax ) 
