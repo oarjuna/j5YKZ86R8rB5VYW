@@ -30,7 +30,8 @@ module.exports = {
 
         var repairSite = creep.pos.findInRange(FIND_STRUCTURES, 0, {
             filter: (s) =>
-            ( s.structureType == STRUCTURE_ROAD && s.hits < s.hitsMax )
+            ( s.structureType == STRUCTURE_ROAD && s.hits < s.hitsMax ) ||
+            ( s.structureType == STRUCTURE_CONTAINER && s.hits < s.hitsMax ) 
         });
 
 	if ( creep.getActiveBodyparts(WORK) && repairSite[0] != undefined ) {
@@ -51,7 +52,7 @@ module.exports = {
         var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
   	    	filter: (s) =>
   					(
-  						( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= 100 )
+	( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= 100 )
   	      )});
 
         //if (creep.harvest(source) == ERR_NOT_IN_RANGE) {

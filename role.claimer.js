@@ -28,7 +28,7 @@ module.exports = {
 
 			var repairSite = creep.pos.findInRange(FIND_STRUCTURES, 1, {
 				filter: (s) =>
-				( s.structureType == STRUCTURE_CONTAINER && s.hits < 210000 )
+				( s.structureType == STRUCTURE_CONTAINER && s.hits < 10000 )
 			});
 
 
