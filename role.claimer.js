@@ -41,7 +41,7 @@ module.exports = {
       }
 
 			if ( creep.getActiveBodyparts(CLAIM) ) {
-				var status = creep.claimController(creep.room.controller);				
+				var status = creep.claimController(creep.room.controller);
 //				var status = creep.reserveController(creep.room.controller);
 				if (status == ERR_NOT_IN_RANGE ) {
 					console.log(creep + " claimer -- moving to controller ");
@@ -71,7 +71,7 @@ module.exports = {
 			}
 
 			// repair stuff
-			else if ( ( repairSite[0] != undefined  || repairSite != '' ) && creep.memory.working == true ) {
+			else if ( ( repairSite[0] != undefined ) && creep.memory.working == true ) {
 				creep.say('\uD83D\uDEE0\uFE0F'); // 🛠️
 				console.log(creep + " -- repairer --repair --" + repairSite[0] + "--");
 				if (creep.repair(repairSite[0]) == ERR_NOT_IN_RANGE) {
