@@ -30,6 +30,14 @@ module.exports = {
 			// get the dest object object
 			var dest_obj =Game.getObjectById(job.dest_id);
 
+			if ( dest_obj == undefined ) {
+				Log.warn(creep + " dest_obj undefined!" );
+				creep.memory.job = undefined;
+				creep.memory.state = 'idle';
+				job.state = 'abandoned';
+				return;
+			}
+
 			if ( creep.ticksToLive < 10 ) {
 				creep.say('\uD83D\uDC80'); // 💀
 				creep.memory.job = undefined;
