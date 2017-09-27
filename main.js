@@ -127,38 +127,43 @@ Creep.prototype.hasActiveBodypart = function (type) {
 };
 
   var Hive = {
-    spawn_names: ['Spawn1','Spawn2','Spawn3','Spawn4'],
+    spawn_names: ['Spawn1','Spawn2','Spawn3','Spawn4','Spawn5'], // The master spawner for each room
     spawn_levels:
                 //  Harvest, Deliv, Upgrade, Build, Energy, RemoteHarv, Claim, Soldier, Repair, Sol-M ,Sol-R, Sol-H
                 [// H  D  U  B Cr  Rh C  S  R Sm Sr SH
                   [ 3, 2, 2, 1, 1, 0, 0, 1, 0, 0, 0, 0], // Spawn1
                   [ 3, 2, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0], // Spawn2
                   [ 2, 3, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0], // Spawn3
-                  [ 3, 2, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0]  // Spawn4
+                  [ 3, 2, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0],  // Spawn4
+                  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]  // Spawn4
                 ],
     sources:    [
                   [ '5873bcc211e3e4361b4d81ec','5873bcc211e3e4361b4d81ed','5873c16c63ad7a7555b7b2e1'], // Spawn1
                   [ '5873bcc511e3e4361b4d822e','5873bcc511e3e4361b4d822f','5873c16d63ad7a7555b7b2f3'], // Spawn2
                   [ '5873bcc711e3e4361b4d827e','5873bcc711e3e4361b4d827f','5873c16d63ad7a7555b7b302'], // Spawn3
-                  [ '5873bcc911e3e4361b4d82e1','5873bcc911e3e4361b4d82e2','5873c16d63ad7a7555b7b30f']  // Spawn4
+                  [ '5873bcc911e3e4361b4d82e1','5873bcc911e3e4361b4d82e2','5873c16d63ad7a7555b7b30f'],  // Spawn4
+                  [ '0000','0000','0000']  // Spawn5
                 ],
     harvs_per_source: [
                         [1,1,1], // Spawn1
                         [1,1,1], // Spawn2
                         [1,1,0], // Spawn3
-                        [1,1,1]  // Spawn4
+                        [1,1,1],  // Spawn4
+                        [0,0,0]  // Spawn5
                       ],
     links: [
             ['59c1cd62baf545049a7066d6','59a446a802722c0fd674afdf','59c30d1d69240636945779e5'], // Spawn1
             ['59a76b55b9e281705d3b9dea','59c1bae1b3aa556157a63c16'], // Spawn2
             ['59ad5f7548ab72269b30f527','59ad81d6cdfbbf72a0df0c3a','59c1f937b7d6df67346825d5'], // Spawn3
             ['59c1c1911a916c343fd50d4a','59c1bc24b983a432a49d6461'], // Spawn4
+            ['0000','000'] // Spawn5
           ],
     receiving_link: [
                     '59a446a802722c0fd674afdf', // Spawn1
                     '59a76b55b9e281705d3b9dea', // Spawn2
                     '59ad81d6cdfbbf72a0df0c3a', // Spawn3
-                    '59c1bc24b983a432a49d6461' // Spawn4
+                    '59c1bc24b983a432a49d6461', // Spawn4
+                    '00000' // Spawn5
                   ],
     military_squad : [],
     job_queue : [],
