@@ -83,9 +83,9 @@ module.exports = {
 			else {
 				var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
 					filter: (s) =>
+					( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] < s.storeCapacity ) ||
 					( s.structureType==STRUCTURE_SPAWN && s.energy < s.energyCapacity ) ||
-					( s.structureType==STRUCTURE_EXTENSION && s.energy < s.energyCapacity ) ||
-					( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] < s.storeCapacity )
+					( s.structureType==STRUCTURE_EXTENSION && s.energy < s.energyCapacity )
          		 });
 
 				//console.log(creep + " claimer -- transfering energy.");
