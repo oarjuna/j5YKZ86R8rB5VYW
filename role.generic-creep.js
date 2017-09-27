@@ -47,6 +47,7 @@ module.exports = {
 			}
 
 			if ( job.type == '02ii' && dest_obj.structureType == STRUCTURE_CONTROLLER ) {
+				Log.debug(creep + "here !! ",'Generic');
 				job.type = '02ff';
 			}
 
