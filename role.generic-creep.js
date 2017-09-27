@@ -46,7 +46,7 @@ module.exports = {
 				return;
 			}
 
-			if ( job.type = '02ii' && dest_obj.structureType == STRUCTURE_CONTROLLER ) {
+			if ( job.type == '02ii' && dest_obj.structureType == STRUCTURE_CONTROLLER ) {
 				job.type = '02ff';
 			}
 
