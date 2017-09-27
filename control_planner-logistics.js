@@ -242,7 +242,7 @@ module.exports = {
    if ( Game.spawns[spawn_name].room.storage ) { var storage = Game.spawns[spawn_name].room.storage.id; }
   else { var storage = Game.spawns[spawn_name].room.controller.id; }
 
-  Log.debug("STOR " + Game.spawns[spawn_name].room.controller.id,'Planner');
+  Log.debug("STOR " + " " + spawn_name + " " + Game.spawns[spawn_name].room.controller.id,'Planner');
 
     //Log.debug("Hive " + deliv_job_count.length + "/" + Hive.spawn_levels[spawn_num][1],'Planner');
 
