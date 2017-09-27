@@ -47,7 +47,7 @@ module.exports = {
 			}
 
 			if ( job.type == '02ii' && dest_obj.structureType == STRUCTURE_CONTROLLER ) {
-				Log.debug(creep + "here !! ",'Generic');
+				Log.warn(creep + " no storage, changing to 02ff !! ",'Generic');
 				job.type = '02ff';
 			}
 
