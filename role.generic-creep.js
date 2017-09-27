@@ -46,6 +46,10 @@ module.exports = {
 				return;
 			}
 
+			if ( job.type = '02ii' && dest_obj.structureType == STRUCTURE_CONTROLLER ) {
+				job.type = '02ff';
+			}
+
 			//console.log("GEN: " + type + " " + type2 + " " + type3 + " " +  job.dest_id);
 		}
 		else if ( creep.memory.state == 'ttdie' ) {
