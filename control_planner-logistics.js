@@ -77,7 +77,7 @@ module.exports = {
             res_check = x.store[res];
           }
 
-          Log.debug("Res: " + res + " res_list " + res_list[0] + " res_check " + res_check,'Planner');
+          Log.debug("Res: " + res + " " + spawn_name + " res_list " + res_list[0] + " res_check " + res_check,'Planner');
 
           if (
             ( x.structureType == STRUCTURE_LINK && res_check > 0 && res == RESOURCE_ENERGY ) ||
