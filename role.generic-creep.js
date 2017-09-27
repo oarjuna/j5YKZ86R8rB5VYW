@@ -3,7 +3,7 @@ module.exports = {
 
 //		return;
 		//Log.debug(creep + " GEN: " + creep.memory.job + " TTL " + creep.ticksToLive);
-		var spawn_name = Hive.spawn_names[spawn_num];
+		//var spawn_name = Hive.spawn_names[spawn_num];
 
 		if ( creep.memory.job != undefined) {
 			// set state to working
@@ -47,8 +47,8 @@ module.exports = {
 				return;
 			}
 
-			Log.debug(spawn_name + " " +  creep + " dest obj type " + dest_obj.structureType);
-			
+			//Log.debug(spawn_name + " " +  creep + " dest obj type " + dest_obj.structureType);
+
 			if ( job.type == '02ii' && dest_obj.structureType == STRUCTURE_CONTROLLER ) {
 				Log.warn(creep + " no storage, changing to 02ff !! ",'Generic');
 				job.type = '02ff';
