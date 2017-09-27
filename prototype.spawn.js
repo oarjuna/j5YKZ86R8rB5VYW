@@ -15,7 +15,7 @@ module.exports = function() {
     else if ( birthplace == 'Spawn2' && roleName == 'harvester') { var ryantest = true; }
     else if ( birthplace == 'Spawn3' && roleName == 'harvester') { var ryantest = true; }
     else if ( birthplace == 'Spawn4' && roleName == 'harvester') { var ryantest = true; }
-//    else if ( birthplace == 'Spawn4' && roleName == 'harvester') { var ryantest = true; }
+    else if ( birthplace == 'Spawn4' && roleName == 'harvester') { var ryantest = true; }
 
 
     else if ( birthplace == 'Spawn1' && roleName == 'deliverer') { var ryantest = true; }
