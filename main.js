@@ -314,8 +314,8 @@ console.log("------ START ------");
 
 
  //if ( job.type == '02jj' || job.type == '01ff' || job.type == '01hh' || job.type == '02hh' || job.type == '02ee' || job.type == '01gg') {
-  if ( job.id == '41e20273-593d') {
-     Log.info(job.id + " @ " + job.spawn_name + "\tp: " + job.priority + "\tt: " + j_type + "\td: " + job.type  + "\ttq " + ( Game.time - job.tick_issued) + "\tcr: " + name + " X: " + job.extra ,'Queue');
+  if ( assigned_creep.id == 'Nora') {
+     Log.info(job.assigned_creep + " @ " + job.spawn_name + "\tp: " + job.priority + "\tt: " + j_type + "\td: " + job.type  + "\ttq " + ( Game.time - job.tick_issued) + "\tcr: " + name + " X: " + job.extra ,'Queue');
     }
   }
   console.log("------ END ------");
