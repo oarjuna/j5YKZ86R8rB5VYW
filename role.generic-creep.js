@@ -19,6 +19,8 @@ module.exports = {
 				return;
 			}
 
+			// get the dest object object
+			var dest_obj =Game.getObjectById(job.dest_id);
 			//Log.debug("GEN: " + job.id + " ttl: " + creep.ticksToLive  +  " jst: " + job.state,'Generic' );
 			//Log.debug(creep + " dest obj type " + dest_obj.structureType);
 
@@ -34,8 +36,6 @@ module.exports = {
 			// job specfic changes
 			if ( job.type == '01aa') { job.dest_id = creep.memory.destid; }
 
-			// get the dest object object
-			var dest_obj =Game.getObjectById(job.dest_id);
 
 			if ( dest_obj == undefined ) {
 				Log.warn(creep + " dest_obj undefined!" );
