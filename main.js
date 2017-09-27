@@ -172,13 +172,15 @@ Creep.prototype.hasActiveBodypart = function (type) {
                           '400', // Spawn1
                           '400', // Spawn2
                           '400', // Spawn3
-                          '400'  // Spawn4
+                          '400',  // Spawn4
+                          '100' // Spawn5
     ],
     upgrader_carry_cap : [
                           '100', // Spawn1
                           '100', // Spawn2
                           '100', // Spawn3
-                          '100'  // Spawn4
+                          '100',  // Spawn4
+                          '100' // SPawn5
     ]
   };
 
