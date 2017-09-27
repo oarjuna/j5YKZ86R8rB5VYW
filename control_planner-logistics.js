@@ -289,7 +289,7 @@ module.exports = {
     );});
 
     if ( Game.spawns[spawn_name].room.storage ) { var storage = Game.spawns[spawn_name].room.storage.id; }
-   else { var storage = undefined;}
+    else { var storage = undefined;}
 
     if ( deliv_job_count < Hive.spawn_levels[spawn_num][1] ) {
       var job = new Job(spawn_name,'01cc',10,'unassigned','deliverer',storage,RESOURCE_ENERGY,Game.time,'','');
