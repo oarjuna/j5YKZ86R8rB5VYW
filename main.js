@@ -135,7 +135,7 @@ Creep.prototype.hasActiveBodypart = function (type) {
                   [ 3, 2, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0], // Spawn2
                   [ 2, 3, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0], // Spawn3
                   [ 3, 2, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0],  // Spawn4
-                  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]  // Spawn4
+                  [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]  // Spawn4
                 ],
     sources:    [
                   [ '5873bcc211e3e4361b4d81ec','5873bcc211e3e4361b4d81ed','5873c16c63ad7a7555b7b2e1'], // Spawn1
@@ -258,6 +258,7 @@ console.log("------ START ------");
   roleSpawn.run(1,Hive);
   roleSpawn.run(2,Hive);
   roleSpawn.run(3,Hive);
+  roleSpawn.run(4,Hive);
 
 
   console.log("#-------------------------------------------------------#  H, U, De, B,  R,  RH, C, CR, S");
@@ -266,6 +267,7 @@ console.log("------ START ------");
   gameStatus.display_status(1,Hive);
 	gameStatus.display_status(2,Hive);
   gameStatus.display_status(3,Hive);
+  gameStatus.display_status(4,Hive);
 
 /*
   // display the job queue
