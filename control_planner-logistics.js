@@ -240,7 +240,7 @@ module.exports = {
 
      // only if there are no other energy needing jobs
    if ( Game.spawns[spawn_name].room.storage ) { var storage = Game.spawns[spawn_name].room.storage.id; }
-  else { var storage = undefined;}
+  else { var storage = Game.spawns[spawn_name].room.controller.id; }
 
     //Log.debug("Hive " + deliv_job_count.length + "/" + Hive.spawn_levels[spawn_num][1],'Planner');
 
