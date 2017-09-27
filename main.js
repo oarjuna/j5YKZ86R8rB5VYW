@@ -312,6 +312,7 @@ console.log("------ START ------");
   if ( type2 == '01') { j_type = 'Fillfrom'; }
   else if ( type2 == '02' ) { j_type = 'Deliver'; }
 
+  //var name = Game.getObjectById(job.assigned_creep);
 
  //if ( job.type == '02jj' || job.type == '01ff' || job.type == '01hh' || job.type == '02hh' || job.type == '02ee' || job.type == '01gg') {
   if ( job.spawn_name == 'Spawn5') {
