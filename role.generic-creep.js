@@ -110,7 +110,7 @@ module.exports = {
 		// idea - move to spawn for recyling when close to death
 
 		// if the dest_obj in range // range is diff for controllers
-		if ( dest_obj.structureType == STRUCTURE_CONTROLLER) { var range = 3; }
+		if ( dest_obj != undefined && dest_obj.structureType == STRUCTURE_CONTROLLER) { var range = 3; }
 		else { var range = 1; }
 
 		if(creep.pos.inRangeTo(dest_obj,range)) { 	// harvest/transfer/withdraw/upgrade/repair dest_obj
