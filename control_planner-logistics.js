@@ -265,10 +265,10 @@ module.exports = {
      // only if there are no other energy needing jobs
 
      if ( Game.spawns[spawn_name].room.storage ) { var storage = Game.spawns[spawn_name].room.storage.id; }
-    else { var storage = undefined;}
+    else { var storage = undefined; }
     //Log.debug("Hive " + deliv_job_count.length + "/" + Hive.spawn_levels[spawn_num][1],'Planner');
 
-    if ( deliv_job_count.length < 2 ) {
+    if ( deliv_job_count.length < 2 && storage != undefined ) {
      var job = new Job(spawn_name,'02ee',10,'unassigned','deliverer',storage,'',Game.time,'','');
      Hive.memory.job_queue.push(job);
      Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
