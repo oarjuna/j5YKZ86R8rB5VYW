@@ -23,7 +23,7 @@ module.exports = {
 			var dest_obj =Game.getObjectById(job.dest_id);
 
 			// job specfic oddness
-			
+
 			// drop off at storage in rooms without storage
 			if ( job.type == '02ii' && dest_obj.structureType == STRUCTURE_CONTROLLER ) {
 				Log.warn(creep + " no storage, changing to 02ff !! ",'Generic');
@@ -32,7 +32,7 @@ module.exports = {
 
 			// harvesting jobs
 			if ( job.type == '01aa') {
-				Log.warn(creeFp + " 01aa !! ",'Generic');
+				Log.warn(creep + " 01aa !! ",'Generic');
 				job.dest_id = creep.memory.destid;
 				var dest_obj =Game.getObjectById(job.dest_id);
 
