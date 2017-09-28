@@ -29,7 +29,10 @@ module.exports = {
 				job.type = '02ff';
 			}
 			// job specfic changes
-			if ( job.type == '01aa') { job.dest_id = creep.memory.destid; }
+			if ( job.type == '01aa') {
+				Log.warn(creep + " 01aa !! ",'Generic');
+				job.dest_id = creep.memory.destid;
+			}
 
 			var type = job.type;
 			var type2 = type.slice(0,2);
