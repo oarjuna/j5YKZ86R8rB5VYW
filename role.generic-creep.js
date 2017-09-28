@@ -50,7 +50,7 @@ module.exports = {
 				return;
 			}
 
-			if ( creep.ticksToLive < 10 ) {
+			if ( creep.ticksToLive < 4 ) {
 				creep.say('\uD83D\uDC80'); // 💀
 				creep.memory.job = undefined;
 				creep.memory.state = 'ttdie';
