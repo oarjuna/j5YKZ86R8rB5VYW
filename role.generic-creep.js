@@ -30,7 +30,7 @@ module.exports = {
 			}
 			// job specfic changes
 			if ( job.type == '01aa') { job.dest_id = creep.memory.destid; }
-			
+
 			var type = job.type;
 			var type2 = type.slice(0,2);
 			var type3 = type.slice(2);
@@ -136,9 +136,8 @@ module.exports = {
 				if ( type3 == 'aa') { // from source == harvest
 					//creep.say('\u26CF'); //  ⛏
 					creep.harvest(dest_obj);
-
 					if ( _.sum(creep.carry) == creep.carryCapacity  ) { var complete = true; }
-
+					Log.debug(creep + " harvest !",'Generic');
 				}
 				else { // everything else uses withdraw
 					//creep.say('\uD83D\uDD3A'); // 🔺
