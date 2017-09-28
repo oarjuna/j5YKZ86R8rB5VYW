@@ -80,11 +80,11 @@ module.exports = {
         console.log(spawn_name + " -- spawning deliverer");
         name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'deliverer',Hive.receiving_link[spawn_num],spawn_name);
     }
-   // if not enough regular claimers
+   // if not enough  claimers w/ claim parts
     else if (numClReg < MinClReg) {
       console.log(spawn_name + " -- spawning claimer_Reg");
       var return_id =  Game.spawns[spawn_name].room.storage.id;
-      name =Game.spawns[spawn_name].createCustomCreep(energy_avail,'claimer_reg','CFlag1',spawn_name);
+      name =Game.spawns[spawn_name].createCustomCreep(energy_avail,'claimer_reg',spawn_name+'ClaimFlag',spawn_name);
     }
     // if not enough soldiers
     else if (numSold < MinSold) {
@@ -128,7 +128,7 @@ module.exports = {
         name =Game.spawns[spawn_name].createCustomCreep(energy_avail,'remote_harv',dest,spawn_name,return_id);
     }
 
-        // claimers
+        // claimers w/o claim parts. remote general workers
     else if (numClai < MinClai) {
         // count the number of claimers per flag
         var c_flag1 = _.sum(Game.creeps,(c) => c.memory.role == 'claimer' && c.memory.destid == 'CFlag1');
