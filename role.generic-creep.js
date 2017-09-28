@@ -30,7 +30,7 @@ module.exports = {
 			}
 			// job specfic changes
 			if ( job.type == '01aa') {
-				Log.warn(creep + " 01aa !! ",'Generic');
+				Log.warn(creeFp + " 01aa !! ",'Generic');
 				job.dest_id = creep.memory.destid;
 				var dest_obj =Game.getObjectById(job.dest_id);
 
@@ -39,8 +39,6 @@ module.exports = {
 			var type = job.type;
 			var type2 = type.slice(0,2);
 			var type3 = type.slice(2);
-
-
 
 			if ( dest_obj == undefined ) {
 				Log.warn(creep + " dest_obj undefined!" );
@@ -57,10 +55,6 @@ module.exports = {
 				job.state = 'abandoned';
 				return;
 			}
-
-
-
-			console.log("GEN: " + type + " " + type2 + " " + type3 + " " +  job.dest_id);
 		}
 		else if ( creep.memory.state == 'ttdie' ) {
 			creep.say('\uD83D\uDC80'); // 💀
