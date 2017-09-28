@@ -22,7 +22,8 @@ module.exports = {
 			// get the dest object object
 			var dest_obj =Game.getObjectById(job.dest_id);
 
-			// job specfic changes
+			// job specfic oddness
+			
 			// drop off at storage in rooms without storage
 			if ( job.type == '02ii' && dest_obj.structureType == STRUCTURE_CONTROLLER ) {
 				Log.warn(creep + " no storage, changing to 02ff !! ",'Generic');
