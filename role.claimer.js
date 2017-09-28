@@ -4,7 +4,6 @@ module.exports = {
 
 		// get your assignment
     var dest_key = creep.memory.destid;
-		var spawn_name = creep.memory.birthplace;
     if ( dest_key == 'CFlag1') {  var gotoFlag = Game.flags.CFlag1; }
     else if ( dest_key == 'CFlag2') {  var gotoFlag = Game.flags.CFlag2; }
     else if ( dest_key == 'CFlag3') {  var gotoFlag = Game.flags.CFlag3; }
