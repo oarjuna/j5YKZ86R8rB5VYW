@@ -41,8 +41,8 @@ module.exports = {
       }
 
 			if ( creep.getActiveBodyparts(CLAIM) ) {
-				var status = creep.claimController(creep.room.controller);
-//				var status = creep.reserveController(creep.room.controller);
+//				var status = creep.claimController(creep.room.controller);
+				var status = creep.reserveController(creep.room.controller);
 				if (status == ERR_NOT_IN_RANGE ) {
 					console.log(creep + " claimer -- moving to controller ");
 					creep.travelTo(creep.room.controller);
