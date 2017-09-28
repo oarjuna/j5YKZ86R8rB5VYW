@@ -32,7 +32,7 @@ module.exports = {
 
 			// harvesting jobs
 			if ( job.type == '01aa') {
-				Log.warn(creep + " 01aa !! ",'Generic');
+				//Log.warn(creep + " 01aa !! ",'Generic');
 				job.dest_id = creep.memory.destid;
 				var dest_obj =Game.getObjectById(job.dest_id);
 
