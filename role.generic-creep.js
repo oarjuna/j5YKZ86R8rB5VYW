@@ -26,7 +26,7 @@ module.exports = {
 
 			// drop off at storage in rooms without storage
 			if ( job.type == '02ii' && dest_obj.structureType == STRUCTURE_CONTROLLER ) {
-				Log.warn(creep + " no storage, changing to 02ff !! ",'Generic');
+				Log.warn(creep + " no storage in this room, changing to 02ff !! ",'Generic');
 				job.type = '02ff';
 			}
 
