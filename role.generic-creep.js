@@ -25,7 +25,7 @@ module.exports = {
 			// job specfic oddness
 
 			// drop off at storage in rooms without storage
-			if ( job.type == '02ii' && dest_obj.structureType == STRUCTURE_CONTROLLER ) {
+			if ( job.type == '02ii' && dest_obj.structureType == STRUCTURE_CONTROLLER && creep.getActiveBodyparts(WORK) ) {
 				Log.warn(creep + " no storage in this room, changing to 02ff !! ",'Generic');
 				job.type = '02ff';
 			}
