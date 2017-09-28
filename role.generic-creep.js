@@ -51,6 +51,8 @@ module.exports = {
 			}
 
 			if ( creep.ticksToLive < 4 ) {
+					// TODO -- they should deposit anything they are carrying
+					// TODO -- and try to get to someplace to be recycled if possible.
 				creep.say('\uD83D\uDC80'); // 💀
 				creep.memory.job = undefined;
 				creep.memory.state = 'ttdie';
