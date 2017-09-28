@@ -11,10 +11,8 @@ module.exports = {
     else if ( dest_key == 'CFlag4') {  var gotoFlag = Game.flags.CFlag4; }
     else if ( dest_key == 'CFlag5') {  var gotoFlag = Game.flags.CFlag5; }
 
-		else if ( dest_key == spawn_name+'ClaimFlag' ) { var gotoFlag = Game.flags.spawn_name+'ClaimFlag'; }
-
 		// are we in the room with the flag?
-		if (creep.pos.roomName != gotoFlag.pos.roomName ) {
+		if ( creep.pos.roomName != gotoFlag.pos.roomName ) {
 			// No
 			moveStatus = creep.travelTo(gotoFlag);
 		}
