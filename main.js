@@ -315,10 +315,10 @@ console.log("------ START ------");
   //var name = Game.getObjectById(job.assigned_creep);
 
  //if ( job.type == '02jj' || job.type == '01ff' || job.type == '01hh' || job.type == '02hh' || job.type == '02ee' || job.type == '01gg') {
-//  if ( job.id == 'caf2ee47-a694') {
-  //   Log.info(job.assigned_creep + " @ " + job.spawn_name + "\tp: " + job.priority + "\tt: " + j_type + "\td: " + job.type  + "\ttq " + ( Game.time - job.tick_issued) + "\tcr: " + name + " X: " + job.extra ,'Queue');
+  if ( job.type == '02ff' && job.spawn_name == 'Spawn5') {
+     Log.info(job.assigned_creep + " @ " + job.spawn_name + "\tp: " + job.priority + "\tt: " + j_type + "\td: " + job.type  + "\ttq " + ( Game.time - job.tick_issued) + "\tcr: " + name + " X: " + job.extra ,'Queue');
     }
-//  }
+  }
   console.log("------ END ------");
   //console.log("#-------------------------------------------------------#  H, U, R, B, RH, C, De, EM, S");
   stats.collect_stats();
