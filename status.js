@@ -47,8 +47,6 @@ module.exports = {
         var status22 = " SR: " + numSolR + "/" + MinSolR;
         var status23 = " SH: " + numSolH + "/" + MinSolH;
 
-
-
         var status11 = " E: " + cur_energy + "/" + cur_energy_cap;
 
         var status12 = " UP: " + Game.spawns[spawn_name].room.controller.progress + "/" + Game.spawns[spawn_name].room.controller.progressTotal;
