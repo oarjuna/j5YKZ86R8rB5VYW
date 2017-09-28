@@ -60,7 +60,6 @@ module.exports = {
 
         Log.info(url + " : lvl" + lvl + status11 + status12 + "\tC: "+ total_status + " -- " + status1 + status2 + status8 + status4 + status3 + status5 + status7 + status9 + status10);
         //console.log(url + " : lvl" + lvl + status11 + status12 + " C: "+ total_status + " -- " + status1 + status2 + status3 + status4 + status5 + status7 + status8 + status9 + status10);
-        console.log("MinClRg" + MinClRg);
 
         //console.log("\t" + status21 + status22 + status23);
 
