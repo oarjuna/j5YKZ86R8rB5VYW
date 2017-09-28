@@ -55,7 +55,7 @@ module.exports = {
 
 
 
-			//console.log("GEN: " + type + " " + type2 + " " + type3 + " " +  job.dest_id);
+			console.log("GEN: " + type + " " + type2 + " " + type3 + " " +  job.dest_id);
 		}
 		else if ( creep.memory.state == 'ttdie' ) {
 			creep.say('\uD83D\uDC80'); // 💀
