@@ -41,6 +41,14 @@
 // normal deliverer creeps could be sent empty to a remote room and then return full
 //
 
+// Remote Harv Task - 2 sources
+- 1x claimer ( spawns 2nd, reserves the controller )
+- 1x builder ( spawns 1st, builds containers, remains until roadwork and containers are complete )
+- 2x harvester ( spawns 3rd, harvests, repairs containers )
+- 6x deliverer ( spawns 5th, hauls, repairs roads)
+- soldier ( spawns 4th, fights)
+
+
 
 // ssh -i "screeps-grafana.pem" ubuntu@ec2-34-214-54-56.us-west-2.compute.amazonaws.com
  // sudo screepsplus-agent

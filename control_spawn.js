@@ -25,6 +25,9 @@ module.exports = {
         var numRepa = _.sum(Game.creeps, (c) => c.memory.role == 'repairer' && c.memory.birthplace == spawn_name);
         var numClReg = _.sum(Game.creeps, (c) => c.memory.role == 'claimer_reg' && c.memory.birthplace == spawn_name);
 
+
+        /// TODO -- all of this crap , refactor into queue based system
+
         var energy_avail = Game.spawns[spawn_name].room.energyCapacityAvailable;
 	      //if ( spawn_name == 'Spawn3' ) { energy_avail = 300; }
 

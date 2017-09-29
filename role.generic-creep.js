@@ -7,7 +7,9 @@ module.exports = {
 		if ( creep.memory.job != undefined) {
 			// set state to working
 			creep.memory.state = 'working';
-			// receive orders
+			// TODO -- consider - creeps could pick their own job. it would make 'closest' jobs easier.
+			// TODO -- consider - it probably would simplfy code.
+
 			// find your job
 			var job = _.find(Hive.memory.job_queue,  function(o) { return o.id == creep.memory.job; });
 
@@ -203,6 +205,7 @@ module.exports = {
 
 			} // END BUILD / REPAIR
 
+			// TODO -- travelTo
 
 			if ( complete == true ) {
 				Log.debug(creep.name + "GEN: task complete -- " + job.id,'Generic')
