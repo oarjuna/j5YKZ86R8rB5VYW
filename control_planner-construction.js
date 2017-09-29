@@ -32,7 +32,7 @@ module.exports = {
     }
     /// START LOGIC
 
-    Log.debug("",'Construct');
+    //Log.debug("",'Construct');
 
     // END
   }
