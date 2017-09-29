@@ -129,7 +129,7 @@ module.exports = {
 			saytest = '\uD83D\uDEE0\uFE0F'; // 🛠️
 			break;
 			case '04aa' :// TravelTo - 04aa - any creep, travel to destination id
-			saytest = 'travel'; // 
+			saytest = 'travel'; //
 			break;
 		}
 
@@ -204,18 +204,16 @@ module.exports = {
 
 			else if ( type2 == '03 ') { // BUILD/REPAIR
 				if ( type3 == 'aa') { // build
-					//creep.say('\uD83D\uDD28'); // 🔨
 					creep.build(dest_obj);
 				}
 				else { // repair
-					//creep.say('\uD83D\uDEE0\uFE0F'); // 🛠️
 					creep.repair(dest_obj);
 				}
 
 				// if build is 100% complete
-				if ( type3 == 'aa' && ( dest_obj.progress == dest_obj.progressTotal ) ) { var complete = true; }
+				if ( type3 == 'aa' && ( ( dest_obj.progress == dest_obj.progressTotal ) || ( creep.carry[RESOURCE_ENERGY] == 0 ) ) ) { var complete = true; }
 				// else if repair is complete
-				else if ( dest_obj.hits == dest_obj.hitsMax ) { var complete = true; }
+				else if (( dest_obj.hits == dest_obj.hitsMax ) || ( creep.carry[RESOURCE_ENERGY] == 0 ) ) { var complete = true; }
 			} // END BUILD / REPAIR
 
 			if ( complete == true ) {
