@@ -296,12 +296,31 @@ module.exports = {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////// BUILD AND REPAIR
 // Construct - 03aa - build object
-
+// find a creep full of the needed resource
+        case '03aa':
+          tmpcreep = _.find(Game.creeps, (c) =>
+           ( c.memory.birthplace == job.spawn_name ) &&
+           ( c.spawning != true ) &&
+           ( c.carry[job.extra] > 0 ) &&
+           ( c.memory.state == 'idle' ) &&
+           ( c.memory.ryantest == true) &&
+           ( c.memory.role == 'builder' )
+          );
+        break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Construct - 03bb - repair object
-
+        case '03bb':
+          tmpcreep = _.find(Game.creeps, (c) =>
+           ( c.memory.birthplace == job.spawn_name ) &&
+           ( c.spawning != true ) &&
+           ( c.carry[job.extra] > 0 ) &&
+           ( c.memory.state == 'idle' ) &&
+           ( c.memory.ryantest == true) &&
+           ( c.memory.role == 'builder' )
+          );
+        break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////// TRAVEL
+/////// TRAVEL -- when to assign this? // TODO
 // TravelTo - 04aa - any creep, travel to destination id
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
