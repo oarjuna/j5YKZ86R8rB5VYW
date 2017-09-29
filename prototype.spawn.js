@@ -11,26 +11,12 @@ module.exports = function() {
   StructureSpawn.prototype.createCustomCreep =
   function(energy_avail, roleName, dest, birthplace,return_id) {
 
-    if ( birthplace == 'Spawn1' && roleName == 'harvester') { var ryantest = true; }
-    else if ( birthplace == 'Spawn2' && roleName == 'harvester') { var ryantest = true; }
-    else if ( birthplace == 'Spawn3' && roleName == 'harvester') { var ryantest = true; }
-    else if ( birthplace == 'Spawn4' && roleName == 'harvester') { var ryantest = true; }
-    else if ( birthplace == 'Spawn5' && roleName == 'harvester') { var ryantest = true; }
-
-    else if ( birthplace == 'Spawn1' && roleName == 'deliverer') { var ryantest = true; }
-    else if ( birthplace == 'Spawn2' && roleName == 'deliverer') { var ryantest = true; }
-    else if ( birthplace == 'Spawn3' && roleName == 'deliverer') { var ryantest = true; }
-    else if ( birthplace == 'Spawn4' && roleName == 'deliverer') { var ryantest = true; }
-    else if ( birthplace == 'Spawn5' && roleName == 'deliverer') { var ryantest = true; }
-
-    else if ( birthplace == 'Spawn1' && roleName == 'upgrader') { var ryantest = true; }
-    else if ( birthplace == 'Spawn2' && roleName == 'upgrader') { var ryantest = true; }
-    else if ( birthplace == 'Spawn3' && roleName == 'upgrader') { var ryantest = true; }
-    else if ( birthplace == 'Spawn4' && roleName == 'upgrader') { var ryantest = true; }
-    else if ( birthplace == 'Spawn5' && roleName == 'upgrader') { var ryantest = true; }
-
-
+    if ( roleName == 'harvester') { var ryantest = true; }
+    else if ( roleName == 'deliverer') { var ryantest = true; }
+    else if ( roleName == 'upgrader') { var ryantest = true; }
+    else if ( roleName == 'builder') { var ryantest = true; }
     else { var ryantest = false; }
+
 
     //var ryantest = false;
     // 300 - 549 energy_avail --- initial spawn
