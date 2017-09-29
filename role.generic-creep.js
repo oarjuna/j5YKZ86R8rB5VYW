@@ -203,9 +203,7 @@ module.exports = {
 				}
 
 				// if build is 100% complete
-				if ( type3 == 'aa' && ( ( dest_obj.progress == dest_obj.progressTotal ) || ( creep.carry[RESOURCE_ENERGY] == 0 ) ) ) { var complete = true; }
-				// else if repair is complete
-				else if (( dest_obj.hits == dest_obj.hitsMax ) || ( creep.carry[RESOURCE_ENERGY] == 0 ) ) { var complete = true; }
+				if ( creep.carry[RESOURCE_ENERGY] == 0 ) { var complete = true; }
 			} // END BUILD / REPAIR
 
 			if ( complete == true ) {
