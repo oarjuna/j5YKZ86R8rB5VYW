@@ -2,8 +2,7 @@ module.exports = {
 	run: function(creep,Hive) {
 
 //		return;
-		//Log.debug(creep + " GEN: " + creep.memory.job + " TTL " + creep.ticksToLive);
-		//var spawn_name = Hive.spawn_names[spawn_num];
+		var spawn_name = Hive.spawn_names[spawn_num];
 
 		if ( creep.memory.job != undefined) {
 			// set state to working
@@ -69,6 +68,10 @@ module.exports = {
 			creep.memory.state = 'idle';
 			return;
 		}
+		// TODO
+		// if the creep is taking damage, it should abandon its job.
+		// idea - move to spawn for recyling when close to death
+
 
 		Log.debug(creep + " job.dest_id " + job.dest_id,'Generic');
 		switch (job.type) {
@@ -135,10 +138,6 @@ module.exports = {
 		}
 
 		creep.say(saytext);
-		// TODO
-		// if the creep is taking damage, it should abandon its job.
-		// idea - move to spawn for recyling when close to death
-
 		// if the dest_obj in range // range is diff for controllers
 		if ( dest_obj != undefined && dest_obj.structureType == STRUCTURE_CONTROLLER) { var range = 3; }
 		else { var range = 1; }
@@ -204,6 +203,7 @@ module.exports = {
 
 				// if build is 100% complete
 				if ( creep.carry[RESOURCE_ENERGY] == 0 ) { var complete = true; }
+
 			} // END BUILD / REPAIR
 
 			if ( complete == true ) {
@@ -220,12 +220,7 @@ module.exports = {
 		} // END is near to destination
 		else {
 			// else move towards dest_obj
-			//creep.say(job.type);
 			creep.travelTo(dest_obj);
-	//		creep.travelTo(dest_obj,{ignoreStructures: false});
-			//creep.moveTo(dest_obj);
-
-
 		} // END move
 
 	} // END FUNCTION

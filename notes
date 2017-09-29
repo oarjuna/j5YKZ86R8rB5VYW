@@ -27,9 +27,18 @@
 // TravelTo - 04aa - any creep, travel to destination id
 // TravelTo - 04bb -
 
+/////// SPAWN
+// SpawnCreep - 05aa - spawn role, energy amount,
+
+/////// GROUPING
+// Group - 06aa - join group
+// Group - 06bb - leave group
+
+
 // assign some creeps to "tasks" instead of birthplace
 - tasks are long term ongoing operations in a room, remote harvesting, attacks, other
-// tasks can have flag 'Task1' which can be used for destinations testing
+// tasks can have multiple flags 'Task1' which can be used for destinations  and return ids
+// normal deliverer creeps could be sent empty to a remote room and then return full
 //
 
 
