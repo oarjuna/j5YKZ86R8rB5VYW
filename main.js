@@ -315,7 +315,7 @@ console.log("------ START ------");
 
  //if ( job.type == '02jj' || job.type == '01ff' || job.type == '01hh' || job.type == '02hh' || job.type == '02ee' || job.type == '01gg') {
   if ( job.type == '03aa' ) {
-     Log.info(job.assigned_creep + " @ " + job.spawn_name + "\tp: " + job.priority + "\tt: " + job.type  + "\ttq " + ( Game.time - job.tick_issued) + "\tcr: " + name + " X: " + job.extra ,'Queue');
+  //   Log.info(job.assigned_creep + " @ " + job.spawn_name + "\tp: " + job.priority + "\tt: " + job.type  + "\ttq " + ( Game.time - job.tick_issued) + "\tcr: " + name + " X: " + job.extra ,'Queue');
     }
   }
   console.log("------ END ------");
