@@ -191,13 +191,10 @@ module.exports = {
 					if ( res_has == res_max ||  _.sum(creep.carry) == 0 ) {
 						var complete = true;
 					}
-
-
 				}
-
 			} // END DELIV
 
-			else if ( type2 == '03 ') { // BUILD/REPAIR
+			else if ( type2 == '03') { // BUILD/REPAIR
 				if ( type3 == 'aa') { // build
 					creep.build(dest_obj);
 				}
