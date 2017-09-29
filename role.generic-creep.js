@@ -204,8 +204,6 @@ module.exports = {
 			} // END BUILD / REPAIR
 
 
-
-
 			if ( complete == true ) {
 				Log.debug(creep.name + "GEN: task complete -- " + job.id,'Generic')
 				// set creep state to idle
