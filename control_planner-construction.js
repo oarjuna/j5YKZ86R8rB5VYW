@@ -32,7 +32,20 @@ module.exports = {
     }
     /// START LOGIC
 
-    //Log.debug("",'Construct');
+
+    // get a list of all constuctions sites
+    var constructionSites = Game.spawns[spawn_name].room.find(FIND_CONSTRUCTION_SITES);
+    Log.debug(spawn_name + " sites: " + constructionSites.length,'Construct');
+
+
+    for ( t of constructionSites ) {
+      job_count = _.filter(Hive.memory.job_queue, function(s) {
+        return  (
+          s.spawn_name == spawn_name &&
+          s.type == '03aa' &&
+          s.dest_id == t.id
+        );});
+      }
 
     // END
   }
