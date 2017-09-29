@@ -135,12 +135,12 @@ module.exports = {
 		}
 
 		creep.say(saytext);
+
 		// if the dest_obj in range // range is diff for controllers
 		if ( dest_obj != undefined && dest_obj.structureType == STRUCTURE_CONTROLLER) { var range = 3; }
 		else { var range = 1; }
 
-		if(creep.pos.inRangeTo(dest_obj,range)) { 	// harvest/transfer/withdraw/upgrade/repair dest_obj
-
+		if(creep.pos.inRangeTo(dest_obj,range)) {
 			if ( type2 == '01' ) { // FILL up
 				if ( type3 == 'aa') { // from source == harvest
 					creep.harvest(dest_obj);
@@ -202,6 +202,9 @@ module.exports = {
 				if ( creep.carry[RESOURCE_ENERGY] == 0 ) { var complete = true; }
 
 			} // END BUILD / REPAIR
+
+
+
 
 			if ( complete == true ) {
 				Log.debug(creep.name + "GEN: task complete -- " + job.id,'Generic')
