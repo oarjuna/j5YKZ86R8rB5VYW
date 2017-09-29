@@ -30,7 +30,7 @@ module.exports = function() {
 
     // 550 - 799 energy_avail
     else if ( energy_avail > 550 && energy_avail < 850 ) {
-      if      (roleName == 'harvester')   { var body = [ WORK, WORK, WORK, MOVE, MOVE, CARRY,  ]; }                          // 500
+      if      (roleName == 'harvester')   { var body = [ WORK, WORK, WORK, MOVE, MOVE, CARRY  ]; }                          // 500
       else if (roleName == 'deliverer')   { var body = [ WORK, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY ]; }                  	// 500
       else if (roleName == 'upgrader')    { var body = [ WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY ]; }                  	// 550
 
