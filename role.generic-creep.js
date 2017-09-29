@@ -124,13 +124,13 @@ module.exports = {
 			saytext = '\uD83D\uDD3B\u26A1\uD83D\uDCDE'; // 🔻⚡📞
 			break;
 			case '03aa' :// Construct - 03aa - build object
-			saytest = '\uD83D\uDD28'; // 🔨
+			saytext = '\uD83D\uDD28'; // 🔨
 			break;
 			case '03bb' :// Construct - 03bb - repair object
-			saytest = '\uD83D\uDEE0\uFE0F'; // 🛠️
+			saytext = '\uD83D\uDEE0\uFE0F'; // 🛠️
 			break;
 			case '04aa' :// TravelTo - 04aa - any creep, travel to destination id
-			saytest = 'travel'; //
+			saytext = 'travel'; //
 			break;
 		}
 
