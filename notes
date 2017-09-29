@@ -19,6 +19,20 @@
 // Deliverto - 02hh - mins to term - deliv
 // Deliverto - 02jj - energy to term - deliv
 
+/////// BUILD AND REPAIR
+// Construct - 03aa - build object
+// Construct - 03bb - repair object
+
+/////// TRAVEL
+// TravelTo - 04aa - any creep, travel to destination id
+// TravelTo - 04bb -
+
+// assign some creeps to "tasks" instead of birthplace
+- tasks are long term ongoing operations in a room, remote harvesting, attacks, other
+// tasks can have flag 'Task1' which can be used for destinations testing
+//
+
+
 // ssh -i "screeps-grafana.pem" ubuntu@ec2-34-214-54-56.us-west-2.compute.amazonaws.com
  // sudo screepsplus-agent
 
