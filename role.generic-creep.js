@@ -2,7 +2,7 @@ module.exports = {
 	run: function(creep,Hive) {
 
 //		return;
-		var spawn_name = Hive.spawn_names[spawn_num];
+//		var spawn_name = Hive.spawn_names[spawn_num];
 
 		if ( creep.memory.job != undefined) {
 			// set state to working
