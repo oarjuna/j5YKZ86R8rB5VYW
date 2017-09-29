@@ -146,13 +146,11 @@ module.exports = {
 
 			if ( type2 == '01' ) { // FILL up
 				if ( type3 == 'aa') { // from source == harvest
-					//creep.say('\u26CF'); //  ⛏
 					creep.harvest(dest_obj);
 					if ( _.sum(creep.carry) == creep.carryCapacity  ) { var complete = true; }
 					Log.debug(creep + " harvest !",'Generic');
 				}
 				else { // everything else uses withdraw
-					//creep.say('\uD83D\uDD3A'); // 🔺
 					creep.withdraw(dest_obj, job.extra);
 					if ( dest_obj.structureType == STRUCTURE_LINK ) {
 						var res_has = dest_obj.energy;
@@ -170,19 +168,15 @@ module.exports = {
 			else if ( type2 == '02') { // DELIV
 				if ( type3 == 'ff') { // to controller == upgrade
 					creep.upgradeController(dest_obj);
-					//creep.say('\u2699\uFE0F'); // ⚙️
 					if ( _.sum(creep.carry) == 0 ) {
 						var complete = true;
 					}
 				}
 				else { // everything else uses transfer
-					//creep.transfer(dest_obj, job.extra); // from the creep
 					for ( r in creep.carry ) {
 						Log.debug(creep + "xfer res " + r ,'Generic');
 						creep.transfer(dest_obj, r); // from the creep
 					}
-
-					//creep.say('\uD83D\uDD3B'); // 🔻
 
 					if ( dest_obj.structureType == STRUCTURE_STORAGE || dest_obj.structureType == STRUCTURE_CONTAINER ) {
 							var res_has =  dest_obj.store[job.extra];
