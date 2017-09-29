@@ -131,8 +131,8 @@ Creep.prototype.hasActiveBodypart = function (type) {
     spawn_levels:
                 //  Harvest, Deliv, Upgrade, Build, Energy, RemoteHarv, Claim, Soldier, Repair, Sol-M ,Sol-R, Sol-H
                 [// H  D  U  B Cr  Rh C  S  R Sm Sr SH
-                  [ 2, 2, 2, 1, 0, 1, 0, 1, 0, 0, 0, 0], // Spawn1
-                  [ 2, 2, 2, 1, 0, 1, 0, 0, 0, 0, 0, 0], // Spawn2
+                  [ 2, 2, 2, 1, 0, 0, 0, 1, 0, 0, 0, 0], // Spawn1
+                  [ 2, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0], // Spawn2
                   [ 2, 3, 2, 0, 1, 2, 0, 0, 0, 0, 0, 0], // Spawn3
                   [ 2, 2, 3, 0, 1, 2, 1, 0, 0, 0, 0, 0],  // Spawn4
                   [ 2, 2, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0]  // Spawn5
