@@ -88,16 +88,16 @@ module.exports = function() {
 
       else if (roleName == "remote_harv")  {
           var body = [
-	    WORK, WORK, WORK,
+	          WORK, WORK, WORK,
             MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE,           // 400
             CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY ];                  // 400
           }  // 800
 
       else if (roleName == "claimer")     { var body = [ CLAIM, CLAIM, MOVE, MOVE ];  } //  1350 }
-      else if (roleName == "claimer_reg") { var body = [  WORK, WORK, WORK, WORK, WORK,  //500
+      else if (roleName == "claimer_reg") { var body = [  WORK, WORK, WORK, WORK, WORK, WORK, WORK,  //700
                                                           MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, //350
                                                           CARRY, CARRY // 100
-                                                      ]; } // 950 }
+                                                      ]; } // 1150 }
       else if (roleName == "energy_mover"){ var body = [ WORK, WORK, WORK, WORK, WORK, MOVE, CARRY, CARRY ]; } // 1100}
 
       // HEAL 250,RANGED_ATTACK 150,MOVE 50,ATTACK 80,TOUGH 10
