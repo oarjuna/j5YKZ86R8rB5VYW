@@ -2,6 +2,7 @@ var plan_harvs = require('control_planner-harvs');
 var plan_market = require('control_planner-market');
 var plan_upgrade = require('control_planner-upgrader');
 var plan_logistics = require('control_planner-logistics');
+var plan_construction = require('control_planner-construction');
 
 module.exports = {
   run: function(spawn_num,Hive) {
