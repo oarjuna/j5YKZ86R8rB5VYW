@@ -86,7 +86,7 @@ module.exports = {
             ( _.sum(c.carry) == 0 ) &&
             ( c.memory.state == 'idle' ) &&
             ( c.memory.ryantest == true) &&
-            ( c.memory.role == 'deliverer' ||  c.memory.role == 'upgrader' )
+            ( c.memory.role == 'deliverer' ||  c.memory.role == 'upgrader' ||  c.memory.role == 'builder')
             );
           break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
