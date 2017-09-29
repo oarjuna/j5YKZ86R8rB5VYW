@@ -17,7 +17,6 @@ module.exports = function() {
     else if ( roleName == 'builder') { var ryantest = true; }
     else { var ryantest = false; }
 
-
     //var ryantest = false;
     // 300 - 549 energy_avail --- initial spawn
     if ( energy_avail <= 550 ) {
