@@ -70,7 +70,7 @@ module.exports = {
 			return;
 		}
 
-		Log.debug(creep + " job.type " + job.type,'Generic');
+		Log.debug(creep + " job.dest_id " + job.dest_id,'Generic');
 		switch (job.type) {
 			case '01aa' : // Fillfrom - 01aa - resource -> harv
 			saytext = '\uD83D\uDD3A\u26CF'; // 🔺⛏
