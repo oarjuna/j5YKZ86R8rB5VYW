@@ -44,7 +44,7 @@ module.exports = {
         );
       });
 
-      if (  job_exists != undefined && job_exists.length == 0  ) {
+      if (  job_exists == undefined ) {
 //        var job = new Job(spawn_name,'03aa',5,'unassigned','builder',t.id,RESOURCE_ENERGY,Game.time,'','');
   //      Hive.memory.job_queue.push(job);
         Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " type " + job.type + " res " + job.extra + " dest " + t.structureType + " " + t.id,'Construct');
