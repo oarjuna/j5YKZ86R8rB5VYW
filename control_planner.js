@@ -5,18 +5,16 @@ var plan_logistics = require('control_planner-logistics');
 var plan_construction = require('control_planner-construction');
 var plan_spawning = require('control_planner-spawning');
 
-
 module.exports = {
   run: function(spawn_num,Hive) {
     var spawn_name = Hive.spawn_names[spawn_num];
 
     // TODO --
-    // Building and Repairing on the queue // TODO 1st!
-    // remote harvesting on the queue
-    // remote reserving on the queue
     // spawning on the queue
+    // remote harvesting / reserving on the queue
     // market AI
-    // military items on the queue
+    // military items / claiming on the queue
+    // structure building
 
     // Run the various sub actors
     plan_harvs.run(spawn_num,Hive);
@@ -24,7 +22,7 @@ module.exports = {
     plan_upgrade.run(spawn_num,Hive);
     plan_logistics.run(spawn_num,Hive);
     plan_construction.run(spawn_num,Hive);
-    plan_spawning.run(spawn_num,Hive);
+    //plan_spawning.run(spawn_num,Hive);
 
     // Manual commands for testing
     if (Memory.clearqueue == true ){
