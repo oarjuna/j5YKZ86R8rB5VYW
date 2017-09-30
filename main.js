@@ -15,7 +15,7 @@ var roleSoldier_ranged = require('role.soldier_ranged');
 var roleSoldier_healer = require('role.soldier_healer');
 
 var gameStatus = require('status');
-var roleSpawn = require('control_spawn');
+var controlRoom = require('control_room');
 
 var roleGeneric = require('role.generic-creep');
 
@@ -256,11 +256,11 @@ console.log("------ START ------");
   }
   general.run(Hive);
 
-  roleSpawn.run(0,Hive);
-  roleSpawn.run(1,Hive);
-  roleSpawn.run(2,Hive);
-  roleSpawn.run(3,Hive);
-  roleSpawn.run(4,Hive);
+  controlRoom.run(0,Hive);
+  controlRoom.run(1,Hive);
+  controlRoom.run(2,Hive);
+  controlRoom.run(3,Hive);
+  controlRoom.run(4,Hive);
 
 
   console.log("#-------------------------------------------------------#  H, U, De, B,  R,  RH, C, CR, S");
@@ -324,7 +324,7 @@ console.log("------ START ------");
   Memory.stats.job_queue_length = Hive.memory.job_queue.length;
   Memory.stats.cpu_used = Game.cpu.getUsed();
   //for (var spawn in Game.spawns){
-    //roleSpawn.run(spawn);
+    //controlRoom.run(spawn);
 	//}
 
 };
