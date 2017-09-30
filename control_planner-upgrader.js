@@ -1,6 +1,6 @@
 module.exports = {
-  run: function(spawn_num,Hive) {
-    var spawn_name = Hive.spawn_names[spawn_num];
+  run: function(room_num,Hive) {
+    var spawn_name = Hive.spawn_names[room_num];
 
     // Define the job object
     // job object prototype - spawn_name,type, priority, state, body_type_req, dest_id, extra, tick_issued, tick_complete
@@ -42,7 +42,7 @@ module.exports = {
       return  ( s.type == '02ff' && s.spawn_name == spawn_name );
     });
     // count the number of total # of harvs each room will spawn
-    var upgraders_needed =  Hive.spawn_levels[spawn_num][2]; // # of upgraders
+    var upgraders_needed =  Hive.spawn_levels[room_num][2]; // # of upgraders
 
     Log.debug(" 02ff " + upgrade_jobs.length + "/" + upgraders_needed,'Planner');
 

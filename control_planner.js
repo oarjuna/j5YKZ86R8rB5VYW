@@ -6,8 +6,8 @@ var plan_construction = require('control_planner-construction');
 var plan_spawning = require('control_planner-spawning');
 
 module.exports = {
-  run: function(spawn_num,Hive) {
-    var spawn_name = Hive.spawn_names[spawn_num];
+  run: function(room_num,Hive) {
+    var spawn_name = Hive.spawn_names[room_num];
 
     // TODO --
     // spawning on the queue
@@ -17,12 +17,12 @@ module.exports = {
     // structure building
 
     // Run the various sub actors
-    plan_harvs.run(spawn_num,Hive);
-    plan_market.run(spawn_num,Hive);
-    plan_upgrade.run(spawn_num,Hive);
-    plan_logistics.run(spawn_num,Hive);
-    plan_construction.run(spawn_num,Hive);
-    plan_spawning.run(spawn_num,Hive);
+    plan_harvs.run(room_num,Hive);
+    plan_market.run(room_num,Hive);
+    plan_upgrade.run(room_num,Hive);
+    plan_logistics.run(room_num,Hive);
+    plan_construction.run(room_num,Hive);
+    plan_spawning.run(room_num,Hive);
 
     // Manual commands for testing
     if (Memory.clearqueue == true ){

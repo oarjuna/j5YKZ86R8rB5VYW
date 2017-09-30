@@ -1,7 +1,7 @@
 module.exports = {
-  run: function(spawn_num,Hive) {
-    [MinHarv,MinDeli,MinUgra,MinBuil,MinClReg,MinReHa,MinClai,MinSold,MinRepa,MinSolM,MinSolR,MinSolH] =  Hive.spawn_levels[spawn_num];
-    var spawn_name = Hive.spawn_names[spawn_num];
+  run: function(room_num,Hive) {
+    [MinHarv,MinDeli,MinUgra,MinBuil,MinClReg,MinReHa,MinClai,MinSold,MinRepa,MinSolM,MinSolR,MinSolH] =  Hive.spawn_levels[room_num];
+    var spawn_name = Hive.spawn_names[room_num];
 
     // ----- Below here lies job assignment logic
     // variables
@@ -171,7 +171,7 @@ module.exports = {
               // Find nearby structures with enough space for a full drop off
 
               // find very nearby sending links and containers, both with room
-              var rec_link = Hive.receiving_link[spawn_num];
+              var rec_link = Hive.receiving_link[room_num];
               var harv_deliv_targets = tmpcreep.pos.findInRange(FIND_STRUCTURES, 1, {
                 filter: (s) => (
                   ( s.structureType == STRUCTURE_CONTAINER && _.sum(s.store) <= s.storeCapacity - harvester_carry_cap) ||

@@ -1,6 +1,6 @@
 module.exports = {
-  run: function(spawn_num,Hive) {
-    var spawn_name = Hive.spawn_names[spawn_num];
+  run: function(room_num,Hive) {
+    var spawn_name = Hive.spawn_names[room_num];
 
     // Define the job object
     // job object prototype - spawn_name,type, priority, state, body_type_req, dest_id, extra, tick_issued, tick_complete
@@ -45,10 +45,10 @@ module.exports = {
       filter: (s) =>
         (
           // TODO -- make this list handle resources better, not hardcoded
-          ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= Hive.deliverer_carry_cap[spawn_num] ) ||
-          ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= Hive.deliverer_carry_cap[spawn_num] ) ||
-          ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_LEMERGIUM] >= Hive.deliverer_carry_cap[spawn_num] ) ||
-          ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_OXYGEN] >= Hive.deliverer_carry_cap[spawn_num] )
+          ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] >= Hive.deliverer_carry_cap[room_num] ) ||
+          ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_KEANIUM] >= Hive.deliverer_carry_cap[room_num] ) ||
+          ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_LEMERGIUM] >= Hive.deliverer_carry_cap[room_num] ) ||
+          ( s.structureType==STRUCTURE_CONTAINER && s.store[RESOURCE_OXYGEN] >= Hive.deliverer_carry_cap[room_num] )
     )});
 
     var res_list = [ RESOURCE_ENERGY,RESOURCE_OXYGEN,RESOURCE_KEANIUM,RESOURCE_LEMERGIUM ]; // TODO - what to do with this?
@@ -56,7 +56,7 @@ module.exports = {
     var res_pickup_spots_links = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
       filter: (s) =>
         (
-          ( s.structureType== STRUCTURE_LINK && s.id == Hive.receiving_link[spawn_num] && s.energy >= Hive.upgrader_carry_cap[spawn_num] )
+          ( s.structureType== STRUCTURE_LINK && s.id == Hive.receiving_link[room_num] && s.energy >= Hive.upgrader_carry_cap[room_num] )
     )});
 
     var res_pickup_spots = _.union(res_pickup_spots_cont,res_pickup_spots_links);
@@ -86,10 +86,10 @@ module.exports = {
 
             // get the amount of resource to pickup = resources / carry cap
             if ( x.structureType == STRUCTURE_CONTAINER) {
-              num_of_jobs_needed =  x.store[res] / Hive.deliverer_carry_cap[spawn_num];
+              num_of_jobs_needed =  x.store[res] / Hive.deliverer_carry_cap[room_num];
             }
             else if ( x.structureType == STRUCTURE_LINK) {
-              num_of_jobs_needed =  x.energy / Hive.upgrader_carry_cap[spawn_num];
+              num_of_jobs_needed =  x.energy / Hive.upgrader_carry_cap[room_num];
             }
 
             // get a count of existing jobs for this resource and pickup location
@@ -148,7 +148,7 @@ module.exports = {
           s.dest_id == t.id
         );});
 
-      num_of_jobs_needed =  ( t.energyCapacity - t.energy ) / Hive.deliverer_carry_cap[spawn_num];
+      num_of_jobs_needed =  ( t.energyCapacity - t.energy ) / Hive.deliverer_carry_cap[room_num];
 
       Log.debug("PL: job_count towers: " + job_count.length + "/" + num_of_jobs_needed,'Planner');
 
@@ -183,7 +183,7 @@ module.exports = {
       if ( t.structureType == STRUCTURE_SPAWN ) { energy_needed = energy_needed + 300; }
       else { energy_needed = energy_needed + 50; }
 
-      //num_of_jobs_needed = energy_needed / Hive.deliverer_carry_cap[spawn_num];
+      //num_of_jobs_needed = energy_needed / Hive.deliverer_carry_cap[room_num];
       num_of_jobs_needed = num_of_jobs_needed + 1;
 
       Log.debug("PL: job_count sp & ext: " + t.id + " " + job_count.length + "/" + num_of_jobs_needed,'Planner');
@@ -199,7 +199,7 @@ module.exports = {
     // get a list of sending links needing energy
     var structure_sending_links = Game.spawns[spawn_name].room.find(FIND_MY_STRUCTURES, {
        filter: (s) => (
-         ( s.structureType == STRUCTURE_LINK && s.id != Hive.receiving_link[spawn_num] )
+         ( s.structureType == STRUCTURE_LINK && s.id != Hive.receiving_link[room_num] )
     )});
 
     // Foreach sending links needing energy, ensure a job exists. assigned or otherwise
@@ -214,7 +214,7 @@ module.exports = {
           s.dest_id == t.id
         );});
 
-      num_of_jobs_needed = ( t.energyCapacity - t.energy ) / Hive.deliverer_carry_cap[spawn_num];
+      num_of_jobs_needed = ( t.energyCapacity - t.energy ) / Hive.deliverer_carry_cap[room_num];
 
       Log.debug("PL: job_count send links : " + job_count.length + "/" + num_of_jobs_needed,'Planner');
 
@@ -244,9 +244,9 @@ module.exports = {
 
   Log.debug("STOR " + " sn: " + spawn_name + " id " + storage,'Planner');
 
-    //Log.debug("Hive " + deliv_job_count.length + "/" + Hive.spawn_levels[spawn_num][1],'Planner');
+    //Log.debug("Hive " + deliv_job_count.length + "/" + Hive.spawn_levels[room_num][1],'Planner');
 
-    if ( deliv_job_count.length < Hive.spawn_levels[spawn_num][1] ) {
+    if ( deliv_job_count.length < Hive.spawn_levels[room_num][1] ) {
      var job = new Job(spawn_name,'02ii',10,'unassigned','deliverer',storage,RESOURCE_ENERGY,Game.time,'','');
      Hive.memory.job_queue.push(job);
      Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');
@@ -268,7 +268,7 @@ module.exports = {
 
      if ( Game.spawns[spawn_name].room.storage ) { var storage = Game.spawns[spawn_name].room.storage.id; }
     else { var storage = undefined; }
-    //Log.debug("Hive " + deliv_job_count.length + "/" + Hive.spawn_levels[spawn_num][1],'Planner');
+    //Log.debug("Hive " + deliv_job_count.length + "/" + Hive.spawn_levels[room_num][1],'Planner');
 
     if ( deliv_job_count.length < 2 && storage != undefined ) {
      var job = new Job(spawn_name,'02ee',10,'unassigned','deliverer',storage,'',Game.time,'','');
@@ -293,7 +293,7 @@ module.exports = {
     if ( Game.spawns[spawn_name].room.storage ) { var storage = Game.spawns[spawn_name].room.storage.id; }
     else { var storage = undefined;}
 
-    if ( deliv_job_count < Hive.spawn_levels[spawn_num][1] ) {
+    if ( deliv_job_count < Hive.spawn_levels[room_num][1] ) {
       var job = new Job(spawn_name,'01cc',10,'unassigned','deliverer',storage,RESOURCE_ENERGY,Game.time,'','');
       Hive.memory.job_queue.push(job);
       Log.debug("NEWJOB : " + spawn_name + " jid " + job.id + " job " + job.type,'Planner');

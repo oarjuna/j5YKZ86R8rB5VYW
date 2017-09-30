@@ -1,7 +1,7 @@
 module.exports = {
-  run: function(spawn_num,Hive) {
-    var spawn_name = Hive.spawn_names[spawn_num];
-    [MinHarv,MinDeli,MinUgra,MinBuil,MinClReg,MinReHa,MinClai,MinSold,MinRepa,MinSolM,MinSolR,MinSolH] =  Hive.spawn_levels[spawn_num];
+  run: function(room_num,Hive) {
+    var spawn_name = Hive.spawn_names[room_num];
+    [MinHarv,MinDeli,MinUgra,MinBuil,MinClReg,MinReHa,MinClai,MinSold,MinRepa,MinSolM,MinSolR,MinSolH] =  Hive.spawn_levels[room_num];
 
     // Define the job object
     // job object prototype - spawn_name,type, priority, state, body_type_req, dest_id, extra, tick_issued, tick_complete
@@ -83,11 +83,11 @@ module.exports = {
 
     // if not enough harvesters
     else  if (numHarv < MinHarv) {
-      for (let xx in Hive.sources[spawn_num] ) {
-        var h_tmp = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.destid == Hive.sources[spawn_num][xx]);
-        //console.log(spawn_name + " -- " + h_tmp  + " " +  Hive.harvs_per_source[spawn_num][xx]);
-        if ( h_tmp < Hive.harvs_per_source[spawn_num][xx]) {
-           var dest =  Hive.sources[spawn_num][xx];
+      for (let xx in Hive.sources[room_num] ) {
+        var h_tmp = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.memory.destid == Hive.sources[room_num][xx]);
+        //console.log(spawn_name + " -- " + h_tmp  + " " +  Hive.harvs_per_source[room_num][xx]);
+        if ( h_tmp < Hive.harvs_per_source[room_num][xx]) {
+           var dest =  Hive.sources[room_num][xx];
         }
       }
         // try to spawn one
@@ -99,7 +99,7 @@ module.exports = {
     // if not enough deliverers
     else if (numDeli < MinDeli) {
         console.log(spawn_name + " -- spawning deliverer");
-        name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'deliverer',Hive.receiving_link[spawn_num],spawn_name);
+        name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'deliverer',Hive.receiving_link[room_num],spawn_name);
     }
     // if not enough  claimers w/ claim parts
     else if (numClReg < MinClReg) {
@@ -114,8 +114,8 @@ module.exports = {
     }
     // if not enough upgraders
     else if (numUpgr < MinUgra) {
-        console.log(spawn_name + " -- spawning upgrader - dest: " + Hive.receiving_link[spawn_num]);
-        name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'upgrader',Hive.receiving_link[spawn_num],spawn_name);
+        console.log(spawn_name + " -- spawning upgrader - dest: " + Hive.receiving_link[room_num]);
+        name = Game.spawns[spawn_name].createCustomCreep(energy_avail, 'upgrader',Hive.receiving_link[room_num],spawn_name);
     }
     // if not enough repairers
     else if (numRepa < MinRepa) {
