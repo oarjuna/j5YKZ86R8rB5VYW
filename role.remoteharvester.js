@@ -31,12 +31,12 @@ module.exports = {
         var repairSite = creep.pos.findInRange(FIND_STRUCTURES, 1, {
             filter: (s) =>
             ( s.structureType == STRUCTURE_ROAD && s.hits < s.hitsMax ) ||
-            ( s.structureType == STRUCTURE_CONTAINER && s.hits < s.hitsMax ) 
+            ( s.structureType == STRUCTURE_CONTAINER && s.hits < s.hitsMax )
         });
 
 	if ( creep.getActiveBodyparts(WORK) && repairSite[0] != undefined ) {
 	  creep.say('\uD83D\uDEE0\uFE0F'); // 🛠️
-          console.log(creep + " -- repairer --repair --" + repairSite[0] + "--");
+          //console.log(creep + " -- repairer --repair --" + repairSite[0] + "--");
 	  creep.repair(repairSite[0]);
 	}
 	else {
