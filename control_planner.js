@@ -3,6 +3,8 @@ var plan_market = require('control_planner-market');
 var plan_upgrade = require('control_planner-upgrader');
 var plan_logistics = require('control_planner-logistics');
 var plan_construction = require('control_planner-construction');
+var plan_spawning = require('control_planner-spawning');
+
 
 module.exports = {
   run: function(spawn_num,Hive) {
@@ -22,6 +24,7 @@ module.exports = {
     plan_upgrade.run(spawn_num,Hive);
     plan_logistics.run(spawn_num,Hive);
     plan_construction.run(spawn_num,Hive);
+    plan_spawning.run(spawn_num,Hive);
 
     // Manual commands for testing
     if (Memory.clearqueue == true ){
