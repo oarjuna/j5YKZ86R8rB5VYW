@@ -22,7 +22,7 @@ module.exports = {
     plan_upgrade.run(spawn_num,Hive);
     plan_logistics.run(spawn_num,Hive);
     plan_construction.run(spawn_num,Hive);
-    //plan_spawning.run(spawn_num,Hive);
+    plan_spawning.run(spawn_num,Hive);
 
     // Manual commands for testing
     if (Memory.clearqueue == true ){

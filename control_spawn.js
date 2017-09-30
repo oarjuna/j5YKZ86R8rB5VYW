@@ -8,6 +8,7 @@ module.exports = {
       Harvest, Deliv, Upgrade, Build, ClaimrREg, RemoHarv, Claim, Soldier, Repair
     */
     run: function(spawn_num,Hive) {
+/*
       [MinHarv,MinDeli,MinUgra,MinBuil,MinClReg,MinReHa,MinClai,MinSold,MinRepa,MinSolM,MinSolR,MinSolH] =  Hive.spawn_levels[spawn_num];
       var spawn_name = Hive.spawn_names[spawn_num];
 
@@ -151,17 +152,17 @@ module.exports = {
         console.log(spawn_name + " -- spawning claimer " + dest + " body - " + role);
         name = Game.spawns[spawn_name].createCustomCreep(energy_avail, role, dest,spawn_name);
     }
-
-    // run the towers
+*/
+    // run the towers for this room
     towercontrol.run(spawn_num,Hive);
 
-    // run the links
+    // run the links for this room
     linkcontrol.run(spawn_num,Hive);
 
-    // run the planner
+    // run the planner for this room
     plancontrol.run(spawn_num,Hive);
 
-    // run job control
+    // run job control for this room
     jobcontrol.run(spawn_num,Hive);
 
   }
