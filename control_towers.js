@@ -12,10 +12,10 @@ module.exports = {
 
     for (let tower of towers) {
 
-      if (   Game.spawns[spawn_name].room.controller.level < 5 ) { var wall_ramp_str = 5000; }
+      if (   Game.spawns[spawn_name].room.controller.level < 5 ) { var wall_ramp_str = 10000; }
       else {
       //  var wall_upgrades =
-        var wall_ramp_str = 70000;
+        var wall_ramp_str = 80000;
 
       }
 
