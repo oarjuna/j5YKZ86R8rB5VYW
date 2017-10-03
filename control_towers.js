@@ -7,9 +7,6 @@ module.exports = {
         filter: (s) => s.structureType == STRUCTURE_TOWER
     });
 
-    var wall_ramp_str = 55000;
-
-
     for (let tower of towers) {
 
       if (   Game.spawns[spawn_name].room.controller.level < 5 ) { var wall_ramp_str = 10000; }
